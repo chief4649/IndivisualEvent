@@ -1,0 +1,15 @@
+{
+  "name": "ttreport-individual",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WTT individual match formatter MVP web app",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "start:admin": "ADMIN_TOKEN=secret-token PORT=3001 node server.js",
+    "cli": "node extract_individual_matches.js",
+    "verify:wtt": "node verify_wtt_alignment.js"
+  }
+}
