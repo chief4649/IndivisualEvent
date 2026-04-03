@@ -837,36 +837,6 @@ function applyFilters(matches, args, translations) {
     filtered = filtered.filter((match) => match.discipline === wantedDiscipline);
   }
 
-  if (!args.round) {
-    const hasKnockoutRounds = filtered.some((match) =>
-      [
-        "round_of_128",
-        "round_of_64",
-        "round_of_32",
-        "round_of_16",
-        "quarterfinal",
-        "semifinal",
-        "final",
-      ].includes(match.roundKey),
-    );
-    const hasGroupRounds = filtered.some((match) =>
-      match.roundKey === "group" ||
-      String(match.roundKey || "").startsWith("group ") ||
-      String(match.roundKey || "").endsWith("_group"),
-    );
-    const isYouthCategory = filtered.some((match) => /^U\s*\d+/i.test(String(match.categoryName || "")));
-
-    if (hasKnockoutRounds && hasGroupRounds && !isYouthCategory) {
-      filtered = filtered.filter((match) =>
-        !(
-          match.roundKey === "group" ||
-          String(match.roundKey || "").startsWith("group ") ||
-          String(match.roundKey || "").endsWith("_group")
-        ),
-      );
-    }
-  }
-
   if (args.round) {
     const wantedRound = normalizeRound(args.round);
     const roundContext = buildJaRoundContext(filtered);
