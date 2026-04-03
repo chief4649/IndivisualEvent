@@ -618,7 +618,7 @@ async function handleCategoriesApi(requestUrl, response) {
 
     sendJson(response, 200, {
       event: options.event,
-      categories: summarizeCategories(result.normalized),
+      categories: summarizeCategories(result.filtered),
     });
   } catch (error) {
     sendJson(response, 500, {
