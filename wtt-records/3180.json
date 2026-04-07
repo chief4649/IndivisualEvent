@@ -1,0 +1,1115 @@
+[
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3180",
+    "documentCode": "M.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Boys' Teams - Group 1 - Match 1",
+    "venue": "Table Tennis Hall, Chongchun Street",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "DPR Korea",
+        "org": "DPR Korea",
+        "orgCode": "PRK"
+      },
+      {
+        "name": "Chinese Taipei",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-4",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220818",
+            "name": "JON Ju Phyong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220818",
+                "name": "JON Ju Phyong",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201149",
+            "name": "CHANG Jui-Yang",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "201149",
+                "name": "CHANG Jui-Yang",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-1",
+          "11-9",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220827",
+            "name": "RI Kang Ung",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220827",
+                "name": "RI Kang Ung",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145043",
+            "name": "HSU Hsien-Chia",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "145043",
+                "name": "HSU Hsien-Chia",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "8-11",
+          "11-3",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220820",
+            "name": "SO Ju Gang",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220820",
+                "name": "SO Ju Gang",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220712",
+            "name": "LIU Chien Jui",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "220712",
+                "name": "LIU Chien Jui",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220818",
+            "name": "JON Ju Phyong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220818",
+                "name": "JON Ju Phyong",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145043",
+            "name": "HSU Hsien-Chia",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "145043",
+                "name": "HSU Hsien-Chia",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220827",
+            "name": "RI Kang Ung",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220827",
+                "name": "RI Kang Ung",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201149",
+            "name": "CHANG Jui-Yang",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "201149",
+                "name": "CHANG Jui-Yang",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3180",
+    "documentCode": "W.TEAM-----------U19.FNL-.00010000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U19 Girls' Teams - Finals - Match 1",
+    "venue": "Table Tennis Hall, Chongchun Street",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Hong Kong, China",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG"
+      },
+      {
+        "name": "DPR Korea",
+        "org": "DPR Korea",
+        "orgCode": "PRK"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "11-9",
+          "11-7",
+          "10-12",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206252",
+            "name": "SU Tsz Tung",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "206252",
+                "name": "SU Tsz Tung",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220833",
+            "name": "JANG Sol Hyang",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220833",
+                "name": "JANG Sol Hyang",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-3",
+          "12-14",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201271",
+            "name": "MAK Ming Shum",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201271",
+                "name": "MAK Ming Shum",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220832",
+            "name": "JO Hong Rim",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220832",
+                "name": "JO Hong Rim",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "7-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201263",
+            "name": "WONG Tsz Yui",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201263",
+                "name": "WONG Tsz Yui",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220835",
+            "name": "KYE Yong Gyong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220835",
+                "name": "KYE Yong Gyong",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "6-11",
+          "11-8",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206252",
+            "name": "SU Tsz Tung",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "206252",
+                "name": "SU Tsz Tung",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220832",
+            "name": "JO Hong Rim",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220832",
+                "name": "JO Hong Rim",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201271",
+            "name": "MAK Ming Shum",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201271",
+                "name": "MAK Ming Shum",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220833",
+            "name": "JANG Sol Hyang",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220833",
+                "name": "JANG Sol Hyang",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3180",
+    "documentCode": "M.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Boys' Teams - Group 1 - Match 2",
+    "venue": "Table Tennis Hall, Chongchun Street",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Hong Kong, China",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG"
+      },
+      {
+        "name": "Chinese Taipei",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "11-9",
+          "9-11",
+          "11-7",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201278",
+            "name": "WONG Wan Hei",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201278",
+                "name": "WONG Wan Hei",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220712",
+            "name": "LIU Chien Jui",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "220712",
+                "name": "LIU Chien Jui",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-13",
+          "4-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202015",
+            "name": "LO Ka Kit",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "202015",
+                "name": "LO Ka Kit",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145043",
+            "name": "HSU Hsien-Chia",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "145043",
+                "name": "HSU Hsien-Chia",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "7-11",
+          "7-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201277",
+            "name": "YAU Kwan Ting",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201277",
+                "name": "YAU Kwan Ting",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "136989",
+            "name": "PENG Jing-You",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "136989",
+                "name": "PENG Jing-You",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "9-11",
+          "9-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201278",
+            "name": "WONG Wan Hei",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201278",
+                "name": "WONG Wan Hei",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145043",
+            "name": "HSU Hsien-Chia",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "145043",
+                "name": "HSU Hsien-Chia",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202015",
+            "name": "LO Ka Kit",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "202015",
+                "name": "LO Ka Kit",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220712",
+            "name": "LIU Chien Jui",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "irm": null,
+            "players": [
+              {
+                "id": "220712",
+                "name": "LIU Chien Jui",
+                "org": "Chinese Taipei",
+                "orgCode": "TPE",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3180",
+    "documentCode": "M.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Boys' Teams - Group 1 - Match 3",
+    "venue": "Table Tennis Hall, Chongchun Street",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "DPR Korea",
+        "org": "DPR Korea",
+        "orgCode": "PRK"
+      },
+      {
+        "name": "Hong Kong, China",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-8",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220818",
+            "name": "JON Ju Phyong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220818",
+                "name": "JON Ju Phyong",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206208",
+            "name": "WONG Alvin",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "206208",
+                "name": "WONG Alvin",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-8",
+          "9-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220827",
+            "name": "RI Kang Ung",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220827",
+                "name": "RI Kang Ung",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201278",
+            "name": "WONG Wan Hei",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201278",
+                "name": "WONG Wan Hei",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "10-12",
+          "11-9",
+          "11-7",
+          "11-2"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220820",
+            "name": "SO Ju Gang",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220820",
+                "name": "SO Ju Gang",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202015",
+            "name": "LO Ka Kit",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "202015",
+                "name": "LO Ka Kit",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "12-10",
+          "4-11",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220818",
+            "name": "JON Ju Phyong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220818",
+                "name": "JON Ju Phyong",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201278",
+            "name": "WONG Wan Hei",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "201278",
+                "name": "WONG Wan Hei",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220827",
+            "name": "RI Kang Ung",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220827",
+                "name": "RI Kang Ung",
+                "org": "DPR Korea",
+                "orgCode": "PRK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206208",
+            "name": "WONG Alvin",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "irm": null,
+            "players": [
+              {
+                "id": "206208",
+                "name": "WONG Alvin",
+                "org": "Hong Kong, China",
+                "orgCode": "HKG",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

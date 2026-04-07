@@ -1,0 +1,4134 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 3,
+    "description": "Men's Singles - Preliminary Round 1 - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106094",
+        "name": "MITCHELL Odingo",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "106094",
+            "name": "MITCHELL Odingo",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209226",
+        "name": "LEWIS Rohan",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "209226",
+            "name": "LEWIS Rohan",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "7-11",
+      "11-9",
+      "8-11",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.001200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 12,
+    "description": "Men's Singles - Preliminary Round 1 - Match 12",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206048",
+        "name": "JIA Jaden",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "206048",
+            "name": "JIA Jaden",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122862",
+        "name": "CARRILLO Sergio",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122862",
+            "name": "CARRILLO Sergio",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "2-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.001500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 15,
+    "description": "Men's Singles - Preliminary Round 1 - Match 15",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "WO-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206472",
+        "name": "BOTHA Bosman",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "206472",
+            "name": "BOTHA Bosman",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117613",
+        "name": "WANG Zexuan",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117613",
+            "name": "WANG Zexuan",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-11",
+      "0-11",
+      "0-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 2,
+    "description": "Men's Singles - Preliminary Round 1 - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "118153",
+        "name": "MCPHERSON Emani",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "118153",
+            "name": "MCPHERSON Emani",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145823",
+        "name": "VIGNEAULT Laurent",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145823",
+            "name": "VIGNEAULT Laurent",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "7-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 6,
+    "description": "Men's Singles - Preliminary Round 1 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "213000",
+        "name": "KALICHARAN Winston",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "213000",
+            "name": "KALICHARAN Winston",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137877",
+        "name": "TSAO Darryl",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "137877",
+            "name": "TSAO Darryl",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-0",
+      "11-0",
+      "11-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 7,
+    "description": "Men's Singles - Preliminary Round 1 - Match 7",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "WO-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200439",
+        "name": "EBANKS Jayden",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "200439",
+            "name": "EBANKS Jayden",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119470",
+        "name": "LI Jonathan",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "119470",
+            "name": "LI Jonathan",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-11",
+      "0-11",
+      "0-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 5,
+    "description": "Men's Singles - Preliminary Round 1 - Match 5",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200021",
+        "name": "MORALES Ian",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "200021",
+            "name": "MORALES Ian",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110035",
+        "name": "WATSON Kane",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "110035",
+            "name": "WATSON Kane",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.001000--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 10,
+    "description": "Men's Singles - Preliminary Round 1 - Match 10",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "213151",
+        "name": "GALLARDO Diego",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "213151",
+            "name": "GALLARDO Diego",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136769",
+        "name": "JOHNSON Azizi",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "136769",
+            "name": "JOHNSON Azizi",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-0",
+      "11-0",
+      "11-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.001100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 11,
+    "description": "Men's Singles - Preliminary Round 1 - Match 11",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209017",
+        "name": "BERNARD Jameson",
+        "org": "Haiti",
+        "orgCode": "HAI",
+        "irm": null,
+        "players": [
+          {
+            "id": "209017",
+            "name": "BERNARD Jameson",
+            "org": "Haiti",
+            "orgCode": "HAI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108625",
+        "name": "SHODHAN Shashin",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "108625",
+            "name": "SHODHAN Shashin",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "13-11",
+      "7-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND1.001400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 14,
+    "description": "Men's Singles - Preliminary Round 1 - Match 14",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122586",
+        "name": "ZHANG Xiangjing",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122586",
+            "name": "ZHANG Xiangjing",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115473",
+        "name": "PHILLIPS Mark",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "115473",
+            "name": "PHILLIPS Mark",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 1,
+    "description": "Men's Singles - Preliminary Round 2 - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "144891",
+        "name": "IIZUKA Leonardo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144891",
+            "name": "IIZUKA Leonardo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145823",
+        "name": "VIGNEAULT Laurent",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145823",
+            "name": "VIGNEAULT Laurent",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-5",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 2,
+    "description": "Men's Singles - Preliminary Round 2 - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209226",
+        "name": "LEWIS Rohan",
+        "org": "Jamaica",
+        "orgCode": "JAM",
+        "irm": null,
+        "players": [
+          {
+            "id": "209226",
+            "name": "LEWIS Rohan",
+            "org": "Jamaica",
+            "orgCode": "JAM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121222",
+        "name": "LIANG Jishan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121222",
+            "name": "LIANG Jishan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "4-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 3,
+    "description": "Men's Singles - Preliminary Round 2 - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200021",
+        "name": "MORALES Ian",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "200021",
+            "name": "MORALES Ian",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "213000",
+        "name": "KALICHARAN Winston",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "213000",
+            "name": "KALICHARAN Winston",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-6",
+      "12-10",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 4,
+    "description": "Men's Singles - Preliminary Round 2 - Match 4",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119470",
+        "name": "LI Jonathan",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "119470",
+            "name": "LI Jonathan",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "3-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 5,
+    "description": "Men's Singles - Preliminary Round 2 - Match 5",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135769",
+        "name": "NARESH Sid",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135769",
+            "name": "NARESH Sid",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "213151",
+        "name": "GALLARDO Diego",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "213151",
+            "name": "GALLARDO Diego",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 6,
+    "description": "Men's Singles - Preliminary Round 2 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108625",
+        "name": "SHODHAN Shashin",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "108625",
+            "name": "SHODHAN Shashin",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122862",
+        "name": "CARRILLO Sergio",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122862",
+            "name": "CARRILLO Sergio",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "7-11",
+      "10-12",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 7,
+    "description": "Men's Singles - Preliminary Round 2 - Match 7",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122503",
+        "name": "BRITTON Shemar",
+        "org": "Guyana",
+        "orgCode": "GUY",
+        "irm": null,
+        "players": [
+          {
+            "id": "122503",
+            "name": "BRITTON Shemar",
+            "org": "Guyana",
+            "orgCode": "GUY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122586",
+        "name": "ZHANG Xiangjing",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122586",
+            "name": "ZHANG Xiangjing",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "4-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.RND2.000800--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Preliminary Round 2",
+    "roundKey": "preliminary_round",
+    "matchNumber": 8,
+    "description": "Men's Singles - Preliminary Round 2 - Match 8",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117613",
+        "name": "WANG Zexuan",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117613",
+            "name": "WANG Zexuan",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123031",
+        "name": "TEODORO Guilherme",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "123031",
+            "name": "TEODORO Guilherme",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "8-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.RND1.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Preliminary Round 1",
+    "roundKey": "preliminary_round",
+    "matchNumber": 6,
+    "description": "Women's Singles - Preliminary Round 1 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200606",
+        "name": "YEOH Irene",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "200606",
+            "name": "YEOH Irene",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "212377",
+        "name": "DONG Natalie",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "212377",
+            "name": "DONG Natalie",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-8",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.001100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 11,
+    "description": "Men's Singles - Round of 32 - Match 11",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114247",
+        "name": "WANG Eugene",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114247",
+            "name": "WANG Eugene",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122586",
+        "name": "ZHANG Xiangjing",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122586",
+            "name": "ZHANG Xiangjing",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-7",
+      "11-6",
+      "14-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.001500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 15,
+    "description": "Women's Singles - Round of 32 - Match 15",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134471",
+        "name": "ARELLANO Angelica",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "134471",
+            "name": "ARELLANO Angelica",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115498",
+        "name": "EDGHILL Chelsea",
+        "org": "Guyana",
+        "orgCode": "GUY",
+        "irm": null,
+        "players": [
+          {
+            "id": "115498",
+            "name": "EDGHILL Chelsea",
+            "org": "Guyana",
+            "orgCode": "GUY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-2",
+      "8-11",
+      "11-5",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 32 - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117294",
+        "name": "ORTEGA Daniela",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117294",
+            "name": "ORTEGA Daniela",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "212377",
+        "name": "DONG Natalie",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "212377",
+            "name": "DONG Natalie",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-6",
+      "12-10",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.001400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 14,
+    "description": "Men's Singles - Round of 32 - Match 14",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145823",
+        "name": "VIGNEAULT Laurent",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145823",
+            "name": "VIGNEAULT Laurent",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "106366",
+        "name": "MOSCOSO Heber",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "106366",
+            "name": "MOSCOSO Heber",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-5",
+      "11-9",
+      "11-7",
+      "6-11",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 32 - Match 7",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135769",
+        "name": "NARESH Sid",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135769",
+            "name": "NARESH Sid",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "8-11",
+      "16-14",
+      "8-11",
+      "14-12",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.001000--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 10,
+    "description": "Women's Singles - Round of 32 - Match 10",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134769",
+        "name": "CUX Jenny",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "134769",
+            "name": "CUX Jenny",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "208510",
+        "name": "REYES LAI Jessica",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "208510",
+            "name": "REYES LAI Jessica",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "9-11",
+      "4-11",
+      "3-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.001100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 11,
+    "description": "Women's Singles - Round of 32 - Match 11",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134776",
+        "name": "ACEVES Marbella",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134776",
+            "name": "ACEVES Marbella",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209711",
+        "name": "CHEN Hildy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209711",
+            "name": "CHEN Hildy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "8-11",
+      "11-9",
+      "6-11",
+      "4-11",
+      "11-8",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 32 - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122862",
+        "name": "CARRILLO Sergio",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122862",
+            "name": "CARRILLO Sergio",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144891",
+        "name": "IIZUKA Leonardo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144891",
+            "name": "IIZUKA Leonardo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "6-11",
+      "10-12",
+      "11-9",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.001000--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 10,
+    "description": "Men's Singles - Round of 32 - Match 10",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121222",
+        "name": "LIANG Jishan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121222",
+            "name": "LIANG Jishan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123031",
+        "name": "TEODORO Guilherme",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "123031",
+            "name": "TEODORO Guilherme",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-8",
+      "11-8",
+      "10-12",
+      "7-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 32 - Match 7",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-15",
+      "11-5",
+      "11-3",
+      "11-5",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 32 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200606",
+        "name": "YEOH Irene",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "200606",
+            "name": "YEOH Irene",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "13-11",
+      "11-4",
+      "7-11",
+      "3-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 32 - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134849",
+        "name": "CASTRO Rogelio",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134849",
+            "name": "CASTRO Rogelio",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "11-4",
+      "7-11",
+      "11-7",
+      "6-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.001500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 15,
+    "description": "Men's Singles - Round of 32 - Match 15",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135768",
+        "name": "NARESH Nandan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135768",
+            "name": "NARESH Nandan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122503",
+        "name": "BRITTON Shemar",
+        "org": "Guyana",
+        "orgCode": "GUY",
+        "irm": null,
+        "players": [
+          {
+            "id": "122503",
+            "name": "BRITTON Shemar",
+            "org": "Guyana",
+            "orgCode": "GUY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-9",
+      "12-10",
+      "9-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.R32-.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 32 - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135689",
+        "name": "XU Isabella",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135689",
+            "name": "XU Isabella",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122419",
+        "name": "LIAO Ivy",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122419",
+            "name": "LIAO Ivy",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "8-11",
+      "6-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.R32-.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 32",
+    "roundKey": "round_of_32",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 32 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200021",
+        "name": "MORALES Ian",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "200021",
+            "name": "MORALES Ian",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "10-12",
+      "7-11",
+      "0-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114247",
+        "name": "WANG Eugene",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114247",
+            "name": "WANG Eugene",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105679",
+        "name": "MADRID Marcos",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "105679",
+            "name": "MADRID Marcos",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "11-7",
+      "11-4",
+      "10-12",
+      "5-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 16 - Match 7",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133478",
+        "name": "TAKAHASHI Giulia",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "133478",
+            "name": "TAKAHASHI Giulia",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200029",
+        "name": "ZAVALETA Lucia",
+        "org": "Costa Rica",
+        "orgCode": "CRC",
+        "irm": null,
+        "players": [
+          {
+            "id": "200029",
+            "name": "ZAVALETA Lucia",
+            "org": "Costa Rica",
+            "orgCode": "CRC",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-8",
+      "11-5",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 - Match 7",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145823",
+        "name": "VIGNEAULT Laurent",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145823",
+            "name": "VIGNEAULT Laurent",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-7",
+      "11-3",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Women's Singles - Round of 16 - Match 8",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134471",
+        "name": "ARELLANO Angelica",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "134471",
+            "name": "ARELLANO Angelica",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112221",
+        "name": "ZHANG Lily",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112221",
+            "name": "ZHANG Lily",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "9-11",
+      "8-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Men's Singles - Round of 16 - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144891",
+        "name": "IIZUKA Leonardo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144891",
+            "name": "IIZUKA Leonardo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-8",
+      "9-11",
+      "10-12",
+      "11-6",
+      "11-9",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Women's Singles - Round of 16 - Match 4",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119022",
+        "name": "WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "6-11",
+      "12-10",
+      "11-9",
+      "9-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Men's Singles - Round of 16 - Match 4",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122425",
+        "name": "LY Edward",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122425",
+            "name": "LY Edward",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "7-11",
+      "7-11",
+      "11-9",
+      "11-9",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 16 - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117294",
+        "name": "ORTEGA Daniela",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117294",
+            "name": "ORTEGA Daniela",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134356",
+        "name": "COSSIO Arantxa",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134356",
+            "name": "COSSIO Arantxa",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-5",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Men's Singles - Round of 16 - Match 8",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135768",
+        "name": "NARESH Nandan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135768",
+            "name": "NARESH Nandan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117312",
+        "name": "ISHIY Vitor",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "117312",
+            "name": "ISHIY Vitor",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "15-13",
+      "10-12",
+      "11-8",
+      "13-11",
+      "9-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Women's Singles - Round of 16 - Match 5",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "208510",
+        "name": "REYES LAI Jessica",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "208510",
+            "name": "REYES LAI Jessica",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "12-10",
+      "11-7",
+      "11-1"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Men's Singles - Round of 16 - Match 5",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121222",
+        "name": "LIANG Jishan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121222",
+            "name": "LIANG Jishan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-9",
+      "13-11",
+      "11-2",
+      "9-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 - Match 6",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134776",
+        "name": "ACEVES Marbella",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134776",
+            "name": "ACEVES Marbella",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "109777",
+        "name": "VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "5-11",
+      "8-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134849",
+        "name": "CASTRO Rogelio",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134849",
+            "name": "CASTRO Rogelio",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132793",
+        "name": "LORENZO Santiago",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "132793",
+            "name": "LORENZO Santiago",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "7-11",
+      "6-11",
+      "11-9",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Women's Singles - Round of 16 - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121623",
+        "name": "TAKAHASHI Bruna",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121623",
+            "name": "TAKAHASHI Bruna",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122419",
+        "name": "LIAO Ivy",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122419",
+            "name": "LIAO Ivy",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-8",
+      "11-7",
+      "11-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113419",
+        "name": "JOUTI Eric",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113419",
+            "name": "JOUTI Eric",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "9-11",
+      "11-8",
+      "11-4",
+      "11-8",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "9-11",
+      "7-11",
+      "11-7",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals - Match 4",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135768",
+        "name": "NARESH Nandan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135768",
+            "name": "NARESH Nandan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-9",
+      "13-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "109777",
+        "name": "VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-7",
+      "11-8",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals - Match 3",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "114247",
+        "name": "WANG Eugene",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114247",
+            "name": "WANG Eugene",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "11-8",
+      "14-12",
+      "16-18",
+      "3-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals - Match 4",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133478",
+        "name": "TAKAHASHI Giulia",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "133478",
+            "name": "TAKAHASHI Giulia",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112221",
+        "name": "ZHANG Lily",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112221",
+            "name": "ZHANG Lily",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "6-11",
+      "7-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132793",
+        "name": "LORENZO Santiago",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "132793",
+            "name": "LORENZO Santiago",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "11-3",
+      "11-4",
+      "11-3",
+      "15-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119022",
+        "name": "WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "5-11",
+      "7-11",
+      "11-9",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113419",
+        "name": "JOUTI Eric",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113419",
+            "name": "JOUTI Eric",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122425",
+        "name": "LY Edward",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122425",
+            "name": "LY Edward",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "12-10",
+      "13-11",
+      "7-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121623",
+        "name": "TAKAHASHI Bruna",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121623",
+            "name": "TAKAHASHI Bruna",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117294",
+        "name": "ORTEGA Daniela",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117294",
+            "name": "ORTEGA Daniela",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-9",
+      "10-12",
+      "11-5",
+      "12-10",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113419",
+        "name": "JOUTI Eric",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113419",
+            "name": "JOUTI Eric",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-6",
+      "11-5",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112221",
+        "name": "ZHANG Lily",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112221",
+            "name": "ZHANG Lily",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "6-11",
+      "3-11",
+      "11-8",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114247",
+        "name": "WANG Eugene",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114247",
+            "name": "WANG Eugene",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-9",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121623",
+        "name": "TAKAHASHI Bruna",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121623",
+            "name": "TAKAHASHI Bruna",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119022",
+        "name": "WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-8",
+      "11-2",
+      "7-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "114247",
+        "name": "WANG Eugene",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114247",
+            "name": "WANG Eugene",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "9-11",
+      "11-9",
+      "5-11",
+      "13-15",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3117",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals - Match 1",
+    "venue": "888 Table Tennis Center",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121623",
+        "name": "TAKAHASHI Bruna",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121623",
+            "name": "TAKAHASHI Bruna",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112221",
+        "name": "ZHANG Lily",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112221",
+            "name": "ZHANG Lily",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "14-12",
+      "11-5",
+      "9-11",
+      "12-14",
+      "15-13",
+      "11-5"
+    ],
+    "source": "wtt"
+  }
+]

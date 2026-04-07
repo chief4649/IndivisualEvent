@@ -1,0 +1,3152 @@
+[
+  {
+    "id": 7604398,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203313",
+          "competitiorName": "CHEN Min-Hsin",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203313",
+              "playerName": "CHEN Min-Hsin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,4,9,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201874",
+          "competitiorName": "WU Ying-syuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201874",
+              "playerName": "WU Ying-syuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,3,11,11,8",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,11-3,4-11,9-11,11-8",
+      "resultsGameScores": "11-8,11-3,4-11,9-11,11-8",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201874",
+        "serverReceiver": "203313",
+        "serverNext": "201874",
+        "serverCompetitor": "201874",
+        "receiverNext": "203313"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:21",
+        "startDateLocal": "06/08/2024 19:00:00",
+        "startDateUTC": "06/08/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "236",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T19:00:00"
+  },
+  {
+    "id": 7604228,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145799",
+          "competitiorName": "BERTELSMEIER Andre",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145799",
+              "playerName": "BERTELSMEIER Andre",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134556",
+          "competitiorName": "CAMARA Gabrielius",
+          "competitiorOrg": "NED",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134556",
+              "playerName": "CAMARA Gabrielius",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,11-6,0-0,0-0",
+      "resultsGameScores": "11-7,11-6,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145799",
+        "serverReceiver": "134556",
+        "serverNext": "145799",
+        "serverCompetitor": "145799",
+        "receiverNext": "134556"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:24",
+        "startDateLocal": "06/08/2024 19:00:00",
+        "startDateUTC": "06/08/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "153",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T19:00:00"
+  },
+  {
+    "id": 7603869,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202345",
+          "competitiorName": "WONGLAKHON Phatsaraphon",
+          "competitiorOrg": "THA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202345",
+              "playerName": "WONGLAKHON Phatsaraphon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "THA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,3,11,5,6",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146280",
+          "competitiorName": "CHEN Chi-Shiuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146280",
+              "playerName": "CHEN Chi-Shiuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,9,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,3-11,11-9,5-11,6-11",
+      "resultsGameScores": "11-9,3-11,11-9,5-11,6-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146280",
+        "serverReceiver": "202345",
+        "serverNext": "146280",
+        "serverCompetitor": "146280",
+        "receiverNext": "202345"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:42",
+        "startDateLocal": "06/08/2024 18:30:00",
+        "startDateUTC": "06/08/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "239",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T18:30:00"
+  },
+  {
+    "id": 7603794,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206028",
+          "competitiorName": "KIM Kanghyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206028",
+              "playerName": "KIM Kanghyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,5,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "143942",
+          "competitiorName": "FASO Danilo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "143942",
+              "playerName": "FASO Danilo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,5-11,6-11,0-0,0-0",
+      "resultsGameScores": "4-11,5-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "143942",
+        "serverReceiver": "206028",
+        "serverNext": "143942",
+        "serverCompetitor": "143942",
+        "receiverNext": "206028"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:28",
+        "startDateLocal": "06/08/2024 18:30:00",
+        "startDateUTC": "06/08/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "139",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T18:30:00"
+  },
+  {
+    "id": 7603411,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201438",
+          "competitiorName": "VIJITVIRIYAGUL Kulapassr",
+          "competitiorOrg": "THA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201438",
+              "playerName": "VIJITVIRIYAGUL Kulapassr",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "THA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,5,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201874",
+          "competitiorName": "WU Ying-syuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201874",
+              "playerName": "WU Ying-syuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,7-11,5-11,5-11,0-0",
+      "resultsGameScores": "11-8,7-11,5-11,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201874",
+        "serverReceiver": "201438",
+        "serverNext": "201874",
+        "serverCompetitor": "201874",
+        "receiverNext": "201438"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:43",
+        "startDateLocal": "06/08/2024 17:30:00",
+        "startDateUTC": "06/08/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "188",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:30:00"
+  },
+  {
+    "id": 7603353,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137256",
+          "competitiorName": "HSIAO Tzu-Jui",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137256",
+              "playerName": "HSIAO Tzu-Jui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,4,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145799",
+          "competitiorName": "BERTELSMEIER Andre",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145799",
+              "playerName": "BERTELSMEIER Andre",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,4-11,5-11,0-0,0-0",
+      "resultsGameScores": "6-11,4-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145799",
+        "serverReceiver": "137256",
+        "serverNext": "145799",
+        "serverCompetitor": "145799",
+        "receiverNext": "137256"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:06",
+        "startDateLocal": "06/08/2024 17:30:00",
+        "startDateUTC": "06/08/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "129",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:30:00"
+  },
+  {
+    "id": 7603295,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136005",
+          "competitiorName": "SZANTOSI David",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136005",
+              "playerName": "SZANTOSI David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,5,11,11,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134556",
+          "competitiorName": "CAMARA Gabrielius",
+          "competitiorOrg": "NED",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134556",
+              "playerName": "CAMARA Gabrielius",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,3,4,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "4-11,5-11,11-3,11-4,7-11",
+      "resultsGameScores": "4-11,5-11,11-3,11-4,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136005",
+        "serverReceiver": "134556",
+        "serverNext": "136005",
+        "serverCompetitor": "136005",
+        "receiverNext": "134556"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:38",
+        "startDateLocal": "06/08/2024 17:30:00",
+        "startDateUTC": "06/08/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "217",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:30:00"
+  },
+  {
+    "id": 7603190,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209157",
+          "competitiorName": "CHEN Yu-Jhen",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209157",
+              "playerName": "CHEN Yu-Jhen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,5,11,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203313",
+          "competitiorName": "CHEN Min-Hsin",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203313",
+              "playerName": "CHEN Min-Hsin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,4,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "2-11,5-11,11-4,7-11,0-0",
+      "resultsGameScores": "2-11,5-11,11-4,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203313",
+        "serverReceiver": "209157",
+        "serverNext": "203313",
+        "serverCompetitor": "203313",
+        "receiverNext": "209157"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:02",
+        "startDateLocal": "06/08/2024 17:30:00",
+        "startDateUTC": "06/08/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "164",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:30:00"
+  },
+  {
+    "id": 7602832,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146306",
+          "competitiorName": "MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,11,7,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206028",
+          "competitiorName": "KIM Kanghyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206028",
+              "playerName": "KIM Kanghyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,9,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,7-11,11-9,7-11,9-11",
+      "resultsGameScores": "11-8,7-11,11-9,7-11,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146306",
+        "serverReceiver": "206028",
+        "serverNext": "146306",
+        "serverCompetitor": "146306",
+        "receiverNext": "206028"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:59",
+        "startDateLocal": "06/08/2024 17:00:00",
+        "startDateUTC": "06/08/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "262",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:00:00"
+  },
+  {
+    "id": 7602771,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146307",
+          "competitiorName": "RIOS Enrique",
+          "competitiorOrg": "PUR",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,9,11,5",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "143942",
+          "competitiorName": "FASO Danilo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "143942",
+              "playerName": "FASO Danilo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,9-11,11-8,5-11",
+      "resultsGameScores": "11-8,9-11,9-11,11-8,5-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "143942",
+        "serverReceiver": "146307",
+        "serverNext": "143942",
+        "serverCompetitor": "143942",
+        "receiverNext": "146307"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:22",
+        "startDateLocal": "06/08/2024 17:00:00",
+        "startDateUTC": "06/08/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "261",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:00:00"
+  },
+  {
+    "id": 7602490,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135076",
+          "competitiorName": "KIM Dahee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135076",
+              "playerName": "KIM Dahee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,8,1,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146280",
+          "competitiorName": "CHEN Chi-Shiuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146280",
+              "playerName": "CHEN Chi-Shiuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,8-11,1-11,0-0,0-0",
+      "resultsGameScores": "9-11,8-11,1-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146280",
+        "serverReceiver": "135076",
+        "serverNext": "146280",
+        "serverCompetitor": "146280",
+        "receiverNext": "135076"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:38",
+        "startDateLocal": "06/08/2024 17:00:00",
+        "startDateUTC": "06/08/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "139",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:00:00"
+  },
+  {
+    "id": 7602479,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202245",
+          "competitiorName": "LEE Dahye",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202245",
+              "playerName": "LEE Dahye",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,4,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202345",
+          "competitiorName": "WONGLAKHON Phatsaraphon",
+          "competitiorOrg": "THA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202345",
+              "playerName": "WONGLAKHON Phatsaraphon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "THA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,4-11,7-11,0-0,0-0",
+      "resultsGameScores": "9-11,4-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202345",
+        "serverReceiver": "202245",
+        "serverNext": "202345",
+        "serverCompetitor": "202345",
+        "receiverNext": "202245"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:08",
+        "startDateLocal": "06/08/2024 17:00:00",
+        "startDateUTC": "06/08/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "140",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T17:00:00"
+  },
+  {
+    "id": 7601895,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145615",
+          "competitiorName": "LEAL Julia",
+          "competitiorOrg": "POR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145615",
+              "playerName": "LEAL Julia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,3,11,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209157",
+          "competitiorName": "CHEN Yu-Jhen",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209157",
+              "playerName": "CHEN Yu-Jhen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,7,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "5-11,11-9,3-11,11-7,9-11",
+      "resultsGameScores": "5-11,11-9,3-11,11-7,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209157",
+        "serverReceiver": "145615",
+        "serverNext": "209157",
+        "serverCompetitor": "209157",
+        "receiverNext": "145615"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:38",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "240",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601867,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137256",
+          "competitiorName": "HSIAO Tzu-Jui",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137256",
+              "playerName": "HSIAO Tzu-Jui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144529",
+          "competitiorName": "MOURIER Flavio",
+          "competitiorOrg": "FRA",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144529",
+              "playerName": "MOURIER Flavio",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,9,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,11-8,11-9,11-7,0-0",
+      "resultsGameScores": "8-11,11-8,11-9,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137256",
+        "serverReceiver": "144529",
+        "serverNext": "137256",
+        "serverCompetitor": "137256",
+        "receiverNext": "144529"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:50",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "203",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601817,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135768",
+          "competitiorName": "NARESH Nandan",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135768",
+              "playerName": "NARESH Nandan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,16,2,4,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145799",
+          "competitiorName": "BERTELSMEIER Andre",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145799",
+              "playerName": "BERTELSMEIER Andre",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,14,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,16-14,2-11,4-11,0-0",
+      "resultsGameScores": "5-11,16-14,2-11,4-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145799",
+        "serverReceiver": "135768",
+        "serverNext": "145799",
+        "serverCompetitor": "145799",
+        "receiverNext": "145799"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601806,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136005",
+          "competitiorName": "SZANTOSI David",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136005",
+              "playerName": "SZANTOSI David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,7,11,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200044",
+          "competitiorName": "KUO Guan-Hong",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200044",
+              "playerName": "KUO Guan-Hong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,8,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,8-11,7-11,11-8,12-10",
+      "resultsGameScores": "11-9,8-11,7-11,11-8,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200044",
+        "serverReceiver": "136005",
+        "serverNext": "200044",
+        "serverCompetitor": "200044",
+        "receiverNext": "200044"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601727,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203122",
+          "competitiorName": "CHEN Chi-Yun",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203122",
+              "playerName": "CHEN Chi-Yun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,9,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201438",
+          "competitiorName": "VIJITVIRIYAGUL Kulapassr",
+          "competitiorOrg": "THA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201438",
+              "playerName": "VIJITVIRIYAGUL Kulapassr",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "THA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,11-6,9-11,6-11,0-0",
+      "resultsGameScores": "9-11,11-6,9-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201438",
+        "serverReceiver": "203122",
+        "serverNext": "201438",
+        "serverCompetitor": "201438",
+        "receiverNext": "201438"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601714,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T08",
+      "tableName": "Table 8",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134556",
+          "competitiorName": "CAMARA Gabrielius",
+          "competitiorOrg": "NED",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134556",
+              "playerName": "CAMARA Gabrielius",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,8,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145286",
+          "competitiorName": "VARGA Botond",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145286",
+              "playerName": "VARGA Botond",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,11,11,6,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-3,6-11,8-11,11-6,11-6",
+      "resultsGameScores": "11-3,6-11,8-11,11-6,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145286",
+        "serverReceiver": "134556",
+        "serverNext": "145286",
+        "serverCompetitor": "145286",
+        "receiverNext": "145286"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601559,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T07",
+      "tableName": "Table 7",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "143735",
+          "competitiorName": "JETHA Sienna",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "143735",
+              "playerName": "JETHA Sienna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,5,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203313",
+          "competitiorName": "CHEN Min-Hsin",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203313",
+              "playerName": "CHEN Min-Hsin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,8-11,0-0,0-0",
+      "resultsGameScores": "5-11,5-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203313",
+        "serverReceiver": "143735",
+        "serverNext": "203313",
+        "serverCompetitor": "203313",
+        "receiverNext": "203313"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601548,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201874",
+          "competitiorName": "WU Ying-syuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201874",
+              "playerName": "WU Ying-syuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146298",
+          "competitiorName": "KAMALOVA Arujan",
+          "competitiorOrg": "UZB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146298",
+              "playerName": "KAMALOVA Arujan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UZB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,5,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-5,11-9,0-0,0-0",
+      "resultsGameScores": "11-3,11-5,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146298",
+        "serverReceiver": "201874",
+        "serverNext": "146298",
+        "serverCompetitor": "146298",
+        "receiverNext": "146298"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 16:00:00",
+        "startDateUTC": "06/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T16:00:00"
+  },
+  {
+    "id": 7601233,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146280",
+          "competitiorName": "CHEN Chi-Shiuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146280",
+              "playerName": "CHEN Chi-Shiuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,10,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136597",
+          "competitiorName": "BOGDANOWICZ Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136597",
+              "playerName": "BOGDANOWICZ Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,7,12,5",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,9-11,11-7,10-12,11-5",
+      "resultsGameScores": "11-9,9-11,11-7,10-12,11-5",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146280",
+        "serverReceiver": "136597",
+        "serverNext": "146280",
+        "serverCompetitor": "146280",
+        "receiverNext": "136597"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:13",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "271",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7601202,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146306",
+          "competitiorName": "MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,4,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145776",
+          "competitiorName": "WALLIN Adam",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145776",
+              "playerName": "WALLIN Adam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,8,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,4-11,11-8,11-9,0-0",
+      "resultsGameScores": "11-7,4-11,11-8,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145776",
+        "serverReceiver": "146306",
+        "serverNext": "145776",
+        "serverCompetitor": "145776",
+        "receiverNext": "146306"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:03",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "197",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7601049,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145035",
+          "competitiorName": "WU Jia-En",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145035",
+              "playerName": "WU Jia-En",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,8,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202245",
+          "competitiorName": "LEE Dahye",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202245",
+              "playerName": "LEE Dahye",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "10-12,8-11,5-11,0-0,0-0",
+      "resultsGameScores": "10-12,8-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202245",
+        "serverReceiver": "145035",
+        "serverNext": "202245",
+        "serverCompetitor": "202245",
+        "receiverNext": "202245"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7601020,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146307",
+          "competitiorName": "RIOS Enrique",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201113",
+          "competitiorName": "SJOSVARD Melker",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201113",
+              "playerName": "SJOSVARD Melker",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,4,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-4,11-7,0-0,0-0",
+      "resultsGameScores": "11-6,11-4,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201113",
+        "serverReceiver": "146307",
+        "serverNext": "201113",
+        "serverCompetitor": "201113",
+        "receiverNext": "201113"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7601005,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202345",
+          "competitiorName": "WONGLAKHON Phatsaraphon",
+          "competitiorOrg": "THA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202345",
+              "playerName": "WONGLAKHON Phatsaraphon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "THA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137613",
+          "competitiorName": "HOLDA Karolina",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137613",
+              "playerName": "HOLDA Karolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,11-7,0-0,0-0",
+      "resultsGameScores": "11-9,11-9,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137613",
+        "serverReceiver": "202345",
+        "serverNext": "137613",
+        "serverCompetitor": "137613",
+        "receiverNext": "137613"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7600994,
+    "eventId": "2821",
+    "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T07",
+      "tableName": "Table 7",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201797",
+          "competitiorName": "CLEMENT Emma",
+          "competitiorOrg": "DEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201797",
+              "playerName": "CLEMENT Emma",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "DEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,6,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135076",
+          "competitiorName": "KIM Dahee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135076",
+              "playerName": "KIM Dahee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,6-11,7-11,0-0,0-0",
+      "resultsGameScores": "5-11,6-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135076",
+        "serverReceiver": "201797",
+        "serverNext": "135076",
+        "serverCompetitor": "135076",
+        "receiverNext": "135076"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7600979,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T08",
+      "tableName": "Table 8",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206028",
+          "competitiorName": "KIM Kanghyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206028",
+              "playerName": "KIM Kanghyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201148",
+          "competitiorName": "CHEN Yi-Jui",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201148",
+              "playerName": "CHEN Yi-Jui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,7,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-7,11-7,0-0,0-0",
+      "resultsGameScores": "11-9,11-7,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201148",
+        "serverReceiver": "206028",
+        "serverNext": "201148",
+        "serverCompetitor": "201148",
+        "receiverNext": "201148"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7600936,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201473",
+          "competitiorName": "RINDERER Jonas",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201473",
+              "playerName": "RINDERER Jonas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,6,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "143942",
+          "competitiorName": "FASO Danilo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "143942",
+              "playerName": "FASO Danilo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,6-11,5-11,0-0,0-0",
+      "resultsGameScores": "6-11,6-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "143942",
+        "serverReceiver": "201473",
+        "serverNext": "143942",
+        "serverCompetitor": "143942",
+        "receiverNext": "143942"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 15:30:00",
+        "startDateUTC": "06/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:30:00"
+  },
+  {
+    "id": 7600124,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U198FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U198FNL000600----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200044",
+          "competitiorName": "KUO Guan-Hong",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200044",
+              "playerName": "KUO Guan-Hong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137632",
+          "competitiorName": "BESNIER Celian",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137632",
+              "playerName": "BESNIER Celian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,12,6,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,10-12,11-6,11-9,0-0",
+      "resultsGameScores": "11-9,10-12,11-6,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137632",
+        "serverReceiver": "200044",
+        "serverNext": "137632",
+        "serverCompetitor": "137632",
+        "receiverNext": "200044"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:15",
+        "startDateLocal": "06/08/2024 13:50:00",
+        "startDateUTC": "06/08/2024 11:50:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "209",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T13:50:00"
+  },
+  {
+    "id": 7600027,
+    "eventId": "2821",
+    "documentCode": "TTEMSINGLES--------U198FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2821",
+      "documentCode": "TTEMSINGLES--------U198FNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Helsingborg Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135768",
+          "competitiorName": "NARESH Nandan",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135768",
+              "playerName": "NARESH Nandan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "19,11,8,8,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133415",
+          "competitiorName": "VALLINO Federico",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133415",
+              "playerName": "VALLINO Federico",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "17,8,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "19-17,11-8,8-11,8-11,11-0",
+      "resultsGameScores": "19-17,11-8,8-11,8-11,11-0",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133415",
+        "serverReceiver": "135768",
+        "serverNext": "133415",
+        "serverCompetitor": "133415",
+        "receiverNext": "133415"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/08/2024 13:45:00",
+        "startDateUTC": "06/08/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T13:45:00"
+  }
+]

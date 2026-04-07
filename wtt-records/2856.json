@@ -1,0 +1,3152 @@
+[
+  {
+    "id": 6998826,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144891",
+          "competitiorName": "IIZUKA Leonardo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144891",
+              "playerName": "IIZUKA Leonardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,12,8,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200389",
+          "competitiorName": "DOTI Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200389",
+              "playerName": "DOTI Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,10,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,8-11,12-10,8-11,8-11",
+      "resultsGameScores": "11-7,8-11,12-10,8-11,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200389",
+        "serverReceiver": "144891",
+        "serverNext": "200389",
+        "serverCompetitor": "200389",
+        "receiverNext": "200389"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 19:30:00",
+        "startDateUTC": "04/20/2024 23:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T19:30:00"
+  },
+  {
+    "id": 6998821,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200756",
+          "competitiorName": "SARDA Mahayla",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200756",
+              "playerName": "SARDA Mahayla",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "14,7,17,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202070",
+          "competitiorName": "RAMIREZ Catalina",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202070",
+              "playerName": "RAMIREZ Catalina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,15,3,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "14-12,7-11,17-15,11-3,0-0",
+      "resultsGameScores": "14-12,7-11,17-15,11-3,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202070",
+        "serverReceiver": "200756",
+        "serverNext": "202070",
+        "serverCompetitor": "202070",
+        "receiverNext": "202070"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 19:30:00",
+        "startDateUTC": "04/20/2024 23:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T19:30:00"
+  },
+  {
+    "id": 6998817,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201770",
+          "competitiorName": "ARCHUA Benjamin",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201770",
+              "playerName": "ARCHUA Benjamin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,7,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204850",
+          "competitiorName": "THIOFILO Vitor",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204850",
+              "playerName": "THIOFILO Vitor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,12,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,10-12,7-11,7-11,0-0",
+      "resultsGameScores": "11-8,10-12,7-11,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204850",
+        "serverReceiver": "201770",
+        "serverNext": "204850",
+        "serverCompetitor": "204850",
+        "receiverNext": "204850"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 19:00:00",
+        "startDateUTC": "04/20/2024 23:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T19:00:00"
+  },
+  {
+    "id": 6998810,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135039",
+          "competitiorName": "WIELGOS Zuzanna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135039",
+              "playerName": "WIELGOS Zuzanna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146023",
+          "competitiorName": "MIYABARA Sabrina",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146023",
+              "playerName": "MIYABARA Sabrina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,11,7,3,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,6-11,11-7,11-3,0-0",
+      "resultsGameScores": "11-4,6-11,11-7,11-3,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146023",
+        "serverReceiver": "135039",
+        "serverNext": "146023",
+        "serverCompetitor": "146023",
+        "receiverNext": "146023"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 19:00:00",
+        "startDateUTC": "04/20/2024 23:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T19:00:00"
+  },
+  {
+    "id": 6998805,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200756",
+          "competitiorName": "SARDA Mahayla",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200756",
+              "playerName": "SARDA Mahayla",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,4,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200647",
+          "competitiorName": "AGNONE MAIARA",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200647",
+              "playerName": "AGNONE MAIARA",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,3,5,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,4-11,11-3,11-5,0-0",
+      "resultsGameScores": "11-9,4-11,11-3,11-5,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200647",
+        "serverReceiver": "200756",
+        "serverNext": "200647",
+        "serverCompetitor": "200647",
+        "receiverNext": "200647"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 18:15:00",
+        "startDateUTC": "04/20/2024 22:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T18:15:00"
+  },
+  {
+    "id": 6998798,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200389",
+          "competitiorName": "DOTI Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200389",
+              "playerName": "DOTI Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,6,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136416",
+          "competitiorName": "PIGUAVE Diego",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136416",
+              "playerName": "PIGUAVE Diego",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,7,11,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,11-7,6-11,12-10,0-0",
+      "resultsGameScores": "11-7,11-7,6-11,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136416",
+        "serverReceiver": "200389",
+        "serverNext": "136416",
+        "serverCompetitor": "136416",
+        "receiverNext": "136416"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 18:15:00",
+        "startDateUTC": "04/20/2024 22:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T18:15:00"
+  },
+  {
+    "id": 6998791,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144891",
+          "competitiorName": "IIZUKA Leonardo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144891",
+              "playerName": "IIZUKA Leonardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,11,13,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204515",
+          "competitiorName": "ROMANSKI Lucas",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204515",
+              "playerName": "ROMANSKI Lucas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "13-11,11-9,13-11,0-0,0-0",
+      "resultsGameScores": "13-11,11-9,13-11,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204515",
+        "serverReceiver": "144891",
+        "serverNext": "204515",
+        "serverCompetitor": "204515",
+        "receiverNext": "204515"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 18:15:00",
+        "startDateUTC": "04/20/2024 22:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T18:15:00"
+  },
+  {
+    "id": 6998788,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201203",
+          "competitiorName": "YAMANAKA Erika",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201203",
+              "playerName": "YAMANAKA Erika",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "3,4,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202070",
+          "competitiorName": "RAMIREZ Catalina",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202070",
+              "playerName": "RAMIREZ Catalina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "3-11,4-11,8-11,0-0,0-0",
+      "resultsGameScores": "3-11,4-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202070",
+        "serverReceiver": "201203",
+        "serverNext": "202070",
+        "serverCompetitor": "202070",
+        "receiverNext": "202070"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 18:15:00",
+        "startDateUTC": "04/20/2024 22:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T18:15:00"
+  },
+  {
+    "id": 6998783,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144239",
+          "competitiorName": "SENAGA Karina",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144239",
+              "playerName": "SENAGA Karina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,9,9,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146023",
+          "competitiorName": "MIYABARA Sabrina",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146023",
+              "playerName": "MIYABARA Sabrina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,5,11,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "12-10,11-5,9-11,9-11,9-11",
+      "resultsGameScores": "12-10,11-5,9-11,9-11,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146023",
+        "serverReceiver": "144239",
+        "serverNext": "146023",
+        "serverCompetitor": "146023",
+        "receiverNext": "146023"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:45:00",
+        "startDateUTC": "04/20/2024 21:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:45:00"
+  },
+  {
+    "id": 6998776,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200757",
+          "competitiorName": "DE MELO Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200757",
+              "playerName": "DE MELO Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,11,10,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204850",
+          "competitiorName": "THIOFILO Vitor",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204850",
+              "playerName": "THIOFILO Vitor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,9,12,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,11-9,11-9,10-12,8-11",
+      "resultsGameScores": "6-11,11-9,11-9,10-12,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204850",
+        "serverReceiver": "200757",
+        "serverNext": "204850",
+        "serverCompetitor": "204850",
+        "receiverNext": "204850"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:45:00",
+        "startDateUTC": "04/20/2024 21:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:45:00"
+  },
+  {
+    "id": 6998770,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209188",
+          "competitiorName": "MOTIZUKI Vitor",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209188",
+              "playerName": "MOTIZUKI Vitor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,11,11,6,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201770",
+          "competitiorName": "ARCHUA Benjamin",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201770",
+              "playerName": "ARCHUA Benjamin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,4,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "4-11,11-7,11-4,6-11,9-11",
+      "resultsGameScores": "4-11,11-7,11-4,6-11,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201770",
+        "serverReceiver": "209188",
+        "serverNext": "201770",
+        "serverCompetitor": "201770",
+        "receiverNext": "201770"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:45:00",
+        "startDateUTC": "04/20/2024 21:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:45:00"
+  },
+  {
+    "id": 6998763,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133478",
+          "competitiorName": "TAKAHASHI Giulia",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133478",
+              "playerName": "TAKAHASHI Giulia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,8,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135039",
+          "competitiorName": "WIELGOS Zuzanna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135039",
+              "playerName": "WIELGOS Zuzanna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-8,8-11,8-11,0-0",
+      "resultsGameScores": "5-11,11-8,8-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135039",
+        "serverReceiver": "133478",
+        "serverNext": "135039",
+        "serverCompetitor": "135039",
+        "receiverNext": "135039"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:45:00",
+        "startDateUTC": "04/20/2024 21:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:45:00"
+  },
+  {
+    "id": 6998758,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T08",
+      "tableName": "Table 8",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136416",
+          "competitiorName": "PIGUAVE Diego",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136416",
+              "playerName": "PIGUAVE Diego",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136271",
+          "competitiorName": "FUENTES Alvaro",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136271",
+              "playerName": "FUENTES Alvaro",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,5,10,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-5,12-10,0-0,0-0",
+      "resultsGameScores": "11-8,11-5,12-10,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136271",
+        "serverReceiver": "136416",
+        "serverNext": "136271",
+        "serverCompetitor": "136271",
+        "receiverNext": "136271"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998751,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144061",
+          "competitiorName": "LAMA Jaime",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144061",
+              "playerName": "LAMA Jaime",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,7,8,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204515",
+          "competitiorName": "ROMANSKI Lucas",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204515",
+              "playerName": "ROMANSKI Lucas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,7-11,8-11,8-11,0-0",
+      "resultsGameScores": "12-10,7-11,8-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204515",
+        "serverReceiver": "144061",
+        "serverNext": "204515",
+        "serverCompetitor": "204515",
+        "receiverNext": "204515"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998744,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T07",
+      "tableName": "Table 7",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200389",
+          "competitiorName": "DOTI Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200389",
+              "playerName": "DOTI Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,9,9,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146025",
+          "competitiorName": "SUAREZ Benjamin",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146025",
+              "playerName": "SUAREZ Benjamin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,10,11,11,3",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-6,12-10,9-11,9-11,11-3",
+      "resultsGameScores": "11-6,12-10,9-11,9-11,11-3",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146025",
+        "serverReceiver": "200389",
+        "serverNext": "146025",
+        "serverCompetitor": "146025",
+        "receiverNext": "146025"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998737,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "205236",
+          "competitiorName": "HEIDRICH Raiane",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205236",
+              "playerName": "HEIDRICH Raiane",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,8,11,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200647",
+          "competitiorName": "AGNONE MAIARA",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200647",
+              "playerName": "AGNONE MAIARA",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,8-11,11-8,5-11,0-0",
+      "resultsGameScores": "8-11,8-11,11-8,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200647",
+        "serverReceiver": "205236",
+        "serverNext": "200647",
+        "serverCompetitor": "200647",
+        "receiverNext": "200647"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998731,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200641",
+          "competitiorName": "TURINI Ana",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200641",
+              "playerName": "TURINI Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,5,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202070",
+          "competitiorName": "RAMIREZ Catalina",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202070",
+              "playerName": "RAMIREZ Catalina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,5-11,8-11,0-0,0-0",
+      "resultsGameScores": "4-11,5-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202070",
+        "serverReceiver": "200641",
+        "serverNext": "202070",
+        "serverCompetitor": "202070",
+        "receiverNext": "202070"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998727,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144891",
+          "competitiorName": "IIZUKA Leonardo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144891",
+              "playerName": "IIZUKA Leonardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136417",
+          "competitiorName": "CEDENO Jeremy",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136417",
+              "playerName": "CEDENO Jeremy",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,7,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-7,11-3,0-0,0-0",
+      "resultsGameScores": "11-5,11-7,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136417",
+        "serverReceiver": "144891",
+        "serverNext": "136417",
+        "serverCompetitor": "136417",
+        "receiverNext": "136417"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998721,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201203",
+          "competitiorName": "YAMANAKA Erika",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201203",
+              "playerName": "YAMANAKA Erika",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,16,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202012",
+          "competitiorName": "PAZMINO Naomi",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202012",
+              "playerName": "PAZMINO Naomi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,8,14,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-8,16-14,0-0,0-0",
+      "resultsGameScores": "11-9,11-8,16-14,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202012",
+        "serverReceiver": "201203",
+        "serverNext": "202012",
+        "serverCompetitor": "202012",
+        "receiverNext": "202012"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998715,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200756",
+          "competitiorName": "SARDA Mahayla",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200756",
+              "playerName": "SARDA Mahayla",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204826",
+          "competitiorName": "CARRASCO Jacinta",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204826",
+              "playerName": "CARRASCO Jacinta",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "1,6,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-1,11-6,11-5,0-0,0-0",
+      "resultsGameScores": "11-1,11-6,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204826",
+        "serverReceiver": "200756",
+        "serverNext": "204826",
+        "serverCompetitor": "204826",
+        "receiverNext": "204826"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 17:00:00",
+        "startDateUTC": "04/20/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T17:00:00"
+  },
+  {
+    "id": 6998711,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T08",
+      "tableName": "Table 8",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146023",
+          "competitiorName": "MIYABARA Sabrina",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146023",
+              "playerName": "MIYABARA Sabrina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,3,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133758",
+          "competitiorName": "BRZYSKA Anna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133758",
+              "playerName": "BRZYSKA Anna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,9,8",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "8-11,11-7,3-11,11-9,11-8",
+      "resultsGameScores": "8-11,11-7,3-11,11-9,11-8",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133758",
+        "serverReceiver": "146023",
+        "serverNext": "133758",
+        "serverCompetitor": "133758",
+        "receiverNext": "133758"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998704,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200721",
+          "competitiorName": "ASMU Agustin",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200721",
+              "playerName": "ASMU Agustin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,11,10,11,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204850",
+          "competitiorName": "THIOFILO Vitor",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204850",
+              "playerName": "THIOFILO Vitor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,4,12,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "4-11,11-4,10-12,11-8,7-11",
+      "resultsGameScores": "4-11,11-4,10-12,11-8,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204850",
+        "serverReceiver": "200721",
+        "serverNext": "204850",
+        "serverCompetitor": "204850",
+        "receiverNext": "204850"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998697,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146091",
+          "competitiorName": "STRASSBURGER Victoria",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146091",
+              "playerName": "STRASSBURGER Victoria",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,11,2,2",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135039",
+          "competitiorName": "WIELGOS Zuzanna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135039",
+              "playerName": "WIELGOS Zuzanna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,9,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,11-9,11-9,2-11,2-11",
+      "resultsGameScores": "9-11,11-9,11-9,2-11,2-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135039",
+        "serverReceiver": "146091",
+        "serverNext": "135039",
+        "serverCompetitor": "135039",
+        "receiverNext": "135039"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998692,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133478",
+          "competitiorName": "TAKAHASHI Giulia",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133478",
+              "playerName": "TAKAHASHI Giulia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135760",
+          "competitiorName": "FIORE Beatriz",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135760",
+              "playerName": "FIORE Beatriz",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,12,5,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-5,10-12,11-5,11-9,0-0",
+      "resultsGameScores": "11-5,10-12,11-5,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135760",
+        "serverReceiver": "133478",
+        "serverNext": "135760",
+        "serverCompetitor": "135760",
+        "receiverNext": "135760"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998688,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "205687",
+          "competitiorName": "MOTIKAWA Vitor",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205687",
+              "playerName": "MOTIKAWA Vitor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,4,11,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201770",
+          "competitiorName": "ARCHUA Benjamin",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201770",
+              "playerName": "ARCHUA Benjamin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,4-11,11-8,7-11,0-0",
+      "resultsGameScores": "8-11,4-11,11-8,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201770",
+        "serverReceiver": "205687",
+        "serverNext": "201770",
+        "serverCompetitor": "201770",
+        "receiverNext": "201770"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998682,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209188",
+          "competitiorName": "MOTIZUKI Vitor",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209188",
+              "playerName": "MOTIZUKI Vitor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,9,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200705",
+          "competitiorName": "BERNAL RICARDO",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200705",
+              "playerName": "BERNAL RICARDO",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,4,11,3,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,11-4,9-11,11-3,0-0",
+      "resultsGameScores": "11-4,11-4,9-11,11-3,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200705",
+        "serverReceiver": "209188",
+        "serverNext": "200705",
+        "serverCompetitor": "200705",
+        "receiverNext": "200705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998677,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T07",
+      "tableName": "Table 7",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144011",
+          "competitiorName": "MENENDEZ Maybelline",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144011",
+              "playerName": "MENENDEZ Maybelline",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,5,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144239",
+          "competitiorName": "SENAGA Karina",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144239",
+              "playerName": "SENAGA Karina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,5-11,6-11,0-0,0-0",
+      "resultsGameScores": "9-11,5-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144239",
+        "serverReceiver": "144011",
+        "serverNext": "144239",
+        "serverCompetitor": "144239",
+        "receiverNext": "144239"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998670,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200672",
+          "competitiorName": "REVELO Cesar",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200672",
+              "playerName": "REVELO Cesar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,5,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200757",
+          "competitiorName": "DE MELO Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200757",
+              "playerName": "DE MELO Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,5-11,8-11,0-0,0-0",
+      "resultsGameScores": "4-11,5-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200757",
+        "serverReceiver": "200672",
+        "serverNext": "200757",
+        "serverCompetitor": "200757",
+        "receiverNext": "200757"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 16:30:00",
+        "startDateUTC": "04/20/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T16:30:00"
+  },
+  {
+    "id": 6998664,
+    "eventId": "2856",
+    "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202219",
+          "competitiorName": "IWAMOTO Yumi",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202219",
+              "playerName": "IWAMOTO Yumi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "205052",
+          "competitiorName": "WEIZMAN Sarah",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205052",
+              "playerName": "WEIZMAN Sarah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,7,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-7,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-7,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205052",
+        "serverReceiver": "202219",
+        "serverNext": "205052",
+        "serverCompetitor": "205052",
+        "receiverNext": "205052"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 14:45:00",
+        "startDateUTC": "04/20/2024 18:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T14:45:00"
+  },
+  {
+    "id": 6998658,
+    "eventId": "2856",
+    "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2856",
+      "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo Parque Estadio Nacional",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209227",
+          "competitiorName": "LEYTON Nicolas",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209227",
+              "playerName": "LEYTON Nicolas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209216",
+          "competitiorName": "VIDAL Agustin",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209216",
+              "playerName": "VIDAL Agustin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,7,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-7,11-9,0-0,0-0",
+      "resultsGameScores": "11-7,11-7,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209216",
+        "serverReceiver": "209227",
+        "serverNext": "209216",
+        "serverCompetitor": "209216",
+        "receiverNext": "209216"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "04/20/2024 14:45:00",
+        "startDateUTC": "04/20/2024 18:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-04-20T14:45:00"
+  }
+]

@@ -1,0 +1,3184 @@
+[
+  {
+    "id": 8466878,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203958",
+          "competitiorName": "LAINE Clement",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203958",
+              "playerName": "LAINE Clement",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136170",
+          "competitiorName": "ESSID Wassim",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136170",
+              "playerName": "ESSID Wassim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,11,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,8-11,11-8,0-0",
+      "resultsGameScores": "11-7,11-6,8-11,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136170",
+        "serverReceiver": "203958",
+        "serverNext": "136170",
+        "serverCompetitor": "136170",
+        "receiverNext": "203958"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:49",
+        "startDateLocal": "09/13/2024 15:30:00",
+        "startDateUTC": "09/13/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T15:30:00"
+  },
+  {
+    "id": 8466834,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200493",
+          "competitiorName": "VANJO Maja",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200493",
+              "playerName": "VANJO Maja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203153",
+          "competitiorName": "VUJOVIC Anastasija",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203153",
+              "playerName": "VUJOVIC Anastasija",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,11,7,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-5,6-11,11-7,11-7,0-0",
+      "resultsGameScores": "11-5,6-11,11-7,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200493",
+        "serverReceiver": "203153",
+        "serverNext": "200493",
+        "serverCompetitor": "200493",
+        "receiverNext": "203153"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:08",
+        "startDateLocal": "09/13/2024 15:30:00",
+        "startDateUTC": "09/13/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "190",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T15:30:00"
+  },
+  {
+    "id": 8466476,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201839",
+          "competitiorName": "MAYOROV Ladimir",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201839",
+              "playerName": "MAYOROV Ladimir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201107",
+          "competitiorName": "MALOV Alexander",
+          "competitiorOrg": "ESP",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201107",
+              "playerName": "MALOV Alexander",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,7,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,11-7,11-8,0-0",
+      "resultsGameScores": "11-8,9-11,11-7,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201107",
+        "serverReceiver": "201839",
+        "serverNext": "201107",
+        "serverCompetitor": "201107",
+        "receiverNext": "201839"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:30",
+        "startDateLocal": "09/13/2024 15:00:00",
+        "startDateUTC": "09/13/2024 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "201",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T15:00:00"
+  },
+  {
+    "id": 8466411,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136491",
+          "competitiorName": "CRUZ Kheith",
+          "competitiorOrg": "PHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136491",
+              "playerName": "CRUZ Kheith",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136597",
+          "competitiorName": "BOGDANOWICZ Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136597",
+              "playerName": "BOGDANOWICZ Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,4,4,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-4,11-4,11-9,0-0",
+      "resultsGameScores": "7-11,11-4,11-4,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136491",
+        "serverReceiver": "136597",
+        "serverNext": "136491",
+        "serverCompetitor": "136491",
+        "receiverNext": "136597"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:10",
+        "startDateLocal": "09/13/2024 15:00:00",
+        "startDateUTC": "09/13/2024 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "189",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T15:00:00"
+  },
+  {
+    "id": 8462081,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203958",
+          "competitiorName": "LAINE Clement",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203958",
+              "playerName": "LAINE Clement",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,9,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136687",
+          "competitiorName": "BENKO Leon",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136687",
+              "playerName": "BENKO Leon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "1,11,11,6,3",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-1,8-11,9-11,11-6,11-3",
+      "resultsGameScores": "11-1,8-11,9-11,11-6,11-3",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203958",
+        "serverReceiver": "136687",
+        "serverNext": "203958",
+        "serverCompetitor": "203958",
+        "receiverNext": "136687"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:06",
+        "startDateLocal": "09/13/2024 12:45:00",
+        "startDateUTC": "09/13/2024 10:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "238",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:45:00"
+  },
+  {
+    "id": 8461704,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "205402",
+          "competitiorName": "MADAR Maya",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205402",
+              "playerName": "MADAR Maya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,2,4,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203153",
+          "competitiorName": "VUJOVIC Anastasija",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203153",
+              "playerName": "VUJOVIC Anastasija",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,2-11,4-11,9-11,0-0",
+      "resultsGameScores": "11-7,2-11,4-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203153",
+        "serverReceiver": "205402",
+        "serverNext": "203153",
+        "serverCompetitor": "203153",
+        "receiverNext": "203153"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 12:45:00",
+        "startDateUTC": "09/13/2024 10:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:45:00"
+  },
+  {
+    "id": 8461663,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200493",
+          "competitiorName": "VANJO Maja",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200493",
+              "playerName": "VANJO Maja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203494",
+          "competitiorName": "HADZOVIC Mia",
+          "competitiorOrg": "BIH",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203494",
+              "playerName": "HADZOVIC Mia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BIH",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,7,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-7,11-9,0-0,0-0",
+      "resultsGameScores": "11-8,11-7,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203494",
+        "serverReceiver": "200493",
+        "serverNext": "203494",
+        "serverCompetitor": "203494",
+        "receiverNext": "203494"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 12:45:00",
+        "startDateUTC": "09/13/2024 10:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:45:00"
+  },
+  {
+    "id": 8461274,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136170",
+          "competitiorName": "ESSID Wassim",
+          "competitiorOrg": "TUN",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136170",
+              "playerName": "ESSID Wassim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201313",
+          "competitiorName": "RADONJIC Stefan",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201313",
+              "playerName": "RADONJIC Stefan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "1,6,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-1,11-6,11-3,0-0,0-0",
+      "resultsGameScores": "11-1,11-6,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136170",
+        "serverReceiver": "201313",
+        "serverNext": "136170",
+        "serverCompetitor": "136170",
+        "receiverNext": "201313"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:41",
+        "startDateLocal": "09/13/2024 12:45:00",
+        "startDateUTC": "09/13/2024 10:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "117",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:45:00"
+  },
+  {
+    "id": 8460384,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204075",
+          "competitiorName": "TORO David",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204075",
+              "playerName": "TORO David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201107",
+          "competitiorName": "MALOV Alexander",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201107",
+              "playerName": "MALOV Alexander",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,11-13,5-11,0-0,0-0",
+      "resultsGameScores": "5-11,11-13,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201107",
+        "serverReceiver": "204075",
+        "serverNext": "201107",
+        "serverCompetitor": "201107",
+        "receiverNext": "201107"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 12:15:00",
+        "startDateUTC": "09/13/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:15:00"
+  },
+  {
+    "id": 8460356,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201839",
+          "competitiorName": "MAYOROV Ladimir",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201839",
+              "playerName": "MAYOROV Ladimir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206940",
+          "competitiorName": "MILADINOVIC Nikola",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206940",
+              "playerName": "MILADINOVIC Nikola",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,7,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-7,11-5,0-0,0-0",
+      "resultsGameScores": "11-7,11-7,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206940",
+        "serverReceiver": "201839",
+        "serverNext": "206940",
+        "serverCompetitor": "206940",
+        "receiverNext": "206940"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 12:15:00",
+        "startDateUTC": "09/13/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:15:00"
+  },
+  {
+    "id": 8460187,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137613",
+          "competitiorName": "HOLDA Karolina",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137613",
+              "playerName": "HOLDA Karolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,10,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136597",
+          "competitiorName": "BOGDANOWICZ Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136597",
+              "playerName": "BOGDANOWICZ Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,14,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,10-12,12-14,0-0,0-0",
+      "resultsGameScores": "6-11,10-12,12-14,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136597",
+        "serverReceiver": "137613",
+        "serverNext": "136597",
+        "serverCompetitor": "136597",
+        "receiverNext": "137613"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:10",
+        "startDateLocal": "09/13/2024 12:15:00",
+        "startDateUTC": "09/13/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "191",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:15:00"
+  },
+  {
+    "id": 8460139,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136491",
+          "competitiorName": "CRUZ Kheith",
+          "competitiorOrg": "PHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136491",
+              "playerName": "CRUZ Kheith",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137624",
+          "competitiorName": "ROBBES Jeanne",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137624",
+              "playerName": "ROBBES Jeanne",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,5,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-5,11-4,0-0,0-0",
+      "resultsGameScores": "11-6,11-5,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136491",
+        "serverReceiver": "137624",
+        "serverNext": "136491",
+        "serverCompetitor": "136491",
+        "receiverNext": "137624"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:06",
+        "startDateLocal": "09/13/2024 12:15:00",
+        "startDateUTC": "09/13/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "130",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T12:15:00"
+  },
+  {
+    "id": 8458518,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203154",
+          "competitiorName": "ZIVANOVIC Mia",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203154",
+              "playerName": "ZIVANOVIC Mia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,8,14,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203494",
+          "competitiorName": "HADZOVIC Mia",
+          "competitiorOrg": "BIH",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203494",
+              "playerName": "HADZOVIC Mia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BIH",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "10-12,8-11,14-12,9-11,0-0",
+      "resultsGameScores": "10-12,8-11,14-12,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203494",
+        "serverReceiver": "203154",
+        "serverNext": "203494",
+        "serverCompetitor": "203494",
+        "receiverNext": "203154"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:17",
+        "startDateLocal": "09/13/2024 11:15:00",
+        "startDateUTC": "09/13/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "243",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T11:15:00"
+  },
+  {
+    "id": 8458497,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207067",
+          "competitiorName": "MAKSIMOVIC Nikolina",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207067",
+              "playerName": "MAKSIMOVIC Nikolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,4,10,3,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203153",
+          "competitiorName": "VUJOVIC Anastasija",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203153",
+              "playerName": "VUJOVIC Anastasija",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,4-11,10-12,3-11,0-0",
+      "resultsGameScores": "12-10,4-11,10-12,3-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203153",
+        "serverReceiver": "207067",
+        "serverNext": "203153",
+        "serverCompetitor": "203153",
+        "receiverNext": "203153"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 11:15:00",
+        "startDateUTC": "09/13/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T11:15:00"
+  },
+  {
+    "id": 8458347,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200493",
+          "competitiorName": "VANJO Maja",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200493",
+              "playerName": "VANJO Maja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206937",
+          "competitiorName": "BALAZ Hana",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206937",
+              "playerName": "BALAZ Hana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,10,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,12-10,11-7,0-0,0-0",
+      "resultsGameScores": "11-5,12-10,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206937",
+        "serverReceiver": "200493",
+        "serverNext": "206937",
+        "serverCompetitor": "206937",
+        "receiverNext": "200493"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:35",
+        "startDateLocal": "09/13/2024 11:15:00",
+        "startDateUTC": "09/13/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "152",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T11:15:00"
+  },
+  {
+    "id": 8458099,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "205402",
+          "competitiorName": "MADAR Maya",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205402",
+              "playerName": "MADAR Maya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203150",
+          "competitiorName": "FRANETA Katarina",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203150",
+              "playerName": "FRANETA Katarina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,4,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-2,11-4,11-2,0-0,0-0",
+      "resultsGameScores": "11-2,11-4,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203150",
+        "serverReceiver": "205402",
+        "serverNext": "203150",
+        "serverCompetitor": "203150",
+        "receiverNext": "203150"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 11:15:00",
+        "startDateUTC": "09/13/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T11:15:00"
+  },
+  {
+    "id": 8457814,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145759",
+          "competitiorName": "GILLES Sohan",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145759",
+              "playerName": "GILLES Sohan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,13,10,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136170",
+          "competitiorName": "ESSID Wassim",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136170",
+              "playerName": "ESSID Wassim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,11,12,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,11-6,13-11,10-12,8-11",
+      "resultsGameScores": "6-11,11-6,13-11,10-12,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136170",
+        "serverReceiver": "145759",
+        "serverNext": "136170",
+        "serverCompetitor": "136170",
+        "receiverNext": "136170"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 10:45:00",
+        "startDateUTC": "09/13/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:45:00"
+  },
+  {
+    "id": 8457423,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201313",
+          "competitiorName": "RADONJIC Stefan",
+          "competitiorOrg": "MNE",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201313",
+              "playerName": "RADONJIC Stefan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,7,11,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145421",
+          "competitiorName": "HENCL Ivan",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145421",
+              "playerName": "HENCL Ivan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,11,11,6,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-3,6-11,7-11,11-6,12-10",
+      "resultsGameScores": "11-3,6-11,7-11,11-6,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201313",
+        "serverReceiver": "145421",
+        "serverNext": "201313",
+        "serverCompetitor": "201313",
+        "receiverNext": "145421"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:59",
+        "startDateLocal": "09/13/2024 10:45:00",
+        "startDateUTC": "09/13/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "243",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:45:00"
+  },
+  {
+    "id": 8457273,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136687",
+          "competitiorName": "BENKO Leon",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136687",
+              "playerName": "BENKO Leon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "14,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146233",
+          "competitiorName": "PILARD Nathan",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146233",
+              "playerName": "PILARD Nathan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,4,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "14-12,11-4,11-9,0-0,0-0",
+      "resultsGameScores": "14-12,11-4,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146233",
+        "serverReceiver": "136687",
+        "serverNext": "146233",
+        "serverCompetitor": "146233",
+        "receiverNext": "146233"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 10:45:00",
+        "startDateUTC": "09/13/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:45:00"
+  },
+  {
+    "id": 8456914,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136686",
+          "competitiorName": "ZIJADIC Benjamin",
+          "competitiorOrg": "BIH",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136686",
+              "playerName": "ZIJADIC Benjamin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BIH",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,5,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203958",
+          "competitiorName": "LAINE Clement",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203958",
+              "playerName": "LAINE Clement",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "7-11,5-11,9-11,0-0,0-0",
+      "resultsGameScores": "7-11,5-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136686",
+        "serverReceiver": "203958",
+        "serverNext": "136686",
+        "serverCompetitor": "136686",
+        "receiverNext": "203958"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:42",
+        "startDateLocal": "09/13/2024 10:45:00",
+        "startDateUTC": "09/13/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "164",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:45:00"
+  },
+  {
+    "id": 8455558,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202560",
+          "competitiorName": "ZOUITENE Bilel",
+          "competitiorOrg": "ALG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202560",
+              "playerName": "ZOUITENE Bilel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ALG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,12,11,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201107",
+          "competitiorName": "MALOV Alexander",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201107",
+              "playerName": "MALOV Alexander",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,10,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,11-13,12-10,11-8,8-11",
+      "resultsGameScores": "6-11,11-13,12-10,11-8,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201107",
+        "serverReceiver": "202560",
+        "serverNext": "201107",
+        "serverCompetitor": "201107",
+        "receiverNext": "201107"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 10:00:00",
+        "startDateUTC": "09/13/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:00:00"
+  },
+  {
+    "id": 8455055,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204075",
+          "competitiorName": "TORO David",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204075",
+              "playerName": "TORO David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,13,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203673",
+          "competitiorName": "BASIC Nidal",
+          "competitiorOrg": "BIH",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203673",
+              "playerName": "BASIC Nidal",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BIH",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,6,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-6,13-11,0-0,0-0",
+      "resultsGameScores": "11-9,11-6,13-11,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203673",
+        "serverReceiver": "204075",
+        "serverNext": "203673",
+        "serverCompetitor": "203673",
+        "receiverNext": "203673"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/13/2024 10:00:00",
+        "startDateUTC": "09/13/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:00:00"
+  },
+  {
+    "id": 8454933,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207068",
+          "competitiorName": "RASOVIC Andrija",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207068",
+              "playerName": "RASOVIC Andrija",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,3,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206940",
+          "competitiorName": "MILADINOVIC Nikola",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206940",
+              "playerName": "MILADINOVIC Nikola",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,3-11,7-11,0-0,0-0",
+      "resultsGameScores": "5-11,3-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206940",
+        "serverReceiver": "207068",
+        "serverNext": "206940",
+        "serverCompetitor": "206940",
+        "receiverNext": "207068"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:00",
+        "startDateLocal": "09/13/2024 10:00:00",
+        "startDateUTC": "09/13/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "133",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:00:00"
+  },
+  {
+    "id": 8454851,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201839",
+          "competitiorName": "MAYOROV Ladimir",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201839",
+              "playerName": "MAYOROV Ladimir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209646",
+          "competitiorName": "JOSEPH Joshua",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209646",
+              "playerName": "JOSEPH Joshua",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,5,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-5,11-6,0-0,0-0",
+      "resultsGameScores": "11-4,11-5,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201839",
+        "serverReceiver": "209646",
+        "serverNext": "201839",
+        "serverCompetitor": "201839",
+        "receiverNext": "209646"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:13:48",
+        "startDateLocal": "09/13/2024 10:00:00",
+        "startDateUTC": "09/13/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "142",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T10:00:00"
+  },
+  {
+    "id": 8454109,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U158FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U158FNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206937",
+          "competitiorName": "BALAZ Hana",
+          "competitiorOrg": "SRB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206937",
+              "playerName": "BALAZ Hana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "208399",
+          "competitiorName": "KIRILOVA Yoana",
+          "competitiorOrg": "BUL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208399",
+              "playerName": "KIRILOVA Yoana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BUL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,6,10,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-6,12-10,0-0,0-0",
+      "resultsGameScores": "11-4,11-6,12-10,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206937",
+        "serverReceiver": "208399",
+        "serverNext": "206937",
+        "serverCompetitor": "206937",
+        "receiverNext": "208399"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:09",
+        "startDateLocal": "09/13/2024 09:30:00",
+        "startDateUTC": "09/13/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "144",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T09:30:00"
+  },
+  {
+    "id": 8453929,
+    "eventId": "2834",
+    "documentCode": "TTEWSINGLES--------U158FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEWSINGLES--------U158FNL000700----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203155",
+          "competitiorName": "BAJOVIC Anja",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203155",
+              "playerName": "BAJOVIC Anja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,3,3,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "207067",
+          "competitiorName": "MAKSIMOVIC Nikolina",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207067",
+              "playerName": "MAKSIMOVIC Nikolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,3-11,3-11,0-0,0-0",
+      "resultsGameScores": "4-11,3-11,3-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203155",
+        "serverReceiver": "207067",
+        "serverNext": "203155",
+        "serverCompetitor": "203155",
+        "receiverNext": "207067"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:09:26",
+        "startDateLocal": "09/13/2024 09:30:00",
+        "startDateUTC": "09/13/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "116",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-13T09:30:00"
+  },
+  {
+    "id": 8444693,
+    "eventId": "2834",
+    "documentCode": "TTEXDOUBLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEXDOUBLES--------U19FNL-000100----------",
+      "subEventName": "U19 Mixed Doubles",
+      "subEventDescription": "U19 Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100119882",
+          "competitiorName": "BOTHA Bosman/CRUZ Kheith",
+          "competitiorOrg": "USA/PHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206472",
+              "playerName": "BOTHA Bosman",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "136491",
+              "playerName": "CRUZ Kheith",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,2,11,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "57907",
+          "competitiorName": "GROMEK Artur/BOGDANOWICZ Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145004",
+              "playerName": "GROMEK Artur",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "136597",
+              "playerName": "BOGDANOWICZ Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,6,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "2-11,2-11,11-6,9-11,0-0",
+      "resultsGameScores": "2-11,2-11,11-6,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136597",
+        "serverReceiver": "136491",
+        "serverNext": "136597",
+        "serverCompetitor": "57907",
+        "receiverNext": "136491"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:18",
+        "startDateLocal": "09/12/2024 20:15:00",
+        "startDateUTC": "09/12/2024 18:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "171",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-12T20:15:00"
+  },
+  {
+    "id": 8444517,
+    "eventId": "2834",
+    "documentCode": "TTEXDOUBLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEXDOUBLES--------U15FNL-000100----------",
+      "subEventName": "U15 Mixed Doubles",
+      "subEventDescription": "U15 Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100121536",
+          "competitiorName": "TORO David/MADAR Maya",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204075",
+              "playerName": "TORO David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "205402",
+              "playerName": "MADAR Maya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,14,5,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100121662",
+          "competitiorName": "VITEL Noah/VUJOVIC Anastasija",
+          "competitiorOrg": "FRA/MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201075",
+              "playerName": "VITEL Noah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "203153",
+              "playerName": "VUJOVIC Anastasija",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,14-12,5-11,7-11,0-0",
+      "resultsGameScores": "5-11,14-12,5-11,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205402",
+        "serverReceiver": "201075",
+        "serverNext": "205402",
+        "serverCompetitor": "100121536",
+        "receiverNext": "201075"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:00",
+        "startDateLocal": "09/12/2024 19:45:00",
+        "startDateUTC": "09/12/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "217",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-12T19:45:00"
+  },
+  {
+    "id": 8444303,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U11GP01000900----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U11GP01000900----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Group 1 - Match 9",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203631",
+          "competitiorName": "DIMITROV Dimitar",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203631",
+              "playerName": "DIMITROV Dimitar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203166",
+          "competitiorName": "VUCETIC Milan",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203166",
+              "playerName": "VUCETIC Milan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,4,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-4,11-6,0-0,0-0",
+      "resultsGameScores": "11-6,11-4,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203166",
+        "serverReceiver": "203631",
+        "serverNext": "203166",
+        "serverCompetitor": "203166",
+        "receiverNext": "203166"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/12/2024 19:00:00",
+        "startDateUTC": "09/12/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-12T19:00:00"
+  },
+  {
+    "id": 8444297,
+    "eventId": "2834",
+    "documentCode": "TTEMSINGLES--------U11GP01001000----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2834",
+      "documentCode": "TTEMSINGLES--------U11GP01001000----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Group 1 - Match 10",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Voco Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211076",
+          "competitiorName": "MRKAJIC Uros",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211076",
+              "playerName": "MRKAJIC Uros",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,1,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211074",
+          "competitiorName": "VOJVODIC Konstantin",
+          "competitiorOrg": "MNE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211074",
+              "playerName": "VOJVODIC Konstantin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MNE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,7-11,1-11,7-11,0-0",
+      "resultsGameScores": "11-6,7-11,1-11,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211074",
+        "serverReceiver": "211076",
+        "serverNext": "211074",
+        "serverCompetitor": "211074",
+        "receiverNext": "211074"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/12/2024 19:00:00",
+        "startDateUTC": "09/12/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-12T19:00:00"
+  }
+]

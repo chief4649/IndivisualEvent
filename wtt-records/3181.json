@@ -1,0 +1,3332 @@
+[
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "W.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Girls' Teams - Group 1 - Match 1",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Islamic Rep. of Iran",
+        "org": "Islamic Rep. of Iran",
+        "orgCode": "IRI"
+      },
+      {
+        "name": "Kazakhstan",
+        "org": "Kazakhstan",
+        "orgCode": "KAZ"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "10-12",
+          "11-9",
+          "13-11",
+          "9-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200499",
+            "name": "ILOUKHANI Setayesh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200499",
+                "name": "ILOUKHANI Setayesh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200324",
+            "name": "MOCHALKINA Viktoriya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200324",
+                "name": "MOCHALKINA Viktoriya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "8-11",
+          "12-10",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201232",
+            "name": "YAVARI Vania",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201232",
+                "name": "YAVARI Vania",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200347",
+            "name": "ZHAXYLYKOVA Albina",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200347",
+                "name": "ZHAXYLYKOVA Albina",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "11-9",
+          "7-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205698",
+            "name": "YAZDANPANAH Fatemeh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "205698",
+                "name": "YAZDANPANAH Fatemeh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203045",
+            "name": "KHANIYAZOVA Noila",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "203045",
+                "name": "KHANIYAZOVA Noila",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-9",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200499",
+            "name": "ILOUKHANI Setayesh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200499",
+                "name": "ILOUKHANI Setayesh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200347",
+            "name": "ZHAXYLYKOVA Albina",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200347",
+                "name": "ZHAXYLYKOVA Albina",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-4",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201232",
+            "name": "YAVARI Vania",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201232",
+                "name": "YAVARI Vania",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200324",
+            "name": "MOCHALKINA Viktoriya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200324",
+                "name": "MOCHALKINA Viktoriya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "W.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Girls' Teams - Group 1 - Match 2",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Uzbekistan",
+        "org": "Uzbekistan",
+        "orgCode": "UZB"
+      },
+      {
+        "name": "Kyrgyzstan",
+        "org": "Kyrgyzstan",
+        "orgCode": "KGZ"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-4",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146298",
+            "name": "KAMALOVA Arujan",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146298",
+                "name": "KAMALOVA Arujan",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "210808",
+            "name": "ABDIMITALIPOVA Ramida",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210808",
+                "name": "ABDIMITALIPOVA Ramida",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-2",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146301",
+            "name": "ERKEBAEVA Asel",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146301",
+                "name": "ERKEBAEVA Asel",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "221069",
+            "name": "KADYROVA Tansuluu",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221069",
+                "name": "KADYROVA Tansuluu",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-2",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202822",
+            "name": "ABDULLAEVA Mokhira",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "202822",
+                "name": "ABDULLAEVA Mokhira",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "210804",
+            "name": "ALMAZBEKOVA Daiana",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210804",
+                "name": "ALMAZBEKOVA Daiana",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146298",
+            "name": "KAMALOVA Arujan",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146298",
+                "name": "KAMALOVA Arujan",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "221069",
+            "name": "KADYROVA Tansuluu",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221069",
+                "name": "KADYROVA Tansuluu",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146301",
+            "name": "ERKEBAEVA Asel",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146301",
+                "name": "ERKEBAEVA Asel",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "210808",
+            "name": "ABDIMITALIPOVA Ramida",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210808",
+                "name": "ABDIMITALIPOVA Ramida",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "M.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Boys' Teams - Group 1 - Match 1",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Uzbekistan",
+        "org": "Uzbekistan",
+        "orgCode": "UZB"
+      },
+      {
+        "name": "Islamic Rep. of Iran",
+        "org": "Islamic Rep. of Iran",
+        "orgCode": "IRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "11-2",
+          "11-3",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146293",
+            "name": "ISKANDAROV Shokhrukh",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146293",
+                "name": "ISKANDAROV Shokhrukh",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200447",
+            "name": "KARIMI Samran",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200447",
+                "name": "KARIMI Samran",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-8",
+          "13-15",
+          "8-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200075",
+            "name": "DILSHODOV Diyorbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "200075",
+                "name": "DILSHODOV Diyorbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201238",
+            "name": "FARAJI Benyamin",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201238",
+                "name": "FARAJI Benyamin",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "9-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203041",
+            "name": "AKHMEDOV Khurshid",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "203041",
+                "name": "AKHMEDOV Khurshid",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201290",
+            "name": "HABIBI Mohammad",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201290",
+                "name": "HABIBI Mohammad",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "8-11",
+          "11-8",
+          "9-11",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146293",
+            "name": "ISKANDAROV Shokhrukh",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146293",
+                "name": "ISKANDAROV Shokhrukh",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201238",
+            "name": "FARAJI Benyamin",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201238",
+                "name": "FARAJI Benyamin",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "11-8",
+          "11-9",
+          "10-12",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200075",
+            "name": "DILSHODOV Diyorbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "200075",
+                "name": "DILSHODOV Diyorbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200447",
+            "name": "KARIMI Samran",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200447",
+                "name": "KARIMI Samran",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "M.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Boys' Teams - Group 1 - Match 2",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Kyrgyzstan",
+        "org": "Kyrgyzstan",
+        "orgCode": "KGZ"
+      },
+      {
+        "name": "Kazakhstan",
+        "org": "Kazakhstan",
+        "orgCode": "KAZ"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "8-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145171",
+            "name": "KASYMOV Atai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "145171",
+                "name": "KASYMOV Atai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "204051",
+            "name": "SHI Danyang",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "204051",
+                "name": "SHI Danyang",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "4-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206470",
+            "name": "KASYMOV Abai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "206470",
+                "name": "KASYMOV Abai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200344",
+            "name": "MAMAY Abdulla",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200344",
+                "name": "MAMAY Abdulla",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "5-11",
+          "4-11",
+          "1-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221065",
+            "name": "TOLOGONOV Nuradil",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221065",
+                "name": "TOLOGONOV Nuradil",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203055",
+            "name": "KASSYM Nurislam",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "203055",
+                "name": "KASSYM Nurislam",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145171",
+            "name": "KASYMOV Atai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "145171",
+                "name": "KASYMOV Atai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200344",
+            "name": "MAMAY Abdulla",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200344",
+                "name": "MAMAY Abdulla",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206470",
+            "name": "KASYMOV Abai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "206470",
+                "name": "KASYMOV Abai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "204051",
+            "name": "SHI Danyang",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "204051",
+                "name": "SHI Danyang",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "W.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Girls' Teams - Group 1 - Match 3",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Uzbekistan",
+        "org": "Uzbekistan",
+        "orgCode": "UZB"
+      },
+      {
+        "name": "Islamic Rep. of Iran",
+        "org": "Islamic Rep. of Iran",
+        "orgCode": "IRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "9-11",
+          "14-12",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146298",
+            "name": "KAMALOVA Arujan",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146298",
+                "name": "KAMALOVA Arujan",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201232",
+            "name": "YAVARI Vania",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201232",
+                "name": "YAVARI Vania",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-13",
+          "3-11",
+          "12-14"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146301",
+            "name": "ERKEBAEVA Asel",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146301",
+                "name": "ERKEBAEVA Asel",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200499",
+            "name": "ILOUKHANI Setayesh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200499",
+                "name": "ILOUKHANI Setayesh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "5-11",
+          "11-8",
+          "12-10",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203924",
+            "name": "KHASANOVA Adelina",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "203924",
+                "name": "KHASANOVA Adelina",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201292",
+            "name": "LARKIAN Yekta",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201292",
+                "name": "LARKIAN Yekta",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146298",
+            "name": "KAMALOVA Arujan",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146298",
+                "name": "KAMALOVA Arujan",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200499",
+            "name": "ILOUKHANI Setayesh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200499",
+                "name": "ILOUKHANI Setayesh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146301",
+            "name": "ERKEBAEVA Asel",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146301",
+                "name": "ERKEBAEVA Asel",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201232",
+            "name": "YAVARI Vania",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201232",
+                "name": "YAVARI Vania",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "W.TEAM-----------U19.GP01.00040000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U19 Girls' Teams - Group 1 - Match 4",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Kyrgyzstan",
+        "org": "Kyrgyzstan",
+        "orgCode": "KGZ"
+      },
+      {
+        "name": "Kazakhstan",
+        "org": "Kazakhstan",
+        "orgCode": "KAZ"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "7-11",
+          "1-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221067",
+            "name": "ARISTANALIEVA Janaiym",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221067",
+                "name": "ARISTANALIEVA Janaiym",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203527",
+            "name": "FU Darya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "203527",
+                "name": "FU Darya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "4-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221069",
+            "name": "KADYROVA Tansuluu",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221069",
+                "name": "KADYROVA Tansuluu",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200347",
+            "name": "ZHAXYLYKOVA Albina",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200347",
+                "name": "ZHAXYLYKOVA Albina",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-7",
+          "4-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "210808",
+            "name": "ABDIMITALIPOVA Ramida",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210808",
+                "name": "ABDIMITALIPOVA Ramida",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203045",
+            "name": "KHANIYAZOVA Noila",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "203045",
+                "name": "KHANIYAZOVA Noila",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221067",
+            "name": "ARISTANALIEVA Janaiym",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221067",
+                "name": "ARISTANALIEVA Janaiym",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200347",
+            "name": "ZHAXYLYKOVA Albina",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200347",
+                "name": "ZHAXYLYKOVA Albina",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221069",
+            "name": "KADYROVA Tansuluu",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221069",
+                "name": "KADYROVA Tansuluu",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203527",
+            "name": "FU Darya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "203527",
+                "name": "FU Darya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "M.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Boys' Teams - Group 1 - Match 3",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Kazakhstan",
+        "org": "Kazakhstan",
+        "orgCode": "KAZ"
+      },
+      {
+        "name": "Islamic Rep. of Iran",
+        "org": "Islamic Rep. of Iran",
+        "orgCode": "IRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "2-11",
+          "9-11",
+          "11-5",
+          "11-7",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137568",
+            "name": "KURMANGALIYEV Alan",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "137568",
+                "name": "KURMANGALIYEV Alan",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201290",
+            "name": "HABIBI Mohammad",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201290",
+                "name": "HABIBI Mohammad",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "5-11",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "204051",
+            "name": "SHI Danyang",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "204051",
+                "name": "SHI Danyang",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201238",
+            "name": "FARAJI Benyamin",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201238",
+                "name": "FARAJI Benyamin",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "11-8",
+          "7-11",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200344",
+            "name": "MAMAY Abdulla",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200344",
+                "name": "MAMAY Abdulla",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200447",
+            "name": "KARIMI Samran",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200447",
+                "name": "KARIMI Samran",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "2-11",
+          "11-5",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137568",
+            "name": "KURMANGALIYEV Alan",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "137568",
+                "name": "KURMANGALIYEV Alan",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201238",
+            "name": "FARAJI Benyamin",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201238",
+                "name": "FARAJI Benyamin",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "11-13",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "204051",
+            "name": "SHI Danyang",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "204051",
+                "name": "SHI Danyang",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201290",
+            "name": "HABIBI Mohammad",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201290",
+                "name": "HABIBI Mohammad",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "M.TEAM-----------U19.GP01.00040000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U19 Boys' Teams - Group 1 - Match 4",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Kyrgyzstan",
+        "org": "Kyrgyzstan",
+        "orgCode": "KGZ"
+      },
+      {
+        "name": "Uzbekistan",
+        "org": "Uzbekistan",
+        "orgCode": "UZB"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "8-11",
+          "3-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221065",
+            "name": "TOLOGONOV Nuradil",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221065",
+                "name": "TOLOGONOV Nuradil",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146297",
+            "name": "NURMONOV Temurbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146297",
+                "name": "NURMONOV Temurbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "6-11",
+          "2-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221063",
+            "name": "IBRAGIMOV Islam",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221063",
+                "name": "IBRAGIMOV Islam",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146293",
+            "name": "ISKANDAROV Shokhrukh",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146293",
+                "name": "ISKANDAROV Shokhrukh",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "8-11",
+          "9-11",
+          "11-7",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206470",
+            "name": "KASYMOV Abai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "206470",
+                "name": "KASYMOV Abai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203040",
+            "name": "GULOMIDDINOV Shahbozbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "203040",
+                "name": "GULOMIDDINOV Shahbozbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221065",
+            "name": "TOLOGONOV Nuradil",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221065",
+                "name": "TOLOGONOV Nuradil",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146293",
+            "name": "ISKANDAROV Shokhrukh",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146293",
+                "name": "ISKANDAROV Shokhrukh",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221063",
+            "name": "IBRAGIMOV Islam",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221063",
+                "name": "IBRAGIMOV Islam",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146297",
+            "name": "NURMONOV Temurbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146297",
+                "name": "NURMONOV Temurbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "W.TEAM-----------U19.GP01.00050000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U19 Girls' Teams - Group 1 - Match 5",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Islamic Rep. of Iran",
+        "org": "Islamic Rep. of Iran",
+        "orgCode": "IRI"
+      },
+      {
+        "name": "Kyrgyzstan",
+        "org": "Kyrgyzstan",
+        "orgCode": "KGZ"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-7",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200499",
+            "name": "ILOUKHANI Setayesh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200499",
+                "name": "ILOUKHANI Setayesh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "210804",
+            "name": "ALMAZBEKOVA Daiana",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210804",
+                "name": "ALMAZBEKOVA Daiana",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-2",
+          "11-6",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201232",
+            "name": "YAVARI Vania",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201232",
+                "name": "YAVARI Vania",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "221067",
+            "name": "ARISTANALIEVA Janaiym",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221067",
+                "name": "ARISTANALIEVA Janaiym",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-5",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220794",
+            "name": "RANJBAR Efat",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "220794",
+                "name": "RANJBAR Efat",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "210808",
+            "name": "ABDIMITALIPOVA Ramida",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210808",
+                "name": "ABDIMITALIPOVA Ramida",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200499",
+            "name": "ILOUKHANI Setayesh",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "200499",
+                "name": "ILOUKHANI Setayesh",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "221067",
+            "name": "ARISTANALIEVA Janaiym",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221067",
+                "name": "ARISTANALIEVA Janaiym",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201232",
+            "name": "YAVARI Vania",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201232",
+                "name": "YAVARI Vania",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "210804",
+            "name": "ALMAZBEKOVA Daiana",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "210804",
+                "name": "ALMAZBEKOVA Daiana",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "W.TEAM-----------U19.GP01.00060000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U19 Girls' Teams - Group 1 - Match 6",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 2",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Kazakhstan",
+        "org": "Kazakhstan",
+        "orgCode": "KAZ"
+      },
+      {
+        "name": "Uzbekistan",
+        "org": "Uzbekistan",
+        "orgCode": "UZB"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "7-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200347",
+            "name": "ZHAXYLYKOVA Albina",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200347",
+                "name": "ZHAXYLYKOVA Albina",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146298",
+            "name": "KAMALOVA Arujan",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146298",
+                "name": "KAMALOVA Arujan",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "7-11",
+          "11-6",
+          "6-11",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200324",
+            "name": "MOCHALKINA Viktoriya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200324",
+                "name": "MOCHALKINA Viktoriya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146301",
+            "name": "ERKEBAEVA Asel",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146301",
+                "name": "ERKEBAEVA Asel",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-13",
+          "12-10",
+          "4-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203527",
+            "name": "FU Darya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "203527",
+                "name": "FU Darya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203924",
+            "name": "KHASANOVA Adelina",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "203924",
+                "name": "KHASANOVA Adelina",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "12-14",
+          "6-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200347",
+            "name": "ZHAXYLYKOVA Albina",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200347",
+                "name": "ZHAXYLYKOVA Albina",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146301",
+            "name": "ERKEBAEVA Asel",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146301",
+                "name": "ERKEBAEVA Asel",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200324",
+            "name": "MOCHALKINA Viktoriya",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200324",
+                "name": "MOCHALKINA Viktoriya",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146298",
+            "name": "KAMALOVA Arujan",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146298",
+                "name": "KAMALOVA Arujan",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "M.TEAM-----------U19.GP01.00050000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U19 Boys' Teams - Group 1 - Match 5",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Kyrgyzstan",
+        "org": "Kyrgyzstan",
+        "orgCode": "KGZ"
+      },
+      {
+        "name": "Islamic Rep. of Iran",
+        "org": "Islamic Rep. of Iran",
+        "orgCode": "IRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "6-11",
+          "11-13"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221063",
+            "name": "IBRAGIMOV Islam",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221063",
+                "name": "IBRAGIMOV Islam",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201238",
+            "name": "FARAJI Benyamin",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201238",
+                "name": "FARAJI Benyamin",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "4-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206470",
+            "name": "KASYMOV Abai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "206470",
+                "name": "KASYMOV Abai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "204492",
+            "name": "HODAEI Seyedamirabbas",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "204492",
+                "name": "HODAEI Seyedamirabbas",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "3-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221065",
+            "name": "TOLOGONOV Nuradil",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221065",
+                "name": "TOLOGONOV Nuradil",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201290",
+            "name": "HABIBI Mohammad",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201290",
+                "name": "HABIBI Mohammad",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "221063",
+            "name": "IBRAGIMOV Islam",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "221063",
+                "name": "IBRAGIMOV Islam",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "204492",
+            "name": "HODAEI Seyedamirabbas",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "204492",
+                "name": "HODAEI Seyedamirabbas",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206470",
+            "name": "KASYMOV Abai",
+            "org": "Kyrgyzstan",
+            "orgCode": "KGZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "206470",
+                "name": "KASYMOV Abai",
+                "org": "Kyrgyzstan",
+                "orgCode": "KGZ",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201238",
+            "name": "FARAJI Benyamin",
+            "org": "Islamic Rep. of Iran",
+            "orgCode": "IRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "201238",
+                "name": "FARAJI Benyamin",
+                "org": "Islamic Rep. of Iran",
+                "orgCode": "IRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3181",
+    "documentCode": "M.TEAM-----------U19.GP01.00060000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U19 Boys' Teams - Group 1 - Match 6",
+    "venue": "Table Tennis Center (ADD Ustel Tennis Ortalygy)",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Uzbekistan",
+        "org": "Uzbekistan",
+        "orgCode": "UZB"
+      },
+      {
+        "name": "Kazakhstan",
+        "org": "Kazakhstan",
+        "orgCode": "KAZ"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-8",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146293",
+            "name": "ISKANDAROV Shokhrukh",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146293",
+                "name": "ISKANDAROV Shokhrukh",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "204051",
+            "name": "SHI Danyang",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "204051",
+                "name": "SHI Danyang",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "4-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146297",
+            "name": "NURMONOV Temurbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146297",
+                "name": "NURMONOV Temurbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137568",
+            "name": "KURMANGALIYEV Alan",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "137568",
+                "name": "KURMANGALIYEV Alan",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "9-11",
+          "11-9",
+          "7-11",
+          "19-17"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200075",
+            "name": "DILSHODOV Diyorbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "200075",
+                "name": "DILSHODOV Diyorbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200344",
+            "name": "MAMAY Abdulla",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "200344",
+                "name": "MAMAY Abdulla",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "6-11",
+          "11-3",
+          "10-12",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146293",
+            "name": "ISKANDAROV Shokhrukh",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146293",
+                "name": "ISKANDAROV Shokhrukh",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137568",
+            "name": "KURMANGALIYEV Alan",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "137568",
+                "name": "KURMANGALIYEV Alan",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "10-12",
+          "8-11",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146297",
+            "name": "NURMONOV Temurbek",
+            "org": "Uzbekistan",
+            "orgCode": "UZB",
+            "irm": null,
+            "players": [
+              {
+                "id": "146297",
+                "name": "NURMONOV Temurbek",
+                "org": "Uzbekistan",
+                "orgCode": "UZB",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "204051",
+            "name": "SHI Danyang",
+            "org": "Kazakhstan",
+            "orgCode": "KAZ",
+            "irm": null,
+            "players": [
+              {
+                "id": "204051",
+                "name": "SHI Danyang",
+                "org": "Kazakhstan",
+                "orgCode": "KAZ",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

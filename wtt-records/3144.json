@@ -1,0 +1,7901 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP01.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 1 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205403",
+        "name": "SEBATINDIRA Joseph",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205403",
+            "name": "SEBATINDIRA Joseph",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222198",
+        "name": "CODO Satfilx",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222198",
+            "name": "CODO Satfilx",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-7",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP02.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 2 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203947",
+        "name": "GOUDJIL Aylan",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "203947",
+            "name": "GOUDJIL Aylan",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "210758",
+        "name": "RANARISON David",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "210758",
+            "name": "RANARISON David",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-6",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP03.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 3 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202560",
+        "name": "ZOUITENE Bilel",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "202560",
+            "name": "ZOUITENE Bilel",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209126",
+        "name": "NSEREKO Sharif",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209126",
+            "name": "NSEREKO Sharif",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "12-10",
+      "11-3",
+      "11-13",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP04.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 4 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "201315",
+        "name": "SAMEH Asser",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "201315",
+            "name": "SAMEH Asser",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220710",
+        "name": "BAILINA Valengy",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220710",
+            "name": "BAILINA Valengy",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "14-16",
+      "11-3",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP05.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 5 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "213308",
+        "name": "PUTOLA Tidiane",
+        "org": "Chad",
+        "orgCode": "CHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "213308",
+            "name": "PUTOLA Tidiane",
+            "org": "Chad",
+            "orgCode": "CHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209917",
+        "name": "NDZELEN Maxwell",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209917",
+            "name": "NDZELEN Maxwell",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP06.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 6 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211611",
+        "name": "ABDOURAHAMAN Ganiou",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "211611",
+            "name": "ABDOURAHAMAN Ganiou",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222213",
+        "name": "ISSAH Hamza",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "222213",
+            "name": "ISSAH Hamza",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-9",
+      "7-11",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP07.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 7 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203252",
+        "name": "ABDELHALIM Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203252",
+            "name": "ABDELHALIM Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220596",
+        "name": "JOSEPH Victor",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220596",
+            "name": "JOSEPH Victor",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "8-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP01.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 1 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202553",
+        "name": "ELHAKIM Khadeeja",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "202553",
+            "name": "ELHAKIM Khadeeja",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222210",
+        "name": "DROH Jessica",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "222210",
+            "name": "DROH Jessica",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-4",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP02.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 2 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203075",
+        "name": "THABET Farida",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203075",
+            "name": "THABET Farida",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222225",
+        "name": "DAGNE Veronica",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222225",
+            "name": "DAGNE Veronica",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-1",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP03.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 3 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204592",
+        "name": "MORICE Tania",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204592",
+            "name": "MORICE Tania",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222234",
+        "name": "NOUSSOUKPOE Marcelle",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222234",
+            "name": "NOUSSOUKPOE Marcelle",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-2",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP04.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 4 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202166",
+        "name": "NAKAWALA Jemimah",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202166",
+            "name": "NAKAWALA Jemimah",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222319",
+        "name": "AMADJI Christelle",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222319",
+            "name": "AMADJI Christelle",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-3",
+      "11-1"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP05.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 5 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204591",
+        "name": "MORICE Jade",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204591",
+            "name": "MORICE Jade",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209676",
+        "name": "AMADJI Christ",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "209676",
+            "name": "AMADJI Christ",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-7",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP06.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 6 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206049",
+        "name": "SEZUO Aziza",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206049",
+            "name": "SEZUO Aziza",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222226",
+        "name": "YIRGU Abigya",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222226",
+            "name": "YIRGU Abigya",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-2",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP01.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 1 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209918",
+        "name": "NDZELEN Maxsmith",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209918",
+            "name": "NDZELEN Maxsmith",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-7",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP02.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 2 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135595",
+        "name": "MOSTAFA Badr",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "135595",
+            "name": "MOSTAFA Badr",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222229",
+        "name": "ASHEBER Liken",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222229",
+            "name": "ASHEBER Liken",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-6",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP03.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 3 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202627",
+        "name": "KUTI Matthew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "202627",
+            "name": "KUTI Matthew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222224",
+        "name": "NEGASH Endale",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222224",
+            "name": "NEGASH Endale",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-4",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP04.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 4 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137316",
+        "name": "BELLA Maheidine",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "137316",
+            "name": "BELLA Maheidine",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209957",
+        "name": "MVENG Marcel",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209957",
+            "name": "MVENG Marcel",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-3",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP05.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 5 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203308",
+        "name": "ABDULFATAI Abdulbasit",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "203308",
+            "name": "ABDULFATAI Abdulbasit",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222155",
+        "name": "TRAORE Souleymane",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222155",
+            "name": "TRAORE Souleymane",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP06.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 6 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200310",
+        "name": "ADEGOKE Muizz",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200310",
+            "name": "ADEGOKE Muizz",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222282",
+        "name": "BEAHENOU Aime",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222282",
+            "name": "BEAHENOU Aime",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-9",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP07.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 7 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146212",
+        "name": "AGBODJAN Elias",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "146212",
+            "name": "AGBODJAN Elias",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222320",
+        "name": "GUEDOU Anjorin",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222320",
+            "name": "GUEDOU Anjorin",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP08.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 8 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206051",
+        "name": "FABUNMI Mathew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206051",
+            "name": "FABUNMI Mathew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144689",
+        "name": "OFORI Richard",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144689",
+            "name": "OFORI Richard",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP01.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 1 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137516",
+        "name": "YOUNES Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137516",
+            "name": "YOUNES Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144701",
+        "name": "KYERE Emmanuella Yaa",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144701",
+            "name": "KYERE Emmanuella Yaa",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-3",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP02.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 2 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205034",
+        "name": "DIENG Kelly",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "205034",
+            "name": "DIENG Kelly",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "11-3",
+      "11-1",
+      "6-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP03.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 3 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221708",
+        "name": "OJO Favour",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221708",
+            "name": "OJO Favour",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209635",
+        "name": "GUEYE Fatou",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "209635",
+            "name": "GUEYE Fatou",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-4",
+      "11-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP04.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 4 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137518",
+        "name": "ZAKI Nour",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137518",
+            "name": "ZAKI Nour",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222238",
+        "name": "SISAY Alem",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222238",
+            "name": "SISAY Alem",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-6",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP04.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 4 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206050",
+        "name": "AYOOLA Kabirat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206050",
+            "name": "AYOOLA Kabirat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209662",
+        "name": "BORTEY Emerald",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209662",
+            "name": "BORTEY Emerald",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-2",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP01.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 1 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205403",
+        "name": "SEBATINDIRA Joseph",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205403",
+            "name": "SEBATINDIRA Joseph",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222223",
+        "name": "AGBETOGLO Tony",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222223",
+            "name": "AGBETOGLO Tony",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-7",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP02.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 2 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203947",
+        "name": "GOUDJIL Aylan",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "203947",
+            "name": "GOUDJIL Aylan",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220607",
+        "name": "ADEBAKIN Tobi",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220607",
+            "name": "ADEBAKIN Tobi",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "6-11",
+      "5-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP03.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 3 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202560",
+        "name": "ZOUITENE Bilel",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "202560",
+            "name": "ZOUITENE Bilel",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222002",
+        "name": "JOSEPH Marvelous",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "222002",
+            "name": "JOSEPH Marvelous",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-5",
+      "15-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP04.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 4 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "201315",
+        "name": "SAMEH Asser",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "201315",
+            "name": "SAMEH Asser",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "210218",
+        "name": "ASHOUR Yousuf",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "210218",
+            "name": "ASHOUR Yousuf",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-5",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP05.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 5 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "213308",
+        "name": "PUTOLA Tidiane",
+        "org": "Chad",
+        "orgCode": "CHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "213308",
+            "name": "PUTOLA Tidiane",
+            "org": "Chad",
+            "orgCode": "CHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203598",
+        "name": "IMBARAK Mohammed",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "203598",
+            "name": "IMBARAK Mohammed",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-3",
+      "11-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP06.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 6 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211611",
+        "name": "ABDOURAHAMAN Ganiou",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "211611",
+            "name": "ABDOURAHAMAN Ganiou",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137009",
+        "name": "MUSTAPHA Musa",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137009",
+            "name": "MUSTAPHA Musa",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "5-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP07.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 7 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203252",
+        "name": "ABDELHALIM Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203252",
+            "name": "ABDELHALIM Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209121",
+        "name": "AKLIE Israel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209121",
+            "name": "AKLIE Israel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-6",
+      "11-8",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP01.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 1 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202553",
+        "name": "ELHAKIM Khadeeja",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "202553",
+            "name": "ELHAKIM Khadeeja",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "211165",
+        "name": "AHMED Fatimoh",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "211165",
+            "name": "AHMED Fatimoh",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-4",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP02.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 2 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203075",
+        "name": "THABET Farida",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203075",
+            "name": "THABET Farida",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "208118",
+        "name": "ARUNA Mariam",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "208118",
+            "name": "ARUNA Mariam",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-8",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP01.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 1 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222157",
+        "name": "FAYE Gilles",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222157",
+            "name": "FAYE Gilles",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-2",
+      "11-1"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP05.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 5 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204591",
+        "name": "MORICE Jade",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204591",
+            "name": "MORICE Jade",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220353",
+        "name": "OKAFOR Chinenye",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220353",
+            "name": "OKAFOR Chinenye",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-3",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP04.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 4 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202166",
+        "name": "NAKAWALA Jemimah",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202166",
+            "name": "NAKAWALA Jemimah",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209675",
+        "name": "ANDRIANTAHINA Tina",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "209675",
+            "name": "ANDRIANTAHINA Tina",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-2",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP06.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 6 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206049",
+        "name": "SEZUO Aziza",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206049",
+            "name": "SEZUO Aziza",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-6",
+      "10-12",
+      "4-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP03.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 3 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204592",
+        "name": "MORICE Tania",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204592",
+            "name": "MORICE Tania",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209793",
+        "name": "ANYANGO Patience",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209793",
+            "name": "ANYANGO Patience",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-9",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP02.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 2 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135595",
+        "name": "MOSTAFA Badr",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "135595",
+            "name": "MOSTAFA Badr",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222178",
+        "name": "TCHAGOLE Abdoulhakim",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222178",
+            "name": "TCHAGOLE Abdoulhakim",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-7",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP03.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 3 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202627",
+        "name": "KUTI Matthew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "202627",
+            "name": "KUTI Matthew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209120",
+        "name": "RAKOTOARISOA Mamy",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "209120",
+            "name": "RAKOTOARISOA Mamy",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP04.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 4 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137316",
+        "name": "BELLA Maheidine",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "137316",
+            "name": "BELLA Maheidine",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144702",
+        "name": "NUHU Ibrahim Gado",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144702",
+            "name": "NUHU Ibrahim Gado",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP05.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 5 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203308",
+        "name": "ABDULFATAI Abdulbasit",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "203308",
+            "name": "ABDULFATAI Abdulbasit",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136134",
+        "name": "KHENNICHE Sofiane",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "136134",
+            "name": "KHENNICHE Sofiane",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-0",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP06.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 6 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200310",
+        "name": "ADEGOKE Muizz",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200310",
+            "name": "ADEGOKE Muizz",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205791",
+        "name": "FIKREEN Mohammed",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205791",
+            "name": "FIKREEN Mohammed",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP07.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 7 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146212",
+        "name": "AGBODJAN Elias",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "146212",
+            "name": "AGBODJAN Elias",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133513",
+        "name": "EHAB Omar",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "133513",
+            "name": "EHAB Omar",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "8-11",
+      "16-14",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP08.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 8 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206051",
+        "name": "FABUNMI Mathew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206051",
+            "name": "FABUNMI Mathew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "146168",
+        "name": "HAMRANAH Alhusayn",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "146168",
+            "name": "HAMRANAH Alhusayn",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "9-11",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP01.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 1 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137516",
+        "name": "YOUNES Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137516",
+            "name": "YOUNES Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209660",
+        "name": "RABIU Aishat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209660",
+            "name": "RABIU Aishat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-1",
+      "14-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP02.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 2 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221517",
+        "name": "OKANLAWON Kadijat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221517",
+            "name": "OKANLAWON Kadijat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-8",
+      "6-11",
+      "11-9",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP03.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 3 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221708",
+        "name": "OJO Favour",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221708",
+            "name": "OJO Favour",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207174",
+        "name": "RAKOTONDRAZAKA Ranto",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "207174",
+            "name": "RAKOTONDRAZAKA Ranto",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-3",
+      "14-16",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP04.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 4 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137518",
+        "name": "ZAKI Nour",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137518",
+            "name": "ZAKI Nour",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "206050",
+        "name": "AYOOLA Kabirat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206050",
+            "name": "AYOOLA Kabirat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-6",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP04.000400--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 4,
+    "description": "U19 Girls' Singles - Group 4 - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "222238",
+        "name": "SISAY Alem",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222238",
+            "name": "SISAY Alem",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209662",
+        "name": "BORTEY Emerald",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209662",
+            "name": "BORTEY Emerald",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-7",
+      "6-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP01.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 1 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "222223",
+        "name": "AGBETOGLO Tony",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222223",
+            "name": "AGBETOGLO Tony",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222198",
+        "name": "CODO Satfilx",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222198",
+            "name": "CODO Satfilx",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "10-12",
+      "8-11",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP02.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 2 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "220607",
+        "name": "ADEBAKIN Tobi",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220607",
+            "name": "ADEBAKIN Tobi",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "210758",
+        "name": "RANARISON David",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "210758",
+            "name": "RANARISON David",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP03.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 3 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "222002",
+        "name": "JOSEPH Marvelous",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "222002",
+            "name": "JOSEPH Marvelous",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209126",
+        "name": "NSEREKO Sharif",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209126",
+            "name": "NSEREKO Sharif",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-15",
+      "12-14",
+      "11-7",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP04.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 4 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "210218",
+        "name": "ASHOUR Yousuf",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "210218",
+            "name": "ASHOUR Yousuf",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220710",
+        "name": "BAILINA Valengy",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220710",
+            "name": "BAILINA Valengy",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-5",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP05.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 5 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203598",
+        "name": "IMBARAK Mohammed",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "203598",
+            "name": "IMBARAK Mohammed",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209917",
+        "name": "NDZELEN Maxwell",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209917",
+            "name": "NDZELEN Maxwell",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "10-12",
+      "7-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP06.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 6 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137009",
+        "name": "MUSTAPHA Musa",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137009",
+            "name": "MUSTAPHA Musa",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222213",
+        "name": "ISSAH Hamza",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "222213",
+            "name": "ISSAH Hamza",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-6",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.GP07.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 7 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209121",
+        "name": "AKLIE Israel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209121",
+            "name": "AKLIE Israel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220596",
+        "name": "JOSEPH Victor",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220596",
+            "name": "JOSEPH Victor",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "6-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP01.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 1 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211165",
+        "name": "AHMED Fatimoh",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "211165",
+            "name": "AHMED Fatimoh",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222210",
+        "name": "DROH Jessica",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "222210",
+            "name": "DROH Jessica",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-8",
+      "4-11",
+      "3-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP02.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 2 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "208118",
+        "name": "ARUNA Mariam",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "208118",
+            "name": "ARUNA Mariam",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222225",
+        "name": "DAGNE Veronica",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222225",
+            "name": "DAGNE Veronica",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "3-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP03.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 3 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209793",
+        "name": "ANYANGO Patience",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209793",
+            "name": "ANYANGO Patience",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222234",
+        "name": "NOUSSOUKPOE Marcelle",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222234",
+            "name": "NOUSSOUKPOE Marcelle",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-4",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP04.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 4 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209675",
+        "name": "ANDRIANTAHINA Tina",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "209675",
+            "name": "ANDRIANTAHINA Tina",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222319",
+        "name": "AMADJI Christelle",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222319",
+            "name": "AMADJI Christelle",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "9-11",
+      "9-11",
+      "11-3",
+      "11-1"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP05.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 5 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "220353",
+        "name": "OKAFOR Chinenye",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220353",
+            "name": "OKAFOR Chinenye",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209676",
+        "name": "AMADJI Christ",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "209676",
+            "name": "AMADJI Christ",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-5",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.GP06.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 6 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222226",
+        "name": "YIRGU Abigya",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222226",
+            "name": "YIRGU Abigya",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-3",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP01.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 1 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "222157",
+        "name": "FAYE Gilles",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222157",
+            "name": "FAYE Gilles",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209918",
+        "name": "NDZELEN Maxsmith",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209918",
+            "name": "NDZELEN Maxsmith",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "1-11",
+      "2-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP05.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 5 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136134",
+        "name": "KHENNICHE Sofiane",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "136134",
+            "name": "KHENNICHE Sofiane",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222155",
+        "name": "TRAORE Souleymane",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222155",
+            "name": "TRAORE Souleymane",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP03.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 3 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209120",
+        "name": "RAKOTOARISOA Mamy",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "209120",
+            "name": "RAKOTOARISOA Mamy",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222224",
+        "name": "NEGASH Endale",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222224",
+            "name": "NEGASH Endale",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "3-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP04.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 4 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "144702",
+        "name": "NUHU Ibrahim Gado",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144702",
+            "name": "NUHU Ibrahim Gado",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209957",
+        "name": "MVENG Marcel",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209957",
+            "name": "MVENG Marcel",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-3",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP02.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 2 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "222178",
+        "name": "TCHAGOLE Abdoulhakim",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222178",
+            "name": "TCHAGOLE Abdoulhakim",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222229",
+        "name": "ASHEBER Liken",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222229",
+            "name": "ASHEBER Liken",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "6-11",
+      "11-9",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP06.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 6 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205791",
+        "name": "FIKREEN Mohammed",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205791",
+            "name": "FIKREEN Mohammed",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222282",
+        "name": "BEAHENOU Aime",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222282",
+            "name": "BEAHENOU Aime",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-4",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP07.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 7 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133513",
+        "name": "EHAB Omar",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "133513",
+            "name": "EHAB Omar",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222320",
+        "name": "GUEDOU Anjorin",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "222320",
+            "name": "GUEDOU Anjorin",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-3",
+      "11-1"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.GP08.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 8 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146168",
+        "name": "HAMRANAH Alhusayn",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "146168",
+            "name": "HAMRANAH Alhusayn",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144689",
+        "name": "OFORI Richard",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144689",
+            "name": "OFORI Richard",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "9-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP01.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 1 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209660",
+        "name": "RABIU Aishat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209660",
+            "name": "RABIU Aishat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144701",
+        "name": "KYERE Emmanuella Yaa",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144701",
+            "name": "KYERE Emmanuella Yaa",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "12-10",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP02.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 2 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221517",
+        "name": "OKANLAWON Kadijat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221517",
+            "name": "OKANLAWON Kadijat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205034",
+        "name": "DIENG Kelly",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "205034",
+            "name": "DIENG Kelly",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-9",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP03.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 3 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207174",
+        "name": "RAKOTONDRAZAKA Ranto",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "207174",
+            "name": "RAKOTONDRAZAKA Ranto",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209635",
+        "name": "GUEYE Fatou",
+        "org": "Senegal",
+        "orgCode": "SEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "209635",
+            "name": "GUEYE Fatou",
+            "org": "Senegal",
+            "orgCode": "SEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-2",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP04.000500--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 5,
+    "description": "U19 Girls' Singles - Group 4 - Match 5",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137518",
+        "name": "ZAKI Nour",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137518",
+            "name": "ZAKI Nour",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209662",
+        "name": "BORTEY Emerald",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209662",
+            "name": "BORTEY Emerald",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-4",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.GP04.000600--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 6,
+    "description": "U19 Girls' Singles - Group 4 - Match 6",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206050",
+        "name": "AYOOLA Kabirat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206050",
+            "name": "AYOOLA Kabirat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222238",
+        "name": "SISAY Alem",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "222238",
+            "name": "SISAY Alem",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "12-10",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.8FNL.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Round of 16 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203947",
+        "name": "GOUDJIL Aylan",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "203947",
+            "name": "GOUDJIL Aylan",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137009",
+        "name": "MUSTAPHA Musa",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137009",
+            "name": "MUSTAPHA Musa",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "9-11",
+      "11-8",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.8FNL.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Round of 16 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "220596",
+        "name": "JOSEPH Victor",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220596",
+            "name": "JOSEPH Victor",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209917",
+        "name": "NDZELEN Maxwell",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209917",
+            "name": "NDZELEN Maxwell",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-8",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.8FNL.000400--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "U15 Boys' Singles - Round of 16 - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202560",
+        "name": "ZOUITENE Bilel",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "202560",
+            "name": "ZOUITENE Bilel",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "201315",
+        "name": "SAMEH Asser",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "201315",
+            "name": "SAMEH Asser",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "10-12",
+      "11-6",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.8FNL.000500--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "U15 Boys' Singles - Round of 16 - Match 5",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209126",
+        "name": "NSEREKO Sharif",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209126",
+            "name": "NSEREKO Sharif",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222223",
+        "name": "AGBETOGLO Tony",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222223",
+            "name": "AGBETOGLO Tony",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-6",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.8FNL.000600--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "U15 Boys' Singles - Round of 16 - Match 6",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211611",
+        "name": "ABDOURAHAMAN Ganiou",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "211611",
+            "name": "ABDOURAHAMAN Ganiou",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "213308",
+        "name": "PUTOLA Tidiane",
+        "org": "Chad",
+        "orgCode": "CHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "213308",
+            "name": "PUTOLA Tidiane",
+            "org": "Chad",
+            "orgCode": "CHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "5-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.8FNL.000700--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "U15 Boys' Singles - Round of 16 - Match 7",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203252",
+        "name": "ABDELHALIM Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203252",
+            "name": "ABDELHALIM Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "210218",
+        "name": "ASHOUR Yousuf",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "210218",
+            "name": "ASHOUR Yousuf",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.8FNL.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Round of 16 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "208118",
+        "name": "ARUNA Mariam",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "208118",
+            "name": "ARUNA Mariam",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209675",
+        "name": "ANDRIANTAHINA Tina",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "209675",
+            "name": "ANDRIANTAHINA Tina",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-8",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Round of 16 - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144689",
+        "name": "OFORI Richard",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144689",
+            "name": "OFORI Richard",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-6",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Round of 16 - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "222178",
+        "name": "TCHAGOLE Abdoulhakim",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "222178",
+            "name": "TCHAGOLE Abdoulhakim",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203308",
+        "name": "ABDULFATAI Abdulbasit",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "203308",
+            "name": "ABDULFATAI Abdulbasit",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "0-11",
+      "1-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Round of 16 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133513",
+        "name": "EHAB Omar",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "133513",
+            "name": "EHAB Omar",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205791",
+        "name": "FIKREEN Mohammed",
+        "org": "Libya",
+        "orgCode": "LBA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205791",
+            "name": "FIKREEN Mohammed",
+            "org": "Libya",
+            "orgCode": "LBA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-4",
+      "11-2",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000400--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "U19 Boys' Singles - Round of 16 - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "144702",
+        "name": "NUHU Ibrahim Gado",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144702",
+            "name": "NUHU Ibrahim Gado",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202627",
+        "name": "KUTI Matthew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "202627",
+            "name": "KUTI Matthew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "5-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.8FNL.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Round of 16 - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220353",
+        "name": "OKAFOR Chinenye",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220353",
+            "name": "OKAFOR Chinenye",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "13-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.8FNL.000600--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "U15 Girls' Singles - Round of 16 - Match 6",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 6",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206049",
+        "name": "SEZUO Aziza",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206049",
+            "name": "SEZUO Aziza",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209793",
+        "name": "ANYANGO Patience",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209793",
+            "name": "ANYANGO Patience",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "6-11",
+      "10-12",
+      "11-9",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.8FNL.000700--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "U15 Girls' Singles - Round of 16 - Match 7",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204591",
+        "name": "MORICE Jade",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204591",
+            "name": "MORICE Jade",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "222210",
+        "name": "DROH Jessica",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "222210",
+            "name": "DROH Jessica",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-5",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000500--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "U19 Boys' Singles - Round of 16 - Match 5",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137316",
+        "name": "BELLA Maheidine",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "137316",
+            "name": "BELLA Maheidine",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "146212",
+        "name": "AGBODJAN Elias",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "146212",
+            "name": "AGBODJAN Elias",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-7",
+      "11-6",
+      "14-16",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000600--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "U19 Boys' Singles - Round of 16 - Match 6",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136134",
+        "name": "KHENNICHE Sofiane",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "136134",
+            "name": "KHENNICHE Sofiane",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "206051",
+        "name": "FABUNMI Mathew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206051",
+            "name": "FABUNMI Mathew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "10-12",
+      "7-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000700--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "U19 Boys' Singles - Round of 16 - Match 7",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200310",
+        "name": "ADEGOKE Muizz",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200310",
+            "name": "ADEGOKE Muizz",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209918",
+        "name": "NDZELEN Maxsmith",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209918",
+            "name": "NDZELEN Maxsmith",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-4",
+      "11-2",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.8FNL.000800--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "U19 Boys' Singles - Round of 16 - Match 8",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209120",
+        "name": "RAKOTOARISOA Mamy",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "209120",
+            "name": "RAKOTOARISOA Mamy",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135595",
+        "name": "MOSTAFA Badr",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "135595",
+            "name": "MOSTAFA Badr",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "5-11",
+      "7-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.QFNL.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Quarterfinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202553",
+        "name": "ELHAKIM Khadeeja",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "202553",
+            "name": "ELHAKIM Khadeeja",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "208118",
+        "name": "ARUNA Mariam",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "208118",
+            "name": "ARUNA Mariam",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-4",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.QFNL.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Quarterfinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "204592",
+        "name": "MORICE Tania",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204592",
+            "name": "MORICE Tania",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "4-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.QFNL.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Quarterfinals - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202166",
+        "name": "NAKAWALA Jemimah",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202166",
+            "name": "NAKAWALA Jemimah",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209793",
+        "name": "ANYANGO Patience",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209793",
+            "name": "ANYANGO Patience",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.QFNL.000400--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "U15 Girls' Singles - Quarterfinals - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204591",
+        "name": "MORICE Jade",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204591",
+            "name": "MORICE Jade",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203075",
+        "name": "THABET Farida",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203075",
+            "name": "THABET Farida",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-8",
+      "9-11",
+      "11-5",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.QFNL.000400--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "U15 Boys' Singles - Quarterfinals - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203252",
+        "name": "ABDELHALIM Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203252",
+            "name": "ABDELHALIM Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220607",
+        "name": "ADEBAKIN Tobi",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220607",
+            "name": "ADEBAKIN Tobi",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "8-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.QFNL.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Quarterfinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "220596",
+        "name": "JOSEPH Victor",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220596",
+            "name": "JOSEPH Victor",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202560",
+        "name": "ZOUITENE Bilel",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "202560",
+            "name": "ZOUITENE Bilel",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "15-13",
+      "11-7",
+      "8-11",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.QFNL.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Quarterfinals - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209126",
+        "name": "NSEREKO Sharif",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209126",
+            "name": "NSEREKO Sharif",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "213308",
+        "name": "PUTOLA Tidiane",
+        "org": "Chad",
+        "orgCode": "CHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "213308",
+            "name": "PUTOLA Tidiane",
+            "org": "Chad",
+            "orgCode": "CHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "11-7",
+      "12-14",
+      "11-9",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.QFNL.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Quarterfinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205403",
+        "name": "SEBATINDIRA Joseph",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205403",
+            "name": "SEBATINDIRA Joseph",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203947",
+        "name": "GOUDJIL Aylan",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "203947",
+            "name": "GOUDJIL Aylan",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-7",
+      "9-11",
+      "7-11",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.QFNL.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Quarterfinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137516",
+        "name": "YOUNES Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137516",
+            "name": "YOUNES Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "206050",
+        "name": "AYOOLA Kabirat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206050",
+            "name": "AYOOLA Kabirat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-1",
+      "11-5",
+      "8-11",
+      "9-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.QFNL.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Quarterfinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221708",
+        "name": "OJO Favour",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221708",
+            "name": "OJO Favour",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "9-11",
+      "5-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.QFNL.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Quarterfinals - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137518",
+        "name": "ZAKI Nour",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137518",
+            "name": "ZAKI Nour",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209660",
+        "name": "RABIU Aishat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "209660",
+            "name": "RABIU Aishat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "11-4",
+      "11-13",
+      "11-3",
+      "11-4",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.QFNL.000400--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "U19 Girls' Singles - Quarterfinals - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207174",
+        "name": "RAKOTONDRAZAKA Ranto",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "207174",
+            "name": "RAKOTONDRAZAKA Ranto",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221517",
+        "name": "OKANLAWON Kadijat",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221517",
+            "name": "OKANLAWON Kadijat",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "8-11",
+      "11-6",
+      "11-9",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.QFNL.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Quarterfinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203308",
+        "name": "ABDULFATAI Abdulbasit",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "203308",
+            "name": "ABDULFATAI Abdulbasit",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "9-11",
+      "11-8",
+      "14-12",
+      "11-7",
+      "7-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.QFNL.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Quarterfinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133513",
+        "name": "EHAB Omar",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "133513",
+            "name": "EHAB Omar",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202627",
+        "name": "KUTI Matthew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "202627",
+            "name": "KUTI Matthew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "16-14",
+      "9-11",
+      "11-5",
+      "11-9",
+      "15-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.QFNL.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Quarterfinals - Match 3",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137316",
+        "name": "BELLA Maheidine",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "137316",
+            "name": "BELLA Maheidine",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "206051",
+        "name": "FABUNMI Mathew",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "206051",
+            "name": "FABUNMI Mathew",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-5",
+      "6-11",
+      "11-3",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.QFNL.000400--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "U19 Boys' Singles - Quarterfinals - Match 4",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200310",
+        "name": "ADEGOKE Muizz",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200310",
+            "name": "ADEGOKE Muizz",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135595",
+        "name": "MOSTAFA Badr",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "135595",
+            "name": "MOSTAFA Badr",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "14-16",
+      "11-7",
+      "8-11",
+      "11-7",
+      "5-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.SFNL.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Semifinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205403",
+        "name": "SEBATINDIRA Joseph",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205403",
+            "name": "SEBATINDIRA Joseph",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202560",
+        "name": "ZOUITENE Bilel",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "202560",
+            "name": "ZOUITENE Bilel",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "6-11",
+      "12-10",
+      "8-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.SFNL.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Semifinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202553",
+        "name": "ELHAKIM Khadeeja",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "202553",
+            "name": "ELHAKIM Khadeeja",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "204592",
+        "name": "MORICE Tania",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204592",
+            "name": "MORICE Tania",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "9-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.SFNL.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Semifinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209126",
+        "name": "NSEREKO Sharif",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209126",
+            "name": "NSEREKO Sharif",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220607",
+        "name": "ADEBAKIN Tobi",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "220607",
+            "name": "ADEBAKIN Tobi",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "11-6",
+      "6-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.SFNL.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Semifinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202166",
+        "name": "NAKAWALA Jemimah",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202166",
+            "name": "NAKAWALA Jemimah",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203075",
+        "name": "THABET Farida",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "203075",
+            "name": "THABET Farida",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "13-11",
+      "15-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.SFNL.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Semifinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133513",
+        "name": "EHAB Omar",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "133513",
+            "name": "EHAB Omar",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-15",
+      "7-11",
+      "11-9",
+      "11-5",
+      "11-9",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.SFNL.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Semifinals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137516",
+        "name": "YOUNES Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137516",
+            "name": "YOUNES Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221708",
+        "name": "OJO Favour",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "221708",
+            "name": "OJO Favour",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "9-11",
+      "11-3",
+      "11-9",
+      "14-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.SFNL.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Semifinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 3",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137316",
+        "name": "BELLA Maheidine",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "137316",
+            "name": "BELLA Maheidine",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200310",
+        "name": "ADEGOKE Muizz",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200310",
+            "name": "ADEGOKE Muizz",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "9-11",
+      "12-10",
+      "5-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.SFNL.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Semifinals - Match 2",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137518",
+        "name": "ZAKI Nour",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137518",
+            "name": "ZAKI Nour",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207174",
+        "name": "RAKOTONDRAZAKA Ranto",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "207174",
+            "name": "RAKOTONDRAZAKA Ranto",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-5",
+      "11-6",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U15.FNL-.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Finals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "204592",
+        "name": "MORICE Tania",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "204592",
+            "name": "MORICE Tania",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202166",
+        "name": "NAKAWALA Jemimah",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202166",
+            "name": "NAKAWALA Jemimah",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "7-11",
+      "11-7",
+      "11-2",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U15.FNL-.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Finals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205403",
+        "name": "SEBATINDIRA Joseph",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205403",
+            "name": "SEBATINDIRA Joseph",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209126",
+        "name": "NSEREKO Sharif",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209126",
+            "name": "NSEREKO Sharif",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "W.SINGLES--------U19.FNL-.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Finals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137516",
+        "name": "YOUNES Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137516",
+            "name": "YOUNES Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137518",
+        "name": "ZAKI Nour",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "137518",
+            "name": "ZAKI Nour",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-8",
+      "11-4",
+      "14-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3144",
+    "documentCode": "M.SINGLES--------U19.FNL-.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Finals - Match 1",
+    "venue": "Sir Molade Okoya Thomas Indoor Sports Hall",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200310",
+        "name": "ADEGOKE Muizz",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200310",
+            "name": "ADEGOKE Muizz",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-8",
+      "11-6",
+      "11-7"
+    ],
+    "source": "wtt"
+  }
+]

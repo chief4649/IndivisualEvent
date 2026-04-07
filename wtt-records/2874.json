@@ -1,0 +1,1831 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP01.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 1 - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111772",
+        "name": "LI Jie",
+        "org": "Netherlands",
+        "orgCode": "NED",
+        "irm": null,
+        "players": [
+          {
+            "id": "111772",
+            "name": "LI Jie",
+            "org": "Netherlands",
+            "orgCode": "NED",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115781",
+        "name": "KIM Song I",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "115781",
+            "name": "KIM Song I",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-7",
+      "3-11",
+      "8-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP02.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 2 - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108226",
+        "name": "SAMARA Elizabeta",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "108226",
+            "name": "SAMARA Elizabeta",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "8-11",
+      "3-11",
+      "9-11",
+      "11-4",
+      "13-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP03.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 3 - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105111",
+        "name": "LAY Jian Fang",
+        "org": "Australia",
+        "orgCode": "AUS",
+        "irm": null,
+        "players": [
+          {
+            "id": "105111",
+            "name": "LAY Jian Fang",
+            "org": "Australia",
+            "orgCode": "AUS",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-8",
+      "9-11",
+      "11-9",
+      "11-8",
+      "8-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP04.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 4 - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111012",
+        "name": "SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110227",
+        "name": "WU Yue",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "110227",
+            "name": "WU Yue",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-4",
+      "11-9",
+      "9-11",
+      "9-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP01.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 1 - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111772",
+        "name": "LI Jie",
+        "org": "Netherlands",
+        "orgCode": "NED",
+        "irm": null,
+        "players": [
+          {
+            "id": "111772",
+            "name": "LI Jie",
+            "org": "Netherlands",
+            "orgCode": "NED",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102472",
+        "name": "EKHOLM Matilda",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "102472",
+            "name": "EKHOLM Matilda",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "6-11",
+      "6-11",
+      "6-11",
+      "11-8",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP02.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 2 - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108226",
+        "name": "SAMARA Elizabeta",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "108226",
+            "name": "SAMARA Elizabeta",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "114105",
+        "name": "CHEN Szu-Yu",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "114105",
+            "name": "CHEN Szu-Yu",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "6-11",
+      "8-11",
+      "7-11",
+      "11-6",
+      "13-11",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP03.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 3 - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107525",
+        "name": "POTA Georgina",
+        "org": "Hungary",
+        "orgCode": "HUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "107525",
+            "name": "POTA Georgina",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "6-11",
+      "11-7",
+      "14-16",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP04.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 4 - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111012",
+        "name": "SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105469",
+        "name": "LIU Jia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "105469",
+            "name": "LIU Jia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "11-5",
+      "9-11",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP02.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 2 - Match 3",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114105",
+        "name": "CHEN Szu-Yu",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "114105",
+            "name": "CHEN Szu-Yu",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-6",
+      "11-9",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP01.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 1 - Match 3",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102472",
+        "name": "EKHOLM Matilda",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "102472",
+            "name": "EKHOLM Matilda",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115781",
+        "name": "KIM Song I",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "115781",
+            "name": "KIM Song I",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-6",
+      "9-11",
+      "11-7",
+      "4-11",
+      "11-7",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP04.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 4 - Match 3",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105469",
+        "name": "LIU Jia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "105469",
+            "name": "LIU Jia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110227",
+        "name": "WU Yue",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "110227",
+            "name": "WU Yue",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "9-11",
+      "8-11",
+      "11-4",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.GP03.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 3 - Match 3",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107525",
+        "name": "POTA Georgina",
+        "org": "Hungary",
+        "orgCode": "HUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "107525",
+            "name": "POTA Georgina",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105111",
+        "name": "LAY Jian Fang",
+        "org": "Australia",
+        "orgCode": "AUS",
+        "irm": null,
+        "players": [
+          {
+            "id": "105111",
+            "name": "LAY Jian Fang",
+            "org": "Australia",
+            "orgCode": "AUS",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "6-11",
+      "2-11",
+      "12-10",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Women's Singles - Round of 16 - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117332",
+        "name": "ZHU Yuling",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117332",
+            "name": "ZHU Yuling",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102472",
+        "name": "EKHOLM Matilda",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "102472",
+            "name": "EKHOLM Matilda",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-5",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 16 - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108226",
+        "name": "SAMARA Elizabeta",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "108226",
+            "name": "SAMARA Elizabeta",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107477",
+        "name": "POLCANOVA Sofia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "107477",
+            "name": "POLCANOVA Sofia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "8-11",
+      "9-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Women's Singles - Round of 16 - Match 5",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102265",
+        "name": "DING Ning",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "102265",
+            "name": "DING Ning",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105469",
+        "name": "LIU Jia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "105469",
+            "name": "LIU Jia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Women's Singles - Round of 16 - Match 4",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107525",
+        "name": "POTA Georgina",
+        "org": "Hungary",
+        "orgCode": "HUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "107525",
+            "name": "POTA Georgina",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110797",
+        "name": "CHENG I-Ching",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "110797",
+            "name": "CHENG I-Ching",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "18-20",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 - Match 3",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115543",
+        "name": "DOO Hoi Kem",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG",
+        "irm": null,
+        "players": [
+          {
+            "id": "115543",
+            "name": "DOO Hoi Kem",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111012",
+        "name": "SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-6",
+      "12-10",
+      "11-6",
+      "16-18",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 - Match 6",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105111",
+        "name": "LAY Jian Fang",
+        "org": "Australia",
+        "orgCode": "AUS",
+        "irm": null,
+        "players": [
+          {
+            "id": "105111",
+            "name": "LAY Jian Fang",
+            "org": "Australia",
+            "orgCode": "AUS",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108470",
+        "name": "SUH Hyowon",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "108470",
+            "name": "SUH Hyowon",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "4-11",
+      "11-4",
+      "4-11",
+      "11-6",
+      "11-9",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 16 - Match 7",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117820",
+        "name": "HIRANO Miu",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117820",
+            "name": "HIRANO Miu",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115781",
+        "name": "KIM Song I",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "115781",
+            "name": "KIM Song I",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "11-5",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Women's Singles - Round of 16 - Match 8",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114105",
+        "name": "CHEN Szu-Yu",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "114105",
+            "name": "CHEN Szu-Yu",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110752",
+        "name": "ISHIKAWA Kasumi",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110752",
+            "name": "ISHIKAWA Kasumi",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-5",
+      "7-11",
+      "9-11",
+      "8-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117332",
+        "name": "ZHU Yuling",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117332",
+            "name": "ZHU Yuling",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107477",
+        "name": "POLCANOVA Sofia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "107477",
+            "name": "POLCANOVA Sofia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "14-12",
+      "11-8",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115543",
+        "name": "DOO Hoi Kem",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG",
+        "irm": null,
+        "players": [
+          {
+            "id": "115543",
+            "name": "DOO Hoi Kem",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110797",
+        "name": "CHENG I-Ching",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "110797",
+            "name": "CHENG I-Ching",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-9",
+      "11-13",
+      "9-11",
+      "6-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals - Match 4",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117820",
+        "name": "HIRANO Miu",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117820",
+            "name": "HIRANO Miu",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110752",
+        "name": "ISHIKAWA Kasumi",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110752",
+            "name": "ISHIKAWA Kasumi",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "7-11",
+      "9-11",
+      "6-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals - Match 3",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102265",
+        "name": "DING Ning",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "102265",
+            "name": "DING Ning",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108470",
+        "name": "SUH Hyowon",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "108470",
+            "name": "SUH Hyowon",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-3",
+      "5-11",
+      "11-6",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102265",
+        "name": "DING Ning",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "102265",
+            "name": "DING Ning",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110752",
+        "name": "ISHIKAWA Kasumi",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110752",
+            "name": "ISHIKAWA Kasumi",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-5",
+      "11-3",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117332",
+        "name": "ZHU Yuling",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117332",
+            "name": "ZHU Yuling",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110797",
+        "name": "CHENG I-Ching",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "110797",
+            "name": "CHENG I-Ching",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-4",
+      "11-13",
+      "11-5",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.1BFL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "3rd Position Match",
+    "roundKey": "3rd position match",
+    "matchNumber": 1,
+    "description": "Women's Singles - 3rd Position Match - Match 1",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110797",
+        "name": "CHENG I-Ching",
+        "org": "Chinese Taipei",
+        "orgCode": "TPE",
+        "irm": null,
+        "players": [
+          {
+            "id": "110797",
+            "name": "CHENG I-Ching",
+            "org": "Chinese Taipei",
+            "orgCode": "TPE",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110752",
+        "name": "ISHIKAWA Kasumi",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110752",
+            "name": "ISHIKAWA Kasumi",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-7",
+      "12-10",
+      "13-15",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2874",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": null,
+    "description": "Women's Singles - Finals - Gold Medal Match",
+    "venue": "Sichuan Province Gymnasium",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117332",
+        "name": "ZHU Yuling",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117332",
+            "name": "ZHU Yuling",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102265",
+        "name": "DING Ning",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "102265",
+            "name": "DING Ning",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "8-11",
+      "10-12",
+      "8-11"
+    ],
+    "source": "wtt"
+  }
+]

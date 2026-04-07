@@ -1,0 +1,5532 @@
+[
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Girls' Teams - Group 1 - Match 1",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "6-11",
+          "2-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "8-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-6",
+          "4-11",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220841",
+            "name": "MOOSA Sara",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220841",
+                "name": "MOOSA Sara",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220973",
+            "name": "POUDEL Yonggi",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220973",
+                "name": "POUDEL Yonggi",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "2-11",
+          "3-11",
+          "11-13"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Girls' Teams - Group 1 - Match 2",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-5",
+          "11-2"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200574",
+            "name": "TANCHANGYA Resmi",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200574",
+                "name": "TANCHANGYA Resmi",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "11-7",
+          "12-10",
+          "12-10"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-9",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206102",
+            "name": "KOROTTA Diwya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206102",
+                "name": "KOROTTA Diwya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200574",
+            "name": "TANCHANGYA Resmi",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200574",
+                "name": "TANCHANGYA Resmi",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Boys' Teams - Group 1 - Match 1",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-8",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220840",
+            "name": "IBRAHIM Awn",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220840",
+                "name": "IBRAHIM Awn",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "5-11",
+          "11-7",
+          "11-8",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-5",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220884",
+            "name": "ALI Md Sagor",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220884",
+                "name": "ALI Md Sagor",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220839",
+            "name": "RAFIU Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220839",
+                "name": "RAFIU Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-2",
+          "11-6",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220840",
+            "name": "IBRAHIM Awn",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220840",
+                "name": "IBRAHIM Awn",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Boys' Teams - Group 1 - Match 2",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Pakistan",
+        "org": "Pakistan",
+        "orgCode": "PAK"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "5-11",
+          "7-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206072",
+            "name": "DAHAL Gananjaya",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "206072",
+                "name": "DAHAL Gananjaya",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "11-6",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220972",
+            "name": "BASNET Prabesh",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220972",
+                "name": "BASNET Prabesh",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-8",
+          "11-13",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220985",
+            "name": "MALHI Ahmad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220985",
+                "name": "MALHI Ahmad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "6-11",
+          "6-11",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206072",
+            "name": "DAHAL Gananjaya",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "206072",
+                "name": "DAHAL Gananjaya",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-7",
+          "8-11",
+          "15-17",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220972",
+            "name": "BASNET Prabesh",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220972",
+                "name": "BASNET Prabesh",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Girls' Teams - Group 1 - Match 3",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "6-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "5-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135511",
+            "name": "VARTIKAR Pritha",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135511",
+                "name": "VARTIKAR Pritha",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "4-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205786",
+            "name": "KHATUN Habiba",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205786",
+                "name": "KHATUN Habiba",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146057",
+            "name": "BRAMHACHARY Diya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "146057",
+                "name": "BRAMHACHARY Diya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135511",
+            "name": "VARTIKAR Pritha",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135511",
+                "name": "VARTIKAR Pritha",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00040000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U19 Girls' Teams - Group 1 - Match 4",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "7-11",
+          "11-7",
+          "9-11",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "9-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "13-11",
+          "8-11",
+          "11-9",
+          "7-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206102",
+            "name": "KOROTTA Diwya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206102",
+                "name": "KOROTTA Diwya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220973",
+            "name": "POUDEL Yonggi",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220973",
+                "name": "POUDEL Yonggi",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "8-11",
+          "11-9",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-4",
+          "8-11",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Boys' Teams - Group 1 - Match 3",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "9-11",
+          "12-10",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "12-14",
+          "11-8",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "11-8",
+          "11-7",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220972",
+            "name": "BASNET Prabesh",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220972",
+                "name": "BASNET Prabesh",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206628",
+            "name": "VIYANDUWA Akain",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206628",
+                "name": "VIYANDUWA Akain",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00040000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U19 Boys' Teams - Group 1 - Match 4",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "Pakistan",
+        "org": "Pakistan",
+        "orgCode": "PAK"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "6-11",
+          "11-6",
+          "11-7",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "6-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220840",
+            "name": "IBRAHIM Awn",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220840",
+                "name": "IBRAHIM Awn",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "6-11",
+          "11-6",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220839",
+            "name": "RAFIU Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220839",
+                "name": "RAFIU Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220985",
+            "name": "MALHI Ahmad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220985",
+                "name": "MALHI Ahmad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220840",
+            "name": "IBRAHIM Awn",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220840",
+                "name": "IBRAHIM Awn",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00060000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U19 Girls' Teams - Group 1 - Match 6",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "4-11",
+          "13-11",
+          "11-13",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "7-11",
+          "6-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "2-11",
+          "4-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220841",
+            "name": "MOOSA Sara",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220841",
+                "name": "MOOSA Sara",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200574",
+            "name": "TANCHANGYA Resmi",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200574",
+                "name": "TANCHANGYA Resmi",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "14-16",
+          "3-11",
+          "11-13"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00050000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U19 Girls' Teams - Group 1 - Match 5",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      },
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-9",
+          "13-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137856",
+            "name": "PATEL Hardee",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137856",
+                "name": "PATEL Hardee",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "8-11",
+          "11-2",
+          "7-11",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-1",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "146057",
+            "name": "BRAMHACHARY Diya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "146057",
+                "name": "BRAMHACHARY Diya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144801",
+            "name": "JAYASINGHE MUDIYANSELAGE Sandinthhie Diyana",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144801",
+                "name": "JAYASINGHE MUDIYANSELAGE Sandinthhie Diyana",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137856",
+            "name": "PATEL Hardee",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137856",
+                "name": "PATEL Hardee",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00050000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U19 Boys' Teams - Group 1 - Match 5",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Pakistan",
+        "org": "Pakistan",
+        "orgCode": "PAK"
+      },
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "6-11",
+          "11-7",
+          "14-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "20-18",
+          "11-9",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "5-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220985",
+            "name": "MALHI Ahmad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220985",
+                "name": "MALHI Ahmad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206628",
+            "name": "VIYANDUWA Akain",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206628",
+                "name": "VIYANDUWA Akain",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "10-12",
+          "9-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "8-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00060000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U19 Boys' Teams - Group 1 - Match 6",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "11-6",
+          "11-6",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-13",
+          "11-6",
+          "11-9",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "11-7",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220972",
+            "name": "BASNET Prabesh",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220972",
+                "name": "BASNET Prabesh",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220884",
+            "name": "ALI Md Sagor",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220884",
+                "name": "ALI Md Sagor",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00070000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 7,
+    "description": "U19 Girls' Teams - Group 1 - Match 7",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "9-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "10-12",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137856",
+            "name": "PATEL Hardee",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137856",
+                "name": "PATEL Hardee",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "2-11",
+          "3-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220841",
+            "name": "MOOSA Sara",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220841",
+                "name": "MOOSA Sara",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146057",
+            "name": "BRAMHACHARY Diya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "146057",
+                "name": "BRAMHACHARY Diya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137856",
+            "name": "PATEL Hardee",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137856",
+                "name": "PATEL Hardee",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00080000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 8,
+    "description": "U19 Girls' Teams - Group 1 - Match 8",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-5",
+          "8-11",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "7-11",
+          "11-7",
+          "11-9",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "11-5",
+          "4-11",
+          "11-6",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220970",
+            "name": "DEULA Diya",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220970",
+                "name": "DEULA Diya",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200574",
+            "name": "TANCHANGYA Resmi",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200574",
+                "name": "TANCHANGYA Resmi",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "12-10",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00070000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 7,
+    "description": "U19 Boys' Teams - Group 1 - Match 7",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-2",
+          "11-7",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "5-11",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "5-11",
+          "3-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220884",
+            "name": "ALI Md Sagor",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220884",
+                "name": "ALI Md Sagor",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206628",
+            "name": "VIYANDUWA Akain",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206628",
+                "name": "VIYANDUWA Akain",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "11-6",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "5-11",
+          "5-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00080000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 8,
+    "description": "U19 Boys' Teams - Group 1 - Match 8",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-1",
+          "11-2"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220839",
+            "name": "RAFIU Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220839",
+                "name": "RAFIU Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-2",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-6",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220972",
+            "name": "BASNET Prabesh",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220972",
+                "name": "BASNET Prabesh",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220840",
+            "name": "IBRAHIM Awn",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220840",
+                "name": "IBRAHIM Awn",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220971",
+            "name": "BISTA Himal",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220971",
+                "name": "BISTA Himal",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220839",
+            "name": "RAFIU Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220839",
+                "name": "RAFIU Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00090000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 9,
+    "description": "U19 Girls' Teams - Group 1 - Match 9",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      },
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "11-5",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-8",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135511",
+            "name": "VARTIKAR Pritha",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135511",
+                "name": "VARTIKAR Pritha",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-3",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137856",
+            "name": "PATEL Hardee",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137856",
+                "name": "PATEL Hardee",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220973",
+            "name": "POUDEL Yonggi",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220973",
+                "name": "POUDEL Yonggi",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135900",
+            "name": "CHANDE Ananya",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135900",
+                "name": "CHANDE Ananya",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135511",
+            "name": "VARTIKAR Pritha",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "135511",
+                "name": "VARTIKAR Pritha",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "W.TEAM-----------U19.GP01.00100000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 10,
+    "description": "U19 Girls' Teams - Group 1 - Match 10",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-2",
+          "11-5",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "5-11",
+          "11-3",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-8",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206102",
+            "name": "KOROTTA Diwya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206102",
+                "name": "KOROTTA Diwya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220841",
+            "name": "MOOSA Sara",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220841",
+                "name": "MOOSA Sara",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206105",
+            "name": "HALAWATHAGE Shamalsha",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206105",
+                "name": "HALAWATHAGE Shamalsha",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201109",
+            "name": "MALAAK Muizzu",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201109",
+                "name": "MALAAK Muizzu",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00090000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 9,
+    "description": "U19 Boys' Teams - Group 1 - Match 9",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-9",
+          "11-13",
+          "7-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "2-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220839",
+            "name": "RAFIU Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220839",
+                "name": "RAFIU Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "5-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220840",
+            "name": "IBRAHIM Awn",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220840",
+                "name": "IBRAHIM Awn",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206628",
+            "name": "VIYANDUWA Akain",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206628",
+                "name": "VIYANDUWA Akain",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201134",
+            "name": "ZEEK Hassan",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "201134",
+                "name": "ZEEK Hassan",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220839",
+            "name": "RAFIU Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "220839",
+                "name": "RAFIU Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144805",
+            "name": "LAMASURIYA Danuk Nisalvin",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144805",
+                "name": "LAMASURIYA Danuk Nisalvin",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3183",
+    "documentCode": "M.TEAM-----------U19.GP01.00100000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 10,
+    "description": "U19 Boys' Teams - Group 1 - Match 10",
+    "venue": "National Table Tennis training Centre, Lainchor, Kathmandu, Nepal",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "Pakistan",
+        "org": "Pakistan",
+        "orgCode": "PAK"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-9",
+          "6-11",
+          "9-11",
+          "14-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-8",
+          "7-11",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-8",
+          "12-10"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220884",
+            "name": "ALI Md Sagor",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220884",
+                "name": "ALI Md Sagor",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220985",
+            "name": "MALHI Ahmad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220985",
+                "name": "MALHI Ahmad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203034",
+            "name": "IQBAL Nafiz",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "203034",
+                "name": "IQBAL Nafiz",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203380",
+            "name": "BILAL Taha",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "203380",
+                "name": "BILAL Taha",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220880",
+            "name": "ISLAM Md Joy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220880",
+                "name": "ISLAM Md Joy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220976",
+            "name": "KHAN Abdal Muhammad",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "irm": null,
+            "players": [
+              {
+                "id": "220976",
+                "name": "KHAN Abdal Muhammad",
+                "org": "Pakistan",
+                "orgCode": "PAK",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

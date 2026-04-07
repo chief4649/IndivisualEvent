@@ -1,0 +1,3175 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U15.GP01.000100--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U15 Boys' Singles - Group 1 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221462",
+        "name": "BRUMIER Daniel",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221462",
+            "name": "BRUMIER Daniel",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "5-11",
+      "13-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP03.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 3 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-6",
+      "11-9",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP01.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 1 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202861",
+        "name": "TEHAHETUA Kelley",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202861",
+            "name": "TEHAHETUA Kelley",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207747",
+        "name": "ADDI Grace",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "207747",
+            "name": "ADDI Grace",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-0",
+      "11-3",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP02.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Group 2 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202862",
+        "name": "TEHAHETUA Keala",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202862",
+            "name": "TEHAHETUA Keala",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220465",
+        "name": "DAGAGIO Nancy",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "220465",
+            "name": "DAGAGIO Nancy",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-5",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U15.GP01.000200--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U15 Boys' Singles - Group 1 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202915",
+        "name": "ZHOU Cheng",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202915",
+            "name": "ZHOU Cheng",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "6-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP03.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 3 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221148",
+        "name": "BARBU Erell",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221148",
+            "name": "BARBU Erell",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207758",
+        "name": "FALU Annie",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "207758",
+            "name": "FALU Annie",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP01.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 1 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202861",
+        "name": "TEHAHETUA Kelley",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202861",
+            "name": "TEHAHETUA Kelley",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221118",
+        "name": "LEKUETA Isabella",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221118",
+            "name": "LEKUETA Isabella",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP02.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Group 2 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202862",
+        "name": "TEHAHETUA Keala",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202862",
+            "name": "TEHAHETUA Keala",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221147",
+        "name": "MARTIN Yvanita",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221147",
+            "name": "MARTIN Yvanita",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-5",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U15.GP01.000300--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U15 Boys' Singles - Group 1 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "5-11",
+      "11-8",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP03.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 3 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221148",
+        "name": "BARBU Erell",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221148",
+            "name": "BARBU Erell",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-5",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP01.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 1 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "WO-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221118",
+        "name": "LEKUETA Isabella",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221118",
+            "name": "LEKUETA Isabella",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207747",
+        "name": "ADDI Grace",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "207747",
+            "name": "ADDI Grace",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP02.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Group 2 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221147",
+        "name": "MARTIN Yvanita",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221147",
+            "name": "MARTIN Yvanita",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220465",
+        "name": "DAGAGIO Nancy",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "220465",
+            "name": "DAGAGIO Nancy",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U15.GP01.000400--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U15 Boys' Singles - Group 1 - Match 4",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202915",
+        "name": "ZHOU Cheng",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202915",
+            "name": "ZHOU Cheng",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221462",
+        "name": "BRUMIER Daniel",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221462",
+            "name": "BRUMIER Daniel",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "9-11",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP03.000400--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 4,
+    "description": "U19 Girls' Singles - Group 3 - Match 4",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207758",
+        "name": "FALU Annie",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "207758",
+            "name": "FALU Annie",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U15.GP01.000500--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U15 Boys' Singles - Group 1 - Match 5",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202915",
+        "name": "ZHOU Cheng",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202915",
+            "name": "ZHOU Cheng",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP03.000500--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 5,
+    "description": "U19 Girls' Singles - Group 3 - Match 5",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207758",
+        "name": "FALU Annie",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "207758",
+            "name": "FALU Annie",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U15.GP01.000600--",
+    "subEventType": "U15 Boys' Singles",
+    "categoryName": "U15 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U15 Boys' Singles - Group 1 - Match 6",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221462",
+        "name": "BRUMIER Daniel",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221462",
+            "name": "BRUMIER Daniel",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-8",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.GP03.000600--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 6,
+    "description": "U19 Girls' Singles - Group 3 - Match 6",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221148",
+        "name": "BARBU Erell",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221148",
+            "name": "BARBU Erell",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "6-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP02.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 2 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221466",
+        "name": "SNAIDER Mia",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221466",
+            "name": "SNAIDER Mia",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "12-10",
+      "7-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP02.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 2 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221463",
+        "name": "TANETOA Herearii",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221463",
+            "name": "TANETOA Herearii",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "5-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP01.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Group 1 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211237",
+        "name": "PAMBRUN Ariinui",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211237",
+            "name": "PAMBRUN Ariinui",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "12-10",
+      "9-11",
+      "6-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP01.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Group 1 - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211306",
+        "name": "OUTZEKHOVSKY Anais",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211306",
+            "name": "OUTZEKHOVSKY Anais",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "6-11",
+      "11-13",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP02.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 2 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221147",
+        "name": "MARTIN Yvanita",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221147",
+            "name": "MARTIN Yvanita",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221118",
+        "name": "LEKUETA Isabella",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221118",
+            "name": "LEKUETA Isabella",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP02.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 2 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202915",
+        "name": "ZHOU Cheng",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202915",
+            "name": "ZHOU Cheng",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221146",
+        "name": "PINDON Matisse",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221146",
+            "name": "PINDON Matisse",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-4",
+      "6-11",
+      "11-8",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP01.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Group 1 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202913",
+        "name": "DENG Jedidiah",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202913",
+            "name": "DENG Jedidiah",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221138",
+        "name": "QUINNE Raphael",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221138",
+            "name": "QUINNE Raphael",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "5-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP01.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Group 1 - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211306",
+        "name": "OUTZEKHOVSKY Anais",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211306",
+            "name": "OUTZEKHOVSKY Anais",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "220465",
+        "name": "DAGAGIO Nancy",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "220465",
+            "name": "DAGAGIO Nancy",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-1",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP02.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 2 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221147",
+        "name": "MARTIN Yvanita",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221147",
+            "name": "MARTIN Yvanita",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "15-13",
+      "11-5",
+      "7-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP02.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 2 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221463",
+        "name": "TANETOA Herearii",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221463",
+            "name": "TANETOA Herearii",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202915",
+        "name": "ZHOU Cheng",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202915",
+            "name": "ZHOU Cheng",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "7-11",
+      "11-5",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP01.000300--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Boys' Singles - Group 1 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211237",
+        "name": "PAMBRUN Ariinui",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211237",
+            "name": "PAMBRUN Ariinui",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202913",
+        "name": "DENG Jedidiah",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202913",
+            "name": "DENG Jedidiah",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-6",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP01.000300--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U15 Girls' Singles - Group 1 - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "220465",
+        "name": "DAGAGIO Nancy",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "220465",
+            "name": "DAGAGIO Nancy",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "10-12",
+      "1-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP02.000400--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 4,
+    "description": "U15 Girls' Singles - Group 2 - Match 4",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221466",
+        "name": "SNAIDER Mia",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221466",
+            "name": "SNAIDER Mia",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221118",
+        "name": "LEKUETA Isabella",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221118",
+            "name": "LEKUETA Isabella",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP02.000400--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 4,
+    "description": "U19 Boys' Singles - Group 2 - Match 4",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221146",
+        "name": "PINDON Matisse",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221146",
+            "name": "PINDON Matisse",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-8",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP01.000400--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U19 Boys' Singles - Group 1 - Match 4",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221138",
+        "name": "QUINNE Raphael",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221138",
+            "name": "QUINNE Raphael",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP02.000500--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 5,
+    "description": "U15 Girls' Singles - Group 2 - Match 5",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221118",
+        "name": "LEKUETA Isabella",
+        "org": "Solomon Islands",
+        "orgCode": "SOL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221118",
+            "name": "LEKUETA Isabella",
+            "org": "Solomon Islands",
+            "orgCode": "SOL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP02.000500--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 5,
+    "description": "U19 Boys' Singles - Group 2 - Match 5",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221463",
+        "name": "TANETOA Herearii",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221463",
+            "name": "TANETOA Herearii",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221146",
+        "name": "PINDON Matisse",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221146",
+            "name": "PINDON Matisse",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "5-11",
+      "5-11",
+      "11-6",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP01.000500--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U19 Boys' Singles - Group 1 - Match 5",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211237",
+        "name": "PAMBRUN Ariinui",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211237",
+            "name": "PAMBRUN Ariinui",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221138",
+        "name": "QUINNE Raphael",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221138",
+            "name": "QUINNE Raphael",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-3",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.GP02.000600--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 6,
+    "description": "U15 Girls' Singles - Group 2 - Match 6",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221147",
+        "name": "MARTIN Yvanita",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221147",
+            "name": "MARTIN Yvanita",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221466",
+        "name": "SNAIDER Mia",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221466",
+            "name": "SNAIDER Mia",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-13",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP02.000600--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 6,
+    "description": "U19 Boys' Singles - Group 2 - Match 6",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202915",
+        "name": "ZHOU Cheng",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202915",
+            "name": "ZHOU Cheng",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "7-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.GP01.000600--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U19 Boys' Singles - Group 1 - Match 6",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202913",
+        "name": "DENG Jedidiah",
+        "org": "Fiji",
+        "orgCode": "FIJ",
+        "irm": null,
+        "players": [
+          {
+            "id": "202913",
+            "name": "DENG Jedidiah",
+            "org": "Fiji",
+            "orgCode": "FIJ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "2-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.QFNL.000300--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "U19 Girls' Singles - Quarterfinals - Match 3",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207747",
+        "name": "ADDI Grace",
+        "org": "Nauru",
+        "orgCode": "NRU",
+        "irm": null,
+        "players": [
+          {
+            "id": "207747",
+            "name": "ADDI Grace",
+            "org": "Nauru",
+            "orgCode": "NRU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-9",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.QFNL.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Quarterfinals - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221147",
+        "name": "MARTIN Yvanita",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221147",
+            "name": "MARTIN Yvanita",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "4-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.SFNL.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Semifinals - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211237",
+        "name": "PAMBRUN Ariinui",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211237",
+            "name": "PAMBRUN Ariinui",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221146",
+        "name": "PINDON Matisse",
+        "org": "New Caledonia",
+        "orgCode": "NCL",
+        "irm": null,
+        "players": [
+          {
+            "id": "221146",
+            "name": "PINDON Matisse",
+            "org": "New Caledonia",
+            "orgCode": "NCL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-8",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.SFNL.000200--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U19 Boys' Singles - Semifinals - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "211231",
+        "name": "BU LUC Tepouatini",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211231",
+            "name": "BU LUC Tepouatini",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "8-11",
+      "11-9",
+      "11-7",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.SFNL.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Semifinals - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 3",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221466",
+        "name": "SNAIDER Mia",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221466",
+            "name": "SNAIDER Mia",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "4-11",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.SFNL.000200--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U15 Girls' Singles - Semifinals - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 4",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211306",
+        "name": "OUTZEKHOVSKY Anais",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211306",
+            "name": "OUTZEKHOVSKY Anais",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "10-12",
+      "11-7",
+      "8-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.SFNL.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Semifinals - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202861",
+        "name": "TEHAHETUA Kelley",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202861",
+            "name": "TEHAHETUA Kelley",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-3",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.SFNL.000200--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "U19 Girls' Singles - Semifinals - Match 2",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211232",
+        "name": "TERE Temehau",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211232",
+            "name": "TERE Temehau",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202862",
+        "name": "TEHAHETUA Keala",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202862",
+            "name": "TEHAHETUA Keala",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "5-11",
+      "6-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U15.FNL-.000100--",
+    "subEventType": "U15 Girls' Singles",
+    "categoryName": "U15 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U15 Girls' Singles - Finals - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "221467",
+        "name": "SAYEGH Clara",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221467",
+            "name": "SAYEGH Clara",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "211306",
+        "name": "OUTZEKHOVSKY Anais",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211306",
+            "name": "OUTZEKHOVSKY Anais",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "16-18",
+      "11-13",
+      "11-2",
+      "13-15"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "W.SINGLES--------U19.FNL-.000100--",
+    "subEventType": "U19 Girls' Singles",
+    "categoryName": "U19 Girls' Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U19 Girls' Singles - Finals - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202861",
+        "name": "TEHAHETUA Kelley",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202861",
+            "name": "TEHAHETUA Kelley",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202862",
+        "name": "TEHAHETUA Keala",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "202862",
+            "name": "TEHAHETUA Keala",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-13",
+      "11-13",
+      "11-5",
+      "11-5",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "3204",
+    "documentCode": "M.SINGLES--------U19.FNL-.000100--",
+    "subEventType": "U19 Boys' Singles",
+    "categoryName": "U19 Boys' Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "U19 Boys' Singles - Finals - Match 1",
+    "venue": "Table Tennis Canterbury",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "211237",
+        "name": "PAMBRUN Ariinui",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "211237",
+            "name": "PAMBRUN Ariinui",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "221461",
+        "name": "SAYEGH Leo",
+        "org": "Tahiti",
+        "orgCode": "PYF",
+        "irm": null,
+        "players": [
+          {
+            "id": "221461",
+            "name": "SAYEGH Leo",
+            "org": "Tahiti",
+            "orgCode": "PYF",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-9",
+      "9-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  }
+]

@@ -1,0 +1,2091 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP01.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 1 - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134974",
+        "name": "ALI Fathimath",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200042",
+        "name": "FAWAD Hoor",
+        "org": "Pakistan",
+        "orgCode": "PAK",
+        "irm": null,
+        "players": [
+          {
+            "id": "200042",
+            "name": "FAWAD Hoor",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "15-13",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP02.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 2 - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105681",
+        "name": "MADURANGI Ishara",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "105681",
+            "name": "MADURANGI Ishara",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200578",
+        "name": "THAPA Evana",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-14",
+      "6-11",
+      "11-5",
+      "8-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP03.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 3 - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145481",
+        "name": "KHAN Perniya",
+        "org": "Pakistan",
+        "orgCode": "PAK",
+        "irm": null,
+        "players": [
+          {
+            "id": "145481",
+            "name": "KHAN Perniya",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111260",
+        "name": "SHRESTHA Nabita",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "4-11",
+      "7-11",
+      "16-14",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP03.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 3 - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206827",
+        "name": "IBRAHIM Mishka",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "206827",
+            "name": "IBRAHIM Mishka",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116567",
+        "name": "SOMA Sonam",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116567",
+            "name": "SOMA Sonam",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-9",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP01.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 1 - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146081",
+        "name": "AKHYAR Ahmed",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "146081",
+            "name": "AKHYAR Ahmed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132915",
+        "name": "SHRESTHA Santoo",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "132915",
+            "name": "SHRESTHA Santoo",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "2-11",
+      "9-11",
+      "5-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP01.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 1 - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123237",
+        "name": "DE SILVA Jayasanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "123237",
+            "name": "DE SILVA Jayasanka",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200573",
+        "name": "BAWM Ramhimlian",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "11-2",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP02.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 2 - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134900",
+        "name": "KAPALI Sanyog",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "100196",
+        "name": "AHMED Moosa",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-6",
+      "5-11",
+      "13-15",
+      "6-11",
+      "11-9",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP02.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 2 - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145237",
+        "name": "RIDOY Mohutasin Ahmed",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145237",
+            "name": "RIDOY Mohutasin Ahmed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117902",
+        "name": "GINIGE Chameera",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117902",
+            "name": "GINIGE Chameera",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "6-11",
+      "6-11",
+      "11-6",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP01.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 1 - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134974",
+        "name": "ALI Fathimath",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136529",
+        "name": "BANDARA Bimandee",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "10-12",
+      "11-4",
+      "6-11",
+      "11-9",
+      "6-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP02.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 2 - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105681",
+        "name": "MADURANGI Ishara",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "105681",
+            "name": "MADURANGI Ishara",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132917",
+        "name": "MOU Sadia Rahman",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "132917",
+            "name": "MOU Sadia Rahman",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "11-2",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP03.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 3 - Match 3",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145481",
+        "name": "KHAN Perniya",
+        "org": "Pakistan",
+        "orgCode": "PAK",
+        "irm": null,
+        "players": [
+          {
+            "id": "145481",
+            "name": "KHAN Perniya",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "206827",
+        "name": "IBRAHIM Mishka",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "206827",
+            "name": "IBRAHIM Mishka",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-2",
+      "12-10",
+      "8-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP03.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 4,
+    "description": "Women's Singles - Group 3 - Match 4",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111260",
+        "name": "SHRESTHA Nabita",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116567",
+        "name": "SOMA Sonam",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116567",
+            "name": "SOMA Sonam",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "8-11",
+      "9-11",
+      "4-11",
+      "11-4",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP01.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 1 - Match 3",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146081",
+        "name": "AKHYAR Ahmed",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "146081",
+            "name": "AKHYAR Ahmed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123237",
+        "name": "DE SILVA Jayasanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "123237",
+            "name": "DE SILVA Jayasanka",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-6",
+      "11-8",
+      "9-11",
+      "4-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP01.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "Men's Singles - Group 1 - Match 4",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132915",
+        "name": "SHRESTHA Santoo",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "132915",
+            "name": "SHRESTHA Santoo",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200573",
+        "name": "BAWM Ramhimlian",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "12-10",
+      "9-11",
+      "12-10",
+      "5-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP02.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 2 - Match 3",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134900",
+        "name": "KAPALI Sanyog",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145237",
+        "name": "RIDOY Mohutasin Ahmed",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145237",
+            "name": "RIDOY Mohutasin Ahmed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-7",
+      "3-11",
+      "13-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP02.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 4,
+    "description": "Men's Singles - Group 2 - Match 4",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "100196",
+        "name": "AHMED Moosa",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117902",
+        "name": "GINIGE Chameera",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117902",
+            "name": "GINIGE Chameera",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "8-11",
+      "11-7",
+      "9-11",
+      "11-9",
+      "7-11",
+      "16-18"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP01.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 1 - Match 3",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136529",
+        "name": "BANDARA Bimandee",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200042",
+        "name": "FAWAD Hoor",
+        "org": "Pakistan",
+        "orgCode": "PAK",
+        "irm": null,
+        "players": [
+          {
+            "id": "200042",
+            "name": "FAWAD Hoor",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-4",
+      "11-5",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP02.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 2 - Match 3",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132917",
+        "name": "MOU Sadia Rahman",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "132917",
+            "name": "MOU Sadia Rahman",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200578",
+        "name": "THAPA Evana",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "6-11",
+      "3-11",
+      "15-13",
+      "11-9",
+      "13-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP03.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 5,
+    "description": "Women's Singles - Group 3 - Match 5",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145481",
+        "name": "KHAN Perniya",
+        "org": "Pakistan",
+        "orgCode": "PAK",
+        "irm": null,
+        "players": [
+          {
+            "id": "145481",
+            "name": "KHAN Perniya",
+            "org": "Pakistan",
+            "orgCode": "PAK",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116567",
+        "name": "SOMA Sonam",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116567",
+            "name": "SOMA Sonam",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-6",
+      "6-11",
+      "10-12",
+      "11-7",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.GP03.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 6,
+    "description": "Women's Singles - Group 3 - Match 6",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206827",
+        "name": "IBRAHIM Mishka",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "206827",
+            "name": "IBRAHIM Mishka",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111260",
+        "name": "SHRESTHA Nabita",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-13",
+      "11-5",
+      "9-11",
+      "7-11",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP01.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "Men's Singles - Group 1 - Match 5",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146081",
+        "name": "AKHYAR Ahmed",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "146081",
+            "name": "AKHYAR Ahmed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200573",
+        "name": "BAWM Ramhimlian",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-13",
+      "6-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP01.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "Men's Singles - Group 1 - Match 6",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123237",
+        "name": "DE SILVA Jayasanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "123237",
+            "name": "DE SILVA Jayasanka",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132915",
+        "name": "SHRESTHA Santoo",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "132915",
+            "name": "SHRESTHA Santoo",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "5-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP02.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 5,
+    "description": "Men's Singles - Group 2 - Match 5",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134900",
+        "name": "KAPALI Sanyog",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117902",
+        "name": "GINIGE Chameera",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117902",
+            "name": "GINIGE Chameera",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-9",
+      "11-5",
+      "4-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.GP02.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 6,
+    "description": "Men's Singles - Group 2 - Match 6",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145237",
+        "name": "RIDOY Mohutasin Ahmed",
+        "org": "Bangladesh",
+        "orgCode": "BAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "145237",
+            "name": "RIDOY Mohutasin Ahmed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "100196",
+        "name": "AHMED Moosa",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "16-14",
+      "11-8",
+      "9-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105681",
+        "name": "MADURANGI Ishara",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "105681",
+            "name": "MADURANGI Ishara",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111260",
+        "name": "SHRESTHA Nabita",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-4",
+      "11-6",
+      "11-13",
+      "5-11",
+      "2-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals - Match 3",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "206827",
+        "name": "IBRAHIM Mishka",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "206827",
+            "name": "IBRAHIM Mishka",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136529",
+        "name": "BANDARA Bimandee",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "7-11",
+      "5-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134974",
+        "name": "ALI Fathimath",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105681",
+        "name": "MADURANGI Ishara",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "105681",
+            "name": "MADURANGI Ishara",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "8-11",
+      "11-5",
+      "11-9",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136529",
+        "name": "BANDARA Bimandee",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200578",
+        "name": "THAPA Evana",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-2",
+      "6-11",
+      "11-3",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132915",
+        "name": "SHRESTHA Santoo",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "132915",
+            "name": "SHRESTHA Santoo",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117902",
+        "name": "GINIGE Chameera",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "117902",
+            "name": "GINIGE Chameera",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "6-11",
+      "8-11",
+      "11-3",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123237",
+        "name": "DE SILVA Jayasanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "123237",
+            "name": "DE SILVA Jayasanka",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134900",
+        "name": "KAPALI Sanyog",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-13",
+      "7-11",
+      "10-12",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134974",
+        "name": "ALI Fathimath",
+        "org": "Maldives",
+        "orgCode": "MDV",
+        "irm": null,
+        "players": [
+          {
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136529",
+        "name": "BANDARA Bimandee",
+        "org": "Sri Lanka",
+        "orgCode": "SRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "8-11",
+      "13-11",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2953",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals - Match 1",
+    "venue": "National Table Tennis Training Centre",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132915",
+        "name": "SHRESTHA Santoo",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "132915",
+            "name": "SHRESTHA Santoo",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134900",
+        "name": "KAPALI Sanyog",
+        "org": "Nepal",
+        "orgCode": "NEP",
+        "irm": null,
+        "players": [
+          {
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "8-11",
+      "11-7",
+      "11-6",
+      "8-11",
+      "8-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  }
+]

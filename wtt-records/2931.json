@@ -1,0 +1,3663 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.8FNL.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Round of 16 KO1 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2824",
+        "name": "SANGUANSIN Phakpoom/PARANANG Orawan",
+        "org": "Thailand",
+        "orgCode": "THA",
+        "irm": null,
+        "players": [
+          {
+            "id": "108276",
+            "name": "SANGUANSIN Phakpoom",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 1
+          },
+          {
+            "id": "120972",
+            "name": "PARANANG Orawan",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2913",
+        "name": "KUMAR Nikhil/WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          },
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "8-11",
+      "11-9",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.8FNL.000600--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 6,
+    "description": "Mixed Doubles - Round of 16 KO1 - Match 6",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2736",
+        "name": "RI Jong Sik/KIM Kum Yong",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "132881",
+            "name": "RI Jong Sik",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          },
+          {
+            "id": "136607",
+            "name": "KIM Kum Yong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2754",
+        "name": "PISTEJ Lubomir/BALAZOVA Barbora",
+        "org": "Slovakia",
+        "orgCode": "SVK",
+        "irm": null,
+        "players": [
+          {
+            "id": "107445",
+            "name": "PISTEJ Lubomir",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 1
+          },
+          {
+            "id": "100868",
+            "name": "BALAZOVA Barbora",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "10-12",
+      "12-10",
+      "11-3",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.8FNL.000500--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 5,
+    "description": "Mixed Doubles - Round of 16 KO1 - Match 5",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2815",
+        "name": "GNANASEKARAN Sathiyan/BATRA Manika",
+        "org": "India",
+        "orgCode": "IND",
+        "irm": null,
+        "players": [
+          {
+            "id": "103126",
+            "name": "GNANASEKARAN Sathiyan",
+            "org": "India",
+            "orgCode": "IND",
+            "position": 1
+          },
+          {
+            "id": "115920",
+            "name": "BATRA Manika",
+            "org": "India",
+            "orgCode": "IND",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2838",
+        "name": "STAMATOUROS Georgios/PAPADIMITRIOU Malamatenia",
+        "org": "Greece",
+        "orgCode": "GRE",
+        "irm": null,
+        "players": [
+          {
+            "id": "123514",
+            "name": "STAMATOUROS Georgios",
+            "org": "Greece",
+            "orgCode": "GRE",
+            "position": 1
+          },
+          {
+            "id": "132780",
+            "name": "PAPADIMITRIOU Malamatenia",
+            "org": "Greece",
+            "orgCode": "GRE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-9",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.8FNL.000700--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 7,
+    "description": "Mixed Doubles - Round of 16 KO1 - Match 7",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2832",
+        "name": "OYEBODE John/MONFARDINI Gaia",
+        "org": "Italy",
+        "orgCode": "ITA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122051",
+            "name": "OYEBODE John",
+            "org": "Italy",
+            "orgCode": "ITA",
+            "position": 1
+          },
+          {
+            "id": "120294",
+            "name": "MONFARDINI Gaia",
+            "org": "Italy",
+            "orgCode": "ITA",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2837",
+        "name": "VALENTA Jan/BLASKOVA Zdena",
+        "org": "Czech Republic",
+        "orgCode": "CZE",
+        "irm": null,
+        "players": [
+          {
+            "id": "123664",
+            "name": "VALENTA Jan",
+            "org": "Czech Republic",
+            "orgCode": "CZE",
+            "position": 1
+          },
+          {
+            "id": "123535",
+            "name": "BLASKOVA Zdena",
+            "org": "Czech Republic",
+            "orgCode": "CZE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "8-11",
+      "10-12",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.8FNL.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Round of 16 KO1 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2833",
+        "name": "LEVAJAC Dimitrije/LUPULESKU Izabela",
+        "org": "Serbia",
+        "orgCode": "SRB",
+        "irm": null,
+        "players": [
+          {
+            "id": "123192",
+            "name": "LEVAJAC Dimitrije",
+            "org": "Serbia",
+            "orgCode": "SRB",
+            "position": 1
+          },
+          {
+            "id": "120187",
+            "name": "LUPULESKU Izabela",
+            "org": "Serbia",
+            "orgCode": "SRB",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2836",
+        "name": "NAYRE Jann Mari/CRUZ Kheith",
+        "org": "Philippines",
+        "orgCode": "PHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "123864",
+            "name": "NAYRE Jann Mari",
+            "org": "Philippines",
+            "orgCode": "PHI",
+            "position": 1
+          },
+          {
+            "id": "136491",
+            "name": "CRUZ Kheith",
+            "org": "Philippines",
+            "orgCode": "PHI",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-3",
+      "7-11",
+      "6-11",
+      "12-10",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1616.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Round of 16 KO2 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2745",
+        "name": "KULCZYCKI Samuel/WIELGOS Zuzanna",
+        "org": "Poland",
+        "orgCode": "POL",
+        "irm": null,
+        "players": [
+          {
+            "id": "121031",
+            "name": "KULCZYCKI Samuel",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 1
+          },
+          {
+            "id": "135039",
+            "name": "WIELGOS Zuzanna",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2753",
+        "name": "LIMONOV Anton/BRATEYKO Solomiya",
+        "org": "Ukraine",
+        "orgCode": "UKR",
+        "irm": null,
+        "players": [
+          {
+            "id": "124147",
+            "name": "LIMONOV Anton",
+            "org": "Ukraine",
+            "orgCode": "UKR",
+            "position": 1
+          },
+          {
+            "id": "122348",
+            "name": "BRATEYKO Solomiya",
+            "org": "Ukraine",
+            "orgCode": "UKR",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "11-9",
+      "11-7",
+      "7-11",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1616.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Round of 16 KO2 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2732",
+        "name": "GUNDUZ Ibrahim/ALTINKAYA Sibel",
+        "org": "Turkey",
+        "orgCode": "TUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "120168",
+            "name": "GUNDUZ Ibrahim",
+            "org": "Turkey",
+            "orgCode": "TUR",
+            "position": 1
+          },
+          {
+            "id": "112944",
+            "name": "ALTINKAYA Sibel",
+            "org": "Turkey",
+            "orgCode": "TUR",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2738",
+        "name": "URSU Vladislav/CHIRIACOVA Alexandra",
+        "org": "Rep. of Moldova",
+        "orgCode": "MDA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122320",
+            "name": "URSU Vladislav",
+            "org": "Rep. of Moldova",
+            "orgCode": "MDA",
+            "position": 1
+          },
+          {
+            "id": "146263",
+            "name": "CHIRIACOVA Alexandra",
+            "org": "Rep. of Moldova",
+            "orgCode": "MDA",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "9-11",
+      "13-11",
+      "8-11",
+      "8-11",
+      "11-6",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1616.000500--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 5,
+    "description": "Mixed Doubles - Round of 16 KO2 - Match 5",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2740",
+        "name": "MLADENOVIC Luka/NI Xia Lian",
+        "org": "Luxembourg",
+        "orgCode": "LUX",
+        "irm": null,
+        "players": [
+          {
+            "id": "120074",
+            "name": "MLADENOVIC Luka",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 1
+          },
+          {
+            "id": "106706",
+            "name": "NI Xia Lian",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2827",
+        "name": "KUNATS Heorhi/BARAVOK Katsiaryna",
+        "org": "AIN",
+        "orgCode": "AIN",
+        "irm": null,
+        "players": [
+          {
+            "id": "131997",
+            "name": "KUNATS Heorhi",
+            "org": "",
+            "orgCode": "AIN",
+            "position": 1
+          },
+          {
+            "id": "111144",
+            "name": "BARAVOK Katsiaryna",
+            "org": "",
+            "orgCode": "AIN",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-4",
+      "11-2",
+      "2-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1616.000700--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 7,
+    "description": "Mixed Doubles - Round of 16 KO2 - Match 7",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2822",
+        "name": "BURGOS Nicolas/VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          },
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2737",
+        "name": "KODJABASHEV Denislav/YOVKOVA Maria",
+        "org": "Bulgaria",
+        "orgCode": "BUL",
+        "irm": null,
+        "players": [
+          {
+            "id": "112950",
+            "name": "KODJABASHEV Denislav",
+            "org": "Bulgaria",
+            "orgCode": "BUL",
+            "position": 1
+          },
+          {
+            "id": "117455",
+            "name": "YOVKOVA Maria",
+            "org": "Bulgaria",
+            "orgCode": "BUL",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "11-4",
+      "11-8",
+      "7-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1616.000600--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 6,
+    "description": "Mixed Doubles - Round of 16 KO2 - Match 6",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2823",
+        "name": "CHOONG Javen/LYNE Karen",
+        "org": "Malaysia",
+        "orgCode": "MAS",
+        "irm": null,
+        "players": [
+          {
+            "id": "131932",
+            "name": "CHOONG Javen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 1
+          },
+          {
+            "id": "132892",
+            "name": "LYNE Karen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2744",
+        "name": "CHEW Zhe Yu Clarence/ZENG Jian",
+        "org": "Singapore",
+        "orgCode": "SGP",
+        "irm": null,
+        "players": [
+          {
+            "id": "113395",
+            "name": "CHEW Zhe Yu Clarence",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 1
+          },
+          {
+            "id": "131342",
+            "name": "ZENG Jian",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-9",
+      "6-11",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.QFNL.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Quarterfinals KO1 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2815",
+        "name": "GNANASEKARAN Sathiyan/BATRA Manika",
+        "org": "India",
+        "orgCode": "IND",
+        "irm": null,
+        "players": [
+          {
+            "id": "103126",
+            "name": "GNANASEKARAN Sathiyan",
+            "org": "India",
+            "orgCode": "IND",
+            "position": 1
+          },
+          {
+            "id": "115920",
+            "name": "BATRA Manika",
+            "org": "India",
+            "orgCode": "IND",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2736",
+        "name": "RI Jong Sik/KIM Kum Yong",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "132881",
+            "name": "RI Jong Sik",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          },
+          {
+            "id": "136607",
+            "name": "KIM Kum Yong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "10-12",
+      "11-9",
+      "6-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.QFNL.000400--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 4,
+    "description": "Mixed Doubles - Quarterfinals KO1 - Match 4",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2837",
+        "name": "VALENTA Jan/BLASKOVA Zdena",
+        "org": "Czech Republic",
+        "orgCode": "CZE",
+        "irm": null,
+        "players": [
+          {
+            "id": "123664",
+            "name": "VALENTA Jan",
+            "org": "Czech Republic",
+            "orgCode": "CZE",
+            "position": 1
+          },
+          {
+            "id": "123535",
+            "name": "BLASKOVA Zdena",
+            "org": "Czech Republic",
+            "orgCode": "CZE",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2742",
+        "name": "ECSEKI Nandor/MADARASZ Dora",
+        "org": "Hungary",
+        "orgCode": "HUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114716",
+            "name": "ECSEKI Nandor",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 1
+          },
+          {
+            "id": "111213",
+            "name": "MADARASZ Dora",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "9-11",
+      "11-6",
+      "11-9",
+      "11-7",
+      "4-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.QFNL.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Quarterfinals KO1 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 3",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2735",
+        "name": "ROBLES Alvaro/XIAO Maria",
+        "org": "Spain",
+        "orgCode": "ESP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111050",
+            "name": "ROBLES Alvaro",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 1
+          },
+          {
+            "id": "111072",
+            "name": "XIAO Maria",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2824",
+        "name": "SANGUANSIN Phakpoom/PARANANG Orawan",
+        "org": "Thailand",
+        "orgCode": "THA",
+        "irm": null,
+        "players": [
+          {
+            "id": "108276",
+            "name": "SANGUANSIN Phakpoom",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 1
+          },
+          {
+            "id": "120972",
+            "name": "PARANANG Orawan",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "9-11",
+      "11-7",
+      "11-2",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.QFNL.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Quarterfinals KO1 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2833",
+        "name": "LEVAJAC Dimitrije/LUPULESKU Izabela",
+        "org": "Serbia",
+        "orgCode": "SRB",
+        "irm": null,
+        "players": [
+          {
+            "id": "123192",
+            "name": "LEVAJAC Dimitrije",
+            "org": "Serbia",
+            "orgCode": "SRB",
+            "position": 1
+          },
+          {
+            "id": "120187",
+            "name": "LUPULESKU Izabela",
+            "org": "Serbia",
+            "orgCode": "SRB",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2743",
+        "name": "GARDOS Robert/POLCANOVA Sofia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "102968",
+            "name": "GARDOS Robert",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          },
+          {
+            "id": "107477",
+            "name": "POLCANOVA Sofia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "4-11",
+      "1-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.916-.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": " Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 1,
+    "description": "Mixed Doubles -  Quarterfinals KO2 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2781",
+        "name": "WONG Chun Ting/DOO Hoi Kem",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG",
+        "irm": null,
+        "players": [
+          {
+            "id": "112620",
+            "name": "WONG Chun Ting",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 1
+          },
+          {
+            "id": "115543",
+            "name": "DOO Hoi Kem",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2745",
+        "name": "KULCZYCKI Samuel/WIELGOS Zuzanna",
+        "org": "Poland",
+        "orgCode": "POL",
+        "irm": null,
+        "players": [
+          {
+            "id": "121031",
+            "name": "KULCZYCKI Samuel",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 1
+          },
+          {
+            "id": "135039",
+            "name": "WIELGOS Zuzanna",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "6-11",
+      "11-3",
+      "11-6",
+      "11-7",
+      "8-11",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.916-.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": " Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 2,
+    "description": "Mixed Doubles -  Quarterfinals KO2 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2732",
+        "name": "GUNDUZ Ibrahim/ALTINKAYA Sibel",
+        "org": "Turkey",
+        "orgCode": "TUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "120168",
+            "name": "GUNDUZ Ibrahim",
+            "org": "Turkey",
+            "orgCode": "TUR",
+            "position": 1
+          },
+          {
+            "id": "112944",
+            "name": "ALTINKAYA Sibel",
+            "org": "Turkey",
+            "orgCode": "TUR",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2828",
+        "name": "KARLSSON Kristian/KALLBERG Christina",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "104379",
+            "name": "KARLSSON Kristian",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          },
+          {
+            "id": "118507",
+            "name": "KALLBERG Christina",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "8-11",
+      "7-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.916-.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": " Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 3,
+    "description": "Mixed Doubles -  Quarterfinals KO2 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 3",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2740",
+        "name": "MLADENOVIC Luka/NI Xia Lian",
+        "org": "Luxembourg",
+        "orgCode": "LUX",
+        "irm": null,
+        "players": [
+          {
+            "id": "120074",
+            "name": "MLADENOVIC Luka",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 1
+          },
+          {
+            "id": "106706",
+            "name": "NI Xia Lian",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2823",
+        "name": "CHOONG Javen/LYNE Karen",
+        "org": "Malaysia",
+        "orgCode": "MAS",
+        "irm": null,
+        "players": [
+          {
+            "id": "131932",
+            "name": "CHOONG Javen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 1
+          },
+          {
+            "id": "132892",
+            "name": "LYNE Karen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-4",
+      "10-12",
+      "7-11",
+      "9-11",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.916-.000400--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": " Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 4,
+    "description": "Mixed Doubles -  Quarterfinals KO2 - Match 4",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2822",
+        "name": "BURGOS Nicolas/VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          },
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2755",
+        "name": "IONESCU Ovidiu/SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "103903",
+            "name": "IONESCU Ovidiu",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          },
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "7-11",
+      "8-11",
+      "4-11",
+      "11-8",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.SFNL.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO1",
+    "roundKey": "semifinals ko1",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Semifinals KO1 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2735",
+        "name": "ROBLES Alvaro/XIAO Maria",
+        "org": "Spain",
+        "orgCode": "ESP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111050",
+            "name": "ROBLES Alvaro",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 1
+          },
+          {
+            "id": "111072",
+            "name": "XIAO Maria",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2743",
+        "name": "GARDOS Robert/POLCANOVA Sofia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "102968",
+            "name": "GARDOS Robert",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          },
+          {
+            "id": "107477",
+            "name": "POLCANOVA Sofia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-5",
+      "11-2",
+      "11-4",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.SFNL.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO1",
+    "roundKey": "semifinals ko1",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Semifinals KO1 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2736",
+        "name": "RI Jong Sik/KIM Kum Yong",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "132881",
+            "name": "RI Jong Sik",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          },
+          {
+            "id": "136607",
+            "name": "KIM Kum Yong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2742",
+        "name": "ECSEKI Nandor/MADARASZ Dora",
+        "org": "Hungary",
+        "orgCode": "HUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114716",
+            "name": "ECSEKI Nandor",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 1
+          },
+          {
+            "id": "111213",
+            "name": "MADARASZ Dora",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "4-11",
+      "11-7",
+      "16-14",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.912-.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO2",
+    "roundKey": "semifinals ko2",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Semifinals KO2 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2740",
+        "name": "MLADENOVIC Luka/NI Xia Lian",
+        "org": "Luxembourg",
+        "orgCode": "LUX",
+        "irm": null,
+        "players": [
+          {
+            "id": "120074",
+            "name": "MLADENOVIC Luka",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 1
+          },
+          {
+            "id": "106706",
+            "name": "NI Xia Lian",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2755",
+        "name": "IONESCU Ovidiu/SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "103903",
+            "name": "IONESCU Ovidiu",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          },
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "7-11",
+      "11-3",
+      "11-3",
+      "9-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.912-.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO2",
+    "roundKey": "semifinals ko2",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Semifinals KO2 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2781",
+        "name": "WONG Chun Ting/DOO Hoi Kem",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG",
+        "irm": null,
+        "players": [
+          {
+            "id": "112620",
+            "name": "WONG Chun Ting",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 1
+          },
+          {
+            "id": "115543",
+            "name": "DOO Hoi Kem",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2828",
+        "name": "KARLSSON Kristian/KALLBERG Christina",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "104379",
+            "name": "KARLSSON Kristian",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          },
+          {
+            "id": "118507",
+            "name": "KALLBERG Christina",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-5",
+      "8-11",
+      "11-8",
+      "11-5",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.FNL-.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Finals KO1",
+    "roundKey": "finals ko1",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Finals KO1 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2735",
+        "name": "ROBLES Alvaro/XIAO Maria",
+        "org": "Spain",
+        "orgCode": "ESP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111050",
+            "name": "ROBLES Alvaro",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 1
+          },
+          {
+            "id": "111072",
+            "name": "XIAO Maria",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2736",
+        "name": "RI Jong Sik/KIM Kum Yong",
+        "org": "DPR Korea",
+        "orgCode": "PRK",
+        "irm": null,
+        "players": [
+          {
+            "id": "132881",
+            "name": "RI Jong Sik",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 1
+          },
+          {
+            "id": "136607",
+            "name": "KIM Kum Yong",
+            "org": "DPR Korea",
+            "orgCode": "PRK",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-9",
+      "11-6",
+      "7-11",
+      "15-13",
+      "9-11",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.34--.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Finals KO2",
+    "roundKey": "finals ko2",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Finals KO2 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2781",
+        "name": "WONG Chun Ting/DOO Hoi Kem",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG",
+        "irm": null,
+        "players": [
+          {
+            "id": "112620",
+            "name": "WONG Chun Ting",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 1
+          },
+          {
+            "id": "115543",
+            "name": "DOO Hoi Kem",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2740",
+        "name": "MLADENOVIC Luka/NI Xia Lian",
+        "org": "Luxembourg",
+        "orgCode": "LUX",
+        "irm": null,
+        "players": [
+          {
+            "id": "120074",
+            "name": "MLADENOVIC Luka",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 1
+          },
+          {
+            "id": "106706",
+            "name": "NI Xia Lian",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "7-11",
+      "11-6",
+      "11-9",
+      "10-12",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1724.000700--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 7,
+    "description": "Mixed Doubles - Round of 16 KO3 - Match 7",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2732",
+        "name": "GUNDUZ Ibrahim/ALTINKAYA Sibel",
+        "org": "Turkey",
+        "orgCode": "TUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "120168",
+            "name": "GUNDUZ Ibrahim",
+            "org": "Turkey",
+            "orgCode": "TUR",
+            "position": 1
+          },
+          {
+            "id": "112944",
+            "name": "ALTINKAYA Sibel",
+            "org": "Turkey",
+            "orgCode": "TUR",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2913",
+        "name": "KUMAR Nikhil/WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          },
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-6",
+      "11-7",
+      "4-11",
+      "10-12",
+      "11-9",
+      "12-14"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1724.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Round of 16 KO3 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2738",
+        "name": "URSU Vladislav/CHIRIACOVA Alexandra",
+        "org": "Rep. of Moldova",
+        "orgCode": "MDA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122320",
+            "name": "URSU Vladislav",
+            "org": "Rep. of Moldova",
+            "orgCode": "MDA",
+            "position": 1
+          },
+          {
+            "id": "146263",
+            "name": "CHIRIACOVA Alexandra",
+            "org": "Rep. of Moldova",
+            "orgCode": "MDA",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2837",
+        "name": "VALENTA Jan/BLASKOVA Zdena",
+        "org": "Czech Republic",
+        "orgCode": "CZE",
+        "irm": null,
+        "players": [
+          {
+            "id": "123664",
+            "name": "VALENTA Jan",
+            "org": "Czech Republic",
+            "orgCode": "CZE",
+            "position": 1
+          },
+          {
+            "id": "123535",
+            "name": "BLASKOVA Zdena",
+            "org": "Czech Republic",
+            "orgCode": "CZE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "8-11",
+      "11-8",
+      "6-11",
+      "11-9",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1724.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Round of 16 KO3 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2745",
+        "name": "KULCZYCKI Samuel/WIELGOS Zuzanna",
+        "org": "Poland",
+        "orgCode": "POL",
+        "irm": null,
+        "players": [
+          {
+            "id": "121031",
+            "name": "KULCZYCKI Samuel",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 1
+          },
+          {
+            "id": "135039",
+            "name": "WIELGOS Zuzanna",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2836",
+        "name": "NAYRE Jann Mari/CRUZ Kheith",
+        "org": "Philippines",
+        "orgCode": "PHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "123864",
+            "name": "NAYRE Jann Mari",
+            "org": "Philippines",
+            "orgCode": "PHI",
+            "position": 1
+          },
+          {
+            "id": "136491",
+            "name": "CRUZ Kheith",
+            "org": "Philippines",
+            "orgCode": "PHI",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-9",
+      "11-6",
+      "4-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1724.000600--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 6,
+    "description": "Mixed Doubles - Round of 16 KO3 - Match 6",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2838",
+        "name": "STAMATOUROS Georgios/PAPADIMITRIOU Malamatenia",
+        "org": "Greece",
+        "orgCode": "GRE",
+        "irm": null,
+        "players": [
+          {
+            "id": "123514",
+            "name": "STAMATOUROS Georgios",
+            "org": "Greece",
+            "orgCode": "GRE",
+            "position": 1
+          },
+          {
+            "id": "132780",
+            "name": "PAPADIMITRIOU Malamatenia",
+            "org": "Greece",
+            "orgCode": "GRE",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2823",
+        "name": "CHOONG Javen/LYNE Karen",
+        "org": "Malaysia",
+        "orgCode": "MAS",
+        "irm": null,
+        "players": [
+          {
+            "id": "131932",
+            "name": "CHOONG Javen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 1
+          },
+          {
+            "id": "132892",
+            "name": "LYNE Karen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "4-11",
+      "6-11",
+      "11-9",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2526.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Round of 16 KO4 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2753",
+        "name": "LIMONOV Anton/BRATEYKO Solomiya",
+        "org": "Ukraine",
+        "orgCode": "UKR",
+        "irm": null,
+        "players": [
+          {
+            "id": "124147",
+            "name": "LIMONOV Anton",
+            "org": "Ukraine",
+            "orgCode": "UKR",
+            "position": 1
+          },
+          {
+            "id": "122348",
+            "name": "BRATEYKO Solomiya",
+            "org": "Ukraine",
+            "orgCode": "UKR",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2744",
+        "name": "CHEW Zhe Yu Clarence/ZENG Jian",
+        "org": "Singapore",
+        "orgCode": "SGP",
+        "irm": null,
+        "players": [
+          {
+            "id": "113395",
+            "name": "CHEW Zhe Yu Clarence",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 1
+          },
+          {
+            "id": "131342",
+            "name": "ZENG Jian",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "12-10",
+      "7-11",
+      "6-11",
+      "5-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2526.000700--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 7,
+    "description": "Mixed Doubles - Round of 16 KO4 - Match 7",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2754",
+        "name": "PISTEJ Lubomir/BALAZOVA Barbora",
+        "org": "Slovakia",
+        "orgCode": "SVK",
+        "irm": null,
+        "players": [
+          {
+            "id": "107445",
+            "name": "PISTEJ Lubomir",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 1
+          },
+          {
+            "id": "100868",
+            "name": "BALAZOVA Barbora",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2827",
+        "name": "KUNATS Heorhi/BARAVOK Katsiaryna",
+        "org": "AIN",
+        "orgCode": "AIN",
+        "irm": null,
+        "players": [
+          {
+            "id": "131997",
+            "name": "KUNATS Heorhi",
+            "org": "",
+            "orgCode": "AIN",
+            "position": 1
+          },
+          {
+            "id": "111144",
+            "name": "BARAVOK Katsiaryna",
+            "org": "",
+            "orgCode": "AIN",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "11-8",
+      "11-3",
+      "9-11",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2526.000600--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 6,
+    "description": "Mixed Doubles - Round of 16 KO4 - Match 6",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2737",
+        "name": "KODJABASHEV Denislav/YOVKOVA Maria",
+        "org": "Bulgaria",
+        "orgCode": "BUL",
+        "irm": null,
+        "players": [
+          {
+            "id": "112950",
+            "name": "KODJABASHEV Denislav",
+            "org": "Bulgaria",
+            "orgCode": "BUL",
+            "position": 1
+          },
+          {
+            "id": "117455",
+            "name": "YOVKOVA Maria",
+            "org": "Bulgaria",
+            "orgCode": "BUL",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2833",
+        "name": "LEVAJAC Dimitrije/LUPULESKU Izabela",
+        "org": "Serbia",
+        "orgCode": "SRB",
+        "irm": null,
+        "players": [
+          {
+            "id": "123192",
+            "name": "LEVAJAC Dimitrije",
+            "org": "Serbia",
+            "orgCode": "SRB",
+            "position": 1
+          },
+          {
+            "id": "120187",
+            "name": "LUPULESKU Izabela",
+            "org": "Serbia",
+            "orgCode": "SRB",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-8",
+      "11-9",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2526.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Round of 16 KO4 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2824",
+        "name": "SANGUANSIN Phakpoom/PARANANG Orawan",
+        "org": "Thailand",
+        "orgCode": "THA",
+        "irm": null,
+        "players": [
+          {
+            "id": "108276",
+            "name": "SANGUANSIN Phakpoom",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 1
+          },
+          {
+            "id": "120972",
+            "name": "PARANANG Orawan",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2832",
+        "name": "OYEBODE John/MONFARDINI Gaia",
+        "org": "Italy",
+        "orgCode": "ITA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122051",
+            "name": "OYEBODE John",
+            "org": "Italy",
+            "orgCode": "ITA",
+            "position": 1
+          },
+          {
+            "id": "120294",
+            "name": "MONFARDINI Gaia",
+            "org": "Italy",
+            "orgCode": "ITA",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "9-11",
+      "11-5",
+      "5-11",
+      "12-10",
+      "2-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1720.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Quarterfinals KO3 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2815",
+        "name": "GNANASEKARAN Sathiyan/BATRA Manika",
+        "org": "India",
+        "orgCode": "IND",
+        "irm": null,
+        "players": [
+          {
+            "id": "103126",
+            "name": "GNANASEKARAN Sathiyan",
+            "org": "India",
+            "orgCode": "IND",
+            "position": 1
+          },
+          {
+            "id": "115920",
+            "name": "BATRA Manika",
+            "org": "India",
+            "orgCode": "IND",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2823",
+        "name": "CHOONG Javen/LYNE Karen",
+        "org": "Malaysia",
+        "orgCode": "MAS",
+        "irm": null,
+        "players": [
+          {
+            "id": "131932",
+            "name": "CHOONG Javen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 1
+          },
+          {
+            "id": "132892",
+            "name": "LYNE Karen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "9-11",
+      "9-11",
+      "11-7",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1720.000400--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 4,
+    "description": "Mixed Doubles - Quarterfinals KO3 - Match 4",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2913",
+        "name": "KUMAR Nikhil/WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          },
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2755",
+        "name": "IONESCU Ovidiu/SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "103903",
+            "name": "IONESCU Ovidiu",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          },
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "7-11",
+      "12-10",
+      "6-11",
+      "13-11",
+      "10-12",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1720.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Quarterfinals KO3 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 3",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2735",
+        "name": "ROBLES Alvaro/XIAO Maria",
+        "org": "Spain",
+        "orgCode": "ESP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111050",
+            "name": "ROBLES Alvaro",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 1
+          },
+          {
+            "id": "111072",
+            "name": "XIAO Maria",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2738",
+        "name": "URSU Vladislav/CHIRIACOVA Alexandra",
+        "org": "Rep. of Moldova",
+        "orgCode": "MDA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122320",
+            "name": "URSU Vladislav",
+            "org": "Rep. of Moldova",
+            "orgCode": "MDA",
+            "position": 1
+          },
+          {
+            "id": "146263",
+            "name": "CHIRIACOVA Alexandra",
+            "org": "Rep. of Moldova",
+            "orgCode": "MDA",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-7",
+      "8-11",
+      "10-12",
+      "11-5",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1720.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Quarterfinals KO3 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2745",
+        "name": "KULCZYCKI Samuel/WIELGOS Zuzanna",
+        "org": "Poland",
+        "orgCode": "POL",
+        "irm": null,
+        "players": [
+          {
+            "id": "121031",
+            "name": "KULCZYCKI Samuel",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 1
+          },
+          {
+            "id": "135039",
+            "name": "WIELGOS Zuzanna",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2822",
+        "name": "BURGOS Nicolas/VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          },
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-6",
+      "11-9",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2124.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Quarterfinals KO4 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2824",
+        "name": "SANGUANSIN Phakpoom/PARANANG Orawan",
+        "org": "Thailand",
+        "orgCode": "THA",
+        "irm": null,
+        "players": [
+          {
+            "id": "108276",
+            "name": "SANGUANSIN Phakpoom",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 1
+          },
+          {
+            "id": "120972",
+            "name": "PARANANG Orawan",
+            "org": "Thailand",
+            "orgCode": "THA",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2828",
+        "name": "KARLSSON Kristian/KALLBERG Christina",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "104379",
+            "name": "KARLSSON Kristian",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          },
+          {
+            "id": "118507",
+            "name": "KALLBERG Christina",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-8",
+      "9-11",
+      "10-12",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2124.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Quarterfinals KO4 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2740",
+        "name": "MLADENOVIC Luka/NI Xia Lian",
+        "org": "Luxembourg",
+        "orgCode": "LUX",
+        "irm": null,
+        "players": [
+          {
+            "id": "120074",
+            "name": "MLADENOVIC Luka",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 1
+          },
+          {
+            "id": "106706",
+            "name": "NI Xia Lian",
+            "org": "Luxembourg",
+            "orgCode": "LUX",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2744",
+        "name": "CHEW Zhe Yu Clarence/ZENG Jian",
+        "org": "Singapore",
+        "orgCode": "SGP",
+        "irm": null,
+        "players": [
+          {
+            "id": "113395",
+            "name": "CHEW Zhe Yu Clarence",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 1
+          },
+          {
+            "id": "131342",
+            "name": "ZENG Jian",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "12-14",
+      "8-11",
+      "7-11",
+      "11-9",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2124.000300--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 3,
+    "description": "Mixed Doubles - Quarterfinals KO4 - Match 3",
+    "venue": "National Training Center Havirov",
+    "table": "Table 3",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2743",
+        "name": "GARDOS Robert/POLCANOVA Sofia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "102968",
+            "name": "GARDOS Robert",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          },
+          {
+            "id": "107477",
+            "name": "POLCANOVA Sofia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2737",
+        "name": "KODJABASHEV Denislav/YOVKOVA Maria",
+        "org": "Bulgaria",
+        "orgCode": "BUL",
+        "irm": null,
+        "players": [
+          {
+            "id": "112950",
+            "name": "KODJABASHEV Denislav",
+            "org": "Bulgaria",
+            "orgCode": "BUL",
+            "position": 1
+          },
+          {
+            "id": "117455",
+            "name": "YOVKOVA Maria",
+            "org": "Bulgaria",
+            "orgCode": "BUL",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-5",
+      "11-7",
+      "11-4",
+      "9-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2124.000400--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 4,
+    "description": "Mixed Doubles - Quarterfinals KO4 - Match 4",
+    "venue": "National Training Center Havirov",
+    "table": "Table 4",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2754",
+        "name": "PISTEJ Lubomir/BALAZOVA Barbora",
+        "org": "Slovakia",
+        "orgCode": "SVK",
+        "irm": null,
+        "players": [
+          {
+            "id": "107445",
+            "name": "PISTEJ Lubomir",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 1
+          },
+          {
+            "id": "100868",
+            "name": "BALAZOVA Barbora",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2742",
+        "name": "ECSEKI Nandor/MADARASZ Dora",
+        "org": "Hungary",
+        "orgCode": "HUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "114716",
+            "name": "ECSEKI Nandor",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 1
+          },
+          {
+            "id": "111213",
+            "name": "MADARASZ Dora",
+            "org": "Hungary",
+            "orgCode": "HUN",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-5",
+      "9-11",
+      "2-11",
+      "10-12",
+      "11-9",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1920.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO3",
+    "roundKey": "semifinals ko3",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Semifinals KO3 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2823",
+        "name": "CHOONG Javen/LYNE Karen",
+        "org": "Malaysia",
+        "orgCode": "MAS",
+        "irm": null,
+        "players": [
+          {
+            "id": "131932",
+            "name": "CHOONG Javen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 1
+          },
+          {
+            "id": "132892",
+            "name": "LYNE Karen",
+            "org": "Malaysia",
+            "orgCode": "MAS",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2755",
+        "name": "IONESCU Ovidiu/SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "103903",
+            "name": "IONESCU Ovidiu",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          },
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "2-11",
+      "8-11",
+      "6-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1920.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO3",
+    "roundKey": "semifinals ko3",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Semifinals KO3 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2735",
+        "name": "ROBLES Alvaro/XIAO Maria",
+        "org": "Spain",
+        "orgCode": "ESP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111050",
+            "name": "ROBLES Alvaro",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 1
+          },
+          {
+            "id": "111072",
+            "name": "XIAO Maria",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2745",
+        "name": "KULCZYCKI Samuel/WIELGOS Zuzanna",
+        "org": "Poland",
+        "orgCode": "POL",
+        "irm": null,
+        "players": [
+          {
+            "id": "121031",
+            "name": "KULCZYCKI Samuel",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 1
+          },
+          {
+            "id": "135039",
+            "name": "WIELGOS Zuzanna",
+            "org": "Poland",
+            "orgCode": "POL",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-6",
+      "11-9",
+      "13-11",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2324.000200--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO4",
+    "roundKey": "semifinals ko4",
+    "matchNumber": 2,
+    "description": "Mixed Doubles - Semifinals KO4 - Match 2",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2743",
+        "name": "GARDOS Robert/POLCANOVA Sofia",
+        "org": "Austria",
+        "orgCode": "AUT",
+        "irm": null,
+        "players": [
+          {
+            "id": "102968",
+            "name": "GARDOS Robert",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 1
+          },
+          {
+            "id": "107477",
+            "name": "POLCANOVA Sofia",
+            "org": "Austria",
+            "orgCode": "AUT",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2754",
+        "name": "PISTEJ Lubomir/BALAZOVA Barbora",
+        "org": "Slovakia",
+        "orgCode": "SVK",
+        "irm": null,
+        "players": [
+          {
+            "id": "107445",
+            "name": "PISTEJ Lubomir",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 1
+          },
+          {
+            "id": "100868",
+            "name": "BALAZOVA Barbora",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-9",
+      "11-4",
+      "10-12",
+      "4-11",
+      "14-12",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2324.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Semifinals KO4",
+    "roundKey": "semifinals ko4",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Semifinals KO4 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2744",
+        "name": "CHEW Zhe Yu Clarence/ZENG Jian",
+        "org": "Singapore",
+        "orgCode": "SGP",
+        "irm": null,
+        "players": [
+          {
+            "id": "113395",
+            "name": "CHEW Zhe Yu Clarence",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 1
+          },
+          {
+            "id": "131342",
+            "name": "ZENG Jian",
+            "org": "Singapore",
+            "orgCode": "SGP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2828",
+        "name": "KARLSSON Kristian/KALLBERG Christina",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "104379",
+            "name": "KARLSSON Kristian",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          },
+          {
+            "id": "118507",
+            "name": "KALLBERG Christina",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "9-11",
+      "11-9",
+      "9-11",
+      "9-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.1718.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Finals KO3",
+    "roundKey": "finals ko3",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Finals KO3 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2735",
+        "name": "ROBLES Alvaro/XIAO Maria",
+        "org": "Spain",
+        "orgCode": "ESP",
+        "irm": null,
+        "players": [
+          {
+            "id": "111050",
+            "name": "ROBLES Alvaro",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 1
+          },
+          {
+            "id": "111072",
+            "name": "XIAO Maria",
+            "org": "Spain",
+            "orgCode": "ESP",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2755",
+        "name": "IONESCU Ovidiu/SZOCS Bernadette",
+        "org": "Romania",
+        "orgCode": "ROU",
+        "irm": null,
+        "players": [
+          {
+            "id": "103903",
+            "name": "IONESCU Ovidiu",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 1
+          },
+          {
+            "id": "111012",
+            "name": "SZOCS Bernadette",
+            "org": "Romania",
+            "orgCode": "ROU",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "15-13",
+      "14-16",
+      "11-8",
+      "8-11",
+      "11-4",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2931",
+    "documentCode": "X.DOUBLES-----------.2122.000100--",
+    "subEventType": "Mixed Doubles",
+    "categoryName": "Mixed Doubles",
+    "discipline": "mixed",
+    "gender": "mixed",
+    "roundLabel": "Finals KO4",
+    "roundKey": "finals ko4",
+    "matchNumber": 1,
+    "description": "Mixed Doubles - Finals KO4 - Match 1",
+    "venue": "National Training Center Havirov",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "pair",
+        "id": "D2828",
+        "name": "KARLSSON Kristian/KALLBERG Christina",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "104379",
+            "name": "KARLSSON Kristian",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          },
+          {
+            "id": "118507",
+            "name": "KALLBERG Christina",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 2
+          }
+        ]
+      },
+      {
+        "type": "pair",
+        "id": "D2754",
+        "name": "PISTEJ Lubomir/BALAZOVA Barbora",
+        "org": "Slovakia",
+        "orgCode": "SVK",
+        "irm": null,
+        "players": [
+          {
+            "id": "107445",
+            "name": "PISTEJ Lubomir",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 1
+          },
+          {
+            "id": "100868",
+            "name": "BALAZOVA Barbora",
+            "org": "Slovakia",
+            "orgCode": "SVK",
+            "position": 2
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-7",
+      "11-9",
+      "11-5"
+    ],
+    "source": "wtt"
+  }
+]

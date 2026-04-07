@@ -1,0 +1,3248 @@
+[
+  {
+    "id": 8373092,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204138",
+          "competitiorName": "HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,8,4,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144860",
+          "competitiorName": "MENDE Rin",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144860",
+              "playerName": "MENDE Rin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,8-11,4-11,0-0,0-0",
+      "resultsGameScores": "8-11,8-11,4-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204138",
+        "serverReceiver": "144860",
+        "serverNext": "204138",
+        "serverCompetitor": "204138",
+        "receiverNext": "144860"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:56",
+        "startDateLocal": "09/08/2024 19:00:00",
+        "startDateUTC": "09/08/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "142",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T19:00:00"
+  },
+  {
+    "id": 8372939,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209007",
+          "competitiorName": "YAO Ruixuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209007",
+              "playerName": "YAO Ruixuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,9,11,14",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210319",
+          "competitiorName": "HU Yi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210319",
+              "playerName": "HU Yi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,5,12",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,9-11,9-11,11-5,14-12",
+      "resultsGameScores": "11-9,9-11,9-11,11-5,14-12",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210319",
+        "serverReceiver": "209007",
+        "serverNext": "210319",
+        "serverCompetitor": "210319",
+        "receiverNext": "209007"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:44:59",
+        "startDateLocal": "09/08/2024 18:30:00",
+        "startDateUTC": "09/08/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "274",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T18:30:00"
+  },
+  {
+    "id": 8372666,
+    "eventId": "2832",
+    "documentCode": "TTEWDOUBLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWDOUBLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls' Doubles",
+      "subEventDescription": "U19 Girls' Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100105575",
+          "competitiorName": "MENDE Rin/TAKAMORI Mao",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144860",
+              "playerName": "MENDE Rin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135937",
+              "playerName": "TAKAMORI Mao",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100105696",
+          "competitiorName": "CHOI Nahyun/YOO Yerin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136479",
+              "playerName": "CHOI Nahyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "137193",
+              "playerName": "YOO Yerin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,7,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-7,11-7,0-0,0-0",
+      "resultsGameScores": "11-5,11-7,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136479",
+        "serverReceiver": "144860",
+        "serverNext": "136479",
+        "serverCompetitor": "100105696",
+        "receiverNext": "144860"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:25",
+        "startDateLocal": "09/08/2024 18:00:00",
+        "startDateUTC": "09/08/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "143",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T18:00:00"
+  },
+  {
+    "id": 8372511,
+    "eventId": "2832",
+    "documentCode": "TTEWDOUBLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWDOUBLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls' Doubles",
+      "subEventDescription": "U15 Girls' Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100121479",
+          "competitiorName": "SHINTANI Rio/MURAMATSU Cocona",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208980",
+              "playerName": "SHINTANI Rio",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "209670",
+              "playerName": "MURAMATSU Cocona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,11,6,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100121487",
+          "competitiorName": "HEO Yerim/LEE Dahye",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "202245",
+              "playerName": "LEE Dahye",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,7,11,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,6-11,11-7,6-11,12-10",
+      "resultsGameScores": "11-7,6-11,11-7,6-11,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204138",
+        "serverReceiver": "209670",
+        "serverNext": "204138",
+        "serverCompetitor": "100121487",
+        "receiverNext": "209670"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:39:42",
+        "startDateLocal": "09/08/2024 17:30:00",
+        "startDateUTC": "09/08/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "249",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T17:30:00"
+  },
+  {
+    "id": 8372258,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144860",
+          "competitiorName": "MENDE Rin",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144860",
+              "playerName": "MENDE Rin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,8,9,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144628",
+          "competitiorName": "QIN Yuxuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144628",
+              "playerName": "QIN Yuxuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,6,9",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "13-11,8-11,9-11,11-6,11-9",
+      "resultsGameScores": "13-11,8-11,9-11,11-6,11-9",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144860",
+        "serverReceiver": "144628",
+        "serverNext": "144860",
+        "serverCompetitor": "144860",
+        "receiverNext": "144628"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:46:33",
+        "startDateLocal": "09/08/2024 16:30:00",
+        "startDateUTC": "09/08/2024 14:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "277",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T16:30:00"
+  },
+  {
+    "id": 8372184,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133901",
+          "competitiorName": "ZHANG Xiangyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133901",
+              "playerName": "ZHANG Xiangyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,10,11,10,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204138",
+          "competitiorName": "HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,3,12,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,10-12,11-3,10-12,0-0",
+      "resultsGameScores": "5-11,10-12,11-3,10-12,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204138",
+        "serverReceiver": "133901",
+        "serverNext": "204138",
+        "serverCompetitor": "204138",
+        "receiverNext": "133901"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:53",
+        "startDateLocal": "09/08/2024 16:30:00",
+        "startDateUTC": "09/08/2024 14:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "213",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T16:30:00"
+  },
+  {
+    "id": 8371772,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210319",
+          "competitiorName": "HU Yi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210319",
+              "playerName": "HU Yi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,11,14,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204138",
+          "competitiorName": "HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,13,12,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "8-11,11-6,11-13,14-12,11-7",
+      "resultsGameScores": "8-11,11-6,11-13,14-12,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204138",
+        "serverReceiver": "210319",
+        "serverNext": "204138",
+        "serverCompetitor": "204138",
+        "receiverNext": "210319"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:50:39",
+        "startDateLocal": "09/08/2024 16:00:00",
+        "startDateUTC": "09/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "291",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T16:00:00"
+  },
+  {
+    "id": 8371740,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210320",
+          "competitiorName": "ZHU Qihui",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210320",
+              "playerName": "ZHU Qihui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,4,5,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209007",
+          "competitiorName": "YAO Ruixuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209007",
+              "playerName": "YAO Ruixuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "15-13,4-11,5-11,8-11,0-0",
+      "resultsGameScores": "15-13,4-11,5-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210320",
+        "serverReceiver": "209007",
+        "serverNext": "210320",
+        "serverCompetitor": "210320",
+        "receiverNext": "209007"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:53",
+        "startDateLocal": "09/08/2024 16:00:00",
+        "startDateUTC": "09/08/2024 14:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "211",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T16:00:00"
+  },
+  {
+    "id": 8371327,
+    "eventId": "2832",
+    "documentCode": "TTEWDOUBLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWDOUBLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls' Doubles",
+      "subEventDescription": "U19 Girls' Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "43546",
+          "competitiorName": "COLL Silvia/BERZOSA Maria",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134982",
+              "playerName": "COLL Silvia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "144098",
+              "playerName": "BERZOSA Maria",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,9,11,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100105696",
+          "competitiorName": "CHOI Nahyun/YOO Yerin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136479",
+              "playerName": "CHOI Nahyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "137193",
+              "playerName": "YOO Yerin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "15,11,8,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "13-15,9-11,11-8,7-11,0-0",
+      "resultsGameScores": "13-15,9-11,11-8,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136479",
+        "serverReceiver": "134982",
+        "serverNext": "136479",
+        "serverCompetitor": "100105696",
+        "receiverNext": "134982"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:40",
+        "startDateLocal": "09/08/2024 15:30:00",
+        "startDateUTC": "09/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "232",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T15:30:00"
+  },
+  {
+    "id": 8371191,
+    "eventId": "2832",
+    "documentCode": "TTEWDOUBLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWDOUBLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls' Doubles",
+      "subEventDescription": "U19 Girls' Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "64229",
+          "competitiorName": "HOCHART Leana/GUO ZHENG Nina",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145544",
+              "playerName": "HOCHART Leana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "146232",
+              "playerName": "GUO ZHENG Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,3,2",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100105575",
+          "competitiorName": "MENDE Rin/TAKAMORI Mao",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144860",
+              "playerName": "MENDE Rin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135937",
+              "playerName": "TAKAMORI Mao",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,9,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,11-9,3-11,2-11",
+      "resultsGameScores": "9-11,11-7,11-9,3-11,2-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145544",
+        "serverReceiver": "144860",
+        "serverNext": "145544",
+        "serverCompetitor": "64229",
+        "receiverNext": "144860"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:55",
+        "startDateLocal": "09/08/2024 15:30:00",
+        "startDateUTC": "09/08/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "236",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T15:30:00"
+  },
+  {
+    "id": 8370871,
+    "eventId": "2832",
+    "documentCode": "TTEWDOUBLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWDOUBLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls' Doubles",
+      "subEventDescription": "U15 Girls' Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100121487",
+          "competitiorName": "HEO Yerim/LEE Dahye",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "202245",
+              "playerName": "LEE Dahye",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,10,4,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100121725",
+          "competitiorName": "ITAGAKI Koharu/DAS Syndrela",
+          "competitiorOrg": "GER/IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200456",
+              "playerName": "ITAGAKI Koharu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "201368",
+              "playerName": "DAS Syndrela",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,12,11,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,10-12,4-11,11-6",
+      "resultsGameScores": "11-5,11-8,10-12,4-11,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200456",
+        "serverReceiver": "202245",
+        "serverNext": "200456",
+        "serverCompetitor": "100121725",
+        "receiverNext": "202245"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:19",
+        "startDateLocal": "09/08/2024 15:00:00",
+        "startDateUTC": "09/08/2024 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "241",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T15:00:00"
+  },
+  {
+    "id": 8370692,
+    "eventId": "2832",
+    "documentCode": "TTEWDOUBLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWDOUBLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls' Doubles",
+      "subEventDescription": "U15 Girls' Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "64502",
+          "competitiorName": "KODETOVA Hanka/RAJKOWSKA Katarzyna",
+          "competitiorOrg": "CZE/POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200095",
+              "playerName": "KODETOVA Hanka",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "201833",
+              "playerName": "RAJKOWSKA Katarzyna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,7,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100121479",
+          "competitiorName": "SHINTANI Rio/MURAMATSU Cocona",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208980",
+              "playerName": "SHINTANI Rio",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "209670",
+              "playerName": "MURAMATSU Cocona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,7-11,6-11,0-0,0-0",
+      "resultsGameScores": "6-11,7-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200095",
+        "serverReceiver": "208980",
+        "serverNext": "200095",
+        "serverCompetitor": "64502",
+        "receiverNext": "208980"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:18",
+        "startDateLocal": "09/08/2024 15:00:00",
+        "startDateUTC": "09/08/2024 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "146",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T15:00:00"
+  },
+  {
+    "id": 8369971,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145267",
+          "competitiorName": "OJIO Yuna",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145267",
+              "playerName": "OJIO Yuna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,9,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144860",
+          "competitiorName": "MENDE Rin",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144860",
+              "playerName": "MENDE Rin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "17,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "15-17,9-11,6-11,0-0,0-0",
+      "resultsGameScores": "15-17,9-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145267",
+        "serverReceiver": "144860",
+        "serverNext": "145267",
+        "serverCompetitor": "145267",
+        "receiverNext": "144860"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:58",
+        "startDateLocal": "09/08/2024 12:15:00",
+        "startDateUTC": "09/08/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T12:15:00"
+  },
+  {
+    "id": 8369825,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144628",
+          "competitiorName": "QIN Yuxuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144628",
+              "playerName": "QIN Yuxuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,14,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135091",
+          "competitiorName": "CHENG Pusyuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135091",
+              "playerName": "CHENG Pusyuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,12,1,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,14-12,11-1,0-0,0-0",
+      "resultsGameScores": "11-8,14-12,11-1,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144628",
+        "serverReceiver": "135091",
+        "serverNext": "144628",
+        "serverCompetitor": "144628",
+        "receiverNext": "135091"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:29",
+        "startDateLocal": "09/08/2024 12:15:00",
+        "startDateUTC": "09/08/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "157",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T12:15:00"
+  },
+  {
+    "id": 8369777,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204138",
+          "competitiorName": "HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135937",
+          "competitiorName": "TAKAMORI Mao",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135937",
+              "playerName": "TAKAMORI Mao",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,9,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-9,11-5,0-0,0-0",
+      "resultsGameScores": "11-7,11-9,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204138",
+        "serverReceiver": "135937",
+        "serverNext": "204138",
+        "serverCompetitor": "204138",
+        "receiverNext": "135937"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:20",
+        "startDateLocal": "09/08/2024 12:15:00",
+        "startDateUTC": "09/08/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "147",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T12:15:00"
+  },
+  {
+    "id": 8369641,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200456",
+          "competitiorName": "ITAGAKI Koharu",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200456",
+              "playerName": "ITAGAKI Koharu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,6,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133901",
+          "competitiorName": "ZHANG Xiangyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133901",
+              "playerName": "ZHANG Xiangyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "2-11,6-11,6-11,0-0,0-0",
+      "resultsGameScores": "2-11,6-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133901",
+        "serverReceiver": "200456",
+        "serverNext": "133901",
+        "serverCompetitor": "133901",
+        "receiverNext": "200456"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:18",
+        "startDateLocal": "09/08/2024 12:15:00",
+        "startDateUTC": "09/08/2024 10:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "132",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T12:15:00"
+  },
+  {
+    "id": 8369353,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210319",
+          "competitiorName": "HU Yi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210319",
+              "playerName": "HU Yi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "208980",
+          "competitiorName": "SHINTANI Rio",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208980",
+              "playerName": "SHINTANI Rio",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,9,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,7-11,11-9,11-4,0-0",
+      "resultsGameScores": "11-8,7-11,11-9,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "208980",
+        "serverReceiver": "210319",
+        "serverNext": "208980",
+        "serverCompetitor": "208980",
+        "receiverNext": "210319"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:49",
+        "startDateLocal": "09/08/2024 11:45:00",
+        "startDateUTC": "09/08/2024 09:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "204",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:45:00"
+  },
+  {
+    "id": 8369114,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204138",
+          "competitiorName": "HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,10,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206219",
+          "competitiorName": "YANG Huize",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206219",
+              "playerName": "YANG Huize",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,9,12,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,11-9,10-12,11-8,0-0",
+      "resultsGameScores": "11-6,11-9,10-12,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204138",
+        "serverReceiver": "206219",
+        "serverNext": "204138",
+        "serverCompetitor": "204138",
+        "receiverNext": "206219"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:31",
+        "startDateLocal": "09/08/2024 11:45:00",
+        "startDateUTC": "09/08/2024 09:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "208",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:45:00"
+  },
+  {
+    "id": 8369005,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209670",
+          "competitiorName": "MURAMATSU Cocona",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209670",
+              "playerName": "MURAMATSU Cocona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,4,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210320",
+          "competitiorName": "ZHU Qihui",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210320",
+              "playerName": "ZHU Qihui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,4-11,6-11,0-0,0-0",
+      "resultsGameScores": "8-11,4-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210320",
+        "serverReceiver": "209670",
+        "serverNext": "210320",
+        "serverCompetitor": "210320",
+        "receiverNext": "209670"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:28",
+        "startDateLocal": "09/08/2024 11:45:00",
+        "startDateUTC": "09/08/2024 09:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "137",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:45:00"
+  },
+  {
+    "id": 8368889,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201874",
+          "competitiorName": "WU Ying-syuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201874",
+              "playerName": "WU Ying-syuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,4,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209007",
+          "competitiorName": "YAO Ruixuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209007",
+              "playerName": "YAO Ruixuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,4-11,9-11,0-0,0-0",
+      "resultsGameScores": "8-11,4-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201874",
+        "serverReceiver": "209007",
+        "serverNext": "201874",
+        "serverCompetitor": "201874",
+        "receiverNext": "209007"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:49",
+        "startDateLocal": "09/08/2024 11:45:00",
+        "startDateUTC": "09/08/2024 09:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "144",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:45:00"
+  },
+  {
+    "id": 8368347,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000600----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136987",
+          "competitiorName": "YEH Yi-Tian",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136987",
+              "playerName": "YEH Yi-Tian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,6,11,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144860",
+          "competitiorName": "MENDE Rin",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144860",
+              "playerName": "MENDE Rin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,7,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,6-11,11-7,8-11,0-0",
+      "resultsGameScores": "9-11,6-11,11-7,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136987",
+        "serverReceiver": "144860",
+        "serverNext": "136987",
+        "serverCompetitor": "136987",
+        "receiverNext": "144860"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:23",
+        "startDateLocal": "09/08/2024 11:00:00",
+        "startDateUTC": "09/08/2024 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "201",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:00:00"
+  },
+  {
+    "id": 8368213,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000200----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145035",
+          "competitiorName": "WU Jia-En",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145035",
+              "playerName": "WU Jia-En",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,9,14,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133901",
+          "competitiorName": "ZHANG Xiangyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133901",
+              "playerName": "ZHANG Xiangyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,9-11,14-12,8-11,0-0",
+      "resultsGameScores": "6-11,9-11,14-12,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133901",
+        "serverReceiver": "145035",
+        "serverNext": "133901",
+        "serverCompetitor": "133901",
+        "receiverNext": "145035"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:57",
+        "startDateLocal": "09/08/2024 11:00:00",
+        "startDateUTC": "09/08/2024 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "235",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:00:00"
+  },
+  {
+    "id": 8368111,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000500----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000500----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145267",
+          "competitiorName": "OJIO Yuna",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145267",
+              "playerName": "OJIO Yuna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137193",
+          "competitiorName": "YOO Yerin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137193",
+              "playerName": "YOO Yerin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,6,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-6,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-6,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137193",
+        "serverReceiver": "145267",
+        "serverNext": "137193",
+        "serverCompetitor": "137193",
+        "receiverNext": "145267"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:51",
+        "startDateLocal": "09/08/2024 11:00:00",
+        "startDateUTC": "09/08/2024 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "136",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:00:00"
+  },
+  {
+    "id": 8367742,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000100----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137626",
+          "competitiorName": "PUJOL Elise",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137626",
+              "playerName": "PUJOL Elise",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,4,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200456",
+          "competitiorName": "ITAGAKI Koharu",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200456",
+              "playerName": "ITAGAKI Koharu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,4-11,6-11,0-0,0-0",
+      "resultsGameScores": "4-11,4-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200456",
+        "serverReceiver": "137626",
+        "serverNext": "200456",
+        "serverCompetitor": "200456",
+        "receiverNext": "137626"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:19",
+        "startDateLocal": "09/08/2024 11:00:00",
+        "startDateUTC": "09/08/2024 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "141",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T11:00:00"
+  },
+  {
+    "id": 8367561,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000300----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136479",
+          "competitiorName": "CHOI Nahyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136479",
+              "playerName": "CHOI Nahyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,15,7,4",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204138",
+          "competitiorName": "HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,13,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,15-13,7-11,4-11",
+      "resultsGameScores": "11-8,9-11,15-13,7-11,4-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136479",
+        "serverReceiver": "204138",
+        "serverNext": "136479",
+        "serverCompetitor": "136479",
+        "receiverNext": "204138"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:41:58",
+        "startDateLocal": "09/08/2024 10:30:00",
+        "startDateUTC": "09/08/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "319",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T10:30:00"
+  },
+  {
+    "id": 8367442,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000700----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144628",
+          "competitiorName": "QIN Yuxuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144628",
+              "playerName": "QIN Yuxuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,12,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135498",
+          "competitiorName": "GRIESEL Mia",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135498",
+              "playerName": "GRIESEL Mia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,10,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-6,12-10,11-8,0-0",
+      "resultsGameScores": "5-11,11-6,12-10,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144628",
+        "serverReceiver": "135498",
+        "serverNext": "144628",
+        "serverCompetitor": "144628",
+        "receiverNext": "135498"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:18",
+        "startDateLocal": "09/08/2024 10:30:00",
+        "startDateUTC": "09/08/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "206",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T10:30:00"
+  },
+  {
+    "id": 8367195,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000400----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135937",
+          "competitiorName": "TAKAMORI Mao",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135937",
+              "playerName": "TAKAMORI Mao",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,13,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145544",
+          "competitiorName": "HOCHART Leana",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145544",
+              "playerName": "HOCHART Leana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,3,11,5,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,11-3,13-11,11-5,0-0",
+      "resultsGameScores": "11-13,11-3,13-11,11-5,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135937",
+        "serverReceiver": "145544",
+        "serverNext": "135937",
+        "serverCompetitor": "135937",
+        "receiverNext": "145544"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:38",
+        "startDateLocal": "09/08/2024 10:30:00",
+        "startDateUTC": "09/08/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "245",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T10:30:00"
+  },
+  {
+    "id": 8367079,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U198FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U198FNL000800----------",
+      "subEventName": "U19 Girls' Singles",
+      "subEventDescription": "U19 Girls' Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146232",
+          "competitiorName": "GUO ZHENG Nina",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146232",
+              "playerName": "GUO ZHENG Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,7,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135091",
+          "competitiorName": "CHENG Pusyuan",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135091",
+              "playerName": "CHENG Pusyuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "2-11,7-11,7-11,0-0,0-0",
+      "resultsGameScores": "2-11,7-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135091",
+        "serverReceiver": "146232",
+        "serverNext": "135091",
+        "serverCompetitor": "135091",
+        "receiverNext": "146232"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:47",
+        "startDateLocal": "09/08/2024 10:30:00",
+        "startDateUTC": "09/08/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "130",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T10:30:00"
+  },
+  {
+    "id": 8366474,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U158FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U158FNL000400----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200456",
+          "competitiorName": "ITAGAKI Koharu",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200456",
+              "playerName": "ITAGAKI Koharu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,4,11,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209007",
+          "competitiorName": "YAO Ruixuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209007",
+              "playerName": "YAO Ruixuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,7,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,4-11,11-7,6-11,0-0",
+      "resultsGameScores": "6-11,4-11,11-7,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200456",
+        "serverReceiver": "209007",
+        "serverNext": "200456",
+        "serverCompetitor": "200456",
+        "receiverNext": "209007"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:10",
+        "startDateLocal": "09/08/2024 10:00:00",
+        "startDateUTC": "09/08/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "181",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T10:00:00"
+  },
+  {
+    "id": 8366417,
+    "eventId": "2832",
+    "documentCode": "TTEWSINGLES--------U158FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2832",
+      "documentCode": "TTEWSINGLES--------U158FNL000100----------",
+      "subEventName": "U15 Girls' Singles",
+      "subEventDescription": "U15 Girls' Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "SC Jane Sandanski",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209670",
+          "competitiorName": "MURAMATSU Cocona",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209670",
+              "playerName": "MURAMATSU Cocona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201833",
+          "competitiorName": "RAJKOWSKA Katarzyna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201833",
+              "playerName": "RAJKOWSKA Katarzyna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,6,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-6,11-8,0-0,0-0",
+      "resultsGameScores": "11-4,11-6,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209670",
+        "serverReceiver": "201833",
+        "serverNext": "209670",
+        "serverCompetitor": "209670",
+        "receiverNext": "201833"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:01",
+        "startDateLocal": "09/08/2024 10:00:00",
+        "startDateUTC": "09/08/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "137",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-09-08T10:00:00"
+  }
+]

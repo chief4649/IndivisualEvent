@@ -1,0 +1,3152 @@
+[
+  {
+    "id": 7822896,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207089",
+          "competitiorName": "ALLAM Salah",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207089",
+              "playerName": "ALLAM Salah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,6,8,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206505",
+          "competitiorName": "ALMAAYTA Omar",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206505",
+              "playerName": "ALMAAYTA Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,5,11,11,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,11-5,6-11,8-11,11-7",
+      "resultsGameScores": "11-9,11-5,6-11,8-11,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206505",
+        "serverReceiver": "207089",
+        "serverNext": "206505",
+        "serverCompetitor": "206505",
+        "receiverNext": "206505"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 13:00:00",
+        "startDateUTC": "07/04/2024 11:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T13:00:00"
+  },
+  {
+    "id": 7822183,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136170",
+          "competitiorName": "ESSID Wassim",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136170",
+              "playerName": "ESSID Wassim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136144",
+          "competitiorName": "KHALOUFI Mohamed",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136144",
+              "playerName": "KHALOUFI Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,5,2,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,11-7,11-5,11-2,0-0",
+      "resultsGameScores": "8-11,11-7,11-5,11-2,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136144",
+        "serverReceiver": "136170",
+        "serverNext": "136144",
+        "serverCompetitor": "136144",
+        "receiverNext": "136144"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 13:00:00",
+        "startDateUTC": "07/04/2024 11:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T13:00:00"
+  },
+  {
+    "id": 7821872,
+    "eventId": "2898",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203234",
+          "competitiorName": "ELEWA Hanin",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203234",
+              "playerName": "ELEWA Hanin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,8,11,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203075",
+          "competitiorName": "THABET Farida",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203075",
+              "playerName": "THABET Farida",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,9,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,7-11,8-11,11-9,8-11",
+      "resultsGameScores": "11-8,7-11,8-11,11-9,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203075",
+        "serverReceiver": "203234",
+        "serverNext": "203075",
+        "serverCompetitor": "203075",
+        "receiverNext": "203075"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 12:30:00",
+        "startDateUTC": "07/04/2024 10:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T12:30:00"
+  },
+  {
+    "id": 7821660,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202548",
+          "competitiorName": "EYAD Hussein",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202548",
+              "playerName": "EYAD Hussein",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,8,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137392",
+          "competitiorName": "AIDLI Youssef",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137392",
+              "playerName": "AIDLI Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,8-11,6-11,0-0,0-0",
+      "resultsGameScores": "8-11,8-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137392",
+        "serverReceiver": "202548",
+        "serverNext": "137392",
+        "serverCompetitor": "137392",
+        "receiverNext": "137392"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 12:30:00",
+        "startDateUTC": "07/04/2024 10:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T12:30:00"
+  },
+  {
+    "id": 7821632,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136144",
+          "competitiorName": "KHALOUFI Mohamed",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136144",
+              "playerName": "KHALOUFI Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134797",
+          "competitiorName": "WAEL Yassin",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134797",
+              "playerName": "WAEL Yassin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,9,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-9,11-7,0-0,0-0",
+      "resultsGameScores": "11-4,11-9,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134797",
+        "serverReceiver": "136144",
+        "serverNext": "134797",
+        "serverCompetitor": "134797",
+        "receiverNext": "134797"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 11:45:00",
+        "startDateUTC": "07/04/2024 09:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T11:45:00"
+  },
+  {
+    "id": 7821588,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136170",
+          "competitiorName": "ESSID Wassim",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136170",
+              "playerName": "ESSID Wassim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146154",
+          "competitiorName": "CHAIEB Firas",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146154",
+              "playerName": "CHAIEB Firas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,5,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-5,11-2,0-0,0-0",
+      "resultsGameScores": "11-3,11-5,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146154",
+        "serverReceiver": "136170",
+        "serverNext": "146154",
+        "serverCompetitor": "146154",
+        "receiverNext": "146154"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 11:45:00",
+        "startDateUTC": "07/04/2024 09:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T11:45:00"
+  },
+  {
+    "id": 7821299,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201289",
+          "competitiorName": "AL-ZOUBI Rakan",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201289",
+              "playerName": "AL-ZOUBI Rakan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "1,3,3,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137392",
+          "competitiorName": "AIDLI Youssef",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137392",
+              "playerName": "AIDLI Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "1-11,3-11,3-11,0-0,0-0",
+      "resultsGameScores": "1-11,3-11,3-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137392",
+        "serverReceiver": "201289",
+        "serverNext": "137392",
+        "serverCompetitor": "137392",
+        "receiverNext": "137392"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 11:15:00",
+        "startDateUTC": "07/04/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T11:15:00"
+  },
+  {
+    "id": 7821295,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146146",
+          "competitiorName": "ESSID Amir",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146146",
+              "playerName": "ESSID Amir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,6,11,3,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202548",
+          "competitiorName": "EYAD Hussein",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202548",
+              "playerName": "EYAD Hussein",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,6,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,6-11,11-6,3-11,0-0",
+      "resultsGameScores": "6-11,6-11,11-6,3-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202548",
+        "serverReceiver": "146146",
+        "serverNext": "202548",
+        "serverCompetitor": "202548",
+        "receiverNext": "202548"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 11:15:00",
+        "startDateUTC": "07/04/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T11:15:00"
+  },
+  {
+    "id": 7821289,
+    "eventId": "2898",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203075",
+          "competitiorName": "THABET Farida",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203075",
+              "playerName": "THABET Farida",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201309",
+          "competitiorName": "ELBADAWY Nada",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201309",
+              "playerName": "ELBADAWY Nada",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,10,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,12-10,11-2,0-0,0-0",
+      "resultsGameScores": "11-6,12-10,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201309",
+        "serverReceiver": "203075",
+        "serverNext": "201309",
+        "serverCompetitor": "201309",
+        "receiverNext": "201309"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 11:15:00",
+        "startDateUTC": "07/04/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T11:15:00"
+  },
+  {
+    "id": 7821278,
+    "eventId": "2898",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202553",
+          "competitiorName": "ELHAKIM Khadeeja",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202553",
+              "playerName": "ELHAKIM Khadeeja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,2,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203234",
+          "competitiorName": "ELEWA Hanin",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203234",
+              "playerName": "ELEWA Hanin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,2-11,7-11,0-0,0-0",
+      "resultsGameScores": "9-11,2-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203234",
+        "serverReceiver": "202553",
+        "serverNext": "203234",
+        "serverCompetitor": "203234",
+        "receiverNext": "203234"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 11:15:00",
+        "startDateUTC": "07/04/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T11:15:00"
+  },
+  {
+    "id": 7820517,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201318",
+          "competitiorName": "OSMAN Omar",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201318",
+              "playerName": "OSMAN Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,9,16,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146154",
+          "competitiorName": "CHAIEB Firas",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146154",
+              "playerName": "CHAIEB Firas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,14,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,9-11,16-14,8-11,0-0",
+      "resultsGameScores": "6-11,9-11,16-14,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146154",
+        "serverReceiver": "201318",
+        "serverNext": "146154",
+        "serverCompetitor": "146154",
+        "receiverNext": "146154"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:30:00",
+        "startDateUTC": "07/04/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:30:00"
+  },
+  {
+    "id": 7820500,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136170",
+          "competitiorName": "ESSID Wassim",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136170",
+              "playerName": "ESSID Wassim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137586",
+          "competitiorName": "ISMAIL Youssef",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137586",
+              "playerName": "ISMAIL Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,5,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-5,11-2,0-0,0-0",
+      "resultsGameScores": "11-3,11-5,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137586",
+        "serverReceiver": "136170",
+        "serverNext": "137586",
+        "serverCompetitor": "137586",
+        "receiverNext": "137586"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:30:00",
+        "startDateUTC": "07/04/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:30:00"
+  },
+  {
+    "id": 7820486,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136144",
+          "competitiorName": "KHALOUFI Mohamed",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136144",
+              "playerName": "KHALOUFI Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202996",
+          "competitiorName": "ELEWA Youssef",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202996",
+              "playerName": "ELEWA Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,8,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-8,11-2,0-0,0-0",
+      "resultsGameScores": "11-7,11-8,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202996",
+        "serverReceiver": "136144",
+        "serverNext": "202996",
+        "serverCompetitor": "202996",
+        "receiverNext": "202996"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:30:00",
+        "startDateUTC": "07/04/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:30:00"
+  },
+  {
+    "id": 7820467,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133935",
+          "competitiorName": "ELSISY Mohamed",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133935",
+              "playerName": "ELSISY Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,5,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134797",
+          "competitiorName": "WAEL Yassin",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134797",
+              "playerName": "WAEL Yassin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,7-11,0-0,0-0",
+      "resultsGameScores": "5-11,5-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134797",
+        "serverReceiver": "133935",
+        "serverNext": "134797",
+        "serverCompetitor": "134797",
+        "receiverNext": "134797"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:30:00",
+        "startDateUTC": "07/04/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:30:00"
+  },
+  {
+    "id": 7819787,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11SFNL000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207089",
+          "competitiorName": "ALLAM Salah",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207089",
+              "playerName": "ALLAM Salah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,8,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "207092",
+          "competitiorName": "METAWEA Saif",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207092",
+              "playerName": "METAWEA Saif",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,6,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,8-11,8-11,11-6,11-7",
+      "resultsGameScores": "11-8,8-11,8-11,11-6,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "207092",
+        "serverReceiver": "207089",
+        "serverNext": "207092",
+        "serverCompetitor": "207092",
+        "receiverNext": "207092"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:00:00",
+        "startDateUTC": "07/04/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:00:00"
+  },
+  {
+    "id": 7819759,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11SFNL000200----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210253",
+          "competitiorName": "LASHEEN Ahmed",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210253",
+              "playerName": "LASHEEN Ahmed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "3,8,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206505",
+          "competitiorName": "ALMAAYTA Omar",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206505",
+              "playerName": "ALMAAYTA Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "3-11,8-11,6-11,0-0,0-0",
+      "resultsGameScores": "3-11,8-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206505",
+        "serverReceiver": "210253",
+        "serverNext": "206505",
+        "serverCompetitor": "206505",
+        "receiverNext": "206505"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:00:00",
+        "startDateUTC": "07/04/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:00:00"
+  },
+  {
+    "id": 7819710,
+    "eventId": "2898",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203075",
+          "competitiorName": "THABET Farida",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203075",
+              "playerName": "THABET Farida",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202739",
+          "competitiorName": "ALTHRAWAT Jana",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202739",
+              "playerName": "ALTHRAWAT Jana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "14,9,7,2,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-14,11-9,11-7,11-2,0-0",
+      "resultsGameScores": "12-14,11-9,11-7,11-2,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202739",
+        "serverReceiver": "203075",
+        "serverNext": "202739",
+        "serverCompetitor": "202739",
+        "receiverNext": "202739"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:00:00",
+        "startDateUTC": "07/04/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:00:00"
+  },
+  {
+    "id": 7819681,
+    "eventId": "2898",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201286",
+          "competitiorName": "ALTHRAWAT Ghala",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201286",
+              "playerName": "ALTHRAWAT Ghala",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,2,3,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203234",
+          "competitiorName": "ELEWA Hanin",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203234",
+              "playerName": "ELEWA Hanin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "2-11,2-11,3-11,0-0,0-0",
+      "resultsGameScores": "2-11,2-11,3-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203234",
+        "serverReceiver": "201286",
+        "serverNext": "203234",
+        "serverCompetitor": "203234",
+        "receiverNext": "203234"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 10:00:00",
+        "startDateUTC": "07/04/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T10:00:00"
+  },
+  {
+    "id": 7819087,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "205791",
+          "competitiorName": "FIKREEN Mohammed",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205791",
+              "playerName": "FIKREEN Mohammed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,7,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202548",
+          "competitiorName": "EYAD Hussein",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202548",
+              "playerName": "EYAD Hussein",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,7-11,7-11,0-0,0-0",
+      "resultsGameScores": "9-11,7-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202548",
+        "serverReceiver": "205791",
+        "serverNext": "202548",
+        "serverCompetitor": "202548",
+        "receiverNext": "202548"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:30:00",
+        "startDateUTC": "07/04/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:30:00"
+  },
+  {
+    "id": 7819071,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201289",
+          "competitiorName": "AL-ZOUBI Rakan",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201289",
+              "playerName": "AL-ZOUBI Rakan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210218",
+          "competitiorName": "ASHOUR Yousuf",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210218",
+              "playerName": "ASHOUR Yousuf",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,9,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-9,11-7,0-0,0-0",
+      "resultsGameScores": "11-6,11-9,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210218",
+        "serverReceiver": "201289",
+        "serverNext": "210218",
+        "serverCompetitor": "210218",
+        "receiverNext": "210218"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:30:00",
+        "startDateUTC": "07/04/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:30:00"
+  },
+  {
+    "id": 7819060,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203394",
+          "competitiorName": "ELMAHASHI Abdalla",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203394",
+              "playerName": "ELMAHASHI Abdalla",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,3,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137392",
+          "competitiorName": "AIDLI Youssef",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137392",
+              "playerName": "AIDLI Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "2-11,3-11,5-11,0-0,0-0",
+      "resultsGameScores": "2-11,3-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137392",
+        "serverReceiver": "203394",
+        "serverNext": "137392",
+        "serverCompetitor": "137392",
+        "receiverNext": "137392"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:30:00",
+        "startDateUTC": "07/04/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:30:00"
+  },
+  {
+    "id": 7819048,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146146",
+          "competitiorName": "ESSID Amir",
+          "competitiorOrg": "TUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146146",
+              "playerName": "ESSID Amir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206486",
+          "competitiorName": "ELMAHESHI Ayoub",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206486",
+              "playerName": "ELMAHESHI Ayoub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,13,5,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-5,11-13,11-5,11-9,0-0",
+      "resultsGameScores": "11-5,11-13,11-5,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206486",
+        "serverReceiver": "146146",
+        "serverNext": "206486",
+        "serverCompetitor": "206486",
+        "receiverNext": "206486"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:30:00",
+        "startDateUTC": "07/04/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:30:00"
+  },
+  {
+    "id": 7818672,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U198FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U198FNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137586",
+          "competitiorName": "ISMAIL Youssef",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137586",
+              "playerName": "ISMAIL Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144664",
+          "competitiorName": "IENANAH Jummah",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144664",
+              "playerName": "IENANAH Jummah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,6,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "15-13,11-6,11-9,0-0,0-0",
+      "resultsGameScores": "15-13,11-6,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144664",
+        "serverReceiver": "137586",
+        "serverNext": "144664",
+        "serverCompetitor": "144664",
+        "receiverNext": "144664"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:00:00",
+        "startDateUTC": "07/04/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:00:00"
+  },
+  {
+    "id": 7818653,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U198FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U198FNL000700----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137100",
+          "competitiorName": "AL-NAJADAT Taqi Al-Din",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137100",
+              "playerName": "AL-NAJADAT Taqi Al-Din",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,4,12,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133935",
+          "competitiorName": "ELSISY Mohamed",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133935",
+              "playerName": "ELSISY Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,10,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,4-11,12-10,6-11,0-0",
+      "resultsGameScores": "9-11,4-11,12-10,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133935",
+        "serverReceiver": "137100",
+        "serverNext": "133935",
+        "serverCompetitor": "133935",
+        "receiverNext": "133935"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:00:00",
+        "startDateUTC": "07/04/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:00:00"
+  },
+  {
+    "id": 7818636,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U198FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U198FNL000600----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202996",
+          "competitiorName": "ELEWA Youssef",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202996",
+              "playerName": "ELEWA Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,11,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137506",
+          "competitiorName": "ABDELAAL Anas",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137506",
+              "playerName": "ABDELAAL Anas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,5,13,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,11-7,11-5,11-13,11-6",
+      "resultsGameScores": "6-11,11-7,11-5,11-13,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137506",
+        "serverReceiver": "202996",
+        "serverNext": "137506",
+        "serverCompetitor": "137506",
+        "receiverNext": "137506"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:00:00",
+        "startDateUTC": "07/04/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:00:00"
+  },
+  {
+    "id": 7818561,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U198FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U198FNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201318",
+          "competitiorName": "OSMAN Omar",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201318",
+              "playerName": "OSMAN Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145514",
+          "competitiorName": "THABIT Abdelrahman",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145514",
+              "playerName": "THABIT Abdelrahman",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,4,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-4,11-3,0-0,0-0",
+      "resultsGameScores": "11-5,11-4,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145514",
+        "serverReceiver": "201318",
+        "serverNext": "145514",
+        "serverCompetitor": "145514",
+        "receiverNext": "145514"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/04/2024 09:00:00",
+        "startDateUTC": "07/04/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-04T09:00:00"
+  },
+  {
+    "id": 7813451,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11GP01000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11GP01000500----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Group 1 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207089",
+          "competitiorName": "ALLAM Salah",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207089",
+              "playerName": "ALLAM Salah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210249",
+          "competitiorName": "ASHOUR Aws",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210249",
+              "playerName": "ASHOUR Aws",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,8,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-8,11-5,0-0,0-0",
+      "resultsGameScores": "11-7,11-8,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210249",
+        "serverReceiver": "207089",
+        "serverNext": "210249",
+        "serverCompetitor": "210249",
+        "receiverNext": "210249"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/03/2024 20:30:00",
+        "startDateUTC": "07/03/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-03T20:30:00"
+  },
+  {
+    "id": 7813446,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11GP01000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11GP01000600----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Group 1 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210214",
+          "competitiorName": "ALKADEEKI Miftah",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210214",
+              "playerName": "ALKADEEKI Miftah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,3,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210253",
+          "competitiorName": "LASHEEN Ahmed",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210253",
+              "playerName": "LASHEEN Ahmed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "7-11,3-11,9-11,0-0,0-0",
+      "resultsGameScores": "7-11,3-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210253",
+        "serverReceiver": "210214",
+        "serverNext": "210253",
+        "serverCompetitor": "210253",
+        "receiverNext": "210253"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/03/2024 20:30:00",
+        "startDateUTC": "07/03/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-03T20:30:00"
+  },
+  {
+    "id": 7813439,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11GP02000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11GP02000500----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Group 2 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207092",
+          "competitiorName": "METAWEA Saif",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207092",
+              "playerName": "METAWEA Saif",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210221",
+          "competitiorName": "ELKHOUJA Hamza",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210221",
+              "playerName": "ELKHOUJA Hamza",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,5,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-5,11-6,0-0,0-0",
+      "resultsGameScores": "11-4,11-5,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210221",
+        "serverReceiver": "207092",
+        "serverNext": "210221",
+        "serverCompetitor": "210221",
+        "receiverNext": "210221"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/03/2024 20:30:00",
+        "startDateUTC": "07/03/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-03T20:30:00"
+  },
+  {
+    "id": 7813434,
+    "eventId": "2898",
+    "documentCode": "TTEMSINGLES--------U11GP02000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2898",
+      "documentCode": "TTEMSINGLES--------U11GP02000600----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Group 2 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Benghazi Sport Complex",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210220",
+          "competitiorName": "ELKHOUJA Hama",
+          "competitiorOrg": "LBA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210220",
+              "playerName": "ELKHOUJA Hama",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LBA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "0,1,1,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206505",
+          "competitiorName": "ALMAAYTA Omar",
+          "competitiorOrg": "JOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206505",
+              "playerName": "ALMAAYTA Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "0-11,1-11,1-11,0-0,0-0",
+      "resultsGameScores": "0-11,1-11,1-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206505",
+        "serverReceiver": "210220",
+        "serverNext": "206505",
+        "serverCompetitor": "206505",
+        "receiverNext": "206505"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "07/03/2024 20:30:00",
+        "startDateUTC": "07/03/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-07-03T20:30:00"
+  }
+]

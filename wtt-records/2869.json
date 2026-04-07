@@ -1,0 +1,3296 @@
+[
+  {
+    "id": 7605921,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133694",
+          "competitiorName": "TOGAMI Shunsuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133694",
+              "playerName": "TOGAMI Shunsuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,6,7,11,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "132992",
+          "competitiorName": "LEBRUN Alexis",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132992",
+              "playerName": "LEBRUN Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,5,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "4-11,6-11,7-11,11-5,7-11,0-0,0-0",
+      "resultsGameScores": "4-11,6-11,7-11,11-5,7-11,0-0,0-0",
+      "overallScores": "1-4",
+      "resultOverallScores": "1-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "132992",
+        "serverReceiver": "133694",
+        "serverNext": "132992",
+        "serverCompetitor": "132992",
+        "receiverNext": "133694"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:32",
+        "startDateLocal": "06/09/2024 16:15:00",
+        "startDateUTC": "06/09/2024 14:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "238",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-09T16:15:00"
+  },
+  {
+    "id": 7605691,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123672",
+          "competitiorName": "HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,11,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136711",
+          "competitiorName": "HARIMOTO Miwa",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136711",
+              "playerName": "HARIMOTO Miwa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,10,8,3,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,12-10,11-8,11-3,0-0,0-0,0-0",
+      "resultsGameScores": "11-8,12-10,11-8,11-3,0-0,0-0,0-0",
+      "overallScores": "4-0",
+      "resultOverallScores": "4-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136711",
+        "serverReceiver": "123672",
+        "serverNext": "136711",
+        "serverCompetitor": "136711",
+        "receiverNext": "123672"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:54",
+        "startDateLocal": "06/09/2024 15:30:00",
+        "startDateUTC": "06/09/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "208",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-09T15:30:00"
+  },
+  {
+    "id": 7605495,
+    "eventId": "2869",
+    "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100117844",
+          "competitiorName": "LEBRUN Alexis/GAUZY Simon",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132992",
+              "playerName": "LEBRUN Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "112062",
+              "playerName": "GAUZY Simon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "46594",
+          "competitiorName": "DYJAS Jakub/KULCZYCKI Samuel",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "113931",
+              "playerName": "DYJAS Jakub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "121031",
+              "playerName": "KULCZYCKI Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,4,10,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-4,12-10,0-0,0-0",
+      "resultsGameScores": "11-7,11-4,12-10,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112062",
+        "serverReceiver": "113931",
+        "serverNext": "112062",
+        "serverCompetitor": "100117844",
+        "receiverNext": "113931"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:09",
+        "startDateLocal": "06/09/2024 14:45:00",
+        "startDateUTC": "06/09/2024 12:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "160",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-09T14:45:00"
+  },
+  {
+    "id": 7605339,
+    "eventId": "2869",
+    "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100120053",
+          "competitiorName": "JOO Cheonhui/JEON Jihee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200413",
+              "playerName": "JOO Cheonhui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,6,14,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "44898",
+          "competitiorName": "YOKOI Sakura/ODO Satsuki",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135935",
+              "playerName": "YOKOI Sakura",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133405",
+              "playerName": "ODO Satsuki",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,6-11,14-12,5-11,0-0",
+      "resultsGameScores": "9-11,6-11,14-12,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "118994",
+        "serverReceiver": "133405",
+        "serverNext": "118994",
+        "serverCompetitor": "100120053",
+        "receiverNext": "133405"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:58",
+        "startDateLocal": "06/09/2024 14:00:00",
+        "startDateUTC": "06/09/2024 12:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "226",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-09T14:00:00"
+  },
+  {
+    "id": 7605123,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123980",
+          "competitiorName": "HARIMOTO Tomokazu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123980",
+              "playerName": "HARIMOTO Tomokazu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,12,11,11,10",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133694",
+          "competitiorName": "TOGAMI Shunsuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133694",
+              "playerName": "TOGAMI Shunsuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "15,14,8,9,12",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "13-15,12-14,11-8,11-9,10-12",
+      "resultsGameScores": "13-15,12-14,11-8,11-9,10-12",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133694",
+        "serverReceiver": "123980",
+        "serverNext": "133694",
+        "serverCompetitor": "133694",
+        "receiverNext": "123980"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:54:28",
+        "startDateLocal": "06/08/2024 20:20:00",
+        "startDateUTC": "06/08/2024 18:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "343",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T20:20:00"
+  },
+  {
+    "id": 7604834,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123672",
+          "competitiorName": "HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,7,11,13",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "117820",
+          "competitiorName": "HIRANO Miu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117820",
+              "playerName": "HIRANO Miu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,5,11,4,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,11-5,7-11,11-4,13-11",
+      "resultsGameScores": "6-11,11-5,7-11,11-4,13-11",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117820",
+        "serverReceiver": "123672",
+        "serverNext": "117820",
+        "serverCompetitor": "117820",
+        "receiverNext": "123672"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:49:25",
+        "startDateLocal": "06/08/2024 19:45:00",
+        "startDateUTC": "06/08/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "263",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T19:45:00"
+  },
+  {
+    "id": 7604592,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "132992",
+          "competitiorName": "LEBRUN Alexis",
+          "competitiorOrg": "FRA",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132992",
+              "playerName": "LEBRUN Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,11,7,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121514",
+          "competitiorName": "AN Jaehyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121514",
+              "playerName": "AN Jaehyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,12,4,11,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,10-12,11-4,7-11,11-6",
+      "resultsGameScores": "11-9,10-12,11-4,7-11,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121514",
+        "serverReceiver": "132992",
+        "serverNext": "121514",
+        "serverCompetitor": "121514",
+        "receiverNext": "132992"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:55",
+        "startDateLocal": "06/08/2024 19:10:00",
+        "startDateUTC": "06/08/2024 17:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "251",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T19:10:00"
+  },
+  {
+    "id": 7604289,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136711",
+          "competitiorName": "HARIMOTO Miwa",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136711",
+              "playerName": "HARIMOTO Miwa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "131036",
+          "competitiorName": "KIHARA Miyuu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131036",
+              "playerName": "KIHARA Miyuu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,4,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-4,11-9,0-0,0-0",
+      "resultsGameScores": "11-5,11-4,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "131036",
+        "serverReceiver": "136711",
+        "serverNext": "131036",
+        "serverCompetitor": "131036",
+        "receiverNext": "136711"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:14",
+        "startDateLocal": "06/08/2024 18:35:00",
+        "startDateUTC": "06/08/2024 16:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "145",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T18:35:00"
+  },
+  {
+    "id": 7603794,
+    "eventId": "2869",
+    "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "57776",
+          "competitiorName": "LIM Jonghoon/SHIN Yubin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117357",
+              "playerName": "LIM Jonghoon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "123977",
+              "playerName": "SHIN Yubin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,8,11,6",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "37084",
+          "competitiorName": "HARIMOTO Tomokazu/HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123980",
+              "playerName": "HARIMOTO Tomokazu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,2,11,3,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,11-2,8-11,11-3,6-11",
+      "resultsGameScores": "9-11,11-2,8-11,11-3,6-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123977",
+        "serverReceiver": "123980",
+        "serverNext": "123977",
+        "serverCompetitor": "57776",
+        "receiverNext": "123980"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:00",
+        "startDateLocal": "06/08/2024 18:00:00",
+        "startDateUTC": "06/08/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "237",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T18:00:00"
+  },
+  {
+    "id": 7601999,
+    "eventId": "2869",
+    "documentCode": "TTEMDOUBLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMDOUBLES-----------SFNL000200----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100111454",
+          "competitiorName": "EL-BEIALI Mohamed/ABDEL-AZIZ Youssef",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102486",
+              "playerName": "EL-BEIALI Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "116723",
+              "playerName": "ABDEL-AZIZ Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,4,11,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "46594",
+          "competitiorName": "DYJAS Jakub/KULCZYCKI Samuel",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "113931",
+              "playerName": "DYJAS Jakub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "121031",
+              "playerName": "KULCZYCKI Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,12,11,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,10-12,4-11,11-8,9-11",
+      "resultsGameScores": "11-7,10-12,4-11,11-8,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "102486",
+        "serverReceiver": "113931",
+        "serverNext": "102486",
+        "serverCompetitor": "100111454",
+        "receiverNext": "113931"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:44:19",
+        "startDateLocal": "06/08/2024 15:55:00",
+        "startDateUTC": "06/08/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "256",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:55:00"
+  },
+  {
+    "id": 7601798,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121514",
+          "competitiorName": "AN Jaehyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121514",
+              "playerName": "AN Jaehyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,13,8,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114936",
+          "competitiorName": "JANG Woojin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114936",
+              "playerName": "JANG Woojin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,15,11,8",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,13-11,13-15,8-11,11-8",
+      "resultsGameScores": "11-9,13-11,13-15,8-11,11-8",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114936",
+        "serverReceiver": "121514",
+        "serverNext": "114936",
+        "serverCompetitor": "114936",
+        "receiverNext": "121514"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:53:14",
+        "startDateLocal": "06/08/2024 14:45:00",
+        "startDateUTC": "06/08/2024 12:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "316",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T14:45:00"
+  },
+  {
+    "id": 7601772,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123980",
+          "competitiorName": "HARIMOTO Tomokazu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123980",
+              "playerName": "HARIMOTO Tomokazu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110673",
+          "competitiorName": "ALAMIYAN Noshad",
+          "competitiorOrg": "IRI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110673",
+              "playerName": "ALAMIYAN Noshad",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IRI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,7,1,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,11-7,11-1,12-10,0-0",
+      "resultsGameScores": "11-13,11-7,11-1,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "110673",
+        "serverReceiver": "123980",
+        "serverNext": "110673",
+        "serverCompetitor": "110673",
+        "receiverNext": "123980"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:07",
+        "startDateLocal": "06/08/2024 13:35:00",
+        "startDateUTC": "06/08/2024 11:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "217",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T13:35:00"
+  },
+  {
+    "id": 7601539,
+    "eventId": "2869",
+    "documentCode": "TTEMDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMDOUBLES-----------SFNL000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100117844",
+          "competitiorName": "LEBRUN Alexis/GAUZY Simon",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132992",
+              "playerName": "LEBRUN Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "112062",
+              "playerName": "GAUZY Simon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,13,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "48567",
+          "competitiorName": "PANG Koen/QUEK Izaac",
+          "competitiorOrg": "SGP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131912",
+              "playerName": "PANG Koen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SGP",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133713",
+              "playerName": "QUEK Izaac",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SGP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,6,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-2,11-6,13-11,0-0,0-0",
+      "resultsGameScores": "11-2,11-6,13-11,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133713",
+        "serverReceiver": "112062",
+        "serverNext": "133713",
+        "serverCompetitor": "48567",
+        "receiverNext": "112062"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:18",
+        "startDateLocal": "06/08/2024 15:55:00",
+        "startDateUTC": "06/08/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "162",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:55:00"
+  },
+  {
+    "id": 7601377,
+    "eventId": "2869",
+    "documentCode": "TTEWDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWDOUBLES-----------SFNL000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100120053",
+          "competitiorName": "JOO Cheonhui/JEON Jihee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200413",
+              "playerName": "JOO Cheonhui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "53609",
+          "competitiorName": "ZHU Chengzhu/LEE Ho Ching",
+          "competitiorOrg": "HKG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123505",
+              "playerName": "ZHU Chengzhu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "105159",
+              "playerName": "LEE Ho Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,7,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "12-10,11-7,11-4,0-0,0-0",
+      "resultsGameScores": "12-10,11-7,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "105159",
+        "serverReceiver": "200413",
+        "serverNext": "105159",
+        "serverCompetitor": "53609",
+        "receiverNext": "200413"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:32",
+        "startDateLocal": "06/08/2024 15:20:00",
+        "startDateUTC": "06/08/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "158",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:20:00"
+  },
+  {
+    "id": 7600986,
+    "eventId": "2869",
+    "documentCode": "TTEWDOUBLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWDOUBLES-----------SFNL000200----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "77439",
+          "competitiorName": "JEGER Mateja/RAKOVAC Lea",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112453",
+              "playerName": "JEGER Mateja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "113944",
+              "playerName": "RAKOVAC Lea",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,9,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "44898",
+          "competitiorName": "YOKOI Sakura/ODO Satsuki",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135935",
+              "playerName": "YOKOI Sakura",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133405",
+              "playerName": "ODO Satsuki",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "15,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "13-15,9-11,5-11,0-0,0-0",
+      "resultsGameScores": "13-15,9-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133405",
+        "serverReceiver": "113944",
+        "serverNext": "133405",
+        "serverCompetitor": "44898",
+        "receiverNext": "113944"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:39",
+        "startDateLocal": "06/08/2024 15:20:00",
+        "startDateUTC": "06/08/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "197",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T15:20:00"
+  },
+  {
+    "id": 7600494,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133694",
+          "competitiorName": "TOGAMI Shunsuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133694",
+              "playerName": "TOGAMI Shunsuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "103903",
+          "competitiorName": "IONESCU Ovidiu",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "103903",
+              "playerName": "IONESCU Ovidiu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,10,13,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,12-10,11-13,11-6,0-0",
+      "resultsGameScores": "11-8,12-10,11-13,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133694",
+        "serverReceiver": "103903",
+        "serverNext": "133694",
+        "serverCompetitor": "133694",
+        "receiverNext": "103903"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:54",
+        "startDateLocal": "06/08/2024 14:45:00",
+        "startDateUTC": "06/08/2024 12:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "232",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T14:45:00"
+  },
+  {
+    "id": 7600149,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123672",
+          "competitiorName": "HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110797",
+          "competitiorName": "CHENG I-Ching",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110797",
+              "playerName": "CHENG I-Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,11-2,0-0,0-0",
+      "resultsGameScores": "11-5,11-8,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "110797",
+        "serverReceiver": "123672",
+        "serverNext": "110797",
+        "serverCompetitor": "110797",
+        "receiverNext": "123672"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:18",
+        "startDateLocal": "06/08/2024 14:10:00",
+        "startDateUTC": "06/08/2024 12:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "161",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T14:10:00"
+  },
+  {
+    "id": 7600119,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "131100",
+          "competitiorName": "PAVADE Prithika",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131100",
+              "playerName": "PAVADE Prithika",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,2,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136711",
+          "competitiorName": "HARIMOTO Miwa",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136711",
+              "playerName": "HARIMOTO Miwa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-13,8-11,2-11,0-0,0-0",
+      "resultsGameScores": "11-13,8-11,2-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136711",
+        "serverReceiver": "131100",
+        "serverNext": "136711",
+        "serverCompetitor": "136711",
+        "receiverNext": "131100"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:20",
+        "startDateLocal": "06/08/2024 14:10:00",
+        "startDateUTC": "06/08/2024 12:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "166",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T14:10:00"
+  },
+  {
+    "id": 7599684,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "132992",
+          "competitiorName": "LEBRUN Alexis",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132992",
+              "playerName": "LEBRUN Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,6,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135996",
+          "competitiorName": "MATSUSHIMA Sora",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135996",
+              "playerName": "MATSUSHIMA Sora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,6,11,11,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-6,11-6,8-11,6-11,12-10",
+      "resultsGameScores": "11-6,11-6,8-11,6-11,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135996",
+        "serverReceiver": "132992",
+        "serverNext": "135996",
+        "serverCompetitor": "135996",
+        "receiverNext": "132992"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:35",
+        "startDateLocal": "06/08/2024 13:35:00",
+        "startDateUTC": "06/08/2024 11:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "253",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T13:35:00"
+  },
+  {
+    "id": 7598885,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "111012",
+          "competitiorName": "SZOCS Bernadette",
+          "competitiorOrg": "ROU",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111012",
+              "playerName": "SZOCS Bernadette",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,9,10,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "117820",
+          "competitiorName": "HIRANO Miu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117820",
+              "playerName": "HIRANO Miu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "17,11,12,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "15-17,9-11,10-12,0-0,0-0",
+      "resultsGameScores": "15-17,9-11,10-12,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111012",
+        "serverReceiver": "117820",
+        "serverNext": "111012",
+        "serverCompetitor": "111012",
+        "receiverNext": "117820"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:55",
+        "startDateLocal": "06/08/2024 13:00:00",
+        "startDateUTC": "06/08/2024 11:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "209",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T13:00:00"
+  },
+  {
+    "id": 7598877,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "118994",
+          "competitiorName": "JEON Jihee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,3,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "131036",
+          "competitiorName": "KIHARA Miyuu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131036",
+              "playerName": "KIHARA Miyuu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,7-11,3-11,9-11,0-0",
+      "resultsGameScores": "11-8,7-11,3-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "131036",
+        "serverReceiver": "118994",
+        "serverNext": "131036",
+        "serverCompetitor": "131036",
+        "receiverNext": "118994"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:28",
+        "startDateLocal": "06/08/2024 13:00:00",
+        "startDateUTC": "06/08/2024 11:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "195",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-08T13:00:00"
+  },
+  {
+    "id": 7595334,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133694",
+          "competitiorName": "TOGAMI Shunsuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133694",
+              "playerName": "TOGAMI Shunsuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "116532",
+          "competitiorName": "PUCAR Tomislav",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116532",
+              "playerName": "PUCAR Tomislav",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,4,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,9-11,11-4,11-6,0-0",
+      "resultsGameScores": "11-6,9-11,11-4,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133694",
+        "serverReceiver": "116532",
+        "serverNext": "133694",
+        "serverCompetitor": "133694",
+        "receiverNext": "116532"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:03",
+        "startDateLocal": "06/07/2024 20:55:00",
+        "startDateUTC": "06/07/2024 18:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "197",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T20:55:00"
+  },
+  {
+    "id": 7595296,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------8FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------8FNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123505",
+          "competitiorName": "ZHU Chengzhu",
+          "competitiorOrg": "HKG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123505",
+              "playerName": "ZHU Chengzhu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,9,2,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "117820",
+          "competitiorName": "HIRANO Miu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117820",
+              "playerName": "HIRANO Miu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,9-11,2-11,0-0,0-0",
+      "resultsGameScores": "6-11,9-11,2-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117820",
+        "serverReceiver": "123505",
+        "serverNext": "117820",
+        "serverCompetitor": "117820",
+        "receiverNext": "123505"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:44",
+        "startDateLocal": "06/07/2024 20:55:00",
+        "startDateUTC": "06/07/2024 18:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "144",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T20:55:00"
+  },
+  {
+    "id": 7595017,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------8FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------8FNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123672",
+          "competitiorName": "HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,6,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133405",
+          "competitiorName": "ODO Satsuki",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133405",
+              "playerName": "ODO Satsuki",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,2,11,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,11-2,6-11,11-7,0-0",
+      "resultsGameScores": "11-4,11-2,6-11,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133405",
+        "serverReceiver": "123672",
+        "serverNext": "133405",
+        "serverCompetitor": "133405",
+        "receiverNext": "123672"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:39",
+        "startDateLocal": "06/07/2024 20:20:00",
+        "startDateUTC": "06/07/2024 18:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "183",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T20:20:00"
+  },
+  {
+    "id": 7595002,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135996",
+          "competitiorName": "MATSUSHIMA Sora",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135996",
+              "playerName": "MATSUSHIMA Sora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112092",
+          "competitiorName": "ARUNA Quadri",
+          "competitiorOrg": "NGR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112092",
+              "playerName": "ARUNA Quadri",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NGR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,9,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-9,11-8,0-0,0-0",
+      "resultsGameScores": "11-8,11-9,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135996",
+        "serverReceiver": "112092",
+        "serverNext": "135996",
+        "serverCompetitor": "135996",
+        "receiverNext": "112092"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:31",
+        "startDateLocal": "06/07/2024 20:20:00",
+        "startDateUTC": "06/07/2024 18:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "165",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T20:20:00"
+  },
+  {
+    "id": 7594713,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------8FNL000600----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "105159",
+          "competitiorName": "LEE Ho Ching",
+          "competitiorOrg": "HKG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "105159",
+              "playerName": "LEE Ho Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,4,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136711",
+          "competitiorName": "HARIMOTO Miwa",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136711",
+              "playerName": "HARIMOTO Miwa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,4-11,7-11,0-0,0-0",
+      "resultsGameScores": "5-11,4-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136711",
+        "serverReceiver": "105159",
+        "serverNext": "136711",
+        "serverCompetitor": "136711",
+        "receiverNext": "105159"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:37",
+        "startDateLocal": "06/07/2024 19:45:00",
+        "startDateUTC": "06/07/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "141",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T19:45:00"
+  },
+  {
+    "id": 7594642,
+    "eventId": "2869",
+    "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123980",
+          "competitiorName": "HARIMOTO Tomokazu",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123980",
+              "playerName": "HARIMOTO Tomokazu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "104036",
+          "competitiorName": "JANCARIK Lubomir",
+          "competitiorOrg": "CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "104036",
+              "playerName": "JANCARIK Lubomir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,12,7,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-2,10-12,11-7,11-8,0-0",
+      "resultsGameScores": "11-2,10-12,11-7,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "104036",
+        "serverReceiver": "123980",
+        "serverNext": "104036",
+        "serverCompetitor": "104036",
+        "receiverNext": "123980"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:34",
+        "startDateLocal": "06/07/2024 19:45:00",
+        "startDateUTC": "06/07/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T19:45:00"
+  },
+  {
+    "id": 7594477,
+    "eventId": "2869",
+    "documentCode": "TTEMDOUBLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEMDOUBLES-----------QFNL000300----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100111454",
+          "competitiorName": "EL-BEIALI Mohamed/ABDEL-AZIZ Youssef",
+          "competitiorOrg": "EGY",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102486",
+              "playerName": "EL-BEIALI Mohamed",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "116723",
+              "playerName": "ABDEL-AZIZ Youssef",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EGY",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "42656",
+          "competitiorName": "LAM Siu Hang/HO Kwan Kit",
+          "competitiorOrg": "HKG",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115546",
+              "playerName": "LAM Siu Hang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "123690",
+              "playerName": "HO Kwan Kit",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,7,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-7,11-4,0-0,0-0",
+      "resultsGameScores": "11-8,11-7,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "102486",
+        "serverReceiver": "115546",
+        "serverNext": "102486",
+        "serverCompetitor": "100111454",
+        "receiverNext": "115546"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:21",
+        "startDateLocal": "06/07/2024 19:10:00",
+        "startDateUTC": "06/07/2024 17:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "147",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T19:10:00"
+  },
+  {
+    "id": 7594301,
+    "eventId": "2869",
+    "documentCode": "TTEWSINGLES-----------8FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWSINGLES-----------8FNL000700----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "118994",
+          "competitiorName": "JEON Jihee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "108470",
+          "competitiorName": "SUH Hyo Won",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "108470",
+              "playerName": "SUH Hyo Won",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,2,7,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,11-2,11-7,12-10,0-0",
+      "resultsGameScores": "11-13,11-2,11-7,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "108470",
+        "serverReceiver": "118994",
+        "serverNext": "108470",
+        "serverCompetitor": "108470",
+        "receiverNext": "118994"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:27",
+        "startDateLocal": "06/07/2024 19:10:00",
+        "startDateUTC": "06/07/2024 17:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "232",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T19:10:00"
+  },
+  {
+    "id": 7594269,
+    "eventId": "2869",
+    "documentCode": "TTEWDOUBLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2869",
+      "documentCode": "TTEWDOUBLES-----------QFNL000300----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Dom Sportova",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "46434",
+          "competitiorName": "SCHREINER Franziska/KLEE Sophia",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131086",
+              "playerName": "SCHREINER Franziska",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "132978",
+              "playerName": "KLEE Sophia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,9,12,9,10",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "77439",
+          "competitiorName": "JEGER Mateja/RAKOVAC Lea",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112453",
+              "playerName": "JEGER Mateja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "113944",
+              "playerName": "RAKOVAC Lea",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,10,11,12",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "12-10,9-11,12-10,9-11,10-12",
+      "resultsGameScores": "12-10,9-11,12-10,9-11,10-12",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "132978",
+        "serverReceiver": "112453",
+        "serverNext": "132978",
+        "serverCompetitor": "46434",
+        "receiverNext": "112453"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:56:09",
+        "startDateLocal": "06/07/2024 18:35:00",
+        "startDateUTC": "06/07/2024 16:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "325",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-07T18:35:00"
+  }
+]

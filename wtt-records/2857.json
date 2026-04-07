@@ -1,0 +1,3134 @@
+[
+  {
+    "id": 9134922,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206909",
+          "competitiorName": "LIU Xinran",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206909",
+              "playerName": "LIU Xinran",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,6,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210318",
+          "competitiorName": "XU Jiayi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210318",
+              "playerName": "XU Jiayi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,12,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,10-12,6-11,7-11,0-0",
+      "resultsGameScores": "11-8,10-12,6-11,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210318",
+        "serverReceiver": "206909",
+        "serverNext": "210318",
+        "serverCompetitor": "210318",
+        "receiverNext": "206909"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:25",
+        "startDateLocal": "11/07/2024 18:45:00",
+        "startDateUTC": "11/07/2024 22:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "213",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T18:45:00"
+  },
+  {
+    "id": 9134921,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202019",
+          "competitiorName": "LA VIA Giuliano",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202019",
+              "playerName": "LA VIA Giuliano",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,4,8,14,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200649",
+          "competitiorName": "VEGAS Jonathan",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200649",
+              "playerName": "VEGAS Jonathan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,11,12,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "12-10,4-11,8-11,14-12,8-11",
+      "resultsGameScores": "12-10,4-11,8-11,14-12,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202019",
+        "serverReceiver": "200649",
+        "serverNext": "202019",
+        "serverCompetitor": "202019",
+        "receiverNext": "200649"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:25",
+        "startDateLocal": "11/07/2024 18:45:00",
+        "startDateUTC": "11/07/2024 22:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "280",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T18:45:00"
+  },
+  {
+    "id": 9134918,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210321",
+          "competitiorName": "WANG Kaibo",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210321",
+              "playerName": "WANG Kaibo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,6,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209955",
+          "competitiorName": "NING Xiankun",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209955",
+              "playerName": "NING Xiankun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,11-8,6-11,9-11,0-0",
+      "resultsGameScores": "9-11,11-8,6-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209955",
+        "serverReceiver": "210321",
+        "serverNext": "209955",
+        "serverCompetitor": "209955",
+        "receiverNext": "210321"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:45",
+        "startDateLocal": "11/07/2024 19:15:00",
+        "startDateUTC": "11/07/2024 23:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "203",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T19:15:00"
+  },
+  {
+    "id": 9134915,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201909",
+          "competitiorName": "FERRER Dakota",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201909",
+              "playerName": "FERRER Dakota",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209553",
+          "competitiorName": "DOMINGUEZ Emily",
+          "competitiorOrg": "CUB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209553",
+              "playerName": "DOMINGUEZ Emily",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CUB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,11,9,2,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-2,6-11,11-9,11-2,0-0",
+      "resultsGameScores": "11-2,6-11,11-9,11-2,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201909",
+        "serverReceiver": "209553",
+        "serverNext": "201909",
+        "serverCompetitor": "201909",
+        "receiverNext": "209553"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:11",
+        "startDateLocal": "11/07/2024 19:15:00",
+        "startDateUTC": "11/07/2024 23:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "177",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T19:15:00"
+  },
+  {
+    "id": 9134129,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209436",
+          "competitiorName": "TARACHE Yazid",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209436",
+              "playerName": "TARACHE Yazid",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,11,4,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209437",
+          "competitiorName": "TOVAR Adrian",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209437",
+              "playerName": "TOVAR Adrian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,15,9,11,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,13-15,11-9,4-11,11-7",
+      "resultsGameScores": "11-8,13-15,11-9,4-11,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209437",
+        "serverReceiver": "209436",
+        "serverNext": "209437",
+        "serverCompetitor": "209437",
+        "receiverNext": "209436"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:00",
+        "startDateLocal": "11/07/2024 18:15:00",
+        "startDateUTC": "11/07/2024 22:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "271",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T18:15:00"
+  },
+  {
+    "id": 9134085,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209431",
+          "competitiorName": "GOMEZ Susej",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209431",
+              "playerName": "GOMEZ Susej",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "1,11,3,11,5",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209432",
+          "competitiorName": "PINEDA Loriadni",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209432",
+              "playerName": "PINEDA Loriadni",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,6,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "1-11,11-9,3-11,11-6,5-11",
+      "resultsGameScores": "1-11,11-9,3-11,11-6,5-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209432",
+        "serverReceiver": "209431",
+        "serverNext": "209432",
+        "serverCompetitor": "209432",
+        "receiverNext": "209431"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:13",
+        "startDateLocal": "11/07/2024 18:15:00",
+        "startDateUTC": "11/07/2024 22:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "231",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T18:15:00"
+  },
+  {
+    "id": 9133689,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202982",
+          "competitiorName": "KANG Youde",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202982",
+              "playerName": "KANG Youde",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,11,8,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210321",
+          "competitiorName": "WANG Kaibo",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210321",
+              "playerName": "WANG Kaibo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,7,11,14,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "10-12,11-7,8-11,12-14,0-0",
+      "resultsGameScores": "10-12,11-7,8-11,12-14,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202982",
+        "serverReceiver": "210321",
+        "serverNext": "202982",
+        "serverCompetitor": "202982",
+        "receiverNext": "210321"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:40:40",
+        "startDateLocal": "11/07/2024 17:30:00",
+        "startDateUTC": "11/07/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "241",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T17:30:00"
+  },
+  {
+    "id": 9133618,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209955",
+          "competitiorName": "NING Xiankun",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209955",
+              "playerName": "NING Xiankun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,16,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200361",
+          "competitiorName": "RIOS Carlos",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200361",
+              "playerName": "RIOS Carlos",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,9,14,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-2,11-9,16-14,0-0,0-0",
+      "resultsGameScores": "11-2,11-9,16-14,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200361",
+        "serverReceiver": "209955",
+        "serverNext": "200361",
+        "serverCompetitor": "200361",
+        "receiverNext": "209955"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:19",
+        "startDateLocal": "11/07/2024 17:30:00",
+        "startDateUTC": "11/07/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "206",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T17:30:00"
+  },
+  {
+    "id": 9133580,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209553",
+          "competitiorName": "DOMINGUEZ Emily",
+          "competitiorOrg": "CUB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209553",
+              "playerName": "DOMINGUEZ Emily",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CUB",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,11,11,14,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202016",
+          "competitiorName": "FRIAS Luciana",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202016",
+              "playerName": "FRIAS Luciana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,6,12,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "4-11,11-9,11-6,14-12,0-0",
+      "resultsGameScores": "4-11,11-9,11-6,14-12,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202016",
+        "serverReceiver": "209553",
+        "serverNext": "202016",
+        "serverCompetitor": "202016",
+        "receiverNext": "209553"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:55",
+        "startDateLocal": "11/07/2024 17:30:00",
+        "startDateUTC": "11/07/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "218",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T17:30:00"
+  },
+  {
+    "id": 9133313,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201909",
+          "competitiorName": "FERRER Dakota",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201909",
+              "playerName": "FERRER Dakota",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200735",
+          "competitiorName": "ESPINOZA Zurisadai",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200735",
+              "playerName": "ESPINOZA Zurisadai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,4,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-4,11-5,0-0,0-0",
+      "resultsGameScores": "11-7,11-4,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200735",
+        "serverReceiver": "201909",
+        "serverNext": "200735",
+        "serverCompetitor": "200735",
+        "receiverNext": "201909"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:11:13",
+        "startDateLocal": "11/07/2024 17:30:00",
+        "startDateUTC": "11/07/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "133",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T17:30:00"
+  },
+  {
+    "id": 9133050,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203471",
+          "competitiorName": "YAO Zixuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203471",
+              "playerName": "YAO Zixuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,6,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210318",
+          "competitiorName": "XU Jiayi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210318",
+              "playerName": "XU Jiayi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,6-11,9-11,0-0,0-0",
+      "resultsGameScores": "8-11,6-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210318",
+        "serverReceiver": "203471",
+        "serverNext": "210318",
+        "serverCompetitor": "210318",
+        "receiverNext": "203471"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:16",
+        "startDateLocal": "11/07/2024 17:00:00",
+        "startDateUTC": "11/07/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "155",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T17:00:00"
+  },
+  {
+    "id": 9133009,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201911",
+          "competitiorName": "PEROZO Liudwing",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201911",
+              "playerName": "PEROZO Liudwing",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,5,12,2",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200649",
+          "competitiorName": "VEGAS Jonathan",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200649",
+              "playerName": "VEGAS Jonathan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,10,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "7-11,11-7,5-11,12-10,2-11",
+      "resultsGameScores": "7-11,11-7,5-11,12-10,2-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200649",
+        "serverReceiver": "201911",
+        "serverNext": "200649",
+        "serverCompetitor": "200649",
+        "receiverNext": "201911"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:56",
+        "startDateLocal": "11/07/2024 17:00:00",
+        "startDateUTC": "11/07/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "236",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-11-07T17:00:00"
+  },
+  {
+    "id": 9133005,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144239",
+          "competitiorName": "SENAGA Karina",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144239",
+              "playerName": "SENAGA Karina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,2,3,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206909",
+          "competitiorName": "LIU Xinran",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206909",
+              "playerName": "LIU Xinran",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,2-11,3-11,0-0,0-0",
+      "resultsGameScores": "9-11,2-11,3-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206909",
+        "serverReceiver": "144239",
+        "serverNext": "206909",
+        "serverCompetitor": "206909",
+        "receiverNext": "144239"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:29",
+        "startDateLocal": "11/07/2024 17:00:00",
+        "startDateUTC": "11/07/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "132",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T17:00:00"
+  },
+  {
+    "id": 9132976,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202019",
+          "competitiorName": "LA VIA Giuliano",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202019",
+              "playerName": "LA VIA Giuliano",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209138",
+          "competitiorName": "MARTINEZ Moises",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209138",
+              "playerName": "MARTINEZ Moises",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,2,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,9-11,11-2,11-9,0-0",
+      "resultsGameScores": "11-7,9-11,11-2,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202019",
+        "serverReceiver": "209138",
+        "serverNext": "202019",
+        "serverCompetitor": "202019",
+        "receiverNext": "209138"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:17",
+        "startDateLocal": "11/07/2024 17:00:00",
+        "startDateUTC": "11/07/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "189",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T17:00:00"
+  },
+  {
+    "id": 9132432,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U11SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U11SFNL000100----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211640",
+          "competitiorName": "COITA Albanis",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211640",
+              "playerName": "COITA Albanis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,5,11,9,6",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209431",
+          "competitiorName": "GOMEZ Susej",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209431",
+              "playerName": "GOMEZ Susej",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,7,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,5-11,11-7,9-11,6-11",
+      "resultsGameScores": "11-7,5-11,11-7,9-11,6-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211640",
+        "serverReceiver": "209431",
+        "serverNext": "211640",
+        "serverCompetitor": "211640",
+        "receiverNext": "209431"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:09",
+        "startDateLocal": "11/07/2024 16:30:00",
+        "startDateUTC": "11/07/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "246",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T16:30:00"
+  },
+  {
+    "id": 9132343,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U11SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U11SFNL000200----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209437",
+          "competitiorName": "TOVAR Adrian",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209437",
+              "playerName": "TOVAR Adrian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,19,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211922",
+          "competitiorName": "BLANCO Luis",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211922",
+              "playerName": "BLANCO Luis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,17,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,19-17,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,19-17,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211922",
+        "serverReceiver": "209437",
+        "serverNext": "211922",
+        "serverCompetitor": "211922",
+        "receiverNext": "209437"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:40",
+        "startDateLocal": "11/07/2024 16:30:00",
+        "startDateUTC": "11/07/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T16:30:00"
+  },
+  {
+    "id": 9132301,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U11SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U11SFNL000200----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209432",
+          "competitiorName": "PINEDA Loriadni",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209432",
+              "playerName": "PINEDA Loriadni",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,16,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211617",
+          "competitiorName": "ROOS Maria",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211617",
+              "playerName": "ROOS Maria",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,14,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,16-14,11-5,0-0,0-0",
+      "resultsGameScores": "11-7,16-14,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209432",
+        "serverReceiver": "211617",
+        "serverNext": "209432",
+        "serverCompetitor": "209432",
+        "receiverNext": "211617"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:18",
+        "startDateLocal": "11/07/2024 16:30:00",
+        "startDateUTC": "11/07/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "198",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T16:30:00"
+  },
+  {
+    "id": 9132234,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U11SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U11SFNL000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209436",
+          "competitiorName": "TARACHE Yazid",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209436",
+              "playerName": "TARACHE Yazid",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211841",
+          "competitiorName": "GIL Gabriel",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211841",
+              "playerName": "GIL Gabriel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,5,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "12-10,11-5,11-6,0-0,0-0",
+      "resultsGameScores": "12-10,11-5,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211841",
+        "serverReceiver": "209436",
+        "serverNext": "211841",
+        "serverCompetitor": "211841",
+        "receiverNext": "209436"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:05",
+        "startDateLocal": "11/07/2024 16:30:00",
+        "startDateUTC": "11/07/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "151",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T16:30:00"
+  },
+  {
+    "id": 9131661,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200735",
+          "competitiorName": "ESPINOZA Zurisadai",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200735",
+              "playerName": "ESPINOZA Zurisadai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,11,8,14",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209429",
+          "competitiorName": "SALVATIERRA Carla",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209429",
+              "playerName": "SALVATIERRA Carla",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,7,11,12",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,11-7,8-11,14-12",
+      "resultsGameScores": "9-11,11-7,11-7,8-11,14-12",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209429",
+        "serverReceiver": "200735",
+        "serverNext": "209429",
+        "serverCompetitor": "209429",
+        "receiverNext": "200735"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:50",
+        "startDateLocal": "11/07/2024 15:00:00",
+        "startDateUTC": "11/07/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "278",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T15:00:00"
+  },
+  {
+    "id": 9131221,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202016",
+          "competitiorName": "FRIAS Luciana",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202016",
+              "playerName": "FRIAS Luciana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,10,6,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211761",
+          "competitiorName": "MARCUNEZ Diana",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211761",
+              "playerName": "MARCUNEZ Diana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,6,12,11,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-4,11-6,10-12,6-11,11-7",
+      "resultsGameScores": "11-4,11-6,10-12,6-11,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202016",
+        "serverReceiver": "211761",
+        "serverNext": "202016",
+        "serverCompetitor": "202016",
+        "receiverNext": "211761"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:40",
+        "startDateLocal": "11/07/2024 15:00:00",
+        "startDateUTC": "11/07/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "239",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T15:00:00"
+  },
+  {
+    "id": 9131105,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210321",
+          "competitiorName": "WANG Kaibo",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210321",
+              "playerName": "WANG Kaibo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,4,8,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211408",
+          "competitiorName": "LI Enci",
+          "competitiorOrg": "CHN",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211408",
+              "playerName": "LI Enci",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,11,11,5,9",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-3,4-11,8-11,11-5,11-9",
+      "resultsGameScores": "11-3,4-11,8-11,11-5,11-9",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211408",
+        "serverReceiver": "210321",
+        "serverNext": "211408",
+        "serverCompetitor": "211408",
+        "receiverNext": "210321"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:15",
+        "startDateLocal": "11/07/2024 14:30:00",
+        "startDateUTC": "11/07/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "238",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:30:00"
+  },
+  {
+    "id": 9131042,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201909",
+          "competitiorName": "FERRER Dakota",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201909",
+              "playerName": "FERRER Dakota",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200660",
+          "competitiorName": "LOPEZ Gabriela",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200660",
+              "playerName": "LOPEZ Gabriela",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,5,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-5,11-6,0-0,0-0",
+      "resultsGameScores": "11-7,11-5,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201909",
+        "serverReceiver": "200660",
+        "serverNext": "201909",
+        "serverCompetitor": "201909",
+        "receiverNext": "200660"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:12:21",
+        "startDateLocal": "11/07/2024 15:00:00",
+        "startDateUTC": "11/07/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "141",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T15:00:00"
+  },
+  {
+    "id": 9130997,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209139",
+          "competitiorName": "BETANCOURT Barbara",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209139",
+              "playerName": "BETANCOURT Barbara",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,7,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209553",
+          "competitiorName": "DOMINGUEZ Emily",
+          "competitiorOrg": "CUB",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209553",
+              "playerName": "DOMINGUEZ Emily",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CUB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-5,9-11,7-11,6-11,0-0",
+      "resultsGameScores": "11-5,9-11,7-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209139",
+        "serverReceiver": "209553",
+        "serverNext": "209139",
+        "serverCompetitor": "209139",
+        "receiverNext": "209553"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:41",
+        "startDateLocal": "11/07/2024 15:00:00",
+        "startDateUTC": "11/07/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "189",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T15:00:00"
+  },
+  {
+    "id": 9130510,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136097",
+          "competitiorName": "CHAMBET-WEIL Remi",
+          "competitiorOrg": "NED",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136097",
+              "playerName": "CHAMBET-WEIL Remi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,5,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202982",
+          "competitiorName": "KANG Youde",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202982",
+              "playerName": "KANG Youde",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,5-11,8-11,0-0,0-0",
+      "resultsGameScores": "6-11,5-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136097",
+        "serverReceiver": "202982",
+        "serverNext": "136097",
+        "serverCompetitor": "136097",
+        "receiverNext": "202982"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:20",
+        "startDateLocal": "11/07/2024 14:30:00",
+        "startDateUTC": "11/07/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "146",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:30:00"
+  },
+  {
+    "id": 9130454,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200361",
+          "competitiorName": "RIOS Carlos",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200361",
+              "playerName": "RIOS Carlos",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,5,16,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200389",
+          "competitiorName": "DOTI Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200389",
+              "playerName": "DOTI Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,11,18,5",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,5-11,16-18,11-5",
+      "resultsGameScores": "11-7,11-6,5-11,16-18,11-5",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200361",
+        "serverReceiver": "200389",
+        "serverNext": "200361",
+        "serverCompetitor": "200361",
+        "receiverNext": "200389"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:23",
+        "startDateLocal": "11/07/2024 14:30:00",
+        "startDateUTC": "11/07/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "282",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:30:00"
+  },
+  {
+    "id": 9130174,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209955",
+          "competitiorName": "NING Xiankun",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209955",
+              "playerName": "NING Xiankun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200415",
+          "competitiorName": "BEDOYA Sebastian",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200415",
+              "playerName": "BEDOYA Sebastian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,10,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,12-10,11-4,0-0,0-0",
+      "resultsGameScores": "11-5,12-10,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200415",
+        "serverReceiver": "209955",
+        "serverNext": "200415",
+        "serverCompetitor": "200415",
+        "receiverNext": "209955"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:15",
+        "startDateLocal": "11/07/2024 14:30:00",
+        "startDateUTC": "11/07/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "143",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:30:00"
+  },
+  {
+    "id": 9130076,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209138",
+          "competitiorName": "MARTINEZ Moises",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209138",
+              "playerName": "MARTINEZ Moises",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,7,11,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200657",
+          "competitiorName": "MARCUNEZ PACHECO Ruben Isaac",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200657",
+              "playerName": "MARCUNEZ PACHECO Ruben Isaac",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,9,7,8",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "10-12,7-11,11-9,11-7,11-8",
+      "resultsGameScores": "10-12,7-11,11-9,11-7,11-8",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209138",
+        "serverReceiver": "200657",
+        "serverNext": "209138",
+        "serverCompetitor": "209138",
+        "receiverNext": "200657"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:07",
+        "startDateLocal": "11/07/2024 14:00:00",
+        "startDateUTC": "11/07/2024 18:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "288",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:00:00"
+  },
+  {
+    "id": 9129729,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204920",
+          "competitiorName": "ROSSI Santino",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204920",
+              "playerName": "ROSSI Santino",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202019",
+          "competitiorName": "LA VIA Giuliano",
+          "competitiorOrg": "ARG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202019",
+              "playerName": "LA VIA Giuliano",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ARG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,13,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,11-9,8-11,11-13,0-0",
+      "resultsGameScores": "6-11,11-9,8-11,11-13,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202019",
+        "serverReceiver": "204920",
+        "serverNext": "202019",
+        "serverCompetitor": "202019",
+        "receiverNext": "204920"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:41",
+        "startDateLocal": "11/07/2024 14:00:00",
+        "startDateUTC": "11/07/2024 18:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "225",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:00:00"
+  },
+  {
+    "id": 9128945,
+    "eventId": "2857",
+    "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206909",
+          "competitiorName": "LIU Xinran",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206909",
+              "playerName": "LIU Xinran",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,11,7,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202747",
+          "competitiorName": "ZHU Ziyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202747",
+              "playerName": "ZHU Ziyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,3,11,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,6-11,11-3,7-11,12-10",
+      "resultsGameScores": "11-7,6-11,11-3,7-11,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206909",
+        "serverReceiver": "202747",
+        "serverNext": "206909",
+        "serverCompetitor": "206909",
+        "receiverNext": "202747"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:48:10",
+        "startDateLocal": "11/07/2024 13:30:00",
+        "startDateUTC": "11/07/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "235",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T13:30:00"
+  },
+  {
+    "id": 9128901,
+    "eventId": "2857",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2857",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Gym Elizabeth Popper and Francisco L?pez",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201911",
+          "competitiorName": "PEROZO Liudwing",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201911",
+              "playerName": "PEROZO Liudwing",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211652",
+          "competitiorName": "ALTUVE Jhonathan",
+          "competitiorOrg": "VEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211652",
+              "playerName": "ALTUVE Jhonathan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,11-9,0-0,0-0",
+      "resultsGameScores": "11-5,11-8,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211652",
+        "serverReceiver": "201911",
+        "serverNext": "211652",
+        "serverCompetitor": "211652",
+        "receiverNext": "201911"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:07",
+        "startDateLocal": "11/07/2024 14:00:00",
+        "startDateUTC": "11/07/2024 18:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "150",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-11-07T14:00:00"
+  }
+]

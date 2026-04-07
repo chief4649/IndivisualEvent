@@ -1,0 +1,3152 @@
+[
+  {
+    "id": 8850363,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200614",
+          "competitiorName": "RODRIGUEZ Mariana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200614",
+              "playerName": "RODRIGUEZ Mariana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,8,11,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200709",
+          "competitiorName": "MALDONADO Karolayn",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200709",
+              "playerName": "MALDONADO Karolayn",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,9,9,13",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "8-11,8-11,11-9,11-9,11-13",
+      "resultsGameScores": "8-11,8-11,11-9,11-9,11-13",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200709",
+        "serverReceiver": "200614",
+        "serverNext": "200709",
+        "serverCompetitor": "200709",
+        "receiverNext": "200614"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:41",
+        "startDateLocal": "10/25/2024 16:45:00",
+        "startDateUTC": "10/25/2024 21:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "276",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T16:45:00"
+  },
+  {
+    "id": 8850247,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200730",
+          "competitiorName": "ROBAYO Joshua",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200730",
+              "playerName": "ROBAYO Joshua",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,12,5,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145404",
+          "competitiorName": "OTALVARO Emanuel",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145404",
+              "playerName": "OTALVARO Emanuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,12-10,5-11,6-11,0-0",
+      "resultsGameScores": "5-11,12-10,5-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200730",
+        "serverReceiver": "145404",
+        "serverNext": "200730",
+        "serverCompetitor": "200730",
+        "receiverNext": "145404"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:47",
+        "startDateLocal": "10/25/2024 16:45:00",
+        "startDateUTC": "10/25/2024 21:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "194",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T16:45:00"
+  },
+  {
+    "id": 8849915,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145409",
+          "competitiorName": "ISAZA Ana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145409",
+              "playerName": "ISAZA Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,5,11,11,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137613",
+          "competitiorName": "HOLDA Karolina",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137613",
+              "playerName": "HOLDA Karolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,8,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,11-8,11-8,7-11",
+      "resultsGameScores": "5-11,5-11,11-8,11-8,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137613",
+        "serverReceiver": "145409",
+        "serverNext": "137613",
+        "serverCompetitor": "137613",
+        "receiverNext": "145409"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:17",
+        "startDateLocal": "10/25/2024 16:15:00",
+        "startDateUTC": "10/25/2024 21:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "228",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T16:15:00"
+  },
+  {
+    "id": 8849866,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201107",
+          "competitiorName": "MALOV Alexander",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201107",
+              "playerName": "MALOV Alexander",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,7,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200705",
+          "competitiorName": "BERNAL RICARDO",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200705",
+              "playerName": "BERNAL RICARDO",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,6,11,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,11-6,7-11,11-4,0-0",
+      "resultsGameScores": "11-8,11-6,7-11,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201107",
+        "serverReceiver": "200705",
+        "serverNext": "201107",
+        "serverCompetitor": "201107",
+        "receiverNext": "200705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:30",
+        "startDateLocal": "10/25/2024 16:15:00",
+        "startDateUTC": "10/25/2024 21:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "185",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T16:15:00"
+  },
+  {
+    "id": 8849326,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144012",
+          "competitiorName": "VASQUEZ Joseph",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144012",
+              "playerName": "VASQUEZ Joseph",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200730",
+          "competitiorName": "ROBAYO Joshua",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200730",
+              "playerName": "ROBAYO Joshua",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,13,13,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,9-11,11-13,11-13,0-0",
+      "resultsGameScores": "11-9,9-11,11-13,11-13,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200730",
+        "serverReceiver": "144012",
+        "serverNext": "200730",
+        "serverCompetitor": "200730",
+        "receiverNext": "200730"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 15:15:00",
+        "startDateUTC": "10/25/2024 20:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T15:15:00"
+  },
+  {
+    "id": 8849322,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200709",
+          "competitiorName": "MALDONADO Karolayn",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200709",
+              "playerName": "MALDONADO Karolayn",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,12,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "205778",
+          "competitiorName": "SANLLEHI Ana",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205778",
+              "playerName": "SANLLEHI Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,6,14,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-3,11-6,12-14,11-6,0-0",
+      "resultsGameScores": "11-3,11-6,12-14,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205778",
+        "serverReceiver": "200709",
+        "serverNext": "205778",
+        "serverCompetitor": "205778",
+        "receiverNext": "200709"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:38",
+        "startDateLocal": "10/25/2024 15:15:00",
+        "startDateUTC": "10/25/2024 20:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "205",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T15:15:00"
+  },
+  {
+    "id": 8849319,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136416",
+          "competitiorName": "PIGUAVE Diego",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136416",
+              "playerName": "PIGUAVE Diego",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,4,8,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145404",
+          "competitiorName": "OTALVARO Emanuel",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145404",
+              "playerName": "OTALVARO Emanuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,4-11,8-11,8-11,0-0",
+      "resultsGameScores": "11-4,4-11,8-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136416",
+        "serverReceiver": "145404",
+        "serverNext": "136416",
+        "serverCompetitor": "136416",
+        "receiverNext": "145404"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:25",
+        "startDateLocal": "10/25/2024 15:15:00",
+        "startDateUTC": "10/25/2024 20:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "188",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T15:15:00"
+  },
+  {
+    "id": 8849189,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200614",
+          "competitiorName": "RODRIGUEZ Mariana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200614",
+              "playerName": "RODRIGUEZ Mariana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200701",
+          "competitiorName": "RIVADENEIRA Zarahys",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200701",
+              "playerName": "RIVADENEIRA Zarahys",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,11,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,13-11,11-5,0-0,0-0",
+      "resultsGameScores": "11-5,13-11,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200701",
+        "serverReceiver": "200614",
+        "serverNext": "200701",
+        "serverCompetitor": "200701",
+        "receiverNext": "200701"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 15:15:00",
+        "startDateUTC": "10/25/2024 20:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T15:15:00"
+  },
+  {
+    "id": 8848852,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209258",
+          "competitiorName": "ORELLANA Angel",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209258",
+              "playerName": "ORELLANA Angel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,5,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200705",
+          "competitiorName": "BERNAL RICARDO",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200705",
+              "playerName": "BERNAL RICARDO",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,7,13",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "5-11,11-9,5-11,11-7,11-13",
+      "resultsGameScores": "5-11,11-9,5-11,11-7,11-13",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209258",
+        "serverReceiver": "200705",
+        "serverNext": "209258",
+        "serverCompetitor": "209258",
+        "receiverNext": "200705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:33",
+        "startDateLocal": "10/25/2024 14:45:00",
+        "startDateUTC": "10/25/2024 19:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "264",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T14:45:00"
+  },
+  {
+    "id": 8848779,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201833",
+          "competitiorName": "RAJKOWSKA Katarzyna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201833",
+              "playerName": "RAJKOWSKA Katarzyna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,11,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137613",
+          "competitiorName": "HOLDA Karolina",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137613",
+              "playerName": "HOLDA Karolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,7,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,8-11,11-7,5-11,0-0",
+      "resultsGameScores": "11-13,8-11,11-7,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137613",
+        "serverReceiver": "201833",
+        "serverNext": "137613",
+        "serverCompetitor": "137613",
+        "receiverNext": "137613"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 14:45:00",
+        "startDateUTC": "10/25/2024 19:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T14:45:00"
+  },
+  {
+    "id": 8848720,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201107",
+          "competitiorName": "MALOV Alexander",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201107",
+              "playerName": "MALOV Alexander",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200696",
+          "competitiorName": "VILLAVICENCIO Boris",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200696",
+              "playerName": "VILLAVICENCIO Boris",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,3,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-3,11-8,0-0,0-0",
+      "resultsGameScores": "11-6,11-3,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200696",
+        "serverReceiver": "201107",
+        "serverNext": "200696",
+        "serverCompetitor": "200696",
+        "receiverNext": "200696"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 14:45:00",
+        "startDateUTC": "10/25/2024 19:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T14:45:00"
+  },
+  {
+    "id": 8848659,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207088",
+          "competitiorName": "CARDENAS Arianny",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207088",
+              "playerName": "CARDENAS Arianny",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,7,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145409",
+          "competitiorName": "ISAZA Ana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145409",
+              "playerName": "ISAZA Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,7-11,6-11,0-0,0-0",
+      "resultsGameScores": "9-11,7-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145409",
+        "serverReceiver": "207088",
+        "serverNext": "145409",
+        "serverCompetitor": "145409",
+        "receiverNext": "207088"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:28",
+        "startDateLocal": "10/25/2024 14:45:00",
+        "startDateUTC": "10/25/2024 19:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "153",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T14:45:00"
+  },
+  {
+    "id": 8848040,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209644",
+          "competitiorName": "JOSEPH Isabella",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209644",
+              "playerName": "JOSEPH Isabella",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,7,9,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202671",
+          "competitiorName": "REYES Sara",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202671",
+              "playerName": "REYES Sara",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "13-11,7-11,9-11,6-11,0-0",
+      "resultsGameScores": "13-11,7-11,9-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209644",
+        "serverReceiver": "202671",
+        "serverNext": "209644",
+        "serverCompetitor": "209644",
+        "receiverNext": "202671"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:25",
+        "startDateLocal": "10/25/2024 13:15:00",
+        "startDateUTC": "10/25/2024 18:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "222",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T13:15:00"
+  },
+  {
+    "id": 8847981,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207383",
+          "competitiorName": "PORTALATINO Caleb",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207383",
+              "playerName": "PORTALATINO Caleb",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202572",
+          "competitiorName": "ROMERO Alexis",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202572",
+              "playerName": "ROMERO Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,10,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,12-10,11-7,0-0,0-0",
+      "resultsGameScores": "11-8,12-10,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202572",
+        "serverReceiver": "207383",
+        "serverNext": "202572",
+        "serverCompetitor": "202572",
+        "receiverNext": "207383"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:43",
+        "startDateLocal": "10/25/2024 13:15:00",
+        "startDateUTC": "10/25/2024 18:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "159",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T13:15:00"
+  },
+  {
+    "id": 8847617,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200675",
+          "competitiorName": "MEDRANDA Ivanna",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200675",
+              "playerName": "MEDRANDA Ivanna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,9,11,10,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "205778",
+          "competitiorName": "SANLLEHI Ana",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205778",
+              "playerName": "SANLLEHI Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,4,12,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,9-11,11-4,10-12,0-0",
+      "resultsGameScores": "5-11,9-11,11-4,10-12,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205778",
+        "serverReceiver": "200675",
+        "serverNext": "205778",
+        "serverCompetitor": "205778",
+        "receiverNext": "200675"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:20",
+        "startDateLocal": "10/25/2024 12:30:00",
+        "startDateUTC": "10/25/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "203",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:30:00"
+  },
+  {
+    "id": 8847590,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200709",
+          "competitiorName": "MALDONADO Karolayn",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200709",
+              "playerName": "MALDONADO Karolayn",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,12,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202119",
+          "competitiorName": "GOMEZ Ana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202119",
+              "playerName": "GOMEZ Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,9,5,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,12-10,11-9,11-5,0-0",
+      "resultsGameScores": "9-11,12-10,11-9,11-5,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202119",
+        "serverReceiver": "200709",
+        "serverNext": "202119",
+        "serverCompetitor": "202119",
+        "receiverNext": "202119"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 12:30:00",
+        "startDateUTC": "10/25/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:30:00"
+  },
+  {
+    "id": 8847415,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200701",
+          "competitiorName": "RIVADENEIRA Zarahys",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200701",
+              "playerName": "RIVADENEIRA Zarahys",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202574",
+          "competitiorName": "ROMERO Carolina",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202574",
+              "playerName": "ROMERO Carolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,4,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-4,11-6,0-0,0-0",
+      "resultsGameScores": "11-7,11-4,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202574",
+        "serverReceiver": "200701",
+        "serverNext": "202574",
+        "serverCompetitor": "202574",
+        "receiverNext": "202574"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 12:30:00",
+        "startDateUTC": "10/25/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:30:00"
+  },
+  {
+    "id": 8847203,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200614",
+          "competitiorName": "RODRIGUEZ Mariana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200614",
+              "playerName": "RODRIGUEZ Mariana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,13,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209714",
+          "competitiorName": "PALMA Danna",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209714",
+              "playerName": "PALMA Danna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,7,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-7,13-11,0-0,0-0",
+      "resultsGameScores": "11-3,11-7,13-11,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209714",
+        "serverReceiver": "200614",
+        "serverNext": "209714",
+        "serverCompetitor": "209714",
+        "receiverNext": "200614"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:47",
+        "startDateLocal": "10/25/2024 12:30:00",
+        "startDateUTC": "10/25/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "157",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:30:00"
+  },
+  {
+    "id": 8846845,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136416",
+          "competitiorName": "PIGUAVE Diego",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136416",
+              "playerName": "PIGUAVE Diego",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146122",
+          "competitiorName": "CRUZ APONTE Daniel Esteban",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146122",
+              "playerName": "CRUZ APONTE Daniel Esteban",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,9,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-9,11-9,0-0,0-0",
+      "resultsGameScores": "11-6,11-9,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136416",
+        "serverReceiver": "146122",
+        "serverNext": "136416",
+        "serverCompetitor": "136416",
+        "receiverNext": "146122"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:51",
+        "startDateLocal": "10/25/2024 12:00:00",
+        "startDateUTC": "10/25/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "164",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:00:00"
+  },
+  {
+    "id": 8846524,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144012",
+          "competitiorName": "VASQUEZ Joseph",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144012",
+              "playerName": "VASQUEZ Joseph",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200729",
+          "competitiorName": "IBARRA Henry",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200729",
+              "playerName": "IBARRA Henry",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,11,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,8-11,11-8,0-0",
+      "resultsGameScores": "11-9,11-9,8-11,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200729",
+        "serverReceiver": "144012",
+        "serverNext": "200729",
+        "serverCompetitor": "200729",
+        "receiverNext": "200729"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 12:00:00",
+        "startDateUTC": "10/25/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:00:00"
+  },
+  {
+    "id": 8846452,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200415",
+          "competitiorName": "BEDOYA Sebastian",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200415",
+              "playerName": "BEDOYA Sebastian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "16,9,7,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200730",
+          "competitiorName": "ROBAYO Joshua",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200730",
+              "playerName": "ROBAYO Joshua",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "14,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "16-14,9-11,7-11,6-11,0-0",
+      "resultsGameScores": "16-14,9-11,7-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200730",
+        "serverReceiver": "200415",
+        "serverNext": "200730",
+        "serverCompetitor": "200730",
+        "receiverNext": "200730"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 12:00:00",
+        "startDateUTC": "10/25/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:00:00"
+  },
+  {
+    "id": 8846212,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136097",
+          "competitiorName": "CHAMBET-WEIL Remi",
+          "competitiorOrg": "NED",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136097",
+              "playerName": "CHAMBET-WEIL Remi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,3,7,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145404",
+          "competitiorName": "OTALVARO Emanuel",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145404",
+              "playerName": "OTALVARO Emanuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,3-11,7-11,5-11,0-0",
+      "resultsGameScores": "11-8,3-11,7-11,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136097",
+        "serverReceiver": "145404",
+        "serverNext": "136097",
+        "serverCompetitor": "136097",
+        "receiverNext": "145404"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:22",
+        "startDateLocal": "10/25/2024 12:00:00",
+        "startDateUTC": "10/25/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "184",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T12:00:00"
+  },
+  {
+    "id": 8845327,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145409",
+          "competitiorName": "ISAZA Ana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145409",
+              "playerName": "ISAZA Ana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,12,12,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134420",
+          "competitiorName": "LOZADA Juliana",
+          "competitiorOrg": "COL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134420",
+              "playerName": "LOZADA Juliana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "COL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,14,10,9,2",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,12-14,12-10,11-9,11-2",
+      "resultsGameScores": "9-11,12-14,12-10,11-9,11-2",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134420",
+        "serverReceiver": "145409",
+        "serverNext": "134420",
+        "serverCompetitor": "134420",
+        "receiverNext": "134420"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 11:30:00",
+        "startDateUTC": "10/25/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:30:00"
+  },
+  {
+    "id": 8845210,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136594",
+          "competitiorName": "CHAN Natalie",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136594",
+              "playerName": "CHAN Natalie",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,10,11,4,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137613",
+          "competitiorName": "HOLDA Karolina",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137613",
+              "playerName": "HOLDA Karolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,6,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,10-12,11-6,4-11,0-0",
+      "resultsGameScores": "9-11,10-12,11-6,4-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136594",
+        "serverReceiver": "137613",
+        "serverNext": "136594",
+        "serverCompetitor": "136594",
+        "receiverNext": "137613"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:37",
+        "startDateLocal": "10/25/2024 11:30:00",
+        "startDateUTC": "10/25/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "197",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:30:00"
+  },
+  {
+    "id": 8844883,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201833",
+          "competitiorName": "RAJKOWSKA Katarzyna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201833",
+              "playerName": "RAJKOWSKA Katarzyna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134471",
+          "competitiorName": "ARELLANO Angelica",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134471",
+              "playerName": "ARELLANO Angelica",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,6,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-6,11-7,0-0,0-0",
+      "resultsGameScores": "11-3,11-6,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134471",
+        "serverReceiver": "201833",
+        "serverNext": "134471",
+        "serverCompetitor": "134471",
+        "receiverNext": "134471"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 11:30:00",
+        "startDateUTC": "10/25/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:30:00"
+  },
+  {
+    "id": 8844737,
+    "eventId": "2854",
+    "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEWSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136597",
+          "competitiorName": "BOGDANOWICZ Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136597",
+              "playerName": "BOGDANOWICZ Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,4,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "207088",
+          "competitiorName": "CARDENAS Arianny",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207088",
+              "playerName": "CARDENAS Arianny",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,2,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-2,4-11,8-11,0-0",
+      "resultsGameScores": "5-11,11-2,4-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "207088",
+        "serverReceiver": "136597",
+        "serverNext": "207088",
+        "serverCompetitor": "207088",
+        "receiverNext": "136597"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 11:30:00",
+        "startDateUTC": "10/25/2024 16:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "177",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:30:00"
+  },
+  {
+    "id": 8844071,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200696",
+          "competitiorName": "VILLAVICENCIO Boris",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200696",
+              "playerName": "VILLAVICENCIO Boris",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,6,11,13,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200672",
+          "competitiorName": "REVELO Cesar",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200672",
+              "playerName": "REVELO Cesar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,7,11,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "8-11,6-11,11-7,13-11,11-6",
+      "resultsGameScores": "8-11,6-11,11-7,13-11,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200672",
+        "serverReceiver": "200696",
+        "serverNext": "200672",
+        "serverCompetitor": "200672",
+        "receiverNext": "200672"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 11:00:00",
+        "startDateUTC": "10/25/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:00:00"
+  },
+  {
+    "id": 8844026,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202659",
+          "competitiorName": "VENTOSILLA Andre",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202659",
+              "playerName": "VENTOSILLA Andre",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,9,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209258",
+          "competitiorName": "ORELLANA Angel",
+          "competitiorOrg": "CHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209258",
+              "playerName": "ORELLANA Angel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,9-11,9-11,0-0,0-0",
+      "resultsGameScores": "9-11,9-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209258",
+        "serverReceiver": "202659",
+        "serverNext": "209258",
+        "serverCompetitor": "209258",
+        "receiverNext": "202659"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:43",
+        "startDateLocal": "10/25/2024 11:00:00",
+        "startDateUTC": "10/25/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "164",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:00:00"
+  },
+  {
+    "id": 8843532,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201107",
+          "competitiorName": "MALOV Alexander",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201107",
+              "playerName": "MALOV Alexander",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202607",
+          "competitiorName": "MONTALVO Juan",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202607",
+              "playerName": "MONTALVO Juan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,9,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-9,11-8,0-0,0-0",
+      "resultsGameScores": "11-5,11-9,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201107",
+        "serverReceiver": "202607",
+        "serverNext": "201107",
+        "serverCompetitor": "201107",
+        "receiverNext": "202607"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:00",
+        "startDateLocal": "10/25/2024 11:00:00",
+        "startDateUTC": "10/25/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "146",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:00:00"
+  },
+  {
+    "id": 8843528,
+    "eventId": "2854",
+    "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2854",
+      "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Polideportivo del Complejo de Totoracocha",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200677",
+          "competitiorName": "VELEZ Joaquin",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200677",
+              "playerName": "VELEZ Joaquin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,7,3,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200705",
+          "competitiorName": "BERNAL RICARDO",
+          "competitiorOrg": "ECU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200705",
+              "playerName": "BERNAL RICARDO",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ECU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,7-11,3-11,0-0,0-0",
+      "resultsGameScores": "5-11,7-11,3-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200705",
+        "serverReceiver": "200677",
+        "serverNext": "200705",
+        "serverCompetitor": "200705",
+        "receiverNext": "200705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "10/25/2024 11:00:00",
+        "startDateUTC": "10/25/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-10-25T11:00:00"
+  }
+]

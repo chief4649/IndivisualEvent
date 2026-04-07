@@ -1,0 +1,1830 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP01.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group A",
+    "roundKey": "group a",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group A - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115641",
+        "name": "CALDERANO Hugo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "115641",
+            "name": "CALDERANO Hugo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105136",
+        "name": "LEBESSON Emmanuel",
+        "org": "France",
+        "orgCode": "FRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "105136",
+            "name": "LEBESSON Emmanuel",
+            "org": "France",
+            "orgCode": "FRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-9",
+      "11-7",
+      "11-7",
+      "9-11",
+      "10-12",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP03.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group C",
+    "roundKey": "group c",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group C - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111595",
+        "name": "JEONG Sangeun",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111595",
+            "name": "JEONG Sangeun",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103107",
+        "name": "GIONIS Panagiotis",
+        "org": "Greece",
+        "orgCode": "GRE",
+        "irm": null,
+        "players": [
+          {
+            "id": "103107",
+            "name": "GIONIS Panagiotis",
+            "org": "Greece",
+            "orgCode": "GRE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-6",
+      "5-11",
+      "11-5",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP02.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group B",
+    "roundKey": "group b",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group B - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112062",
+        "name": "GAUZY Simon",
+        "org": "France",
+        "orgCode": "FRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112062",
+            "name": "GAUZY Simon",
+            "org": "France",
+            "orgCode": "FRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "12-10",
+      "13-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP04.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group D",
+    "roundKey": "group d",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group D - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112409",
+        "name": "GROTH Jonathan",
+        "org": "Denmark",
+        "orgCode": "DEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112409",
+            "name": "GROTH Jonathan",
+            "org": "Denmark",
+            "orgCode": "DEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "114460",
+        "name": "HU Heming",
+        "org": "Australia",
+        "orgCode": "AUS",
+        "irm": null,
+        "players": [
+          {
+            "id": "114460",
+            "name": "HU Heming",
+            "org": "Australia",
+            "orgCode": "AUS",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-7",
+      "11-9",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP01.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group A",
+    "roundKey": "group a",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group A - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115641",
+        "name": "CALDERANO Hugo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "115641",
+            "name": "CALDERANO Hugo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108246",
+        "name": "SAMSONOV Vladimir",
+        "org": "Belarus",
+        "orgCode": "BLR",
+        "irm": null,
+        "players": [
+          {
+            "id": "108246",
+            "name": "SAMSONOV Vladimir",
+            "org": "Belarus",
+            "orgCode": "BLR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "9-11",
+      "7-11",
+      "12-14",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP03.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group C",
+    "roundKey": "group c",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group C - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111595",
+        "name": "JEONG Sangeun",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111595",
+            "name": "JEONG Sangeun",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "109581",
+        "name": "TSUBOI Gustavo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "109581",
+            "name": "TSUBOI Gustavo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-8",
+      "11-7",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP02.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group B",
+    "roundKey": "group b",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group B - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112062",
+        "name": "GAUZY Simon",
+        "org": "France",
+        "orgCode": "FRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112062",
+            "name": "GAUZY Simon",
+            "org": "France",
+            "orgCode": "FRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "10-12",
+      "5-11",
+      "11-9",
+      "11-6",
+      "11-5",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP04.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group D",
+    "roundKey": "group d",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group D - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112409",
+        "name": "GROTH Jonathan",
+        "org": "Denmark",
+        "orgCode": "DEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112409",
+            "name": "GROTH Jonathan",
+            "org": "Denmark",
+            "orgCode": "DEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112074",
+        "name": "FALCK Mattias",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "112074",
+            "name": "FALCK Mattias",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "11-5",
+      "12-10",
+      "11-7",
+      "7-11",
+      "5-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP01.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group A",
+    "roundKey": "group a",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group A - Match 3",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108246",
+        "name": "SAMSONOV Vladimir",
+        "org": "Belarus",
+        "orgCode": "BLR",
+        "irm": null,
+        "players": [
+          {
+            "id": "108246",
+            "name": "SAMSONOV Vladimir",
+            "org": "Belarus",
+            "orgCode": "BLR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105136",
+        "name": "LEBESSON Emmanuel",
+        "org": "France",
+        "orgCode": "FRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "105136",
+            "name": "LEBESSON Emmanuel",
+            "org": "France",
+            "orgCode": "FRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "7-11",
+      "11-6",
+      "8-11",
+      "11-3",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP03.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group C",
+    "roundKey": "group c",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group C - Match 3",
+    "venue": "Disney Event Arena",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "109581",
+        "name": "TSUBOI Gustavo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "109581",
+            "name": "TSUBOI Gustavo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103107",
+        "name": "GIONIS Panagiotis",
+        "org": "Greece",
+        "orgCode": "GRE",
+        "irm": null,
+        "players": [
+          {
+            "id": "103107",
+            "name": "GIONIS Panagiotis",
+            "org": "Greece",
+            "orgCode": "GRE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "11-8",
+      "6-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP02.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group B",
+    "roundKey": "group b",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group B - Match 3",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "9-11",
+      "11-8",
+      "7-11",
+      "11-8",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.GP04.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group D",
+    "roundKey": "group d",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group D - Match 3",
+    "venue": "Disney Event Arena",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112074",
+        "name": "FALCK Mattias",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "112074",
+            "name": "FALCK Mattias",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "114460",
+        "name": "HU Heming",
+        "org": "Australia",
+        "orgCode": "AUS",
+        "irm": null,
+        "players": [
+          {
+            "id": "114460",
+            "name": "HU Heming",
+            "org": "Australia",
+            "orgCode": "AUS",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-8",
+      "11-6",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Men's Singles - Round of 16 - Match 5",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107028",
+        "name": "OVTCHAROV Dimitrij",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "107028",
+            "name": "OVTCHAROV Dimitrij",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112074",
+        "name": "FALCK Mattias",
+        "org": "Sweden",
+        "orgCode": "SWE",
+        "irm": null,
+        "players": [
+          {
+            "id": "112074",
+            "name": "FALCK Mattias",
+            "org": "Sweden",
+            "orgCode": "SWE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "4-11",
+      "7-11",
+      "13-11",
+      "11-3",
+      "5-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Men's Singles - Round of 16 - Match 8",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105136",
+        "name": "LEBESSON Emmanuel",
+        "org": "France",
+        "orgCode": "FRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "105136",
+            "name": "LEBESSON Emmanuel",
+            "org": "France",
+            "orgCode": "FRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101222",
+        "name": "BOLL Timo",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "101222",
+            "name": "BOLL Timo",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-8",
+      "8-11",
+      "5-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 - Match 3",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110729",
+        "name": "NIWA Koki",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110729",
+            "name": "NIWA Koki",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112409",
+        "name": "GROTH Jonathan",
+        "org": "Denmark",
+        "orgCode": "DEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112409",
+            "name": "GROTH Jonathan",
+            "org": "Denmark",
+            "orgCode": "DEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-5",
+      "4-11",
+      "12-10",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 - Match 7",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123980",
+        "name": "HARIMOTO Tomokazu",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "123980",
+            "name": "HARIMOTO Tomokazu",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111595",
+        "name": "JEONG Sangeun",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111595",
+            "name": "JEONG Sangeun",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "11-7",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Men's Singles - Round of 16 - Match 4",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115910",
+        "name": "LIN Gaoyuan",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "115910",
+            "name": "LIN Gaoyuan",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-6",
+      "7-11",
+      "6-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Men's Singles - Round of 16 - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121404",
+        "name": "FAN Zhendong",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121404",
+            "name": "FAN Zhendong",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "109581",
+        "name": "TSUBOI Gustavo",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "109581",
+            "name": "TSUBOI Gustavo",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108246",
+        "name": "SAMSONOV Vladimir",
+        "org": "Belarus",
+        "orgCode": "BLR",
+        "irm": null,
+        "players": [
+          {
+            "id": "108246",
+            "name": "SAMSONOV Vladimir",
+            "org": "Belarus",
+            "orgCode": "BLR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112620",
+        "name": "WONG Chun Ting",
+        "org": "Hong Kong, China",
+        "orgCode": "HKG",
+        "irm": null,
+        "players": [
+          {
+            "id": "112620",
+            "name": "WONG Chun Ting",
+            "org": "Hong Kong, China",
+            "orgCode": "HKG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "12-10",
+      "11-9",
+      "7-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 - Match 6",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112062",
+        "name": "GAUZY Simon",
+        "org": "France",
+        "orgCode": "FRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112062",
+            "name": "GAUZY Simon",
+            "org": "France",
+            "orgCode": "FRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105197",
+        "name": "LEE Sangsu",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "105197",
+            "name": "LEE Sangsu",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-4",
+      "11-6",
+      "7-11",
+      "11-6",
+      "8-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121404",
+        "name": "FAN Zhendong",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121404",
+            "name": "FAN Zhendong",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108246",
+        "name": "SAMSONOV Vladimir",
+        "org": "Belarus",
+        "orgCode": "BLR",
+        "irm": null,
+        "players": [
+          {
+            "id": "108246",
+            "name": "SAMSONOV Vladimir",
+            "org": "Belarus",
+            "orgCode": "BLR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-6",
+      "12-10",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110729",
+        "name": "NIWA Koki",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110729",
+            "name": "NIWA Koki",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115910",
+        "name": "LIN Gaoyuan",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "115910",
+            "name": "LIN Gaoyuan",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-5",
+      "12-14",
+      "9-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals - Match 3",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107028",
+        "name": "OVTCHAROV Dimitrij",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "107028",
+            "name": "OVTCHAROV Dimitrij",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105197",
+        "name": "LEE Sangsu",
+        "org": "Republic of Korea",
+        "orgCode": "KOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "105197",
+            "name": "LEE Sangsu",
+            "org": "Republic of Korea",
+            "orgCode": "KOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-5",
+      "11-13",
+      "9-11",
+      "5-11",
+      "11-5",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals - Match 4",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123980",
+        "name": "HARIMOTO Tomokazu",
+        "org": "Japan",
+        "orgCode": "JPN",
+        "irm": null,
+        "players": [
+          {
+            "id": "123980",
+            "name": "HARIMOTO Tomokazu",
+            "org": "Japan",
+            "orgCode": "JPN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101222",
+        "name": "BOLL Timo",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "101222",
+            "name": "BOLL Timo",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "3-11",
+      "11-13",
+      "5-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107028",
+        "name": "OVTCHAROV Dimitrij",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "107028",
+            "name": "OVTCHAROV Dimitrij",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101222",
+        "name": "BOLL Timo",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "101222",
+            "name": "BOLL Timo",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "7-11",
+      "13-15",
+      "11-9",
+      "11-13",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121404",
+        "name": "FAN Zhendong",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121404",
+            "name": "FAN Zhendong",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115910",
+        "name": "LIN Gaoyuan",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "115910",
+            "name": "LIN Gaoyuan",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "12-10",
+      "15-13",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.1BFL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Bronze Medal Match",
+    "roundKey": "bronze_medal_match",
+    "matchNumber": 1,
+    "description": "Men's Singles - Bronze Medal Match - Match 1",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115910",
+        "name": "LIN Gaoyuan",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "115910",
+            "name": "LIN Gaoyuan",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107028",
+        "name": "OVTCHAROV Dimitrij",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "107028",
+            "name": "OVTCHAROV Dimitrij",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "9-11",
+      "11-4",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2875",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": null,
+    "description": "Men's Singles - Finals - Gold Medal Match",
+    "venue": "Disney Event Arena",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121404",
+        "name": "FAN Zhendong",
+        "org": "China",
+        "orgCode": "CHN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121404",
+            "name": "FAN Zhendong",
+            "org": "China",
+            "orgCode": "CHN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101222",
+        "name": "BOLL Timo",
+        "org": "Germany",
+        "orgCode": "GER",
+        "irm": null,
+        "players": [
+          {
+            "id": "101222",
+            "name": "BOLL Timo",
+            "org": "Germany",
+            "orgCode": "GER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-5",
+      "11-6",
+      "9-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  }
+]

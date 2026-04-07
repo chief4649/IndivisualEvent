@@ -1,0 +1,3152 @@
+[
+  {
+    "id": 7454407,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP22000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP22000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 22 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T15",
+      "tableName": "Table 15",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203560",
+          "competitiorName": "PERKOWSKI Kacper",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203560",
+              "playerName": "PERKOWSKI Kacper",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,8,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137872",
+          "competitiorName": "ALESTEDT Peter",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137872",
+              "playerName": "ALESTEDT Peter",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-8,8-11,5-11,0-0",
+      "resultsGameScores": "7-11,11-8,8-11,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137872",
+        "serverReceiver": "203560",
+        "serverNext": "137872",
+        "serverCompetitor": "137872",
+        "receiverNext": "137872"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 11:15:00",
+        "startDateUTC": "05/22/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T11:15:00"
+  },
+  {
+    "id": 7454362,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP19000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP19000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 19 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T12",
+      "tableName": "Table 12",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203935",
+          "competitiorName": "MRUGALA Jan",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203935",
+              "playerName": "MRUGALA Jan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,11,7,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145708",
+          "competitiorName": "LEHTLAAN Pert",
+          "competitiorOrg": "EST",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145708",
+              "playerName": "LEHTLAAN Pert",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EST",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,5,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,7-11,11-5,7-11,9-11",
+      "resultsGameScores": "11-9,7-11,11-5,7-11,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145708",
+        "serverReceiver": "203935",
+        "serverNext": "145708",
+        "serverCompetitor": "145708",
+        "receiverNext": "145708"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 11:15:00",
+        "startDateUTC": "05/22/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T11:15:00"
+  },
+  {
+    "id": 7454329,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP13000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP13000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 13 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203965",
+          "competitiorName": "KORZUS Julian",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203965",
+              "playerName": "KORZUS Julian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,4,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137713",
+          "competitiorName": "SAMUOLIS Dominykas",
+          "competitiorOrg": "DEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137713",
+              "playerName": "SAMUOLIS Dominykas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "DEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "2-11,4-11,6-11,0-0,0-0",
+      "resultsGameScores": "2-11,4-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137713",
+        "serverReceiver": "203965",
+        "serverNext": "137713",
+        "serverCompetitor": "137713",
+        "receiverNext": "137713"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 11:15:00",
+        "startDateUTC": "05/22/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T11:15:00"
+  },
+  {
+    "id": 7454318,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP10000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP10000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 10 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200100",
+          "competitiorName": "SKALDA Jan",
+          "competitiorOrg": "CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200100",
+              "playerName": "SKALDA Jan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,9,13,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203202",
+          "competitiorName": "YU Yi-Cing",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203202",
+              "playerName": "YU Yi-Cing",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,12,11,11,8",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,10-12,9-11,13-11,11-8",
+      "resultsGameScores": "11-8,10-12,9-11,13-11,11-8",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203202",
+        "serverReceiver": "200100",
+        "serverNext": "203202",
+        "serverCompetitor": "203202",
+        "receiverNext": "203202"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 11:15:00",
+        "startDateUTC": "05/22/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T11:15:00"
+  },
+  {
+    "id": 7454302,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP11000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP11000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 11 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "143942",
+          "competitiorName": "FASO Danilo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "143942",
+              "playerName": "FASO Danilo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204520",
+          "competitiorName": "SAIDOV Hasan",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204520",
+              "playerName": "SAIDOV Hasan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,3,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-3,11-5,0-0,0-0",
+      "resultsGameScores": "11-5,11-3,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204520",
+        "serverReceiver": "143942",
+        "serverNext": "204520",
+        "serverCompetitor": "204520",
+        "receiverNext": "143942"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:00",
+        "startDateLocal": "05/22/2024 11:15:00",
+        "startDateUTC": "05/22/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "135",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T11:15:00"
+  },
+  {
+    "id": 7454161,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP03000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP03000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 3 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T12",
+      "tableName": "Table 12",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137873",
+          "competitiorName": "BERGENBLOCK William",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137873",
+              "playerName": "BERGENBLOCK William",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206607",
+          "competitiorName": "BILGUUN Ankhbayar",
+          "competitiorOrg": "MGL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206607",
+              "playerName": "BILGUUN Ankhbayar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MGL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,4,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-4,11-8,0-0,0-0",
+      "resultsGameScores": "11-9,11-4,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206607",
+        "serverReceiver": "137873",
+        "serverNext": "206607",
+        "serverCompetitor": "206607",
+        "receiverNext": "206607"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7454153,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP02000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP02000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 2 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T11",
+      "tableName": "Table 11",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145043",
+          "competitiorName": "HSU Hsien-Chia",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145043",
+              "playerName": "HSU Hsien-Chia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209607",
+          "competitiorName": "CIOSMAK Maciej",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209607",
+              "playerName": "CIOSMAK Maciej",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,4,5,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,11-4,11-5,11-4,0-0",
+      "resultsGameScores": "11-13,11-4,11-5,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209607",
+        "serverReceiver": "145043",
+        "serverNext": "209607",
+        "serverCompetitor": "209607",
+        "receiverNext": "209607"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7454145,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP21000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP21000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 21 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T09",
+      "tableName": "Table 9",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200176",
+          "competitiorName": "JERSOVA Aleksandra",
+          "competitiorOrg": "LAT",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200176",
+              "playerName": "JERSOVA Aleksandra",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LAT",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209747",
+          "competitiorName": "WOJTYLA Maja",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209747",
+              "playerName": "WOJTYLA Maja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,4,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-4,11-4,0-0,0-0",
+      "resultsGameScores": "11-4,11-4,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209747",
+        "serverReceiver": "200176",
+        "serverNext": "209747",
+        "serverCompetitor": "209747",
+        "receiverNext": "209747"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7454135,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP20000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP20000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 20 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T08",
+      "tableName": "Table 8",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201050",
+          "competitiorName": "NUYTTENS Lotte",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201050",
+              "playerName": "NUYTTENS Lotte",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209296",
+          "competitiorName": "TURK Elis",
+          "competitiorOrg": "EST",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209296",
+              "playerName": "TURK Elis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "EST",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,7,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-7,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-7,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209296",
+        "serverReceiver": "201050",
+        "serverNext": "209296",
+        "serverCompetitor": "209296",
+        "receiverNext": "209296"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7454126,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP19000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP19000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 19 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T07",
+      "tableName": "Table 7",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204191",
+          "competitiorName": "HADRYS Matylda",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204191",
+              "playerName": "HADRYS Matylda",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209639",
+          "competitiorName": "STOSIO Martyna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209639",
+              "playerName": "STOSIO Martyna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,5,7,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "10-12,11-5,11-7,11-6,0-0",
+      "resultsGameScores": "10-12,11-5,11-7,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209639",
+        "serverReceiver": "204191",
+        "serverNext": "209639",
+        "serverCompetitor": "209639",
+        "receiverNext": "209639"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7454118,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP13000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP13000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 13 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203614",
+          "competitiorName": "TWARDAWA Emilia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203614",
+              "playerName": "TWARDAWA Emilia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209604",
+          "competitiorName": "PULECKA Gabriela",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209604",
+              "playerName": "PULECKA Gabriela",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,9,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,11-8,11-9,11-6,0-0",
+      "resultsGameScores": "9-11,11-8,11-9,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209604",
+        "serverReceiver": "203614",
+        "serverNext": "209604",
+        "serverCompetitor": "209604",
+        "receiverNext": "209604"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7454103,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP16000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP16000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201049",
+          "competitiorName": "LEWYCKYJ Lessia",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201049",
+              "playerName": "LEWYCKYJ Lessia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209749",
+          "competitiorName": "SHAH Mauli",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209749",
+              "playerName": "SHAH Mauli",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,7,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-7,11-8,0-0,0-0",
+      "resultsGameScores": "11-4,11-7,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201049",
+        "serverReceiver": "209749",
+        "serverNext": "201049",
+        "serverCompetitor": "201049",
+        "receiverNext": "209749"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:12:00",
+        "startDateLocal": "05/22/2024 10:45:00",
+        "startDateUTC": "05/22/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "137",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:45:00"
+  },
+  {
+    "id": 7453985,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP12000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP12000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 12 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T16",
+      "tableName": "Table 16",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201501",
+          "competitiorName": "PERZ Izabela",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201501",
+              "playerName": "PERZ Izabela",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,8,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144878",
+          "competitiorName": "PRZYBYTKOWSKA Wiktoria Weronika",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144878",
+              "playerName": "PRZYBYTKOWSKA Wiktoria Weronika",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,8-11,5-11,0-0",
+      "resultsGameScores": "11-8,9-11,8-11,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144878",
+        "serverReceiver": "201501",
+        "serverNext": "144878",
+        "serverCompetitor": "144878",
+        "receiverNext": "144878"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453957,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP10000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP10000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 10 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T14",
+      "tableName": "Table 14",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201453",
+          "competitiorName": "LOY Ming Ying",
+          "competitiorOrg": "SGP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201453",
+              "playerName": "LOY Ming Ying",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SGP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209706",
+          "competitiorName": "MALEWICZ Anna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209706",
+              "playerName": "MALEWICZ Anna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,7,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-7,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-7,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209706",
+        "serverReceiver": "201453",
+        "serverNext": "209706",
+        "serverCompetitor": "209706",
+        "receiverNext": "209706"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453937,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP08000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP08000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 8 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T12",
+      "tableName": "Table 12",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201833",
+          "competitiorName": "RAJKOWSKA Katarzyna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201833",
+              "playerName": "RAJKOWSKA Katarzyna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209751",
+          "competitiorName": "KUSINSKA Blanka",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209751",
+              "playerName": "KUSINSKA Blanka",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,7,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-7,11-7,0-0,0-0",
+      "resultsGameScores": "11-8,11-7,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209751",
+        "serverReceiver": "201833",
+        "serverNext": "209751",
+        "serverCompetitor": "209751",
+        "receiverNext": "209751"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453920,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP06000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP06000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 6 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T10",
+      "tableName": "Table 10",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136597",
+          "competitiorName": "BOGDANOWICZ Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136597",
+              "playerName": "BOGDANOWICZ Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "205666",
+          "competitiorName": "ZYNA Julia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205666",
+              "playerName": "ZYNA Julia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,2,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "13-11,11-2,11-8,0-0,0-0",
+      "resultsGameScores": "13-11,11-2,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205666",
+        "serverReceiver": "136597",
+        "serverNext": "205666",
+        "serverCompetitor": "205666",
+        "receiverNext": "205666"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453909,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP02000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP02000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 2 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207971",
+          "competitiorName": "BAZYLEWSKA Zuzanna",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207971",
+              "playerName": "BAZYLEWSKA Zuzanna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,5,11,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202013",
+          "competitiorName": "BRZEZINSKA Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202013",
+              "playerName": "BRZEZINSKA Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,9,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,11-9,5-11,0-0",
+      "resultsGameScores": "5-11,5-11,11-9,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202013",
+        "serverReceiver": "207971",
+        "serverNext": "202013",
+        "serverCompetitor": "202013",
+        "receiverNext": "202013"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453903,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U17GP01000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U17GP01000100----------",
+      "subEventName": "U17 Girls Singles",
+      "subEventDescription": "U17 Girls Singles - Group 1 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204152",
+          "competitiorName": "BIALK Karolina",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204152",
+              "playerName": "BIALK Karolina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "14,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209817",
+          "competitiorName": "BOROWSKA Julia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209817",
+              "playerName": "BOROWSKA Julia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,10,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "14-12,12-10,11-4,0-0,0-0",
+      "resultsGameScores": "14-12,12-10,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209817",
+        "serverReceiver": "204152",
+        "serverNext": "209817",
+        "serverCompetitor": "209817",
+        "receiverNext": "209817"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453893,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U13GP05000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U13GP05000200----------",
+      "subEventName": "U13 Girls Singles",
+      "subEventDescription": "U13 Girls Singles - Group 5 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209572",
+          "competitiorName": "KALUZA Aleksandra",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209572",
+              "playerName": "KALUZA Aleksandra",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,9,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209142",
+          "competitiorName": "ZALEWSKA Julia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209142",
+              "playerName": "ZALEWSKA Julia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,14,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,9-11,12-14,0-0,0-0",
+      "resultsGameScores": "4-11,9-11,12-14,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209142",
+        "serverReceiver": "209572",
+        "serverNext": "209142",
+        "serverCompetitor": "209142",
+        "receiverNext": "209142"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453887,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U13GP06000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U13GP06000100----------",
+      "subEventName": "U13 Girls Singles",
+      "subEventDescription": "U13 Girls Singles - Group 6 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "205349",
+          "competitiorName": "CZARNECKA Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205349",
+              "playerName": "CZARNECKA Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204519",
+          "competitiorName": "PULAWSKA Amelia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204519",
+              "playerName": "PULAWSKA Amelia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,6,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-6,11-9,0-0,0-0",
+      "resultsGameScores": "11-8,11-6,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204519",
+        "serverReceiver": "205349",
+        "serverNext": "204519",
+        "serverCompetitor": "204519",
+        "receiverNext": "204519"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453873,
+    "eventId": "2816",
+    "documentCode": "TTEWSINGLES--------U13GP06000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEWSINGLES--------U13GP06000200----------",
+      "subEventName": "U13 Girls Singles",
+      "subEventDescription": "U13 Girls Singles - Group 6 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209026",
+          "competitiorName": "JABLONSKA Anelia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209026",
+              "playerName": "JABLONSKA Anelia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,6,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209506",
+          "competitiorName": "RAHMANI Soroya",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209506",
+              "playerName": "RAHMANI Soroya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,8-11,6-11,8-11,0-0",
+      "resultsGameScores": "11-7,8-11,6-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209506",
+        "serverReceiver": "209026",
+        "serverNext": "209506",
+        "serverCompetitor": "209506",
+        "receiverNext": "209026"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:22",
+        "startDateLocal": "05/22/2024 10:15:00",
+        "startDateUTC": "05/22/2024 08:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "198",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T10:15:00"
+  },
+  {
+    "id": 7453780,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U13GP07000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U13GP07000200----------",
+      "subEventName": "U13 Boys Singles",
+      "subEventDescription": "U13 Boys Singles - Group 7 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T08",
+      "tableName": "Table 8",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209729",
+          "competitiorName": "ATLAS Krzysztof",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209729",
+              "playerName": "ATLAS Krzysztof",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,5,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209704",
+          "competitiorName": "NOWACKI Jan",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209704",
+              "playerName": "NOWACKI Jan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-6,5-11,8-11,0-0",
+      "resultsGameScores": "5-11,11-6,5-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209704",
+        "serverReceiver": "209729",
+        "serverNext": "209704",
+        "serverCompetitor": "209704",
+        "receiverNext": "209704"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:50:00",
+        "startDateUTC": "05/22/2024 07:50:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:50:00"
+  },
+  {
+    "id": 7453758,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U13GP04000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U13GP04000200----------",
+      "subEventName": "U13 Boys Singles",
+      "subEventDescription": "U13 Boys Singles - Group 4 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206571",
+          "competitiorName": "SCICLUNA Daniel",
+          "competitiorOrg": "MLT",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206571",
+              "playerName": "SCICLUNA Daniel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MLT",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,4,4,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209810",
+          "competitiorName": "SELIUKOV Hlib",
+          "competitiorOrg": "UKR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209810",
+              "playerName": "SELIUKOV Hlib",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,4-11,4-11,0-0,0-0",
+      "resultsGameScores": "5-11,4-11,4-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209810",
+        "serverReceiver": "206571",
+        "serverNext": "209810",
+        "serverCompetitor": "209810",
+        "receiverNext": "209810"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:50:00",
+        "startDateUTC": "05/22/2024 07:50:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:50:00"
+  },
+  {
+    "id": 7453631,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U13GP05000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U13GP05000200----------",
+      "subEventName": "U13 Boys Singles",
+      "subEventDescription": "U13 Boys Singles - Group 5 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "208381",
+          "competitiorName": "SARRI Zacharia",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208381",
+              "playerName": "SARRI Zacharia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,2,7,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206677",
+          "competitiorName": "WIECZOREK Tymoteusz",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206677",
+              "playerName": "WIECZOREK Tymoteusz",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,2-11,7-11,9-11,0-0",
+      "resultsGameScores": "11-9,2-11,7-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206677",
+        "serverReceiver": "208381",
+        "serverNext": "206677",
+        "serverCompetitor": "206677",
+        "receiverNext": "208381"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:52",
+        "startDateLocal": "05/22/2024 09:50:00",
+        "startDateUTC": "05/22/2024 07:50:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "195",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:50:00"
+  },
+  {
+    "id": 7453568,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U13GP03000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U13GP03000200----------",
+      "subEventName": "U13 Boys Singles",
+      "subEventDescription": "U13 Boys Singles - Group 3 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T16",
+      "tableName": "Table 16",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204991",
+          "competitiorName": "FLAUMENHAFT Wojciech",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204991",
+              "playerName": "FLAUMENHAFT Wojciech",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,9,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209664",
+          "competitiorName": "TYSZKOWSKI Kajetan",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209664",
+              "playerName": "TYSZKOWSKI Kajetan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,6,13,11,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-5,11-6,11-13,9-11,11-7",
+      "resultsGameScores": "11-5,11-6,11-13,9-11,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209664",
+        "serverReceiver": "204991",
+        "serverNext": "209664",
+        "serverCompetitor": "209664",
+        "receiverNext": "209664"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:25:00",
+        "startDateUTC": "05/22/2024 07:25:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:25:00"
+  },
+  {
+    "id": 7453555,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U13GP03000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U13GP03000100----------",
+      "subEventName": "U13 Boys Singles",
+      "subEventDescription": "U13 Boys Singles - Group 3 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T15",
+      "tableName": "Table 15",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209031",
+          "competitiorName": "GANBAATAR Tuvshinsaikhan",
+          "competitiorOrg": "MGL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209031",
+              "playerName": "GANBAATAR Tuvshinsaikhan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MGL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,4,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206892",
+          "competitiorName": "SZARMACH Antoni",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206892",
+              "playerName": "SZARMACH Antoni",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,4-11,9-11,0-0,0-0",
+      "resultsGameScores": "4-11,4-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206892",
+        "serverReceiver": "209031",
+        "serverNext": "206892",
+        "serverCompetitor": "206892",
+        "receiverNext": "206892"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:25:00",
+        "startDateUTC": "05/22/2024 07:25:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:25:00"
+  },
+  {
+    "id": 7453528,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP24000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP24000200----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 24 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T10",
+      "tableName": "Table 10",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146258",
+          "competitiorName": "CLOSSET Matt",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146258",
+              "playerName": "CLOSSET Matt",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "208834",
+          "competitiorName": "YAMIN Parsa",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208834",
+              "playerName": "YAMIN Parsa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,8,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-8,11-9,0-0,0-0",
+      "resultsGameScores": "11-6,11-8,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "208834",
+        "serverReceiver": "146258",
+        "serverNext": "208834",
+        "serverCompetitor": "208834",
+        "receiverNext": "208834"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:25:00",
+        "startDateUTC": "05/22/2024 07:25:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:25:00"
+  },
+  {
+    "id": 7453466,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP22000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP22000100----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 22 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203560",
+          "competitiorName": "PERKOWSKI Kacper",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203560",
+              "playerName": "PERKOWSKI Kacper",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209812",
+          "competitiorName": "WIECHECKI Tomasz",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209812",
+              "playerName": "WIECHECKI Tomasz",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,4,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-4,11-4,0-0,0-0",
+      "resultsGameScores": "11-6,11-4,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209812",
+        "serverReceiver": "203560",
+        "serverNext": "209812",
+        "serverCompetitor": "209812",
+        "receiverNext": "209812"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:25:00",
+        "startDateUTC": "05/22/2024 07:25:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:25:00"
+  },
+  {
+    "id": 7453380,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP10000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP10000100----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 10 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T10",
+      "tableName": "Table 10",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200100",
+          "competitiorName": "SKALDA Jan",
+          "competitiorOrg": "CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200100",
+              "playerName": "SKALDA Jan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209027",
+          "competitiorName": "MARCZAK Cyprian",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209027",
+              "playerName": "MARCZAK Cyprian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,15,11,13,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,13-15,8-11,11-13,0-0",
+      "resultsGameScores": "11-8,13-15,8-11,11-13,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209027",
+        "serverReceiver": "200100",
+        "serverNext": "209027",
+        "serverCompetitor": "209027",
+        "receiverNext": "209027"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:00:00",
+        "startDateUTC": "05/22/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:00:00"
+  },
+  {
+    "id": 7453366,
+    "eventId": "2816",
+    "documentCode": "TTEMSINGLES--------U17GP07000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2816",
+      "documentCode": "TTEMSINGLES--------U17GP07000100----------",
+      "subEventName": "U17 Boys Singles",
+      "subEventDescription": "U17 Boys Singles - Group 7 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Olympic Training Center Cetniewo",
+      "tableNumber": "T07",
+      "tableName": "Table 7",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201850",
+          "competitiorName": "SZYMIK Jakub",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201850",
+              "playerName": "SZYMIK Jakub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210022",
+          "competitiorName": "KOWALIK Remigiusz",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210022",
+              "playerName": "KOWALIK Remigiusz",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "0,0,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-0,11-0,11-0,0-0,0-0",
+      "resultsGameScores": "11-0,11-0,11-0,0-0,0-0",
+      "overallScores": "3-0 WO",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210022",
+        "serverReceiver": "201850",
+        "serverNext": "210022",
+        "serverCompetitor": "210022",
+        "receiverNext": "210022"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "05/22/2024 09:00:00",
+        "startDateUTC": "05/22/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-05-22T09:00:00"
+  }
+]

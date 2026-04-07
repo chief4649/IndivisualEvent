@@ -1,0 +1,3200 @@
+[
+  {
+    "id": 6055325,
+    "eventId": "2863",
+    "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "57776",
+          "competitiorName": "LIM Jonghoon/SHIN Yubin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117357",
+              "playerName": "LIM Jonghoon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "123977",
+              "playerName": "SHIN Yubin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,13,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "41233",
+          "competitiorName": "ROBLES Alvaro/XIAO Maria",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111050",
+              "playerName": "ROBLES Alvaro",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "111072",
+              "playerName": "XIAO Maria",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,10,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-2,12-10,13-11,0-0,0-0",
+      "resultsGameScores": "11-2,12-10,13-11,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117357",
+        "serverReceiver": "111050",
+        "serverNext": "117357",
+        "serverCompetitor": "57776",
+        "receiverNext": "111050"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "01/28/2024 15:30:00",
+        "startDateUTC": "01/28/2024 10:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "171",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T15:30:00"
+  },
+  {
+    "id": 6055319,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115641",
+          "competitiorName": "CALDERANO Hugo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115641",
+              "playerName": "CALDERANO Hugo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,13,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135977",
+          "competitiorName": "LEBRUN Felix",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135977",
+              "playerName": "LEBRUN Felix",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,13,11,15,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 6,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,11-13,0-11,13-15,7-11,0-0",
+      "resultsGameScores": "11-9,11-9,11-13,0-11,13-15,7-11,0-0",
+      "overallScores": "2-4",
+      "resultOverallScores": "2-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115641",
+        "serverReceiver": "135977",
+        "serverNext": "115641",
+        "serverCompetitor": "115641",
+        "receiverNext": "135977"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:47:21",
+        "startDateLocal": "01/28/2024 19:00:00",
+        "startDateUTC": "01/28/2024 13:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "356",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T19:00:00"
+  },
+  {
+    "id": 6054970,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114726",
+          "competitiorName": "MITTELHAM Nina",
+          "competitiorOrg": "GER",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114726",
+              "playerName": "MITTELHAM Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,8,15,6,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110797",
+          "competitiorName": "CHENG I-Ching",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110797",
+              "playerName": "CHENG I-Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,17,11,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,8-11,15-17,6-11,0-0,0-0,0-0",
+      "resultsGameScores": "8-11,8-11,15-17,6-11,0-0,0-0,0-0",
+      "overallScores": "0-4",
+      "resultOverallScores": "0-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114726",
+        "serverReceiver": "110797",
+        "serverNext": "114726",
+        "serverCompetitor": "114726",
+        "receiverNext": "110797"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:27",
+        "startDateLocal": "01/28/2024 18:00:00",
+        "startDateUTC": "01/28/2024 12:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "262",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T18:00:00"
+  },
+  {
+    "id": 6054540,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115641",
+          "competitiorName": "CALDERANO Hugo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115641",
+              "playerName": "CALDERANO Hugo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,15,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "107028",
+          "competitiorName": "OVTCHAROV Dimitrij",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "107028",
+              "playerName": "OVTCHAROV Dimitrij",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,13,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,8-11,15-13,11-6,0-0",
+      "resultsGameScores": "11-7,8-11,15-13,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115641",
+        "serverReceiver": "107028",
+        "serverNext": "115641",
+        "serverCompetitor": "115641",
+        "receiverNext": "107028"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:43:30",
+        "startDateLocal": "01/28/2024 15:00:00",
+        "startDateUTC": "01/28/2024 09:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "240",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T15:00:00"
+  },
+  {
+    "id": 6054296,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "110797",
+          "competitiorName": "CHENG I-Ching",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110797",
+              "playerName": "CHENG I-Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112868",
+          "competitiorName": "YANG Xiaoxin",
+          "competitiorOrg": "MON",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112868",
+              "playerName": "YANG Xiaoxin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MON",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,5,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-5,11-4,0-0,0-0",
+      "resultsGameScores": "11-6,11-5,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112868",
+        "serverReceiver": "110797",
+        "serverNext": "112868",
+        "serverCompetitor": "112868",
+        "receiverNext": "110797"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:54",
+        "startDateLocal": "01/28/2024 14:20:00",
+        "startDateUTC": "01/28/2024 08:50:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "130",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T14:20:00"
+  },
+  {
+    "id": 6054157,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "102832",
+          "competitiorName": "FRANZISKA Patrick",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102832",
+              "playerName": "FRANZISKA Patrick",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,5,3,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135977",
+          "competitiorName": "LEBRUN Felix",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135977",
+              "playerName": "LEBRUN Felix",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,5-11,3-11,9-11,0-0",
+      "resultsGameScores": "11-8,5-11,3-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "102832",
+        "serverReceiver": "135977",
+        "serverNext": "102832",
+        "serverCompetitor": "102832",
+        "receiverNext": "135977"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:26",
+        "startDateLocal": "01/28/2024 13:40:00",
+        "startDateUTC": "01/28/2024 08:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "189",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T13:40:00"
+  },
+  {
+    "id": 6053958,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123977",
+          "competitiorName": "SHIN Yubin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123977",
+              "playerName": "SHIN Yubin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,8,11,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114726",
+          "competitiorName": "MITTELHAM Nina",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114726",
+              "playerName": "MITTELHAM Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,1,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,7-11,8-11,11-1,8-11",
+      "resultsGameScores": "11-9,7-11,8-11,11-1,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123977",
+        "serverReceiver": "114726",
+        "serverNext": "123977",
+        "serverCompetitor": "123977",
+        "receiverNext": "114726"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:12",
+        "startDateLocal": "01/28/2024 13:00:00",
+        "startDateUTC": "01/28/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "244",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-28T13:00:00"
+  },
+  {
+    "id": 6053711,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "102832",
+          "competitiorName": "FRANZISKA Patrick",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102832",
+              "playerName": "FRANZISKA Patrick",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,10,3,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135367",
+          "competitiorName": "OH Junsung",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135367",
+              "playerName": "OH Junsung",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,12,11,9",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,10-12,3-11,11-9",
+      "resultsGameScores": "11-9,11-9,10-12,3-11,11-9",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135367",
+        "serverReceiver": "102832",
+        "serverNext": "135367",
+        "serverCompetitor": "135367",
+        "receiverNext": "102832"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:48:10",
+        "startDateLocal": "01/27/2024 20:35:00",
+        "startDateUTC": "01/27/2024 15:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "264",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T20:35:00"
+  },
+  {
+    "id": 6053436,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133814",
+          "competitiorName": "KIM Nayeong",
+          "competitiorOrg": "KOR",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133814",
+              "playerName": "KIM Nayeong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,10,15,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112868",
+          "competitiorName": "YANG Xiaoxin",
+          "competitiorOrg": "MON",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112868",
+              "playerName": "YANG Xiaoxin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MON",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,13,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,10-12,15-13,9-11,0-0",
+      "resultsGameScores": "7-11,10-12,15-13,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133814",
+        "serverReceiver": "112868",
+        "serverNext": "133814",
+        "serverCompetitor": "133814",
+        "receiverNext": "112868"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:40:39",
+        "startDateLocal": "01/27/2024 20:00:00",
+        "startDateUTC": "01/27/2024 14:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "257",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T20:00:00"
+  },
+  {
+    "id": 6053344,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200413",
+          "competitiorName": "JOO Cheonhui",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200413",
+              "playerName": "JOO Cheonhui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,9,10,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114726",
+          "competitiorName": "MITTELHAM Nina",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114726",
+              "playerName": "MITTELHAM Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,12,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "10-12,9-11,10-12,0-0,0-0",
+      "resultsGameScores": "10-12,9-11,10-12,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200413",
+        "serverReceiver": "114726",
+        "serverNext": "200413",
+        "serverCompetitor": "200413",
+        "receiverNext": "114726"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:50",
+        "startDateLocal": "01/27/2024 20:00:00",
+        "startDateUTC": "01/27/2024 14:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "193",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T20:00:00"
+  },
+  {
+    "id": 6052985,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114715",
+          "competitiorName": "QIU Dang",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,6,8,4",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "107028",
+          "competitiorName": "OVTCHAROV Dimitrij",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "107028",
+              "playerName": "OVTCHAROV Dimitrij",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,3,11,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-6,11-3,6-11,8-11,4-11",
+      "resultsGameScores": "11-6,11-3,6-11,8-11,4-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "107028",
+        "serverReceiver": "114715",
+        "serverNext": "107028",
+        "serverCompetitor": "107028",
+        "receiverNext": "114715"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:23",
+        "startDateLocal": "01/27/2024 19:25:00",
+        "startDateUTC": "01/27/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "237",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T19:25:00"
+  },
+  {
+    "id": 6052973,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115641",
+          "competitiorName": "CALDERANO Hugo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115641",
+              "playerName": "CALDERANO Hugo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "116853",
+          "competitiorName": "KALLBERG Anton",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116853",
+              "playerName": "KALLBERG Anton",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,8,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,8-11,11-8,11-4,0-0",
+      "resultsGameScores": "11-7,8-11,11-8,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115641",
+        "serverReceiver": "116853",
+        "serverNext": "115641",
+        "serverCompetitor": "115641",
+        "receiverNext": "116853"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:58",
+        "startDateLocal": "01/27/2024 19:25:00",
+        "startDateUTC": "01/27/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "201",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T19:25:00"
+  },
+  {
+    "id": 6052529,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "122718",
+          "competitiorName": "AKULA Sreeja",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "122718",
+              "playerName": "AKULA Sreeja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,6,4,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110797",
+          "competitiorName": "CHENG I-Ching",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110797",
+              "playerName": "CHENG I-Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-7,6-11,4-11,0-0",
+      "resultsGameScores": "5-11,11-7,6-11,4-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "110797",
+        "serverReceiver": "122718",
+        "serverNext": "110797",
+        "serverCompetitor": "110797",
+        "receiverNext": "122718"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:41",
+        "startDateLocal": "01/27/2024 18:50:00",
+        "startDateUTC": "01/27/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "186",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T18:50:00"
+  },
+  {
+    "id": 6052503,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123977",
+          "competitiorName": "SHIN Yubin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123977",
+              "playerName": "SHIN Yubin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "14,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "118994",
+          "competitiorName": "JEON Jihee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,8,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "14-12,11-8,11-5,0-0,0-0",
+      "resultsGameScores": "14-12,11-8,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "118994",
+        "serverReceiver": "123977",
+        "serverNext": "118994",
+        "serverCompetitor": "118994",
+        "receiverNext": "123977"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:40",
+        "startDateLocal": "01/27/2024 18:50:00",
+        "startDateUTC": "01/27/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "177",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T18:50:00"
+  },
+  {
+    "id": 6052152,
+    "eventId": "2863",
+    "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "77476",
+          "competitiorName": "AN Jaehyun/LIM Jonghoon",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121514",
+              "playerName": "AN Jaehyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "117357",
+              "playerName": "LIM Jonghoon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "44907",
+          "competitiorName": "QIU Dang/FRANZISKA Patrick",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "102832",
+              "playerName": "FRANZISKA Patrick",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,11-7,0-0,0-0",
+      "resultsGameScores": "11-9,11-9,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "102832",
+        "serverReceiver": "117357",
+        "serverNext": "102832",
+        "serverCompetitor": "44907",
+        "receiverNext": "117357"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:40",
+        "startDateLocal": "01/27/2024 18:00:00",
+        "startDateUTC": "01/27/2024 12:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "175",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T18:00:00"
+  },
+  {
+    "id": 6052079,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112092",
+          "competitiorName": "ARUNA Quadri",
+          "competitiorOrg": "NGR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112092",
+              "playerName": "ARUNA Quadri",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NGR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,6,10,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135977",
+          "competitiorName": "LEBRUN Felix",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135977",
+              "playerName": "LEBRUN Felix",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,6-11,10-12,0-0,0-0",
+      "resultsGameScores": "4-11,6-11,10-12,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112092",
+        "serverReceiver": "135977",
+        "serverNext": "112092",
+        "serverCompetitor": "112092",
+        "receiverNext": "135977"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:45",
+        "startDateLocal": "01/27/2024 18:00:00",
+        "startDateUTC": "01/27/2024 12:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "146",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T18:00:00"
+  },
+  {
+    "id": 6051814,
+    "eventId": "2863",
+    "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "43021",
+          "competitiorName": "JEON Jihee/SHIN Yubin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "123977",
+              "playerName": "SHIN Yubin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,15,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100112518",
+          "competitiorName": "JOO Cheonhui/CHOI Hyojoo",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200413",
+              "playerName": "JOO Cheonhui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "131401",
+              "playerName": "CHOI Hyojoo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,4,17,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,11-4,15-17,11-6,0-0",
+      "resultsGameScores": "11-4,11-4,15-17,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "118994",
+        "serverReceiver": "131401",
+        "serverNext": "118994",
+        "serverCompetitor": "43021",
+        "receiverNext": "131401"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:45",
+        "startDateLocal": "01/27/2024 15:30:00",
+        "startDateUTC": "01/27/2024 10:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "243",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T15:30:00"
+  },
+  {
+    "id": 6051794,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000500----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "118927",
+          "competitiorName": "JORGIC Darko",
+          "competitiorOrg": "SLO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118927",
+              "playerName": "JORGIC Darko",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SLO",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,6,12,11,5",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "102832",
+          "competitiorName": "FRANZISKA Patrick",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102832",
+              "playerName": "FRANZISKA Patrick",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,10,7,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,6-11,12-10,11-7,5-11",
+      "resultsGameScores": "9-11,6-11,12-10,11-7,5-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "118927",
+        "serverReceiver": "102832",
+        "serverNext": "118927",
+        "serverCompetitor": "118927",
+        "receiverNext": "102832"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:51",
+        "startDateLocal": "01/27/2024 14:45:00",
+        "startDateUTC": "01/27/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "270",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:45:00"
+  },
+  {
+    "id": 6051322,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115641",
+          "competitiorName": "CALDERANO Hugo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115641",
+              "playerName": "CALDERANO Hugo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "117357",
+          "competitiorName": "LIM Jonghoon",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117357",
+              "playerName": "LIM Jonghoon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,5,1,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "13-11,11-5,11-1,0-0,0-0",
+      "resultsGameScores": "13-11,11-5,11-1,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115641",
+        "serverReceiver": "117357",
+        "serverNext": "115641",
+        "serverCompetitor": "115641",
+        "receiverNext": "117357"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:45",
+        "startDateLocal": "01/27/2024 14:45:00",
+        "startDateUTC": "01/27/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "149",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:45:00"
+  },
+  {
+    "id": 6051281,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114715",
+          "competitiorName": "QIU Dang",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100621",
+          "competitiorName": "APOLONIA Tiago",
+          "competitiorOrg": "POR",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "100621",
+              "playerName": "APOLONIA Tiago",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,6,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-6,11-9,0-0,0-0",
+      "resultsGameScores": "11-8,11-6,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "100621",
+        "serverReceiver": "114715",
+        "serverNext": "100621",
+        "serverCompetitor": "100621",
+        "receiverNext": "114715"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:54",
+        "startDateLocal": "01/27/2024 14:45:00",
+        "startDateUTC": "01/27/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "159",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:45:00"
+  },
+  {
+    "id": 6051212,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------8FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------8FNL000700----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133814",
+          "competitiorName": "KIM Nayeong",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133814",
+              "playerName": "KIM Nayeong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "131100",
+          "competitiorName": "PAVADE Prithika",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131100",
+              "playerName": "PAVADE Prithika",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,9,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,9-11,11-9,11-9,0-0",
+      "resultsGameScores": "11-6,9-11,11-9,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133814",
+        "serverReceiver": "131100",
+        "serverNext": "133814",
+        "serverCompetitor": "133814",
+        "receiverNext": "131100"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:03",
+        "startDateLocal": "01/27/2024 14:10:00",
+        "startDateUTC": "01/27/2024 08:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "215",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:10:00"
+  },
+  {
+    "id": 6051104,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------8FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------8FNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "117463",
+          "competitiorName": "DIACONU Adina",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117463",
+              "playerName": "DIACONU Adina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,11,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114726",
+          "competitiorName": "MITTELHAM Nina",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114726",
+              "playerName": "MITTELHAM Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,9,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,11-13,11-9,6-11,0-0",
+      "resultsGameScores": "9-11,11-13,11-9,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117463",
+        "serverReceiver": "114726",
+        "serverNext": "117463",
+        "serverCompetitor": "117463",
+        "receiverNext": "114726"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:06",
+        "startDateLocal": "01/27/2024 14:45:00",
+        "startDateUTC": "01/27/2024 09:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "235",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:45:00"
+  },
+  {
+    "id": 6050742,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "102841",
+          "competitiorName": "FREITAS Marcos",
+          "competitiorOrg": "POR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102841",
+              "playerName": "FREITAS Marcos",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "1,11,2,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "116853",
+          "competitiorName": "KALLBERG Anton",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116853",
+              "playerName": "KALLBERG Anton",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "1-11,11-7,2-11,6-11,0-0",
+      "resultsGameScores": "1-11,11-7,2-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "102841",
+        "serverReceiver": "116853",
+        "serverNext": "102841",
+        "serverCompetitor": "102841",
+        "receiverNext": "116853"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:21",
+        "startDateLocal": "01/27/2024 14:10:00",
+        "startDateUTC": "01/27/2024 08:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "172",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:10:00"
+  },
+  {
+    "id": 6050717,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------8FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------8FNL000800----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115920",
+          "competitiorName": "BATRA Manika",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115920",
+              "playerName": "BATRA Manika",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,7,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112868",
+          "competitiorName": "YANG Xiaoxin",
+          "competitiorOrg": "MON",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112868",
+              "playerName": "YANG Xiaoxin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MON",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,13,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,11-13,7-11,9-11,0-0",
+      "resultsGameScores": "11-9,11-13,7-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112868",
+        "serverReceiver": "115920",
+        "serverNext": "112868",
+        "serverCompetitor": "112868",
+        "receiverNext": "115920"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:37",
+        "startDateLocal": "01/27/2024 14:10:00",
+        "startDateUTC": "01/27/2024 08:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "228",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:10:00"
+  },
+  {
+    "id": 6050349,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135367",
+          "competitiorName": "OH Junsung",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135367",
+              "playerName": "OH Junsung",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,7,11,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114936",
+          "competitiorName": "JANG Woojin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114936",
+              "playerName": "JANG Woojin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,13,11,9,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,11-13,7-11,11-9,12-10",
+      "resultsGameScores": "11-8,11-13,7-11,11-9,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114936",
+        "serverReceiver": "135367",
+        "serverNext": "114936",
+        "serverCompetitor": "114936",
+        "receiverNext": "135367"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:04",
+        "startDateLocal": "01/27/2024 13:35:00",
+        "startDateUTC": "01/27/2024 08:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "301",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T13:35:00"
+  },
+  {
+    "id": 6050201,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------8FNL000600----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112368",
+          "competitiorName": "YANG Ha Eun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112368",
+              "playerName": "YANG Ha Eun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,9,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110797",
+          "competitiorName": "CHENG I-Ching",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110797",
+              "playerName": "CHENG I-Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,9-11,9-11,0-0,0-0",
+      "resultsGameScores": "8-11,9-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "110797",
+        "serverReceiver": "112368",
+        "serverNext": "110797",
+        "serverCompetitor": "110797",
+        "receiverNext": "112368"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:29:13",
+        "startDateLocal": "01/27/2024 14:10:00",
+        "startDateUTC": "01/27/2024 08:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "165",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T14:10:00"
+  },
+  {
+    "id": 6050039,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------8FNL000500----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------8FNL000500----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "122718",
+          "competitiorName": "AKULA Sreeja",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "122718",
+              "playerName": "AKULA Sreeja",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,8,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115543",
+          "competitiorName": "DOO Hoi Kem",
+          "competitiorOrg": "HKG",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115543",
+              "playerName": "DOO Hoi Kem",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HKG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,8,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,8-11,11-8,11-8,0-0",
+      "resultsGameScores": "12-10,8-11,11-8,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115543",
+        "serverReceiver": "122718",
+        "serverNext": "115543",
+        "serverCompetitor": "115543",
+        "receiverNext": "122718"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:49",
+        "startDateLocal": "01/27/2024 13:35:00",
+        "startDateUTC": "01/27/2024 08:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "227",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T13:35:00"
+  },
+  {
+    "id": 6049739,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000700----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112092",
+          "competitiorName": "ARUNA Quadri",
+          "competitiorOrg": "NGR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112092",
+              "playerName": "ARUNA Quadri",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NGR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,12,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "132992",
+          "competitiorName": "LEBRUN Alexis",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132992",
+              "playerName": "LEBRUN Alexis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,10,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,8-11,12-10,11-8,0-0",
+      "resultsGameScores": "11-8,8-11,12-10,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112092",
+        "serverReceiver": "132992",
+        "serverNext": "112092",
+        "serverCompetitor": "112092",
+        "receiverNext": "132992"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:21",
+        "startDateLocal": "01/27/2024 13:35:00",
+        "startDateUTC": "01/27/2024 08:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "241",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T13:35:00"
+  },
+  {
+    "id": 6049460,
+    "eventId": "2863",
+    "documentCode": "TTEMSINGLES-----------8FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEMSINGLES-----------8FNL000800----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "122044",
+          "competitiorName": "MOREGARD Truls",
+          "competitiorOrg": "SWE",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "122044",
+              "playerName": "MOREGARD Truls",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "3,10,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135977",
+          "competitiorName": "LEBRUN Felix",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135977",
+              "playerName": "LEBRUN Felix",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "3-11,10-12,9-11,0-0,0-0",
+      "resultsGameScores": "3-11,10-12,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "122044",
+        "serverReceiver": "135977",
+        "serverNext": "122044",
+        "serverCompetitor": "122044",
+        "receiverNext": "135977"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:08",
+        "startDateLocal": "01/27/2024 13:35:00",
+        "startDateUTC": "01/27/2024 08:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "165",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T13:35:00"
+  },
+  {
+    "id": 6049212,
+    "eventId": "2863",
+    "documentCode": "TTEWSINGLES-----------8FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2863",
+      "documentCode": "TTEWSINGLES-----------8FNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Peddem Indoor Stadium",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200413",
+          "competitiorName": "JOO Cheonhui",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200413",
+              "playerName": "JOO Cheonhui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,16,11,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "122052",
+          "competitiorName": "LEE Eunhye",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "122052",
+              "playerName": "LEE Eunhye",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,18,5,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,16-18,11-5,12-10,0-0",
+      "resultsGameScores": "11-7,16-18,11-5,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "122052",
+        "serverReceiver": "200413",
+        "serverNext": "122052",
+        "serverCompetitor": "122052",
+        "receiverNext": "200413"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:44:44",
+        "startDateLocal": "01/27/2024 13:00:00",
+        "startDateUTC": "01/27/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "261",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-27T13:00:00"
+  }
+]

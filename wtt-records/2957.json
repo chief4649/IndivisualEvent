@@ -1,0 +1,3177 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP02.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 2 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113197",
+        "name": "MOHAMED Aia",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "113197",
+            "name": "MOHAMED Aia",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "201228",
+        "name": "HAMEED Nesmah",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "201228",
+            "name": "HAMEED Nesmah",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "9-11",
+      "11-8",
+      "13-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP03.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 3 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137673",
+        "name": "PHADKE Amruta",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "137673",
+            "name": "PHADKE Amruta",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134092",
+        "name": "HAYT Asmaa",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "134092",
+            "name": "HAYT Asmaa",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "10-12",
+      "11-6",
+      "11-2",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP01.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 1 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133408",
+        "name": "ALAALI Maryam",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "133408",
+            "name": "ALAALI Maryam",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135902",
+        "name": "ALI Aya",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135902",
+            "name": "ALI Aya",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "12-10",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP03.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 3 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 4",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133459",
+        "name": "AL-WEDIAN Bara",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "133459",
+            "name": "AL-WEDIAN Bara",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121997",
+        "name": "KHOURY Malak",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121997",
+            "name": "KHOURY Malak",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "8-11",
+      "11-4",
+      "11-7",
+      "4-11",
+      "14-16",
+      "11-1"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP01.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 1 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113376",
+        "name": "ALKHADRAWI Ali",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113376",
+            "name": "ALKHADRAWI Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116390",
+        "name": "TAHER Omar",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "116390",
+            "name": "TAHER Omar",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "12-10",
+      "11-8",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP02.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 2 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135310",
+        "name": "ZAZA Hend",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108825",
+        "name": "SAHAKIAN Mariana",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "108825",
+            "name": "SAHAKIAN Mariana",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "11-3",
+      "11-7",
+      "9-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP02.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 2 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115118",
+        "name": "BU SHULAYBI Abdulaziz",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "115118",
+            "name": "BU SHULAYBI Abdulaziz",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133365",
+        "name": "MAGHRABI Ibrahim",
+        "org": "Palestine",
+        "orgCode": "PLE",
+        "irm": null,
+        "players": [
+          {
+            "id": "133365",
+            "name": "MAGHRABI Ibrahim",
+            "org": "Palestine",
+            "orgCode": "PLE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "13-11",
+      "11-3",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP03.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 3 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135910",
+        "name": "GUBRAN Ebrahim",
+        "org": "Yemen",
+        "orgCode": "YEM",
+        "irm": null,
+        "players": [
+          {
+            "id": "135910",
+            "name": "GUBRAN Ebrahim",
+            "org": "Yemen",
+            "orgCode": "YEM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "201296",
+        "name": "GAREEB Gaith",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-3",
+      "11-7",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP05.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 5 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135386",
+        "name": "AL-KUWARI Sultan",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "135386",
+            "name": "AL-KUWARI Sultan",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122973",
+        "name": "HAMEED Anwer",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "122973",
+            "name": "HAMEED Anwer",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-7",
+      "8-11",
+      "13-15",
+      "11-8",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP04.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 4 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135383",
+        "name": "ALNASER Rawad",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "135383",
+            "name": "ALNASER Rawad",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120239",
+        "name": "HAMIE Mohamad",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120239",
+            "name": "HAMIE Mohamad",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-9",
+      "7-11",
+      "8-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP06.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 6 - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110674",
+        "name": "ABO YAMAN Zaid",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "110674",
+            "name": "ABO YAMAN Zaid",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134648",
+        "name": "ZAZA Obaida",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "134648",
+            "name": "ZAZA Obaida",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-5",
+      "11-3",
+      "13-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP02.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 2 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113197",
+        "name": "MOHAMED Aia",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "113197",
+            "name": "MOHAMED Aia",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135310",
+        "name": "ZAZA Hend",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "9-11",
+      "8-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP03.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 3 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133459",
+        "name": "AL-WEDIAN Bara",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "133459",
+            "name": "AL-WEDIAN Bara",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137673",
+        "name": "PHADKE Amruta",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "137673",
+            "name": "PHADKE Amruta",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "7-11",
+      "9-11",
+      "11-4",
+      "6-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP03.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 4,
+    "description": "Women's Singles - Group 3 - Match 4",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121997",
+        "name": "KHOURY Malak",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121997",
+            "name": "KHOURY Malak",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134092",
+        "name": "HAYT Asmaa",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "134092",
+            "name": "HAYT Asmaa",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-7",
+      "12-10",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP02.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 4,
+    "description": "Women's Singles - Group 2 - Match 4",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "201228",
+        "name": "HAMEED Nesmah",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "201228",
+            "name": "HAMEED Nesmah",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108825",
+        "name": "SAHAKIAN Mariana",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "108825",
+            "name": "SAHAKIAN Mariana",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "4-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP01.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 1 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133408",
+        "name": "ALAALI Maryam",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "133408",
+            "name": "ALAALI Maryam",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118087",
+        "name": "ABO-YAMAN Taimmaa",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "118087",
+            "name": "ABO-YAMAN Taimmaa",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-13",
+      "11-5",
+      "11-5",
+      "9-11",
+      "11-5",
+      "9-11",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP04.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 4 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135383",
+        "name": "ALNASER Rawad",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "135383",
+            "name": "ALNASER Rawad",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116742",
+        "name": "RASHED Rashed",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116742",
+            "name": "RASHED Rashed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "5-11",
+      "11-9",
+      "14-12",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP02.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 2 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115118",
+        "name": "BU SHULAYBI Abdulaziz",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "115118",
+            "name": "BU SHULAYBI Abdulaziz",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116739",
+        "name": "ALYASSI Alyas",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116739",
+            "name": "ALYASSI Alyas",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-5",
+      "11-7",
+      "11-13",
+      "4-11",
+      "7-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP03.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 3 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135910",
+        "name": "GUBRAN Ebrahim",
+        "org": "Yemen",
+        "orgCode": "YEM",
+        "irm": null,
+        "players": [
+          {
+            "id": "135910",
+            "name": "GUBRAN Ebrahim",
+            "org": "Yemen",
+            "orgCode": "YEM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120133",
+        "name": "CHEAIB Dauud",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120133",
+            "name": "CHEAIB Dauud",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "10-12",
+      "8-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP06.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 6 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110674",
+        "name": "ABO YAMAN Zaid",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "110674",
+            "name": "ABO YAMAN Zaid",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132462",
+        "name": "AL BALUSHI Muhannad",
+        "org": "Oman",
+        "orgCode": "OMA",
+        "irm": null,
+        "players": [
+          {
+            "id": "132462",
+            "name": "AL BALUSHI Muhannad",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-3",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP05.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 5 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135386",
+        "name": "AL-KUWARI Sultan",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "135386",
+            "name": "AL-KUWARI Sultan",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "114323",
+        "name": "ALDMAISY Zeyad",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "114323",
+            "name": "ALDMAISY Zeyad",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "8-11",
+      "8-11",
+      "7-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP01.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 1 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113376",
+        "name": "ALKHADRAWI Ali",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113376",
+            "name": "ALKHADRAWI Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110989",
+        "name": "ALI Omar",
+        "org": "Yemen",
+        "orgCode": "YEM",
+        "irm": null,
+        "players": [
+          {
+            "id": "110989",
+            "name": "ALI Omar",
+            "org": "Yemen",
+            "orgCode": "YEM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-1",
+      "11-7",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP02.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 6,
+    "description": "Women's Singles - Group 2 - Match 6",
+    "venue": "University of Sulaimani",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135310",
+        "name": "ZAZA Hend",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "201228",
+        "name": "HAMEED Nesmah",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "201228",
+            "name": "HAMEED Nesmah",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-9",
+      "11-2",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP01.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 1 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "118087",
+        "name": "ABO-YAMAN Taimmaa",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "118087",
+            "name": "ABO-YAMAN Taimmaa",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135902",
+        "name": "ALI Aya",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135902",
+            "name": "ALI Aya",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "6-11",
+      "11-5",
+      "11-9",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP02.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 5,
+    "description": "Women's Singles - Group 2 - Match 5",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113197",
+        "name": "MOHAMED Aia",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "113197",
+            "name": "MOHAMED Aia",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108825",
+        "name": "SAHAKIAN Mariana",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "108825",
+            "name": "SAHAKIAN Mariana",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "8-11",
+      "11-13",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP03.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 6,
+    "description": "Women's Singles - Group 3 - Match 6",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137673",
+        "name": "PHADKE Amruta",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "137673",
+            "name": "PHADKE Amruta",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121997",
+        "name": "KHOURY Malak",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121997",
+            "name": "KHOURY Malak",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "7-11",
+      "7-11",
+      "4-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.GP03.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 5,
+    "description": "Women's Singles - Group 3 - Match 5",
+    "venue": "University of Sulaimani",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133459",
+        "name": "AL-WEDIAN Bara",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "133459",
+            "name": "AL-WEDIAN Bara",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134092",
+        "name": "HAYT Asmaa",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "134092",
+            "name": "HAYT Asmaa",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-6",
+      "11-9",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP01.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 1 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110989",
+        "name": "ALI Omar",
+        "org": "Yemen",
+        "orgCode": "YEM",
+        "irm": null,
+        "players": [
+          {
+            "id": "110989",
+            "name": "ALI Omar",
+            "org": "Yemen",
+            "orgCode": "YEM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116390",
+        "name": "TAHER Omar",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "116390",
+            "name": "TAHER Omar",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "5-11",
+      "10-12",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP03.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 3 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120133",
+        "name": "CHEAIB Dauud",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120133",
+            "name": "CHEAIB Dauud",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "201296",
+        "name": "GAREEB Gaith",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-3",
+      "11-1",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP04.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 4 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116742",
+        "name": "RASHED Rashed",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116742",
+            "name": "RASHED Rashed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120239",
+        "name": "HAMIE Mohamad",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120239",
+            "name": "HAMIE Mohamad",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-9",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP06.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 6 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132462",
+        "name": "AL BALUSHI Muhannad",
+        "org": "Oman",
+        "orgCode": "OMA",
+        "irm": null,
+        "players": [
+          {
+            "id": "132462",
+            "name": "AL BALUSHI Muhannad",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134648",
+        "name": "ZAZA Obaida",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "134648",
+            "name": "ZAZA Obaida",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "6-11",
+      "5-11",
+      "2-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP02.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 2 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116739",
+        "name": "ALYASSI Alyas",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116739",
+            "name": "ALYASSI Alyas",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133365",
+        "name": "MAGHRABI Ibrahim",
+        "org": "Palestine",
+        "orgCode": "PLE",
+        "irm": null,
+        "players": [
+          {
+            "id": "133365",
+            "name": "MAGHRABI Ibrahim",
+            "org": "Palestine",
+            "orgCode": "PLE",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-4",
+      "11-7",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.GP05.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 5 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114323",
+        "name": "ALDMAISY Zeyad",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "114323",
+            "name": "ALDMAISY Zeyad",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122973",
+        "name": "HAMEED Anwer",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "122973",
+            "name": "HAMEED Anwer",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "4-11",
+      "11-7",
+      "20-18",
+      "7-11",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114323",
+        "name": "ALDMAISY Zeyad",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "114323",
+            "name": "ALDMAISY Zeyad",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116739",
+        "name": "ALYASSI Alyas",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116739",
+            "name": "ALYASSI Alyas",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "9-11",
+      "12-14",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135910",
+        "name": "GUBRAN Ebrahim",
+        "org": "Yemen",
+        "orgCode": "YEM",
+        "irm": null,
+        "players": [
+          {
+            "id": "135910",
+            "name": "GUBRAN Ebrahim",
+            "org": "Yemen",
+            "orgCode": "YEM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134648",
+        "name": "ZAZA Obaida",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "134648",
+            "name": "ZAZA Obaida",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "11-6",
+      "12-10",
+      "5-11",
+      "10-12",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 - Match 7",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122973",
+        "name": "HAMEED Anwer",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "122973",
+            "name": "HAMEED Anwer",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135383",
+        "name": "ALNASER Rawad",
+        "org": "Qatar",
+        "orgCode": "QAT",
+        "irm": null,
+        "players": [
+          {
+            "id": "135383",
+            "name": "ALNASER Rawad",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-9",
+      "11-9",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 - Match 6",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116390",
+        "name": "TAHER Omar",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "116390",
+            "name": "TAHER Omar",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110674",
+        "name": "ABO YAMAN Zaid",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "110674",
+            "name": "ABO YAMAN Zaid",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "11-9",
+      "6-11",
+      "4-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "121997",
+        "name": "KHOURY Malak",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "121997",
+            "name": "KHOURY Malak",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118087",
+        "name": "ABO-YAMAN Taimmaa",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "118087",
+            "name": "ABO-YAMAN Taimmaa",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-13",
+      "11-9",
+      "13-15",
+      "7-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108825",
+        "name": "SAHAKIAN Mariana",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "108825",
+            "name": "SAHAKIAN Mariana",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133459",
+        "name": "AL-WEDIAN Bara",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "133459",
+            "name": "AL-WEDIAN Bara",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-9",
+      "12-10",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113376",
+        "name": "ALKHADRAWI Ali",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113376",
+            "name": "ALKHADRAWI Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134648",
+        "name": "ZAZA Obaida",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "134648",
+            "name": "ZAZA Obaida",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-6",
+      "11-9",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "DSQ-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116739",
+        "name": "ALYASSI Alyas",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116739",
+            "name": "ALYASSI Alyas",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116742",
+        "name": "RASHED Rashed",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116742",
+            "name": "RASHED Rashed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-11",
+      "0-11",
+      "0-11",
+      "0-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals - Match 4",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122973",
+        "name": "HAMEED Anwer",
+        "org": "Iraq",
+        "orgCode": "IRQ",
+        "irm": null,
+        "players": [
+          {
+            "id": "122973",
+            "name": "HAMEED Anwer",
+            "org": "Iraq",
+            "orgCode": "IRQ",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115118",
+        "name": "BU SHULAYBI Abdulaziz",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "115118",
+            "name": "BU SHULAYBI Abdulaziz",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-8",
+      "11-9",
+      "6-11",
+      "6-11",
+      "8-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals - Match 3",
+    "venue": "University of Sulaimani",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120133",
+        "name": "CHEAIB Dauud",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120133",
+            "name": "CHEAIB Dauud",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110674",
+        "name": "ABO YAMAN Zaid",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "110674",
+            "name": "ABO YAMAN Zaid",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-13",
+      "7-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133408",
+        "name": "ALAALI Maryam",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "133408",
+            "name": "ALAALI Maryam",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "108825",
+        "name": "SAHAKIAN Mariana",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "108825",
+            "name": "SAHAKIAN Mariana",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-9",
+      "11-13",
+      "11-3",
+      "7-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113376",
+        "name": "ALKHADRAWI Ali",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113376",
+            "name": "ALKHADRAWI Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116742",
+        "name": "RASHED Rashed",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116742",
+            "name": "RASHED Rashed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "5-11",
+      "8-11",
+      "7-11",
+      "15-13",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "118087",
+        "name": "ABO-YAMAN Taimmaa",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "118087",
+            "name": "ABO-YAMAN Taimmaa",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135310",
+        "name": "ZAZA Hend",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "5-11",
+      "5-11",
+      "11-9",
+      "11-9",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110674",
+        "name": "ABO YAMAN Zaid",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "110674",
+            "name": "ABO YAMAN Zaid",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115118",
+        "name": "BU SHULAYBI Abdulaziz",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA",
+        "irm": null,
+        "players": [
+          {
+            "id": "115118",
+            "name": "BU SHULAYBI Abdulaziz",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "13-11",
+      "11-8",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "108825",
+        "name": "SAHAKIAN Mariana",
+        "org": "Lebanon",
+        "orgCode": "LBN",
+        "irm": null,
+        "players": [
+          {
+            "id": "108825",
+            "name": "SAHAKIAN Mariana",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135310",
+        "name": "ZAZA Hend",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "6-11",
+      "11-9",
+      "11-3",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2957",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals - Match 1",
+    "venue": "University of Sulaimani",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116742",
+        "name": "RASHED Rashed",
+        "org": "Bahrain",
+        "orgCode": "BRN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116742",
+            "name": "RASHED Rashed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110674",
+        "name": "ABO YAMAN Zaid",
+        "org": "Jordan",
+        "orgCode": "JOR",
+        "irm": null,
+        "players": [
+          {
+            "id": "110674",
+            "name": "ABO YAMAN Zaid",
+            "org": "Jordan",
+            "orgCode": "JOR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "2-11",
+      "2-11",
+      "7-11",
+      "11-9",
+      "8-11"
+    ],
+    "source": "wtt"
+  }
+]

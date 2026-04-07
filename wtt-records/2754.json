@@ -1,0 +1,1576 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.912-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 9-12",
+    "roundKey": "pos 9 12",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 9-12 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113568",
+        "name": "BORQUAYE Bernice",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113568",
+            "name": "BORQUAYE Bernice",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131909",
+        "name": "HOUNGUE Rebecca",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "131909",
+            "name": "HOUNGUE Rebecca",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.912-.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 9-12",
+    "roundKey": "pos 9 12",
+    "matchNumber": 2,
+    "description": "Women's Singles - Pos. 9-12 - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136346",
+        "name": "BAIDOO Augustina",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "136346",
+            "name": "BAIDOO Augustina",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103335",
+        "name": "GYASI Beatrice",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "103335",
+            "name": "GYASI Beatrice",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.912-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 9-12",
+    "roundKey": "pos 9 12",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 9-12 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113557",
+        "name": "AKAYADE Samuel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113557",
+            "name": "AKAYADE Samuel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205257",
+        "name": "MARFO James",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205257",
+            "name": "MARFO James",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.912-.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 9-12",
+    "roundKey": "pos 9 12",
+    "matchNumber": 2,
+    "description": "Men's Singles - Pos. 9-12 - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113473",
+        "name": "KOUASSI Ange-Aime",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113473",
+            "name": "KOUASSI Ange-Aime",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205260",
+        "name": "ALABI Godwin",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205260",
+            "name": "ALABI Godwin",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.1616.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 13-16",
+    "roundKey": "pos 13 16",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 13-16 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "100534",
+        "name": "AMUSA Jimoh",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "100534",
+            "name": "AMUSA Jimoh",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133661",
+        "name": "ASSOU Atarou",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "133661",
+            "name": "ASSOU Atarou",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.1616.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 13-16",
+    "roundKey": "pos 13 16",
+    "matchNumber": 2,
+    "description": "Men's Singles - Pos. 13-16 - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112645",
+        "name": "SANYAOLOU Niyi",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112645",
+            "name": "SANYAOLOU Niyi",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205193",
+        "name": "PYEE Bogton",
+        "org": "Liberia",
+        "orgCode": "LBR",
+        "irm": null,
+        "players": [
+          {
+            "id": "205193",
+            "name": "PYEE Bogton",
+            "org": "Liberia",
+            "orgCode": "LBR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115379",
+        "name": "BELLO Fatimo",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115379",
+            "name": "BELLO Fatimo",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122193",
+        "name": "ORIBAMISE Esther",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "122193",
+            "name": "ORIBAMISE Esther",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122660",
+        "name": "OJOMU Ajoke",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "122660",
+            "name": "OJOMU Ajoke",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200328",
+        "name": "LEBA Essevoh Mireille",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "200328",
+            "name": "LEBA Essevoh Mireille",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.58--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 5-8",
+    "roundKey": "pos 5 8",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 5-8 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202247",
+        "name": "AGUEH Lyntia",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "202247",
+            "name": "AGUEH Lyntia",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202262",
+        "name": "LABANTI Blessing",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202262",
+            "name": "LABANTI Blessing",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.58--.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 5-8",
+    "roundKey": "pos 5 8",
+    "matchNumber": 2,
+    "description": "Women's Singles - Pos. 5-8 - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131728",
+        "name": "AKADIRI Ziadath",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "131728",
+            "name": "AKADIRI Ziadath",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113565",
+        "name": "KWABI Cynthia",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113565",
+            "name": "KWABI Cynthia",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123128",
+        "name": "AKANBI Rilwan",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "123128",
+            "name": "AKANBI Rilwan",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132026",
+        "name": "OMEH Amadi",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "132026",
+            "name": "OMEH Amadi",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123175",
+        "name": "SOLANKE Azeez",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "123175",
+            "name": "SOLANKE Azeez",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.58--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 5-8",
+    "roundKey": "pos 5 8",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 5-8 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114163",
+        "name": "ISSAC Davies",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "114163",
+            "name": "ISSAC Davies",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "106843",
+        "name": "OBA Don Ange Cedric",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "106843",
+            "name": "OBA Don Ange Cedric",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.58--.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 5-8",
+    "roundKey": "pos 5 8",
+    "matchNumber": 2,
+    "description": "Men's Singles - Pos. 5-8 - Match 2",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113559",
+        "name": "LARTEY Felix",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113559",
+            "name": "LARTEY Felix",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136501",
+        "name": "ADOU Amir Atanda",
+        "org": "Benin",
+        "orgCode": "BEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136501",
+            "name": "ADOU Amir Atanda",
+            "org": "Benin",
+            "orgCode": "BEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.910-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 9-10",
+    "roundKey": "pos 9 10",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 9-10 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "136346",
+        "name": "BAIDOO Augustina",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "136346",
+            "name": "BAIDOO Augustina",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.1112.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 11-12",
+    "roundKey": "pos 11 12",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 11-12 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "103335",
+        "name": "GYASI Beatrice",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "103335",
+            "name": "GYASI Beatrice",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.1314.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 13-14",
+    "roundKey": "pos 13 14",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 13-14 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136516",
+        "name": "AMAH Ayoko Fanida",
+        "org": "Togo",
+        "orgCode": "TOG",
+        "irm": null,
+        "players": [
+          {
+            "id": "136516",
+            "name": "AMAH Ayoko Fanida",
+            "org": "Togo",
+            "orgCode": "TOG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118151",
+        "name": "BAAH-DANSO Celia",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118151",
+            "name": "BAAH-DANSO Celia",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.910-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 9-10",
+    "roundKey": "pos 9 10",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 9-10 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.1112.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 11-12",
+    "roundKey": "pos 11 12",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 11-12 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.1314.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 13-14",
+    "roundKey": "pos 13 14",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 13-14 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.1516.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 15-16",
+    "roundKey": "pos 15 16",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 15-16 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.34--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 3-4",
+    "roundKey": "pos 3 4",
+    "matchNumber": null,
+    "description": "Women's Singles - Pos. 3-4 - Bronze Medal Match",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.56--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 5-6",
+    "roundKey": "pos 5 6",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 5-6 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.78--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 7-8",
+    "roundKey": "pos 7 8",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 7-8 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.34--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 3-4",
+    "roundKey": "pos 3 4",
+    "matchNumber": null,
+    "description": "Men's Singles - Pos. 3-4 - Bronze Medal Match",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123128",
+        "name": "AKANBI Rilwan",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "123128",
+            "name": "AKANBI Rilwan",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123175",
+        "name": "SOLANKE Azeez",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "123175",
+            "name": "SOLANKE Azeez",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-6",
+      "15-17",
+      "11-4",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.56--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 5-6",
+    "roundKey": "pos 5 6",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 5-6 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.78--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 7-8",
+    "roundKey": "pos 7 8",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 7-8 - Match 1",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": null,
+    "description": "Women's Singles - Finals - Gold Medal Match",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115379",
+        "name": "BELLO Fatimo",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115379",
+            "name": "BELLO Fatimo",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122660",
+        "name": "OJOMU Ajoke",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "122660",
+            "name": "OJOMU Ajoke",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-8",
+      "13-11",
+      "6-11",
+      "11-6",
+      "9-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2754",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": null,
+    "description": "Men's Singles - Finals - Gold Medal Match",
+    "venue": "Ga Mashie Hall Trust Emporium",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132026",
+        "name": "OMEH Amadi",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "132026",
+            "name": "OMEH Amadi",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "13-15",
+      "8-11"
+    ],
+    "source": "wtt"
+  }
+]

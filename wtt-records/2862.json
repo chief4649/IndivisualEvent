@@ -1,0 +1,3200 @@
+[
+  {
+    "id": 5907844,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137237",
+          "competitiorName": "LIN Shidong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137237",
+              "playerName": "LIN Shidong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,3,12,7,11,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121558",
+          "competitiorName": "WANG Chuqin",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121558",
+              "playerName": "WANG Chuqin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,10,11,4,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 6,
+      "full_msg": null,
+      "gameScores": "8-11,3-11,12-10,7-11,11-4,5-11,0-0",
+      "resultsGameScores": "8-11,3-11,12-10,7-11,11-4,5-11,0-0",
+      "overallScores": "2-4",
+      "resultOverallScores": "2-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121558",
+        "serverReceiver": "137237",
+        "serverNext": "121558",
+        "serverCompetitor": "121558",
+        "receiverNext": "137237"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:06",
+        "startDateLocal": "01/13/2024 19:00:00",
+        "startDateUTC": "01/13/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "290",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T19:00:00"
+  },
+  {
+    "id": 5906501,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "131163",
+          "competitiorName": "SUN Yingsha",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131163",
+              "playerName": "SUN Yingsha",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,2,11,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112019",
+          "competitiorName": "CHEN Meng",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112019",
+              "playerName": "CHEN Meng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,11,7,10,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,2-11,11-7,12-10,0-0,0-0",
+      "resultsGameScores": "11-7,11-6,2-11,11-7,12-10,0-0,0-0",
+      "overallScores": "4-1",
+      "resultOverallScores": "4-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112019",
+        "serverReceiver": "131163",
+        "serverNext": "112019",
+        "serverCompetitor": "112019",
+        "receiverNext": "131163"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:01",
+        "startDateLocal": "01/13/2024 18:00:00",
+        "startDateUTC": "01/13/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "250",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T18:00:00"
+  },
+  {
+    "id": 5904235,
+    "eventId": "2862",
+    "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "37085",
+          "competitiorName": "WANG Chuqin/SUN Yingsha",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121558",
+              "playerName": "WANG Chuqin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "131163",
+              "playerName": "SUN Yingsha",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,14,3,5,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "46619",
+          "competitiorName": "LIN Shidong/KUAI Man",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137237",
+              "playerName": "LIN Shidong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135049",
+              "playerName": "KUAI Man",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,12,11,11,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "12-10,14-12,3-11,5-11,11-6",
+      "resultsGameScores": "12-10,14-12,3-11,5-11,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137237",
+        "serverReceiver": "131163",
+        "serverNext": "137237",
+        "serverCompetitor": "46619",
+        "receiverNext": "131163"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:43:57",
+        "startDateLocal": "01/13/2024 15:30:00",
+        "startDateUTC": "01/13/2024 12:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "296",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T15:30:00"
+  },
+  {
+    "id": 5903025,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137237",
+          "competitiorName": "LIN Shidong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137237",
+              "playerName": "LIN Shidong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,14,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "119588",
+          "competitiorName": "LIANG Jingkun",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119588",
+              "playerName": "LIANG Jingkun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,12,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,14-12,11-6,0-0,0-0",
+      "resultsGameScores": "11-6,14-12,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137237",
+        "serverReceiver": "119588",
+        "serverNext": "137237",
+        "serverCompetitor": "137237",
+        "receiverNext": "119588"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:01",
+        "startDateLocal": "01/13/2024 14:45:00",
+        "startDateUTC": "01/13/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "175",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T14:45:00"
+  },
+  {
+    "id": 5902388,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112019",
+          "competitiorName": "CHEN Meng",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112019",
+              "playerName": "CHEN Meng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "119797",
+          "competitiorName": "QIAN Tianyi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119797",
+              "playerName": "QIAN Tianyi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,1,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,13-11,11-1,0-0,0-0",
+      "resultsGameScores": "11-8,13-11,11-1,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112019",
+        "serverReceiver": "119797",
+        "serverNext": "112019",
+        "serverCompetitor": "112019",
+        "receiverNext": "119797"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:23",
+        "startDateLocal": "01/13/2024 14:10:00",
+        "startDateUTC": "01/13/2024 11:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "160",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T14:10:00"
+  },
+  {
+    "id": 5901728,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115910",
+          "competitiorName": "LIN Gaoyuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115910",
+              "playerName": "LIN Gaoyuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,5,4,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121558",
+          "competitiorName": "WANG Chuqin",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121558",
+              "playerName": "WANG Chuqin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,13,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,5-11,4-11,11-13,0-0",
+      "resultsGameScores": "11-6,5-11,4-11,11-13,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121558",
+        "serverReceiver": "115910",
+        "serverNext": "121558",
+        "serverCompetitor": "121558",
+        "receiverNext": "115910"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:56",
+        "startDateLocal": "01/13/2024 13:35:00",
+        "startDateUTC": "01/13/2024 10:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "210",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T13:35:00"
+  },
+  {
+    "id": 5901150,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "131163",
+          "competitiorName": "SUN Yingsha",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131163",
+              "playerName": "SUN Yingsha",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,5,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121411",
+          "competitiorName": "WANG Manyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121411",
+              "playerName": "WANG Manyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,7,11,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,11-7,5-11,11-8,0-0",
+      "resultsGameScores": "11-8,11-7,5-11,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "131163",
+        "serverReceiver": "121411",
+        "serverNext": "131163",
+        "serverCompetitor": "131163",
+        "receiverNext": "121411"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:40:41",
+        "startDateLocal": "01/13/2024 13:00:00",
+        "startDateUTC": "01/13/2024 10:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "207",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-13T13:00:00"
+  },
+  {
+    "id": 5898540,
+    "eventId": "2862",
+    "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "39921",
+          "competitiorName": "MA Long/WANG Chuqin",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "105649",
+              "playerName": "MA Long",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "121558",
+              "playerName": "WANG Chuqin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,6,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "69890",
+          "competitiorName": "LIANG Jingkun/YUAN Licen",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119588",
+              "playerName": "LIANG Jingkun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133848",
+              "playerName": "YUAN Licen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-9,6-11,6-11,0-0",
+      "resultsGameScores": "7-11,11-9,6-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "105649",
+        "serverReceiver": "119588",
+        "serverNext": "105649",
+        "serverCompetitor": "39921",
+        "receiverNext": "119588"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:04",
+        "startDateLocal": "01/12/2024 21:15:00",
+        "startDateUTC": "01/12/2024 18:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "198",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T21:15:00"
+  },
+  {
+    "id": 5898280,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123112",
+          "competitiorName": "ZHANG Rui",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123112",
+              "playerName": "ZHANG Rui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,1,8,3,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112019",
+          "competitiorName": "CHEN Meng",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112019",
+              "playerName": "CHEN Meng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,1-11,8-11,3-11,0-0",
+      "resultsGameScores": "11-6,1-11,8-11,3-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123112",
+        "serverReceiver": "112019",
+        "serverNext": "123112",
+        "serverCompetitor": "123112",
+        "receiverNext": "112019"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:04",
+        "startDateLocal": "01/12/2024 20:30:00",
+        "startDateUTC": "01/12/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "176",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T20:30:00"
+  },
+  {
+    "id": 5897712,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121404",
+          "competitiorName": "FAN Zhendong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121404",
+              "playerName": "FAN Zhendong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "3,11,9,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137237",
+          "competitiorName": "LIN Shidong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137237",
+              "playerName": "LIN Shidong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,5,11,7,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "3-11,11-5,9-11,11-7,0-11",
+      "resultsGameScores": "3-11,11-5,9-11,11-7,0-11",
+      "overallScores": "2-3 INJ",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121404",
+        "serverReceiver": "137237",
+        "serverNext": "121404",
+        "serverCompetitor": "121404",
+        "receiverNext": "137237"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:39",
+        "startDateLocal": "01/12/2024 20:30:00",
+        "startDateUTC": "01/12/2024 17:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "204",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T20:30:00"
+  },
+  {
+    "id": 5897699,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114715",
+          "competitiorName": "QIU Dang",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121558",
+          "competitiorName": "WANG Chuqin",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121558",
+              "playerName": "WANG Chuqin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,11-13,5-11,0-0,0-0",
+      "resultsGameScores": "5-11,11-13,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121558",
+        "serverReceiver": "114715",
+        "serverNext": "121558",
+        "serverCompetitor": "121558",
+        "receiverNext": "114715"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:12",
+        "startDateLocal": "01/12/2024 19:55:00",
+        "startDateUTC": "01/12/2024 16:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "160",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T19:55:00"
+  },
+  {
+    "id": 5896966,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "131163",
+          "competitiorName": "SUN Yingsha",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131163",
+              "playerName": "SUN Yingsha",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,8,11,7,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123672",
+          "competitiorName": "HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,7,11,9",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "15-13,8-11,11-7,7-11,11-9",
+      "resultsGameScores": "15-13,8-11,11-7,7-11,11-9",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123672",
+        "serverReceiver": "131163",
+        "serverNext": "123672",
+        "serverCompetitor": "123672",
+        "receiverNext": "131163"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:53:50",
+        "startDateLocal": "01/12/2024 19:20:00",
+        "startDateUTC": "01/12/2024 16:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "294",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T19:20:00"
+  },
+  {
+    "id": 5896843,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "119797",
+          "competitiorName": "QIAN Tianyi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119797",
+              "playerName": "QIAN Tianyi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,14,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "124110",
+          "competitiorName": "WANG Yidi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "124110",
+              "playerName": "WANG Yidi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,12,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,14-12,11-6,0-0,0-0",
+      "resultsGameScores": "11-7,14-12,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "119797",
+        "serverReceiver": "124110",
+        "serverNext": "119797",
+        "serverCompetitor": "119797",
+        "receiverNext": "124110"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:33",
+        "startDateLocal": "01/12/2024 19:55:00",
+        "startDateUTC": "01/12/2024 16:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "174",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T19:55:00"
+  },
+  {
+    "id": 5896427,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115910",
+          "competitiorName": "LIN Gaoyuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115910",
+              "playerName": "LIN Gaoyuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "105649",
+          "competitiorName": "MA Long",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "105649",
+              "playerName": "MA Long",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,5,11,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,11-5,8-11,11-8,0-0",
+      "resultsGameScores": "11-8,11-5,8-11,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "105649",
+        "serverReceiver": "115910",
+        "serverNext": "105649",
+        "serverCompetitor": "105649",
+        "receiverNext": "115910"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:40",
+        "startDateLocal": "01/12/2024 19:20:00",
+        "startDateUTC": "01/12/2024 16:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "198",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T19:20:00"
+  },
+  {
+    "id": 5895896,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "119588",
+          "competitiorName": "LIANG Jingkun",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119588",
+              "playerName": "LIANG Jingkun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,11,13,11,12",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121582",
+          "competitiorName": "LIN Yun-Ju",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121582",
+              "playerName": "LIN Yun-Ju",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,15,2,10",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,11-7,13-15,11-2,12-10",
+      "resultsGameScores": "6-11,11-7,13-15,11-2,12-10",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "119588",
+        "serverReceiver": "121582",
+        "serverNext": "119588",
+        "serverCompetitor": "119588",
+        "receiverNext": "121582"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:44:47",
+        "startDateLocal": "01/12/2024 18:45:00",
+        "startDateUTC": "01/12/2024 15:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "290",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T18:45:00"
+  },
+  {
+    "id": 5895366,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121411",
+          "competitiorName": "WANG Manyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121411",
+              "playerName": "WANG Manyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121403",
+          "competitiorName": "CHEN Xingtong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121403",
+              "playerName": "CHEN Xingtong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,11-8,0-0,0-0",
+      "resultsGameScores": "11-5,11-8,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121403",
+        "serverReceiver": "121411",
+        "serverNext": "121403",
+        "serverCompetitor": "121403",
+        "receiverNext": "121411"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:16",
+        "startDateLocal": "01/12/2024 18:45:00",
+        "startDateUTC": "01/12/2024 15:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "147",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T18:45:00"
+  },
+  {
+    "id": 5893682,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------8FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------8FNL000800----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "106706",
+          "competitiorName": "NI Xia Lian",
+          "competitiorOrg": "LUX",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "106706",
+              "playerName": "NI Xia Lian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LUX",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,6,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "124110",
+          "competitiorName": "WANG Yidi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "124110",
+              "playerName": "WANG Yidi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,13-11,6-11,5-11,0-0",
+      "resultsGameScores": "11-13,13-11,6-11,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "106706",
+        "serverReceiver": "124110",
+        "serverNext": "106706",
+        "serverCompetitor": "106706",
+        "receiverNext": "124110"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:09",
+        "startDateLocal": "01/12/2024 14:45:00",
+        "startDateUTC": "01/12/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "223",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:45:00"
+  },
+  {
+    "id": 5893626,
+    "eventId": "2862",
+    "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "41484",
+          "competitiorName": "QIAN Tianyi/CHEN Xingtong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119797",
+              "playerName": "QIAN Tianyi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "121403",
+              "playerName": "CHEN Xingtong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "58428",
+          "competitiorName": "DIACONU Adina/XIAO Maria",
+          "competitiorOrg": "ROU/ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117463",
+              "playerName": "DIACONU Adina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "111072",
+              "playerName": "XIAO Maria",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,1,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-1,11-9,0-0,0-0",
+      "resultsGameScores": "11-3,11-1,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111072",
+        "serverReceiver": "119797",
+        "serverNext": "111072",
+        "serverCompetitor": "58428",
+        "receiverNext": "119797"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:48",
+        "startDateLocal": "01/12/2024 15:30:00",
+        "startDateUTC": "01/12/2024 12:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "128",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T15:30:00"
+  },
+  {
+    "id": 5893295,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135996",
+          "competitiorName": "MATSUSHIMA Sora",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135996",
+              "playerName": "MATSUSHIMA Sora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,5,3,11,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121582",
+          "competitiorName": "LIN Yun-Ju",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121582",
+              "playerName": "LIN Yun-Ju",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,11,11,7,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-5,5-11,3-11,11-7,8-11",
+      "resultsGameScores": "11-5,5-11,3-11,11-7,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121582",
+        "serverReceiver": "135996",
+        "serverNext": "121582",
+        "serverCompetitor": "121582",
+        "receiverNext": "135996"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:21",
+        "startDateLocal": "01/12/2024 14:45:00",
+        "startDateUTC": "01/12/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "231",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:45:00"
+  },
+  {
+    "id": 5892927,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "116532",
+          "competitiorName": "PUCAR Tomislav",
+          "competitiorOrg": "CRO",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116532",
+              "playerName": "PUCAR Tomislav",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CRO",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,7,4,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "105649",
+          "competitiorName": "MA Long",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "105649",
+              "playerName": "MA Long",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,7-11,4-11,0-0,0-0",
+      "resultsGameScores": "8-11,7-11,4-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "105649",
+        "serverReceiver": "116532",
+        "serverNext": "105649",
+        "serverCompetitor": "105649",
+        "receiverNext": "116532"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:46",
+        "startDateLocal": "01/12/2024 14:45:00",
+        "startDateUTC": "01/12/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "148",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:45:00"
+  },
+  {
+    "id": 5892722,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000800----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "122044",
+          "competitiorName": "MOREGARD Truls",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "122044",
+              "playerName": "MOREGARD Truls",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "2,6,11,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121558",
+          "competitiorName": "WANG Chuqin",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121558",
+              "playerName": "WANG Chuqin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,6,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "2-11,6-11,11-6,9-11,0-0",
+      "resultsGameScores": "2-11,6-11,11-6,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121558",
+        "serverReceiver": "122044",
+        "serverNext": "121558",
+        "serverCompetitor": "121558",
+        "receiverNext": "122044"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:41",
+        "startDateLocal": "01/12/2024 14:45:00",
+        "startDateUTC": "01/12/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "185",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:45:00"
+  },
+  {
+    "id": 5892698,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------8FNL000500----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------8FNL000500----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "118994",
+          "competitiorName": "JEON Jihee",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118994",
+              "playerName": "JEON Jihee",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,3,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123112",
+          "competitiorName": "ZHANG Rui",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123112",
+              "playerName": "ZHANG Rui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,7-11,3-11,8-11,0-0",
+      "resultsGameScores": "11-9,7-11,3-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123112",
+        "serverReceiver": "118994",
+        "serverNext": "123112",
+        "serverCompetitor": "123112",
+        "receiverNext": "118994"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:14",
+        "startDateLocal": "01/12/2024 14:10:00",
+        "startDateUTC": "01/12/2024 11:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "219",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:10:00"
+  },
+  {
+    "id": 5892148,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000500----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115910",
+          "competitiorName": "LIN Gaoyuan",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115910",
+              "playerName": "LIN Gaoyuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,14,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114936",
+          "competitiorName": "JANG Woojin",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114936",
+              "playerName": "JANG Woojin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,12,13,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,14-12,11-13,11-7,0-0",
+      "resultsGameScores": "12-10,14-12,11-13,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114936",
+        "serverReceiver": "115910",
+        "serverNext": "114936",
+        "serverCompetitor": "114936",
+        "receiverNext": "115910"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:43:30",
+        "startDateLocal": "01/12/2024 14:10:00",
+        "startDateUTC": "01/12/2024 11:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "259",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:10:00"
+  },
+  {
+    "id": 5892100,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------8FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------8FNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121411",
+          "competitiorName": "WANG Manyu",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121411",
+              "playerName": "WANG Manyu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,13,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110797",
+          "competitiorName": "CHENG I-Ching",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110797",
+              "playerName": "CHENG I-Ching",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,11,11,3,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,7-11,13-11,11-3,0-0",
+      "resultsGameScores": "11-4,7-11,13-11,11-3,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "110797",
+        "serverReceiver": "121411",
+        "serverNext": "110797",
+        "serverCompetitor": "110797",
+        "receiverNext": "121411"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:51",
+        "startDateLocal": "01/12/2024 14:10:00",
+        "startDateUTC": "01/12/2024 11:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:10:00"
+  },
+  {
+    "id": 5891939,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------8FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------8FNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "131163",
+          "competitiorName": "SUN Yingsha",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "131163",
+              "playerName": "SUN Yingsha",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136711",
+          "competitiorName": "HARIMOTO Miwa",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136711",
+              "playerName": "HARIMOTO Miwa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "0,3,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-0,11-3,11-6,0-0,0-0",
+      "resultsGameScores": "11-0,11-3,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "131163",
+        "serverReceiver": "136711",
+        "serverNext": "131163",
+        "serverCompetitor": "131163",
+        "receiverNext": "136711"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:31",
+        "startDateLocal": "01/12/2024 14:10:00",
+        "startDateUTC": "01/12/2024 11:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "117",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T14:10:00"
+  },
+  {
+    "id": 5891687,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000700----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115641",
+          "competitiorName": "CALDERANO Hugo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115641",
+              "playerName": "CALDERANO Hugo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,7,13,10,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114715",
+          "competitiorName": "QIU Dang",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,11,12,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-13,7-11,13-11,10-12,0-0",
+      "resultsGameScores": "11-13,7-11,13-11,10-12,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114715",
+        "serverReceiver": "115641",
+        "serverNext": "114715",
+        "serverCompetitor": "114715",
+        "receiverNext": "115641"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:04",
+        "startDateLocal": "01/12/2024 13:35:00",
+        "startDateUTC": "01/12/2024 10:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "252",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T13:35:00"
+  },
+  {
+    "id": 5891106,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121404",
+          "competitiorName": "FAN Zhendong",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121404",
+              "playerName": "FAN Zhendong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,9,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "117357",
+          "competitiorName": "LIM Jonghoon",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117357",
+              "playerName": "LIM Jonghoon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,9,11,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,11-9,9-11,12-10,0-0",
+      "resultsGameScores": "11-6,11-9,9-11,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117357",
+        "serverReceiver": "121404",
+        "serverNext": "117357",
+        "serverCompetitor": "117357",
+        "receiverNext": "121404"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:52",
+        "startDateLocal": "01/12/2024 13:35:00",
+        "startDateUTC": "01/12/2024 10:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "219",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T13:35:00"
+  },
+  {
+    "id": 5890765,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------8FNL000600----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200413",
+          "competitiorName": "JOO Cheonhui",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200413",
+              "playerName": "JOO Cheonhui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,8,3,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112019",
+          "competitiorName": "CHEN Meng",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112019",
+              "playerName": "CHEN Meng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,8-11,3-11,0-0,0-0",
+      "resultsGameScores": "6-11,8-11,3-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112019",
+        "serverReceiver": "200413",
+        "serverNext": "112019",
+        "serverCompetitor": "112019",
+        "receiverNext": "200413"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:50",
+        "startDateLocal": "01/12/2024 13:35:00",
+        "startDateUTC": "01/12/2024 10:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "137",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T13:35:00"
+  },
+  {
+    "id": 5890759,
+    "eventId": "2862",
+    "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "119588",
+          "competitiorName": "LIANG Jingkun",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119588",
+              "playerName": "LIANG Jingkun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133694",
+          "competitiorName": "TOGAMI Shunsuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133694",
+              "playerName": "TOGAMI Shunsuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,11-3,0-0,0-0",
+      "resultsGameScores": "11-5,11-8,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "119588",
+        "serverReceiver": "133694",
+        "serverNext": "119588",
+        "serverCompetitor": "119588",
+        "receiverNext": "133694"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:52",
+        "startDateLocal": "01/12/2024 13:35:00",
+        "startDateUTC": "01/12/2024 10:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "135",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T13:35:00"
+  },
+  {
+    "id": 5890046,
+    "eventId": "2862",
+    "documentCode": "TTEWSINGLES-----------8FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2862",
+      "documentCode": "TTEWSINGLES-----------8FNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Lusail Sports Arena",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114905",
+          "competitiorName": "BERGSTROM Linda",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114905",
+              "playerName": "BERGSTROM Linda",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,4,6",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123672",
+          "competitiorName": "HAYATA Hina",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123672",
+              "playerName": "HAYATA Hina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,6,11,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-5,11-6,8-11,4-11,6-11",
+      "resultsGameScores": "11-5,11-6,8-11,4-11,6-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114905",
+        "serverReceiver": "123672",
+        "serverNext": "114905",
+        "serverCompetitor": "114905",
+        "receiverNext": "123672"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:44:45",
+        "startDateLocal": "01/12/2024 13:00:00",
+        "startDateUTC": "01/12/2024 10:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "244",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-01-12T13:00:00"
+  }
+]

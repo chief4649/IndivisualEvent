@@ -1,0 +1,5423 @@
+[
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00010000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Women's Teams - Group 1 - Match 1",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00020000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Women's Teams - Group 1 - Match 2",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-6",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "6-11",
+          "11-8",
+          "11-7",
+          "12-10"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "4-11",
+          "11-9",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145608",
+            "name": "GUSTHIGHGHA WADU Maneesha Shalindi",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "145608",
+                "name": "GUSTHIGHGHA WADU Maneesha Shalindi",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "8-11",
+          "8-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "13-11",
+          "11-5",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00010000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Men's Teams - Group 1 - Match 1",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "16-14",
+          "8-11",
+          "12-14",
+          "11-8",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-13",
+          "8-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "119932",
+            "name": "AHMED Md Javed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "119932",
+                "name": "AHMED Md Javed",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "2-11",
+          "11-2",
+          "11-6",
+          "10-12",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146081",
+            "name": "AKHYAR Ahmed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "146081",
+                "name": "AKHYAR Ahmed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "5-11",
+          "11-9",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "8-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "119932",
+            "name": "AHMED Md Javed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "119932",
+                "name": "AHMED Md Javed",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00020000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Men's Teams - Group 1 - Match 2",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "8-11",
+          "9-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-7",
+          "7-11",
+          "11-5",
+          "1-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "7-11",
+          "8-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144807",
+            "name": "HAMER Nethan",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144807",
+                "name": "HAMER Nethan",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203088",
+            "name": "CHIKANBANJAR Rajeev",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203088",
+                "name": "CHIKANBANJAR Rajeev",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00040000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "Women's Teams - Group 1 - Match 4",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "13-11",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "132829",
+            "name": "NAZIM Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "132829",
+                "name": "NAZIM Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "7-11",
+          "11-6",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134974",
+                "name": "ALI Fathimath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-13",
+          "11-6",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200577",
+            "name": "MISHKA Mohamed Ibrahim",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "200577",
+                "name": "MISHKA Mohamed Ibrahim",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134974",
+                "name": "ALI Fathimath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "132829",
+            "name": "NAZIM Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "132829",
+                "name": "NAZIM Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00030000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Women's Teams - Group 1 - Match 3",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "6-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "132917",
+            "name": "MOU Sadia",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "132917",
+                "name": "MOU Sadia",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200317",
+            "name": "WANI Sayali",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "200317",
+                "name": "WANI Sayali",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "5-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "117035",
+            "name": "ROY Krittwika",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "117035",
+                "name": "ROY Krittwika",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "4-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205772",
+            "name": "ROHMAN Oishe",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205772",
+                "name": "ROHMAN Oishe",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201368",
+            "name": "DAS Syndrela",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "201368",
+                "name": "DAS Syndrela",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "132917",
+            "name": "MOU Sadia",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "132917",
+                "name": "MOU Sadia",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "117035",
+            "name": "ROY Krittwika",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "117035",
+                "name": "ROY Krittwika",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200317",
+            "name": "WANI Sayali",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "200317",
+                "name": "WANI Sayali",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00040000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "Men's Teams - Group 1 - Match 4",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-7",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "9-11",
+          "12-10",
+          "11-4",
+          "1-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "14-12",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203088",
+            "name": "CHIKANBANJAR Rajeev",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203088",
+                "name": "CHIKANBANJAR Rajeev",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146081",
+            "name": "AKHYAR Ahmed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "146081",
+                "name": "AKHYAR Ahmed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "11-13",
+          "11-4",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00030000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Men's Teams - Group 1 - Match 3",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "9-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137242",
+            "name": "PAL Akash",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137242",
+                "name": "PAL Akash",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-9",
+          "5-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "119042",
+            "name": "GHOSH Anirban",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "119042",
+                "name": "GHOSH Anirban",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "7-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206802",
+            "name": "IMON Imrul",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "206802",
+                "name": "IMON Imrul",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134868",
+            "name": "SRIVASTAVA Divyansh",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "134868",
+                "name": "SRIVASTAVA Divyansh",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "119042",
+            "name": "GHOSH Anirban",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "119042",
+                "name": "GHOSH Anirban",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137242",
+            "name": "PAL Akash",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137242",
+                "name": "PAL Akash",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00050000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "Women's Teams - Group 1 - Match 5",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "6-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200317",
+            "name": "WANI Sayali",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "200317",
+                "name": "WANI Sayali",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "10-12",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "117035",
+            "name": "ROY Krittwika",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "117035",
+                "name": "ROY Krittwika",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "8-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145608",
+            "name": "GUSTHIGHGHA WADU Maneesha Shalindi",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "145608",
+                "name": "GUSTHIGHGHA WADU Maneesha Shalindi",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "131171",
+            "name": "SELVAKUMAR Selena",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "131171",
+                "name": "SELVAKUMAR Selena",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "117035",
+            "name": "ROY Krittwika",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "117035",
+                "name": "ROY Krittwika",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200317",
+            "name": "WANI Sayali",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "200317",
+                "name": "WANI Sayali",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00060000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "Women's Teams - Group 1 - Match 6",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "11-8",
+          "11-3",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-9",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "132917",
+            "name": "MOU Sadia",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "132917",
+                "name": "MOU Sadia",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "4-11",
+          "11-9",
+          "14-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200578",
+            "name": "THAPA Evana",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "200578",
+                "name": "THAPA Evana",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "116567",
+            "name": "SOMA Sonam",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "116567",
+                "name": "SOMA Sonam",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "132917",
+            "name": "MOU Sadia",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "132917",
+                "name": "MOU Sadia",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00050000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "Men's Teams - Group 1 - Match 5",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "9-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "123385",
+            "name": "BHANJA Ronit",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "123385",
+                "name": "BHANJA Ronit",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "12-10",
+          "6-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134868",
+            "name": "SRIVASTAVA Divyansh",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "134868",
+                "name": "SRIVASTAVA Divyansh",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "9-11",
+          "12-10",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "131944",
+            "name": "RANCHAGODA Thisas",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "131944",
+                "name": "RANCHAGODA Thisas",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144615",
+            "name": "PRADHIVADHI Abhinandh",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "144615",
+                "name": "PRADHIVADHI Abhinandh",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134868",
+            "name": "SRIVASTAVA Divyansh",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "134868",
+                "name": "SRIVASTAVA Divyansh",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "123385",
+            "name": "BHANJA Ronit",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "123385",
+                "name": "BHANJA Ronit",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00060000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "Men's Teams - Group 1 - Match 6",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "11-7",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-2",
+          "12-10"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "9-11",
+          "11-3",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203088",
+            "name": "CHIKANBANJAR Rajeev",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203088",
+                "name": "CHIKANBANJAR Rajeev",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "119932",
+            "name": "AHMED Md Javed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "119932",
+                "name": "AHMED Md Javed",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "9-11",
+          "11-7",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "13-11",
+          "8-11",
+          "11-7",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00080000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 8,
+    "description": "Women's Teams - Group 1 - Match 8",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "7-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134974",
+                "name": "ALI Fathimath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-7",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-5",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "203058",
+            "name": "KULAPPUWAWADU Lesanya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "203058",
+                "name": "KULAPPUWAWADU Lesanya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200577",
+            "name": "MISHKA Mohamed Ibrahim",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "200577",
+                "name": "MISHKA Mohamed Ibrahim",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-7",
+          "2-11",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134974",
+                "name": "ALI Fathimath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00070000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 7,
+    "description": "Women's Teams - Group 1 - Match 7",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "3-11",
+          "2-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201368",
+            "name": "DAS Syndrela",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "201368",
+                "name": "DAS Syndrela",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "3-11",
+          "11-6",
+          "5-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200317",
+            "name": "WANI Sayali",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "200317",
+                "name": "WANI Sayali",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "6-11",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220973",
+            "name": "POUDEL Yonggi",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "220973",
+                "name": "POUDEL Yonggi",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "131171",
+            "name": "SELVAKUMAR Selena",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "131171",
+                "name": "SELVAKUMAR Selena",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "202991",
+            "name": "RAI Bianca",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "202991",
+                "name": "RAI Bianca",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200317",
+            "name": "WANI Sayali",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "200317",
+                "name": "WANI Sayali",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "111260",
+            "name": "SHRESTHA Nabita",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "111260",
+                "name": "SHRESTHA Nabita",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201368",
+            "name": "DAS Syndrela",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "201368",
+                "name": "DAS Syndrela",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00080000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 8,
+    "description": "Men's Teams - Group 1 - Match 8",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "11-13",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "4-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-2",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "131944",
+            "name": "RANCHAGODA Thisas",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "131944",
+                "name": "RANCHAGODA Thisas",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "146081",
+            "name": "AKHYAR Ahmed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "146081",
+                "name": "AKHYAR Ahmed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "9-11",
+          "2-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00070000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 7,
+    "description": "Men's Teams - Group 1 - Match 7",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      },
+      {
+        "name": "Nepal",
+        "org": "Nepal",
+        "orgCode": "NEP"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-8",
+          "11-3"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "123385",
+            "name": "BHANJA Ronit",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "123385",
+                "name": "BHANJA Ronit",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-8",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137242",
+            "name": "PAL Akash",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137242",
+                "name": "PAL Akash",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-7",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134868",
+            "name": "SRIVASTAVA Divyansh",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "134868",
+                "name": "SRIVASTAVA Divyansh",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206072",
+            "name": "DAHAL Gananjaya",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "206072",
+                "name": "DAHAL Gananjaya",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "123385",
+            "name": "BHANJA Ronit",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "123385",
+                "name": "BHANJA Ronit",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134900",
+            "name": "KAPALI Sanyog",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "134900",
+                "name": "KAPALI Sanyog",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137242",
+            "name": "PAL Akash",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "137242",
+                "name": "PAL Akash",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203160",
+            "name": "MAHARJAN Rubin",
+            "org": "Nepal",
+            "orgCode": "NEP",
+            "irm": null,
+            "players": [
+              {
+                "id": "203160",
+                "name": "MAHARJAN Rubin",
+                "org": "Nepal",
+                "orgCode": "NEP",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00090000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 9,
+    "description": "Women's Teams - Group 1 - Match 9",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      },
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "5-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134974",
+                "name": "ALI Fathimath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "131171",
+            "name": "SELVAKUMAR Selena",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "131171",
+                "name": "SELVAKUMAR Selena",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "8-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "132829",
+            "name": "NAZIM Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "132829",
+                "name": "NAZIM Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "117035",
+            "name": "ROY Krittwika",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "117035",
+                "name": "ROY Krittwika",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "4-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206828",
+            "name": "NAFIZ Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "206828",
+                "name": "NAFIZ Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201368",
+            "name": "DAS Syndrela",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "201368",
+                "name": "DAS Syndrela",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134974",
+            "name": "ALI Fathimath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134974",
+                "name": "ALI Fathimath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "117035",
+            "name": "ROY Krittwika",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "117035",
+                "name": "ROY Krittwika",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "132829",
+            "name": "NAZIM Aishath",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "132829",
+                "name": "NAZIM Aishath",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "131171",
+            "name": "SELVAKUMAR Selena",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "131171",
+                "name": "SELVAKUMAR Selena",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "W.TEAM--------------.GP01.00100000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women's Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 10,
+    "description": "Women's Teams - Group 1 - Match 10",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      },
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "11-7",
+          "4-11",
+          "14-12",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "116567",
+            "name": "SOMA Sonam",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "116567",
+                "name": "SOMA Sonam",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "3-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "132917",
+            "name": "MOU Sadia",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "132917",
+                "name": "MOU Sadia",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "5-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "205776",
+            "name": "SAI Khoy",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "205776",
+                "name": "SAI Khoy",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145608",
+            "name": "GUSTHIGHGHA WADU Maneesha Shalindi",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "145608",
+                "name": "GUSTHIGHGHA WADU Maneesha Shalindi",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "116567",
+            "name": "SOMA Sonam",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "116567",
+                "name": "SOMA Sonam",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "136529",
+            "name": "BANDARA Bimandee",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "136529",
+                "name": "BANDARA Bimandee",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "132917",
+            "name": "MOU Sadia",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "132917",
+                "name": "MOU Sadia",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144803",
+            "name": "ALAGIYAWADU Tamadi Kavindya",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "144803",
+                "name": "ALAGIYAWADU Tamadi Kavindya",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00090000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 9,
+    "description": "Men's Teams - Group 1 - Match 9",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "India",
+        "org": "India",
+        "orgCode": "IND"
+      },
+      {
+        "name": "Maldives",
+        "org": "Maldives",
+        "orgCode": "MDV"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "11-7",
+          "11-2"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "123385",
+            "name": "BHANJA Ronit",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "123385",
+                "name": "BHANJA Ronit",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "11-9",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "119042",
+            "name": "GHOSH Anirban",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "119042",
+                "name": "GHOSH Anirban",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-4",
+          "11-5",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144615",
+            "name": "PRADHIVADHI Abhinandh",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "144615",
+                "name": "PRADHIVADHI Abhinandh",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "115930",
+            "name": "NASEEM Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "115930",
+                "name": "NASEEM Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "123385",
+            "name": "BHANJA Ronit",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "123385",
+                "name": "BHANJA Ronit",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134910",
+            "name": "SHAFFAN Mohamed",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "134910",
+                "name": "SHAFFAN Mohamed",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "119042",
+            "name": "GHOSH Anirban",
+            "org": "India",
+            "orgCode": "IND",
+            "irm": null,
+            "players": [
+              {
+                "id": "119042",
+                "name": "GHOSH Anirban",
+                "org": "India",
+                "orgCode": "IND",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "100196",
+            "name": "AHMED Moosa",
+            "org": "Maldives",
+            "orgCode": "MDV",
+            "irm": null,
+            "players": [
+              {
+                "id": "100196",
+                "name": "AHMED Moosa",
+                "org": "Maldives",
+                "orgCode": "MDV",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3210",
+    "documentCode": "M.TEAM--------------.GP01.00100000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men's Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 10,
+    "description": "Men's Teams - Group 1 - Match 10",
+    "venue": "National Table Tennis training Centre, Lainchor",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Sri Lanka",
+        "org": "Sri Lanka",
+        "orgCode": "SRI"
+      },
+      {
+        "name": "Bangladesh",
+        "org": "Bangladesh",
+        "orgCode": "BAN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "13-11",
+          "11-8",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "10-12",
+          "11-9",
+          "6-11",
+          "3-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "131944",
+            "name": "RANCHAGODA Thisas",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "131944",
+                "name": "RANCHAGODA Thisas",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-5",
+          "13-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206100",
+            "name": "MOHAMED Mohommed",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "206100",
+                "name": "MOHAMED Mohommed",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "119932",
+            "name": "AHMED Md Javed",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "119932",
+                "name": "AHMED Md Javed",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-4",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137414",
+            "name": "KULAPPUWAWADU Chanul",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "137414",
+                "name": "KULAPPUWAWADU Chanul",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145237",
+            "name": "RIDOY Mohutasin",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "145237",
+                "name": "RIDOY Mohutasin",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "131944",
+            "name": "RANCHAGODA Thisas",
+            "org": "Sri Lanka",
+            "orgCode": "SRI",
+            "irm": null,
+            "players": [
+              {
+                "id": "131944",
+                "name": "RANCHAGODA Thisas",
+                "org": "Sri Lanka",
+                "orgCode": "SRI",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200573",
+            "name": "BAWM Ramhimlian",
+            "org": "Bangladesh",
+            "orgCode": "BAN",
+            "irm": null,
+            "players": [
+              {
+                "id": "200573",
+                "name": "BAWM Ramhimlian",
+                "org": "Bangladesh",
+                "orgCode": "BAN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

@@ -1,0 +1,5941 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP01.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 1 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144764",
+        "name": "TUMUKUNDE Hervine",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144764",
+            "name": "TUMUKUNDE Hervine",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-2",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP03.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 3 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120726",
+        "name": "ALHODABY Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "120726",
+            "name": "ALHODABY Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209765",
+        "name": "HIRWA Chantal",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209765",
+            "name": "HIRWA Chantal",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-1",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP02.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 2 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131335",
+        "name": "GODA Hana",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "131335",
+            "name": "GODA Hana",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202456",
+        "name": "GHOUNIM Malak",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "202456",
+            "name": "GHOUNIM Malak",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP04.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 4 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102445",
+        "name": "EDEM Offiong",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "102445",
+            "name": "EDEM Offiong",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133464",
+        "name": "KESSACI Amina",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "133464",
+            "name": "KESSACI Amina",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-7",
+      "7-11",
+      "11-3",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP05.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 5 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "103425",
+        "name": "HANFFOU Sarah",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "103425",
+            "name": "HANFFOU Sarah",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209793",
+        "name": "ANYANGO Patience",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209793",
+            "name": "ANYANGO Patience",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-1",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP06.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 6 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115379",
+        "name": "BELLO Fatimo",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115379",
+            "name": "BELLO Fatimo",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120141",
+        "name": "HOUSSEIN Rahma",
+        "org": "Djibouti",
+        "orgCode": "DJI",
+        "irm": null,
+        "players": [
+          {
+            "id": "120141",
+            "name": "HOUSSEIN Rahma",
+            "org": "Djibouti",
+            "orgCode": "DJI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-8",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP07.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 7 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117142",
+        "name": "LOGHRAIBI Lynda",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "117142",
+            "name": "LOGHRAIBI Lynda",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145183",
+        "name": "DEJENE Yordanos Ngidie",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "145183",
+            "name": "DEJENE Yordanos Ngidie",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP08.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 1,
+    "description": "Women's Singles - Group 8 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131141",
+        "name": "RAHARIMANANA Hanitra",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "131141",
+            "name": "RAHARIMANANA Hanitra",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103047",
+        "name": "MEKURIA Meron",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "103047",
+            "name": "MEKURIA Meron",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP08.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 8 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209763",
+        "name": "UWASE Diane",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209763",
+            "name": "UWASE Diane",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-5",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP03.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 3 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113563",
+        "name": "OMOTAYO Olajide",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "113563",
+            "name": "OMOTAYO Olajide",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205937",
+        "name": "NEMRAS Reda",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "205937",
+            "name": "NEMRAS Reda",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP04.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 4 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113679",
+        "name": "BOULOUSSA Mehdi",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "113679",
+            "name": "BOULOUSSA Mehdi",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "124063",
+        "name": "ISHIMWE Francois",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "124063",
+            "name": "ISHIMWE Francois",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP05.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 5 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200157",
+        "name": "BATIX Ylane",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200157",
+            "name": "BATIX Ylane",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209764",
+        "name": "SHIMIRWA Blaise",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209764",
+            "name": "SHIMIRWA Blaise",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP01.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 1 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131813",
+        "name": "SK. HOSSEIN Zayyan",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131813",
+            "name": "SK. HOSSEIN Zayyan",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-2",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP05.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 5 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114457",
+        "name": "IDOWU Saheed",
+        "org": "Congo",
+        "orgCode": "CGO",
+        "irm": null,
+        "players": [
+          {
+            "id": "114457",
+            "name": "IDOWU Saheed",
+            "org": "Congo",
+            "orgCode": "CGO",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209121",
+        "name": "AKLIE Israel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209121",
+            "name": "AKLIE Israel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-2",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP02.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 2 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102486",
+        "name": "EL-BEIALI Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "102486",
+            "name": "EL-BEIALI Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131815",
+        "name": "DESSCANN Ryan",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131815",
+            "name": "DESSCANN Ryan",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-4",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP06.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 6 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116723",
+        "name": "ABDEL-AZIZ Youssef",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "116723",
+            "name": "ABDEL-AZIZ Youssef",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145487",
+        "name": "ABEJE Eyob Sissay",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "145487",
+            "name": "ABEJE Eyob Sissay",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP06.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 6 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137625",
+        "name": "BENCHAT Marius",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137625",
+            "name": "BENCHAT Marius",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116916",
+        "name": "BEN YAHIA Kerem",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116916",
+            "name": "BEN YAHIA Kerem",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "10-12",
+      "11-9",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP07.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 7 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133367",
+        "name": "RAKOTOARIMANANA Fabio",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "133367",
+            "name": "RAKOTOARIMANANA Fabio",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123143",
+        "name": "COMMEY Emmanuel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "123143",
+            "name": "COMMEY Emmanuel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "10-12",
+      "11-3",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP07.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 7 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209956",
+        "name": "GISUBIZO Prince",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209956",
+            "name": "GISUBIZO Prince",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-4",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP08.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 8 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203934",
+        "name": "RAZAFINARIVO Antoine",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "203934",
+            "name": "RAZAFINARIVO Antoine",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205261",
+        "name": "NZOSABA Didier",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205261",
+            "name": "NZOSABA Didier",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-5",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP08.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 1,
+    "description": "Men's Singles - Group 8 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136218",
+        "name": "HADSH Amanual",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "136218",
+            "name": "HADSH Amanual",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP05.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 5 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "103425",
+        "name": "HANFFOU Sarah",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "103425",
+            "name": "HANFFOU Sarah",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117150",
+        "name": "GARCI Fadwa",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117150",
+            "name": "GARCI Fadwa",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP07.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 7 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117142",
+        "name": "LOGHRAIBI Lynda",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "117142",
+            "name": "LOGHRAIBI Lynda",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131834",
+        "name": "KINOO Ruqayyah",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131834",
+            "name": "KINOO Ruqayyah",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "15-17",
+      "10-12",
+      "11-7",
+      "11-6",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP01.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 1 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120020",
+        "name": "HAJ SALAH Abir",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120020",
+            "name": "HAJ SALAH Abir",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-2",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP04.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 4 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102445",
+        "name": "EDEM Offiong",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "102445",
+            "name": "EDEM Offiong",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131818",
+        "name": "JALIM Nandeshwaree",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131818",
+            "name": "JALIM Nandeshwaree",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-8",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP03.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 3 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120726",
+        "name": "ALHODABY Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "120726",
+            "name": "ALHODABY Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-5",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP06.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 6 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115379",
+        "name": "BELLO Fatimo",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115379",
+            "name": "BELLO Fatimo",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113565",
+        "name": "KWABI Cynthia",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113565",
+            "name": "KWABI Cynthia",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "7-11",
+      "11-8",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP02.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Group 2 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131335",
+        "name": "GODA Hana",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "131335",
+            "name": "GODA Hana",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205262",
+        "name": "TWIZERANE Mbabazi",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205262",
+            "name": "TWIZERANE Mbabazi",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-8",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP08.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 8 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131141",
+        "name": "RAHARIMANANA Hanitra",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "131141",
+            "name": "RAHARIMANANA Hanitra",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "8-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP03.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 3 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113563",
+        "name": "OMOTAYO Olajide",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "113563",
+            "name": "OMOTAYO Olajide",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135500",
+        "name": "JELLOULI Milhane",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "135500",
+            "name": "JELLOULI Milhane",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "6-11",
+      "13-11",
+      "5-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP05.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 5 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114457",
+        "name": "IDOWU Saheed",
+        "org": "Congo",
+        "orgCode": "CGO",
+        "irm": null,
+        "players": [
+          {
+            "id": "114457",
+            "name": "IDOWU Saheed",
+            "org": "Congo",
+            "orgCode": "CGO",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200157",
+        "name": "BATIX Ylane",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200157",
+            "name": "BATIX Ylane",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "8-11",
+      "11-8",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP01.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 1 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202168",
+        "name": "ANKUNDA Samuel",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202168",
+            "name": "ANKUNDA Samuel",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "10-12",
+      "9-11",
+      "11-5",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP06.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 6 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116723",
+        "name": "ABDEL-AZIZ Youssef",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "116723",
+            "name": "ABDEL-AZIZ Youssef",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137625",
+        "name": "BENCHAT Marius",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137625",
+            "name": "BENCHAT Marius",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-1",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP02.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 2 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "102486",
+        "name": "EL-BEIALI Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "102486",
+            "name": "EL-BEIALI Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145256",
+        "name": "BOURHAN Abdourazak Abdallah",
+        "org": "Djibouti",
+        "orgCode": "DJI",
+        "irm": null,
+        "players": [
+          {
+            "id": "145256",
+            "name": "BOURHAN Abdourazak Abdallah",
+            "org": "Djibouti",
+            "orgCode": "DJI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-6",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP08.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 4,
+    "description": "Women's Singles - Group 8 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "WO-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "103047",
+        "name": "MEKURIA Meron",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "103047",
+            "name": "MEKURIA Meron",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209763",
+        "name": "UWASE Diane",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209763",
+            "name": "UWASE Diane",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP05.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 4,
+    "description": "Men's Singles - Group 5 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "209121",
+        "name": "AKLIE Israel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209121",
+            "name": "AKLIE Israel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209764",
+        "name": "SHIMIRWA Blaise",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209764",
+            "name": "SHIMIRWA Blaise",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP04.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "Men's Singles - Group 4 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113679",
+        "name": "BOULOUSSA Mehdi",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "113679",
+            "name": "BOULOUSSA Mehdi",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145238",
+        "name": "SENYONGA Jonathan",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "145238",
+            "name": "SENYONGA Jonathan",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-3",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP08.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 8 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203934",
+        "name": "RAZAFINARIVO Antoine",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "203934",
+            "name": "RAZAFINARIVO Antoine",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-9",
+      "8-11",
+      "11-8",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP07.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 7 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133367",
+        "name": "RAKOTOARIMANANA Fabio",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "133367",
+            "name": "RAKOTOARIMANANA Fabio",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "8-11",
+      "11-8",
+      "8-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP07.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 4,
+    "description": "Men's Singles - Group 7 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123143",
+        "name": "COMMEY Emmanuel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "123143",
+            "name": "COMMEY Emmanuel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209956",
+        "name": "GISUBIZO Prince",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209956",
+            "name": "GISUBIZO Prince",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-14",
+      "11-3",
+      "11-5",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP06.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 4,
+    "description": "Men's Singles - Group 6 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "WO-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145487",
+        "name": "ABEJE Eyob Sissay",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "145487",
+            "name": "ABEJE Eyob Sissay",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116916",
+        "name": "BEN YAHIA Kerem",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116916",
+            "name": "BEN YAHIA Kerem",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP08.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 4,
+    "description": "Men's Singles - Group 8 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "WO-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136218",
+        "name": "HADSH Amanual",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "136218",
+            "name": "HADSH Amanual",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205261",
+        "name": "NZOSABA Didier",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205261",
+            "name": "NZOSABA Didier",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP01.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 1 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120020",
+        "name": "HAJ SALAH Abir",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120020",
+            "name": "HAJ SALAH Abir",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "144764",
+        "name": "TUMUKUNDE Hervine",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "144764",
+            "name": "TUMUKUNDE Hervine",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-5",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP02.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 2 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205262",
+        "name": "TWIZERANE Mbabazi",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205262",
+            "name": "TWIZERANE Mbabazi",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "202456",
+        "name": "GHOUNIM Malak",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "202456",
+            "name": "GHOUNIM Malak",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-8",
+      "11-8",
+      "4-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP03.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 3 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209765",
+        "name": "HIRWA Chantal",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209765",
+            "name": "HIRWA Chantal",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "10-12",
+      "11-8",
+      "8-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP08.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 5,
+    "description": "Women's Singles - Group 8 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131141",
+        "name": "RAHARIMANANA Hanitra",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "131141",
+            "name": "RAHARIMANANA Hanitra",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209763",
+        "name": "UWASE Diane",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209763",
+            "name": "UWASE Diane",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "11-7",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP05.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 5 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117150",
+        "name": "GARCI Fadwa",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117150",
+            "name": "GARCI Fadwa",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209793",
+        "name": "ANYANGO Patience",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209793",
+            "name": "ANYANGO Patience",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "11-2",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP06.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 6 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113565",
+        "name": "KWABI Cynthia",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113565",
+            "name": "KWABI Cynthia",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120141",
+        "name": "HOUSSEIN Rahma",
+        "org": "Djibouti",
+        "orgCode": "DJI",
+        "irm": null,
+        "players": [
+          {
+            "id": "120141",
+            "name": "HOUSSEIN Rahma",
+            "org": "Djibouti",
+            "orgCode": "DJI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP04.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 4 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131818",
+        "name": "JALIM Nandeshwaree",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131818",
+            "name": "JALIM Nandeshwaree",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133464",
+        "name": "KESSACI Amina",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "133464",
+            "name": "KESSACI Amina",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "7-11",
+      "4-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP07.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 3,
+    "description": "Women's Singles - Group 7 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131834",
+        "name": "KINOO Ruqayyah",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131834",
+            "name": "KINOO Ruqayyah",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145183",
+        "name": "DEJENE Yordanos Ngidie",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "145183",
+            "name": "DEJENE Yordanos Ngidie",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP01.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 1 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202168",
+        "name": "ANKUNDA Samuel",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202168",
+            "name": "ANKUNDA Samuel",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131813",
+        "name": "SK. HOSSEIN Zayyan",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131813",
+            "name": "SK. HOSSEIN Zayyan",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-15",
+      "11-9",
+      "11-2",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP02.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 2 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145256",
+        "name": "BOURHAN Abdourazak Abdallah",
+        "org": "Djibouti",
+        "orgCode": "DJI",
+        "irm": null,
+        "players": [
+          {
+            "id": "145256",
+            "name": "BOURHAN Abdourazak Abdallah",
+            "org": "Djibouti",
+            "orgCode": "DJI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131815",
+        "name": "DESSCANN Ryan",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131815",
+            "name": "DESSCANN Ryan",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-7",
+      "11-4",
+      "11-13",
+      "11-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP03.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 3 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135500",
+        "name": "JELLOULI Milhane",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "135500",
+            "name": "JELLOULI Milhane",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205937",
+        "name": "NEMRAS Reda",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "205937",
+            "name": "NEMRAS Reda",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP04.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "Men's Singles - Group 4 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145238",
+        "name": "SENYONGA Jonathan",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "145238",
+            "name": "SENYONGA Jonathan",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "124063",
+        "name": "ISHIMWE Francois",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "124063",
+            "name": "ISHIMWE Francois",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-5",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.GP08.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 6,
+    "description": "Women's Singles - Group 8 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103047",
+        "name": "MEKURIA Meron",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "103047",
+            "name": "MEKURIA Meron",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP05.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 5,
+    "description": "Men's Singles - Group 5 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114457",
+        "name": "IDOWU Saheed",
+        "org": "Congo",
+        "orgCode": "CGO",
+        "irm": null,
+        "players": [
+          {
+            "id": "114457",
+            "name": "IDOWU Saheed",
+            "org": "Congo",
+            "orgCode": "CGO",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209764",
+        "name": "SHIMIRWA Blaise",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209764",
+            "name": "SHIMIRWA Blaise",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-8",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP05.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 5",
+    "roundKey": "group 5",
+    "matchNumber": 6,
+    "description": "Men's Singles - Group 5 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200157",
+        "name": "BATIX Ylane",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200157",
+            "name": "BATIX Ylane",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209121",
+        "name": "AKLIE Israel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209121",
+            "name": "AKLIE Israel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-7",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP06.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 5,
+    "description": "Men's Singles - Group 6 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116723",
+        "name": "ABDEL-AZIZ Youssef",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "116723",
+            "name": "ABDEL-AZIZ Youssef",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116916",
+        "name": "BEN YAHIA Kerem",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "116916",
+            "name": "BEN YAHIA Kerem",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "12-14",
+      "11-5",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP07.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 6,
+    "description": "Men's Singles - Group 7 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "123143",
+        "name": "COMMEY Emmanuel",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "123143",
+            "name": "COMMEY Emmanuel",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-7",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP07.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 7",
+    "roundKey": "group 7",
+    "matchNumber": 5,
+    "description": "Men's Singles - Group 7 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133367",
+        "name": "RAKOTOARIMANANA Fabio",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "133367",
+            "name": "RAKOTOARIMANANA Fabio",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "209956",
+        "name": "GISUBIZO Prince",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "209956",
+            "name": "GISUBIZO Prince",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-4",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP08.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 5,
+    "description": "Men's Singles - Group 8 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "3-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205261",
+        "name": "NZOSABA Didier",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205261",
+            "name": "NZOSABA Didier",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-8",
+      "8-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP06.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 6",
+    "roundKey": "group 6",
+    "matchNumber": 6,
+    "description": "Men's Singles - Group 6 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137625",
+        "name": "BENCHAT Marius",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137625",
+            "name": "BENCHAT Marius",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145487",
+        "name": "ABEJE Eyob Sissay",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "145487",
+            "name": "ABEJE Eyob Sissay",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.GP08.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Group 8",
+    "roundKey": "group 8",
+    "matchNumber": 6,
+    "description": "Men's Singles - Group 8 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "3-WO",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "203934",
+        "name": "RAZAFINARIVO Antoine",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "203934",
+            "name": "RAZAFINARIVO Antoine",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136218",
+        "name": "HADSH Amanual",
+        "org": "Ethiopia",
+        "orgCode": "ETH",
+        "irm": null,
+        "players": [
+          {
+            "id": "136218",
+            "name": "HADSH Amanual",
+            "org": "Ethiopia",
+            "orgCode": "ETH",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "0-0",
+      "0-0",
+      "0-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Women's Singles - Round of 16 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120726",
+        "name": "ALHODABY Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "120726",
+            "name": "ALHODABY Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131141",
+        "name": "RAHARIMANANA Hanitra",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "131141",
+            "name": "RAHARIMANANA Hanitra",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-9",
+      "11-8",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117150",
+        "name": "GARCI Fadwa",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "117150",
+            "name": "GARCI Fadwa",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117142",
+        "name": "LOGHRAIBI Lynda",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "117142",
+            "name": "LOGHRAIBI Lynda",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "6-11",
+      "11-6",
+      "7-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Women's Singles - Round of 16 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131834",
+        "name": "KINOO Ruqayyah",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131834",
+            "name": "KINOO Ruqayyah",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102445",
+        "name": "EDEM Offiong",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "102445",
+            "name": "EDEM Offiong",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "7-11",
+      "7-11",
+      "2-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Women's Singles - Round of 16 - Match 8",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120020",
+        "name": "HAJ SALAH Abir",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "120020",
+            "name": "HAJ SALAH Abir",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131335",
+        "name": "GODA Hana",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "131335",
+            "name": "GODA Hana",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "7-11",
+      "2-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202164",
+        "name": "NANGONZI Judith",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202164",
+            "name": "NANGONZI Judith",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "6-11",
+      "8-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 16 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113565",
+        "name": "KWABI Cynthia",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113565",
+            "name": "KWABI Cynthia",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103425",
+        "name": "HANFFOU Sarah",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "103425",
+            "name": "HANFFOU Sarah",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "6-11",
+      "6-11",
+      "11-9",
+      "11-5",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 16 - Match 7",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115379",
+        "name": "BELLO Fatimo",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115379",
+            "name": "BELLO Fatimo",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133464",
+        "name": "KESSACI Amina",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "133464",
+            "name": "KESSACI Amina",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-3",
+      "11-8",
+      "7-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Women's Singles - Round of 16 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205262",
+        "name": "TWIZERANE Mbabazi",
+        "org": "Rwanda",
+        "orgCode": "RWA",
+        "irm": null,
+        "players": [
+          {
+            "id": "205262",
+            "name": "TWIZERANE Mbabazi",
+            "org": "Rwanda",
+            "orgCode": "RWA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-2",
+      "11-2",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Men's Singles - Round of 16 - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135500",
+        "name": "JELLOULI Milhane",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "135500",
+            "name": "JELLOULI Milhane",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-7",
+      "11-4",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116723",
+        "name": "ABDEL-AZIZ Youssef",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "116723",
+            "name": "ABDEL-AZIZ Youssef",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "203934",
+        "name": "RAZAFINARIVO Antoine",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "203934",
+            "name": "RAZAFINARIVO Antoine",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "13-11",
+      "11-6",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Men's Singles - Round of 16 - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 3",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "114457",
+        "name": "IDOWU Saheed",
+        "org": "Congo",
+        "orgCode": "CGO",
+        "irm": null,
+        "players": [
+          {
+            "id": "114457",
+            "name": "IDOWU Saheed",
+            "org": "Congo",
+            "orgCode": "CGO",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113679",
+        "name": "BOULOUSSA Mehdi",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "113679",
+            "name": "BOULOUSSA Mehdi",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "14-12",
+      "9-11",
+      "4-11",
+      "11-8",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Men's Singles - Round of 16 - Match 5",
+    "venue": "BK Arena",
+    "table": "Table 4",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113563",
+        "name": "OMOTAYO Olajide",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "113563",
+            "name": "OMOTAYO Olajide",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "137625",
+        "name": "BENCHAT Marius",
+        "org": "Morocco",
+        "orgCode": "MAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "137625",
+            "name": "BENCHAT Marius",
+            "org": "Morocco",
+            "orgCode": "MAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-4",
+      "11-13",
+      "7-11",
+      "11-6",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 5",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "131815",
+        "name": "DESSCANN Ryan",
+        "org": "Mauritius",
+        "orgCode": "MRI",
+        "irm": null,
+        "players": [
+          {
+            "id": "131815",
+            "name": "DESSCANN Ryan",
+            "org": "Mauritius",
+            "orgCode": "MRI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "4-11",
+      "5-11",
+      "13-15"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 - Match 6",
+    "venue": "BK Arena",
+    "table": "Table 6",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145238",
+        "name": "SENYONGA Jonathan",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "145238",
+            "name": "SENYONGA Jonathan",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200157",
+        "name": "BATIX Ylane",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200157",
+            "name": "BATIX Ylane",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "4-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 - Match 7",
+    "venue": "BK Arena",
+    "table": "Table 7",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133367",
+        "name": "RAKOTOARIMANANA Fabio",
+        "org": "Madagascar",
+        "orgCode": "MAD",
+        "irm": null,
+        "players": [
+          {
+            "id": "133367",
+            "name": "RAKOTOARIMANANA Fabio",
+            "org": "Madagascar",
+            "orgCode": "MAD",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-5",
+      "11-9",
+      "11-9",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Men's Singles - Round of 16 - Match 8",
+    "venue": "BK Arena",
+    "table": "Table 8",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "202168",
+        "name": "ANKUNDA Samuel",
+        "org": "Uganda",
+        "orgCode": "UGA",
+        "irm": null,
+        "players": [
+          {
+            "id": "202168",
+            "name": "ANKUNDA Samuel",
+            "org": "Uganda",
+            "orgCode": "UGA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102486",
+        "name": "EL-BEIALI Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "102486",
+            "name": "EL-BEIALI Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "11-9",
+      "9-11",
+      "4-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103425",
+        "name": "HANFFOU Sarah",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "103425",
+            "name": "HANFFOU Sarah",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-6",
+      "11-3",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "207008",
+        "name": "BORTEYE Joanita",
+        "org": "Ghana",
+        "orgCode": "GHA",
+        "irm": null,
+        "players": [
+          {
+            "id": "207008",
+            "name": "BORTEYE Joanita",
+            "org": "Ghana",
+            "orgCode": "GHA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102445",
+        "name": "EDEM Offiong",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "102445",
+            "name": "EDEM Offiong",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "6-11",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115379",
+        "name": "BELLO Fatimo",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115379",
+            "name": "BELLO Fatimo",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131335",
+        "name": "GODA Hana",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "131335",
+            "name": "GODA Hana",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "5-11",
+      "4-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120726",
+        "name": "ALHODABY Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "120726",
+            "name": "ALHODABY Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117142",
+        "name": "LOGHRAIBI Lynda",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "117142",
+            "name": "LOGHRAIBI Lynda",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-6",
+      "11-6",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "136170",
+        "name": "ESSID Wassim",
+        "org": "Tunisia",
+        "orgCode": "TUN",
+        "irm": null,
+        "players": [
+          {
+            "id": "136170",
+            "name": "ESSID Wassim",
+            "org": "Tunisia",
+            "orgCode": "TUN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "11-8",
+      "11-9",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116723",
+        "name": "ABDEL-AZIZ Youssef",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "116723",
+            "name": "ABDEL-AZIZ Youssef",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113679",
+        "name": "BOULOUSSA Mehdi",
+        "org": "Algeria",
+        "orgCode": "ALG",
+        "irm": null,
+        "players": [
+          {
+            "id": "113679",
+            "name": "BOULOUSSA Mehdi",
+            "org": "Algeria",
+            "orgCode": "ALG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "10-12",
+      "8-11",
+      "11-6",
+      "12-10",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals - Match 4",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113472",
+        "name": "OBA Oba Kizito",
+        "org": "Côte d'Ivoire",
+        "orgCode": "CIV",
+        "irm": null,
+        "players": [
+          {
+            "id": "113472",
+            "name": "OBA Oba Kizito",
+            "org": "Côte d'Ivoire",
+            "orgCode": "CIV",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102486",
+        "name": "EL-BEIALI Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "102486",
+            "name": "EL-BEIALI Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-14",
+      "7-11",
+      "3-11",
+      "11-3",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals - Match 3",
+    "venue": "BK Arena",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113563",
+        "name": "OMOTAYO Olajide",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "113563",
+            "name": "OMOTAYO Olajide",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200157",
+        "name": "BATIX Ylane",
+        "org": "Cameroon",
+        "orgCode": "CMR",
+        "irm": null,
+        "players": [
+          {
+            "id": "200157",
+            "name": "BATIX Ylane",
+            "org": "Cameroon",
+            "orgCode": "CMR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-8",
+      "11-9",
+      "10-12",
+      "15-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102445",
+        "name": "EDEM Offiong",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "102445",
+            "name": "EDEM Offiong",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-9",
+      "11-5",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120726",
+        "name": "ALHODABY Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "120726",
+            "name": "ALHODABY Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "131335",
+        "name": "GODA Hana",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "131335",
+            "name": "GODA Hana",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-6",
+      "11-7",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116723",
+        "name": "ABDEL-AZIZ Youssef",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "116723",
+            "name": "ABDEL-AZIZ Youssef",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "14-12",
+      "11-7",
+      "5-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113563",
+        "name": "OMOTAYO Olajide",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "113563",
+            "name": "OMOTAYO Olajide",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102486",
+        "name": "EL-BEIALI Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "102486",
+            "name": "EL-BEIALI Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "11-7",
+      "8-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111656",
+        "name": "MESHREF Dina",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "111656",
+            "name": "MESHREF Dina",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120726",
+        "name": "ALHODABY Mariam",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "120726",
+            "name": "ALHODABY Mariam",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-13",
+      "11-6",
+      "11-5",
+      "9-11",
+      "11-6",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2944",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals - Match 1",
+    "venue": "BK Arena",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112092",
+        "name": "ARUNA Quadri",
+        "org": "Nigeria",
+        "orgCode": "NGR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112092",
+            "name": "ARUNA Quadri",
+            "org": "Nigeria",
+            "orgCode": "NGR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "102486",
+        "name": "EL-BEIALI Mohamed",
+        "org": "Egypt",
+        "orgCode": "EGY",
+        "irm": null,
+        "players": [
+          {
+            "id": "102486",
+            "name": "EL-BEIALI Mohamed",
+            "org": "Egypt",
+            "orgCode": "EGY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-6",
+      "12-10",
+      "11-3"
+    ],
+    "source": "wtt"
+  }
+]

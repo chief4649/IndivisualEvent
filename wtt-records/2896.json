@@ -1,0 +1,1846 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 - Match 6",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111512",
+        "name": "GONZALEZ Daniel",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111512",
+            "name": "GONZALEZ Daniel",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132793",
+        "name": "LORENZO Santiago",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "132793",
+            "name": "LORENZO Santiago",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "5-11",
+      "11-8",
+      "11-9",
+      "4-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 16 - Match 7",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134356",
+        "name": "COSSIO ACEVES Arantxa",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134356",
+            "name": "COSSIO ACEVES Arantxa",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "11-7",
+      "9-11",
+      "11-8",
+      "5-11",
+      "12-14"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 - Match 7",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117312",
+        "name": "ISHIY Vitor",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "117312",
+            "name": "ISHIY Vitor",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135769",
+        "name": "NARESH Sid",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135769",
+            "name": "NARESH Sid",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "12-10",
+      "8-11",
+      "8-11",
+      "11-7",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Women's Singles - Round of 16 - Match 5",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112221",
+        "name": "ZHANG Lily",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112221",
+            "name": "ZHANG Lily",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-4",
+      "11-2",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 5,
+    "description": "Men's Singles - Round of 16 - Match 5",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "105679",
+        "name": "MADRID Marcos",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "105679",
+            "name": "MADRID Marcos",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-16",
+      "6-11",
+      "11-13",
+      "2-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Women's Singles - Round of 16 - Match 8",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "137114",
+        "name": "MUNOZ Shary",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "137114",
+            "name": "MUNOZ Shary",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121623",
+        "name": "TAKAHASHI Bruna",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121623",
+            "name": "TAKAHASHI Bruna",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "8-11",
+      "3-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 - Match 3",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112125",
+        "name": "VILA Isaac",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "112125",
+            "name": "VILA Isaac",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-7",
+      "11-8",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 16 - Match 2",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119109",
+        "name": "ARGUELLES Camila",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119109",
+            "name": "ARGUELLES Camila",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "3-11",
+      "4-11",
+      "5-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000800--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 8,
+    "description": "Men's Singles - Round of 16 - Match 8",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122425",
+        "name": "LY Edward",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122425",
+            "name": "LY Edward",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107272",
+        "name": "PEREIRA Andy",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "107272",
+            "name": "PEREIRA Andy",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-4",
+      "11-9",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Women's Singles - Round of 16 - Match 4",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113309",
+        "name": "SILVA Yadira",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "113309",
+            "name": "SILVA Yadira",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119022",
+        "name": "WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "7-11",
+      "3-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 - Match 2",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "113419",
+        "name": "JOUTI Eric",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113419",
+            "name": "JOUTI Eric",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-6",
+      "12-14",
+      "11-9",
+      "12-10",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 - Match 6",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122419",
+        "name": "LIAO Ivy",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122419",
+            "name": "LIAO Ivy",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112463",
+        "name": "DIAZ Melanie",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112463",
+            "name": "DIAZ Melanie",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-4",
+      "11-5",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Men's Singles - Round of 16 - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133441",
+        "name": "BURGOS Nicolas",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121222",
+        "name": "LIANG Jishan",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121222",
+            "name": "LIANG Jishan",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "6-11",
+      "15-13",
+      "11-9",
+      "11-9",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 1,
+    "description": "Women's Singles - Round of 16 - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115009",
+        "name": "DIAZ Adriana",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115009",
+            "name": "DIAZ Adriana",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-1",
+      "9-11",
+      "11-9",
+      "11-6",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 4,
+    "description": "Men's Singles - Round of 16 - Match 4",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135362",
+        "name": "GOMEZ Juan Jesus",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "135362",
+            "name": "GOMEZ Juan Jesus",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "8-11",
+      "13-15",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16",
+    "roundKey": "round_of_16",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 - Match 3",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "2",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133478",
+        "name": "TAKAHASHI Giulia",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "133478",
+            "name": "TAKAHASHI Giulia",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "124042",
+        "name": "FONSECA CARRAZANA Daniela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "124042",
+            "name": "FONSECA CARRAZANA Daniela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-7",
+      "11-3",
+      "4-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals - Match 4",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117312",
+        "name": "ISHIY Vitor",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "117312",
+            "name": "ISHIY Vitor",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122425",
+        "name": "LY Edward",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122425",
+            "name": "LY Edward",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals - Match 4",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121623",
+        "name": "TAKAHASHI Bruna",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "121623",
+            "name": "TAKAHASHI Bruna",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals - Match 3",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111512",
+        "name": "GONZALEZ Daniel",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111512",
+            "name": "GONZALEZ Daniel",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals - Match 3",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112221",
+        "name": "ZHANG Lily",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "112221",
+            "name": "ZHANG Lily",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122419",
+        "name": "LIAO Ivy",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122419",
+            "name": "LIAO Ivy",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals - Match 2",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals - Match 2",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "119022",
+        "name": "WANG Amy",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119022",
+            "name": "WANG Amy",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133441",
+        "name": "BURGOS Nicolas",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113419",
+        "name": "JOUTI Eric",
+        "org": "Brazil",
+        "orgCode": "BRA",
+        "irm": null,
+        "players": [
+          {
+            "id": "113419",
+            "name": "JOUTI Eric",
+            "org": "Brazil",
+            "orgCode": "BRA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals",
+    "roundKey": "quarterfinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115009",
+        "name": "DIAZ Adriana",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115009",
+            "name": "DIAZ Adriana",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals - Match 2",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals",
+    "roundKey": "semifinal",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals - Match 2",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.34--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Pos. 3-4",
+    "roundKey": "pos 3 4",
+    "matchNumber": 1,
+    "description": "Men's Singles - Pos. 3-4 - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.34--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Pos. 3-4",
+    "roundKey": "pos 3 4",
+    "matchNumber": 1,
+    "description": "Women's Singles - Pos. 3-4 - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2896",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals",
+    "roundKey": "final",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals - Match 1",
+    "venue": "American Bank Center - Convention Center",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      },
+      {
+        "type": "player",
+        "id": "",
+        "name": "",
+        "org": "",
+        "orgCode": "",
+        "irm": null,
+        "players": []
+      }
+    ],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

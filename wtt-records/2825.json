@@ -1,0 +1,3232 @@
+[
+  {
+    "id": 7747136,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135924",
+          "competitiorName": "CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,14,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144528",
+          "competitiorName": "COTON Flavien",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144528",
+              "playerName": "COTON Flavien",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,16,9,5",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,14-16,11-9,11-5",
+      "resultsGameScores": "9-11,11-7,14-16,11-9,11-5",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144528",
+        "serverReceiver": "135924",
+        "serverNext": "144528",
+        "serverCompetitor": "144528",
+        "receiverNext": "135924"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:28",
+        "startDateLocal": "06/23/2024 19:00:00",
+        "startDateUTC": "06/24/2024 00:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "294",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T19:00:00"
+  },
+  {
+    "id": 7746862,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137666",
+          "competitiorName": "LIN Chin-Ting",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137666",
+              "playerName": "LIN Chin-Ting",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "14,11,5,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146307",
+          "competitiorName": "RIOS Enrique",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,5,11,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "14-12,11-5,5-11,11-7,0-0",
+      "resultsGameScores": "14-12,11-5,5-11,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137666",
+        "serverReceiver": "146307",
+        "serverNext": "137666",
+        "serverCompetitor": "137666",
+        "receiverNext": "146307"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:58",
+        "startDateLocal": "06/23/2024 18:30:00",
+        "startDateUTC": "06/23/2024 23:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "217",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T18:30:00"
+  },
+  {
+    "id": 7746651,
+    "eventId": "2825",
+    "documentCode": "TTEMDOUBLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMDOUBLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys' Doubles",
+      "subEventDescription": "U19 Boys' Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100119955",
+          "competitiorName": "HUNG Jing-Kai/CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144705",
+              "playerName": "HUNG Jing-Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,10,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "42761",
+          "competitiorName": "ARPAS Samuel/PALUSEK Samuel",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137564",
+              "playerName": "ARPAS Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135529",
+              "playerName": "PALUSEK Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,6-11,10-12,5-11,0-0",
+      "resultsGameScores": "11-9,6-11,10-12,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137564",
+        "serverReceiver": "135924",
+        "serverNext": "137564",
+        "serverCompetitor": "42761",
+        "receiverNext": "135924"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:25",
+        "startDateLocal": "06/23/2024 18:00:00",
+        "startDateUTC": "06/23/2024 23:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "214",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T18:00:00"
+  },
+  {
+    "id": 7746437,
+    "eventId": "2825",
+    "documentCode": "TTEMDOUBLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMDOUBLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys' Doubles",
+      "subEventDescription": "U15 Boys' Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "58634",
+          "competitiorName": "RIOS Enrique/MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,12,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100120462",
+          "competitiorName": "RAWAT Sahil/SARDAR Rupam",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208752",
+              "playerName": "RAWAT Sahil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "201366",
+              "playerName": "SARDAR Rupam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,10,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,12-10,11-8,0-0",
+      "resultsGameScores": "9-11,11-7,12-10,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146306",
+        "serverReceiver": "208752",
+        "serverNext": "146306",
+        "serverCompetitor": "58634",
+        "receiverNext": "208752"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:04",
+        "startDateLocal": "06/23/2024 17:30:00",
+        "startDateUTC": "06/23/2024 22:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "222",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T17:30:00"
+  },
+  {
+    "id": 7746213,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144528",
+          "competitiorName": "COTON Flavien",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144528",
+              "playerName": "COTON Flavien",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144705",
+          "competitiorName": "HUNG Jing-Kai",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144705",
+              "playerName": "HUNG Jing-Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,8,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,8-11,11-8,11-6,0-0",
+      "resultsGameScores": "11-6,8-11,11-8,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144528",
+        "serverReceiver": "144705",
+        "serverNext": "144528",
+        "serverCompetitor": "144528",
+        "receiverNext": "144705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:31",
+        "startDateLocal": "06/23/2024 16:30:00",
+        "startDateUTC": "06/23/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T16:30:00"
+  },
+  {
+    "id": 7746023,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135924",
+          "competitiorName": "CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137564",
+          "competitiorName": "ARPAS Samuel",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137564",
+              "playerName": "ARPAS Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "14,5,4,5,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-14,11-5,11-4,11-5,0-0",
+      "resultsGameScores": "12-14,11-5,11-4,11-5,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137564",
+        "serverReceiver": "135924",
+        "serverNext": "137564",
+        "serverCompetitor": "137564",
+        "receiverNext": "135924"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:01",
+        "startDateLocal": "06/23/2024 16:30:00",
+        "startDateUTC": "06/23/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "213",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T16:30:00"
+  },
+  {
+    "id": 7745980,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201372",
+          "competitiorName": "ARYA Sarthak",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201372",
+              "playerName": "ARYA Sarthak",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,10,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146307",
+          "competitiorName": "RIOS Enrique",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,12,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,10-12,10-12,6-11,0-0",
+      "resultsGameScores": "11-8,10-12,10-12,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201372",
+        "serverReceiver": "146307",
+        "serverNext": "201372",
+        "serverCompetitor": "201372",
+        "receiverNext": "146307"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:18",
+        "startDateLocal": "06/23/2024 16:00:00",
+        "startDateUTC": "06/23/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "226",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T16:00:00"
+  },
+  {
+    "id": 7745678,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146306",
+          "competitiorName": "MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,14,11,1,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137666",
+          "competitiorName": "LIN Chin-Ting",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137666",
+              "playerName": "LIN Chin-Ting",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,16,3,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,14-16,11-3,1-11,0-0",
+      "resultsGameScores": "9-11,14-16,11-3,1-11,0-0",
+      "overallScores": "1-3 INJ",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146306",
+        "serverReceiver": "137666",
+        "serverNext": "146306",
+        "serverCompetitor": "146306",
+        "receiverNext": "137666"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:25",
+        "startDateLocal": "06/23/2024 16:00:00",
+        "startDateUTC": "06/23/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "201",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T16:00:00"
+  },
+  {
+    "id": 7745522,
+    "eventId": "2825",
+    "documentCode": "TTEMDOUBLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMDOUBLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys' Doubles",
+      "subEventDescription": "U19 Boys' Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "42761",
+          "competitiorName": "ARPAS Samuel/PALUSEK Samuel",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137564",
+              "playerName": "ARPAS Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135529",
+              "playerName": "PALUSEK Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,9,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100111314",
+          "competitiorName": "IIZUKA Leonardo/DOTI Felipe",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144891",
+              "playerName": "IIZUKA Leonardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "200389",
+              "playerName": "DOTI Felipe",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,9,11,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,11-9,9-11,11-9,0-0",
+      "resultsGameScores": "12-10,11-9,9-11,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200389",
+        "serverReceiver": "137564",
+        "serverNext": "200389",
+        "serverCompetitor": "100111314",
+        "receiverNext": "137564"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:18",
+        "startDateLocal": "06/23/2024 15:30:00",
+        "startDateUTC": "06/23/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "225",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T15:30:00"
+  },
+  {
+    "id": 7745198,
+    "eventId": "2825",
+    "documentCode": "TTEMDOUBLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMDOUBLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys' Doubles",
+      "subEventDescription": "U19 Boys' Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100119955",
+          "competitiorName": "HUNG Jing-Kai/CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144705",
+              "playerName": "HUNG Jing-Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100120414",
+          "competitiorName": "YANG Hao-Jen/CHEN Yi-Teng",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137068",
+              "playerName": "YANG Hao-Jen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "205797",
+              "playerName": "CHEN Yi-Teng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,7,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,9-11,11-7,11-4,0-0",
+      "resultsGameScores": "11-6,9-11,11-7,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137068",
+        "serverReceiver": "144705",
+        "serverNext": "137068",
+        "serverCompetitor": "100120414",
+        "receiverNext": "144705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:00",
+        "startDateLocal": "06/23/2024 15:30:00",
+        "startDateUTC": "06/23/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "202",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T15:30:00"
+  },
+  {
+    "id": 7745135,
+    "eventId": "2825",
+    "documentCode": "TTEMDOUBLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMDOUBLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys' Doubles",
+      "subEventDescription": "U15 Boys' Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100120462",
+          "competitiorName": "RAWAT Sahil/SARDAR Rupam",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208752",
+              "playerName": "RAWAT Sahil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "201366",
+              "playerName": "SARDAR Rupam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,6,10,15,15",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100120461",
+          "competitiorName": "ARYA Sarthak/MUKHERJEE Soham",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201372",
+              "playerName": "ARYA Sarthak",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "201367",
+              "playerName": "MUKHERJEE Soham",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,12,13,13",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "12-10,6-11,10-12,15-13,15-13",
+      "resultsGameScores": "12-10,6-11,10-12,15-13,15-13",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "208752",
+        "serverReceiver": "201367",
+        "serverNext": "208752",
+        "serverCompetitor": "100120462",
+        "receiverNext": "201367"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:54",
+        "startDateLocal": "06/23/2024 15:00:00",
+        "startDateUTC": "06/23/2024 20:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "337",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T15:00:00"
+  },
+  {
+    "id": 7744805,
+    "eventId": "2825",
+    "documentCode": "TTEMDOUBLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMDOUBLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys' Doubles",
+      "subEventDescription": "U15 Boys' Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "58634",
+          "competitiorName": "RIOS Enrique/MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100120194",
+          "competitiorName": "URIBE Santiago/DUFFOO Samuel",
+          "competitiorOrg": "PER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146047",
+              "playerName": "URIBE Santiago",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "201773",
+              "playerName": "DUFFOO Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,2,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-2,11-5,0-0,0-0",
+      "resultsGameScores": "11-7,11-2,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146307",
+        "serverReceiver": "201773",
+        "serverNext": "146307",
+        "serverCompetitor": "58634",
+        "receiverNext": "201773"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:40",
+        "startDateLocal": "06/23/2024 15:00:00",
+        "startDateUTC": "06/23/2024 20:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "135",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T15:00:00"
+  },
+  {
+    "id": 7744542,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200316",
+          "competitiorName": "BHATTACHARJEE Ankur",
+          "competitiorOrg": "IND",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200316",
+              "playerName": "BHATTACHARJEE Ankur",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,3,9,11,14",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144528",
+          "competitiorName": "COTON Flavien",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144528",
+              "playerName": "COTON Flavien",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,8,16",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-6,3-11,9-11,11-8,14-16",
+      "resultsGameScores": "11-6,3-11,9-11,11-8,14-16",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144528",
+        "serverReceiver": "200316",
+        "serverNext": "144528",
+        "serverCompetitor": "144528",
+        "receiverNext": "200316"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:40:09",
+        "startDateLocal": "06/23/2024 11:45:00",
+        "startDateUTC": "06/23/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "296",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T11:45:00"
+  },
+  {
+    "id": 7744508,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144705",
+          "competitiorName": "HUNG Jing-Kai",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144705",
+              "playerName": "HUNG Jing-Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144891",
+          "competitiorName": "IIZUKA Leonardo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144891",
+              "playerName": "IIZUKA Leonardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,8,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,8-11,11-8,11-7,0-0",
+      "resultsGameScores": "11-7,8-11,11-8,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144705",
+        "serverReceiver": "144891",
+        "serverNext": "144705",
+        "serverCompetitor": "144705",
+        "receiverNext": "144891"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:01",
+        "startDateLocal": "06/23/2024 11:45:00",
+        "startDateUTC": "06/23/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "197",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T11:45:00"
+  },
+  {
+    "id": 7744412,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134869",
+          "competitiorName": "MODI Jash",
+          "competitiorOrg": "IND",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134869",
+              "playerName": "MODI Jash",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,10,9,2,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137564",
+          "competitiorName": "ARPAS Samuel",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137564",
+              "playerName": "ARPAS Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,12,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,10-12,9-11,2-11,0-0",
+      "resultsGameScores": "11-7,10-12,9-11,2-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137564",
+        "serverReceiver": "134869",
+        "serverNext": "137564",
+        "serverCompetitor": "137564",
+        "receiverNext": "134869"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:45",
+        "startDateLocal": "06/23/2024 11:45:00",
+        "startDateUTC": "06/23/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "199",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-23T11:45:00"
+  },
+  {
+    "id": 7744342,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U19QFNL000100----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135924",
+          "competitiorName": "CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,13,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137068",
+          "competitiorName": "YANG Hao-Jen",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137068",
+              "playerName": "YANG Hao-Jen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,3,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-7,13-11,11-3,0-0",
+      "resultsGameScores": "5-11,11-7,13-11,11-3,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137068",
+        "serverReceiver": "135924",
+        "serverNext": "137068",
+        "serverCompetitor": "137068",
+        "receiverNext": "135924"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:06",
+        "startDateLocal": "06/23/2024 11:45:00",
+        "startDateUTC": "06/23/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "201",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T11:45:00"
+  },
+  {
+    "id": 7743675,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15QFNL000300----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145876",
+          "competitiorName": "KOKAVEC Pavol",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145876",
+              "playerName": "KOKAVEC Pavol",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,3,11,11,5",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201372",
+          "competitiorName": "ARYA Sarthak",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201372",
+              "playerName": "ARYA Sarthak",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,9,5,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "8-11,3-11,11-9,11-5,5-11",
+      "resultsGameScores": "8-11,3-11,11-9,11-5,5-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145876",
+        "serverReceiver": "201372",
+        "serverNext": "145876",
+        "serverCompetitor": "145876",
+        "receiverNext": "201372"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:18",
+        "startDateLocal": "06/23/2024 11:15:00",
+        "startDateUTC": "06/23/2024 16:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "236",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T11:15:00"
+  },
+  {
+    "id": 7743624,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15QFNL000200----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201367",
+          "competitiorName": "MUKHERJEE Soham",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201367",
+              "playerName": "MUKHERJEE Soham",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,14,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137666",
+          "competitiorName": "LIN Chin-Ting",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137666",
+              "playerName": "LIN Chin-Ting",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,16,14,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,14-16,12-14,0-0,0-0",
+      "resultsGameScores": "6-11,14-16,12-14,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137666",
+        "serverReceiver": "201367",
+        "serverNext": "137666",
+        "serverCompetitor": "137666",
+        "receiverNext": "201367"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:54",
+        "startDateLocal": "06/23/2024 11:15:00",
+        "startDateUTC": "06/23/2024 16:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "222",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T11:15:00"
+  },
+  {
+    "id": 7743578,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15QFNL000100----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146306",
+          "competitiorName": "MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201366",
+          "competitiorName": "SARDAR Rupam",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201366",
+              "playerName": "SARDAR Rupam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,7,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "12-10,11-7,11-9,0-0,0-0",
+      "resultsGameScores": "12-10,11-7,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201366",
+        "serverReceiver": "146306",
+        "serverNext": "201366",
+        "serverCompetitor": "201366",
+        "receiverNext": "146306"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:04",
+        "startDateLocal": "06/23/2024 11:15:00",
+        "startDateUTC": "06/23/2024 16:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "169",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T11:15:00"
+  },
+  {
+    "id": 7743492,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U15QFNL000400----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "208752",
+          "competitiorName": "RAWAT Sahil",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208752",
+              "playerName": "RAWAT Sahil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,6,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146307",
+          "competitiorName": "RIOS Enrique",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,6-11,8-11,0-0,0-0",
+      "resultsGameScores": "6-11,6-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "146307",
+        "serverReceiver": "208752",
+        "serverNext": "146307",
+        "serverCompetitor": "146307",
+        "receiverNext": "208752"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:21",
+        "startDateLocal": "06/23/2024 11:15:00",
+        "startDateUTC": "06/23/2024 16:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "147",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T11:15:00"
+  },
+  {
+    "id": 7742946,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000600----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144528",
+          "competitiorName": "COTON Flavien",
+          "competitiorOrg": "FRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144528",
+              "playerName": "COTON Flavien",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FRA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136097",
+          "competitiorName": "CHAMBET-WEIL Remi",
+          "competitiorOrg": "NED",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136097",
+              "playerName": "CHAMBET-WEIL Remi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,3,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,11-3,11-6,0-0",
+      "resultsGameScores": "11-8,9-11,11-3,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136097",
+        "serverReceiver": "144528",
+        "serverNext": "136097",
+        "serverCompetitor": "136097",
+        "receiverNext": "144528"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:48",
+        "startDateLocal": "06/23/2024 10:30:00",
+        "startDateUTC": "06/23/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "190",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:30:00"
+  },
+  {
+    "id": 7742897,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000700----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "144705",
+          "competitiorName": "HUNG Jing-Kai",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144705",
+              "playerName": "HUNG Jing-Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,14,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202557",
+          "competitiorName": "CHAUDHURY Bodhisatwa",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202557",
+              "playerName": "CHAUDHURY Bodhisatwa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,12,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,14-12,11-8,0-0,0-0",
+      "resultsGameScores": "11-9,14-12,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202557",
+        "serverReceiver": "144705",
+        "serverNext": "202557",
+        "serverCompetitor": "202557",
+        "receiverNext": "144705"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:59",
+        "startDateLocal": "06/23/2024 10:30:00",
+        "startDateUTC": "06/23/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "192",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:30:00"
+  },
+  {
+    "id": 7742869,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000500----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200316",
+          "competitiorName": "BHATTACHARJEE Ankur",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200316",
+              "playerName": "BHATTACHARJEE Ankur",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "205797",
+          "competitiorName": "CHEN Yi-Teng",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205797",
+              "playerName": "CHEN Yi-Teng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,6,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-6,11-6,0-0,0-0",
+      "resultsGameScores": "11-5,11-6,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205797",
+        "serverReceiver": "200316",
+        "serverNext": "205797",
+        "serverCompetitor": "205797",
+        "receiverNext": "200316"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:30",
+        "startDateLocal": "06/23/2024 10:30:00",
+        "startDateUTC": "06/23/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "138",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:30:00"
+  },
+  {
+    "id": 7742787,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000400----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146307",
+          "competitiorName": "RIOS Enrique",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146307",
+              "playerName": "RIOS Enrique",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,6,11,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137564",
+          "competitiorName": "ARPAS Samuel",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137564",
+              "playerName": "ARPAS Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,6-11,11-8,6-11,0-0",
+      "resultsGameScores": "5-11,6-11,11-8,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137564",
+        "serverReceiver": "146307",
+        "serverNext": "137564",
+        "serverCompetitor": "137564",
+        "receiverNext": "146307"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:34",
+        "startDateLocal": "06/23/2024 10:30:00",
+        "startDateUTC": "06/23/2024 15:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "187",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:30:00"
+  },
+  {
+    "id": 7742213,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000100----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135924",
+          "competitiorName": "CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144615",
+          "competitiorName": "PRADHIVADHI Abhinandh",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144615",
+              "playerName": "PRADHIVADHI Abhinandh",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,2,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,11-2,11-4,0-0",
+      "resultsGameScores": "11-8,9-11,11-2,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144615",
+        "serverReceiver": "135924",
+        "serverNext": "144615",
+        "serverCompetitor": "144615",
+        "receiverNext": "135924"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:44",
+        "startDateLocal": "06/23/2024 10:00:00",
+        "startDateUTC": "06/23/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "184",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:00:00"
+  },
+  {
+    "id": 7742139,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000800----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "146306",
+          "competitiorName": "MORENO Steven",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146306",
+              "playerName": "MORENO Steven",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,6,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "144891",
+          "competitiorName": "IIZUKA Leonardo",
+          "competitiorOrg": "BRA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "144891",
+              "playerName": "IIZUKA Leonardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BRA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,6-11,6-11,6-11,0-0",
+      "resultsGameScores": "11-9,6-11,6-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "144891",
+        "serverReceiver": "146306",
+        "serverNext": "144891",
+        "serverCompetitor": "144891",
+        "receiverNext": "146306"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:06",
+        "startDateLocal": "06/23/2024 10:00:00",
+        "startDateUTC": "06/23/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "198",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:00:00"
+  },
+  {
+    "id": 7741857,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000300----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135529",
+          "competitiorName": "PALUSEK Samuel",
+          "competitiorOrg": "SVK",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135529",
+              "playerName": "PALUSEK Samuel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,7,4,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134869",
+          "competitiorName": "MODI Jash",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134869",
+              "playerName": "MODI Jash",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,7-11,4-11,0-0,0-0",
+      "resultsGameScores": "5-11,7-11,4-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134869",
+        "serverReceiver": "135529",
+        "serverNext": "134869",
+        "serverCompetitor": "134869",
+        "receiverNext": "135529"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:41",
+        "startDateLocal": "06/23/2024 10:00:00",
+        "startDateUTC": "06/23/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "137",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:00:00"
+  },
+  {
+    "id": 7741815,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U198FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U198FNL000200----------",
+      "subEventName": "U19 Boys' Singles",
+      "subEventDescription": "U19 Boys' Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200073",
+          "competitiorName": "FLORO Damian",
+          "competitiorOrg": "SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200073",
+              "playerName": "FLORO Damian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,8,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137068",
+          "competitiorName": "YANG Hao-Jen",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137068",
+              "playerName": "YANG Hao-Jen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,8-11,6-11,0-0,0-0",
+      "resultsGameScores": "6-11,8-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "137068",
+        "serverReceiver": "200073",
+        "serverNext": "137068",
+        "serverCompetitor": "137068",
+        "receiverNext": "200073"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:12",
+        "startDateLocal": "06/23/2024 10:00:00",
+        "startDateUTC": "06/23/2024 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "142",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T10:00:00"
+  },
+  {
+    "id": 7741572,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U158FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U158FNL000300----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201367",
+          "competitiorName": "MUKHERJEE Soham",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201367",
+              "playerName": "MUKHERJEE Soham",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,5,12,11,13",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209631",
+          "competitiorName": "PENDSE Tanish",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209631",
+              "playerName": "PENDSE Tanish",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,10,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "7-11,5-11,12-10,11-8,13-11",
+      "resultsGameScores": "7-11,5-11,12-10,11-8,13-11",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209631",
+        "serverReceiver": "201367",
+        "serverNext": "209631",
+        "serverCompetitor": "209631",
+        "receiverNext": "201367"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:01",
+        "startDateLocal": "06/23/2024 09:30:00",
+        "startDateUTC": "06/23/2024 14:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "274",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T09:30:00"
+  },
+  {
+    "id": 7741234,
+    "eventId": "2825",
+    "documentCode": "TTEMSINGLES--------U158FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2825",
+      "documentCode": "TTEMSINGLES--------U158FNL000700----------",
+      "subEventName": "U15 Boys' Singles",
+      "subEventDescription": "U15 Boys' Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Villa Deportiva Nacional (VIDENA)",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "208752",
+          "competitiorName": "RAWAT Sahil",
+          "competitiorOrg": "IND",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "208752",
+              "playerName": "RAWAT Sahil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IND",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "146047",
+          "competitiorName": "URIBE Santiago",
+          "competitiorOrg": "PER",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "146047",
+              "playerName": "URIBE Santiago",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,9,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-9,11-8,0-0,0-0",
+      "resultsGameScores": "11-7,11-9,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "208752",
+        "serverReceiver": "146047",
+        "serverNext": "208752",
+        "serverCompetitor": "208752",
+        "receiverNext": "146047"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:50",
+        "startDateLocal": "06/23/2024 09:30:00",
+        "startDateUTC": "06/23/2024 14:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "160",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-06-23T09:30:00"
+  }
+]

@@ -1,0 +1,3588 @@
+[
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Boys' Teams - Group 1 - Match 1",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 1",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Saudi Arabia",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA"
+      },
+      {
+        "name": "Syrian Arab Rep.",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-13",
+          "12-10",
+          "11-7",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-3",
+          "11-7",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "12-10",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "211220",
+            "name": "ALHENAKI Abdullah",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "211220",
+                "name": "ALHENAKI Abdullah",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220998",
+            "name": "MOUSELLI Abdulaziz",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "220998",
+                "name": "MOUSELLI Abdulaziz",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Boys' Teams - Group 1 - Match 2",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Oman",
+        "org": "Oman",
+        "orgCode": "OMA"
+      },
+      {
+        "name": "Bahrain",
+        "org": "Bahrain",
+        "orgCode": "BRN"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "4-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135872",
+            "name": "AL MUTAWA Mohammed",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135872",
+                "name": "AL MUTAWA Mohammed",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "6-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "7-11",
+          "2-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135829",
+            "name": "AL MUTAWA Moayd",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135829",
+                "name": "AL MUTAWA Moayd",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220879",
+            "name": "BUSAFWAN Hussain",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220879",
+                "name": "BUSAFWAN Hussain",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135872",
+            "name": "AL MUTAWA Mohammed",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135872",
+                "name": "AL MUTAWA Mohammed",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "W.TEAM-----------U19.GP01.00010000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "U19 Girls' Teams - Group 1 - Match 1",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 3",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Saudi Arabia",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA"
+      },
+      {
+        "name": "Syrian Arab Rep.",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "11-7",
+          "0-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206727",
+            "name": "ALQAHTANI Nihal",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206727",
+                "name": "ALQAHTANI Nihal",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200580",
+            "name": "HALLAK Ibaa",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "200580",
+                "name": "HALLAK Ibaa",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "4-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206734",
+            "name": "ALKHALDI Hissah",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206734",
+                "name": "ALKHALDI Hissah",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "135310",
+                "name": "ZAZA Hend",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "14-16",
+          "5-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206732",
+            "name": "ALABBAD Zahra",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206732",
+                "name": "ALABBAD Zahra",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201339",
+            "name": "HAMAMAH Hala",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201339",
+                "name": "HAMAMAH Hala",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206727",
+            "name": "ALQAHTANI Nihal",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206727",
+                "name": "ALQAHTANI Nihal",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "135310",
+                "name": "ZAZA Hend",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "206734",
+            "name": "ALKHALDI Hissah",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206734",
+                "name": "ALKHALDI Hissah",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200580",
+            "name": "HALLAK Ibaa",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "200580",
+                "name": "HALLAK Ibaa",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "W.TEAM-----------U19.GP01.00020000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "U19 Girls' Teams - Group 1 - Match 2",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Lebanon",
+        "org": "Lebanon",
+        "orgCode": "LBN"
+      },
+      {
+        "name": "Saudi Arabia",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "11-8",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137485",
+            "name": "AL DAKDOUKI Fatima",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137485",
+                "name": "AL DAKDOUKI Fatima",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206734",
+            "name": "ALKHALDI Hissah",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206734",
+                "name": "ALKHALDI Hissah",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "1-11",
+          "10-12",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137486",
+            "name": "EL HABECH Yasmina",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137486",
+                "name": "EL HABECH Yasmina",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206727",
+            "name": "ALQAHTANI Nihal",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206727",
+                "name": "ALQAHTANI Nihal",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "6-11",
+          "11-7",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137487",
+            "name": "CHIRI Bissan",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137487",
+                "name": "CHIRI Bissan",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206732",
+            "name": "ALABBAD Zahra",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206732",
+                "name": "ALABBAD Zahra",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "11-13",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137485",
+            "name": "AL DAKDOUKI Fatima",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137485",
+                "name": "AL DAKDOUKI Fatima",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206727",
+            "name": "ALQAHTANI Nihal",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206727",
+                "name": "ALQAHTANI Nihal",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137486",
+            "name": "EL HABECH Yasmina",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137486",
+                "name": "EL HABECH Yasmina",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "206734",
+            "name": "ALKHALDI Hissah",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "206734",
+                "name": "ALKHALDI Hissah",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00040000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 4,
+    "description": "U19 Boys' Teams - Group 1 - Match 4",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bahrain",
+        "org": "Bahrain",
+        "orgCode": "BRN"
+      },
+      {
+        "name": "Syrian Arab Rep.",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "12-10",
+          "11-13",
+          "11-6",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-7",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-7",
+          "11-4"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220879",
+            "name": "BUSAFWAN Hussain",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220879",
+                "name": "BUSAFWAN Hussain",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "220998",
+            "name": "MOUSELLI Abdulaziz",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "220998",
+                "name": "MOUSELLI Abdulaziz",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Boys' Teams - Group 1 - Match 3",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 3",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Qatar",
+        "org": "Qatar",
+        "orgCode": "QAT"
+      },
+      {
+        "name": "Oman",
+        "org": "Oman",
+        "orgCode": "OMA"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-5",
+          "11-6"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203558",
+            "name": "AL ZAABI Nasser",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "203558",
+                "name": "AL ZAABI Nasser",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "6-11",
+          "13-11",
+          "11-3",
+          "12-10"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-7",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "200287",
+            "name": "AL ABDULLA Abdulaziz",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "200287",
+                "name": "AL ABDULLA Abdulaziz",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135872",
+            "name": "AL MUTAWA Mohammed",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135872",
+                "name": "AL MUTAWA Mohammed",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203558",
+            "name": "AL ZAABI Nasser",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "203558",
+                "name": "AL ZAABI Nasser",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00050000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 5,
+    "description": "U19 Boys' Teams - Group 1 - Match 5",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 1",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bahrain",
+        "org": "Bahrain",
+        "orgCode": "BRN"
+      },
+      {
+        "name": "Qatar",
+        "org": "Qatar",
+        "orgCode": "QAT"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "13-11",
+          "11-9",
+          "12-10"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200287",
+            "name": "AL ABDULLA Abdulaziz",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "200287",
+                "name": "AL ABDULLA Abdulaziz",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "8-11",
+          "13-15",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "11-5",
+          "3-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220879",
+            "name": "BUSAFWAN Hussain",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220879",
+                "name": "BUSAFWAN Hussain",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "5-11",
+          "11-7",
+          "11-9",
+          "7-11",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200287",
+            "name": "AL ABDULLA Abdulaziz",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "200287",
+                "name": "AL ABDULLA Abdulaziz",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00060000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 6,
+    "description": "U19 Boys' Teams - Group 1 - Match 6",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 2",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Oman",
+        "org": "Oman",
+        "orgCode": "OMA"
+      },
+      {
+        "name": "Saudi Arabia",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "1-11",
+          "8-11",
+          "3-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135872",
+            "name": "AL MUTAWA Mohammed",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135872",
+                "name": "AL MUTAWA Mohammed",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "7-11",
+          "2-11",
+          "4-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135829",
+            "name": "AL MUTAWA Moayd",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135829",
+                "name": "AL MUTAWA Moayd",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "4-11",
+          "9-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201303",
+            "name": "HANIFA Yousuf",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "201303",
+                "name": "HANIFA Yousuf",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135872",
+            "name": "AL MUTAWA Mohammed",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135872",
+                "name": "AL MUTAWA Mohammed",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "135829",
+            "name": "AL MUTAWA Moayd",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135829",
+                "name": "AL MUTAWA Moayd",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00070000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 7,
+    "description": "U19 Boys' Teams - Group 1 - Match 7",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 1",
+    "overallScore": "3-2",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Saudi Arabia",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA"
+      },
+      {
+        "name": "Qatar",
+        "org": "Qatar",
+        "orgCode": "QAT"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "12-10",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "5-11",
+          "5-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-6",
+          "11-8",
+          "7-11",
+          "11-8"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201303",
+            "name": "HANIFA Yousuf",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "201303",
+                "name": "HANIFA Yousuf",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200287",
+            "name": "AL ABDULLA Abdulaziz",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "200287",
+                "name": "AL ABDULLA Abdulaziz",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "4-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "7-11",
+          "12-10",
+          "11-6",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00080000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 8,
+    "description": "U19 Boys' Teams - Group 1 - Match 8",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 2",
+    "overallScore": "3-0",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Syrian Arab Rep.",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR"
+      },
+      {
+        "name": "Oman",
+        "org": "Oman",
+        "orgCode": "OMA"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-5",
+          "11-6",
+          "11-1"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203558",
+            "name": "AL ZAABI Nasser",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "203558",
+                "name": "AL ZAABI Nasser",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-2",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "10-12",
+          "11-7",
+          "8-11",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-2",
+          "14-16",
+          "11-2",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220998",
+            "name": "MOUSELLI Abdulaziz",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "220998",
+                "name": "MOUSELLI Abdulaziz",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135872",
+            "name": "AL MUTAWA Mohammed",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "135872",
+                "name": "AL MUTAWA Mohammed",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "145526",
+            "name": "AL ABRI Turki",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "145526",
+                "name": "AL ABRI Turki",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "203558",
+            "name": "AL ZAABI Nasser",
+            "org": "Oman",
+            "orgCode": "OMA",
+            "irm": null,
+            "players": [
+              {
+                "id": "203558",
+                "name": "AL ZAABI Nasser",
+                "org": "Oman",
+                "orgCode": "OMA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00100000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 10,
+    "description": "U19 Boys' Teams - Group 1 - Match 10",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 1",
+    "overallScore": "2-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Bahrain",
+        "org": "Bahrain",
+        "orgCode": "BRN"
+      },
+      {
+        "name": "Saudi Arabia",
+        "org": "Saudi Arabia",
+        "orgCode": "KSA"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "11-7",
+          "11-7",
+          "11-7"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "10-12",
+          "10-12",
+          "6-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220879",
+            "name": "BUSAFWAN Hussain",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220879",
+                "name": "BUSAFWAN Hussain",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "4-11",
+          "11-5",
+          "11-13",
+          "11-6",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137710",
+            "name": "ABDULLA Majeed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137710",
+                "name": "ABDULLA Majeed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201303",
+            "name": "HANIFA Yousuf",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "201303",
+                "name": "HANIFA Yousuf",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-0",
+        "resultStatus": null,
+        "gameScores": [
+          "18-16",
+          "11-7",
+          "11-9"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137720",
+            "name": "ALAALI Mohammed",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137720",
+                "name": "ALAALI Mohammed",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "137528",
+            "name": "ALTAHER Ali",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "137528",
+                "name": "ALTAHER Ali",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "2-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "9-11",
+          "11-3",
+          "11-8",
+          "10-12"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220879",
+            "name": "BUSAFWAN Hussain",
+            "org": "Bahrain",
+            "orgCode": "BRN",
+            "irm": null,
+            "players": [
+              {
+                "id": "220879",
+                "name": "BUSAFWAN Hussain",
+                "org": "Bahrain",
+                "orgCode": "BRN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "134729",
+            "name": "ARIF Moaid",
+            "org": "Saudi Arabia",
+            "orgCode": "KSA",
+            "irm": null,
+            "players": [
+              {
+                "id": "134729",
+                "name": "ARIF Moaid",
+                "org": "Saudi Arabia",
+                "orgCode": "KSA",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "M.TEAM-----------U19.GP01.00090000",
+    "subEventType": "U19 Boys' Teams",
+    "categoryName": "U19 Boys' Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 9,
+    "description": "U19 Boys' Teams - Group 1 - Match 9",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 2",
+    "overallScore": "1-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Syrian Arab Rep.",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR"
+      },
+      {
+        "name": "Qatar",
+        "org": "Qatar",
+        "orgCode": "QAT"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "3-1",
+        "resultStatus": null,
+        "gameScores": [
+          "11-9",
+          "11-4",
+          "3-11",
+          "11-5"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "6-11",
+          "7-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "13-11",
+          "9-11",
+          "3-11",
+          "3-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "220998",
+            "name": "MOUSELLI Abdulaziz",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "220998",
+                "name": "MOUSELLI Abdulaziz",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200287",
+            "name": "AL ABDULLA Abdulaziz",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "200287",
+                "name": "AL ABDULLA Abdulaziz",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "1-3",
+        "resultStatus": null,
+        "gameScores": [
+          "11-8",
+          "6-11",
+          "9-11",
+          "8-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201297",
+            "name": "ZAZA Mohamad",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201297",
+                "name": "ZAZA Mohamad",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135384",
+            "name": "KORANI Ahmed",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "135384",
+                "name": "KORANI Ahmed",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "201296",
+            "name": "GAREEB Gaith",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201296",
+                "name": "GAREEB Gaith",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "144666",
+            "name": "ABDALLA Yousif",
+            "org": "Qatar",
+            "orgCode": "QAT",
+            "irm": null,
+            "players": [
+              {
+                "id": "144666",
+                "name": "ABDALLA Yousif",
+                "org": "Qatar",
+                "orgCode": "QAT",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3179",
+    "documentCode": "W.TEAM-----------U19.GP01.00030000",
+    "subEventType": "U19 Girls' Teams",
+    "categoryName": "U19 Girls' Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "U19 Girls' Teams - Group 1 - Match 3",
+    "venue": "Green Sports City, Dammam, Kingdom of Saudi Arabia",
+    "table": "Table 3",
+    "overallScore": "0-3",
+    "resultStatus": "1",
+    "teams": [
+      {
+        "name": "Lebanon",
+        "org": "Lebanon",
+        "orgCode": "LBN"
+      },
+      {
+        "name": "Syrian Arab Rep.",
+        "org": "Syrian Arab Rep.",
+        "orgCode": "SYR"
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "12-14",
+          "8-11",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137485",
+            "name": "AL DAKDOUKI Fatima",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137485",
+                "name": "AL DAKDOUKI Fatima",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200580",
+            "name": "HALLAK Ibaa",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "200580",
+                "name": "HALLAK Ibaa",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "2-11",
+          "4-11",
+          "3-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137487",
+            "name": "CHIRI Bissan",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137487",
+                "name": "CHIRI Bissan",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "135310",
+                "name": "ZAZA Hend",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-3",
+        "resultStatus": null,
+        "gameScores": [
+          "9-11",
+          "10-12",
+          "7-11"
+        ],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137486",
+            "name": "EL HABECH Yasmina",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137486",
+                "name": "EL HABECH Yasmina",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "201339",
+            "name": "HAMAMAH Hala",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "201339",
+                "name": "HAMAMAH Hala",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137485",
+            "name": "AL DAKDOUKI Fatima",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137485",
+                "name": "AL DAKDOUKI Fatima",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "135310",
+            "name": "ZAZA Hend",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "135310",
+                "name": "ZAZA Hend",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "137487",
+            "name": "CHIRI Bissan",
+            "org": "Lebanon",
+            "orgCode": "LBN",
+            "irm": null,
+            "players": [
+              {
+                "id": "137487",
+                "name": "CHIRI Bissan",
+                "org": "Lebanon",
+                "orgCode": "LBN",
+                "position": 1
+              }
+            ]
+          },
+          {
+            "type": "player",
+            "id": "200580",
+            "name": "HALLAK Ibaa",
+            "org": "Syrian Arab Rep.",
+            "orgCode": "SYR",
+            "irm": null,
+            "players": [
+              {
+                "id": "200580",
+                "name": "HALLAK Ibaa",
+                "org": "Syrian Arab Rep.",
+                "orgCode": "SYR",
+                "position": 1
+              }
+            ]
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

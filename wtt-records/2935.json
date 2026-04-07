@@ -1,0 +1,5744 @@
+[
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.56--.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 KO1 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111517",
+        "name": "BRITO Eva",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "111517",
+            "name": "BRITO Eva",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119625",
+        "name": "ZAPATA Hidalynn",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119625",
+            "name": "ZAPATA Hidalynn",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-13",
+      "11-4",
+      "12-10",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.56--.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 KO1 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122604",
+        "name": "DUFFOO Isabel",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122604",
+            "name": "DUFFOO Isabel",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-8",
+      "11-4",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.56--.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 16 KO1 - Match 7",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136406",
+        "name": "CRESPO Estela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "136406",
+            "name": "CRESPO Estela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101836",
+        "name": "CHUNG Rheann",
+        "org": "Trinidad & Tobago",
+        "orgCode": "TTO",
+        "irm": null,
+        "players": [
+          {
+            "id": "101836",
+            "name": "CHUNG Rheann",
+            "org": "Trinidad & Tobago",
+            "orgCode": "TTO",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "11-6",
+      "9-11",
+      "12-14",
+      "8-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.56--.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 KO1 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146225",
+        "name": "CASTILLO AROCHA Cesar Augusto",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "146225",
+            "name": "CASTILLO AROCHA Cesar Augusto",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112121",
+        "name": "CAMPOS Jorge",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "112121",
+            "name": "CAMPOS Jorge",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "7-11",
+      "9-11",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.56--.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 KO1 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117330",
+        "name": "WU Jiaji ^",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "117330",
+            "name": "WU Jiaji ^",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "120207",
+        "name": "FERNANDEZ Favert",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "120207",
+            "name": "FERNANDEZ Favert",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-7",
+      "11-3",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.56--.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 5,
+    "description": "Men's Singles - Round of 16 KO1 - Match 5",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122610",
+        "name": "DUFFOO Felipe",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122610",
+            "name": "DUFFOO Felipe",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-2",
+      "16-14",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.56--.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 KO1 - Match 7",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119463",
+        "name": "KUMAR Nikhil",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121740",
+        "name": "KNIGHT Tyrese",
+        "org": "Barbados",
+        "orgCode": "BAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "121740",
+            "name": "KNIGHT Tyrese",
+            "org": "Barbados",
+            "orgCode": "BAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "11-6",
+      "11-6",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.56--.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO1",
+    "roundKey": "round of 16 ko1",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 KO1 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "103329",
+        "name": "GUTIERREZ Allan",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "103329",
+            "name": "GUTIERREZ Allan",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134849",
+        "name": "CASTRO Rogelio",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134849",
+            "name": "CASTRO Rogelio",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "6-11",
+      "11-7",
+      "2-11",
+      "7-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.910-.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 16 KO2 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123466",
+        "name": "TELLEZ Cory",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "123466",
+            "name": "TELLEZ Cory",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "124042",
+        "name": "FONSECA CARRAZANA Daniela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "124042",
+            "name": "FONSECA CARRAZANA Daniela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "9-11",
+      "7-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.910-.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 KO2 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122482",
+        "name": "ORTIZ Yasiris",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "122482",
+            "name": "ORTIZ Yasiris",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-14",
+      "7-11",
+      "12-14",
+      "10-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.910-.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 KO2 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119109",
+        "name": "ARGUELLES Camila",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119109",
+            "name": "ARGUELLES Camila",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "103189",
+        "name": "GONZALEZ Eliana",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "103189",
+            "name": "GONZALEZ Eliana",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-9",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.910-.000700--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 7,
+    "description": "Women's Singles - Round of 16 KO2 - Match 7",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112144",
+        "name": "GONZALEZ Roxy",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112144",
+            "name": "GONZALEZ Roxy",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115498",
+        "name": "EDGHILL Chelsea",
+        "org": "Guyana",
+        "orgCode": "GUY",
+        "irm": null,
+        "players": [
+          {
+            "id": "115498",
+            "name": "EDGHILL Chelsea",
+            "org": "Guyana",
+            "orgCode": "GUY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-7",
+      "9-11",
+      "11-6",
+      "15-13"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.910-.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 KO2 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145404",
+        "name": "OTALVARO Emanuel",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "145404",
+            "name": "OTALVARO Emanuel",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-8",
+      "11-7",
+      "8-11",
+      "11-9",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.910-.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 4,
+    "description": "Men's Singles - Round of 16 KO2 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200361",
+        "name": "RIOS Carlos",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200361",
+            "name": "RIOS Carlos",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111512",
+        "name": "GONZALEZ Daniel",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111512",
+            "name": "GONZALEZ Daniel",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "6-11",
+      "12-10",
+      "6-11",
+      "4-11",
+      "11-8",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.910-.000500--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 5,
+    "description": "Men's Singles - Round of 16 KO2 - Match 5",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135142",
+        "name": "CALDERON De Andre",
+        "org": "Saint Lucia",
+        "orgCode": "LCA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135142",
+            "name": "CALDERON De Andre",
+            "org": "Saint Lucia",
+            "orgCode": "LCA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-2",
+      "11-2",
+      "11-5",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.910-.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 KO2 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145366",
+        "name": "VILA Ramon",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "145366",
+            "name": "VILA Ramon",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "7-11",
+      "9-11",
+      "12-10",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.910-.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 KO2 - Match 7",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122862",
+        "name": "CARRILLO Sergio",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122862",
+            "name": "CARRILLO Sergio",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122607",
+        "name": "HIDALGO Rodrigo",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122607",
+            "name": "HIDALGO Rodrigo",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "2-11",
+      "3-11",
+      "7-11",
+      "12-10",
+      "11-9",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.910-.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO2",
+    "roundKey": "round of 16 ko2",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 KO2 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135041",
+        "name": "ORANTES Diego",
+        "org": "El Salvador",
+        "orgCode": "ESA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135041",
+            "name": "ORANTES Diego",
+            "org": "El Salvador",
+            "orgCode": "ESA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "1-11",
+      "9-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.SFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals KO1 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111517",
+        "name": "BRITO Eva",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "111517",
+            "name": "BRITO Eva",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "10-12",
+      "11-9",
+      "6-11",
+      "11-4",
+      "8-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals KO1 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "11-9",
+      "11-7",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.SFNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals KO1 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "101836",
+        "name": "CHUNG Rheann",
+        "org": "Trinidad & Tobago",
+        "orgCode": "TTO",
+        "irm": null,
+        "players": [
+          {
+            "id": "101836",
+            "name": "CHUNG Rheann",
+            "org": "Trinidad & Tobago",
+            "orgCode": "TTO",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113309",
+        "name": "SILVA Yadira",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "113309",
+            "name": "SILVA Yadira",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "10-12",
+      "7-11",
+      "11-9",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals KO1 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134420",
+        "name": "LOZADA Juliana",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "134420",
+            "name": "LOZADA Juliana",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "11-8",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.SFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals KO1 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119463",
+        "name": "KUMAR Nikhil",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-7",
+      "11-5",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.SFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals KO1 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133441",
+        "name": "BURGOS Nicolas",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112121",
+        "name": "CAMPOS Jorge",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "112121",
+            "name": "CAMPOS Jorge",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-7",
+      "9-11",
+      "11-7",
+      "11-9",
+      "9-11",
+      "14-12"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.SFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals KO1 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134849",
+        "name": "CASTRO Rogelio",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134849",
+            "name": "CASTRO Rogelio",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "11-9",
+      "11-9",
+      "10-12",
+      "11-2",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.SFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO1",
+    "roundKey": "quarterfinals ko1",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals KO1 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "117330",
+        "name": "WU Jiaji ^",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "117330",
+            "name": "WU Jiaji ^",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132793",
+        "name": "LORENZO Santiago",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "132793",
+            "name": "LORENZO Santiago",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "5-11",
+      "6-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals KO2 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119109",
+        "name": "ARGUELLES Camila",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119109",
+            "name": "ARGUELLES Camila",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112463",
+        "name": "DIAZ Melanie",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112463",
+            "name": "DIAZ Melanie",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "12-10",
+      "13-15",
+      "6-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals KO2 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112144",
+        "name": "GONZALEZ Roxy",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112144",
+            "name": "GONZALEZ Roxy",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122419",
+        "name": "LIAO Ivy",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122419",
+            "name": "LIAO Ivy",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-6",
+      "9-11",
+      "11-7",
+      "11-7",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals KO2 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "109777",
+        "name": "VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "11-6",
+      "8-11",
+      "11-8",
+      "8-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals KO2 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134356",
+        "name": "COSSIO ACEVES Arantxa",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134356",
+            "name": "COSSIO ACEVES Arantxa",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "124042",
+        "name": "FONSECA CARRAZANA Daniela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "124042",
+            "name": "FONSECA CARRAZANA Daniela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "10-12",
+      "7-11",
+      "4-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.QFNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals KO2 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107272",
+        "name": "PEREIRA Andy",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "107272",
+            "name": "PEREIRA Andy",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "13-11",
+      "11-7",
+      "8-11",
+      "11-9",
+      "8-11",
+      "1-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.QFNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals KO2 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "11-3",
+      "12-14",
+      "11-8",
+      "9-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.QFNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals KO2 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "200361",
+        "name": "RIOS Carlos",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200361",
+            "name": "RIOS Carlos",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-5",
+      "11-6",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.QFNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO2",
+    "roundKey": "quarterfinals ko2",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals KO2 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122862",
+        "name": "CARRILLO Sergio",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122862",
+            "name": "CARRILLO Sergio",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105679",
+        "name": "MADRID Marcos",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "105679",
+            "name": "MADRID Marcos",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "6-11",
+      "9-11",
+      "3-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.34--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO1",
+    "roundKey": "semifinals ko1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals KO1 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "11-8",
+      "11-1",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.34--.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO1",
+    "roundKey": "semifinals ko1",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals KO1 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111517",
+        "name": "BRITO Eva",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "111517",
+            "name": "BRITO Eva",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113309",
+        "name": "SILVA Yadira",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "113309",
+            "name": "SILVA Yadira",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "10-12",
+      "11-7",
+      "6-11",
+      "11-7",
+      "2-11",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.34--.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO1",
+    "roundKey": "semifinals ko1",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals KO1 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119463",
+        "name": "KUMAR Nikhil",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-13",
+      "8-11",
+      "13-15",
+      "11-8",
+      "12-14"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.34--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO1",
+    "roundKey": "semifinals ko1",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals KO1 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "133441",
+        "name": "BURGOS Nicolas",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "132793",
+        "name": "LORENZO Santiago",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "132793",
+            "name": "LORENZO Santiago",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "6-11",
+      "9-11",
+      "13-11",
+      "6-11",
+      "11-4",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.58--.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO2",
+    "roundKey": "semifinals ko2",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals KO2 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "109777",
+        "name": "VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112144",
+        "name": "GONZALEZ Roxy",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112144",
+            "name": "GONZALEZ Roxy",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-7",
+      "11-7",
+      "11-5",
+      "11-2"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.58--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO2",
+    "roundKey": "semifinals ko2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals KO2 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "124042",
+        "name": "FONSECA CARRAZANA Daniela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "124042",
+            "name": "FONSECA CARRAZANA Daniela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112463",
+        "name": "DIAZ Melanie",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112463",
+            "name": "DIAZ Melanie",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "13-11",
+      "9-11",
+      "11-6",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.58--.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO2",
+    "roundKey": "semifinals ko2",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals KO2 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105679",
+        "name": "MADRID Marcos",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "105679",
+            "name": "MADRID Marcos",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "9-10",
+      "9-11",
+      "11-5",
+      "11-9",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.58--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO2",
+    "roundKey": "semifinals ko2",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals KO2 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "9-11",
+      "9-11",
+      "11-9",
+      "16-18"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals KO1",
+    "roundKey": "finals ko1",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals KO1 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "110560",
+        "name": "ZHANG Mo",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "110560",
+            "name": "ZHANG Mo",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111517",
+        "name": "BRITO Eva",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "111517",
+            "name": "BRITO Eva",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-4",
+      "11-5",
+      "11-5"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.FNL-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals KO1",
+    "roundKey": "finals ko1",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals KO1 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "132793",
+        "name": "LORENZO Santiago",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "132793",
+            "name": "LORENZO Santiago",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119463",
+        "name": "KUMAR Nikhil",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "16-14",
+      "11-6",
+      "9-11",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.78--.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals KO2",
+    "roundKey": "finals ko2",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals KO2 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "124042",
+        "name": "FONSECA CARRAZANA Daniela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "124042",
+            "name": "FONSECA CARRAZANA Daniela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "109777",
+        "name": "VEGA Paulina",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "109777",
+            "name": "VEGA Paulina",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "6-11",
+      "11-5",
+      "14-12",
+      "8-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.78--.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals KO2",
+    "roundKey": "finals ko2",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals KO2 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "105679",
+        "name": "MADRID Marcos",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "105679",
+            "name": "MADRID Marcos",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "8-11",
+      "11-8",
+      "11-4",
+      "11-1",
+      "7-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1516.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 KO3 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "120207",
+        "name": "FERNANDEZ Favert",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "120207",
+            "name": "FERNANDEZ Favert",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112121",
+        "name": "CAMPOS Jorge",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "112121",
+            "name": "CAMPOS Jorge",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "9-11",
+      "7-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1516.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 KO3 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111512",
+        "name": "GONZALEZ Daniel",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111512",
+            "name": "GONZALEZ Daniel",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "121740",
+        "name": "KNIGHT Tyrese",
+        "org": "Barbados",
+        "orgCode": "BAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "121740",
+            "name": "KNIGHT Tyrese",
+            "org": "Barbados",
+            "orgCode": "BAR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-9",
+      "11-5",
+      "11-9",
+      "9-11",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1516.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 KO3 - Match 7",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "146225",
+        "name": "CASTILLO AROCHA Cesar Augusto",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "146225",
+            "name": "CASTILLO AROCHA Cesar Augusto",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122610",
+        "name": "DUFFOO Felipe",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122610",
+            "name": "DUFFOO Felipe",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "9-11",
+      "7-11",
+      "10-12",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1516.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 KO3 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "103329",
+        "name": "GUTIERREZ Allan",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "103329",
+            "name": "GUTIERREZ Allan",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117330",
+        "name": "WU Jiaji ^",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "117330",
+            "name": "WU Jiaji ^",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "1-11",
+      "10-12",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1516.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 KO3 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "103189",
+        "name": "GONZALEZ Eliana",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "103189",
+            "name": "GONZALEZ Eliana",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134420",
+        "name": "LOZADA Juliana",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "134420",
+            "name": "LOZADA Juliana",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "11-8",
+      "11-8",
+      "9-11",
+      "11-9",
+      "2-11",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1516.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO3",
+    "roundKey": "round of 16 ko3",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 KO3 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122482",
+        "name": "ORTIZ Yasiris",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "122482",
+            "name": "ORTIZ Yasiris",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-5",
+      "11-6",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.R32-.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 2,
+    "description": "Men's Singles - Round of 16 KO4 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "145366",
+        "name": "VILA Ramon",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "145366",
+            "name": "VILA Ramon",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "8-11",
+      "6-11",
+      "11-8",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.R32-.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 3,
+    "description": "Men's Singles - Round of 16 KO4 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200361",
+        "name": "RIOS Carlos",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200361",
+            "name": "RIOS Carlos",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "145404",
+        "name": "OTALVARO Emanuel",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "145404",
+            "name": "OTALVARO Emanuel",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-9",
+      "14-12",
+      "6-11",
+      "8-11",
+      "8-11",
+      "11-3"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.R32-.000700--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 7,
+    "description": "Men's Singles - Round of 16 KO4 - Match 7",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134849",
+        "name": "CASTRO Rogelio",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134849",
+            "name": "CASTRO Rogelio",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122607",
+        "name": "HIDALGO Rodrigo",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122607",
+            "name": "HIDALGO Rodrigo",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "8-11",
+      "11-9",
+      "12-10",
+      "11-4",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.R32-.000600--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 6,
+    "description": "Men's Singles - Round of 16 KO4 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135041",
+        "name": "ORANTES Diego",
+        "org": "El Salvador",
+        "orgCode": "ESA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135041",
+            "name": "ORANTES Diego",
+            "org": "El Salvador",
+            "orgCode": "ESA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122862",
+        "name": "CARRILLO Sergio",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "122862",
+            "name": "CARRILLO Sergio",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-4",
+      "7-11",
+      "11-4",
+      "11-9",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.R32-.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 4,
+    "description": "Men's Singles - Round of 16 KO4 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135142",
+        "name": "CALDERON De Andre",
+        "org": "Saint Lucia",
+        "orgCode": "LCA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135142",
+            "name": "CALDERON De Andre",
+            "org": "Saint Lucia",
+            "orgCode": "LCA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107272",
+        "name": "PEREIRA Andy",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "107272",
+            "name": "PEREIRA Andy",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "6-11",
+      "2-11",
+      "11-9",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.R32-.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 2,
+    "description": "Women's Singles - Round of 16 KO4 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "123466",
+        "name": "TELLEZ Cory",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "123466",
+            "name": "TELLEZ Cory",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-10",
+      "8-11",
+      "4-11",
+      "14-12",
+      "8-11",
+      "11-7",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.R32-.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 3,
+    "description": "Women's Singles - Round of 16 KO4 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136406",
+        "name": "CRESPO Estela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "136406",
+            "name": "CRESPO Estela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "115498",
+        "name": "EDGHILL Chelsea",
+        "org": "Guyana",
+        "orgCode": "GUY",
+        "irm": null,
+        "players": [
+          {
+            "id": "115498",
+            "name": "EDGHILL Chelsea",
+            "org": "Guyana",
+            "orgCode": "GUY",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-5",
+      "8-11",
+      "11-7",
+      "11-8",
+      "8-11",
+      "11-6"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.R32-.000600--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Round of 16 KO4",
+    "roundKey": "round of 16 ko4",
+    "matchNumber": 6,
+    "description": "Women's Singles - Round of 16 KO4 - Match 6",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122604",
+        "name": "DUFFOO Isabel",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122604",
+            "name": "DUFFOO Isabel",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101836",
+        "name": "CHUNG Rheann",
+        "org": "Trinidad & Tobago",
+        "orgCode": "TTO",
+        "irm": null,
+        "players": [
+          {
+            "id": "101836",
+            "name": "CHUNG Rheann",
+            "org": "Trinidad & Tobago",
+            "orgCode": "TTO",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "10-12",
+      "6-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1314.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals KO3 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111115",
+        "name": "AGUIRRE Marcelo",
+        "org": "Paraguay",
+        "orgCode": "PAR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111115",
+            "name": "AGUIRRE Marcelo",
+            "org": "Paraguay",
+            "orgCode": "PAR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112121",
+        "name": "CAMPOS Jorge",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "112121",
+            "name": "CAMPOS Jorge",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "8-11",
+      "9-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1314.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals KO3 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "122610",
+        "name": "DUFFOO Felipe",
+        "org": "Peru",
+        "orgCode": "PER",
+        "irm": null,
+        "players": [
+          {
+            "id": "122610",
+            "name": "DUFFOO Felipe",
+            "org": "Peru",
+            "orgCode": "PER",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133441",
+        "name": "BURGOS Nicolas",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "5-11",
+      "9-11",
+      "9-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1314.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals KO3 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "117330",
+        "name": "WU Jiaji ^",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "117330",
+            "name": "WU Jiaji ^",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-3",
+      "5-11",
+      "9-11",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1314.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals KO3 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111512",
+        "name": "GONZALEZ Daniel",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "111512",
+            "name": "GONZALEZ Daniel",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "12-14",
+      "6-11",
+      "10-12",
+      "15-17"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1314.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals KO3 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119109",
+        "name": "ARGUELLES Camila",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119109",
+            "name": "ARGUELLES Camila",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "113309",
+        "name": "SILVA Yadira",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "113309",
+            "name": "SILVA Yadira",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-4",
+      "8-11",
+      "8-11",
+      "13-11",
+      "11-7",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1314.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals KO3 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "122419",
+        "name": "LIAO Ivy",
+        "org": "Canada",
+        "orgCode": "CAN",
+        "irm": null,
+        "players": [
+          {
+            "id": "122419",
+            "name": "LIAO Ivy",
+            "org": "Canada",
+            "orgCode": "CAN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-9",
+      "11-9",
+      "5-11",
+      "11-6",
+      "4-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1314.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals KO3 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "3-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "124042",
+        "name": "FONSECA CARRAZANA Daniela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "124042",
+            "name": "FONSECA CARRAZANA Daniela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-1",
+      "7-11",
+      "4-11",
+      "11-9",
+      "5-11",
+      "9-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1314.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO3",
+    "roundKey": "quarterfinals ko3",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals KO3 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134420",
+        "name": "LOZADA Juliana",
+        "org": "Colombia",
+        "orgCode": "COL",
+        "irm": null,
+        "players": [
+          {
+            "id": "134420",
+            "name": "LOZADA Juliana",
+            "org": "Colombia",
+            "orgCode": "COL",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "11-6",
+      "11-5",
+      "11-4"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 1,
+    "description": "Men's Singles - Quarterfinals KO4 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-3",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119463",
+        "name": "KUMAR Nikhil",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111683",
+        "name": "GOMEZ Gustavo",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "111683",
+            "name": "GOMEZ Gustavo",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-8",
+      "13-11",
+      "7-11",
+      "9-11",
+      "8-11",
+      "13-11",
+      "12-10"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 2,
+    "description": "Men's Singles - Quarterfinals KO4 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "200361",
+        "name": "RIOS Carlos",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "200361",
+            "name": "RIOS Carlos",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107272",
+        "name": "PEREIRA Andy",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "107272",
+            "name": "PEREIRA Andy",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "14-12",
+      "7-11",
+      "4-11",
+      "3-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 3,
+    "description": "Men's Singles - Quarterfinals KO4 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135041",
+        "name": "ORANTES Diego",
+        "org": "El Salvador",
+        "orgCode": "ESA",
+        "irm": null,
+        "players": [
+          {
+            "id": "135041",
+            "name": "ORANTES Diego",
+            "org": "El Salvador",
+            "orgCode": "ESA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "11-6",
+      "11-8"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 4,
+    "description": "Men's Singles - Quarterfinals KO4 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134849",
+        "name": "CASTRO Rogelio",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134849",
+            "name": "CASTRO Rogelio",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-13",
+      "9-11",
+      "11-8",
+      "9-11",
+      "12-10",
+      "4-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.8FNL.000300--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 3,
+    "description": "Women's Singles - Quarterfinals KO4 - Match 3",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-0",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112144",
+        "name": "GONZALEZ Roxy",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112144",
+            "name": "GONZALEZ Roxy",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "101836",
+        "name": "CHUNG Rheann",
+        "org": "Trinidad & Tobago",
+        "orgCode": "TTO",
+        "irm": null,
+        "players": [
+          {
+            "id": "101836",
+            "name": "CHUNG Rheann",
+            "org": "Trinidad & Tobago",
+            "orgCode": "TTO",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-12",
+      "11-9",
+      "11-9",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.8FNL.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 2,
+    "description": "Women's Singles - Quarterfinals KO4 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 2",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "136406",
+        "name": "CRESPO Estela",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "136406",
+            "name": "CRESPO Estela",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134356",
+        "name": "COSSIO ACEVES Arantxa",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134356",
+            "name": "COSSIO ACEVES Arantxa",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "13-11",
+      "4-11",
+      "8-11",
+      "11-6",
+      "8-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.8FNL.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 1,
+    "description": "Women's Singles - Quarterfinals KO4 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 3",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111517",
+        "name": "BRITO Eva",
+        "org": "Dominican Rep.",
+        "orgCode": "DOM",
+        "irm": null,
+        "players": [
+          {
+            "id": "111517",
+            "name": "BRITO Eva",
+            "org": "Dominican Rep.",
+            "orgCode": "DOM",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-9",
+      "8-11",
+      "6-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.8FNL.000400--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Quarterfinals KO4",
+    "roundKey": "quarterfinals ko4",
+    "matchNumber": 4,
+    "description": "Women's Singles - Quarterfinals KO4 - Match 4",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 4",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119625",
+        "name": "ZAPATA Hidalynn",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119625",
+            "name": "ZAPATA Hidalynn",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112463",
+        "name": "DIAZ Melanie",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112463",
+            "name": "DIAZ Melanie",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "4-11",
+      "11-9",
+      "5-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.912-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO3",
+    "roundKey": "semifinals ko3",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals KO3 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112121",
+        "name": "CAMPOS Jorge",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "112121",
+            "name": "CAMPOS Jorge",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "6-11",
+      "13-11",
+      "10-12",
+      "8-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.912-.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO3",
+    "roundKey": "semifinals ko3",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals KO3 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "133441",
+        "name": "BURGOS Nicolas",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "133441",
+            "name": "BURGOS Nicolas",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-3",
+      "11-3",
+      "11-4",
+      "9-11",
+      "11-0"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.912-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO3",
+    "roundKey": "semifinals ko3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals KO3 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "135306",
+        "name": "BURGOS Brianna",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "135306",
+            "name": "BURGOS Brianna",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-6",
+      "6-11",
+      "11-8",
+      "9-11",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.912-.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO3",
+    "roundKey": "semifinals ko3",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals KO3 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119109",
+        "name": "ARGUELLES Camila",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119109",
+            "name": "ARGUELLES Camila",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-1",
+      "11-4",
+      "11-5",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.916-.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO4",
+    "roundKey": "semifinals ko4",
+    "matchNumber": 1,
+    "description": "Men's Singles - Semifinals KO4 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "119463",
+        "name": "KUMAR Nikhil",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "119463",
+            "name": "KUMAR Nikhil",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "107272",
+        "name": "PEREIRA Andy",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "107272",
+            "name": "PEREIRA Andy",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-5",
+      "4-11",
+      "8-11",
+      "4-11",
+      "7-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.916-.000200--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Semifinals KO4",
+    "roundKey": "semifinals ko4",
+    "matchNumber": 2,
+    "description": "Men's Singles - Semifinals KO4 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "2-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "115000",
+        "name": "AFANADOR Brian",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "115000",
+            "name": "AFANADOR Brian",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-6",
+      "11-8",
+      "1-11",
+      "9-11",
+      "4-11",
+      "6-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.916-.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO4",
+    "roundKey": "semifinals ko4",
+    "matchNumber": 1,
+    "description": "Women's Singles - Semifinals KO4 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "1-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "111053",
+        "name": "CODINA Ana",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "111053",
+            "name": "CODINA Ana",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "134356",
+        "name": "COSSIO ACEVES Arantxa",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134356",
+            "name": "COSSIO ACEVES Arantxa",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "9-11",
+      "11-7",
+      "9-11",
+      "9-11",
+      "5-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.916-.000200--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Semifinals KO4",
+    "roundKey": "semifinals ko4",
+    "matchNumber": 2,
+    "description": "Women's Singles - Semifinals KO4 - Match 2",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "112144",
+        "name": "GONZALEZ Roxy",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112144",
+            "name": "GONZALEZ Roxy",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112463",
+        "name": "DIAZ Melanie",
+        "org": "Puerto Rico",
+        "orgCode": "PUR",
+        "irm": null,
+        "players": [
+          {
+            "id": "112463",
+            "name": "DIAZ Melanie",
+            "org": "Puerto Rico",
+            "orgCode": "PUR",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "4-11",
+      "11-9",
+      "7-11",
+      "11-8",
+      "11-8",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1112.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals KO3",
+    "roundKey": "finals ko3",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals KO3 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "116021",
+        "name": "JHA Kanak",
+        "org": "United States",
+        "orgCode": "USA",
+        "irm": null,
+        "players": [
+          {
+            "id": "116021",
+            "name": "JHA Kanak",
+            "org": "United States",
+            "orgCode": "USA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "119316",
+        "name": "CIFUENTES Horacio",
+        "org": "Argentina",
+        "orgCode": "ARG",
+        "irm": null,
+        "players": [
+          {
+            "id": "119316",
+            "name": "CIFUENTES Horacio",
+            "org": "Argentina",
+            "orgCode": "ARG",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "6-11",
+      "11-8",
+      "11-7",
+      "11-9"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1112.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals KO3",
+    "roundKey": "finals ko3",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals KO3 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "0-4",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "118028",
+        "name": "CORDERO Lucia",
+        "org": "Guatemala",
+        "orgCode": "GUA",
+        "irm": null,
+        "players": [
+          {
+            "id": "118028",
+            "name": "CORDERO Lucia",
+            "org": "Guatemala",
+            "orgCode": "GUA",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "205401",
+        "name": "ZENG Zhiying",
+        "org": "Chile",
+        "orgCode": "CHI",
+        "irm": null,
+        "players": [
+          {
+            "id": "205401",
+            "name": "ZENG Zhiying",
+            "org": "Chile",
+            "orgCode": "CHI",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "14-16",
+      "3-11",
+      "3-11",
+      "3-11"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "M.SINGLES-----------.1616.000100--",
+    "subEventType": "Men's Singles",
+    "categoryName": "Men's Singles",
+    "discipline": "singles",
+    "gender": "men",
+    "roundLabel": "Finals KO4",
+    "roundKey": "finals ko4",
+    "matchNumber": 1,
+    "description": "Men's Singles - Finals KO4 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-2",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "107272",
+        "name": "PEREIRA Andy",
+        "org": "Cuba",
+        "orgCode": "CUB",
+        "irm": null,
+        "players": [
+          {
+            "id": "107272",
+            "name": "PEREIRA Andy",
+            "org": "Cuba",
+            "orgCode": "CUB",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "106151",
+        "name": "MINO Alberto",
+        "org": "Ecuador",
+        "orgCode": "ECU",
+        "irm": null,
+        "players": [
+          {
+            "id": "106151",
+            "name": "MINO Alberto",
+            "org": "Ecuador",
+            "orgCode": "ECU",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "11-9",
+      "2-11",
+      "6-11",
+      "11-9",
+      "14-12",
+      "11-7"
+    ],
+    "source": "wtt"
+  },
+  {
+    "matchType": "individual",
+    "id": null,
+    "eventId": "2935",
+    "documentCode": "W.SINGLES-----------.1616.000100--",
+    "subEventType": "Women's Singles",
+    "categoryName": "Women's Singles",
+    "discipline": "singles",
+    "gender": "women",
+    "roundLabel": "Finals KO4",
+    "roundKey": "finals ko4",
+    "matchNumber": 1,
+    "description": "Women's Singles - Finals KO4 - Match 1",
+    "venue": "Villa Deportiva Nacional Videna",
+    "table": "Table 1",
+    "overallScore": "4-1",
+    "resultStatus": "1",
+    "isParaClass": false,
+    "teams": [],
+    "singles": [],
+    "competitors": [
+      {
+        "type": "player",
+        "id": "134356",
+        "name": "COSSIO ACEVES Arantxa",
+        "org": "Mexico",
+        "orgCode": "MEX",
+        "irm": null,
+        "players": [
+          {
+            "id": "134356",
+            "name": "COSSIO ACEVES Arantxa",
+            "org": "Mexico",
+            "orgCode": "MEX",
+            "position": 1
+          }
+        ]
+      },
+      {
+        "type": "player",
+        "id": "112144",
+        "name": "GONZALEZ Roxy",
+        "org": "Venezuela",
+        "orgCode": "VEN",
+        "irm": null,
+        "players": [
+          {
+            "id": "112144",
+            "name": "GONZALEZ Roxy",
+            "org": "Venezuela",
+            "orgCode": "VEN",
+            "position": 1
+          }
+        ]
+      }
+    ],
+    "gameScores": [
+      "7-11",
+      "11-6",
+      "11-4",
+      "11-7",
+      "11-9"
+    ],
+    "source": "wtt"
+  }
+]

@@ -1,0 +1,3152 @@
+[
+  {
+    "id": 7800003,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200584",
+          "competitiorName": "YU Mandy",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200584",
+              "playerName": "YU Mandy",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,7,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200355",
+          "competitiorName": "DAVILA Valentina",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200355",
+              "playerName": "DAVILA Valentina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,9,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,7-11,11-9,11-8,0-0",
+      "resultsGameScores": "12-10,7-11,11-9,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200355",
+        "serverReceiver": "200584",
+        "serverNext": "200355",
+        "serverCompetitor": "200355",
+        "receiverNext": "200584"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:19",
+        "startDateLocal": "06/28/2024 17:30:00",
+        "startDateUTC": "06/28/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "215",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T17:30:00"
+  },
+  {
+    "id": 7799956,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135924",
+          "competitiorName": "CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201504",
+          "competitiorName": "SAREEN Aditya",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201504",
+              "playerName": "SAREEN Aditya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,3,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "12-10,11-3,11-8,0-0,0-0",
+      "resultsGameScores": "12-10,11-3,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135924",
+        "serverReceiver": "201504",
+        "serverNext": "135924",
+        "serverCompetitor": "135924",
+        "receiverNext": "201504"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:11",
+        "startDateLocal": "06/28/2024 17:30:00",
+        "startDateUTC": "06/28/2024 21:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "157",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T17:30:00"
+  },
+  {
+    "id": 7799625,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200583",
+          "competitiorName": "SHEN Charles",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200583",
+              "playerName": "SHEN Charles",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210176",
+          "competitiorName": "DOYLE Kevin",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210176",
+              "playerName": "DOYLE Kevin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,4,11,5,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,11-4,8-11,11-5,0-0",
+      "resultsGameScores": "11-4,11-4,8-11,11-5,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200583",
+        "serverReceiver": "210176",
+        "serverNext": "200583",
+        "serverCompetitor": "200583",
+        "receiverNext": "210176"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:28",
+        "startDateLocal": "06/28/2024 17:00:00",
+        "startDateUTC": "06/28/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "177",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T17:00:00"
+  },
+  {
+    "id": 7799601,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136491",
+          "competitiorName": "CRUZ Kheith",
+          "competitiorOrg": "PHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136491",
+              "playerName": "CRUZ Kheith",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201896",
+          "competitiorName": "CHEN Lichen",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201896",
+              "playerName": "CHEN Lichen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,13,8,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-5,11-13,11-8,12-10,0-0",
+      "resultsGameScores": "11-5,11-13,11-8,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201896",
+        "serverReceiver": "136491",
+        "serverNext": "201896",
+        "serverCompetitor": "201896",
+        "receiverNext": "136491"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:56",
+        "startDateLocal": "06/28/2024 17:00:00",
+        "startDateUTC": "06/28/2024 21:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "221",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T17:00:00"
+  },
+  {
+    "id": 7799230,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204534",
+          "competitiorName": "SENTHILKUMAR Saivaishnav",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204534",
+              "playerName": "SENTHILKUMAR Saivaishnav",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,5,13,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210021",
+          "competitiorName": "ZHANG Baron",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210021",
+              "playerName": "ZHANG Baron",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,11,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "8-11,11-9,5-11,13-11,11-7",
+      "resultsGameScores": "8-11,11-9,5-11,13-11,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210021",
+        "serverReceiver": "204534",
+        "serverNext": "210021",
+        "serverCompetitor": "210021",
+        "receiverNext": "204534"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:33",
+        "startDateLocal": "06/28/2024 16:30:00",
+        "startDateUTC": "06/28/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "269",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T16:30:00"
+  },
+  {
+    "id": 7799175,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U11FNL-000100----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206329",
+          "competitiorName": "ZHU Cindy",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206329",
+              "playerName": "ZHU Cindy",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209644",
+          "competitiorName": "JOSEPH Isabella",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209644",
+              "playerName": "JOSEPH Isabella",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,8,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-8,11-5,0-0,0-0",
+      "resultsGameScores": "11-9,11-8,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209644",
+        "serverReceiver": "206329",
+        "serverNext": "209644",
+        "serverCompetitor": "209644",
+        "receiverNext": "206329"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:47",
+        "startDateLocal": "06/28/2024 16:30:00",
+        "startDateUTC": "06/28/2024 20:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "158",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T16:30:00"
+  },
+  {
+    "id": 7798821,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137068",
+          "competitiorName": "YANG Hao-Jen",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137068",
+              "playerName": "YANG Hao-Jen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,8,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201504",
+          "competitiorName": "SAREEN Aditya",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201504",
+              "playerName": "SAREEN Aditya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,8-11,9-11,0-0",
+      "resultsGameScores": "9-11,11-7,8-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201504",
+        "serverReceiver": "137068",
+        "serverNext": "201504",
+        "serverCompetitor": "201504",
+        "receiverNext": "137068"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:11",
+        "startDateLocal": "06/28/2024 15:30:00",
+        "startDateUTC": "06/28/2024 19:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "213",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:30:00"
+  },
+  {
+    "id": 7798698,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210176",
+          "competitiorName": "DOYLE Kevin",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210176",
+              "playerName": "DOYLE Kevin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "207106",
+          "competitiorName": "DOAN KIEN TAN Nguyen",
+          "competitiorOrg": "VIE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207106",
+              "playerName": "DOAN KIEN TAN Nguyen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VIE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,6,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-6,11-6,0-0,0-0",
+      "resultsGameScores": "11-8,11-6,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "207106",
+        "serverReceiver": "210176",
+        "serverNext": "207106",
+        "serverCompetitor": "207106",
+        "receiverNext": "207106"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/28/2024 15:00:00",
+        "startDateUTC": "06/28/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:00:00"
+  },
+  {
+    "id": 7798692,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210120",
+          "competitiorName": "FENG William",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210120",
+              "playerName": "FENG William",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,10,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200583",
+          "competitiorName": "SHEN Charles",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200583",
+              "playerName": "SHEN Charles",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,11,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-5,9-11,10-12,9-11,0-0",
+      "resultsGameScores": "11-5,9-11,10-12,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200583",
+        "serverReceiver": "210120",
+        "serverNext": "200583",
+        "serverCompetitor": "200583",
+        "receiverNext": "200583"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/28/2024 15:00:00",
+        "startDateUTC": "06/28/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:00:00"
+  },
+  {
+    "id": 7798670,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200355",
+          "competitiorName": "DAVILA Valentina",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200355",
+              "playerName": "DAVILA Valentina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200564",
+          "competitiorName": "YU Abigail",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200564",
+              "playerName": "YU Abigail",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,4,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-4,11-3,0-0,0-0",
+      "resultsGameScores": "11-8,11-4,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200564",
+        "serverReceiver": "200355",
+        "serverNext": "200564",
+        "serverCompetitor": "200564",
+        "receiverNext": "200564"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/28/2024 15:30:00",
+        "startDateUTC": "06/28/2024 19:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:30:00"
+  },
+  {
+    "id": 7798660,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girls Singles",
+      "subEventDescription": "U15 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200584",
+          "competitiorName": "YU Mandy",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200584",
+              "playerName": "YU Mandy",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203103",
+          "competitiorName": "HUANG Olivia",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203103",
+              "playerName": "HUANG Olivia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,1,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-1,11-7,0-0,0-0",
+      "resultsGameScores": "11-3,11-1,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203103",
+        "serverReceiver": "200584",
+        "serverNext": "203103",
+        "serverCompetitor": "203103",
+        "receiverNext": "203103"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/28/2024 15:30:00",
+        "startDateUTC": "06/28/2024 19:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:30:00"
+  },
+  {
+    "id": 7798592,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "137185",
+          "competitiorName": "LEON Edmarie",
+          "competitiorOrg": "PUR",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137185",
+              "playerName": "LEON Edmarie",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,8,7,18",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201896",
+          "competitiorName": "CHEN Lichen",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201896",
+              "playerName": "CHEN Lichen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,10,11,11,20",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,12-10,8-11,7-11,18-20",
+      "resultsGameScores": "11-7,12-10,8-11,7-11,18-20",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201896",
+        "serverReceiver": "137185",
+        "serverNext": "201896",
+        "serverCompetitor": "201896",
+        "receiverNext": "137185"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:52:21",
+        "startDateLocal": "06/28/2024 15:00:00",
+        "startDateUTC": "06/28/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "344",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:00:00"
+  },
+  {
+    "id": 7798584,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boys Singles",
+      "subEventDescription": "U19 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135924",
+          "competitiorName": "CHANG Yu-An",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135924",
+              "playerName": "CHANG Yu-An",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135768",
+          "competitiorName": "NARESH Nandan",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135768",
+              "playerName": "NARESH Nandan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,8,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-8,11-9,0-0,0-0",
+      "resultsGameScores": "11-7,11-8,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135768",
+        "serverReceiver": "135924",
+        "serverNext": "135768",
+        "serverCompetitor": "135768",
+        "receiverNext": "135924"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:20:44",
+        "startDateLocal": "06/28/2024 15:30:00",
+        "startDateUTC": "06/28/2024 19:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "159",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:30:00"
+  },
+  {
+    "id": 7798214,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girls Singles",
+      "subEventDescription": "U19 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136491",
+          "competitiorName": "CRUZ Kheith",
+          "competitiorOrg": "PHI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136491",
+              "playerName": "CRUZ Kheith",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PHI",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "137646",
+          "competitiorName": "CASTRO Daymar",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "137646",
+              "playerName": "CASTRO Daymar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,11-4,0-0,0-0",
+      "resultsGameScores": "11-5,11-8,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136491",
+        "serverReceiver": "137646",
+        "serverNext": "136491",
+        "serverCompetitor": "136491",
+        "receiverNext": "137646"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:15:27",
+        "startDateLocal": "06/28/2024 15:00:00",
+        "startDateUTC": "06/28/2024 19:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "139",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T15:00:00"
+  },
+  {
+    "id": 7797962,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U11SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U11SFNL000100----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "204534",
+          "competitiorName": "SENTHILKUMAR Saivaishnav",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204534",
+              "playerName": "SENTHILKUMAR Saivaishnav",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210087",
+          "competitiorName": "WANG Derek",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210087",
+              "playerName": "WANG Derek",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,7,10,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-7,12-10,0-0,0-0",
+      "resultsGameScores": "11-7,11-7,12-10,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210087",
+        "serverReceiver": "204534",
+        "serverNext": "210087",
+        "serverCompetitor": "210087",
+        "receiverNext": "210087"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/28/2024 14:30:00",
+        "startDateUTC": "06/28/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T14:30:00"
+  },
+  {
+    "id": 7797951,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U11SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U11SFNL000100----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206329",
+          "competitiorName": "ZHU Cindy",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206329",
+              "playerName": "ZHU Cindy",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "205991",
+          "competitiorName": "RODRIGUEZ Valentina",
+          "competitiorOrg": "PUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "205991",
+              "playerName": "RODRIGUEZ Valentina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,4,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-4,11-8,0-0,0-0",
+      "resultsGameScores": "11-6,11-4,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "205991",
+        "serverReceiver": "206329",
+        "serverNext": "205991",
+        "serverCompetitor": "205991",
+        "receiverNext": "205991"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/28/2024 14:30:00",
+        "startDateUTC": "06/28/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T14:30:00"
+  },
+  {
+    "id": 7797941,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U11SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U11SFNL000200----------",
+      "subEventName": "U11 Boys Singles",
+      "subEventDescription": "U11 Boys Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209803",
+          "competitiorName": "LIANG Daniel",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209803",
+              "playerName": "LIANG Daniel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,9,2,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210021",
+          "competitiorName": "ZHANG Baron",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210021",
+              "playerName": "ZHANG Baron",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,9,11,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-3,11-9,9-11,2-11,8-11",
+      "resultsGameScores": "11-3,11-9,9-11,2-11,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210021",
+        "serverReceiver": "209803",
+        "serverNext": "210021",
+        "serverCompetitor": "210021",
+        "receiverNext": "209803"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:03",
+        "startDateLocal": "06/28/2024 14:30:00",
+        "startDateUTC": "06/28/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "230",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T14:30:00"
+  },
+  {
+    "id": 7797851,
+    "eventId": "2858",
+    "documentCode": "TTEWSINGLES--------U11SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEWSINGLES--------U11SFNL000200----------",
+      "subEventName": "U11 Girls Singles",
+      "subEventDescription": "U11 Girls Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210113",
+          "competitiorName": "YANG Emma",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210113",
+              "playerName": "YANG Emma",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,3,11,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209644",
+          "competitiorName": "JOSEPH Isabella",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209644",
+              "playerName": "JOSEPH Isabella",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,4,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,3-11,11-4,7-11,0-0",
+      "resultsGameScores": "6-11,3-11,11-4,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209644",
+        "serverReceiver": "210113",
+        "serverNext": "209644",
+        "serverCompetitor": "209644",
+        "receiverNext": "210113"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:22",
+        "startDateLocal": "06/28/2024 14:30:00",
+        "startDateUTC": "06/28/2024 18:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "172",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-28T14:30:00"
+  },
+  {
+    "id": 7797023,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP09000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP09000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 9 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202735",
+          "competitiorName": "CHEN Jay",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202735",
+              "playerName": "CHEN Jay",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203099",
+          "competitiorName": "XIE Lucas",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203099",
+              "playerName": "XIE Lucas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,3,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-3,11-8,0-0,0-0",
+      "resultsGameScores": "11-6,11-3,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202735",
+        "serverReceiver": "203099",
+        "serverNext": "202735",
+        "serverCompetitor": "202735",
+        "receiverNext": "203099"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:45:00",
+        "startDateUTC": "06/25/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "155",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:45:00"
+  },
+  {
+    "id": 7797016,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP09000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP09000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 9 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207106",
+          "competitiorName": "DOAN KIEN TAN Nguyen",
+          "competitiorOrg": "VIE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207106",
+              "playerName": "DOAN KIEN TAN Nguyen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VIE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,4,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202735",
+          "competitiorName": "CHEN Jay",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202735",
+              "playerName": "CHEN Jay",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,4-11,8-11,0-0,0-0",
+      "resultsGameScores": "9-11,4-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202735",
+        "serverReceiver": "207106",
+        "serverNext": "202735",
+        "serverCompetitor": "202735",
+        "receiverNext": "207106"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:45:00",
+        "startDateUTC": "06/25/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "145",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:45:00"
+  },
+  {
+    "id": 7797009,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP09000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP09000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 9 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207106",
+          "competitiorName": "DOAN KIEN TAN Nguyen",
+          "competitiorOrg": "VIE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207106",
+              "playerName": "DOAN KIEN TAN Nguyen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "VIE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,11,23,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203099",
+          "competitiorName": "XIE Lucas",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203099",
+              "playerName": "XIE Lucas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,3,21,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,9-11,11-3,23-21,0-0",
+      "resultsGameScores": "11-6,9-11,11-3,23-21,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "207106",
+        "serverReceiver": "203099",
+        "serverNext": "207106",
+        "serverCompetitor": "207106",
+        "receiverNext": "203099"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:45:00",
+        "startDateUTC": "06/25/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "277",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:45:00"
+  },
+  {
+    "id": 7797004,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP08000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP08000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 8 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210059",
+          "competitiorName": "CUI Clark",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210059",
+              "playerName": "CUI Clark",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,7,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210158",
+          "competitiorName": "WU Lucas",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210158",
+              "playerName": "WU Lucas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,7-11,5-11,0-0,0-0",
+      "resultsGameScores": "9-11,7-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210059",
+        "serverReceiver": "210158",
+        "serverNext": "210059",
+        "serverCompetitor": "210059",
+        "receiverNext": "210158"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:45:00",
+        "startDateUTC": "06/25/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "161",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:45:00"
+  },
+  {
+    "id": 7796997,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP08000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP08000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 8 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200583",
+          "competitiorName": "SHEN Charles",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200583",
+              "playerName": "SHEN Charles",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210059",
+          "competitiorName": "CUI Clark",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210059",
+              "playerName": "CUI Clark",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,2,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-2,11-3,0-0,0-0",
+      "resultsGameScores": "11-4,11-2,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200583",
+        "serverReceiver": "210059",
+        "serverNext": "200583",
+        "serverCompetitor": "200583",
+        "receiverNext": "210059"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:45:00",
+        "startDateUTC": "06/25/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "116",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:45:00"
+  },
+  {
+    "id": 7796989,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP08000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP08000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 8 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200583",
+          "competitiorName": "SHEN Charles",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200583",
+              "playerName": "SHEN Charles",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210158",
+          "competitiorName": "WU Lucas",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210158",
+              "playerName": "WU Lucas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,11-6,0-0,0-0",
+      "resultsGameScores": "11-9,11-9,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210158",
+        "serverReceiver": "200583",
+        "serverNext": "210158",
+        "serverCompetitor": "210158",
+        "receiverNext": "210158"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:45:00",
+        "startDateUTC": "06/25/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:45:00"
+  },
+  {
+    "id": 7796981,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP07000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP07000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 7 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "209986",
+          "competitiorName": "GUAY Alexandre",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209986",
+              "playerName": "GUAY Alexandre",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,5,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210480",
+          "competitiorName": "WANG Caixi",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210480",
+              "playerName": "WANG Caixi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-8,5-11,6-11,0-0",
+      "resultsGameScores": "7-11,11-8,5-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210480",
+        "serverReceiver": "209986",
+        "serverNext": "210480",
+        "serverCompetitor": "210480",
+        "receiverNext": "210480"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:15:00",
+        "startDateUTC": "06/25/2024 17:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:15:00"
+  },
+  {
+    "id": 7796973,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP07000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP07000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 7 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T05",
+      "tableName": "Table 5",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207885",
+          "competitiorName": "SHIRBHATE Abhinav",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207885",
+              "playerName": "SHIRBHATE Abhinav",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209986",
+          "competitiorName": "GUAY Alexandre",
+          "competitiorOrg": "CAN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209986",
+              "playerName": "GUAY Alexandre",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CAN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,7,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-7,11-6,0-0,0-0",
+      "resultsGameScores": "11-7,11-7,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209986",
+        "serverReceiver": "207885",
+        "serverNext": "209986",
+        "serverCompetitor": "209986",
+        "receiverNext": "209986"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:15:00",
+        "startDateUTC": "06/25/2024 17:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:15:00"
+  },
+  {
+    "id": 7796966,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP07000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP07000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 7 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "207885",
+          "competitiorName": "SHIRBHATE Abhinav",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "207885",
+              "playerName": "SHIRBHATE Abhinav",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,3,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210480",
+          "competitiorName": "WANG Caixi",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210480",
+              "playerName": "WANG Caixi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,3-11,7-11,0-0,0-0",
+      "resultsGameScores": "4-11,3-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210480",
+        "serverReceiver": "207885",
+        "serverNext": "210480",
+        "serverCompetitor": "210480",
+        "receiverNext": "210480"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 13:15:00",
+        "startDateUTC": "06/25/2024 17:15:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T13:15:00"
+  },
+  {
+    "id": 7796958,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP06000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP06000300----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 6 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T06",
+      "tableName": "Table 6",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206194",
+          "competitiorName": "VINICHENKO Mykhailo",
+          "competitiorOrg": "UKR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206194",
+              "playerName": "VINICHENKO Mykhailo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,8,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210176",
+          "competitiorName": "DOYLE Kevin",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210176",
+              "playerName": "DOYLE Kevin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,13,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,11-13,8-11,8-11,0-0",
+      "resultsGameScores": "11-7,11-13,8-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210176",
+        "serverReceiver": "206194",
+        "serverNext": "210176",
+        "serverCompetitor": "210176",
+        "receiverNext": "210176"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 12:45:00",
+        "startDateUTC": "06/25/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T12:45:00"
+  },
+  {
+    "id": 7796949,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP06000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP06000200----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 6 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206048",
+          "competitiorName": "JIA Jaden",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206048",
+              "playerName": "JIA Jaden",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206194",
+          "competitiorName": "VINICHENKO Mykhailo",
+          "competitiorOrg": "UKR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206194",
+              "playerName": "VINICHENKO Mykhailo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,7,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-7,11-6,0-0,0-0",
+      "resultsGameScores": "11-3,11-7,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206194",
+        "serverReceiver": "206048",
+        "serverNext": "206194",
+        "serverCompetitor": "206194",
+        "receiverNext": "206194"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 12:45:00",
+        "startDateUTC": "06/25/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T12:45:00"
+  },
+  {
+    "id": 7796942,
+    "eventId": "2858",
+    "documentCode": "TTEMSINGLES--------U15GP06000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2858",
+      "documentCode": "TTEMSINGLES--------U15GP06000100----------",
+      "subEventName": "U15 Boys Singles",
+      "subEventDescription": "U15 Boys Singles - Group 6 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Westchester Table Tennis Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206048",
+          "competitiorName": "JIA Jaden",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206048",
+              "playerName": "JIA Jaden",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210176",
+          "competitiorName": "DOYLE Kevin",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210176",
+              "playerName": "DOYLE Kevin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,13,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "7-11,11-13,11-13,0-0,0-0",
+      "resultsGameScores": "7-11,11-13,11-13,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210176",
+        "serverReceiver": "206048",
+        "serverNext": "210176",
+        "serverCompetitor": "210176",
+        "receiverNext": "210176"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "06/25/2024 12:45:00",
+        "startDateUTC": "06/25/2024 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-06-25T12:45:00"
+  }
+]

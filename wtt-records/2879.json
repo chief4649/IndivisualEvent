@@ -1,0 +1,3296 @@
+[
+  {
+    "id": 6124151,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114410",
+          "competitiorName": "RANEFUR Elias",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114410",
+              "playerName": "RANEFUR Elias",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,7,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123971",
+          "competitiorName": "CHO Daeseong",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123971",
+              "playerName": "CHO Daeseong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,7-11,9-11,0-0,0-0",
+      "resultsGameScores": "8-11,7-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114410",
+        "serverReceiver": "123971",
+        "serverNext": "114410",
+        "serverCompetitor": "114410",
+        "receiverNext": "123971"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:19",
+        "startDateLocal": "02/04/2024 17:45:00",
+        "startDateUTC": "02/04/2024 17:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "169",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T17:45:00"
+  },
+  {
+    "id": 6123741,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112221",
+          "competitiorName": "ZHANG Lily",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112221",
+              "playerName": "ZHANG Lily",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,15,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115454",
+          "competitiorName": "BAJOR Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115454",
+              "playerName": "BAJOR Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,3,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,15-13,11-3,11-9,0-0",
+      "resultsGameScores": "9-11,15-13,11-3,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112221",
+        "serverReceiver": "115454",
+        "serverNext": "112221",
+        "serverCompetitor": "112221",
+        "receiverNext": "115454"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:10",
+        "startDateLocal": "02/04/2024 17:10:00",
+        "startDateUTC": "02/04/2024 17:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "239",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T17:10:00"
+  },
+  {
+    "id": 6123236,
+    "eventId": "2879",
+    "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "36005",
+          "competitiorName": "ALLEGRO Martin/LAMBIET Florent",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114848",
+              "playerName": "ALLEGRO Martin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "114709",
+              "playerName": "LAMBIET Florent",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "44389",
+          "competitiorName": "JARVIS Tom/MCBEATH David",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121684",
+              "playerName": "JARVIS Tom",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "112284",
+              "playerName": "MCBEATH David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,7,11,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,11-7,8-11,11-4,0-0",
+      "resultsGameScores": "11-7,11-7,8-11,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114709",
+        "serverReceiver": "121684",
+        "serverNext": "114709",
+        "serverCompetitor": "36005",
+        "receiverNext": "121684"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:22",
+        "startDateLocal": "02/04/2024 16:35:00",
+        "startDateUTC": "02/04/2024 16:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "194",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T16:35:00"
+  },
+  {
+    "id": 6122795,
+    "eventId": "2879",
+    "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "36125",
+          "competitiorName": "BALAZOVA Barbora/MATELOVA Hana",
+          "competitiorOrg": "SVK/CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "100868",
+              "playerName": "BALAZOVA Barbora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "105913",
+              "playerName": "MATELOVA Hana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100118840",
+          "competitiorName": "HO Tin-Tin/HURSEY Anna",
+          "competitiorOrg": "ENG/WAL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115430",
+              "playerName": "HO Tin-Tin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "131480",
+              "playerName": "HURSEY Anna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "WAL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,8,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,11-7,11-8,11-4,0-0",
+      "resultsGameScores": "6-11,11-7,11-8,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "131480",
+        "serverReceiver": "105913",
+        "serverNext": "131480",
+        "serverCompetitor": "100118840",
+        "receiverNext": "105913"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:01",
+        "startDateLocal": "02/04/2024 16:00:00",
+        "startDateUTC": "02/04/2024 16:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "187",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T16:00:00"
+  },
+  {
+    "id": 6121054,
+    "eventId": "2879",
+    "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "37034",
+          "competitiorName": "ECSEKI Nandor/MADARASZ Dora",
+          "competitiorOrg": "HUN",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114716",
+              "playerName": "ECSEKI Nandor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "111213",
+              "playerName": "MADARASZ Dora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,10,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "45654",
+          "competitiorName": "LIMONOV Anton/BRATEYKO Solomiya",
+          "competitiorOrg": "UKR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "124147",
+              "playerName": "LIMONOV Anton",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "122348",
+              "playerName": "BRATEYKO Solomiya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,6,12,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,9-11,11-6,10-12,11-7",
+      "resultsGameScores": "11-8,9-11,11-6,10-12,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114716",
+        "serverReceiver": "122348",
+        "serverNext": "114716",
+        "serverCompetitor": "37034",
+        "receiverNext": "122348"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:43:18",
+        "startDateLocal": "02/04/2024 12:20:00",
+        "startDateUTC": "02/04/2024 12:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "271",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T12:20:00"
+  },
+  {
+    "id": 6120672,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114848",
+          "competitiorName": "ALLEGRO Martin",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114848",
+              "playerName": "ALLEGRO Martin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,4,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123971",
+          "competitiorName": "CHO Daeseong",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123971",
+              "playerName": "CHO Daeseong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "4-11,4-11,6-11,0-0,0-0",
+      "resultsGameScores": "4-11,4-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114848",
+        "serverReceiver": "123971",
+        "serverNext": "114848",
+        "serverCompetitor": "114848",
+        "receiverNext": "123971"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:14:54",
+        "startDateLocal": "02/04/2024 11:45:00",
+        "startDateUTC": "02/04/2024 11:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "127",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T11:45:00"
+  },
+  {
+    "id": 6120067,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "120287",
+          "competitiorName": "MUTTI Matteo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "120287",
+              "playerName": "MUTTI Matteo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,7,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114410",
+          "competitiorName": "RANEFUR Elias",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114410",
+              "playerName": "RANEFUR Elias",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,7-11,8-11,0-0,0-0",
+      "resultsGameScores": "9-11,7-11,8-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114410",
+        "serverReceiver": "120287",
+        "serverNext": "114410",
+        "serverCompetitor": "114410",
+        "receiverNext": "120287"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:37",
+        "startDateLocal": "02/04/2024 11:10:00",
+        "startDateUTC": "02/04/2024 11:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "162",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T11:10:00"
+  },
+  {
+    "id": 6118940,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112221",
+          "competitiorName": "ZHANG Lily",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112221",
+              "playerName": "ZHANG Lily",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,11,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "110995",
+          "competitiorName": "VIVARELLI Debora",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110995",
+              "playerName": "VIVARELLI Debora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,3,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,11-9,11-3,12-10,0-0",
+      "resultsGameScores": "8-11,11-9,11-3,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112221",
+        "serverReceiver": "110995",
+        "serverNext": "112221",
+        "serverCompetitor": "112221",
+        "receiverNext": "110995"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:39",
+        "startDateLocal": "02/04/2024 10:35:00",
+        "startDateUTC": "02/04/2024 10:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "223",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T10:35:00"
+  },
+  {
+    "id": 6117943,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "103752",
+          "competitiorName": "HUANG Yi-Hua",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "103752",
+              "playerName": "HUANG Yi-Hua",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,4,5,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115454",
+          "competitiorName": "BAJOR Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115454",
+              "playerName": "BAJOR Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,4-11,5-11,0-0,0-0",
+      "resultsGameScores": "5-11,4-11,5-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "103752",
+        "serverReceiver": "115454",
+        "serverNext": "103752",
+        "serverCompetitor": "103752",
+        "receiverNext": "115454"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:46",
+        "startDateLocal": "02/04/2024 10:00:00",
+        "startDateUTC": "02/04/2024 10:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "134",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-04T10:00:00"
+  },
+  {
+    "id": 6114877,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114848",
+          "competitiorName": "ALLEGRO Martin",
+          "competitiorOrg": "BEL",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114848",
+              "playerName": "ALLEGRO Martin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,14,5,11,13",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "111050",
+          "competitiorName": "ROBLES Alvaro",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111050",
+              "playerName": "ROBLES Alvaro",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,11,5,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,14-12,5-11,11-5,13-11",
+      "resultsGameScores": "9-11,14-12,5-11,11-5,13-11",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114848",
+        "serverReceiver": "111050",
+        "serverNext": "114848",
+        "serverCompetitor": "114848",
+        "receiverNext": "111050"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:40:26",
+        "startDateLocal": "02/03/2024 19:20:00",
+        "startDateUTC": "02/03/2024 19:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "296",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T19:20:00"
+  },
+  {
+    "id": 6114820,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123971",
+          "competitiorName": "CHO Daeseong",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123971",
+              "playerName": "CHO Daeseong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115029",
+          "competitiorName": "LIND Anders",
+          "competitiorOrg": "DEN",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115029",
+              "playerName": "LIND Anders",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "DEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,8,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-8,11-9,0-0,0-0",
+      "resultsGameScores": "11-7,11-8,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115029",
+        "serverReceiver": "123971",
+        "serverNext": "115029",
+        "serverCompetitor": "115029",
+        "receiverNext": "123971"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:24:13",
+        "startDateLocal": "02/03/2024 19:20:00",
+        "startDateUTC": "02/03/2024 19:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "164",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T19:20:00"
+  },
+  {
+    "id": 6114336,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112442",
+          "competitiorName": "PITCHFORD Liam",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112442",
+              "playerName": "PITCHFORD Liam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,7,1,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "120287",
+          "competitiorName": "MUTTI Matteo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "120287",
+              "playerName": "MUTTI Matteo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,8-11,7-11,1-11,0-0",
+      "resultsGameScores": "11-8,8-11,7-11,1-11,0-0",
+      "overallScores": "1-3 INJ",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "120287",
+        "serverReceiver": "112442",
+        "serverNext": "120287",
+        "serverCompetitor": "120287",
+        "receiverNext": "112442"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:22",
+        "startDateLocal": "02/03/2024 19:20:00",
+        "startDateUTC": "02/03/2024 19:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "171",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T19:20:00"
+  },
+  {
+    "id": 6114307,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "102380",
+          "competitiorName": "DRINKHALL Paul",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102380",
+              "playerName": "DRINKHALL Paul",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,9,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114410",
+          "competitiorName": "RANEFUR Elias",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114410",
+              "playerName": "RANEFUR Elias",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "7-11,9-11,7-11,0-0,0-0",
+      "resultsGameScores": "7-11,9-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "102380",
+        "serverReceiver": "114410",
+        "serverNext": "102380",
+        "serverCompetitor": "102380",
+        "receiverNext": "114410"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:31",
+        "startDateLocal": "02/03/2024 19:20:00",
+        "startDateUTC": "02/03/2024 19:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "162",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T19:20:00"
+  },
+  {
+    "id": 6114213,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "110995",
+          "competitiorName": "VIVARELLI Debora",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "110995",
+              "playerName": "VIVARELLI Debora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,5,13,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "112368",
+          "competitiorName": "YANG Ha Eun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112368",
+              "playerName": "YANG Ha Eun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,11,11,11,4",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-4,6-11,5-11,13-11,11-4",
+      "resultsGameScores": "11-4,6-11,5-11,13-11,11-4",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112368",
+        "serverReceiver": "110995",
+        "serverNext": "112368",
+        "serverCompetitor": "112368",
+        "receiverNext": "110995"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:59",
+        "startDateLocal": "02/03/2024 18:45:00",
+        "startDateUTC": "02/03/2024 18:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "242",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T18:45:00"
+  },
+  {
+    "id": 6113861,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "111072",
+          "competitiorName": "XIAO Maria",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111072",
+              "playerName": "XIAO Maria",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,9,11,14,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "103752",
+          "competitiorName": "HUANG Yi-Hua",
+          "competitiorOrg": "TPE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "103752",
+              "playerName": "HUANG Yi-Hua",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TPE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,5,16,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,9-11,11-5,14-16,0-0",
+      "resultsGameScores": "7-11,9-11,11-5,14-16,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111072",
+        "serverReceiver": "103752",
+        "serverNext": "111072",
+        "serverCompetitor": "111072",
+        "receiverNext": "103752"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:49",
+        "startDateLocal": "02/03/2024 18:45:00",
+        "startDateUTC": "02/03/2024 18:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "248",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T18:45:00"
+  },
+  {
+    "id": 6112870,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112221",
+          "competitiorName": "ZHANG Lily",
+          "competitiorOrg": "USA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112221",
+              "playerName": "ZHANG Lily",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "USA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "122348",
+          "competitiorName": "BRATEYKO Solomiya",
+          "competitiorOrg": "UKR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "122348",
+              "playerName": "BRATEYKO Solomiya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,2,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-2,11-4,0-0,0-0",
+      "resultsGameScores": "11-8,11-2,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112221",
+        "serverReceiver": "122348",
+        "serverNext": "112221",
+        "serverCompetitor": "112221",
+        "receiverNext": "122348"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:34",
+        "startDateLocal": "02/03/2024 18:45:00",
+        "startDateUTC": "02/03/2024 18:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "130",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T18:45:00"
+  },
+  {
+    "id": 6112730,
+    "eventId": "2879",
+    "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "115454",
+          "competitiorName": "BAJOR Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115454",
+              "playerName": "BAJOR Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,7,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "111416",
+          "competitiorName": "MORET Rachel",
+          "competitiorOrg": "SUI",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111416",
+              "playerName": "MORET Rachel",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SUI",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,5,11,3,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,11-5,7-11,11-3,0-0",
+      "resultsGameScores": "11-7,11-5,7-11,11-3,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111416",
+        "serverReceiver": "115454",
+        "serverNext": "111416",
+        "serverCompetitor": "111416",
+        "receiverNext": "115454"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:23:11",
+        "startDateLocal": "02/03/2024 18:45:00",
+        "startDateUTC": "02/03/2024 18:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "185",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T18:45:00"
+  },
+  {
+    "id": 6111738,
+    "eventId": "2879",
+    "documentCode": "TTEXDOUBLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEXDOUBLES-----------SFNL000200----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "45654",
+          "competitiorName": "LIMONOV Anton/BRATEYKO Solomiya",
+          "competitiorOrg": "UKR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "124147",
+              "playerName": "LIMONOV Anton",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "122348",
+              "playerName": "BRATEYKO Solomiya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "UKR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "46036",
+          "competitiorName": "LEVAJAC Dimitrije/LUPULESKU Izabela",
+          "competitiorOrg": "SRB",
+          "compCardY": "1",
+          "compCardYR1": "1",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123192",
+              "playerName": "LEVAJAC Dimitrije",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "120187",
+              "playerName": "LUPULESKU Izabela",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SRB",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,8,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-5,11-8,11-5,0-0,0-0",
+      "resultsGameScores": "11-5,11-8,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123192",
+        "serverReceiver": "122348",
+        "serverNext": "123192",
+        "serverCompetitor": "46036",
+        "receiverNext": "122348"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:22:01",
+        "startDateLocal": "02/03/2024 18:10:00",
+        "startDateUTC": "02/03/2024 18:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "145",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T18:10:00"
+  },
+  {
+    "id": 6111583,
+    "eventId": "2879",
+    "documentCode": "TTEXDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEXDOUBLES-----------SFNL000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "37034",
+          "competitiorName": "ECSEKI Nandor/MADARASZ Dora",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114716",
+              "playerName": "ECSEKI Nandor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "111213",
+              "playerName": "MADARASZ Dora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "37061",
+          "competitiorName": "MLADENOVIC Luka/NI Xia Lian",
+          "competitiorOrg": "LUX",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "120074",
+              "playerName": "MLADENOVIC Luka",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LUX",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "106706",
+              "playerName": "NI Xia Lian",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LUX",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,3,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-3,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-3,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111213",
+        "serverReceiver": "106706",
+        "serverNext": "111213",
+        "serverCompetitor": "37034",
+        "receiverNext": "106706"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:15:59",
+        "startDateLocal": "02/03/2024 18:10:00",
+        "startDateUTC": "02/03/2024 18:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "129",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T18:10:00"
+  },
+  {
+    "id": 6111181,
+    "eventId": "2879",
+    "documentCode": "TTEMDOUBLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMDOUBLES-----------SFNL000200----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "44389",
+          "competitiorName": "JARVIS Tom/MCBEATH David",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121684",
+              "playerName": "JARVIS Tom",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "112284",
+              "playerName": "MCBEATH David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "2,12,13,6,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "36000",
+          "competitiorName": "DRINKHALL Paul/PITCHFORD Liam",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102380",
+              "playerName": "DRINKHALL Paul",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "112442",
+              "playerName": "PITCHFORD Liam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,11,11,9",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "2-11,12-10,13-11,6-11,11-9",
+      "resultsGameScores": "2-11,12-10,13-11,6-11,11-9",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "112284",
+        "serverReceiver": "112442",
+        "serverNext": "112284",
+        "serverCompetitor": "44389",
+        "receiverNext": "112442"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:17",
+        "startDateLocal": "02/03/2024 17:35:00",
+        "startDateUTC": "02/03/2024 17:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "281",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T17:35:00"
+  },
+  {
+    "id": 6110751,
+    "eventId": "2879",
+    "documentCode": "TTEMDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMDOUBLES-----------SFNL000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "35972",
+          "competitiorName": "ECSEKI Nandor/SZUDI Adam",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114716",
+              "playerName": "ECSEKI Nandor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "114717",
+              "playerName": "SZUDI Adam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,10,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "36005",
+          "competitiorName": "ALLEGRO Martin/LAMBIET Florent",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114848",
+              "playerName": "ALLEGRO Martin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "114709",
+              "playerName": "LAMBIET Florent",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,6,12,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-6,10-12,7-11,0-0",
+      "resultsGameScores": "7-11,11-6,10-12,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114848",
+        "serverReceiver": "114717",
+        "serverNext": "114848",
+        "serverCompetitor": "36005",
+        "receiverNext": "114717"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:08",
+        "startDateLocal": "02/03/2024 17:35:00",
+        "startDateUTC": "02/03/2024 17:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "218",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T17:35:00"
+  },
+  {
+    "id": 6109749,
+    "eventId": "2879",
+    "documentCode": "TTEWDOUBLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWDOUBLES-----------SFNL000200----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "36677",
+          "competitiorName": "DEGRAEF Margo/MARCHETTI Nathalie",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "118774",
+              "playerName": "DEGRAEF Margo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "117009",
+              "playerName": "MARCHETTI Nathalie",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,5,11,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100118840",
+          "competitiorName": "HO Tin-Tin/HURSEY Anna",
+          "competitiorOrg": "ENG/WAL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115430",
+              "playerName": "HO Tin-Tin",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "131480",
+              "playerName": "HURSEY Anna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "WAL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,8,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,11-8,5-11,0-0",
+      "resultsGameScores": "5-11,5-11,11-8,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117009",
+        "serverReceiver": "115430",
+        "serverNext": "117009",
+        "serverCompetitor": "36677",
+        "receiverNext": "115430"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:31",
+        "startDateLocal": "02/03/2024 17:00:00",
+        "startDateUTC": "02/03/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "185",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T17:00:00"
+  },
+  {
+    "id": 6109523,
+    "eventId": "2879",
+    "documentCode": "TTEWDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEWDOUBLES-----------SFNL000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "36125",
+          "competitiorName": "BALAZOVA Barbora/MATELOVA Hana",
+          "competitiorOrg": "SVK/CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "100868",
+              "playerName": "BALAZOVA Barbora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "105913",
+              "playerName": "MATELOVA Hana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100112873",
+          "competitiorName": "BAJOR Natalia/KUKULKOVA Tatiana",
+          "competitiorOrg": "POL/SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115454",
+              "playerName": "BAJOR Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "121714",
+              "playerName": "KUKULKOVA Tatiana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,10,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,12-10,11-9,0-0,0-0",
+      "resultsGameScores": "11-8,12-10,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121714",
+        "serverReceiver": "100868",
+        "serverNext": "121714",
+        "serverCompetitor": "100112873",
+        "receiverNext": "100868"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:38",
+        "startDateLocal": "02/03/2024 17:00:00",
+        "startDateUTC": "02/03/2024 17:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "171",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T17:00:00"
+  },
+  {
+    "id": 6106194,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000800----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000800----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 8",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121684",
+          "competitiorName": "JARVIS Tom",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121684",
+              "playerName": "JARVIS Tom",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,9,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115029",
+          "competitiorName": "LIND Anders",
+          "competitiorOrg": "DEN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115029",
+              "playerName": "LIND Anders",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "DEN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,11-8,9-11,8-11,0-0",
+      "resultsGameScores": "8-11,11-8,9-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "115029",
+        "serverReceiver": "121684",
+        "serverNext": "115029",
+        "serverCompetitor": "115029",
+        "receiverNext": "121684"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:45",
+        "startDateLocal": "02/03/2024 13:55:00",
+        "startDateUTC": "02/03/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "209",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:55:00"
+  },
+  {
+    "id": 6106107,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "105679",
+          "competitiorName": "MADRID Marcos",
+          "competitiorOrg": "MEX",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "105679",
+              "playerName": "MADRID Marcos",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "MEX",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,6,6,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "102380",
+          "competitiorName": "DRINKHALL Paul",
+          "competitiorOrg": "ENG",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "102380",
+              "playerName": "DRINKHALL Paul",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "13,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "15-13,6-11,6-11,7-11,0-0",
+      "resultsGameScores": "15-13,6-11,6-11,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "105679",
+        "serverReceiver": "102380",
+        "serverNext": "105679",
+        "serverCompetitor": "105679",
+        "receiverNext": "102380"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:03",
+        "startDateLocal": "02/03/2024 13:55:00",
+        "startDateUTC": "02/03/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "233",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:55:00"
+  },
+  {
+    "id": 6106014,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000700----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000700----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 7",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123971",
+          "competitiorName": "CHO Daeseong",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123971",
+              "playerName": "CHO Daeseong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115449",
+          "competitiorName": "LEVENKO Andreas",
+          "competitiorOrg": "AUT",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115449",
+              "playerName": "LEVENKO Andreas",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUT",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,5,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-5,11-5,0-0,0-0",
+      "resultsGameScores": "11-4,11-5,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123971",
+        "serverReceiver": "115449",
+        "serverNext": "123971",
+        "serverCompetitor": "123971",
+        "receiverNext": "115449"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:44",
+        "startDateLocal": "02/03/2024 13:55:00",
+        "startDateUTC": "02/03/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "133",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:55:00"
+  },
+  {
+    "id": 6105713,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "103903",
+          "competitiorName": "IONESCU Ovidiu",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "103903",
+              "playerName": "IONESCU Ovidiu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,9,7,5,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "114410",
+          "competitiorName": "RANEFUR Elias",
+          "competitiorOrg": "SWE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114410",
+              "playerName": "RANEFUR Elias",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SWE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,9-11,7-11,5-11,0-0",
+      "resultsGameScores": "11-7,9-11,7-11,5-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "103903",
+        "serverReceiver": "114410",
+        "serverNext": "103903",
+        "serverCompetitor": "103903",
+        "receiverNext": "114410"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:45",
+        "startDateLocal": "02/03/2024 13:20:00",
+        "startDateUTC": "02/03/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "195",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:20:00"
+  },
+  {
+    "id": 6105637,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000600----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114709",
+          "competitiorName": "LAMBIET Florent",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114709",
+              "playerName": "LAMBIET Florent",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,5,10,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "111050",
+          "competitiorName": "ROBLES Alvaro",
+          "competitiorOrg": "ESP",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111050",
+              "playerName": "ROBLES Alvaro",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ESP",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,5-11,10-12,0-0,0-0",
+      "resultsGameScores": "8-11,5-11,10-12,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114709",
+        "serverReceiver": "111050",
+        "serverNext": "114709",
+        "serverCompetitor": "114709",
+        "receiverNext": "111050"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:29",
+        "startDateLocal": "02/03/2024 13:55:00",
+        "startDateUTC": "02/03/2024 13:55:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "170",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:55:00"
+  },
+  {
+    "id": 6105564,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "120287",
+          "competitiorName": "MUTTI Matteo",
+          "competitiorOrg": "ITA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "120287",
+              "playerName": "MUTTI Matteo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ITA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,11,7,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "106050",
+          "competitiorName": "MENGEL Steffen",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "106050",
+              "playerName": "MENGEL Steffen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,9,11,6,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "10-12,11-9,7-11,11-6,11-6",
+      "resultsGameScores": "10-12,11-9,7-11,11-6,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "120287",
+        "serverReceiver": "106050",
+        "serverNext": "120287",
+        "serverCompetitor": "120287",
+        "receiverNext": "106050"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:44:43",
+        "startDateLocal": "02/03/2024 13:20:00",
+        "startDateUTC": "02/03/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "261",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:20:00"
+  },
+  {
+    "id": 6105254,
+    "eventId": "2879",
+    "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2879",
+      "documentCode": "TTEMSINGLES-----------8FNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Round of 16 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "National Cycling Centre",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "112442",
+          "competitiorName": "PITCHFORD Liam",
+          "competitiorOrg": "ENG",
+          "compCardY": "1",
+          "compCardYR1": "1",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "112442",
+              "playerName": "PITCHFORD Liam",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ENG",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,11,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "109946",
+          "competitiorName": "WALTHER Ricardo",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "109946",
+              "playerName": "WALTHER Ricardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,6,6,3",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "7-11,11-13,11-6,11-6,11-3",
+      "resultsGameScores": "7-11,11-13,11-6,11-6,11-3",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "109946",
+        "serverReceiver": "112442",
+        "serverNext": "109946",
+        "serverCompetitor": "109946",
+        "receiverNext": "112442"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:47",
+        "startDateLocal": "02/03/2024 13:20:00",
+        "startDateUTC": "02/03/2024 13:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "259",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2024-02-03T13:20:00"
+  }
+]

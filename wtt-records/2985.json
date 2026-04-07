@@ -1,0 +1,3122 @@
+[
+  {
+    "id": 8368530,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201504",
+          "competitiorName": "SAREEN Aditya",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201504",
+              "playerName": "SAREEN Aditya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,8,11,7,11,11,6",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134802",
+          "competitiorName": "BAE Won",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134802",
+              "playerName": "BAE Won",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,6,11,8,7,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 7,
+      "full_msg": null,
+      "gameScores": "5-11,8-11,11-6,7-11,11-8,11-7,6-11",
+      "resultsGameScores": "5-11,8-11,11-6,7-11,11-8,11-7,6-11",
+      "overallScores": "3-4",
+      "resultOverallScores": "3-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134802",
+        "serverReceiver": "201504",
+        "serverNext": "134802",
+        "serverCompetitor": "134802",
+        "receiverNext": "134802"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:45:00",
+        "startDateUTC": "09/08/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:45:00"
+  },
+  {
+    "id": 8368172,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U19FNL-000100----------",
+      "subEventName": "U19 Girl's Singles",
+      "subEventDescription": "U19 Girl's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134972",
+          "competitiorName": "BUDDHADASA Sanaya",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134972",
+              "playerName": "BUDDHADASA Sanaya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,9,7,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145134",
+          "competitiorName": "PSIHOGIOS Constantina",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145134",
+              "playerName": "PSIHOGIOS Constantina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,8,11,11,6,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 6,
+      "full_msg": null,
+      "gameScores": "11-8,11-8,9-11,7-11,11-6,11-9,0-0",
+      "resultsGameScores": "11-8,11-8,9-11,7-11,11-6,11-9,0-0",
+      "overallScores": "4-2",
+      "resultOverallScores": "4-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145134",
+        "serverReceiver": "134972",
+        "serverNext": "145134",
+        "serverCompetitor": "145134",
+        "receiverNext": "145134"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:45:00",
+        "startDateUTC": "09/08/2024 08:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:45:00"
+  },
+  {
+    "id": 8367640,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15CON5000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15CON5000100----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Consolation Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206831",
+          "competitiorName": "LI Andrew",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206831",
+              "playerName": "LI Andrew",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211235",
+          "competitiorName": "SANNE Ariitea",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211235",
+              "playerName": "SANNE Ariitea",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,7,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-3,11-7,11-8,0-0,0-0",
+      "resultsGameScores": "11-3,11-7,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211235",
+        "serverReceiver": "206831",
+        "serverNext": "211235",
+        "serverCompetitor": "211235",
+        "receiverNext": "211235"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 19:00:00",
+        "startDateUTC": "09/08/2024 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T19:00:00"
+  },
+  {
+    "id": 8367615,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19CON5000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19CON5000100----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Consolation Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211236",
+          "competitiorName": "LY KUI Yoann",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211236",
+              "playerName": "LY KUI Yoann",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,1,3,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123935",
+          "competitiorName": "WU Vicky",
+          "competitiorOrg": "FIJ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123935",
+              "playerName": "WU Vicky",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FIJ",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-4,1-11,3-11,9-11,0-0",
+      "resultsGameScores": "11-4,1-11,3-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123935",
+        "serverReceiver": "211236",
+        "serverNext": "123935",
+        "serverCompetitor": "123935",
+        "receiverNext": "123935"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 19:00:00",
+        "startDateUTC": "09/08/2024 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T19:00:00"
+  },
+  {
+    "id": 8367111,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U15CON5000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U15CON5000100----------",
+      "subEventName": "U15 Girl's Singles",
+      "subEventDescription": "U15 Girl's Singles - Consolation Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211232",
+          "competitiorName": "TERE Temehau",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211232",
+              "playerName": "TERE Temehau",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "3,11,3,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209154",
+          "competitiorName": "ZHAO Coral",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209154",
+              "playerName": "ZHAO Coral",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "3-11,11-7,3-11,8-11,0-0",
+      "resultsGameScores": "3-11,11-7,3-11,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209154",
+        "serverReceiver": "211232",
+        "serverNext": "209154",
+        "serverCompetitor": "209154",
+        "receiverNext": "209154"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:30:00",
+        "startDateUTC": "09/08/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:30:00"
+  },
+  {
+    "id": 8367034,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U19CON5000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U19CON5000100----------",
+      "subEventName": "U19 Girl's Singles",
+      "subEventDescription": "U19 Girl's Singles - Consolation Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200210",
+          "competitiorName": "LAM Jocelyn",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200210",
+              "playerName": "LAM Jocelyn",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,4,15,7,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206508",
+          "competitiorName": "YI Yelena",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206508",
+              "playerName": "YI Yelena",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,13,11,7",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-7,4-11,15-13,7-11,11-7",
+      "resultsGameScores": "11-7,4-11,15-13,7-11,11-7",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206508",
+        "serverReceiver": "200210",
+        "serverNext": "206508",
+        "serverCompetitor": "206508",
+        "receiverNext": "206508"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:30:00",
+        "startDateUTC": "09/08/2024 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:30:00"
+  },
+  {
+    "id": 8367011,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206629",
+          "competitiorName": "HUANG Jacob",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206629",
+              "playerName": "HUANG Jacob",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,7,11,14,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202683",
+          "competitiorName": "XIAO August",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202683",
+              "playerName": "XIAO August",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,9,16,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 6,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,7-11,11-9,14-16,6-11,0-0",
+      "resultsGameScores": "9-11,11-7,7-11,11-9,14-16,6-11,0-0",
+      "overallScores": "2-4",
+      "resultOverallScores": "2-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202683",
+        "serverReceiver": "206629",
+        "serverNext": "202683",
+        "serverCompetitor": "202683",
+        "receiverNext": "202683"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:00:00",
+        "startDateUTC": "09/08/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:00:00"
+  },
+  {
+    "id": 8366568,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19CON4000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19CON4000100----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Consolation Semifinals - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211237",
+          "competitiorName": "PAMBRUN Ariinui",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211237",
+              "playerName": "PAMBRUN Ariinui",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,10,11,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211236",
+          "competitiorName": "LY KUI Yoann",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211236",
+              "playerName": "LY KUI Yoann",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,7,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "9-11,10-12,11-7,8-11,0-0",
+      "resultsGameScores": "9-11,10-12,11-7,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211236",
+        "serverReceiver": "211237",
+        "serverNext": "211236",
+        "serverCompetitor": "211236",
+        "receiverNext": "211236"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:00:00",
+        "startDateUTC": "09/08/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:00:00"
+  },
+  {
+    "id": 8366503,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19CON4000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19CON4000200----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Consolation Semifinals - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202863",
+          "competitiorName": "VONGUE Dylan",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202863",
+              "playerName": "VONGUE Dylan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,9,9,3,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "123935",
+          "competitiorName": "WU Vicky",
+          "competitiorOrg": "FIJ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123935",
+              "playerName": "WU Vicky",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FIJ",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,9-11,9-11,3-11,0-0",
+      "resultsGameScores": "12-10,9-11,9-11,3-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "123935",
+        "serverReceiver": "202863",
+        "serverNext": "123935",
+        "serverCompetitor": "123935",
+        "receiverNext": "123935"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:00:00",
+        "startDateUTC": "09/08/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:00:00"
+  },
+  {
+    "id": 8366488,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U15FNL-000100----------",
+      "subEventName": "U15 Girl's Singles",
+      "subEventDescription": "U15 Girl's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210240",
+          "competitiorName": "CHONG Josephine",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210240",
+              "playerName": "CHONG Josephine",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,9,6,6,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200225",
+          "competitiorName": "MORIYAMA Ayumi",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200225",
+              "playerName": "MORIYAMA Ayumi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,11,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,9-11,6-11,6-11,0-0,0-0,0-0",
+      "resultsGameScores": "8-11,9-11,6-11,6-11,0-0,0-0,0-0",
+      "overallScores": "0-4",
+      "resultOverallScores": "0-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200225",
+        "serverReceiver": "210240",
+        "serverNext": "200225",
+        "serverCompetitor": "200225",
+        "receiverNext": "200225"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 18:00:00",
+        "startDateUTC": "09/08/2024 08:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T18:00:00"
+  },
+  {
+    "id": 8366091,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201504",
+          "competitiorName": "SAREEN Aditya",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201504",
+              "playerName": "SAREEN Aditya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,13,11,11,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134803",
+          "competitiorName": "BAE Hwan",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134803",
+              "playerName": "BAE Hwan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,7,3,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,13-11,11-7,11-3,0-0,0-0,0-0",
+      "resultsGameScores": "11-8,13-11,11-7,11-3,0-0,0-0,0-0",
+      "overallScores": "4-0",
+      "resultOverallScores": "4-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134803",
+        "serverReceiver": "201504",
+        "serverNext": "134803",
+        "serverCompetitor": "134803",
+        "receiverNext": "134803"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 17:20:00",
+        "startDateUTC": "09/08/2024 07:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T17:20:00"
+  },
+  {
+    "id": 8366019,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15CON4000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15CON4000100----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Consolation Semifinals - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206831",
+          "competitiorName": "LI Andrew",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206831",
+              "playerName": "LI Andrew",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211234",
+          "competitiorName": "TEHEI Keanu",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211234",
+              "playerName": "TEHEI Keanu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,6,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-6,11-6,0-0,0-0",
+      "resultsGameScores": "11-4,11-6,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211234",
+        "serverReceiver": "206831",
+        "serverNext": "211234",
+        "serverCompetitor": "211234",
+        "receiverNext": "211234"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 17:30:00",
+        "startDateUTC": "09/08/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T17:30:00"
+  },
+  {
+    "id": 8365833,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15CON4000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15CON4000200----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Consolation Semifinals - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211235",
+          "competitiorName": "SANNE Ariitea",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211235",
+              "playerName": "SANNE Ariitea",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211231",
+          "competitiorName": "BU LUC Tepouatini",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211231",
+              "playerName": "BU LUC Tepouatini",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,7,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "12-10,11-7,11-7,0-0,0-0",
+      "resultsGameScores": "12-10,11-7,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211231",
+        "serverReceiver": "211235",
+        "serverNext": "211231",
+        "serverCompetitor": "211231",
+        "receiverNext": "211231"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 17:30:00",
+        "startDateUTC": "09/08/2024 07:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T17:30:00"
+  },
+  {
+    "id": 8365819,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134802",
+          "competitiorName": "BAE Won",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134802",
+              "playerName": "BAE Won",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,11,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136657",
+          "competitiorName": "NIE Chulong",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136657",
+              "playerName": "NIE Chulong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,7,6,4,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-6,11-7,11-6,11-4,0-0,0-0,0-0",
+      "resultsGameScores": "11-6,11-7,11-6,11-4,0-0,0-0,0-0",
+      "overallScores": "4-0",
+      "resultOverallScores": "4-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136657",
+        "serverReceiver": "134802",
+        "serverNext": "136657",
+        "serverCompetitor": "136657",
+        "receiverNext": "136657"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 17:20:00",
+        "startDateUTC": "09/08/2024 07:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T17:20:00"
+  },
+  {
+    "id": 8365679,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U19CON4000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U19CON4000100----------",
+      "subEventName": "U19 Girl's Singles",
+      "subEventDescription": "U19 Girl's Singles - Consolation Semifinals - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200210",
+          "competitiorName": "LAM Jocelyn",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200210",
+              "playerName": "LAM Jocelyn",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,10,12,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200225",
+          "competitiorName": "MORIYAMA Ayumi",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200225",
+              "playerName": "MORIYAMA Ayumi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,12,10,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,10-12,12-10,0-0",
+      "resultsGameScores": "11-7,11-6,10-12,12-10,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200225",
+        "serverReceiver": "200210",
+        "serverNext": "200225",
+        "serverCompetitor": "200225",
+        "receiverNext": "200225"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 17:00:00",
+        "startDateUTC": "09/08/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T17:00:00"
+  },
+  {
+    "id": 8365257,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U19CON4000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U19CON4000200----------",
+      "subEventName": "U19 Girl's Singles",
+      "subEventDescription": "U19 Girl's Singles - Consolation Semifinals - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "210240",
+          "competitiorName": "CHONG Josephine",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210240",
+              "playerName": "CHONG Josephine",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,7,4,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "206508",
+          "competitiorName": "YI Yelena",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206508",
+              "playerName": "YI Yelena",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "6-11,7-11,4-11,0-0,0-0",
+      "resultsGameScores": "6-11,7-11,4-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "206508",
+        "serverReceiver": "210240",
+        "serverNext": "206508",
+        "serverCompetitor": "206508",
+        "receiverNext": "206508"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 17:00:00",
+        "startDateUTC": "09/08/2024 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T17:00:00"
+  },
+  {
+    "id": 8365246,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U19SFNL000100----------",
+      "subEventName": "U19 Girl's Singles",
+      "subEventDescription": "U19 Girl's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201384",
+          "competitiorName": "LE Nguyen",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201384",
+              "playerName": "LE Nguyen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,3,10,5,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134972",
+          "competitiorName": "BUDDHADASA Sanaya",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134972",
+              "playerName": "BUDDHADASA Sanaya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,11,12,11,14,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,3-11,10-12,5-11,12-14,0-0,0-0",
+      "resultsGameScores": "11-8,3-11,10-12,5-11,12-14,0-0,0-0",
+      "overallScores": "1-4",
+      "resultOverallScores": "1-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134972",
+        "serverReceiver": "201384",
+        "serverNext": "134972",
+        "serverCompetitor": "134972",
+        "receiverNext": "134972"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:40:00",
+        "startDateUTC": "09/08/2024 06:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:40:00"
+  },
+  {
+    "id": 8365235,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U19SFNL000200----------",
+      "subEventName": "U19 Girl's Singles",
+      "subEventDescription": "U19 Girl's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "145029",
+          "competitiorName": "GOH Hanna",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145029",
+              "playerName": "GOH Hanna",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,5,6,10,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "145134",
+          "competitiorName": "PSIHOGIOS Constantina",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "145134",
+              "playerName": "PSIHOGIOS Constantina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,12,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,5-11,6-11,10-12,0-0,0-0,0-0",
+      "resultsGameScores": "8-11,5-11,6-11,10-12,0-0,0-0,0-0",
+      "overallScores": "0-4",
+      "resultOverallScores": "0-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "145134",
+        "serverReceiver": "145029",
+        "serverNext": "145134",
+        "serverCompetitor": "145134",
+        "receiverNext": "145134"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:40:00",
+        "startDateUTC": "09/08/2024 06:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:40:00"
+  },
+  {
+    "id": 8365230,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202683",
+          "competitiorName": "XIAO August",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202683",
+              "playerName": "XIAO August",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "15,11,11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203031",
+          "competitiorName": "KEERTHIRATNE Adeepa",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203031",
+              "playerName": "KEERTHIRATNE Adeepa",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "17,4,3,2,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "15-17,11-4,11-3,11-2,11-7,0-0,0-0",
+      "resultsGameScores": "15-17,11-4,11-3,11-2,11-7,0-0,0-0",
+      "overallScores": "4-1",
+      "resultOverallScores": "4-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203031",
+        "serverReceiver": "202683",
+        "serverNext": "203031",
+        "serverCompetitor": "203031",
+        "receiverNext": "203031"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:00:00",
+        "startDateUTC": "09/08/2024 06:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:00:00"
+  },
+  {
+    "id": 8365227,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "206629",
+          "competitiorName": "HUANG Jacob",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "206629",
+              "playerName": "HUANG Jacob",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,11,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "203547",
+          "competitiorName": "DU Oscar",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203547",
+              "playerName": "DU Oscar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,6,7,7,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,11-6,11-7,11-7,0-0,0-0,0-0",
+      "resultsGameScores": "11-8,11-6,11-7,11-7,0-0,0-0,0-0",
+      "overallScores": "4-0",
+      "resultOverallScores": "4-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "203547",
+        "serverReceiver": "206629",
+        "serverNext": "203547",
+        "serverCompetitor": "203547",
+        "receiverNext": "203547"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:00:00",
+        "startDateUTC": "09/08/2024 06:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:00:00"
+  },
+  {
+    "id": 8365222,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U15CON4000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U15CON4000200----------",
+      "subEventName": "U15 Girl's Singles",
+      "subEventDescription": "U15 Girl's Singles - Consolation Semifinals - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211233",
+          "competitiorName": "HEITAA Oe Au",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211233",
+              "playerName": "HEITAA Oe Au",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "0,2,2,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "209154",
+          "competitiorName": "ZHAO Coral",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "209154",
+              "playerName": "ZHAO Coral",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "0-11,2-11,2-11,0-0,0-0",
+      "resultsGameScores": "0-11,2-11,2-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "209154",
+        "serverReceiver": "211233",
+        "serverNext": "209154",
+        "serverCompetitor": "209154",
+        "receiverNext": "209154"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:30:00",
+        "startDateUTC": "09/08/2024 06:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:30:00"
+  },
+  {
+    "id": 8365216,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U15SFNL000100----------",
+      "subEventName": "U15 Girl's Singles",
+      "subEventDescription": "U15 Girl's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "203030",
+          "competitiorName": "XIA Qinle",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "203030",
+              "playerName": "XIA Qinle",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,11,6,8,8,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "210240",
+          "competitiorName": "CHONG Josephine",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "210240",
+              "playerName": "CHONG Josephine",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,5,11,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 6,
+      "full_msg": null,
+      "gameScores": "13-11,11-5,6-11,8-11,8-11,6-11,0-0",
+      "resultsGameScores": "13-11,11-5,6-11,8-11,8-11,6-11,0-0",
+      "overallScores": "2-4",
+      "resultOverallScores": "2-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "210240",
+        "serverReceiver": "203030",
+        "serverNext": "210240",
+        "serverCompetitor": "210240",
+        "receiverNext": "210240"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 15:20:00",
+        "startDateUTC": "09/08/2024 05:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T15:20:00"
+  },
+  {
+    "id": 8365210,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19CON3000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19CON3000200----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Consolation Quarterfinals - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "211236",
+          "competitiorName": "LY KUI Yoann",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211236",
+              "playerName": "LY KUI Yoann",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202915",
+          "competitiorName": "ZHOU Cheng",
+          "competitiorOrg": "FIJ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202915",
+              "playerName": "ZHOU Cheng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FIJ",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,11,1,2,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,8-11,11-1,11-2,0-0",
+      "resultsGameScores": "11-9,8-11,11-1,11-2,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202915",
+        "serverReceiver": "211236",
+        "serverNext": "202915",
+        "serverCompetitor": "202915",
+        "receiverNext": "202915"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:00:00",
+        "startDateUTC": "09/08/2024 06:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:00:00"
+  },
+  {
+    "id": 8365203,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19CON3000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19CON3000300----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Consolation Quarterfinals - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202863",
+          "competitiorName": "VONGUE Dylan",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202863",
+              "playerName": "VONGUE Dylan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "202913",
+          "competitiorName": "DENG Jedidiah",
+          "competitiorOrg": "FIJ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202913",
+              "playerName": "DENG Jedidiah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FIJ",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,4,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-4,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-4,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "202913",
+        "serverReceiver": "202863",
+        "serverNext": "202913",
+        "serverCompetitor": "202913",
+        "receiverNext": "202913"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 16:00:00",
+        "startDateUTC": "09/08/2024 06:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T16:00:00"
+  },
+  {
+    "id": 8365198,
+    "eventId": "2985",
+    "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEWSINGLES--------U15SFNL000200----------",
+      "subEventName": "U15 Girl's Singles",
+      "subEventDescription": "U15 Girl's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200225",
+          "competitiorName": "MORIYAMA Ayumi",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200225",
+              "playerName": "MORIYAMA Ayumi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,9,6,11,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200222",
+          "competitiorName": "CHEN Anya",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200222",
+              "playerName": "CHEN Anya",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,11,5,2,8",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 7,
+      "full_msg": null,
+      "gameScores": "11-6,6-11,9-11,6-11,11-5,11-2,11-8",
+      "resultsGameScores": "11-6,6-11,9-11,6-11,11-5,11-2,11-8",
+      "overallScores": "4-3",
+      "resultOverallScores": "4-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200222",
+        "serverReceiver": "200225",
+        "serverNext": "200222",
+        "serverCompetitor": "200222",
+        "receiverNext": "200222"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 15:20:00",
+        "startDateUTC": "09/08/2024 05:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T15:20:00"
+  },
+  {
+    "id": 8365193,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15CON3000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15CON3000300----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Consolation Quarterfinals - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202915",
+          "competitiorName": "ZHOU Cheng",
+          "competitiorOrg": "FIJ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202915",
+              "playerName": "ZHOU Cheng",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FIJ",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,5,7,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211235",
+          "competitiorName": "SANNE Ariitea",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211235",
+              "playerName": "SANNE Ariitea",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,7-11,0-0,0-0",
+      "resultsGameScores": "5-11,5-11,7-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211235",
+        "serverReceiver": "202915",
+        "serverNext": "211235",
+        "serverCompetitor": "211235",
+        "receiverNext": "211235"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 15:30:00",
+        "startDateUTC": "09/08/2024 05:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T15:30:00"
+  },
+  {
+    "id": 8365189,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U15CON3000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U15CON3000200----------",
+      "subEventName": "U15 Boy's Singles",
+      "subEventDescription": "U15 Boy's Singles - Consolation Quarterfinals - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "202913",
+          "competitiorName": "DENG Jedidiah",
+          "competitiorOrg": "FIJ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "202913",
+              "playerName": "DENG Jedidiah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "FIJ",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,4,9,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "211234",
+          "competitiorName": "TEHEI Keanu",
+          "competitiorOrg": "PYF",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "211234",
+              "playerName": "TEHEI Keanu",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "PYF",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "8-11,4-11,9-11,0-0,0-0",
+      "resultsGameScores": "8-11,4-11,9-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "211234",
+        "serverReceiver": "202913",
+        "serverNext": "211234",
+        "serverCompetitor": "211234",
+        "receiverNext": "211234"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 15:30:00",
+        "startDateUTC": "09/08/2024 05:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T15:30:00"
+  },
+  {
+    "id": 8365184,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19QFNL000400----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200231",
+          "competitiorName": "HO Eli",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200231",
+              "playerName": "HO Eli",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "4,5,11,7,8,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136657",
+          "competitiorName": "NIE Chulong",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136657",
+              "playerName": "NIE Chulong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,2,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "4-11,5-11,11-2,7-11,8-11,0-0,0-0",
+      "resultsGameScores": "4-11,5-11,11-2,7-11,8-11,0-0,0-0",
+      "overallScores": "1-4",
+      "resultOverallScores": "1-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136657",
+        "serverReceiver": "200231",
+        "serverNext": "136657",
+        "serverCompetitor": "136657",
+        "receiverNext": "136657"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 14:40:00",
+        "startDateUTC": "09/08/2024 04:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T14:40:00"
+  },
+  {
+    "id": 8365177,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19QFNL000300----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134802",
+          "competitiorName": "BAE Won",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134802",
+              "playerName": "BAE Won",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,11,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "136202",
+          "competitiorName": "CHOI Timothy",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136202",
+              "playerName": "CHOI Timothy",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,8,8,9,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,11-8,11-8,11-9,0-0,0-0,0-0",
+      "resultsGameScores": "11-8,11-8,11-8,11-9,0-0,0-0,0-0",
+      "overallScores": "4-0",
+      "resultOverallScores": "4-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136202",
+        "serverReceiver": "134802",
+        "serverNext": "136202",
+        "serverCompetitor": "136202",
+        "receiverNext": "136202"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 14:40:00",
+        "startDateUTC": "09/08/2024 04:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T14:40:00"
+  },
+  {
+    "id": 8365171,
+    "eventId": "2985",
+    "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2985",
+      "documentCode": "TTEMSINGLES--------U19QFNL000200----------",
+      "subEventName": "U19 Boy's Singles",
+      "subEventDescription": "U19 Boy's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 7,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 2,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": true
+      },
+      "venueName": "LOOPS Table Tennis ",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134807",
+          "competitiorName": "ZHANG Ray",
+          "competitiorOrg": "NZL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134807",
+              "playerName": "ZHANG Ray",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NZL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,4,9,4,0,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134803",
+          "competitiorName": "BAE Hwan",
+          "competitiorOrg": "AUS",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134803",
+              "playerName": "BAE Hwan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "AUS",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,11,0,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "6-11,4-11,9-11,4-11,0-0,0-0,0-0",
+      "resultsGameScores": "6-11,4-11,9-11,4-11,0-0,0-0,0-0",
+      "overallScores": "0-4",
+      "resultOverallScores": "0-4",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134803",
+        "serverReceiver": "134807",
+        "serverNext": "134803",
+        "serverCompetitor": "134803",
+        "receiverNext": "134803"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:00:00",
+        "startDateLocal": "09/08/2024 14:40:00",
+        "startDateUTC": "09/08/2024 04:40:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "2",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2024-09-08T14:40:00"
+  }
+]
