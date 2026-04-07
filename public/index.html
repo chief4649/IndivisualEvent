@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>個人戦記録出力システム</title>
+    <title>個人戦・団体戦記録出力システム</title>
     <style>
       :root {
         --bg: #f7f1e6;
@@ -151,6 +151,44 @@
         margin-top: 4px;
       }
 
+      .round-box {
+        display: grid;
+        gap: 8px;
+      }
+
+      .round-options {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.86);
+      }
+
+      .round-options:empty::before {
+        content: "種目を選ぶとラウンドが表示されます。";
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .round-option {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: var(--ink);
+        min-width: 0;
+        white-space: normal;
+        line-height: 1.45;
+      }
+
+      .round-option input[type="checkbox"] {
+        margin: 0;
+        margin-top: 0.18rem;
+        flex: 0 0 auto;
+        accent-color: var(--accent);
+      }
+
       button {
         border: 0;
         border-radius: 999px;
@@ -180,6 +218,37 @@
         margin-bottom: 14px;
       }
 
+      .output-wrap {
+        position: relative;
+      }
+
+      .copy-output {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        display: grid;
+        place-items: center;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(10, 12, 14, 0.68);
+        color: #f9f4ea;
+        backdrop-filter: blur(8px);
+        z-index: 1;
+      }
+
+      .copy-output:hover {
+        background: rgba(24, 28, 32, 0.92);
+        border-color: rgba(255, 255, 255, 0.28);
+      }
+
+      .copy-output svg {
+        width: 18px;
+        height: 18px;
+        display: block;
+      }
+
       .chip {
         border-radius: 999px;
         padding: 8px 12px;
@@ -199,7 +268,7 @@
         white-space: pre-wrap;
         word-break: break-word;
         line-height: 1.7;
-        font-family: "SFMono-Regular", "Menlo", monospace;
+        font-family: "Noto Sans Mono CJK JP", "BIZ UDゴシック", "Osaka-Mono", "SFMono-Regular", "Menlo", monospace;
       }
 
       .hint {
@@ -219,6 +288,73 @@
 
       .event-name:hover {
         text-decoration: underline;
+      }
+
+      .event-period {
+        display: block;
+        margin-top: 4px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .event-search {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .search-results {
+        display: grid;
+        gap: 8px;
+        max-height: 240px;
+        overflow-y: auto;
+      }
+
+      .search-result-group {
+        display: grid;
+        gap: 8px;
+      }
+
+      .search-result-group-label {
+        display: block;
+        padding: 2px 2px 0;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+
+      .search-result {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.45);
+        color: var(--text);
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .search-result:hover {
+        border-color: rgba(229, 149, 94, 0.45);
+        background: rgba(229, 149, 94, 0.1);
+      }
+
+      .search-result-title {
+        display: block;
+        font-size: 0.9rem;
+        font-weight: 600;
+        line-height: 1.45;
+      }
+
+      .search-result-meta {
+        display: block;
+        margin-top: 4px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.45;
       }
 
       .admin-note {
@@ -336,9 +472,9 @@
   <body>
     <main class="shell">
       <section class="hero">
-        <h1>個人戦記録出力システム</h1>
+        <h1>個人戦・団体戦記録出力システム</h1>
         <p class="subtitle">
-          WTT 個人戦の結果を検索して、日本語の卓レポ書式で出力するツールです。
+          競技結果を検索して、日本語の卓レポ書式で出力するツールです。まずは WTT に対応し、全日本も載せられる構成へ広げています。
         </p>
       </section>
 
@@ -346,9 +482,22 @@
         <aside class="panel">
           <form id="query-form">
             <label>
-              大会ID
+              データソース
+              <select name="source">
+                <option value="wtt" selected>WTT / ITTF</option>
+                <option value="zennihon">全日本（2011-）</option>
+              </select>
+            </label>
+
+            <label>
+              大会ID / コード
               <input name="event" value="3231" required>
               <a class="event-name" id="event-name" href="" target="_blank" rel="noopener noreferrer"></a>
+              <span class="event-period" id="event-period"></span>
+              <div class="event-search">
+                <input id="event-search-input" placeholder="大会名やIDで候補検索">
+                <div class="search-results" id="event-search-results"></div>
+              </div>
             </label>
 
             <div class="row">
@@ -374,19 +523,14 @@
               </label>
             </div>
 
-            <label>
-              ラウンド
-              <input name="round" placeholder="準決勝 / SF / semifinal /●回戦 / 予選">
-            </label>
+            <div class="round-box">
+              <span>ラウンド</span>
+              <div class="round-options" id="round-options"></div>
+            </div>
 
             <label>
-              含む文字
+              含む文字列
               <input name="contains" placeholder="張本/harimoto/日本/JPN/Japan">
-            </label>
-
-            <label>
-              選手名など
-              <input name="team" placeholder="JPN / Japan / 日本 / 張本 / harimoto">
             </label>
 
             <label class="check">
@@ -401,7 +545,6 @@
 
             <div class="actions">
               <button class="primary" type="submit">出力する</button>
-              <button class="secondary" type="button" id="copy-button">出力をコピー</button>
             </div>
           </form>
 
@@ -410,7 +553,15 @@
         <section class="panel">
           <p class="status" id="status">準備できました。</p>
           <div class="result-meta" id="meta"></div>
-          <pre id="output">ここに整形結果が表示されます。</pre>
+          <div class="output-wrap">
+            <button class="copy-output" type="button" id="copy-button" aria-label="出力をコピー" title="コピー">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M8 7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V7zm2 0v10h8V7h-8z"/>
+                <path fill="currentColor" d="M6 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1h-2V5H5v8h1v2z"/>
+              </svg>
+            </button>
+            <pre id="output">ここに整形結果が表示されます。</pre>
+          </div>
         </section>
       </section>
 
@@ -480,9 +631,17 @@
       const bulkTranslations = document.getElementById("bulk-translations");
       const adminTokenInput = document.getElementById("admin-token");
       const eventName = document.getElementById("event-name");
+      const eventPeriod = document.getElementById("event-period");
+      const eventSearchInput = document.getElementById("event-search-input");
+      const eventSearchResults = document.getElementById("event-search-results");
       const categorySelect = form.elements.namedItem("category");
+      const roundOptions = document.getElementById("round-options");
+      const initialParams = new URLSearchParams(location.search);
+      const initialRoundValues = new Set(initialParams.getAll("round"));
       let eventNameRequestId = 0;
       let categoryRequestId = 0;
+      let roundRequestId = 0;
+      let eventSearchRequestId = 0;
 
       function setStatus(message) {
         status.textContent = message;
@@ -502,21 +661,33 @@
         const eventValue = form.elements.namedItem("event")?.value?.trim() || "";
         if (!eventValue) {
           eventName.textContent = "";
+          eventPeriod.textContent = "";
           eventName.removeAttribute("href");
           return;
         }
       }
 
+      function formatEventTitleWithDate(name, dateLabel) {
+        const eventTitle = String(name || "").trim();
+        const eventDate = String(dateLabel || "").trim();
+        if (!eventTitle) {
+          return "";
+        }
+        return eventDate ? `${eventTitle} (${eventDate})` : eventTitle;
+      }
+
       async function loadEventName() {
+        const sourceValue = form.elements.namedItem("source")?.value?.trim() || "wtt";
         const eventValue = form.elements.namedItem("event")?.value?.trim() || "";
         if (!eventValue) {
           eventName.textContent = "";
+          eventPeriod.textContent = "";
           eventName.removeAttribute("href");
           return;
         }
 
         const requestId = ++eventNameRequestId;
-        const response = await fetch(`/api/event-names?event=${encodeURIComponent(eventValue)}`);
+        const response = await fetch(`/api/event-names?source=${encodeURIComponent(sourceValue)}&event=${encodeURIComponent(eventValue)}`);
         const data = await response.json();
         if (!response.ok) {
           throw new Error(data.error || "大会名JSONの読み込みに失敗しました。");
@@ -524,12 +695,111 @@
         if (requestId !== eventNameRequestId) {
           return;
         }
-        eventName.textContent = data.eventName || "";
-        if (data.eventName) {
-          eventName.href = `https://www.worldtabletennis.com/eventInfo?eventId=${encodeURIComponent(eventValue)}`;
+        eventName.textContent = formatEventTitleWithDate(data.eventName, data.dateLabel);
+        eventPeriod.textContent = "";
+        if (data.eventName && data.eventUrl) {
+          eventName.href = data.eventUrl;
         } else {
           eventName.removeAttribute("href");
         }
+      }
+
+      function renderEventSearchResults(events) {
+        eventSearchResults.innerHTML = "";
+        const groups = new Map();
+        events.forEach((item) => {
+          const label = item.governingBody || "その他";
+          if (!groups.has(label)) {
+            groups.set(label, []);
+          }
+          groups.get(label).push(item);
+        });
+
+        const orderedLabels = ["WTT", "ITTF", "その他"];
+        orderedLabels
+          .filter((label) => groups.has(label))
+          .forEach((label) => {
+            const group = document.createElement("div");
+            group.className = "search-result-group";
+
+            const groupLabel = document.createElement("span");
+            groupLabel.className = "search-result-group-label";
+            groupLabel.textContent = label;
+            group.appendChild(groupLabel);
+
+            groups.get(label).forEach((item) => {
+              const button = document.createElement("button");
+              button.type = "button";
+              button.className = "search-result";
+
+              const title = document.createElement("span");
+              title.className = "search-result-title";
+              title.textContent = item.eventName
+                ? `${formatEventTitleWithDate(item.eventName, item.dateLabel)} (${item.event})`
+                : item.event;
+
+              const metaText = [];
+              if (item.dateLabel) {
+                metaText.push(item.dateLabel);
+              }
+              if (item.series) {
+                metaText.push(item.series);
+              }
+              if (item.archived) {
+                metaText.push("アーカイブ済み");
+              } else if (item.status === "upcoming") {
+                metaText.push("未開催");
+              } else if (item.status === "live") {
+                metaText.push("開催中");
+              } else if (item.status === "unknown") {
+                metaText.push("日付未確定");
+              } else if (item.status === "finished") {
+                metaText.push("終了");
+              }
+
+              button.appendChild(title);
+
+              if (metaText.length > 0) {
+                const meta = document.createElement("span");
+                meta.className = "search-result-meta";
+                meta.textContent = metaText.join(" / ");
+                button.appendChild(meta);
+              }
+
+              button.addEventListener("click", () => {
+                form.elements.namedItem("event").value = item.event;
+                eventSearchResults.innerHTML = "";
+                updateEventName();
+                loadEventName().catch(() => {});
+                loadCategories().catch(() => {});
+                loadRounds().catch(() => {});
+              });
+
+              group.appendChild(button);
+            });
+
+            eventSearchResults.appendChild(group);
+          });
+      }
+
+      async function loadEventSearchResults() {
+        const sourceValue = form.elements.namedItem("source")?.value?.trim() || "wtt";
+        const query = eventSearchInput.value.trim();
+        if (!query) {
+          eventSearchResults.innerHTML = "";
+          return;
+        }
+
+        const requestId = ++eventSearchRequestId;
+        const response = await fetch(`/api/events/search?source=${encodeURIComponent(sourceValue)}&q=${encodeURIComponent(query)}`);
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || "大会候補の読み込みに失敗しました。");
+        }
+        if (requestId !== eventSearchRequestId) {
+          return;
+        }
+        renderEventSearchResults(data.events || []);
       }
 
       function setCategoryOptions(categories) {
@@ -551,7 +821,36 @@
         }
       }
 
+      function getSelectedRounds() {
+        return Array.from(roundOptions.querySelectorAll('input[name="round"]:checked')).map((input) => input.value);
+      }
+
+      function setRoundOptions(rounds) {
+        const previousValues = new Set(getSelectedRounds());
+        const restoredValues = previousValues.size ? previousValues : initialRoundValues;
+        roundOptions.innerHTML = "";
+
+        rounds.forEach((round) => {
+          const label = document.createElement("label");
+          label.className = "round-option";
+
+          const input = document.createElement("input");
+          input.type = "checkbox";
+          input.name = "round";
+          input.value = round.value;
+          input.checked = restoredValues.has(round.value);
+
+          const text = document.createElement("span");
+          text.textContent = round.label;
+
+          label.appendChild(input);
+          label.appendChild(text);
+          roundOptions.appendChild(label);
+        });
+      }
+
       async function loadCategories() {
+        const sourceValue = form.elements.namedItem("source")?.value?.trim() || "wtt";
         const eventValue = form.elements.namedItem("event")?.value?.trim() || "";
         if (!eventValue) {
           setCategoryOptions([]);
@@ -559,7 +858,7 @@
         }
 
         const requestId = ++categoryRequestId;
-        const response = await fetch(`/api/categories?event=${encodeURIComponent(eventValue)}`);
+        const response = await fetch(`/api/categories?source=${encodeURIComponent(sourceValue)}&event=${encodeURIComponent(eventValue)}`);
         const data = await response.json();
         if (!response.ok) {
           throw new Error(data.error || "種目一覧の読み込みに失敗しました。");
@@ -568,13 +867,41 @@
           return;
         }
         setCategoryOptions(data.categories || []);
+        loadRounds().catch(() => {});
+      }
+
+      async function loadRounds() {
+        const sourceValue = form.elements.namedItem("source")?.value?.trim() || "wtt";
+        const eventValue = form.elements.namedItem("event")?.value?.trim() || "";
+        if (!eventValue) {
+          setRoundOptions([]);
+          return;
+        }
+
+        const requestId = ++roundRequestId;
+        const searchParams = new URLSearchParams();
+        searchParams.set("source", sourceValue);
+        searchParams.set("event", eventValue);
+        if (categorySelect.value) {
+          searchParams.set("category", categorySelect.value);
+        }
+
+        const response = await fetch(`/api/rounds?${searchParams.toString()}`);
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || "ラウンド一覧の読み込みに失敗しました。");
+        }
+        if (requestId !== roundRequestId) {
+          return;
+        }
+        setRoundOptions(data.rounds || []);
       }
 
       function buildQueryString(formData) {
         const searchParams = new URLSearchParams();
         for (const [key, value] of formData.entries()) {
           if (value) {
-            searchParams.set(key, value);
+            searchParams.append(key, value);
           }
         }
         return searchParams.toString();
@@ -719,6 +1046,23 @@
         updateEventName();
         loadEventName().catch(() => {});
         loadCategories().catch(() => {});
+        loadRounds().catch(() => {});
+      });
+
+      form.elements.namedItem("source").addEventListener("change", () => {
+        updateEventName();
+        loadEventName().catch(() => {});
+        loadCategories().catch(() => {});
+        loadRounds().catch(() => {});
+        loadEventSearchResults().catch(() => {});
+      });
+
+      eventSearchInput.addEventListener("input", () => {
+        loadEventSearchResults().catch(() => {});
+      });
+
+      categorySelect.addEventListener("change", () => {
+        loadRounds().catch(() => {});
       });
 
       copyButton.addEventListener("click", async () => {
@@ -780,7 +1124,7 @@
       });
 
       (() => {
-        const params = new URLSearchParams(location.search);
+        const params = initialParams;
         for (const [key, value] of params.entries()) {
           const field = form.elements.namedItem(key);
           if (!field) {
@@ -800,6 +1144,7 @@
         updateEventName();
         loadEventName().catch(() => {});
         loadCategories().catch(() => {});
+        loadRounds().catch(() => {});
         loadConfig("translations").catch(() => {});
         loadConfig("rules").catch(() => {});
       })();

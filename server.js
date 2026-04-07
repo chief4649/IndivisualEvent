@@ -10,10 +10,16 @@ const {
   DEFAULT_CACHE_DIR,
   DEFAULT_RULES_PATH,
   DEFAULT_TRANSLATIONS_PATH,
+  buildJaRoundContext,
+  fetchOfficialResultsCached,
+  getWttEventLifecycleMeta,
   getProcessedMatches,
+  normalizeSource,
   readRules,
   readTranslations,
+  readWttDateIndex,
   renderOutput,
+  translateRoundJa,
 } = require("./extract_individual_matches");
 
 const HOST = process.env.HOST || "0.0.0.0";
@@ -23,6 +29,13 @@ const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __d
 const TRANSLATIONS_PATH = path.join(DATA_DIR, "translations.ja.json");
 const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const CACHE_DIR = path.join(DATA_DIR, ".cache");
+const ZENNIHON_ARCHIVE_DIR = path.join(DATA_DIR, "zennihon-records");
+const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
+const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
+const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
+const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
+const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
+const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || "";
 const TRUST_PROXY = process.env.TRUST_PROXY === "1";
@@ -45,6 +58,9 @@ function ensureFileFromDefault(targetPath, sourcePath) {
   if (fs.existsSync(targetPath)) {
     return;
   }
+  if (!sourcePath || !fs.existsSync(sourcePath)) {
+    return;
+  }
   ensureDir(path.dirname(targetPath));
   fs.copyFileSync(sourcePath, targetPath);
 }
@@ -52,8 +68,14 @@ function ensureFileFromDefault(targetPath, sourcePath) {
 function ensureRuntimeFiles() {
   ensureDir(DATA_DIR);
   ensureDir(CACHE_DIR);
+  ensureDir(ZENNIHON_ARCHIVE_DIR);
+  ensureDir(WTT_ARCHIVE_DIR);
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
+  ensureFileFromDefault(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
+  ensureFileFromDefault(WTT_SEARCH_INDEX_PATH, path.join(__dirname, "wtt-search-index.json"));
+  ensureFileFromDefault(EVENT_NAMES_PATH, path.join(__dirname, "event-names.json"));
+  ensureFileFromDefault(WTT_ARCHIVE_INDEX_PATH, path.join(__dirname, "wtt-archive-index.json"));
 }
 
 function hasSharedTranslationsSource() {
@@ -365,33 +387,687 @@ function writePrettyJson(filePath, payload) {
   fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 }
 
-async function fetchEventName(eventId) {
+function getEventNamesMap() {
+  try {
+    if (!fs.existsSync(EVENT_NAMES_PATH)) {
+      return {};
+    }
+    return JSON.parse(fs.readFileSync(EVENT_NAMES_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function getStoredEventName(source, eventId) {
+  const normalizedSource = normalizeSource(source);
   const normalizedId = String(eventId || "").trim();
   if (!normalizedId) {
     return "";
   }
 
-  if (eventNameCache.has(normalizedId)) {
-    return eventNameCache.get(normalizedId);
+  const eventNames = getEventNamesMap();
+  if (eventNames[normalizedSource] && typeof eventNames[normalizedSource] === "object") {
+    return String(eventNames[normalizedSource][normalizedId] || "");
   }
 
-  const response = await fetch(`https://liveeventsapi.worldtabletennis.com/api/cms/GetEventName/${encodeURIComponent(normalizedId)}`, {
+  if (normalizedSource === "wtt") {
+    return String(eventNames[normalizedId] || "");
+  }
+
+  return "";
+}
+
+function getEventUrl(source, eventId) {
+  const normalizedSource = normalizeSource(source);
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return "";
+  }
+
+  if (normalizedSource === "wtt") {
+    return `https://www.worldtabletennis.com/eventInfo?eventId=${encodeURIComponent(normalizedId)}`;
+  }
+
+  if (normalizedSource === "zennihon") {
+    return `https://www.japantabletennis.com/AJ/result${encodeURIComponent(normalizedId)}/`;
+  }
+
+  return "";
+}
+
+function readWttArchiveIndex() {
+  try {
+    if (!fs.existsSync(WTT_ARCHIVE_INDEX_PATH)) {
+      return {};
+    }
+    return JSON.parse(fs.readFileSync(WTT_ARCHIVE_INDEX_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function readWttSearchIndex() {
+  try {
+    if (!fs.existsSync(WTT_SEARCH_INDEX_PATH)) {
+      return {};
+    }
+    return JSON.parse(fs.readFileSync(WTT_SEARCH_INDEX_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function getMergedWttSearchEntry(eventId, entry, dateIndex) {
+  const dateEntry = dateIndex[String(eventId || "").trim()] || {};
+  return {
+    ...(entry || {}),
+    ...(dateEntry || {}),
+  };
+}
+
+function toDateOnly(value) {
+  const text = String(value || "").trim();
+  const match = text.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? match[1] : null;
+}
+
+function normalizeWttCalendarEntry(row) {
+  const eventCode = String(row?.EventCode || "").trim();
+  const eventId = String(row?.EventId || "").trim();
+  const resolvedEventId = /^\d+$/.test(eventCode) && Number(eventCode) > 0 ? eventCode : eventId;
+  if (!/^\d+$/.test(resolvedEventId)) {
+    return null;
+  }
+
+  const useChangedDates = Boolean(row?.EventDateChangeId && row?.ShowInCalendar);
+  const startDate = toDateOnly(useChangedDates ? row?.FromStartDate : row?.StartDateTime);
+  const endDate = toDateOnly(useChangedDates ? row?.FromEndDate : row?.EndDateTime);
+  const eventName = String(row?.EventName || "").replace(/\s+/g, " ").trim();
+  if (!eventName || (!startDate && !endDate)) {
+    return null;
+  }
+
+  return {
+    event: resolvedEventId,
+    eventName,
+    startDate,
+    endDate,
+    source: "calendar",
+    updatedAt: new Date().toISOString(),
+  };
+}
+
+async function fetchWttCalendarDateEntry(eventId) {
+  const response = await fetch(WTT_CALENDAR_API_URL, {
+    method: "POST",
     headers: {
       accept: "application/json, text/plain, */*",
-      referer: "https://www.worldtabletennis.com/",
+      "content-type": "application/json",
+      origin: "https://www.worldtabletennis.com",
+      referer: "https://www.worldtabletennis.com/events_calendar",
       "user-agent": "Mozilla/5.0 (compatible; Codex/1.0)",
-      secapimkey: EVENT_NAME_API_KEY,
+    },
+    body: JSON.stringify({
+      custom_filter: "[]",
+    }),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch WTT calendar: ${response.status} ${response.statusText}`);
+  }
+
+  const payload = await response.json();
+  const rows = Array.isArray(payload?.[0]?.rows) ? payload[0].rows : [];
+  for (const row of rows) {
+    const normalized = normalizeWttCalendarEntry(row);
+    if (normalized?.event === String(eventId || "").trim()) {
+      const current = readWttDateIndex(WTT_DATE_INDEX_PATH);
+      current[normalized.event] = {
+        ...(current[normalized.event] || {}),
+        ...normalized,
+      };
+      writeWttDateIndex(WTT_DATE_INDEX_PATH, current);
+      return current[normalized.event];
+    }
+  }
+
+  return null;
+}
+
+async function getWttDateEntryWithFallback(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  const current = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  if (current[normalizedId]?.startDate || current[normalizedId]?.endDate) {
+    return current[normalizedId];
+  }
+  try {
+    return await fetchWttCalendarDateEntry(normalizedId);
+  } catch {
+    return current[normalizedId] || null;
+  }
+}
+
+function formatDateRange(startDate, endDate) {
+  const start = String(startDate || "").trim();
+  const end = String(endDate || "").trim();
+  const startMatch = start.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const endMatch = end.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (startMatch && endMatch) {
+    const [, startYear, startMonth, startDay] = startMatch;
+    const [, endYear, endMonth, endDay] = endMatch;
+    if (startYear === endYear && startMonth === endMonth) {
+      return `${startYear}/${Number(startMonth)}/${Number(startDay)}-${Number(endDay)}`;
+    }
+    return `${startYear}/${Number(startMonth)}/${Number(startDay)}-${Number(endMonth)}/${Number(endDay)}`;
+  }
+  if (startMatch) {
+    const [, year, month, day] = startMatch;
+    return `${year}/${Number(month)}/${Number(day)}`;
+  }
+  if (endMatch) {
+    const [, year, month, day] = endMatch;
+    return `${year}/${Number(month)}/${Number(day)}`;
+  }
+  return start || end || "";
+}
+
+function toComparableDate(value, endOfDay = false) {
+  const text = String(value || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(text) || text === "0001-01-01") {
+    return null;
+  }
+  const suffix = endOfDay ? "T23:59:59.999Z" : "T00:00:00.000Z";
+  const date = new Date(`${text}${suffix}`);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function deriveLifecycleStatus(startDate, endDate, fallbackStatus = "unknown") {
+  const now = new Date();
+  const start = toComparableDate(startDate, false);
+  const end = toComparableDate(endDate, true);
+
+  if (start && start > now) {
+    return "upcoming";
+  }
+  if (end && end < now) {
+    return "finished";
+  }
+  if (start && end && start <= now && end >= now) {
+    return "live";
+  }
+  return fallbackStatus;
+}
+
+function compareSearchEvents(left, right) {
+  const leftStart = toComparableDate(left?.startDate, false);
+  const rightStart = toComparableDate(right?.startDate, false);
+  if (leftStart && rightStart && leftStart.getTime() !== rightStart.getTime()) {
+    return leftStart - rightStart;
+  }
+  if (leftStart && !rightStart) {
+    return -1;
+  }
+  if (!leftStart && rightStart) {
+    return 1;
+  }
+
+  const leftEnd = toComparableDate(left?.endDate, true);
+  const rightEnd = toComparableDate(right?.endDate, true);
+  if (leftEnd && rightEnd && leftEnd.getTime() !== rightEnd.getTime()) {
+    return leftEnd - rightEnd;
+  }
+  if (leftEnd && !rightEnd) {
+    return -1;
+  }
+  if (!leftEnd && rightEnd) {
+    return 1;
+  }
+
+  return String(left?.event || "").localeCompare(String(right?.event || ""), "en", { numeric: true });
+}
+
+function inferStatusFromEventNameYear(eventName, fallbackStatus = "unknown") {
+  const text = String(eventName || "").trim();
+  if (!text) {
+    return fallbackStatus;
+  }
+
+  const years = Array.from(text.matchAll(/\b(20\d{2})\b/g))
+    .map((match) => Number(match[1]))
+    .filter((year) => Number.isInteger(year));
+  if (years.length === 0) {
+    return fallbackStatus === "live" ? "unknown" : fallbackStatus;
+  }
+
+  const eventYear = Math.max(...years);
+  const currentYear = new Date().getUTCFullYear();
+  if (eventYear < currentYear) {
+    return "finished";
+  }
+  if (eventYear > currentYear) {
+    return "upcoming";
+  }
+  return fallbackStatus === "live" ? "unknown" : fallbackStatus;
+}
+
+function resolveLifecycleStatus(startDate, endDate, fallbackStatus = "unknown", eventName = "") {
+  const derived = deriveLifecycleStatus(startDate, endDate, fallbackStatus);
+  if (String(startDate || "").trim() || String(endDate || "").trim()) {
+    return derived;
+  }
+  return inferStatusFromEventNameYear(eventName, derived);
+}
+
+async function fetchEventMeta(eventId, source = "wtt") {
+  const normalizedSource = normalizeSource(source);
+  const normalizedId = String(eventId || "").trim();
+  const eventName = await fetchEventName(normalizedId, normalizedSource);
+  const eventUrl = getEventUrl(normalizedSource, normalizedId);
+
+  if (normalizedSource === "wtt") {
+    try {
+      const lifecycle = await getWttEventLifecycleMeta(normalizedId, {
+        wttArchiveDir: WTT_ARCHIVE_DIR,
+        wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
+        wttDateIndexPath: WTT_DATE_INDEX_PATH,
+      });
+      const dateEntry = (!lifecycle?.startDate && !lifecycle?.endDate)
+        ? await getWttDateEntryWithFallback(normalizedId)
+        : null;
+      const startDate = lifecycle?.startDate || dateEntry?.startDate || null;
+      const endDate = lifecycle?.endDate || dateEntry?.endDate || null;
+      return {
+        source: normalizedSource,
+        event: normalizedId,
+        eventName: eventName || lifecycle?.title || "",
+        eventUrl,
+        startDate,
+        endDate,
+        dateLabel: formatDateRange(startDate, endDate),
+        archived: Boolean(lifecycle?.archived),
+        status: resolveLifecycleStatus(
+          startDate,
+          endDate,
+          lifecycle?.isFinished ? "finished" : "unknown",
+          eventName || lifecycle?.title || "",
+        ),
+      };
+    } catch {
+      return {
+        source: normalizedSource,
+        event: normalizedId,
+        eventName,
+        eventUrl,
+        startDate: null,
+        endDate: null,
+        dateLabel: "",
+        archived: false,
+        status: "unknown",
+      };
+    }
+  }
+
+  return {
+    source: normalizedSource,
+    event: normalizedId,
+    eventName,
+    eventUrl,
+    startDate: null,
+    endDate: null,
+    dateLabel: "",
+    archived: false,
+    status: "finished",
+  };
+}
+
+function normalizeSearchText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((token) => (/^\d+$/.test(token) ? String(Number(token)) : token))
+    .join(" ")
+    .trim();
+}
+
+function buildDateSearchValues(startDate, endDate, dateLabel) {
+  const values = [startDate, endDate, dateLabel].filter(Boolean).map((value) => String(value));
+  const addParts = (rawDate) => {
+    const match = String(rawDate || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!match) {
+      return;
+    }
+    const [, year, month, day] = match;
+    const monthNum = String(Number(month));
+    const dayNum = String(Number(day));
+    values.push(`${year}/${monthNum}`);
+    values.push(`${year}-${monthNum}`);
+    values.push(`${year} ${monthNum}`);
+    values.push(`${year}/${monthNum}/${dayNum}`);
+    values.push(`${year}-${monthNum}-${dayNum}`);
+    values.push(`${year} ${monthNum} ${dayNum}`);
+  };
+
+  addParts(startDate);
+  addParts(endDate);
+  return values;
+}
+
+function matchesSearchQuery(eventId, eventName, query, extraValues = []) {
+  const rawQuery = String(query || "").trim();
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) {
+    return true;
+  }
+
+  const normalizedEventId = String(eventId || "").trim().toLowerCase();
+  const normalizedName = normalizeSearchText(eventName);
+  const normalizedExtras = extraValues
+    .map((value) => normalizeSearchText(value))
+    .filter(Boolean)
+    .join(" ");
+  const haystack = `${normalizedEventId} ${normalizedName} ${normalizedExtras}`.trim();
+  if (haystack.includes(normalizedQuery)) {
+    return true;
+  }
+
+  const isDateLikeQuery = /^\d{4}\s*[\/-]\s*\d{1,2}(?:\s*[\/-]\s*\d{1,2})?$/.test(rawQuery);
+  if (isDateLikeQuery) {
+    return false;
+  }
+
+  const haystackTokens = new Set(haystack.split(/\s+/).filter(Boolean));
+  const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
+  const isDirectEventIdQuery = /^\d+$/.test(normalizedQuery);
+  if (queryTokens.length === 0) {
+    return true;
+  }
+
+  return queryTokens.every((token) => {
+    if (isDirectEventIdQuery && /^\d+$/.test(token)) {
+      return normalizedEventId.includes(token) || haystackTokens.has(token);
+    }
+    return haystackTokens.has(token);
+  });
+}
+
+function buildSearchableEvents(source, query) {
+  const normalizedSource = normalizeSource(source);
+  const eventNames = getEventNamesMap();
+  const results = [];
+
+  if (normalizedSource === "zennihon") {
+    const zennihonEvents = eventNames.zennihon || {};
+    Object.entries(zennihonEvents).forEach(([eventId, eventName]) => {
+      if (matchesSearchQuery(eventId, eventName, query)) {
+        results.push({
+          source: normalizedSource,
+          event: eventId,
+          eventName,
+          eventUrl: getEventUrl(normalizedSource, eventId),
+          dateLabel: "",
+          archived: true,
+          status: "finished",
+        });
+      }
+    });
+
+    return results.sort((left, right) => Number(right.event) - Number(left.event));
+  }
+
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  Object.entries(searchIndex).forEach(([eventId, entry]) => {
+    const mergedEntry = getMergedWttSearchEntry(eventId, entry, dateIndex);
+    const name = String(mergedEntry?.eventName || mergedEntry?.title || eventNames[eventId] || "");
+    const dateLabel = formatDateRange(mergedEntry?.startDate, mergedEntry?.endDate);
+    if (!shouldDisplayWttSearchEntry(name)) {
+      return;
+    }
+    if (
+      matchesSearchQuery(eventId, name, query, [
+        ...buildDateSearchValues(mergedEntry?.startDate, mergedEntry?.endDate, dateLabel),
+      ])
+    ) {
+      results.push({
+        source: normalizedSource,
+        event: eventId,
+        eventName: name,
+        eventUrl: getEventUrl(normalizedSource, eventId),
+        startDate: mergedEntry?.startDate || null,
+        endDate: mergedEntry?.endDate || null,
+        dateLabel,
+        archived: Boolean(mergedEntry?.archived),
+        status: resolveLifecycleStatus(
+          mergedEntry?.startDate,
+          mergedEntry?.endDate,
+          mergedEntry?.status || "unknown",
+          name,
+        ),
+        series: mergedEntry?.series || classifyWttSeries(name),
+        governingBody: classifyWttGoverningBody(name),
+      });
+    }
+  });
+
+  return results
+    .sort(compareSearchEvents)
+    .slice(0, 50);
+}
+
+function classifyWttSeries(eventName) {
+  const text = String(eventName || "").toLowerCase();
+  if (!text) {
+    return "";
+  }
+  if (text.includes("world table tennis championships finals") || text.includes("world team table tennis championships finals")) {
+    return "World Championships";
+  }
+  if (text.includes("youth")) {
+    return "Youth";
+  }
+  if (text.includes("smash")) {
+    return "Smash";
+  }
+  if (/\bchampions\b/.test(text)) {
+    return "Champions";
+  }
+  if (text.includes("star contender")) {
+    return "Star Contender";
+  }
+  if (text.includes("contender")) {
+    return "Contender";
+  }
+  if (text.includes("feeder")) {
+    return "Feeder";
+  }
+  if (text.includes("finals")) {
+    return "Finals";
+  }
+  return "Other";
+}
+
+function classifyWttGoverningBody(eventName) {
+  const text = String(eventName || "").toLowerCase();
+  if (!text) {
+    return "WTT";
+  }
+  if (
+    text.includes("ittf")
+    || text.includes("para")
+    || text.includes("championships")
+    || text.includes("world table tennis championships finals")
+    || text.includes("world team table tennis championships finals")
+    || text.includes("world youth championships")
+    || text.includes("pan american youth championships")
+    || text.includes("international open")
+    || text.includes("africa cup")
+  ) {
+    return "ITTF";
+  }
+  return "WTT";
+}
+
+function shouldDisplayWttSearchEntry(eventName) {
+  const text = String(eventName || "").trim();
+  if (!text) {
+    return false;
+  }
+  return !/\btest\b|\bsimulation\b/i.test(text);
+}
+
+function inferFinishedFromPayload(payload) {
+  if (!Array.isArray(payload) || payload.length === 0) {
+    return false;
+  }
+
+  const categoryToHasOfficialFinal = new Map();
+  payload.forEach((match) => {
+    const categoryName = String(match?.categoryName || match?.subEventType || "").trim();
+    if (!categoryName) {
+      return;
+    }
+    if (!categoryToHasOfficialFinal.has(categoryName)) {
+      categoryToHasOfficialFinal.set(categoryName, false);
+    }
+    const roundKey = String(match?.roundKey || "").trim().toLowerCase();
+    const roundLabel = String(match?.roundLabel || "").trim().toLowerCase();
+    const status = String(match?.resultStatus || "").trim().toUpperCase();
+    if ((roundKey === "final" || roundLabel === "final") && status === "OFFICIAL") {
+      categoryToHasOfficialFinal.set(categoryName, true);
+    }
+  });
+
+  return categoryToHasOfficialFinal.size > 0 && Array.from(categoryToHasOfficialFinal.values()).every(Boolean);
+}
+
+async function discoverWttSearchEvent(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  if (!/^\d+$/.test(normalizedId)) {
+    return null;
+  }
+
+  const payload = await fetchOfficialResultsCached("wtt", normalizedId, 50, CACHE_DIR, false, {
+    wttArchiveDir: WTT_ARCHIVE_DIR,
+    wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
+    wttDateIndexPath: WTT_DATE_INDEX_PATH,
+  });
+  if (!Array.isArray(payload) || payload.length === 0) {
+    return null;
+  }
+
+  const meta = await fetchEventMeta(normalizedId, "wtt");
+  const eventName = String(meta?.eventName || "").trim();
+  if (!shouldDisplayWttSearchEntry(eventName)) {
+    return null;
+  }
+  const inferredFinished = Boolean(meta?.status === "finished" || meta?.archived) || inferFinishedFromPayload(payload);
+  return {
+    source: "wtt",
+    event: normalizedId,
+    eventName,
+    eventUrl: getEventUrl("wtt", normalizedId),
+    startDate: meta?.startDate || null,
+    endDate: meta?.endDate || null,
+    dateLabel: meta?.dateLabel || "",
+    archived: Boolean(meta?.archived),
+    status: resolveLifecycleStatus(
+      meta?.startDate,
+      meta?.endDate,
+      inferredFinished ? "finished" : (meta?.status || "unknown"),
+      eventName,
+    ),
+    series: classifyWttSeries(eventName),
+    governingBody: classifyWttGoverningBody(eventName),
+  };
+}
+
+async function fetchZennihonEventName(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return "";
+  }
+
+  const response = await fetch(`https://www.japantabletennis.com/AJ/result${encodeURIComponent(normalizedId)}/`, {
+    headers: {
+      accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "user-agent": "Mozilla/5.0 (compatible; Codex/1.0)",
     },
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch event name: ${response.status} ${response.statusText}`);
+    throw new Error(`Failed to fetch zennihon event name: ${response.status} ${response.statusText}`);
   }
 
-  const payload = await response.json();
-  const eventName = Array.isArray(payload) ? String(payload[0]?.eventName || "") : String(payload?.eventName || "");
-  eventNameCache.set(normalizedId, eventName);
-  return eventName;
+  const html = new TextDecoder("euc-jp").decode(await response.arrayBuffer());
+  const h3Match = html.match(/<h3>([\s\S]*?)<\/h3>/i);
+  if (h3Match) {
+    return String(h3Match[1])
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
+  return titleMatch ? String(titleMatch[1]).replace(/\s+/g, " ").trim() : "";
+}
+
+async function fetchEventName(eventId, source = "wtt") {
+  const normalizedSource = normalizeSource(source);
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return "";
+  }
+
+  const cacheKey = `${normalizedSource}:${normalizedId}`;
+  if (eventNameCache.has(cacheKey)) {
+    return eventNameCache.get(cacheKey);
+  }
+
+  const storedName = getStoredEventName(normalizedSource, normalizedId);
+  if (normalizedSource !== "wtt") {
+    if (storedName) {
+      eventNameCache.set(cacheKey, storedName);
+      return storedName;
+    }
+    const eventName = normalizedSource === "zennihon"
+      ? await fetchZennihonEventName(normalizedId)
+      : "";
+    eventNameCache.set(cacheKey, eventName);
+    return eventName;
+  }
+
+  try {
+    const response = await fetch(`https://liveeventsapi.worldtabletennis.com/api/cms/GetEventName/${encodeURIComponent(normalizedId)}`, {
+      headers: {
+        accept: "application/json, text/plain, */*",
+        referer: "https://www.worldtabletennis.com/",
+        "user-agent": "Mozilla/5.0 (compatible; Codex/1.0)",
+        secapimkey: EVENT_NAME_API_KEY,
+      },
+    });
+
+    if (!response.ok) {
+      if (storedName) {
+        eventNameCache.set(cacheKey, storedName);
+        return storedName;
+      }
+      throw new Error(`Failed to fetch event name: ${response.status} ${response.statusText}`);
+    }
+
+    const payload = await response.json();
+    const eventName = Array.isArray(payload) ? String(payload[0]?.eventName || "") : String(payload?.eventName || "") || storedName;
+    eventNameCache.set(cacheKey, eventName);
+    return eventName;
+  } catch (error) {
+    if (storedName) {
+      eventNameCache.set(cacheKey, storedName);
+      return storedName;
+    }
+    throw error;
+  }
 }
 
 function parseBoolean(value) {
@@ -416,14 +1092,15 @@ function pickFormat(searchParams) {
 
 function buildOptions(searchParams) {
   const format = pickFormat(searchParams);
+  const rounds = searchParams.getAll("round").map((value) => String(value || "").trim()).filter(Boolean);
 
   return {
+    source: normalizeSource(searchParams.get("source") || "wtt"),
     event: searchParams.get("event"),
     category: searchParams.get("category") || null,
     gender: searchParams.get("gender") || null,
     discipline: searchParams.get("discipline") || null,
-    round: searchParams.get("round") || null,
-    team: searchParams.get("team") || null,
+    round: rounds.length > 1 ? rounds : rounds[0] || null,
     contains: searchParams.get("contains") || null,
     docCode: searchParams.get("docCode") || null,
     limit: toOptionalNumber(searchParams.get("limit")),
@@ -435,6 +1112,9 @@ function buildOptions(searchParams) {
     translations: TRANSLATIONS_PATH,
     rules: RULES_PATH,
     cacheDir: CACHE_DIR,
+    zennihonArchiveDir: ZENNIHON_ARCHIVE_DIR,
+    wttArchiveDir: WTT_ARCHIVE_DIR,
+    wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache: parseBoolean(searchParams.get("refreshCache")),
     omitSetCounts: parseBoolean(searchParams.get("omitSetCounts")),
   };
@@ -442,11 +1122,40 @@ function buildOptions(searchParams) {
 
 function createFriendlyErrorMessage(error) {
   const message = String(error?.message || "Unknown error");
-  if (message.includes("fetch failed")) {
+  if (
+    message.includes("liveeventsapi.worldtabletennis.com") ||
+    message.includes("worldtabletennis.com") ||
+    message.includes("GetOfficialResult") ||
+    message.includes("Failed to fetch event name")
+  ) {
     return "WTT API への接続に失敗しました。少し待って再試行してください。";
+  }
+  if (
+    message.includes("japantabletennis.com") ||
+    message.includes("Failed to fetch zennihon event name")
+  ) {
+    return "全日本の記録サイトへの接続に失敗しました。少し待って再試行してください。";
+  }
+  if (message.includes("全日本アーカイブが見つかりません")) {
+    return "全日本アーカイブがまだ作成されていません。管理側でアーカイブ生成が必要です。";
+  }
+  if (message.includes("results.ittf.com") || message.includes("ittf-web-results")) {
+    return "ITTF Results への接続に失敗しました。少し待って再試行してください。";
+  }
+  if (message.includes("fetch failed")) {
+    return "外部データの取得に失敗しました。少し待って再試行してください。";
+  }
+  if (message.includes("ECONNRESET") || message.includes("ETIMEDOUT")) {
+    return "外部データの取得がタイムアウトしました。少し待って再試行してください。";
+  }
+  if (message.includes("Failed to fetch")) {
+    return message;
   }
   if (message.includes("400 Bad Request")) {
     return "WTT API がこの条件を受け付けませんでした。eventId や取得時期を確認してください。";
+  }
+  if (message.includes("全日本ソースはまだ取得処理を実装していません")) {
+    return message;
   }
   return message;
 }
@@ -455,9 +1164,85 @@ function summarizeRounds(matches) {
   return [...new Set(matches.map((match) => match.roundLabel).filter(Boolean))];
 }
 
+function getRoundOptionSortValue(match, context) {
+  const knockoutRoundMatch = String(match.roundKey || "").match(/^knockout_round_(\d+)$/);
+  if (knockoutRoundMatch) {
+    return Number(knockoutRoundMatch[1]);
+  }
+
+  const groupMatch = String(match.roundLabel || "").match(/^Group\s+(\d+)$/i);
+  if (groupMatch) {
+    return Number(groupMatch[1]);
+  }
+
+  const qualifyingMatch = String(match.roundKey || "").match(/^qualifying_round_(\d+)$/);
+  if (qualifyingMatch) {
+    return Number(qualifyingMatch[1]);
+  }
+
+  const knockoutLabel = context?.knockoutRoundNumbers?.[match.roundKey] || "";
+  const knockoutMatch = knockoutLabel.match(/^(\d+)回戦$/);
+  if (knockoutMatch) {
+    return 100 + Number(knockoutMatch[1]);
+  }
+
+  if (match.roundKey === "quarterfinal") {
+    return 103;
+  }
+  if (match.roundKey === "semifinal") {
+    return 104;
+  }
+  if (match.roundKey === "final") {
+    return 105;
+  }
+
+  return 999;
+}
+
+function summarizeRoundOptions(matches, rules, translations) {
+  const context = buildJaRoundContext(matches);
+  const seen = new Set();
+  const options = [];
+
+  for (const match of matches) {
+    const value = String(match.roundLabel || "").trim();
+    if (!value || seen.has(value)) {
+      continue;
+    }
+    seen.add(value);
+    const translatedLabel = String(
+      translateRoundJa(match.roundKey, match.roundLabel, translations, rules, context) || match.roundLabel || value,
+    );
+    options.push({
+      value,
+      label: match?.source === "zennihon"
+        ? translatedLabel.replace(/^決勝トーナメント/, "")
+        : translatedLabel,
+      sortValue: getRoundOptionSortValue(match, context),
+    });
+  }
+
+  options.sort((left, right) => {
+    if (left.sortValue !== right.sortValue) {
+      return left.sortValue - right.sortValue;
+    }
+    return left.label.localeCompare(right.label, "ja");
+  });
+
+  return options.map(({ value, label }) => ({ value, label }));
+}
+
 function formatCategoryLabel(categoryName, gender, discipline) {
   const text = String(categoryName || "").trim();
   const genericLabels = {
+    "junior boys singles": "ジュニア男子",
+    "junior girls singles": "ジュニア女子",
+    "men teams": "男子団体",
+    "mens teams": "男子団体",
+    "women teams": "女子団体",
+    "womens teams": "女子団体",
+    "mixed teams": "混合団体",
+    "mixed team": "混合団体",
     "men singles": "男子シングルス",
     "mens singles": "男子シングルス",
     "women singles": "女子シングルス",
@@ -475,12 +1260,16 @@ function formatCategoryLabel(categoryName, gender, discipline) {
     return genericLabels[value] || value;
   }
 
-  const youthMatch = text.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles)$/i);
+  const youthMatch = text.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
   if (youthMatch) {
     const [, age, division, eventType] = youthMatch;
     const divisionJa =
       /^boys$/i.test(division) ? "男子" : /^girls$/i.test(division) ? "女子" : "混合";
-    const eventTypeJa = /^singles$/i.test(eventType) ? "シングルス" : "ダブルス";
+    const eventTypeJa = /^singles$/i.test(eventType)
+      ? "シングルス"
+      : /^doubles$/i.test(eventType)
+        ? "ダブルス"
+        : "団体";
     return `U${age}${divisionJa}${eventTypeJa}`;
   }
 
@@ -496,20 +1285,26 @@ function formatCategoryLabel(categoryName, gender, discipline) {
 function getCategorySortKey(category) {
   const value = String(category?.value || "").trim();
   const label = String(category?.label || "").trim();
-  const youthMatch = value.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles)$/i);
+  if (/^Junior Boys Singles$/i.test(value)) {
+    return [0, 0, -18, 0, value.toLowerCase()];
+  }
+  if (/^Junior Girls Singles$/i.test(value)) {
+    return [0, 0, -18, 1, value.toLowerCase()];
+  }
+  const youthMatch = value.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
 
   if (youthMatch) {
     const [, ageRaw, division, eventType] = youthMatch;
     const age = Number(ageRaw);
-    const disciplineOrder = /^singles$/i.test(eventType) ? 0 : 1;
+    const disciplineOrder = /^singles$/i.test(eventType) ? 0 : /^teams$/i.test(eventType) ? 1 : 2;
     const divisionOrder = /^boys$/i.test(division) ? 0 : /^girls$/i.test(division) ? 1 : 2;
     return [0, disciplineOrder, -age, divisionOrder, value.toLowerCase()];
   }
 
-  const seniorMatch = label.match(/^(男子|女子|混合)(シングルス|ダブルス)$/);
+  const seniorMatch = label.match(/^(男子|女子|混合)(シングルス|ダブルス|団体)$/);
   if (seniorMatch) {
     const [, divisionJa, eventTypeJa] = seniorMatch;
-    const disciplineOrder = eventTypeJa === "シングルス" ? 0 : 1;
+    const disciplineOrder = eventTypeJa === "シングルス" ? 0 : eventTypeJa === "団体" ? 1 : 2;
     const divisionOrder = divisionJa === "男子" ? 0 : divisionJa === "女子" ? 1 : 2;
     return [1, disciplineOrder, 0, divisionOrder, label];
   }
@@ -570,12 +1365,12 @@ async function handleApi(requestUrl, response) {
     const output = renderOutput(result);
     sendJson(response, 200, {
       query: {
+        source: options.source,
         event: options.event,
         category: options.category,
         gender: options.gender,
         discipline: options.discipline,
         round: options.round,
-        team: options.team,
         contains: options.contains,
         docCode: options.docCode,
         limit: options.limit,
@@ -592,6 +1387,7 @@ async function handleApi(requestUrl, response) {
       matches: result.filtered,
     });
   } catch (error) {
+    console.error("[handleApi]", error?.stack || error);
     sendJson(response, 500, {
       error: createFriendlyErrorMessage(error),
     });
@@ -608,6 +1404,7 @@ async function handleCategoriesApi(requestUrl, response) {
     }
 
     const result = await getProcessedMatches({
+      source: options.source,
       event: options.event,
       take: options.take,
       translations: TRANSLATIONS_PATH,
@@ -617,8 +1414,85 @@ async function handleCategoriesApi(requestUrl, response) {
     });
 
     sendJson(response, 200, {
+      source: options.source,
       event: options.event,
-      categories: summarizeCategories(result.normalized),
+      categories: summarizeCategories(result.filtered),
+    });
+  } catch (error) {
+    sendJson(response, 500, {
+      error: createFriendlyErrorMessage(error),
+    });
+  }
+}
+
+async function handleRoundsApi(requestUrl, response) {
+  try {
+    await syncTranslationsFromSharedSource();
+    const options = buildOptions(requestUrl.searchParams);
+    if (!options.event) {
+      sendJson(response, 400, { error: "event is required" });
+      return;
+    }
+
+    const result = await getProcessedMatches({
+      source: options.source,
+      event: options.event,
+      category: options.category,
+      gender: options.gender,
+      discipline: options.discipline,
+      take: options.take,
+      translations: TRANSLATIONS_PATH,
+      rules: RULES_PATH,
+      cacheDir: CACHE_DIR,
+      refreshCache: options.refreshCache,
+    });
+
+    sendJson(response, 200, {
+      source: options.source,
+      event: options.event,
+      rounds: summarizeRoundOptions(result.filtered, result.rules, result.translations),
+    });
+  } catch (error) {
+    sendJson(response, 500, {
+      error: createFriendlyErrorMessage(error),
+    });
+  }
+}
+
+async function handleEventSearchApi(requestUrl, response) {
+  try {
+    const searchParams = requestUrl.searchParams;
+    const source = normalizeSource(searchParams.get("source") || "wtt");
+    const query = String(searchParams.get("q") || "").trim();
+    let results = buildSearchableEvents(source, query);
+
+    if (source === "wtt" && /^\d+$/.test(query)) {
+      results = await Promise.all(results.map(async (item) => {
+        if (item.event !== query || item.dateLabel) {
+          return item;
+        }
+        const meta = await fetchEventMeta(item.event, source);
+        return {
+          ...item,
+          startDate: meta.startDate || item.startDate || null,
+          endDate: meta.endDate || item.endDate || null,
+          dateLabel: meta.dateLabel || item.dateLabel || "",
+          status: meta.status || item.status,
+        };
+      }));
+    }
+
+    if (source === "wtt" && /^\d+$/.test(query) && !results.some((item) => item.event === query)) {
+      const discovered = await discoverWttSearchEvent(query);
+      if (discovered) {
+        results = [discovered, ...results];
+      }
+    }
+
+    sendJson(response, 200, {
+      source,
+      query,
+      events: results.slice(0, 50),
     });
   } catch (error) {
     sendJson(response, 500, {
@@ -654,12 +1528,13 @@ async function handleViewerLogin(request, response) {
 
 function handleConfigGet(request, response, pathname) {
   if (pathname === "/api/event-names") {
-    const eventId = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams.get("event");
-    fetchEventName(eventId)
-      .then((eventName) => {
+    const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+    const eventId = searchParams.get("event");
+    const source = normalizeSource(searchParams.get("source") || "wtt");
+    fetchEventMeta(eventId, source)
+      .then((meta) => {
         sendJson(response, 200, {
-          event: eventId,
-          eventName,
+          ...meta,
         });
       })
       .catch((error) => {
@@ -802,11 +1677,17 @@ const server = http.createServer((request, response) => {
     request.method === "GET" &&
     (
       requestUrl.pathname === "/api/individual-matches" ||
-      requestUrl.pathname === "/api/categories"
+      requestUrl.pathname === "/api/categories" ||
+      requestUrl.pathname === "/api/rounds" ||
+      requestUrl.pathname === "/api/events/search"
     )
   ) {
     if (requestUrl.pathname === "/api/categories") {
       handleCategoriesApi(requestUrl, response);
+    } else if (requestUrl.pathname === "/api/rounds") {
+      handleRoundsApi(requestUrl, response);
+    } else if (requestUrl.pathname === "/api/events/search") {
+      handleEventSearchApi(requestUrl, response);
     } else {
       handleApi(requestUrl, response);
     }
