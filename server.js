@@ -65,11 +65,25 @@ function ensureFileFromDefault(targetPath, sourcePath) {
   fs.copyFileSync(sourcePath, targetPath);
 }
 
+function ensureDirectoryFilesFromDefault(targetDir, sourceDir) {
+  ensureDir(targetDir);
+  if (!sourceDir || !fs.existsSync(sourceDir)) {
+    return;
+  }
+  const entries = fs.readdirSync(sourceDir, { withFileTypes: true });
+  entries.forEach((entry) => {
+    if (!entry.isFile()) {
+      return;
+    }
+    ensureFileFromDefault(path.join(targetDir, entry.name), path.join(sourceDir, entry.name));
+  });
+}
+
 function ensureRuntimeFiles() {
   ensureDir(DATA_DIR);
   ensureDir(CACHE_DIR);
-  ensureDir(ZENNIHON_ARCHIVE_DIR);
-  ensureDir(WTT_ARCHIVE_DIR);
+  ensureDirectoryFilesFromDefault(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
+  ensureDirectoryFilesFromDefault(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
   ensureFileFromDefault(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
