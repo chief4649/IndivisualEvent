@@ -2054,6 +2054,26 @@ function formatGameScoreForWinnerPerspective(score, winnerIndex) {
   return `${loserPoints === 0 ? 0 : loserPoints > winnerPoints ? `-${winnerPoints}` : winnerPoints === 0 ? 0 : winnerPoints === left && winnerIndex === 0 ? loserPoints : winnerPoints === right && winnerIndex === 1 ? loserPoints : ""}`;
 }
 
+function parseScoreTokenValue(rawToken) {
+  const text = String(rawToken || "").trim().toUpperCase();
+  if (!text) {
+    return null;
+  }
+  if (text === "W") {
+    return Number.POSITIVE_INFINITY;
+  }
+  if (text === "L") {
+    return Number.NEGATIVE_INFINITY;
+  }
+
+  const numericMatch = text.match(/^-?\d+/);
+  if (!numericMatch) {
+    return null;
+  }
+  const value = Number(numericMatch[0]);
+  return Number.isNaN(value) ? null : value;
+}
+
 function getWinnerIndexFromScore(score) {
   const [leftRaw, rightRaw] = String(score || "").split("-");
   const leftToken = String(leftRaw || "").trim().toUpperCase();
@@ -2066,9 +2086,9 @@ function getWinnerIndexFromScore(score) {
     return 1;
   }
 
-  const left = Number(leftRaw);
-  const right = Number(rightRaw);
-  if (Number.isNaN(left) || Number.isNaN(right)) {
+  const left = parseScoreTokenValue(leftRaw);
+  const right = parseScoreTokenValue(rightRaw);
+  if (left === null || right === null) {
     return null;
   }
   if (left > right) {
