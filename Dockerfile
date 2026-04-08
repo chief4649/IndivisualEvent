@@ -15,7 +15,6 @@ COPY translations.ja.json ./
 COPY event-names.json ./
 COPY wtt-date-index.json ./
 COPY wtt-search-index.json ./
-COPY wtt-archive-index.json ./
 COPY rules.json ./
 COPY public ./public
 COPY zennihon-records ./zennihon-records
