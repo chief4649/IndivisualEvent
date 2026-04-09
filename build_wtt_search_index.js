@@ -11,6 +11,7 @@ const {
   DEFAULT_WTT_DATE_INDEX_PATH,
   fetchOfficialResultsCached,
   getWttEventLifecycleMeta,
+  readWttDateIndex,
 } = require("./extract_individual_matches");
 
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
@@ -121,6 +122,42 @@ function writeIndex(filePath, index) {
     Object.entries(index).sort((left, right) => Number(left[0]) - Number(right[0])),
   );
   fs.writeFileSync(filePath, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
+}
+
+function mergeDateIndexEntries(index, dateIndex) {
+  Object.entries(dateIndex || {}).forEach(([eventId, entry]) => {
+    const normalizedId = String(eventId || "").trim();
+    const numericId = Number(normalizedId);
+    const eventName = String(entry?.eventName || entry?.title || "").trim();
+    if (
+      !normalizedId ||
+      !Number.isFinite(numericId) ||
+      numericId < 2500 ||
+      !eventName ||
+      !shouldIndexWttEventName(eventName)
+    ) {
+      return;
+    }
+
+    index[normalizedId] = {
+      ...(index[normalizedId] || {}),
+      event: normalizedId,
+      eventName,
+      startDate: entry?.startDate || index[normalizedId]?.startDate || null,
+      endDate: entry?.endDate || index[normalizedId]?.endDate || null,
+      dateLabel: formatDateRange(entry?.startDate || null, entry?.endDate || null),
+      archived: Boolean(index[normalizedId]?.archived),
+      status: resolveLifecycleStatus(
+        entry?.startDate || null,
+        entry?.endDate || null,
+        index[normalizedId]?.status || "unknown",
+        eventName,
+      ),
+      source: index[normalizedId]?.source || entry?.source || "calendar",
+      series: classifyWttSeries(eventName),
+      verifiedAt: index[normalizedId]?.verifiedAt || new Date().toISOString(),
+    };
+  });
 }
 
 function classifyWttSeries(eventName) {
@@ -380,6 +417,7 @@ async function runPool(ids, concurrency, worker) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const existingIndex = readIndex(args.output);
+  const dateIndex = readWttDateIndex(args.wttDateIndexPath);
   const ids = [];
   for (let eventId = args.start; eventId <= args.end; eventId += 1) {
     ids.push(String(eventId));
@@ -404,6 +442,7 @@ async function main() {
     }
   });
 
+  mergeDateIndexEntries(existingIndex, dateIndex);
   writeIndex(args.output, existingIndex);
   console.error(`Wrote ${Object.keys(existingIndex).length} indexed events to ${args.output}`);
 }
