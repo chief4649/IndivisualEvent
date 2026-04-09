@@ -449,6 +449,18 @@ function getEventUrl(source, eventId) {
   return "";
 }
 
+function getWttEventUrl(eventId, sourceHint = "") {
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return "";
+  }
+  const sourceText = String(sourceHint || "").trim().toLowerCase();
+  if (["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText)) {
+    return `https://results.ittf.com/ittf-web-results/html/TTE${encodeURIComponent(normalizedId)}/results.html#/results`;
+  }
+  return getEventUrl("wtt", normalizedId);
+}
+
 function readWttArchiveIndex() {
   try {
     if (!fs.existsSync(WTT_ARCHIVE_INDEX_PATH)) {
@@ -676,7 +688,7 @@ async function fetchEventMeta(eventId, source = "wtt") {
   const normalizedSource = normalizeSource(source);
   const normalizedId = String(eventId || "").trim();
   const eventName = await fetchEventName(normalizedId, normalizedSource);
-  const eventUrl = getEventUrl(normalizedSource, normalizedId);
+  let eventUrl = getEventUrl(normalizedSource, normalizedId);
 
   if (normalizedSource === "wtt") {
     try {
@@ -694,7 +706,7 @@ async function fetchEventMeta(eventId, source = "wtt") {
         source: normalizedSource,
         event: normalizedId,
         eventName: eventName || lifecycle?.title || "",
-        eventUrl,
+        eventUrl: getWttEventUrl(normalizedId, lifecycle?.source),
         startDate,
         endDate,
         dateLabel: formatDateRange(startDate, endDate),
@@ -849,7 +861,7 @@ function buildSearchableEvents(source, query) {
         source: normalizedSource,
         event: eventId,
         eventName: name,
-        eventUrl: getEventUrl(normalizedSource, eventId),
+        eventUrl: getWttEventUrl(eventId, mergedEntry?.source),
         startDate: mergedEntry?.startDate || null,
         endDate: mergedEntry?.endDate || null,
         dateLabel,
