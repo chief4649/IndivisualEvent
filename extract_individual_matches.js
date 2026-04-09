@@ -15,6 +15,9 @@ const DEFAULT_ZENNIHON_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "zennihon-recor
 const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
+const WTT_EVENT_ID_ALIASES = {
+  "5524": "3500",
+};
 const ZENNIHON_ARCHIVE_YEARS = new Set(
   Array.from({ length: 15 }, (_, index) => String(2011 + index)),
 );
@@ -163,6 +166,7 @@ function parseArgs(argv) {
   if (!args.event) {
     throw new Error("--event is required");
   }
+  args.event = resolveEventId(args.source, args.event);
 
   return args;
 }
@@ -224,6 +228,18 @@ function normalizeSource(value) {
     return "zennihon";
   }
   return text;
+}
+
+function resolveEventId(source, eventId) {
+  const normalizedSource = normalizeSource(source);
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return "";
+  }
+  if (normalizedSource === "wtt" && WTT_EVENT_ID_ALIASES[normalizedId]) {
+    return WTT_EVENT_ID_ALIASES[normalizedId];
+  }
+  return normalizedId;
 }
 
 function decodeHtmlEntities(value) {
@@ -2918,6 +2934,7 @@ async function getProcessedMatches(options = {}) {
   if (!args.event) {
     throw new Error("--event is required");
   }
+  args.event = resolveEventId(args.source, args.event);
 
   let normalizedCategory = null;
   if (args.category) {

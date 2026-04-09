@@ -36,6 +36,9 @@ const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
+const WTT_EVENT_ID_ALIASES = {
+  "5524": "3500",
+};
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || "";
 const TRUST_PROXY = process.env.TRUST_PROXY === "1";
@@ -448,6 +451,35 @@ function getStoredEventName(source, eventId) {
   return "";
 }
 
+function getRelatedWttEventIds(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return [];
+  }
+  const ids = new Set([normalizedId]);
+  Object.entries(WTT_EVENT_ID_ALIASES).forEach(([aliasId, canonicalId]) => {
+    if (aliasId === normalizedId || canonicalId === normalizedId) {
+      ids.add(aliasId);
+      ids.add(canonicalId);
+    }
+  });
+  return [...ids];
+}
+
+function getStoredWttIndexedName(eventId) {
+  for (const candidateId of getRelatedWttEventIds(eventId)) {
+    const searchEntry = readWttSearchIndex()[candidateId];
+    if (searchEntry?.eventName) {
+      return String(searchEntry.eventName);
+    }
+    const dateEntry = readWttDateIndex(WTT_DATE_INDEX_PATH)[candidateId];
+    if (dateEntry?.eventName || dateEntry?.title) {
+      return String(dateEntry.eventName || dateEntry.title);
+    }
+  }
+  return "";
+}
+
 function getEventUrl(source, eventId) {
   const normalizedSource = normalizeSource(source);
   const normalizedId = String(eventId || "").trim();
@@ -464,6 +496,18 @@ function getEventUrl(source, eventId) {
   }
 
   return "";
+}
+
+function resolveEventId(source, eventId) {
+  const normalizedSource = normalizeSource(source);
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return "";
+  }
+  if (normalizedSource === "wtt" && WTT_EVENT_ID_ALIASES[normalizedId]) {
+    return WTT_EVENT_ID_ALIASES[normalizedId];
+  }
+  return normalizedId;
 }
 
 function getWttEventUrl(eventId, sourceHint = "") {
@@ -703,7 +747,7 @@ function resolveLifecycleStatus(startDate, endDate, fallbackStatus = "unknown", 
 
 async function fetchEventMeta(eventId, source = "wtt") {
   const normalizedSource = normalizeSource(source);
-  const normalizedId = String(eventId || "").trim();
+  const normalizedId = resolveEventId(normalizedSource, eventId);
   const eventName = await fetchEventName(normalizedId, normalizedSource);
   let eventUrl = getEventUrl(normalizedSource, normalizedId);
 
@@ -1059,7 +1103,7 @@ async function fetchZennihonEventName(eventId) {
 
 async function fetchEventName(eventId, source = "wtt") {
   const normalizedSource = normalizeSource(source);
-  const normalizedId = String(eventId || "").trim();
+  const normalizedId = resolveEventId(normalizedSource, eventId);
   if (!normalizedId) {
     return "";
   }
@@ -1070,6 +1114,7 @@ async function fetchEventName(eventId, source = "wtt") {
   }
 
   const storedName = getStoredEventName(normalizedSource, normalizedId);
+  const indexedName = normalizedSource === "wtt" ? getStoredWttIndexedName(normalizedId) : "";
   if (normalizedSource !== "wtt") {
     if (storedName) {
       eventNameCache.set(cacheKey, storedName);
@@ -1093,21 +1138,25 @@ async function fetchEventName(eventId, source = "wtt") {
     });
 
     if (!response.ok) {
-      if (storedName) {
-        eventNameCache.set(cacheKey, storedName);
-        return storedName;
+      const fallbackName = storedName || indexedName;
+      if (fallbackName) {
+        eventNameCache.set(cacheKey, fallbackName);
+        return fallbackName;
       }
       throw new Error(`Failed to fetch event name: ${response.status} ${response.statusText}`);
     }
 
     const payload = await response.json();
-    const eventName = Array.isArray(payload) ? String(payload[0]?.eventName || "") : String(payload?.eventName || "") || storedName;
+    const eventName = Array.isArray(payload)
+      ? String(payload[0]?.eventName || "")
+      : String(payload?.eventName || "") || storedName || indexedName;
     eventNameCache.set(cacheKey, eventName);
     return eventName;
   } catch (error) {
-    if (storedName) {
-      eventNameCache.set(cacheKey, storedName);
-      return storedName;
+    const fallbackName = storedName || indexedName;
+    if (fallbackName) {
+      eventNameCache.set(cacheKey, fallbackName);
+      return fallbackName;
     }
     throw error;
   }
@@ -1135,11 +1184,12 @@ function pickFormat(searchParams) {
 
 function buildOptions(searchParams) {
   const format = pickFormat(searchParams);
+  const source = normalizeSource(searchParams.get("source") || "wtt");
   const rounds = searchParams.getAll("round").map((value) => String(value || "").trim()).filter(Boolean);
 
   return {
-    source: normalizeSource(searchParams.get("source") || "wtt"),
-    event: searchParams.get("event"),
+    source,
+    event: resolveEventId(source, searchParams.get("event")),
     category: searchParams.get("category") || null,
     gender: searchParams.get("gender") || null,
     discipline: searchParams.get("discipline") || null,
