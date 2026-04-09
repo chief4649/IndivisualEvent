@@ -65,6 +65,23 @@ function ensureFileFromDefault(targetPath, sourcePath) {
   fs.copyFileSync(sourcePath, targetPath);
 }
 
+function syncFileFromDefaultIfNewer(targetPath, sourcePath) {
+  if (!sourcePath || !fs.existsSync(sourcePath)) {
+    return;
+  }
+  if (!fs.existsSync(targetPath)) {
+    ensureDir(path.dirname(targetPath));
+    fs.copyFileSync(sourcePath, targetPath);
+    return;
+  }
+  const sourceStat = fs.statSync(sourcePath);
+  const targetStat = fs.statSync(targetPath);
+  if (sourceStat.mtimeMs <= targetStat.mtimeMs) {
+    return;
+  }
+  fs.copyFileSync(sourcePath, targetPath);
+}
+
 function ensureDirectoryFilesFromDefault(targetDir, sourceDir) {
   ensureDir(targetDir);
   if (!sourceDir || !fs.existsSync(sourceDir)) {
@@ -86,10 +103,10 @@ function ensureRuntimeFiles() {
   ensureDirectoryFilesFromDefault(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
-  ensureFileFromDefault(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
-  ensureFileFromDefault(WTT_SEARCH_INDEX_PATH, path.join(__dirname, "wtt-search-index.json"));
-  ensureFileFromDefault(EVENT_NAMES_PATH, path.join(__dirname, "event-names.json"));
-  ensureFileFromDefault(WTT_ARCHIVE_INDEX_PATH, path.join(__dirname, "wtt-archive-index.json"));
+  syncFileFromDefaultIfNewer(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
+  syncFileFromDefaultIfNewer(WTT_SEARCH_INDEX_PATH, path.join(__dirname, "wtt-search-index.json"));
+  syncFileFromDefaultIfNewer(EVENT_NAMES_PATH, path.join(__dirname, "event-names.json"));
+  syncFileFromDefaultIfNewer(WTT_ARCHIVE_INDEX_PATH, path.join(__dirname, "wtt-archive-index.json"));
 }
 
 function hasSharedTranslationsSource() {
