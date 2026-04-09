@@ -515,6 +515,16 @@ function toCanonicalCategoryName(value, gender = null, discipline = null) {
     return canonicalMap[normalized];
   }
 
+  if (/\bclass(?:es)?\b/i.test(raw)) {
+    return raw
+      .replace(/\bMen['’]s\b/i, "Men")
+      .replace(/\bWomen['’]s\b/i, "Women")
+      .replace(/\bMixed['’]s\b/i, "Mixed")
+      .replace(/\s*[-–]\s*/g, "-")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   const youthMatch = raw.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
   if (youthMatch) {
     const [, age, division, eventType] = youthMatch;
@@ -575,6 +585,20 @@ function resolveCanonicalCategoryName(rawCategoryName, description, gender = nul
     return toCanonicalCategoryName(describedCategory, gender, discipline);
   }
   return toCanonicalCategoryName(rawCategoryName, gender, discipline);
+}
+
+function resolveParaCategoryName(rawCategoryName, description) {
+  const source = String(rawCategoryName || description || "").trim();
+  if (!/\bclass(?:es)?\b/i.test(source)) {
+    return null;
+  }
+  return source
+    .replace(/\bMen['’]s\b/i, "Men")
+    .replace(/\bWomen['’]s\b/i, "Women")
+    .replace(/\bMixed['’]s\b/i, "Mixed")
+    .replace(/\s*[-–]\s*/g, "-")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function extractRound(description) {
@@ -1129,6 +1153,7 @@ function normalizeStandaloneMatch(item) {
   const rawCategoryName = item.subEventType ?? card.subEventName ?? null;
   const discipline = normalizeDiscipline(rawCategoryName);
   const gender = inferGender(rawCategoryName);
+  const paraCategoryName = resolveParaCategoryName(rawCategoryName, card.subEventDescription);
   const round = extractRound(card.subEventDescription);
 
   return {
@@ -1137,7 +1162,7 @@ function normalizeStandaloneMatch(item) {
     eventId: item.eventId ?? card.eventId ?? null,
     documentCode: item.documentCode ?? card.documentCode ?? null,
     subEventType: rawCategoryName,
-    categoryName: resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline),
+    categoryName: paraCategoryName || resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline),
     discipline,
     gender,
     roundLabel: round.roundLabel,
@@ -1148,7 +1173,7 @@ function normalizeStandaloneMatch(item) {
     table: card.tableName ?? card.tableNumber ?? null,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
-    isParaClass: /\bclass\s*\d+\b/i.test(String(card.subEventName || "")) || /\bclass\s*\d+\b/i.test(String(card.subEventDescription || "")),
+    isParaClass: Boolean(paraCategoryName),
     teams: [],
     singles: [],
     competitors,
@@ -1911,7 +1936,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
     const archived = readWttArchive(archiveDir, eventId);
 
-    if (archived && meta.isFinished) {
+    if (archived && meta.isFinished && !refreshCache) {
       return archived;
     }
 
