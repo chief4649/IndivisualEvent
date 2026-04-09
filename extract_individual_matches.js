@@ -2380,6 +2380,10 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   }
 
   const [rawLeftSets, rawRightSets] = String(match.overallScore || "-").split("-");
+  const hasGameScores = Array.isArray(match.gameScores) && match.gameScores.some((game) => String(game || "").trim());
+  if (rawLeftSets === "0" && rawRightSets === "0" && !hasGameScores) {
+    return "-";
+  }
   const leftSets = leftCompetitorIndex === 0 ? rawLeftSets : rawRightSets;
   const rightSets = leftCompetitorIndex === 0 ? rawRightSets : rawLeftSets;
 
