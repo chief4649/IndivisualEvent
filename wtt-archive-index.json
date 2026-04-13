@@ -1,0 +1,177 @@
+{
+  "2535": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2022-09-30",
+    "endDate": "2022-10-09",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-10T06:39:26.403Z"
+  },
+  "2751": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2024-02-16",
+    "endDate": "2024-02-25",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-10T06:31:04.490Z"
+  },
+  "2932": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2024-05-01",
+    "endDate": "2024-05-11",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-08T00:19:00.002Z"
+  },
+  "3084": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2025-01-11",
+    "endDate": "2025-01-17",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T06:14:22.299Z"
+  },
+  "3108": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2025-05-17",
+    "endDate": "2025-05-25",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-10T06:41:12.928Z"
+  },
+  "3231": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-01-07",
+    "endDate": "2026-01-11",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-10T01:49:14.810Z"
+  },
+  "3234": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-02-19",
+    "endDate": "2026-03-01",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-08T08:48:33.089Z"
+  },
+  "3237": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-12",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-13T05:20:58.890Z"
+  },
+  "3263": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2025-11-30",
+    "endDate": "2025-12-07",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-13T05:18:46.579Z"
+  },
+  "3273": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-01-02",
+    "endDate": "2026-01-05",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T06:42:07.407Z"
+  },
+  "3298": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-04-08",
+    "endDate": "2026-04-11",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T07:49:57.662Z"
+  },
+  "3353": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-01-07",
+    "endDate": "2026-01-11",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T07:05:46.441Z"
+  },
+  "3354": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-01-27",
+    "endDate": "2026-01-31",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T07:15:50.475Z"
+  },
+  "3355": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-01-27",
+    "endDate": "2026-01-31",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T07:24:35.301Z"
+  },
+  "3373": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "",
+    "startDate": "2026-04-08",
+    "endDate": "2026-04-11",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-09T07:51:01.998Z"
+  },
+  "3379": {
+    "pooled": true,
+    "source": "wtt",
+    "title": "",
+    "startDate": null,
+    "endDate": null,
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-04-07T10:38:41.953Z"
+  },
+  "3403": {
+    "pooled": true,
+    "source": "bornan",
+    "title": "ITTF-Americas Central American & Caribbean Championships Santo Domingo 2026",
+    "startDate": "2026-04-09",
+    "endDate": "2026-04-10",
+    "canAutoArchive": true,
+    "lastFetchedAt": "2026-04-09T07:51:49.766Z"
+  },
+  "3422": {
+    "pooled": true,
+    "source": "bornan",
+    "title": " ITTF World Para Future Yalova 2026",
+    "startDate": "2026-04-02",
+    "endDate": "2026-04-05",
+    "canAutoArchive": true,
+    "lastFetchedAt": "2026-04-09T05:22:37.572Z",
+    "archived": true,
+    "archivedAt": "2026-04-09T05:22:37.572Z"
+  },
+  "3489": {
+    "pooled": true,
+    "source": "bornan",
+    "title": "ITTF-Africa North Regional Championships Benghazi 2026",
+    "startDate": "2026-04-07",
+    "endDate": "2026-04-09",
+    "canAutoArchive": true,
+    "lastFetchedAt": "2026-04-13T06:01:40.568Z",
+    "archived": true,
+    "archivedAt": "2026-04-13T06:01:40.568Z"
+  }
+}

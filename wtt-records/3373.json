@@ -1,0 +1,2134 @@
+[
+  {
+    "iD": 14198361,
+    "eventId": "3373",
+    "documentCode": "TTEXDOUBLES-----------8FNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEXDOUBLES-----------8FNL000200----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Round of 16 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100232522",
+          "competitiorName": "PISTEJ Lubomir/DE NUTTE Sarah",
+          "competitiorOrg": "SVK/LUX",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "107445",
+              "playerName": "PISTEJ Lubomir",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "112280",
+              "playerName": "DE NUTTE Sarah",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "LUX",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,11,13,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100234712",
+          "competitiorName": "KAHRAMAN Kenan/KAHRAMAN Betul Nur",
+          "competitiorOrg": "TUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201120",
+              "playerName": "KAHRAMAN Kenan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "123638",
+              "playerName": "KAHRAMAN Betul Nur",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,5,11,7,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-5,13-11,11-7,0-0",
+      "resultsGameScores": "7-11,11-5,13-11,11-7,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201120",
+        "serverReceiver": "112280",
+        "serverNext": "201120",
+        "serverCompetitor": "100234712",
+        "receiverNext": "112280"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:28:56",
+        "startDateLocal": "04/09/2026 10:00:00",
+        "startDateUTC": "04/09/2026 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "269",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-09T07:31:26.873Z"
+    },
+    "startDateLocal": "2026-04-09T10:00:00"
+  },
+  {
+    "iD": 14198151,
+    "eventId": "3373",
+    "documentCode": "TTEXDOUBLES-----------8FNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEXDOUBLES-----------8FNL000400----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Round of 16 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100232543",
+          "competitiorName": "JANG Seongil/HEO Yerim",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132172",
+              "playerName": "JANG Seongil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "204138",
+              "playerName": "HEO Yerim",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100234085",
+          "competitiorName": "TAHER Omar/COKLAR Nursema",
+          "competitiorOrg": "IRQ/TUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116390",
+              "playerName": "TAHER Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IRQ",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "225184",
+              "playerName": "COKLAR Nursema",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,11-7,0-0,0-0",
+      "resultsGameScores": "11-7,11-6,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "132172",
+        "serverReceiver": "116390",
+        "serverNext": "132172",
+        "serverCompetitor": "100232543",
+        "receiverNext": "116390"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:34",
+        "startDateLocal": "04/09/2026 10:00:00",
+        "startDateUTC": "04/09/2026 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "159",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-09T07:18:52.297Z"
+    },
+    "startDateLocal": "2026-04-09T10:00:00"
+  },
+  {
+    "iD": 14188663,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP04000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP04000600----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 4 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133469",
+          "competitiorName": "ALSUWAILEM Salem",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133469",
+              "playerName": "ALSUWAILEM Salem",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,11,8,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200266",
+          "competitiorName": "AL TAHER Abdulrahman",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200266",
+              "playerName": "AL TAHER Abdulrahman",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,8,2,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "7-11,11-8,11-2,8-11,7-11",
+      "resultsGameScores": "7-11,11-8,11-2,8-11,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133469",
+        "serverReceiver": "200266",
+        "serverNext": "133469",
+        "serverCompetitor": "133469",
+        "receiverNext": "200266"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:32:05",
+        "startDateLocal": "04/08/2026 16:35:00",
+        "startDateUTC": "04/08/2026 13:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "265",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T16:35:00"
+  },
+  {
+    "iD": 14188439,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP04000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP04000500----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 4 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121693",
+          "competitiorName": "SGOUROPOULOS Ioannis",
+          "competitiorOrg": "GRE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121693",
+              "playerName": "SGOUROPOULOS Ioannis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GRE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201303",
+          "competitiorName": "HANIFA Yousuf",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201303",
+              "playerName": "HANIFA Yousuf",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,7,4,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-7,11-4,0-0,0-0",
+      "resultsGameScores": "11-4,11-7,11-4,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201303",
+        "serverReceiver": "121693",
+        "serverNext": "201303",
+        "serverCompetitor": "201303",
+        "receiverNext": "121693"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:13:40",
+        "startDateLocal": "04/08/2026 16:35:00",
+        "startDateUTC": "04/08/2026 13:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "144",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T16:35:00"
+  },
+  {
+    "iD": 14188405,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP02000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP02000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 2 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "132172",
+          "competitiorName": "JANG Seongil",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132172",
+              "playerName": "JANG Seongil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204112",
+          "competitiorName": "OZTOPRAK Berk",
+          "competitiorOrg": "TUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204112",
+              "playerName": "OZTOPRAK Berk",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,6,7,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-6,11-7,0-0,0-0",
+      "resultsGameScores": "11-7,11-6,11-7,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204112",
+        "serverReceiver": "132172",
+        "serverNext": "204112",
+        "serverCompetitor": "204112",
+        "receiverNext": "132172"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:34",
+        "startDateLocal": "04/08/2026 16:35:00",
+        "startDateUTC": "04/08/2026 13:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "177",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T13:56:33.52Z"
+    },
+    "startDateLocal": "2026-04-08T16:35:00"
+  },
+  {
+    "iD": 14187824,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP03000600----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP03000600----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 3 - Match 6",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135478",
+          "competitiorName": "KAUCKY Jakub",
+          "competitiorOrg": "CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135478",
+              "playerName": "KAUCKY Jakub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,6,13,9,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "116390",
+          "competitiorName": "TAHER Omar",
+          "competitiorOrg": "IRQ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116390",
+              "playerName": "TAHER Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IRQ",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,11,11,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-6,6-11,13-11,9-11,9-11",
+      "resultsGameScores": "11-6,6-11,13-11,9-11,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "135478",
+        "serverReceiver": "116390",
+        "serverNext": "135478",
+        "serverCompetitor": "135478",
+        "receiverNext": "116390"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:25",
+        "startDateLocal": "04/08/2026 16:00:00",
+        "startDateUTC": "04/08/2026 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "284",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T13:39:13.47Z"
+    },
+    "startDateLocal": "2026-04-08T16:00:00"
+  },
+  {
+    "iD": 14187598,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP01000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP01000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 1 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135393",
+          "competitiorName": "URSUT Horia Stefan",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135393",
+              "playerName": "URSUT Horia Stefan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,12,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "132081",
+          "competitiorName": "ALSHAREIF Khalid",
+          "competitiorOrg": "KSA",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132081",
+              "playerName": "ALSHAREIF Khalid",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "3,11,10,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-3,8-11,12-10,11-6,0-0",
+      "resultsGameScores": "11-3,8-11,12-10,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "132081",
+        "serverReceiver": "135393",
+        "serverNext": "132081",
+        "serverCompetitor": "132081",
+        "receiverNext": "135393"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:32",
+        "startDateLocal": "04/08/2026 16:00:00",
+        "startDateUTC": "04/08/2026 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "218",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T13:28:03.76Z"
+    },
+    "startDateLocal": "2026-04-08T16:00:00"
+  },
+  {
+    "iD": 14187575,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP03000500----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP03000500----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 3 - Match 5",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134817",
+          "competitiorName": "CLOSSET Tom",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134817",
+              "playerName": "CLOSSET Tom",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,4,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "224938",
+          "competitiorName": "KIHO Keisuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "224938",
+              "playerName": "KIHO Keisuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,8,11,6,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-8,11-8,4-11,11-6,0-0",
+      "resultsGameScores": "11-8,11-8,4-11,11-6,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "224938",
+        "serverReceiver": "134817",
+        "serverNext": "224938",
+        "serverCompetitor": "224938",
+        "receiverNext": "134817"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:25:56",
+        "startDateLocal": "04/08/2026 16:00:00",
+        "startDateUTC": "04/08/2026 13:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "196",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T13:27:18.493Z"
+    },
+    "startDateLocal": "2026-04-08T16:00:00"
+  },
+  {
+    "iD": 14184619,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP02000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP02000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 2 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201120",
+          "competitiorName": "KAHRAMAN Kenan",
+          "competitiorOrg": "TUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201120",
+              "playerName": "KAHRAMAN Kenan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,16,12,7,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "132172",
+          "competitiorName": "JANG Seongil",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132172",
+              "playerName": "JANG Seongil",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,14,10,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,16-14,12-10,7-11,7-11",
+      "resultsGameScores": "6-11,16-14,12-10,7-11,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "132172",
+        "serverReceiver": "201120",
+        "serverNext": "132172",
+        "serverCompetitor": "132172",
+        "receiverNext": "201120"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:41:29",
+        "startDateLocal": "04/08/2026 12:05:00",
+        "startDateUTC": "04/08/2026 09:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "316",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T09:48:56.253Z"
+    },
+    "startDateLocal": "2026-04-08T12:05:00"
+  },
+  {
+    "iD": 14184294,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP04000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP04000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 4 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "200266",
+          "competitiorName": "AL TAHER Abdulrahman",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200266",
+              "playerName": "AL TAHER Abdulrahman",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,12,13,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201303",
+          "competitiorName": "HANIFA Yousuf",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201303",
+              "playerName": "HANIFA Yousuf",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,10,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-9,12-10,13-11,0-0",
+      "resultsGameScores": "7-11,11-9,12-10,13-11,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200266",
+        "serverReceiver": "201303",
+        "serverNext": "200266",
+        "serverCompetitor": "200266",
+        "receiverNext": "201303"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:03",
+        "startDateLocal": "04/08/2026 12:05:00",
+        "startDateUTC": "04/08/2026 09:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "241",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T09:34:34.207Z"
+    },
+    "startDateLocal": "2026-04-08T12:05:00"
+  },
+  {
+    "iD": 14184102,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP04000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP04000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 4 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121693",
+          "competitiorName": "SGOUROPOULOS Ioannis",
+          "competitiorOrg": "GRE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121693",
+              "playerName": "SGOUROPOULOS Ioannis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GRE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "7,11,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "133469",
+          "competitiorName": "ALSUWAILEM Salem",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133469",
+              "playerName": "ALSUWAILEM Salem",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,5,4,4,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "7-11,11-5,11-4,11-4,0-0",
+      "resultsGameScores": "7-11,11-5,11-4,11-4,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121693",
+        "serverReceiver": "133469",
+        "serverNext": "121693",
+        "serverCompetitor": "121693",
+        "receiverNext": "133469"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:52",
+        "startDateLocal": "04/08/2026 12:05:00",
+        "startDateUTC": "04/08/2026 09:05:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "183",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T09:26:29.577Z"
+    },
+    "startDateLocal": "2026-04-08T12:05:00"
+  },
+  {
+    "iD": 14183263,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP01000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP01000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 1 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136005",
+          "competitiorName": "SZANTOSI David",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136005",
+              "playerName": "SZANTOSI David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,12,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135393",
+          "competitiorName": "URSUT Horia Stefan",
+          "competitiorOrg": "ROU",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135393",
+              "playerName": "URSUT Horia Stefan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "ROU",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,8,10,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-8,11-8,12-10,0-0,0-0",
+      "resultsGameScores": "11-8,11-8,12-10,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136005",
+        "serverReceiver": "135393",
+        "serverNext": "136005",
+        "serverCompetitor": "136005",
+        "receiverNext": "135393"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:15",
+        "startDateLocal": "04/08/2026 11:30:00",
+        "startDateUTC": "04/08/2026 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "163",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T11:30:00"
+  },
+  {
+    "iD": 14183135,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP03000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP03000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 3 - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134817",
+          "competitiorName": "CLOSSET Tom",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134817",
+              "playerName": "CLOSSET Tom",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "135478",
+          "competitiorName": "KAUCKY Jakub",
+          "competitiorOrg": "CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135478",
+              "playerName": "KAUCKY Jakub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "4,8,2,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-4,11-8,11-2,0-0,0-0",
+      "resultsGameScores": "11-4,11-8,11-2,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134817",
+        "serverReceiver": "135478",
+        "serverNext": "134817",
+        "serverCompetitor": "134817",
+        "receiverNext": "135478"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:15:19",
+        "startDateLocal": "04/08/2026 11:30:00",
+        "startDateUTC": "04/08/2026 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "127",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T08:46:53.123Z"
+    },
+    "startDateLocal": "2026-04-08T11:30:00"
+  },
+  {
+    "iD": 14183069,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP03000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP03000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 3 - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "116390",
+          "competitiorName": "TAHER Omar",
+          "competitiorOrg": "IRQ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116390",
+              "playerName": "TAHER Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IRQ",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "3,3,2,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "224938",
+          "competitiorName": "KIHO Keisuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "224938",
+              "playerName": "KIHO Keisuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "3-11,3-11,2-11,0-0,0-0",
+      "resultsGameScores": "3-11,3-11,2-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "116390",
+        "serverReceiver": "224938",
+        "serverNext": "116390",
+        "serverCompetitor": "116390",
+        "receiverNext": "224938"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:13:32",
+        "startDateLocal": "04/08/2026 11:30:00",
+        "startDateUTC": "04/08/2026 08:30:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "129",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T08:45:11.89Z"
+    },
+    "startDateLocal": "2026-04-08T11:30:00"
+  },
+  {
+    "iD": 14182409,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP02000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP02000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 2 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "201120",
+          "competitiorName": "KAHRAMAN Kenan",
+          "competitiorOrg": "TUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201120",
+              "playerName": "KAHRAMAN Kenan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,11,11,8,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "204112",
+          "competitiorName": "OZTOPRAK Berk",
+          "competitiorOrg": "TUR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "204112",
+              "playerName": "OZTOPRAK Berk",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "TUR",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,7,9,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "10-12,11-7,11-9,8-11,7-11",
+      "resultsGameScores": "10-12,11-7,11-9,8-11,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "204112",
+        "serverReceiver": "201120",
+        "serverNext": "204112",
+        "serverCompetitor": "204112",
+        "receiverNext": "201120"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:39",
+        "startDateLocal": "04/08/2026 10:35:00",
+        "startDateUTC": "04/08/2026 07:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "281",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T10:35:00"
+  },
+  {
+    "iD": 14182319,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP04000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP04000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 4 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133469",
+          "competitiorName": "ALSUWAILEM Salem",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133469",
+              "playerName": "ALSUWAILEM Salem",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,9,11,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "201303",
+          "competitiorName": "HANIFA Yousuf",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "201303",
+              "playerName": "HANIFA Yousuf",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,9,9,3",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,9-11,11-9,11-9,11-3",
+      "resultsGameScores": "9-11,9-11,11-9,11-9,11-3",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "201303",
+        "serverReceiver": "133469",
+        "serverNext": "201303",
+        "serverCompetitor": "201303",
+        "receiverNext": "133469"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:27:02",
+        "startDateLocal": "04/08/2026 10:35:00",
+        "startDateUTC": "04/08/2026 07:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "268",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T10:35:00"
+  },
+  {
+    "iD": 14181913,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP04000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP04000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 4 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121693",
+          "competitiorName": "SGOUROPOULOS Ioannis",
+          "competitiorOrg": "GRE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121693",
+              "playerName": "SGOUROPOULOS Ioannis",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GRE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "200266",
+          "competitiorName": "AL TAHER Abdulrahman",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "200266",
+              "playerName": "AL TAHER Abdulrahman",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,5,8,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-5,11-8,0-0,0-0",
+      "resultsGameScores": "11-9,11-5,11-8,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "200266",
+        "serverReceiver": "121693",
+        "serverNext": "200266",
+        "serverCompetitor": "200266",
+        "receiverNext": "121693"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:16:19",
+        "startDateLocal": "04/08/2026 10:35:00",
+        "startDateUTC": "04/08/2026 07:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "167",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T10:35:00"
+  },
+  {
+    "iD": 14181184,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP03000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP03000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 3 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "134817",
+          "competitiorName": "CLOSSET Tom",
+          "competitiorOrg": "BEL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134817",
+              "playerName": "CLOSSET Tom",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "BEL",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "116390",
+          "competitiorName": "TAHER Omar",
+          "competitiorOrg": "IRQ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116390",
+              "playerName": "TAHER Omar",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "IRQ",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,9,9,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-9,11-9,11-9,0-0,0-0",
+      "resultsGameScores": "11-9,11-9,11-9,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134817",
+        "serverReceiver": "116390",
+        "serverNext": "134817",
+        "serverCompetitor": "134817",
+        "receiverNext": "116390"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:21:37",
+        "startDateLocal": "04/08/2026 10:00:00",
+        "startDateUTC": "04/08/2026 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "173",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": "2026-04-08T07:23:17.623Z"
+    },
+    "startDateLocal": "2026-04-08T10:00:00"
+  },
+  {
+    "iD": 14181168,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP03000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP03000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 3 - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "135478",
+          "competitiorName": "KAUCKY Jakub",
+          "competitiorOrg": "CZE",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "135478",
+              "playerName": "KAUCKY Jakub",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,5,6,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "224938",
+          "competitiorName": "KIHO Keisuke",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "224938",
+              "playerName": "KIHO Keisuke",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "5-11,5-11,6-11,0-0,0-0",
+      "resultsGameScores": "5-11,5-11,6-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "224938",
+        "serverReceiver": "135478",
+        "serverNext": "224938",
+        "serverCompetitor": "224938",
+        "receiverNext": "135478"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:11",
+        "startDateLocal": "04/08/2026 10:00:00",
+        "startDateUTC": "04/08/2026 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "156",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T10:00:00"
+  },
+  {
+    "iD": 14181155,
+    "eventId": "3373",
+    "documentCode": "TTEMSINGLES-----------GP01000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "3373",
+      "documentCode": "TTEMSINGLES-----------GP01000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Group 1 - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Nevşehir Hacı Bektaş Veli University Sport Center",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136005",
+          "competitiorName": "SZANTOSI David",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136005",
+              "playerName": "SZANTOSI David",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "132081",
+          "competitiorName": "ALSHAREIF Khalid",
+          "competitiorOrg": "KSA",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132081",
+              "playerName": "ALSHAREIF Khalid",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KSA",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,10,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,12-10,11-6,0-0,0-0",
+      "resultsGameScores": "11-6,12-10,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "136005",
+        "serverReceiver": "132081",
+        "serverNext": "136005",
+        "serverCompetitor": "136005",
+        "receiverNext": "132081"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:17:46",
+        "startDateLocal": "04/08/2026 10:00:00",
+        "startDateUTC": "04/08/2026 07:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "159",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0",
+      "matchStartTimeUTC": null
+    },
+    "startDateLocal": "2026-04-08T10:00:00"
+  }
+]

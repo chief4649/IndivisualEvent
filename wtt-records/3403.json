@@ -1,0 +1,4322 @@
+[
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP01.00010000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Men's Teams - Group 1 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP01.00010000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 1,
+    "description": "Women's Teams - Group 1 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP02.00010000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Men's Teams - Group 2 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP02.00010000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 1,
+    "description": "Women's Teams - Group 2 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP03.00010000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Men's Teams - Group 3 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 5",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP03.00010000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 1,
+    "description": "Women's Teams - Group 3 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 6",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP04.00010000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 1,
+    "description": "Men's Teams - Group 4 - Match 1",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 7",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP04.00020000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 2,
+    "description": "Men's Teams - Group 4 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 8",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP01.00020000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Women's Teams - Group 1 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP01.00020000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 2,
+    "description": "Men's Teams - Group 1 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP02.00020000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Women's Teams - Group 2 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP02.00020000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 2,
+    "description": "Men's Teams - Group 2 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP03.00020000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Women's Teams - Group 3 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 5",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP03.00020000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 2,
+    "description": "Men's Teams - Group 3 - Match 2",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 6",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP04.00030000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 3,
+    "description": "Men's Teams - Group 4 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 7",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP04.00040000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 4,
+    "description": "Men's Teams - Group 4 - Match 4",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 8",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP01.00030000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Men's Teams - Group 1 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 1",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP01.00030000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 1",
+    "roundKey": "group 1",
+    "matchNumber": 3,
+    "description": "Women's Teams - Group 1 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 2",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP02.00030000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Men's Teams - Group 2 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 3",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP02.00030000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 2",
+    "roundKey": "group 2",
+    "matchNumber": 3,
+    "description": "Women's Teams - Group 2 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 4",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP03.00030000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Men's Teams - Group 3 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 5",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "W.TEAM--------------.GP03.00030000",
+    "subEventType": "Women's Teams",
+    "categoryName": "Women Teams",
+    "discipline": "teams",
+    "gender": "women",
+    "roundLabel": "Group 3",
+    "roundKey": "group 3",
+    "matchNumber": 3,
+    "description": "Women's Teams - Group 3 - Match 3",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 6",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP04.00050000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 5,
+    "description": "Men's Teams - Group 4 - Match 5",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 7",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  },
+  {
+    "matchType": "team",
+    "id": null,
+    "eventId": "3403",
+    "documentCode": "M.TEAM--------------.GP04.00060000",
+    "subEventType": "Men's Teams",
+    "categoryName": "Men Teams",
+    "discipline": "teams",
+    "gender": "men",
+    "roundLabel": "Group 4",
+    "roundKey": "group 4",
+    "matchNumber": 6,
+    "description": "Men's Teams - Group 4 - Match 6",
+    "venue": "Parque del Este, Santo Domingo",
+    "table": "Table 8",
+    "overallScore": "0-0",
+    "resultStatus": "4",
+    "teams": [
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      },
+      {
+        "name": "",
+        "org": "",
+        "orgCode": ""
+      }
+    ],
+    "singles": [
+      {
+        "order": 1,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 2,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 3,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 4,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      },
+      {
+        "order": 5,
+        "documentCode": null,
+        "description": null,
+        "overallScore": "0-0",
+        "resultStatus": null,
+        "gameScores": [],
+        "competitors": [
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          },
+          {
+            "type": "player",
+            "id": "",
+            "name": "",
+            "org": "",
+            "orgCode": "",
+            "irm": null,
+            "players": []
+          }
+        ],
+        "winnerOrg": null
+      }
+    ],
+    "competitors": [],
+    "gameScores": [],
+    "source": "wtt"
+  }
+]

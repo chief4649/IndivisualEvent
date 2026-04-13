@@ -13,7 +13,7 @@
   "roundFallbacks": {
     "quarterfinal": "決勝トーナメント準々決勝",
     "semifinal": "決勝トーナメント準決勝",
-    "final": "決勝トーナメント決勝",
+    "final": "決勝",
     "round_of_128": "決勝トーナメント1回戦",
     "round_of_64": "決勝トーナメント2回戦",
     "round_of_16": "決勝トーナメント1回戦",
