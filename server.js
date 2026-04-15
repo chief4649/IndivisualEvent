@@ -702,6 +702,9 @@ function getWttEventUrl(eventId, sourceHint = "") {
   }
   const sourceText = String(sourceHint || "").trim().toLowerCase();
   if (["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText)) {
+    if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000) {
+      return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
+    }
     return `https://results.ittf.com/ittf-web-results/html/TTE${encodeURIComponent(normalizedId)}/results.html#/results`;
   }
   return getEventUrl("wtt", normalizedId);

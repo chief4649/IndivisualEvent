@@ -1564,8 +1564,28 @@ async function fetchZennihonOfficialResults(eventId, options = {}) {
   return normalized;
 }
 
-function getBornanBaseUrl(eventId) {
-  return `${ITTF_RESULTS_BASE_URL}/TTE${String(eventId || "").trim()}/`;
+function getBornanBaseUrls(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return [];
+  }
+
+  const urls = [`${ITTF_RESULTS_BASE_URL}/TTE${normalizedId}/`];
+  if (/^\d+$/.test(normalizedId)) {
+    urls.push(`${ITTF_RESULTS_BASE_URL}/${normalizedId}/`);
+  }
+  return [...new Set(urls)];
+}
+
+async function resolveBornanBaseUrl(eventId) {
+  const baseUrls = getBornanBaseUrls(eventId);
+  for (const baseUrl of baseUrls) {
+    const champ = await fetchJson(new URL("champ.json", baseUrl).toString(), { allowNotFound: true });
+    if (champ) {
+      return { baseUrl, champ };
+    }
+  }
+  return { baseUrl: baseUrls[0] || "", champ: null };
 }
 
 function getBornanEventKey(matchKey) {
@@ -1769,8 +1789,7 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
 }
 
 async function fetchBornanOfficialResults(eventId) {
-  const baseUrl = getBornanBaseUrl(eventId);
-  const champ = await fetchJson(new URL("champ.json", baseUrl).toString(), { allowNotFound: true });
+  const { baseUrl, champ } = await resolveBornanBaseUrl(eventId);
   if (!champ || !Array.isArray(champ.dates) || champ.dates.length === 0) {
     return null;
   }
@@ -1803,8 +1822,7 @@ async function fetchBornanOfficialResults(eventId) {
 }
 
 async function fetchBornanEventMeta(eventId) {
-  const baseUrl = getBornanBaseUrl(eventId);
-  const champ = await fetchJson(new URL("champ.json", baseUrl).toString(), { allowNotFound: true });
+  const { champ } = await resolveBornanBaseUrl(eventId);
   if (!champ) {
     return null;
   }
