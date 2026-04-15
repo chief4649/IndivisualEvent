@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const crypto = require("crypto");
+const { spawn } = require("child_process");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -51,6 +52,14 @@ const TEAM_TRANSLATIONS_VIEWER_PASSWORD = process.env.TEAM_TRANSLATIONS_VIEWER_P
 const rateLimitStore = new Map();
 const eventNameCache = new Map();
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
+const STORAGE_MANAGED_FILES = [
+  ["translations.ja.json", TRANSLATIONS_PATH],
+  ["rules.json", RULES_PATH],
+  ["event-names.json", EVENT_NAMES_PATH],
+  ["wtt-search-index.json", WTT_SEARCH_INDEX_PATH],
+  ["wtt-date-index.json", WTT_DATE_INDEX_PATH],
+  ["wtt-archive-index.json", WTT_ARCHIVE_INDEX_PATH],
+];
 let translationsSyncPromise = null;
 
 function ensureDir(dirPath) {
@@ -419,6 +428,163 @@ function readRequestBody(request) {
 
 function writePrettyJson(filePath, payload) {
   fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+}
+
+function computeFileSha256(filePath) {
+  const hash = crypto.createHash("sha256");
+  hash.update(fs.readFileSync(filePath));
+  return hash.digest("hex");
+}
+
+function getFileMeta(filePath, options = {}) {
+  const includeSha256 = options.includeSha256 !== false;
+  const normalizedPath = String(filePath || "");
+  if (!normalizedPath || !fs.existsSync(normalizedPath)) {
+    return {
+      exists: false,
+      path: normalizedPath,
+      size: 0,
+      mtime: null,
+      sha256: null,
+    };
+  }
+
+  const stat = fs.statSync(normalizedPath);
+  return {
+    exists: true,
+    path: normalizedPath,
+    size: stat.size,
+    mtime: stat.mtime.toISOString(),
+    sha256: includeSha256 ? computeFileSha256(normalizedPath) : null,
+  };
+}
+
+function listRecordFiles(dirPath, limit = 20, options = {}) {
+  const includeSha256 = options.includeSha256 === true;
+  const normalizedLimit = Math.max(1, Math.min(Number(limit) || 20, 100));
+  if (!dirPath || !fs.existsSync(dirPath)) {
+    return {
+      count: 0,
+      latest: [],
+      latestEventIds: [],
+      sample: [],
+    };
+  }
+
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map((entry) => {
+      const fullPath = path.join(dirPath, entry.name);
+      const stat = fs.statSync(fullPath);
+      return {
+        eventId: entry.name.replace(/\.json$/i, ""),
+        filename: entry.name,
+        path: fullPath,
+        size: stat.size,
+        mtime: stat.mtime.toISOString(),
+        mtimeMs: stat.mtimeMs,
+        sha256: includeSha256 ? computeFileSha256(fullPath) : null,
+      };
+    })
+    .sort((a, b) => b.mtimeMs - a.mtimeMs || a.filename.localeCompare(b.filename));
+
+  const latest = entries.slice(0, normalizedLimit).map(({ mtimeMs, ...item }) => item);
+  const sample = entries.slice(0, Math.min(5, normalizedLimit)).map(({ mtimeMs, ...item }) => item);
+
+  return {
+    count: entries.length,
+    latest,
+    latestEventIds: latest.map((item) => item.eventId),
+    sample,
+  };
+}
+
+function getStorageLookup(source, eventId) {
+  const normalizedSource = normalizeSource(source || "wtt");
+  const normalizedId = String(eventId || "").trim();
+  const dirPath = normalizedSource === "zennihon" ? ZENNIHON_ARCHIVE_DIR : WTT_ARCHIVE_DIR;
+  const meta = getFileMeta(path.join(dirPath, `${normalizedId}.json`), { includeSha256: false });
+  return {
+    requestedEventId: normalizedId,
+    exists: meta.exists,
+    path: meta.path,
+    size: meta.size,
+    mtime: meta.mtime,
+  };
+}
+
+function buildStorageStatus(options = {}) {
+  const source = normalizeSource(options.source || "wtt");
+  const eventId = String(options.event || "").trim();
+  const limit = Math.max(1, Math.min(Number(options.limit) || 20, 100));
+  return {
+    dataDir: DATA_DIR,
+    generatedAt: new Date().toISOString(),
+    wttRecordsDir: WTT_ARCHIVE_DIR,
+    zennihonRecordsDir: ZENNIHON_ARCHIVE_DIR,
+    files: Object.fromEntries(
+      STORAGE_MANAGED_FILES.map(([name, filePath]) => [name, getFileMeta(filePath)]),
+    ),
+    wttRecords: listRecordFiles(WTT_ARCHIVE_DIR, limit),
+    zennihonRecords: listRecordFiles(ZENNIHON_ARCHIVE_DIR, Math.min(limit, 20)),
+    lookup: eventId ? getStorageLookup(source, eventId) : null,
+  };
+}
+
+function buildSyncManifest(options = {}) {
+  const includeSha256 = String(options.sha256 || "1") !== "0";
+  const includeZennihon = String(options.includeZennihon || "0") === "1";
+  const entries = STORAGE_MANAGED_FILES.map(([name, filePath]) => ({
+    name,
+    type: "file",
+    ...getFileMeta(filePath, { includeSha256 }),
+  }));
+
+  const addDirectory = (dirPath) => {
+    if (!dirPath || !fs.existsSync(dirPath)) {
+      return;
+    }
+    fs.readdirSync(dirPath, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+      .forEach((entry) => {
+        entries.push({
+          name: entry.name,
+          type: "dir-entry",
+          ...getFileMeta(path.join(dirPath, entry.name), { includeSha256 }),
+        });
+      });
+  };
+
+  addDirectory(WTT_ARCHIVE_DIR);
+  if (includeZennihon) {
+    addDirectory(ZENNIHON_ARCHIVE_DIR);
+  }
+
+  entries.sort((a, b) => a.path.localeCompare(b.path));
+  return {
+    dataDir: DATA_DIR,
+    generatedAt: new Date().toISOString(),
+    includeSha256,
+    includeZennihon,
+    entries,
+  };
+}
+
+function createExportFilename() {
+  const now = new Date();
+  const pad = (value) => String(value).padStart(2, "0");
+  return `indivisualevent-data-${now.getFullYear()}${pad(now.getMonth() + 1)}${pad(now.getDate())}-${pad(now.getHours())}${pad(now.getMinutes())}${pad(now.getSeconds())}.tar.gz`;
+}
+
+function getExportRelativePaths(includeZennihon) {
+  const paths = STORAGE_MANAGED_FILES
+    .map(([, filePath]) => path.relative(DATA_DIR, filePath))
+    .filter((relativePath) => relativePath && !relativePath.startsWith(".."));
+  paths.push(path.relative(DATA_DIR, WTT_ARCHIVE_DIR));
+  if (includeZennihon) {
+    paths.push(path.relative(DATA_DIR, ZENNIHON_ARCHIVE_DIR));
+  }
+  return paths.filter((relativePath) => fs.existsSync(path.join(DATA_DIR, relativePath)));
 }
 
 function getEventNamesMap() {
@@ -1253,6 +1419,88 @@ function createFriendlyErrorMessage(error) {
   return message;
 }
 
+function handleAdminStorageStatus(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+  try {
+    const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+    sendJson(response, 200, buildStorageStatus({
+      source: searchParams.get("source") || "wtt",
+      event: searchParams.get("event") || "",
+      limit: searchParams.get("limit") || "20",
+    }));
+  } catch (error) {
+    sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
+  }
+  return true;
+}
+
+function handleAdminSyncManifest(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+  try {
+    const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+    sendJson(response, 200, buildSyncManifest({
+      includeZennihon: searchParams.get("includeZennihon") || "0",
+      sha256: searchParams.get("sha256") || "1",
+    }));
+  } catch (error) {
+    sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
+  }
+  return true;
+}
+
+function handleAdminExportData(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+
+  const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+  const format = String(searchParams.get("format") || "tar.gz").toLowerCase();
+  const includeZennihon = String(searchParams.get("includeZennihon") || "0") === "1";
+  if (format !== "tar.gz") {
+    sendJson(response, 400, { error: "Only tar.gz is supported" });
+    return true;
+  }
+
+  const relativePaths = getExportRelativePaths(includeZennihon);
+  if (!relativePaths.length) {
+    sendJson(response, 404, { error: "No exportable files found" });
+    return true;
+  }
+
+  response.writeHead(200, {
+    "content-type": "application/gzip",
+    "content-disposition": `attachment; filename="${createExportFilename()}"`,
+    "cache-control": "no-store",
+  });
+
+  const tarProcess = spawn("tar", ["-czf", "-", "-C", DATA_DIR, ...relativePaths], {
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+
+  tarProcess.stdout.pipe(response);
+  tarProcess.stderr.on("data", (chunk) => {
+    console.error(`[admin export-data] ${chunk.toString("utf8").trim()}`);
+  });
+  tarProcess.on("error", (error) => {
+    console.error(error);
+    if (!response.headersSent) {
+      sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
+      return;
+    }
+    response.destroy(error);
+  });
+  tarProcess.on("close", (code) => {
+    if (code !== 0 && !response.destroyed) {
+      response.destroy(new Error(`tar exited with code ${code}`));
+    }
+  });
+  return true;
+}
+
 function summarizeRounds(matches) {
   return [...new Set(matches.map((match) => match.roundLabel).filter(Boolean))];
 }
@@ -1620,6 +1868,18 @@ async function handleViewerLogin(request, response) {
 }
 
 function handleConfigGet(request, response, pathname) {
+  if (pathname === "/api/admin/storage-status") {
+    return handleAdminStorageStatus(request, response);
+  }
+
+  if (pathname === "/api/admin/export-data") {
+    return handleAdminExportData(request, response);
+  }
+
+  if (pathname === "/api/admin/sync-manifest") {
+    return handleAdminSyncManifest(request, response);
+  }
+
   if (pathname === "/api/event-names") {
     const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
     const eventId = searchParams.get("event");
