@@ -386,6 +386,38 @@
         background: rgba(255, 255, 255, 0.5);
       }
 
+      .storage-box {
+        margin-top: 18px;
+        padding: 14px;
+        border: 1px dashed var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.5);
+        display: grid;
+        gap: 12px;
+      }
+
+      .storage-box pre {
+        min-height: 180px;
+        max-height: 360px;
+        background: rgba(28, 25, 23, 0.92);
+        border-radius: 14px;
+      }
+
+      .storage-summary {
+        display: grid;
+        gap: 8px;
+        font-size: 0.9rem;
+        line-height: 1.6;
+      }
+
+      .storage-help {
+        margin: 0;
+        padding-left: 1.2rem;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 0.88rem;
+      }
+
       .bulk-box textarea {
         min-height: 180px;
       }
@@ -603,16 +635,50 @@
                 <button class="secondary" type="button" id="clear-bulk">クリア</button>
               </div>
             </div>
+
             </section>
 
             <section class="editor-box">
-            <strong>ルール JSON</strong>
-            <p class="hint">見出し表記やラウンド名ルールをここで編集できます。</p>
-            <div class="actions">
-              <button class="secondary" type="button" id="load-rules">読み込む</button>
-              <button class="primary" type="button" id="save-rules">保存する</button>
-            </div>
-            <textarea id="rules-editor" spellcheck="false"></textarea>
+              <strong>Render 保存状態</strong>
+              <p class="hint">右カラムでは、Render 永続ディスクにある最新データを確認します。辞書編集とは分けて、確認・回収専用にしています。</p>
+              <div class="storage-box" style="margin-top: 0;">
+                <ul class="storage-help">
+                  <li>保存状態を確認: 主要ファイルの有無、更新時刻、records 件数を確認します。</li>
+                  <li>eventId 存在確認: 例 `3489` のような大会 JSON が Render 上にあるか確認します。</li>
+                  <li>manifest を確認: 同期比較向けの一覧を JSON で表示します。</li>
+                  <li>最新データをダウンロード: Render 側の最新データを tar.gz で回収します。</li>
+                </ul>
+                <div class="row">
+                  <label>
+                    確認 source
+                    <select id="storage-source">
+                      <option value="wtt">wtt</option>
+                      <option value="zennihon">zennihon</option>
+                    </select>
+                  </label>
+                  <label>
+                    eventId 存在確認
+                    <input id="storage-event" placeholder="3489">
+                  </label>
+                </div>
+                <div class="row">
+                  <label>
+                    latest 件数
+                    <input id="storage-limit" type="number" min="1" max="100" value="20">
+                  </label>
+                  <label class="check" style="align-self:end;">
+                    <input id="storage-include-zennihon" type="checkbox">
+                    export に全日本 records を含める
+                  </label>
+                </div>
+                <div class="actions">
+                  <button class="secondary" type="button" id="load-storage-status">保存状態を確認</button>
+                  <button class="secondary" type="button" id="load-storage-manifest">manifest を確認</button>
+                  <button class="ghost" type="button" id="download-storage-export">最新データをダウンロード</button>
+                </div>
+                <div class="storage-summary" id="storage-summary">未取得です。</div>
+                <pre id="storage-output">ここに storage status / manifest が表示されます。</pre>
+              </div>
             </section>
           </div>
         </div>
@@ -626,10 +692,15 @@
       const meta = document.getElementById("meta");
       const copyButton = document.getElementById("copy-button");
       const translationsEditor = document.getElementById("translations-editor");
-      const rulesEditor = document.getElementById("rules-editor");
       const bulkTarget = document.getElementById("bulk-target");
       const bulkTranslations = document.getElementById("bulk-translations");
       const adminTokenInput = document.getElementById("admin-token");
+      const storageSource = document.getElementById("storage-source");
+      const storageEvent = document.getElementById("storage-event");
+      const storageLimit = document.getElementById("storage-limit");
+      const storageIncludeZennihon = document.getElementById("storage-include-zennihon");
+      const storageSummary = document.getElementById("storage-summary");
+      const storageOutput = document.getElementById("storage-output");
       const eventName = document.getElementById("event-name");
       const eventPeriod = document.getElementById("event-period");
       const eventSearchInput = document.getElementById("event-search-input");
@@ -912,6 +983,81 @@
         return token ? { Authorization: `Bearer ${token}` } : {};
       }
 
+      function setStorageSummary(lines) {
+        storageSummary.innerHTML = Array.isArray(lines) ? lines.join("<br>") : String(lines || "");
+      }
+
+      async function loadStorageStatus() {
+        const params = new URLSearchParams({
+          source: storageSource.value || "wtt",
+          limit: storageLimit.value || "20",
+        });
+        if (storageEvent.value.trim()) {
+          params.set("event", storageEvent.value.trim());
+        }
+        const response = await fetch(`/api/admin/storage-status?${params.toString()}`, {
+          headers: buildAuthHeaders(),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || "storage-status の取得に失敗しました。");
+        }
+        storageOutput.textContent = JSON.stringify(data, null, 2);
+        setStorageSummary([
+          `DATA_DIR: ${data.dataDir}`,
+          `WTT records: ${data.wttRecords?.count ?? 0}件`,
+          `全日本 records: ${data.zennihonRecords?.count ?? 0}件`,
+          data.lookup
+            ? `eventId ${data.lookup.requestedEventId}: ${data.lookup.exists ? "存在します" : "見つかりません"}`
+            : `eventId 確認: 未指定`,
+        ]);
+      }
+
+      async function loadStorageManifest() {
+        const params = new URLSearchParams({
+          sha256: "0",
+          includeZennihon: storageIncludeZennihon.checked ? "1" : "0",
+        });
+        const response = await fetch(`/api/admin/sync-manifest?${params.toString()}`, {
+          headers: buildAuthHeaders(),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data.error || "sync-manifest の取得に失敗しました。");
+        }
+        storageOutput.textContent = JSON.stringify(data, null, 2);
+        setStorageSummary([
+          `manifest entries: ${Array.isArray(data.entries) ? data.entries.length : 0}`,
+          `sha256: ${data.includeSha256 ? "あり" : "なし"}`,
+          `全日本含む: ${data.includeZennihon ? "はい" : "いいえ"}`,
+        ]);
+      }
+
+      async function downloadStorageExport() {
+        const response = await fetch(`/api/admin/export-data?format=tar.gz&includeZennihon=${storageIncludeZennihon.checked ? "1" : "0"}`, {
+          headers: buildAuthHeaders(),
+        });
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.error || "export-data の取得に失敗しました。");
+        }
+        const blob = await response.blob();
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        const disposition = response.headers.get("content-disposition") || "";
+        const match = disposition.match(/filename=\"?([^\"]+)\"?/);
+        link.href = url;
+        link.download = match?.[1] || "indivisualevent-data.tar.gz";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+        setStorageSummary([
+          "最新データをダウンロードしました。",
+          `全日本含む: ${storageIncludeZennihon.checked ? "はい" : "いいえ"}`,
+        ]);
+      }
+
       async function loadConfig(kind) {
         const authHeaders = buildAuthHeaders();
         const response = await fetch(`/api/config/${kind}`, {
@@ -925,13 +1071,11 @@
         const text = JSON.stringify(data.data, null, 2);
         if (kind === "translations") {
           translationsEditor.value = text;
-        } else {
-          rulesEditor.value = text;
         }
       }
 
       async function saveConfig(kind) {
-        const body = kind === "translations" ? translationsEditor.value : rulesEditor.value;
+        const body = kind === "translations" ? translationsEditor.value : "";
         const response = await fetch(`/api/config/${kind}`, {
           method: "PUT",
           headers: {
@@ -1092,24 +1236,6 @@
         }
       });
 
-      document.getElementById("load-rules").addEventListener("click", async () => {
-        try {
-          await loadConfig("rules");
-          setStatus("ルールを読み込みました。");
-        } catch (error) {
-          setStatus(error.message);
-        }
-      });
-
-      document.getElementById("save-rules").addEventListener("click", async () => {
-        try {
-          await saveConfig("rules");
-          setStatus("ルールを保存しました。");
-        } catch (error) {
-          setStatus(error.message);
-        }
-      });
-
       document.getElementById("apply-bulk").addEventListener("click", async () => {
         try {
           await applyBulkTranslations();
@@ -1121,6 +1247,33 @@
       document.getElementById("clear-bulk").addEventListener("click", () => {
         bulkTranslations.value = "";
         setStatus("一括追加の入力をクリアしました。");
+      });
+
+      document.getElementById("load-storage-status").addEventListener("click", async () => {
+        try {
+          await loadStorageStatus();
+          setStatus("保存状態を取得しました。");
+        } catch (error) {
+          setStatus(error.message);
+        }
+      });
+
+      document.getElementById("load-storage-manifest").addEventListener("click", async () => {
+        try {
+          await loadStorageManifest();
+          setStatus("manifest を取得しました。");
+        } catch (error) {
+          setStatus(error.message);
+        }
+      });
+
+      document.getElementById("download-storage-export").addEventListener("click", async () => {
+        try {
+          await downloadStorageExport();
+          setStatus("storage export をダウンロードしました。");
+        } catch (error) {
+          setStatus(error.message);
+        }
       });
 
       (() => {
@@ -1146,7 +1299,6 @@
         loadCategories().catch(() => {});
         loadRounds().catch(() => {});
         loadConfig("translations").catch(() => {});
-        loadConfig("rules").catch(() => {});
       })();
     </script>
   </body>
