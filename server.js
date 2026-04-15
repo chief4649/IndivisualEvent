@@ -121,6 +121,25 @@ function ensureRuntimeFiles() {
   syncFileFromDefaultIfNewer(WTT_ARCHIVE_INDEX_PATH, path.join(__dirname, "wtt-archive-index.json"));
 }
 
+function validateTranslationsPayload(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error("辞書 JSON はオブジェクト形式である必要があります。");
+  }
+
+  const normalized = {
+    teams: value.teams && typeof value.teams === "object" && !Array.isArray(value.teams) ? value.teams : {},
+    players: value.players && typeof value.players === "object" && !Array.isArray(value.players) ? value.players : {},
+    rounds: value.rounds && typeof value.rounds === "object" && !Array.isArray(value.rounds) ? value.rounds : {},
+    headers: value.headers && typeof value.headers === "object" && !Array.isArray(value.headers) ? value.headers : {},
+  };
+
+  if (Object.keys(normalized.teams).length === 0 && Object.keys(normalized.players).length === 0) {
+    throw new Error("辞書が空です。空保存を防ぐため、teams または players に1件以上必要です。");
+  }
+
+  return normalized;
+}
+
 function hasSharedTranslationsSource() {
   return Boolean(TEAM_TRANSLATIONS_BASE_URL && TEAM_TRANSLATIONS_ADMIN_TOKEN && TEAM_TRANSLATIONS_VIEWER_PASSWORD);
 }
@@ -1942,10 +1961,11 @@ async function handleConfigUpdate(request, response, pathname) {
     const parsed = JSON.parse(rawBody || "{}");
 
     if (pathname === "/api/config/translations") {
+      const validated = validateTranslationsPayload(parsed);
       if (hasSharedTranslationsSource()) {
-        await saveSharedTranslations(parsed);
+        await saveSharedTranslations(validated);
       }
-      writePrettyJson(TRANSLATIONS_PATH, parsed);
+      writePrettyJson(TRANSLATIONS_PATH, validated);
       sendJson(response, 200, {
         ok: true,
         file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
