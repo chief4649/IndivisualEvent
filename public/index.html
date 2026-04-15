@@ -615,6 +615,9 @@
               <button class="secondary" type="button" id="load-translations">読み込む</button>
               <button class="primary" type="button" id="save-translations">保存する</button>
             </div>
+            <div class="admin-note" id="translations-safety-note">
+              保存前チェック: 辞書の件数を確認してから保存します。空の辞書は保存できません。
+            </div>
             <textarea id="translations-editor" spellcheck="false"></textarea>
 
             <div class="bulk-box">
@@ -692,6 +695,7 @@
       const meta = document.getElementById("meta");
       const copyButton = document.getElementById("copy-button");
       const translationsEditor = document.getElementById("translations-editor");
+      const translationsSafetyNote = document.getElementById("translations-safety-note");
       const bulkTarget = document.getElementById("bulk-target");
       const bulkTranslations = document.getElementById("bulk-translations");
       const adminTokenInput = document.getElementById("admin-token");
@@ -713,6 +717,7 @@
       let categoryRequestId = 0;
       let roundRequestId = 0;
       let eventSearchRequestId = 0;
+      let lastSavedTranslationsStats = null;
 
       function setStatus(message) {
         status.textContent = message;
@@ -983,6 +988,45 @@
         return token ? { Authorization: `Bearer ${token}` } : {};
       }
 
+      function analyzeTranslationsPayload(text) {
+        const parsed = JSON.parse(text || "{}");
+        const normalized = {
+          teams: parsed.teams && typeof parsed.teams === "object" && !Array.isArray(parsed.teams) ? parsed.teams : {},
+          players: parsed.players && typeof parsed.players === "object" && !Array.isArray(parsed.players) ? parsed.players : {},
+          rounds: parsed.rounds && typeof parsed.rounds === "object" && !Array.isArray(parsed.rounds) ? parsed.rounds : {},
+          headers: parsed.headers && typeof parsed.headers === "object" && !Array.isArray(parsed.headers) ? parsed.headers : {},
+        };
+        return {
+          parsed,
+          normalized,
+          teamsCount: Object.keys(normalized.teams).length,
+          playersCount: Object.keys(normalized.players).length,
+          roundsCount: Object.keys(normalized.rounds).length,
+          headersCount: Object.keys(normalized.headers).length,
+        };
+      }
+
+      function updateTranslationsSafetyNote() {
+        try {
+          const stats = analyzeTranslationsPayload(translationsEditor.value);
+          const total = stats.teamsCount + stats.playersCount;
+          const level = total === 0 ? "危険" : total < 20 ? "要確認" : "OK";
+          translationsSafetyNote.textContent =
+            `保存前チェック: ${level} / teams ${stats.teamsCount}件 / players ${stats.playersCount}件 / rounds ${stats.roundsCount}件 / headers ${stats.headersCount}件`;
+        } catch (error) {
+          translationsSafetyNote.textContent = `保存前チェック: JSON エラー (${error.message})`;
+        }
+      }
+
+      function rememberTranslationsStats(stats) {
+        lastSavedTranslationsStats = {
+          teamsCount: stats.teamsCount,
+          playersCount: stats.playersCount,
+          roundsCount: stats.roundsCount,
+          headersCount: stats.headersCount,
+        };
+      }
+
       function setStorageSummary(lines) {
         storageSummary.innerHTML = Array.isArray(lines) ? lines.join("<br>") : String(lines || "");
       }
@@ -1071,11 +1115,45 @@
         const text = JSON.stringify(data.data, null, 2);
         if (kind === "translations") {
           translationsEditor.value = text;
+          const stats = analyzeTranslationsPayload(text);
+          rememberTranslationsStats(stats);
+          updateTranslationsSafetyNote();
         }
       }
 
       async function saveConfig(kind) {
-        const body = kind === "translations" ? translationsEditor.value : "";
+        let body = kind === "translations" ? translationsEditor.value : "";
+        if (kind === "translations") {
+          const stats = analyzeTranslationsPayload(body);
+          const total = stats.teamsCount + stats.playersCount;
+          if (total === 0) {
+            throw new Error("辞書が空です。空保存を防ぐため保存できません。");
+          }
+          if (lastSavedTranslationsStats) {
+            const previousTotal = lastSavedTranslationsStats.teamsCount + lastSavedTranslationsStats.playersCount;
+            if (total < previousTotal) {
+              const ok = window.confirm(
+                [
+                  "辞書件数が前回より減少しています。本当に良いですか？",
+                  `前回: teams ${lastSavedTranslationsStats.teamsCount}件 / players ${lastSavedTranslationsStats.playersCount}件`,
+                  `今回: teams ${stats.teamsCount}件 / players ${stats.playersCount}件`,
+                ].join("\n"),
+              );
+              if (!ok) {
+                throw new Error("保存を中止しました。");
+              }
+            }
+          }
+          if (total < 20) {
+            const ok = window.confirm(
+              `辞書件数がかなり少ないです。\\nteams ${stats.teamsCount}件 / players ${stats.playersCount}件\\nこのまま保存しますか？`,
+            );
+            if (!ok) {
+              throw new Error("保存を中止しました。");
+            }
+          }
+          body = JSON.stringify(stats.normalized, null, 2);
+        }
         const response = await fetch(`/api/config/${kind}`, {
           method: "PUT",
           headers: {
@@ -1087,6 +1165,10 @@
         const data = await response.json();
         if (!response.ok) {
           throw new Error(data.error || `${kind} の保存に失敗しました。`);
+        }
+        if (kind === "translations") {
+          rememberTranslationsStats(analyzeTranslationsPayload(body));
+          updateTranslationsSafetyNote();
         }
       }
 
@@ -1143,6 +1225,7 @@
         });
 
         translationsEditor.value = JSON.stringify(parsed, null, 2);
+        updateTranslationsSafetyNote();
         const targetLabel = target === "players" ? "選手" : target === "teams" ? "チーム" : "ラウンド";
         setStatus(`${entries.length}件を${targetLabel}に反映しました。`);
         translationsEditor.focus();
@@ -1249,6 +1332,10 @@
         setStatus("一括追加の入力をクリアしました。");
       });
 
+      translationsEditor.addEventListener("input", () => {
+        updateTranslationsSafetyNote();
+      });
+
       document.getElementById("load-storage-status").addEventListener("click", async () => {
         try {
           await loadStorageStatus();
@@ -1298,7 +1385,8 @@
         loadEventName().catch(() => {});
         loadCategories().catch(() => {});
         loadRounds().catch(() => {});
-        loadConfig("translations").catch(() => {});
+      updateTranslationsSafetyNote();
+      loadConfig("translations").catch(() => {});
       })();
     </script>
   </body>
