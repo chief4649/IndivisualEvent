@@ -1134,6 +1134,37 @@ function normalizeTeamMatch(item) {
   }));
   const round = extractRound(card.subEventDescription);
   const nested = card?.teamParentData?.extended_info?.matches;
+  const singles = Array.isArray(nested) ? nested.map(normalizeIndividualMatch) : [];
+  const topLevelSingle = normalizeIndividualMatch({ match_result: card, value: card.documentCode }, 0);
+  topLevelSingle.competitors = (topLevelSingle.competitors || []).map((competitor) => {
+    const competitorName = String(competitor?.name || "").trim();
+    const matchingPlayers = (competitor?.players || []).filter(
+      (player) => String(player?.name || "").trim() === competitorName,
+    );
+    return {
+      ...competitor,
+      players: matchingPlayers.length ? matchingPlayers : competitor?.players || [],
+    };
+  });
+  const hasTopLevelPlayers = (topLevelSingle?.competitors || []).some((competitor) =>
+    Boolean(competitor?.name),
+  );
+  const alreadyIncluded = singles.some((single) => {
+    const [left, right] = single?.competitors || [];
+    const [topLeft, topRight] = topLevelSingle?.competitors || [];
+    return (
+      left?.name === topLeft?.name &&
+      left?.org === topLeft?.org &&
+      right?.name === topRight?.name &&
+      right?.org === topRight?.org
+    );
+  });
+  if (hasTopLevelPlayers && !alreadyIncluded) {
+    singles.splice(Math.min(2, singles.length), 0, topLevelSingle);
+  }
+  singles.forEach((single, index) => {
+    single.order = index + 1;
+  });
 
   return {
     matchType: "team",
@@ -1153,7 +1184,7 @@ function normalizeTeamMatch(item) {
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
     teams,
-    singles: Array.isArray(nested) ? nested.map(normalizeIndividualMatch) : [],
+    singles,
     competitors: [],
     gameScores: [],
   };
@@ -2404,6 +2435,9 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   }
   const leftSets = leftCompetitorIndex === 0 ? rawLeftSets : rawRightSets;
   const rightSets = leftCompetitorIndex === 0 ? rawRightSets : rawLeftSets;
+  if (!hasGameScores) {
+    return `${leftSets}-${rightSets}`;
+  }
 
   const normalizedGames = match.gameScores.map((game) => {
     const [rawLeft, rawRight] = String(game).split("-");
