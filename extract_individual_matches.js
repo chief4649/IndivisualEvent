@@ -1889,7 +1889,7 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   if (indexedEntry?.archived && !indexedEntry?.forced) {
     return {
       eventId: eventIdText,
-      source: mergedEntry.source || "wtt",
+      source: indexedEntry.source || mergedEntry.source || "wtt",
       title: mergedEntry.title || indexedEntry.title || "",
       startDate: mergedEntry.startDate || null,
       endDate: mergedEntry.endDate || null,

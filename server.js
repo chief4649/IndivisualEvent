@@ -700,11 +700,11 @@ function getWttEventUrl(eventId, sourceHint = "") {
   if (!normalizedId) {
     return "";
   }
+  if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000) {
+    return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
+  }
   const sourceText = String(sourceHint || "").trim().toLowerCase();
   if (["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText)) {
-    if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000) {
-      return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
-    }
     return `https://results.ittf.com/ittf-web-results/html/TTE${encodeURIComponent(normalizedId)}/results.html#/results`;
   }
   return getEventUrl("wtt", normalizedId);
@@ -734,10 +734,14 @@ function readWttSearchIndex() {
 
 function getMergedWttSearchEntry(eventId, entry, dateIndex) {
   const dateEntry = dateIndex[String(eventId || "").trim()] || {};
-  return {
+  const merged = {
     ...(entry || {}),
     ...(dateEntry || {}),
   };
+  if (entry?.source) {
+    merged.source = entry.source;
+  }
+  return merged;
 }
 
 function toDateOnly(value) {
@@ -1243,7 +1247,7 @@ async function discoverWttSearchEvent(eventId) {
     source: "wtt",
     event: normalizedId,
     eventName,
-    eventUrl: getEventUrl("wtt", normalizedId),
+    eventUrl: meta?.eventUrl || getEventUrl("wtt", normalizedId),
     startDate: meta?.startDate || null,
     endDate: meta?.endDate || null,
     dateLabel: meta?.dateLabel || "",
