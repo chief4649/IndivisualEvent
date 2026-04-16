@@ -21,6 +21,7 @@ const WTT_EVENT_ID_ALIASES = {
 const ZENNIHON_ARCHIVE_YEARS = new Set(
   Array.from({ length: 15 }, (_, index) => String(2011 + index)),
 );
+const normalizedPayloadCache = new Map();
 
 function parseArgs(argv) {
   const args = {
@@ -1256,6 +1257,17 @@ function isPreNormalizedMatch(item) {
     Array.isArray(item.competitors) &&
     typeof item.categoryName === "string",
   );
+}
+
+function getNormalizedPayloadCacheKey(args) {
+  return JSON.stringify({
+    source: args.source,
+    event: args.event,
+    take: args.take,
+    cacheDir: args.cacheDir,
+    wttArchiveDir: args.wttArchiveDir,
+    zennihonArchiveDir: args.zennihonArchiveDir,
+  });
 }
 
 function getZennihonResultBaseUrl(eventId) {
@@ -3019,23 +3031,30 @@ async function getProcessedMatches(options = {}) {
     }
   }
 
-  const payload = await fetchOfficialResultsCached(
-    args.source,
-    args.event,
-    args.take,
-    args.cacheDir,
-    args.refreshCache,
-    {
-      zennihonArchiveDir: args.zennihonArchiveDir,
-      wttArchiveDir: args.wttArchiveDir,
-      wttArchiveIndexPath: args.wttArchiveIndexPath,
-      allowNetworkForZennihonArchiveMiss: args.allowNetworkForZennihonArchiveMiss,
-      writeZennihonArchive: args.writeZennihonArchive,
-    },
-  );
-  const normalized = args.source === "zennihon"
-    ? payload.filter(Boolean)
-    : payload.map((item) => (isPreNormalizedMatch(item) ? item : normalizeOfficialResultItem(item))).filter(Boolean);
+  const normalizedCacheKey = getNormalizedPayloadCacheKey(args);
+  let normalized = !args.refreshCache ? normalizedPayloadCache.get(normalizedCacheKey) : null;
+  if (!normalized) {
+    const payload = await fetchOfficialResultsCached(
+      args.source,
+      args.event,
+      args.take,
+      args.cacheDir,
+      args.refreshCache,
+      {
+        zennihonArchiveDir: args.zennihonArchiveDir,
+        wttArchiveDir: args.wttArchiveDir,
+        wttArchiveIndexPath: args.wttArchiveIndexPath,
+        allowNetworkForZennihonArchiveMiss: args.allowNetworkForZennihonArchiveMiss,
+        writeZennihonArchive: args.writeZennihonArchive,
+      },
+    );
+    normalized = args.source === "zennihon"
+      ? payload.filter(Boolean)
+      : payload.map((item) => (isPreNormalizedMatch(item) ? item : normalizeOfficialResultItem(item))).filter(Boolean);
+    if (!args.refreshCache) {
+      normalizedPayloadCache.set(normalizedCacheKey, normalized);
+    }
+  }
   const translations = readTranslations(args.translations);
   const filtered = applyFilters(normalized, args, translations);
   const rules = readRules(args.rules);
