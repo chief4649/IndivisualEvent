@@ -717,6 +717,8 @@
       let categoryRequestId = 0;
       let roundRequestId = 0;
       let eventSearchRequestId = 0;
+      let lastEventSearchQuery = "";
+      let lastEventSearchResults = [];
       let lastSavedTranslationsStats = null;
 
       function setStatus(message) {
@@ -862,6 +864,8 @@
         const sourceValue = form.elements.namedItem("source")?.value?.trim() || "wtt";
         const query = eventSearchInput.value.trim();
         if (!query) {
+          lastEventSearchQuery = "";
+          lastEventSearchResults = [];
           eventSearchResults.innerHTML = "";
           return;
         }
@@ -875,7 +879,9 @@
         if (requestId !== eventSearchRequestId) {
           return;
         }
-        renderEventSearchResults(data.events || []);
+        lastEventSearchQuery = query;
+        lastEventSearchResults = data.events || [];
+        renderEventSearchResults(lastEventSearchResults);
       }
 
       function setCategoryOptions(categories) {
@@ -1285,6 +1291,18 @@
       });
 
       eventSearchInput.addEventListener("input", () => {
+        loadEventSearchResults().catch(() => {});
+      });
+
+      eventSearchInput.addEventListener("focus", () => {
+        const query = eventSearchInput.value.trim();
+        if (!query) {
+          return;
+        }
+        if (query === lastEventSearchQuery) {
+          renderEventSearchResults(lastEventSearchResults);
+          return;
+        }
         loadEventSearchResults().catch(() => {});
       });
 
