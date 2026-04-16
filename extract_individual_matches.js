@@ -3032,9 +3032,10 @@ async function getProcessedMatches(options = {}) {
   }
 
   const normalizedCacheKey = getNormalizedPayloadCacheKey(args);
+  let payload = null;
   let normalized = !args.refreshCache ? normalizedPayloadCache.get(normalizedCacheKey) : null;
   if (!normalized) {
-    const payload = await fetchOfficialResultsCached(
+    payload = await fetchOfficialResultsCached(
       args.source,
       args.event,
       args.take,
