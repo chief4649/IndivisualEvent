@@ -665,6 +665,22 @@ function getStoredWttIndexedName(eventId) {
   return "";
 }
 
+function isWttTeamEventName(eventName) {
+  const name = String(eventName || "").trim().toLowerCase();
+  if (!name) {
+    return false;
+  }
+  return /\bteam\b/.test(name);
+}
+
+function isWttHostedEventName(eventName) {
+  const name = String(eventName || "").trim().toLowerCase();
+  if (!name) {
+    return false;
+  }
+  return /\bwtt\b/.test(name) || /world team table tennis championships finals/.test(name);
+}
+
 function getEventUrl(source, eventId) {
   const normalizedSource = normalizeSource(source);
   const normalizedId = String(eventId || "").trim();
@@ -695,17 +711,21 @@ function resolveEventId(source, eventId) {
   return normalizedId;
 }
 
-function getWttEventUrl(eventId, sourceHint = "") {
+function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
   const normalizedId = String(eventId || "").trim();
   if (!normalizedId) {
     return "";
   }
-  if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000) {
+  const resolvedName = String(eventName || "").trim() || getStoredWttIndexedName(normalizedId);
+  if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000 && !isWttHostedEventName(resolvedName)) {
     return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
   }
   const sourceText = String(sourceHint || "").trim().toLowerCase();
-  if (["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText)) {
+  if (["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText) && !isWttHostedEventName(resolvedName)) {
     return `https://results.ittf.com/ittf-web-results/html/TTE${encodeURIComponent(normalizedId)}/results.html#/results`;
+  }
+  if (isWttTeamEventName(resolvedName)) {
+    return `https://www.worldtabletennis.com/teamseventInfo?eventId=${encodeURIComponent(normalizedId)}`;
   }
   return getEventUrl("wtt", normalizedId);
 }
@@ -959,7 +979,7 @@ async function fetchEventMeta(eventId, source = "wtt") {
         source: normalizedSource,
         event: normalizedId,
         eventName: eventName || lifecycle?.title || "",
-        eventUrl: getWttEventUrl(normalizedId, lifecycle?.source),
+        eventUrl: getWttEventUrl(normalizedId, lifecycle?.source, eventName || lifecycle?.title || ""),
         startDate,
         endDate,
         dateLabel: formatDateRange(startDate, endDate),
@@ -1114,7 +1134,7 @@ function buildSearchableEvents(source, query) {
         source: normalizedSource,
         event: eventId,
         eventName: name,
-        eventUrl: getWttEventUrl(eventId, mergedEntry?.source),
+        eventUrl: getWttEventUrl(eventId, mergedEntry?.source, name),
         startDate: mergedEntry?.startDate || null,
         endDate: mergedEntry?.endDate || null,
         dateLabel,
@@ -1247,7 +1267,7 @@ async function discoverWttSearchEvent(eventId) {
     source: "wtt",
     event: normalizedId,
     eventName,
-    eventUrl: meta?.eventUrl || getEventUrl("wtt", normalizedId),
+    eventUrl: meta?.eventUrl || getWttEventUrl(normalizedId, "", eventName),
     startDate: meta?.startDate || null,
     endDate: meta?.endDate || null,
     dateLabel: meta?.dateLabel || "",
