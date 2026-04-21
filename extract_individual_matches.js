@@ -16,6 +16,7 @@ const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
 const WTT_EVENT_ID_ALIASES = {
+  "3487": "34031",
   "5524": "3500",
 };
 const ZENNIHON_ARCHIVE_YEARS = new Set(
@@ -1931,6 +1932,46 @@ function isLikelyBornanFallbackCandidate(eventId) {
   return /^\d+$/.test(String(eventId || "").trim());
 }
 
+function isWttHostedEventName(eventName) {
+  const name = String(eventName || "").trim().toLowerCase();
+  if (!name) {
+    return false;
+  }
+  return /\bwtt\b/.test(name) || /world team table tennis championships finals/.test(name);
+}
+
+function isIttfResultsPreferredEventName(eventName) {
+  const name = String(eventName || "").trim().toLowerCase();
+  if (!name || isWttHostedEventName(name)) {
+    return false;
+  }
+  return (
+    /^ittf\b/.test(name) ||
+    /\bworld para\b/.test(name) ||
+    /special event qualifier/.test(name) ||
+    /youth championships?/.test(name) ||
+    /youth cup/.test(name) ||
+    /para (future|open|event)/.test(name)
+  );
+}
+
+function getIndexedWttEventName(eventId, options = {}) {
+  const eventIdText = String(eventId || "").trim();
+  if (!eventIdText) {
+    return "";
+  }
+  const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
+  const dateIndexPath = options.wttDateIndexPath || DEFAULT_WTT_DATE_INDEX_PATH;
+  const archiveIndex = readWttArchiveIndex(archiveIndexPath);
+  const dateIndex = readWttDateIndex(dateIndexPath);
+  return String(
+    archiveIndex[eventIdText]?.title ||
+    dateIndex[eventIdText]?.eventName ||
+    dateIndex[eventIdText]?.title ||
+    "",
+  ).trim();
+}
+
 async function getWttEventLifecycleMeta(eventId, options = {}) {
   const eventIdText = String(eventId || "").trim();
   const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
@@ -1983,7 +2024,15 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   };
 }
 
-async function fetchWttOfficialResults(eventId, take) {
+async function fetchWttOfficialResults(eventId, take, options = {}) {
+  const indexedName = getIndexedWttEventName(eventId, options);
+  if (isIttfResultsPreferredEventName(indexedName) && isLikelyBornanFallbackCandidate(eventId)) {
+    const bornanPayload = await fetchBornanOfficialResults(eventId);
+    if (Array.isArray(bornanPayload) && bornanPayload.length > 0) {
+      return bornanPayload;
+    }
+  }
+
   let primaryPayload = null;
   let primaryError = null;
 
@@ -2012,7 +2061,7 @@ async function fetchWttOfficialResults(eventId, take) {
 
 async function fetchSourceResults(source, eventId, take, options = {}) {
   if (source === "wtt") {
-    return fetchWttOfficialResults(eventId, take);
+    return fetchWttOfficialResults(eventId, take, options);
   }
 
   if (source === "zennihon") {

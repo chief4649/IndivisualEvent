@@ -38,7 +38,11 @@ const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
+  "3487": "34031",
   "5524": "3500",
+};
+const WTT_EVENT_PUBLIC_URLS = {
+  "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",
 };
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || "";
@@ -681,6 +685,21 @@ function isWttHostedEventName(eventName) {
   return /\bwtt\b/.test(name) || /world team table tennis championships finals/.test(name);
 }
 
+function isIttfResultsPreferredEventName(eventName) {
+  const name = String(eventName || "").trim().toLowerCase();
+  if (!name || isWttHostedEventName(name)) {
+    return false;
+  }
+  return (
+    /^ittf\b/.test(name) ||
+    /\bworld para\b/.test(name) ||
+    /special event qualifier/.test(name) ||
+    /youth championships?/.test(name) ||
+    /youth cup/.test(name) ||
+    /para (future|open|event)/.test(name)
+  );
+}
+
 function getEventUrl(source, eventId) {
   const normalizedSource = normalizeSource(source);
   const normalizedId = String(eventId || "").trim();
@@ -716,12 +735,21 @@ function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
   if (!normalizedId) {
     return "";
   }
+  if (WTT_EVENT_PUBLIC_URLS[normalizedId]) {
+    return WTT_EVENT_PUBLIC_URLS[normalizedId];
+  }
   const resolvedName = String(eventName || "").trim() || getStoredWttIndexedName(normalizedId);
   if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000 && !isWttHostedEventName(resolvedName)) {
     return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
   }
   const sourceText = String(sourceHint || "").trim().toLowerCase();
-  if (["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText) && !isWttHostedEventName(resolvedName)) {
+  if (
+    (
+      ["bornan", "ittf", "ittf_results", "ittf-results"].includes(sourceText) ||
+      isIttfResultsPreferredEventName(resolvedName)
+    ) &&
+    !isWttHostedEventName(resolvedName)
+  ) {
     return `https://results.ittf.com/ittf-web-results/html/TTE${encodeURIComponent(normalizedId)}/results.html#/results`;
   }
   if (isWttTeamEventName(resolvedName)) {
