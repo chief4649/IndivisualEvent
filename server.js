@@ -780,14 +780,18 @@ function readWttSearchIndex() {
   }
 }
 
-function getMergedWttSearchEntry(eventId, entry, dateIndex) {
+function getMergedWttSearchEntry(eventId, entry, dateIndex, archiveIndex) {
   const dateEntry = dateIndex[String(eventId || "").trim()] || {};
+  const archiveEntry = archiveIndex[String(eventId || "").trim()] || {};
   const merged = {
+    ...(archiveEntry || {}),
     ...(entry || {}),
     ...(dateEntry || {}),
   };
   if (entry?.source) {
     merged.source = entry.source;
+  } else if (archiveEntry?.source) {
+    merged.source = archiveEntry.source;
   }
   return merged;
 }
@@ -1146,8 +1150,20 @@ function buildSearchableEvents(source, query) {
 
   const searchIndex = readWttSearchIndex();
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
-  Object.entries(searchIndex).forEach(([eventId, entry]) => {
-    const mergedEntry = getMergedWttSearchEntry(eventId, entry, dateIndex);
+  const archiveIndex = readWttArchiveIndex();
+  const indexedEventIds = new Set([
+    ...Object.keys(archiveIndex || {}),
+    ...Object.keys(searchIndex || {}),
+    ...Object.keys(dateIndex || {}),
+  ]);
+
+  indexedEventIds.forEach((eventId) => {
+    const mergedEntry = getMergedWttSearchEntry(
+      eventId,
+      searchIndex[eventId],
+      dateIndex,
+      archiveIndex,
+    );
     const name = String(mergedEntry?.eventName || mergedEntry?.title || eventNames[eventId] || "");
     const dateLabel = formatDateRange(mergedEntry?.startDate, mergedEntry?.endDate);
     if (!shouldDisplayWttSearchEntry(name)) {

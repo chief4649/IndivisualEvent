@@ -124,6 +124,45 @@ function writeIndex(filePath, index) {
   fs.writeFileSync(filePath, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
 }
 
+function mergeArchiveIndexEntries(index, archiveIndex) {
+  Object.entries(archiveIndex || {}).forEach(([eventId, entry]) => {
+    const normalizedId = String(eventId || "").trim();
+    const numericId = Number(normalizedId);
+    const eventName = String(entry?.eventName || entry?.title || "").trim();
+    if (
+      !normalizedId ||
+      !Number.isFinite(numericId) ||
+      numericId < 2500 ||
+      !eventName ||
+      !shouldIndexWttEventName(eventName)
+    ) {
+      return;
+    }
+
+    index[normalizedId] = {
+      ...(index[normalizedId] || {}),
+      event: normalizedId,
+      eventName,
+      startDate: entry?.startDate || index[normalizedId]?.startDate || null,
+      endDate: entry?.endDate || index[normalizedId]?.endDate || null,
+      dateLabel: formatDateRange(
+        entry?.startDate || index[normalizedId]?.startDate || null,
+        entry?.endDate || index[normalizedId]?.endDate || null,
+      ),
+      archived: entry?.archived ?? Boolean(index[normalizedId]?.archived),
+      status: resolveLifecycleStatus(
+        entry?.startDate || index[normalizedId]?.startDate || null,
+        entry?.endDate || index[normalizedId]?.endDate || null,
+        entry?.archived ? "finished" : (index[normalizedId]?.status || "unknown"),
+        eventName,
+      ),
+      source: index[normalizedId]?.source || entry?.source || "wtt",
+      series: classifyWttSeries(eventName),
+      verifiedAt: index[normalizedId]?.verifiedAt || entry?.archivedAt || entry?.lastFetchedAt || new Date().toISOString(),
+    };
+  });
+}
+
 function mergeDateIndexEntries(index, dateIndex) {
   Object.entries(dateIndex || {}).forEach(([eventId, entry]) => {
     const normalizedId = String(eventId || "").trim();
@@ -417,6 +456,7 @@ async function runPool(ids, concurrency, worker) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const existingIndex = readIndex(args.output);
+  const archiveIndex = readIndex(args.wttArchiveIndexPath);
   const dateIndex = readWttDateIndex(args.wttDateIndexPath);
   const ids = [];
   for (let eventId = args.start; eventId <= args.end; eventId += 1) {
@@ -442,6 +482,7 @@ async function main() {
     }
   });
 
+  mergeArchiveIndexEntries(existingIndex, archiveIndex);
   mergeDateIndexEntries(existingIndex, dateIndex);
   writeIndex(args.output, existingIndex);
   console.error(`Wrote ${Object.keys(existingIndex).length} indexed events to ${args.output}`);
