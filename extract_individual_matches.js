@@ -2801,9 +2801,49 @@ function getSinglePlayerFromCompetitor(competitor) {
   };
 }
 
+function getPendingScheduleFromFirstFourSingles(match, displayedTeams) {
+  if (!match || match.singles.length < 4) {
+    return null;
+  }
+
+  const { leftIndex, rightIndex } = displayedTeams;
+  const [firstMatch, secondMatch, , fourthMatch] = match.singles;
+  const firstLeft = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[leftIndex]);
+  const firstRight = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[rightIndex]);
+  const secondLeft = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[leftIndex]);
+  const secondRight = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[rightIndex]);
+  const fourthLeft = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[leftIndex]);
+  const fourthRight = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[rightIndex]);
+
+  if (!firstLeft || !firstRight || !secondLeft || !secondRight || !fourthLeft || !fourthRight) {
+    return null;
+  }
+
+  const firstLeftKey = getPlayerIdentityKey(firstLeft);
+  const firstRightKey = getPlayerIdentityKey(firstRight);
+  const secondLeftKey = getPlayerIdentityKey(secondLeft);
+  const secondRightKey = getPlayerIdentityKey(secondRight);
+  const fourthLeftKey = getPlayerIdentityKey(fourthLeft);
+  const fourthRightKey = getPlayerIdentityKey(fourthRight);
+
+  if (fourthLeftKey === firstLeftKey && fourthRightKey === secondRightKey) {
+    return [[secondLeft.name || "", firstRight.name || ""]];
+  }
+  if (fourthLeftKey === secondLeftKey && fourthRightKey === firstRightKey) {
+    return [[firstLeft.name || "", secondRight.name || ""]];
+  }
+
+  return null;
+}
+
 function inferOlympicPendingTeamSchedule(match, displayedTeams) {
   if (!match || match.discipline !== "teams" || match.singles.length < 3) {
     return null;
+  }
+
+  const firstFourSchedule = getPendingScheduleFromFirstFourSingles(match, displayedTeams);
+  if (firstFourSchedule) {
+    return firstFourSchedule;
   }
 
   const [doublesMatch, secondMatch, thirdMatch] = match.singles;
@@ -3230,7 +3270,9 @@ function formatJaPendingLine(match, index, translations, displayedTeams) {
     [leftPlayers[0], rightPlayers[1]],
     [leftPlayers[1], rightPlayers[0]],
   ];
-  const pair = schedule[index - 4] || [];
+  const pair = inferredSchedule && inferredSchedule.length === 1 && match.singles.length === 4 && index === 5
+    ? inferredSchedule[0]
+    : (schedule[index - 4] || []);
   const left = translatePlayer(pair[0] || "", translations);
   const right = translatePlayer(pair[1] || "", translations);
   return `　${left}　-　${right}`;
