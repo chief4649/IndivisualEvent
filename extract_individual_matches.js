@@ -2640,13 +2640,68 @@ function getTieDisplaySide(match) {
   return winnerIndex === 1 ? 1 : 0;
 }
 
+function inferTeamScoreIndexesFromSingles(match) {
+  const orgToTeamIndex = new Map();
+  (match?.teams || []).forEach((team, index) => {
+    const org = String(team?.org || "").trim();
+    if (org && !orgToTeamIndex.has(org)) {
+      orgToTeamIndex.set(org, index);
+    }
+  });
+
+  const leftCounts = new Map();
+  const rightCounts = new Map();
+  (match?.singles || []).forEach((single) => {
+    const leftOrg = String(single?.competitors?.[0]?.org || "").trim();
+    const rightOrg = String(single?.competitors?.[1]?.org || "").trim();
+    if (leftOrg && orgToTeamIndex.has(leftOrg)) {
+      leftCounts.set(leftOrg, (leftCounts.get(leftOrg) || 0) + 1);
+    }
+    if (rightOrg && orgToTeamIndex.has(rightOrg)) {
+      rightCounts.set(rightOrg, (rightCounts.get(rightOrg) || 0) + 1);
+    }
+  });
+
+  const getTopOrg = (counts) => {
+    let bestOrg = "";
+    let bestCount = -1;
+    counts.forEach((count, org) => {
+      if (count > bestCount) {
+        bestOrg = org;
+        bestCount = count;
+      }
+    });
+    return bestOrg;
+  };
+
+  const leftOrg = getTopOrg(leftCounts);
+  const rightOrg = getTopOrg(rightCounts);
+  const scoreLeftTeamIndex = leftOrg ? orgToTeamIndex.get(leftOrg) : undefined;
+  const scoreRightTeamIndex = rightOrg ? orgToTeamIndex.get(rightOrg) : undefined;
+
+  if (
+    Number.isInteger(scoreLeftTeamIndex) &&
+    Number.isInteger(scoreRightTeamIndex) &&
+    scoreLeftTeamIndex !== scoreRightTeamIndex
+  ) {
+    return { scoreLeftTeamIndex, scoreRightTeamIndex };
+  }
+
+  return { scoreLeftTeamIndex: 0, scoreRightTeamIndex: 1 };
+}
+
 function getDisplayedTeamIndexes(match) {
-  const leftIndex = getTieDisplaySide(match);
+  const { scoreLeftTeamIndex, scoreRightTeamIndex } = inferTeamScoreIndexesFromSingles(match);
+  const winnerIndex = getWinnerIndexFromScore(match.overallScore);
+  const leftIndex = winnerIndex === 1 ? scoreRightTeamIndex : scoreLeftTeamIndex;
+  const rightIndex = leftIndex === scoreLeftTeamIndex ? scoreRightTeamIndex : scoreLeftTeamIndex;
   return {
     leftIndex,
-    rightIndex: leftIndex === 0 ? 1 : 0,
+    rightIndex,
     leftOrg: match?.teams?.[leftIndex]?.org ?? null,
-    rightOrg: match?.teams?.[leftIndex === 0 ? 1 : 0]?.org ?? null,
+    rightOrg: match?.teams?.[rightIndex]?.org ?? null,
+    scoreLeftTeamIndex,
+    scoreRightTeamIndex,
   };
 }
 
@@ -3217,7 +3272,7 @@ function formatJaHeader(match, translations, rules) {
 
 function formatJaTeamLine(match, translations) {
   const displayedTeams = getDisplayedTeamIndexes(match);
-  const { leftIndex, rightIndex } = displayedTeams;
+  const { leftIndex, rightIndex, scoreLeftTeamIndex } = displayedTeams;
   const left = translateTeam(match.teams[leftIndex], translations);
   const right = translateTeam(match.teams[rightIndex], translations);
   if (isMixedTeamMatch(match)) {
@@ -3226,7 +3281,7 @@ function formatJaTeamLine(match, translations) {
   }
   const rawScore = String(match.overallScore || "-");
   const [scoreA, scoreB] = rawScore.split("-");
-  const score = leftIndex === 1 ? `${scoreB}-${scoreA}` : rawScore;
+  const score = leftIndex === scoreLeftTeamIndex ? rawScore : `${scoreB}-${scoreA}`;
   return `　${left}　${score}　${right}`;
 }
 
