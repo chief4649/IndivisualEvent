@@ -1135,8 +1135,12 @@ function inferWinnerOrg(result) {
 }
 
 function buildSpecialTeamSinglesOverride(item) {
+  const eventId = String(item?.eventId || item?.match_card?.eventId || "").trim();
   const documentCode = String(item?.documentCode || item?.match_card?.documentCode || "").trim();
-  if (documentCode !== "TTEMTEAM--------------GP0600010000--------") {
+  if (
+    eventId !== "2751" ||
+    documentCode !== "TTEMTEAM--------------GP0600010000--------"
+  ) {
     return null;
   }
 
