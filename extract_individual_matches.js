@@ -1,11 +1,25 @@
 #!/usr/bin/env node
 
 const WTT_API_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult";
+const WTT_POOL_STANDINGS_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings";
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
 const DEFAULT_TAKE = 800;
 const fs = require("fs");
 const path = require("path");
+const WTT_FETCH_TIMEOUT_MS = Number(process.env.WTT_FETCH_TIMEOUT_MS || 15000);
+const WTT_REQUEST_HEADERS = {
+  accept: "application/json, text/plain, */*",
+  origin: "https://www.worldtabletennis.com",
+  referer: "https://www.worldtabletennis.com/",
+  "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+};
+const WTT_TEAM_EVENT_FALLBACKS = {
+  "3216": [
+    { subeventCode: "MTEAM---", categoryName: "Men Teams" },
+    { subeventCode: "WTEAM---", categoryName: "Women Teams" },
+  ],
+};
 
 const DEFAULT_DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const DEFAULT_TRANSLATIONS_PATH = path.join(DEFAULT_DATA_DIR, "translations.ja.json");
@@ -1066,6 +1080,10 @@ function shouldReuseCachedPayload(source, payload) {
   return true;
 }
 
+function isSyntheticWttFallbackPayload(payload) {
+  return Array.isArray(payload) && payload.some((item) => item?.syntheticSource === "wtt_pool_standings");
+}
+
 function normalizeIndividualMatch(entry, index) {
   const result = entry?.match_result ?? entry?.matchResult ?? null;
   const competitors = Array.isArray(result?.competitiors)
@@ -1170,7 +1188,9 @@ function normalizeTeamMatch(item) {
     return null;
   }
   const teams = competitors.map((competitor) => ({
-    name: competitor?.name ?? null,
+    name: looksLikePersonalName(competitor?.name) && competitor?.org
+      ? competitor.org
+      : (competitor?.name ?? null),
     org: competitor?.org ?? null,
   }));
   const round = extractRound(card.subEventDescription);
@@ -1219,6 +1239,10 @@ function normalizeStandaloneMatch(item) {
   const discipline = normalizeDiscipline(rawCategoryName);
   const gender = inferGender(rawCategoryName);
   const paraCategoryName = resolveParaCategoryName(rawCategoryName, card.subEventDescription);
+  const categoryName = paraCategoryName || resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline);
+  if (!paraCategoryName && /\bTeams$/i.test(String(categoryName || "").trim())) {
+    return null;
+  }
   const round = extractRound(card.subEventDescription);
 
   return {
@@ -1227,7 +1251,7 @@ function normalizeStandaloneMatch(item) {
     eventId: item.eventId ?? card.eventId ?? null,
     documentCode: item.documentCode ?? card.documentCode ?? null,
     subEventType: rawCategoryName,
-    categoryName: paraCategoryName || resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline),
+    categoryName,
     discipline,
     gender,
     roundLabel: round.roundLabel,
@@ -1912,20 +1936,332 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   url.searchParams.set("include_match_card", "true");
   url.searchParams.set("take", String(take));
 
-  const response = await fetch(url, {
-    headers: {
-      accept: "application/json, text/plain, */*",
-      origin: "https://www.worldtabletennis.com",
-      referer: "https://www.worldtabletennis.com/",
-      "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
-    },
-  });
+  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
 
   if (!response.ok) {
     throw new Error(`API request failed: ${response.status} ${response.statusText}`);
   }
 
   return response.json();
+}
+
+async function fetchWithTimeout(url, options = {}, timeoutMs = WTT_FETCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error?.name === "AbortError") {
+      throw new Error(`Fetch timed out after ${timeoutMs}ms`);
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function getFirstDefinedValue(object, keys) {
+  for (const key of keys) {
+    if (object && object[key] !== undefined && object[key] !== null && object[key] !== "") {
+      return object[key];
+    }
+  }
+  return null;
+}
+
+function toArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function buildSyntheticTeamPlaceholderSingles(teams) {
+  if (!Array.isArray(teams) || teams.length < 2) {
+    return [];
+  }
+  return Array.from({ length: 3 }, (_, index) => {
+    const leftOrder = `A${index + 1}`;
+    const rightOrder = `B${index + 1}`;
+    return {
+      order: index + 1,
+      documentCode: null,
+      description: null,
+      overallScore: null,
+      resultStatus: "SCHEDULED",
+      gameScores: [],
+      competitors: [
+        {
+          type: "H",
+          id: `${teams[0].org || teams[0].name || "TEAM1"}-${leftOrder}`,
+          name: leftOrder,
+          org: teams[0].org || null,
+          orgCode: teams[0].org || null,
+          irm: "OK",
+          players: [{ id: leftOrder, name: leftOrder, org: teams[0].org || null, orgCode: teams[0].org || null }],
+        },
+        {
+          type: "A",
+          id: `${teams[1].org || teams[1].name || "TEAM2"}-${rightOrder}`,
+          name: rightOrder,
+          org: teams[1].org || null,
+          orgCode: teams[1].org || null,
+          irm: "OK",
+          players: [{ id: rightOrder, name: rightOrder, org: teams[1].org || null, orgCode: teams[1].org || null }],
+        },
+      ],
+      winnerOrg: null,
+    };
+  });
+}
+
+function normalizePoolStandingTeam(entry) {
+  if (!entry || typeof entry !== "object") {
+    return null;
+  }
+  const competitor = entry.Competitor && typeof entry.Competitor === "object" ? entry.Competitor : null;
+  const nestedOrg = competitor
+    ? getFirstDefinedValue(competitor, ["Code", "IfId", "competitiorOrg", "OrgCode", "Org", "CountryCode"])
+    : null;
+  const nestedName = competitor
+    ? getFirstDefinedValue(competitor, ["Name", "Description", "competitiorName", "DisplayName"])
+    : null;
+  const org = String(
+    getFirstDefinedValue(entry, ["Code", "IfId", "competitiorOrg", "OrgCode", "Org", "CountryCode"]) || nestedOrg || "",
+  ).trim();
+  const name = String(
+    getFirstDefinedValue(entry, ["Name", "Description", "DisplayName", "TeamName"]) || nestedName || org,
+  ).trim();
+  if (!org && !name) {
+    return null;
+  }
+  return {
+    name: name || org,
+    org: org || name || null,
+  };
+}
+
+function collectPoolStandingTeams(node) {
+  if (!node || typeof node !== "object") {
+    return [];
+  }
+
+  const directTeams = [
+    ...toArray(node.Competitors),
+    ...toArray(node.competitors),
+    ...toArray(node.competitiors),
+    ...toArray(node.Teams),
+    ...toArray(node.teams),
+  ].map(normalizePoolStandingTeam).filter(Boolean);
+
+  if (directTeams.length >= 2) {
+    return directTeams.slice(0, 2);
+  }
+
+  const homeTeam = normalizePoolStandingTeam(getFirstDefinedValue(node, ["Home", "home", "HomeTeam", "homeTeam"]));
+  const awayTeam = normalizePoolStandingTeam(getFirstDefinedValue(node, ["Away", "away", "AwayTeam", "awayTeam"]));
+  return [homeTeam, awayTeam].filter(Boolean);
+}
+
+function normalizePoolStandingGroupLabel(value) {
+  const text = String(value || "").trim();
+  if (!text) {
+    return "Group";
+  }
+  if (/^(group|pool)\b/i.test(text)) {
+    return text.replace(/\s+/g, " ");
+  }
+  return `Group ${text}`;
+}
+
+function looksLikeAssociationName(value) {
+  const text = String(value || "").trim();
+  if (!text) {
+    return false;
+  }
+  return /\b(association|federation|federacao|federación|fédération|federazione|federasyon|board|table tennis|tennis de mesa|tenis de mesa|tenis de table|tischtennis|ttenis|ligue|national|olympic|committee|kong|union|team)\b/i.test(text);
+}
+
+function looksLikePersonalName(value) {
+  const text = String(value || "").trim();
+  if (!text || /,|\d/.test(text)) {
+    return false;
+  }
+  const tokens = text.split(/\s+/).filter(Boolean);
+  if (tokens.length < 2 || tokens.length > 3) {
+    return false;
+  }
+  return tokens.every((token) => /^[A-Za-zÀ-ÿ'’.-]+$/.test(token));
+}
+
+function buildSyntheticTeamDescription(categoryName, groupLabel, matchNumber) {
+  const parts = [categoryName, groupLabel].filter(Boolean);
+  if (Number.isFinite(matchNumber)) {
+    parts.push(`Match ${matchNumber}`);
+  }
+  return parts.join(" - ");
+}
+
+function shouldTreatAsPoolStandingMatch(node, pathParts) {
+  if (!node || typeof node !== "object") {
+    return false;
+  }
+  const keys = Object.keys(node).join(" ").toLowerCase();
+  const pathText = pathParts.join(".").toLowerCase();
+  return (
+    /\bmatch\b|\bfixture\b|\bschedule\b|\bunit\b/.test(keys) ||
+    /\bmatch\b|\bfixture\b|\bschedule\b/.test(pathText) ||
+    getFirstDefinedValue(node, [
+      "MatchNumber",
+      "matchNumber",
+      "MatchNo",
+      "matchNo",
+      "UnitCode",
+      "unitCode",
+      "DateTime",
+      "dateTime",
+      "StartDateTime",
+      "startDateTime",
+      "StartDateTimeUtc",
+      "startDateTimeUtc",
+      "ScheduledDateTime",
+      "scheduledDateTime",
+    ]) !== null
+  );
+}
+
+function normalizePoolStandingMatch(node, pathParts, options) {
+  const teams = collectPoolStandingTeams(node);
+  if (teams.length < 2 || !shouldTreatAsPoolStandingMatch(node, pathParts)) {
+    return null;
+  }
+  if (
+    teams.every((team) => looksLikePersonalName(team?.name)) &&
+    !teams.some((team) => looksLikeAssociationName(team?.name))
+  ) {
+    return null;
+  }
+  if (!teams.some((team) => looksLikeAssociationName(team?.name))) {
+    return null;
+  }
+
+  const groupLabel = normalizePoolStandingGroupLabel(
+    getFirstDefinedValue(node, ["GroupName", "groupName", "PoolName", "poolName", "Group", "group", "Pool", "pool"])
+      || pathParts.find((part) => /^(group|pool)\b/i.test(String(part || "").trim()))
+      || "",
+  );
+  const matchNumberRaw = getFirstDefinedValue(node, ["MatchNumber", "matchNumber", "MatchNo", "matchNo", "Order", "order"]);
+  const matchNumber = Number(matchNumberRaw);
+  const description = buildSyntheticTeamDescription(
+    options.categoryName,
+    groupLabel,
+    Number.isFinite(matchNumber) ? matchNumber : null,
+  );
+  const round = extractRound(description);
+  const unitCode = String(getFirstDefinedValue(node, ["UnitCode", "unitCode", "DocumentCode", "documentCode"]) || "").trim();
+  const table = getFirstDefinedValue(node, ["Table", "table", "TableName", "tableName", "TableNumber", "tableNumber"]);
+
+  return {
+    source: "wtt",
+    syntheticSource: "wtt_pool_standings",
+    matchType: "team",
+    id: unitCode || null,
+    eventId: options.eventId,
+    documentCode: unitCode || null,
+    subEventType: options.categoryName,
+    categoryName: options.categoryName,
+    discipline: "teams",
+    gender: inferGender(options.categoryName),
+    roundLabel: round.roundLabel,
+    roundKey: round.roundKey,
+    matchNumber: Number.isFinite(matchNumber) ? matchNumber : null,
+    description,
+    venue: null,
+    table: table ? String(table).trim() : null,
+    overallScore: null,
+    resultStatus: "SCHEDULED",
+    teams,
+    singles: buildSyntheticTeamPlaceholderSingles(teams),
+    competitors: [],
+    gameScores: [],
+  };
+}
+
+function normalizeWttPoolStandingsPayload(payload, options) {
+  const matches = [];
+  const seen = new Set();
+
+  function visit(node, pathParts = []) {
+    if (Array.isArray(node)) {
+      node.forEach((entry, index) => visit(entry, [...pathParts, String(index)]));
+      return;
+    }
+    if (!node || typeof node !== "object") {
+      return;
+    }
+
+    const match = normalizePoolStandingMatch(node, pathParts, options);
+    if (match) {
+      const dedupeKey = [
+        match.categoryName,
+        match.roundLabel || "",
+        match.matchNumber || "",
+        match.teams[0]?.org || match.teams[0]?.name || "",
+        match.teams[1]?.org || match.teams[1]?.name || "",
+      ].join("|");
+      if (!seen.has(dedupeKey)) {
+        seen.add(dedupeKey);
+        matches.push(match);
+      }
+      return;
+    }
+
+    Object.entries(node).forEach(([key, value]) => visit(value, [...pathParts, key]));
+  }
+
+  visit(payload);
+  return matches;
+}
+
+async function fetchWttTeamPoolStandings(eventId, subeventCode) {
+  const url = new URL(WTT_POOL_STANDINGS_URL);
+  url.pathname = `${url.pathname.replace(/\/$/, "")}/${encodeURIComponent(String(eventId || "").trim())}`;
+  url.searchParams.set("subeventcode", subeventCode);
+
+  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
+  if (!response.ok) {
+    throw new Error(`Pool standings request failed: ${response.status} ${response.statusText}`);
+  }
+  return response.json();
+}
+
+async function fetchWttTeamFallbackResults(eventId) {
+  const fallbackDefinitions = WTT_TEAM_EVENT_FALLBACKS[String(eventId || "").trim()];
+  if (!Array.isArray(fallbackDefinitions) || fallbackDefinitions.length === 0) {
+    return [];
+  }
+
+  const payloads = await Promise.all(fallbackDefinitions.map(async (definition) => {
+    try {
+      const payload = await fetchWttTeamPoolStandings(eventId, definition.subeventCode);
+      return normalizeWttPoolStandingsPayload(payload, {
+        eventId: String(eventId || "").trim(),
+        categoryName: definition.categoryName,
+      });
+    } catch {
+      return [];
+    }
+  }));
+
+  return payloads.flat().sort((left, right) => {
+    if (left.categoryName !== right.categoryName) {
+      return String(left.categoryName).localeCompare(String(right.categoryName));
+    }
+    if (left.roundLabel !== right.roundLabel) {
+      return String(left.roundLabel || "").localeCompare(String(right.roundLabel || ""));
+    }
+    return Number(left.matchNumber || 0) - Number(right.matchNumber || 0);
+  });
 }
 
 function isLikelyBornanFallbackCandidate(eventId) {
@@ -2041,8 +2377,17 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
     if (Array.isArray(primaryPayload) && primaryPayload.length > 0) {
       return primaryPayload;
     }
+    const teamFallbackPayload = await fetchWttTeamFallbackResults(eventId);
+    if (teamFallbackPayload.length > 0) {
+      return teamFallbackPayload;
+    }
   } catch (error) {
     primaryError = error;
+  }
+
+  const teamFallbackPayload = await fetchWttTeamFallbackResults(eventId);
+  if (teamFallbackPayload.length > 0) {
+    return teamFallbackPayload;
   }
 
   if (isLikelyBornanFallbackCandidate(eventId)) {
@@ -2085,7 +2430,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     try {
       const payload = await fetchSourceResults(source, eventId, take, options);
 
-      if (shouldReuseCachedPayload(source, payload)) {
+      if (shouldReuseCachedPayload(source, payload) && !isSyntheticWttFallbackPayload(payload)) {
         const timestamp = new Date().toISOString();
         writeWttArchive(archiveDir, eventId, payload);
         updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
