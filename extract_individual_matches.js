@@ -2861,14 +2861,16 @@ function getPendingScheduleFromFirstFourSingles(match, displayedTeams) {
     return null;
   }
 
-  const { leftIndex, rightIndex } = displayedTeams;
   const [firstMatch, secondMatch, , fourthMatch] = match.singles;
-  const firstLeft = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[leftIndex]);
-  const firstRight = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[rightIndex]);
-  const secondLeft = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[leftIndex]);
-  const secondRight = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[rightIndex]);
-  const fourthLeft = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[leftIndex]);
-  const fourthRight = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[rightIndex]);
+  const firstIndexes = getSingleDisplayIndexes(firstMatch, displayedTeams);
+  const secondIndexes = getSingleDisplayIndexes(secondMatch, displayedTeams);
+  const fourthIndexes = getSingleDisplayIndexes(fourthMatch, displayedTeams);
+  const firstLeft = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[firstIndexes.leftCompetitorIndex]);
+  const firstRight = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[firstIndexes.rightCompetitorIndex]);
+  const secondLeft = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[secondIndexes.leftCompetitorIndex]);
+  const secondRight = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[secondIndexes.rightCompetitorIndex]);
+  const fourthLeft = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[fourthIndexes.leftCompetitorIndex]);
+  const fourthRight = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[fourthIndexes.rightCompetitorIndex]);
 
   if (!firstLeft || !firstRight || !secondLeft || !secondRight || !fourthLeft || !fourthRight) {
     return null;
@@ -2906,13 +2908,15 @@ function inferOlympicPendingTeamSchedule(match, displayedTeams) {
     return null;
   }
 
-  const { leftIndex, rightIndex } = displayedTeams;
-  const doublesLeft = doublesMatch.competitors?.[leftIndex];
-  const doublesRight = doublesMatch.competitors?.[rightIndex];
-  const secondLeft = getSinglePlayerFromCompetitor(secondMatch.competitors?.[leftIndex]);
-  const secondRight = getSinglePlayerFromCompetitor(secondMatch.competitors?.[rightIndex]);
-  const thirdLeft = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[leftIndex]);
-  const thirdRight = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[rightIndex]);
+  const doublesIndexes = getSingleDisplayIndexes(doublesMatch, displayedTeams);
+  const secondIndexes = getSingleDisplayIndexes(secondMatch, displayedTeams);
+  const thirdIndexes = getSingleDisplayIndexes(thirdMatch, displayedTeams);
+  const doublesLeft = doublesMatch.competitors?.[doublesIndexes.leftCompetitorIndex];
+  const doublesRight = doublesMatch.competitors?.[doublesIndexes.rightCompetitorIndex];
+  const secondLeft = getSinglePlayerFromCompetitor(secondMatch.competitors?.[secondIndexes.leftCompetitorIndex]);
+  const secondRight = getSinglePlayerFromCompetitor(secondMatch.competitors?.[secondIndexes.rightCompetitorIndex]);
+  const thirdLeft = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[thirdIndexes.leftCompetitorIndex]);
+  const thirdRight = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[thirdIndexes.rightCompetitorIndex]);
 
   const doublesLeftPlayers = Array.isArray(doublesLeft?.players) ? doublesLeft.players.filter(Boolean) : [];
   const doublesRightPlayers = Array.isArray(doublesRight?.players) ? doublesRight.players.filter(Boolean) : [];
