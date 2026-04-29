@@ -299,6 +299,134 @@ function normalizeSearchText(value) {
     .trim();
 }
 
+function parseMatchDateTimeValue(value) {
+  const raw = String(value || "").trim();
+  if (!raw) {
+    return null;
+  }
+
+  const isoLike = raw.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+  if (isoLike) {
+    const [, year, month, day, hour = "00", minute = "00"] = isoLike;
+    return {
+      raw,
+      isoDate: `${year}-${month}-${day}`,
+      isoTime: `${hour}:${minute}`,
+      isoDateTime: `${year}-${month}-${day} ${hour}:${minute}`,
+    };
+  }
+
+  const slashLike = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2})(?::(\d{2}))?)?$/);
+  if (slashLike) {
+    const [, day, month, year, hour = "00", minute = "00"] = slashLike;
+    return {
+      raw,
+      isoDate: `${year}-${month}-${day}`,
+      isoTime: `${hour}:${minute}`,
+      isoDateTime: `${year}-${month}-${day} ${hour}:${minute}`,
+    };
+  }
+
+  return { raw };
+}
+
+function getMatchDateSearchTerms(match) {
+  const values = [
+    match?.matchDateTimeText,
+    match?.matchDateLocal,
+    match?.matchDateUtc,
+  ].filter(Boolean);
+  const terms = new Set();
+
+  values.forEach((value) => {
+    const parsed = parseMatchDateTimeValue(value);
+    if (!parsed) {
+      return;
+    }
+    if (parsed.raw) {
+      terms.add(parsed.raw);
+    }
+    if (parsed.isoDate) {
+      terms.add(parsed.isoDate);
+      terms.add(parsed.isoDate.replace(/-/g, "/"));
+    }
+    if (parsed.isoTime) {
+      terms.add(parsed.isoTime);
+    }
+    if (parsed.isoDateTime) {
+      terms.add(parsed.isoDateTime);
+      terms.add(parsed.isoDateTime.replace(" ", "T"));
+      terms.add(parsed.isoDateTime.replace(/-/g, "/"));
+    }
+  });
+
+  return [...terms];
+}
+
+function normalizeDateRangeBound(token, isEnd = false) {
+  const digits = String(token || "").trim();
+  if (/^\d{8}$/.test(digits)) {
+    return `${digits}${isEnd ? "2359" : "0000"}`;
+  }
+  if (/^\d{12}$/.test(digits)) {
+    return digits;
+  }
+  return null;
+}
+
+function parseContainsDateRange(value) {
+  const text = String(value || "").trim();
+  if (!text || !text.includes("-")) {
+    return null;
+  }
+
+  const openStart = text.match(/^-(\d{8}|\d{12})$/);
+  if (openStart) {
+    return {
+      from: null,
+      to: normalizeDateRangeBound(openStart[1], true),
+    };
+  }
+
+  const openEnd = text.match(/^(\d{8}|\d{12})-$/);
+  if (openEnd) {
+    return {
+      from: normalizeDateRangeBound(openEnd[1], false),
+      to: null,
+    };
+  }
+
+  const closed = text.match(/^(\d{8}|\d{12})-(\d{8}|\d{12})$/);
+  if (closed) {
+    return {
+      from: normalizeDateRangeBound(closed[1], false),
+      to: normalizeDateRangeBound(closed[2], true),
+    };
+  }
+
+  return null;
+}
+
+function getComparableMatchDateTime(match) {
+  const values = [
+    match?.matchDateLocal,
+    match?.matchDateTimeText,
+    match?.matchDateUtc,
+  ].filter(Boolean);
+
+  for (const value of values) {
+    const parsed = parseMatchDateTimeValue(value);
+    if (!parsed?.isoDate) {
+      continue;
+    }
+    const compactDate = parsed.isoDate.replace(/-/g, "");
+    const compactTime = (parsed.isoTime || "00:00").replace(":", "");
+    return `${compactDate}${compactTime}`;
+  }
+
+  return "";
+}
+
 function inferGender(value) {
   const text = normalizeText(value);
   if (text === "women" || text === "womens" || text === "female") {
@@ -957,6 +1085,7 @@ function buildMatchSearchText(match, translations) {
       match.subEventType,
       match.roundLabel,
       match.roundKey,
+      ...getMatchDateSearchTerms(match),
       ...match.teams.flatMap((team) => getSearchTermsForTeam(team, translations)),
       ...match.singles.flatMap((single) => getSearchTermsForSingle(single, translations)),
       ...(match.competitors || []).flatMap((competitor) => getSearchTermsForCompetitor(competitor, translations)),
@@ -1207,6 +1336,9 @@ function normalizeTeamMatch(item) {
   singles.forEach((single, index) => {
     single.order = index + 1;
   });
+  const matchDateLocal = item?.startDateLocal || card?.matchDateTime?.startDateLocal || null;
+  const matchDateUtc = card?.matchDateTime?.startDateUTC || card?.matchStartTimeUTC || null;
+  const matchDateTimeText = card?.matchDateTime?.startDateLocal || matchDateLocal || matchDateUtc || null;
 
   return {
     matchType: "team",
@@ -1223,6 +1355,9 @@ function normalizeTeamMatch(item) {
     description: card.subEventDescription ?? null,
     venue: card.venueName ?? null,
     table: card.tableName ?? card.tableNumber ?? null,
+    matchDateTimeText,
+    matchDateLocal,
+    matchDateUtc,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
     teams,
@@ -1248,6 +1383,9 @@ function normalizeStandaloneMatch(item) {
     return null;
   }
   const round = extractRound(card.subEventDescription);
+  const matchDateLocal = item?.startDateLocal || card?.matchDateTime?.startDateLocal || null;
+  const matchDateUtc = card?.matchDateTime?.startDateUTC || card?.matchStartTimeUTC || null;
+  const matchDateTimeText = card?.matchDateTime?.startDateLocal || matchDateLocal || matchDateUtc || null;
 
   return {
     matchType: "individual",
@@ -1264,6 +1402,9 @@ function normalizeStandaloneMatch(item) {
     description: card.subEventDescription ?? null,
     venue: card.venueName ?? null,
     table: card.tableName ?? card.tableNumber ?? null,
+    matchDateTimeText,
+    matchDateLocal,
+    matchDateUtc,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
     isParaClass: Boolean(paraCategoryName),
@@ -1832,6 +1973,8 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
       description: match?.Desc || `${categoryName} - ${roundLabel}`,
       venue: match?.Venue || null,
       table: match?.LocDesc || match?.Loc || null,
+      matchDateTimeText: match?.Date || null,
+      matchDateLocal: match?.Date || null,
       overallScore: `${match?.Home?.Res ?? "0"}-${match?.Away?.Res ?? "0"}`,
       resultStatus: String(match?.Status || "").trim() || null,
       teams: [
@@ -1862,6 +2005,8 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
     description: match?.Desc || `${categoryName} - ${roundLabel}`,
     venue: match?.Venue || null,
     table: match?.LocDesc || match?.Loc || null,
+    matchDateTimeText: match?.Date || null,
+    matchDateLocal: match?.Date || null,
     overallScore: `${match?.Home?.Res ?? "0"}-${match?.Away?.Res ?? "0"}`,
     resultStatus: String(match?.Status || "").trim() || null,
     isParaClass: false,
@@ -2182,6 +2327,18 @@ function normalizePoolStandingMatch(node, pathParts, options) {
     description,
     venue: null,
     table: table ? String(table).trim() : null,
+    matchDateTimeText: String(
+      getFirstDefinedValue(node, [
+        "DateTime",
+        "dateTime",
+        "StartDateTime",
+        "startDateTime",
+        "StartDateTimeUtc",
+        "startDateTimeUtc",
+        "ScheduledDateTime",
+        "scheduledDateTime",
+      ]) || "",
+    ).trim() || null,
     overallScore: null,
     resultStatus: "SCHEDULED",
     teams,
@@ -2541,8 +2698,25 @@ function applyFilters(matches, args, translations) {
   }
 
   if (args.contains) {
-    const needle = normalizeSearchText(args.contains);
-    filtered = filtered.filter((match) => buildMatchSearchText(match, translations).includes(needle));
+    const range = parseContainsDateRange(args.contains);
+    if (range) {
+      filtered = filtered.filter((match) => {
+        const comparable = getComparableMatchDateTime(match);
+        if (!comparable) {
+          return false;
+        }
+        if (range.from && comparable < range.from) {
+          return false;
+        }
+        if (range.to && comparable > range.to) {
+          return false;
+        }
+        return true;
+      });
+    } else {
+      const needle = normalizeSearchText(args.contains);
+      filtered = filtered.filter((match) => buildMatchSearchText(match, translations).includes(needle));
+    }
   }
 
   if (args.docCode) {
