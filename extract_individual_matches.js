@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const WTT_API_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult";
+const WTT_EVENT_SCHEDULE_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetEventSchedule";
 const WTT_POOL_STANDINGS_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings";
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
@@ -321,7 +322,20 @@ function parseMatchDateTimeValue(value) {
 
   const slashLike = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2})(?::(\d{2}))?)?$/);
   if (slashLike) {
-    const [, day, month, year, hour = "00", minute = "00"] = slashLike;
+    const [, first, second, year, hour = "00", minute = "00"] = slashLike;
+    const firstNumber = Number(first);
+    const secondNumber = Number(second);
+    let month = first;
+    let day = second;
+
+    if (firstNumber > 12 && secondNumber <= 12) {
+      day = first;
+      month = second;
+    } else if (secondNumber > 12 && firstNumber <= 12) {
+      month = first;
+      day = second;
+    }
+
     return {
       raw,
       compactDate: `${year}${month}${day}`,
@@ -2109,6 +2123,30 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   return response.json();
 }
 
+async function fetchWttOfficialResultByDocumentCode(eventId, documentCode) {
+  const url = new URL(WTT_API_URL);
+  url.searchParams.set("EventId", String(eventId));
+  url.searchParams.set("DocumentCode", String(documentCode || "").trim());
+  url.searchParams.set("include_match_card", "true");
+  url.searchParams.set("take", "10");
+
+  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
+  if (!response.ok) {
+    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+  }
+
+  return response.json();
+}
+
+async function fetchWttEventSchedule(eventId) {
+  const url = new URL(`${WTT_EVENT_SCHEDULE_URL}/${encodeURIComponent(String(eventId || "").trim())}`);
+  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
+  if (!response.ok) {
+    throw new Error(`Schedule request failed: ${response.status} ${response.statusText}`);
+  }
+  return response.json();
+}
+
 async function fetchWithTimeout(url, options = {}, timeoutMs = WTT_FETCH_TIMEOUT_MS) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -2236,6 +2274,97 @@ function normalizePoolStandingGroupLabel(value) {
     return text.replace(/\s+/g, " ");
   }
   return `Group ${text}`;
+}
+
+function getWttDocumentCodeKey(value) {
+  return String(value || "").trim().replace(/-+$/g, "");
+}
+
+function collectScheduleUnits(payload) {
+  if (!Array.isArray(payload)) {
+    return [];
+  }
+  return payload.flatMap((entry) => {
+    const competition = entry?.Competition;
+    const units = Array.isArray(competition?.Unit) ? competition.Unit : [];
+    return units.filter((unit) => unit && typeof unit === "object");
+  });
+}
+
+function shouldSupplementFromScheduleStatus(status) {
+  return ["official"].includes(String(status || "").trim().toLowerCase());
+}
+
+function extractMissingOfficialScheduleDocumentCodes(schedulePayload, existingPayload) {
+  const existingDocumentCodeKeys = new Set(
+    toArray(existingPayload)
+      .map((item) => getWttDocumentCodeKey(item?.documentCode || item?.match_card?.documentCode))
+      .filter(Boolean),
+  );
+
+  const scheduleUnits = collectScheduleUnits(schedulePayload);
+  const missingCodes = [];
+  const seen = new Set();
+
+  for (const unit of scheduleUnits) {
+    if (!shouldSupplementFromScheduleStatus(unit?.ScheduleStatus)) {
+      continue;
+    }
+    const code = String(unit?.Code || "").trim();
+    const key = getWttDocumentCodeKey(code);
+    if (!key || seen.has(key) || existingDocumentCodeKeys.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    missingCodes.push(code);
+  }
+
+  return missingCodes;
+}
+
+async function supplementWttOfficialResultsFromSchedule(eventId, primaryPayload) {
+  let schedulePayload = null;
+  try {
+    schedulePayload = await fetchWttEventSchedule(eventId);
+  } catch {
+    return [];
+  }
+
+  const missingDocumentCodes = extractMissingOfficialScheduleDocumentCodes(schedulePayload, primaryPayload);
+  if (missingDocumentCodes.length === 0) {
+    return [];
+  }
+
+  const supplementalPayloads = await Promise.all(
+    missingDocumentCodes.map(async (documentCode) => {
+      try {
+        const payload = await fetchWttOfficialResultByDocumentCode(eventId, documentCode);
+        return Array.isArray(payload) ? payload : [];
+      } catch {
+        return [];
+      }
+    }),
+  );
+
+  return supplementalPayloads.flat().filter(Boolean);
+}
+
+function mergeWttPayloads(...payloadGroups) {
+  const merged = [];
+  const seen = new Set();
+
+  for (const group of payloadGroups) {
+    for (const item of toArray(group)) {
+      const key = getWttDocumentCodeKey(item?.documentCode || item?.match_card?.documentCode) || `id:${item?.id || ""}`;
+      if (!key || seen.has(key)) {
+        continue;
+      }
+      seen.add(key);
+      merged.push(item);
+    }
+  }
+
+  return merged;
 }
 
 function looksLikeAssociationName(value) {
@@ -2551,7 +2680,8 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload) && primaryPayload.length > 0) {
-      return primaryPayload;
+      const supplementalPayload = await supplementWttOfficialResultsFromSchedule(eventId, primaryPayload);
+      return mergeWttPayloads(primaryPayload, supplementalPayload);
     }
     const teamFallbackPayload = await fetchWttTeamFallbackResults(eventId);
     if (teamFallbackPayload.length > 0) {
