@@ -218,6 +218,17 @@
         margin-bottom: 14px;
       }
 
+      .request-url {
+        margin-bottom: 14px;
+        font-size: 0.82rem;
+        color: var(--muted);
+        word-break: break-all;
+      }
+
+      .request-url a {
+        color: var(--accent-2);
+      }
+
       .output-wrap {
         position: relative;
       }
@@ -585,6 +596,7 @@
         <section class="panel">
           <p class="status" id="status">準備できました。</p>
           <div class="result-meta" id="meta"></div>
+          <div class="request-url" id="request-url"></div>
           <div class="output-wrap">
             <button class="copy-output" type="button" id="copy-button" aria-label="出力をコピー" title="コピー">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -693,6 +705,7 @@
       const status = document.getElementById("status");
       const output = document.getElementById("output");
       const meta = document.getElementById("meta");
+      const requestUrl = document.getElementById("request-url");
       const copyButton = document.getElementById("copy-button");
       const translationsEditor = document.getElementById("translations-editor");
       const translationsSafetyNote = document.getElementById("translations-safety-note");
@@ -733,6 +746,15 @@
           chip.textContent = item;
           meta.appendChild(chip);
         });
+      }
+
+      function setRequestUrl(query) {
+        if (!query) {
+          requestUrl.textContent = "";
+          return;
+        }
+        const path = `/api/individual-matches?${query}`;
+        requestUrl.innerHTML = `取得URL: <a href="${path}" target="_blank" rel="noopener noreferrer">${path}</a>`;
       }
 
       function updateEventName() {
@@ -1244,6 +1266,7 @@
         setStatus("読み込み中...");
         output.textContent = "";
         setMeta([]);
+        setRequestUrl(query);
 
         try {
           const response = await fetch(`/api/individual-matches?${query}`);
