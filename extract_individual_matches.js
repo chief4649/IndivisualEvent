@@ -310,6 +310,9 @@ function parseMatchDateTimeValue(value) {
     const [, year, month, day, hour = "00", minute = "00"] = isoLike;
     return {
       raw,
+      compactDate: `${year}${month}${day}`,
+      compactTime: `${hour}${minute}`,
+      compactDateTime: `${year}${month}${day}${hour}${minute}`,
       isoDate: `${year}-${month}-${day}`,
       isoTime: `${hour}:${minute}`,
       isoDateTime: `${year}-${month}-${day} ${hour}:${minute}`,
@@ -321,6 +324,9 @@ function parseMatchDateTimeValue(value) {
     const [, day, month, year, hour = "00", minute = "00"] = slashLike;
     return {
       raw,
+      compactDate: `${year}${month}${day}`,
+      compactTime: `${hour}${minute}`,
+      compactDateTime: `${year}${month}${day}${hour}${minute}`,
       isoDate: `${year}-${month}-${day}`,
       isoTime: `${hour}:${minute}`,
       isoDateTime: `${year}-${month}-${day} ${hour}:${minute}`,
@@ -345,6 +351,15 @@ function getMatchDateSearchTerms(match) {
     }
     if (parsed.raw) {
       terms.add(parsed.raw);
+    }
+    if (parsed.compactDate) {
+      terms.add(parsed.compactDate);
+    }
+    if (parsed.compactTime) {
+      terms.add(parsed.compactTime);
+    }
+    if (parsed.compactDateTime) {
+      terms.add(parsed.compactDateTime);
     }
     if (parsed.isoDate) {
       terms.add(parsed.isoDate);
