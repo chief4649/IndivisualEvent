@@ -2105,12 +2105,19 @@ function chooseBetterPoolStandingMatch(existing, candidate) {
   return existing;
 }
 
+function normalizeWttDocumentCode(value) {
+  return String(value || "").trim().replace(/-+$/, "");
+}
+
 function shouldPreferSupplementalMatch(existing, supplemental) {
   if (!existing) {
     return true;
   }
 
   if (isPreNormalizedMatch(existing)) {
+    if (Array.isArray(existing.singles) && existing.singles.length > 0) {
+      return false;
+    }
     if (existing.matchType !== "team") {
       return true;
     }
@@ -2132,6 +2139,11 @@ function shouldPreferSupplementalMatch(existing, supplemental) {
   const card = existing?.match_card;
   if (!card?.teamParentData) {
     return true;
+  }
+
+  const nestedMatches = card?.teamParentData?.extended_info?.matches;
+  if (Array.isArray(nestedMatches) && nestedMatches.length > 0) {
+    return false;
   }
 
   const competitorCount = Array.isArray(card?.competitiors) ? card.competitiors.length : 0;
@@ -2222,7 +2234,7 @@ function mergeWttSupplementalMatches(primaryPayload, supplementalMatches) {
       merged.push(item);
       continue;
     }
-    indexByDocumentCode.set(String(documentCode), merged.length);
+    indexByDocumentCode.set(normalizeWttDocumentCode(documentCode), merged.length);
     merged.push(item);
   }
 
@@ -2233,7 +2245,7 @@ function mergeWttSupplementalMatches(primaryPayload, supplementalMatches) {
       continue;
     }
 
-    const key = String(documentCode);
+    const key = normalizeWttDocumentCode(documentCode);
     const existingIndex = indexByDocumentCode.get(key);
     if (existingIndex === undefined) {
       indexByDocumentCode.set(key, merged.length);
@@ -2247,6 +2259,38 @@ function mergeWttSupplementalMatches(primaryPayload, supplementalMatches) {
   }
 
   return merged;
+}
+
+function enrichWttTeamMatchesWithArchivedDetails(matches, archivedMatches) {
+  const archivedByCode = new Map();
+
+  for (const match of Array.isArray(archivedMatches) ? archivedMatches : []) {
+    if (match?.matchType !== "team" || !Array.isArray(match?.singles) || match.singles.length === 0) {
+      continue;
+    }
+    const key = normalizeWttDocumentCode(match.documentCode);
+    if (key) {
+      archivedByCode.set(key, match);
+    }
+  }
+
+  return (Array.isArray(matches) ? matches : []).map((match) => {
+    if (match?.matchType !== "team" || (Array.isArray(match?.singles) && match.singles.length > 0)) {
+      return match;
+    }
+
+    const archived = archivedByCode.get(normalizeWttDocumentCode(match.documentCode));
+    if (!archived) {
+      return match;
+    }
+
+    return {
+      ...match,
+      venue: match.venue || archived.venue,
+      table: match.table || archived.table,
+      singles: archived.singles,
+    };
+  });
 }
 
 function isLikelyBornanFallbackCandidate(eventId) {
@@ -2308,21 +2352,14 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
 async function fetchWttOfficialResults(eventId, take) {
   let primaryPayload = null;
   let primaryError = null;
-  const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
 
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload)) {
-      if (primaryPayload.length > 0 || supplementalMatches.length > 0) {
-        return mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
-      }
+      return primaryPayload;
     }
   } catch (error) {
     primaryError = error;
-  }
-
-  if (supplementalMatches.length > 0) {
-    return supplementalMatches;
   }
 
   if (isLikelyBornanFallbackCandidate(eventId)) {
@@ -2365,7 +2402,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     try {
       const payload = await fetchSourceResults(source, eventId, take, options);
 
-      if (shouldReuseCachedPayload(source, payload)) {
+      if (shouldReuseCachedPayload(source, payload) && !refreshCache) {
         const timestamp = new Date().toISOString();
         writeWttArchive(archiveDir, eventId, payload);
         updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
@@ -2388,23 +2425,6 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       return payload;
     } catch (error) {
       if (archived) {
-        const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
-        if (supplementalMatches.length > 0) {
-          const mergedArchived = mergeWttSupplementalMatches(archived, supplementalMatches);
-          const timestamp = new Date().toISOString();
-          writeWttArchive(archiveDir, eventId, mergedArchived);
-          updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
-            pooled: true,
-            source: meta.source || "wtt",
-            title: meta.title || "",
-            startDate: meta.startDate || null,
-            endDate: meta.endDate || null,
-            canAutoArchive: Boolean(meta.canAutoArchive),
-            lastFetchedAt: timestamp,
-          });
-          return mergedArchived;
-        }
-
         return archived;
       }
       throw error;
