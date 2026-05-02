@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const WTT_API_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult";
+const WTT_POOL_STANDINGS_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings";
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
 const DEFAULT_TAKE = 800;
@@ -1936,21 +1937,212 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   url.searchParams.set("EventId", String(eventId));
   url.searchParams.set("include_match_card", "true");
   url.searchParams.set("take", String(take));
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
 
-  const response = await fetch(url, {
-    headers: {
-      accept: "application/json, text/plain, */*",
-      origin: "https://www.worldtabletennis.com",
-      referer: "https://www.worldtabletennis.com/",
-      "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
-    },
-  });
+  try {
+    const response = await fetch(url, {
+      headers: {
+        accept: "application/json, text/plain, */*",
+        origin: "https://www.worldtabletennis.com",
+        referer: "https://www.worldtabletennis.com/",
+        "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+      },
+      signal: controller.signal,
+    });
 
-  if (!response.ok) {
-    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    }
+
+    return response.json();
+  } catch (error) {
+    if (error?.name === "AbortError") {
+      throw new Error("WTT official result request timed out");
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function parsePoolStandingUnit(unit) {
+  const text = String(unit || "").trim();
+  const match = text.match(/GP(\d{2})(\d{4})/i);
+  if (!match) {
+    return {
+      roundLabel: null,
+      roundKey: null,
+      matchNumber: null,
+    };
   }
 
-  return response.json();
+  const groupNumber = Number(match[1]);
+  const matchNumber = Number(match[2]);
+  return {
+    roundLabel: `Group ${groupNumber}`,
+    roundKey: `group ${groupNumber}`,
+    matchNumber,
+  };
+}
+
+function formatPoolStandingStartDateLocal(date, time) {
+  const dateText = String(date || "").trim();
+  const timeText = String(time || "").trim();
+  const dateMatch = dateText.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const timeMatch = timeText.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (!dateMatch || !timeMatch) {
+    return null;
+  }
+
+  const [, year, month, day] = dateMatch;
+  const hour = padTwoDigits(timeMatch[1]);
+  const minute = timeMatch[2];
+  const second = padTwoDigits(timeMatch[3] || "00");
+  return `${month}/${day}/${year} ${hour}:${minute}:${second}`;
+}
+
+function parsePoolStandingOverallScore(result) {
+  const text = String(result || "").trim();
+  const match = text.match(/^(\d+)-(\d+)/);
+  return match ? `${match[1]}-${match[2]}` : "0-0";
+}
+
+function isZeroScoreline(score) {
+  return String(score || "").trim() === "0-0";
+}
+
+function buildPoolStandingTeamMatch(eventId, block, team, opponent) {
+  const unit = String(opponent?.Unit || "").trim();
+  const parsedUnit = parsePoolStandingUnit(unit);
+  const rawCategoryName = String(
+    block?.MessagePayload?.Competition?.ExtendedInfos?.SportDescription?.EventName ||
+    "",
+  ).trim() || null;
+  const discipline = normalizeDiscipline(rawCategoryName);
+  const gender = inferGender(rawCategoryName);
+  const categoryName = resolveCanonicalCategoryName(
+    rawCategoryName,
+    `${rawCategoryName || ""} - ${parsedUnit.roundLabel || ""}`.trim(),
+    gender,
+    discipline,
+  );
+  const startDateLocal = formatPoolStandingStartDateLocal(opponent?.Date, opponent?.Time);
+  const overallScore = parsePoolStandingOverallScore(opponent?.Result);
+
+  return {
+    matchType: "team",
+    id: null,
+    eventId: String(eventId),
+    documentCode: unit || null,
+    subEventType: rawCategoryName,
+    categoryName,
+    discipline,
+    gender,
+    roundLabel: parsedUnit.roundLabel,
+    roundKey: parsedUnit.roundKey,
+    matchNumber: parsedUnit.matchNumber,
+    description: `${rawCategoryName || categoryName} - ${parsedUnit.roundLabel || ""} - Match ${parsedUnit.matchNumber || ""}`.trim(),
+    venue: block?.MessagePayload?.Competition?.ExtendedInfos?.VenueDescription?.VenueName || null,
+    table: null,
+    startDateLocal,
+    startDateUtc: null,
+    searchDateTokens: buildSearchDateTokens(startDateLocal, null),
+    overallScore,
+    resultStatus: isZeroScoreline(overallScore) ? "0" : "1",
+    teams: [
+      {
+        name: team?.Competitor?.Description?.TeamName || team?.Competitor?.Description?.IfId || team?.Competitor?.Organization || null,
+        org: team?.Competitor?.Organization || null,
+        orgCode: team?.Competitor?.Organization || null,
+      },
+      {
+        name: opponent?.Description?.TeamName || opponent?.Description?.IfId || opponent?.Organization || null,
+        org: opponent?.Organization || null,
+        orgCode: opponent?.Organization || null,
+      },
+    ],
+    singles: [],
+    competitors: [],
+    gameScores: [],
+    source: "wtt",
+  };
+}
+
+function chooseBetterPoolStandingMatch(existing, candidate) {
+  if (!existing) {
+    return candidate;
+  }
+
+  if (isZeroScoreline(existing.overallScore) && !isZeroScoreline(candidate.overallScore)) {
+    return candidate;
+  }
+
+  if (!existing.startDateLocal && candidate.startDateLocal) {
+    return candidate;
+  }
+
+  return existing;
+}
+
+async function fetchWttPoolStandingMatches(eventId) {
+  const eventIdText = String(eventId || "").trim();
+  if (!eventIdText) {
+    return [];
+  }
+
+  const subEventCodes = ["MTEAM---", "WTEAM---"];
+  const responses = await Promise.all(
+    subEventCodes.map((subeventcode) =>
+      fetchJson(`${WTT_POOL_STANDINGS_URL}/${eventIdText}?subeventcode=${subeventcode}`, { allowNotFound: true }),
+    ),
+  );
+
+  const deduped = new Map();
+
+  for (const response of responses) {
+    if (!Array.isArray(response)) {
+      continue;
+    }
+
+    for (const block of response) {
+      for (const team of block?.MessagePayload?.Competition?.Result || []) {
+        const opponents = Array.isArray(team?.Competitor?.Opponent) ? team.Competitor.Opponent : [];
+        for (const opponent of opponents) {
+          if (!opponent?.Unit || !team?.Competitor?.Organization || !opponent?.Organization) {
+            continue;
+          }
+
+          const candidate = buildPoolStandingTeamMatch(eventIdText, block, team, opponent);
+          if (!candidate.documentCode) {
+            continue;
+          }
+
+          deduped.set(
+            candidate.documentCode,
+            chooseBetterPoolStandingMatch(deduped.get(candidate.documentCode), candidate),
+          );
+        }
+      }
+    }
+  }
+
+  return [...deduped.values()];
+}
+
+function mergeWttSupplementalMatches(primaryPayload, supplementalMatches) {
+  const existingDocumentCodes = new Set(
+    (Array.isArray(primaryPayload) ? primaryPayload : [])
+      .map((item) => item?.documentCode ?? item?.match_card?.documentCode ?? null)
+      .filter(Boolean)
+      .map((value) => String(value)),
+  );
+
+  const additions = (Array.isArray(supplementalMatches) ? supplementalMatches : []).filter((match) =>
+    match?.documentCode && !existingDocumentCodes.has(String(match.documentCode)),
+  );
+
+  return [...(Array.isArray(primaryPayload) ? primaryPayload : []), ...additions];
 }
 
 function isLikelyBornanFallbackCandidate(eventId) {
@@ -2012,14 +2204,21 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
 async function fetchWttOfficialResults(eventId, take) {
   let primaryPayload = null;
   let primaryError = null;
+  const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
 
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
-    if (Array.isArray(primaryPayload) && primaryPayload.length > 0) {
-      return primaryPayload;
+    if (Array.isArray(primaryPayload)) {
+      if (primaryPayload.length > 0 || supplementalMatches.length > 0) {
+        return mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
+      }
     }
   } catch (error) {
     primaryError = error;
+  }
+
+  if (supplementalMatches.length > 0) {
+    return supplementalMatches;
   }
 
   if (isLikelyBornanFallbackCandidate(eventId)) {
@@ -2935,7 +3134,7 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
       ),
     ];
 
-    if (!(match.discipline === "teams" && match.gender === "mixed")) {
+    if (match.singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
       for (let i = match.singles.length + 1; i <= 5; i += 1) {
         lines.push(formatJaPendingLine(match, i, translations, displayedTeams));
       }
