@@ -1,26 +1,11 @@
 #!/usr/bin/env node
 
 const WTT_API_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult";
-const WTT_EVENT_SCHEDULE_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetEventSchedule";
-const WTT_POOL_STANDINGS_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings";
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
 const DEFAULT_TAKE = 800;
 const fs = require("fs");
 const path = require("path");
-const WTT_FETCH_TIMEOUT_MS = Number(process.env.WTT_FETCH_TIMEOUT_MS || 15000);
-const WTT_REQUEST_HEADERS = {
-  accept: "application/json, text/plain, */*",
-  origin: "https://www.worldtabletennis.com",
-  referer: "https://www.worldtabletennis.com/",
-  "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
-};
-const WTT_TEAM_EVENT_FALLBACKS = {
-  "3216": [
-    { subeventCode: "MTEAM---", categoryName: "Men Teams" },
-    { subeventCode: "WTEAM---", categoryName: "Women Teams" },
-  ],
-};
 
 const DEFAULT_DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const DEFAULT_TRANSLATIONS_PATH = path.join(DEFAULT_DATA_DIR, "translations.ja.json");
@@ -31,13 +16,11 @@ const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
 const WTT_EVENT_ID_ALIASES = {
-  "3487": "34031",
   "5524": "3500",
 };
 const ZENNIHON_ARCHIVE_YEARS = new Set(
   Array.from({ length: 15 }, (_, index) => String(2011 + index)),
 );
-const normalizedPayloadCache = new Map();
 
 function parseArgs(argv) {
   const args = {
@@ -298,162 +281,6 @@ function normalizeSearchText(value) {
     .replace(/['’]/g, "")
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .trim();
-}
-
-function parseMatchDateTimeValue(value) {
-  const raw = String(value || "").trim();
-  if (!raw) {
-    return null;
-  }
-
-  const isoLike = raw.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T\s](\d{2}):(\d{2})(?::(\d{2}))?)?$/);
-  if (isoLike) {
-    const [, year, month, day, hour = "00", minute = "00"] = isoLike;
-    return {
-      raw,
-      compactDate: `${year}${month}${day}`,
-      compactTime: `${hour}${minute}`,
-      compactDateTime: `${year}${month}${day}${hour}${minute}`,
-      isoDate: `${year}-${month}-${day}`,
-      isoTime: `${hour}:${minute}`,
-      isoDateTime: `${year}-${month}-${day} ${hour}:${minute}`,
-    };
-  }
-
-  const slashLike = raw.match(/^(\d{2})\/(\d{2})\/(\d{4})(?:\s+(\d{2}):(\d{2})(?::(\d{2}))?)?$/);
-  if (slashLike) {
-    const [, first, second, year, hour = "00", minute = "00"] = slashLike;
-    const firstNumber = Number(first);
-    const secondNumber = Number(second);
-    let month = first;
-    let day = second;
-
-    if (firstNumber > 12 && secondNumber <= 12) {
-      day = first;
-      month = second;
-    } else if (secondNumber > 12 && firstNumber <= 12) {
-      month = first;
-      day = second;
-    }
-
-    return {
-      raw,
-      compactDate: `${year}${month}${day}`,
-      compactTime: `${hour}${minute}`,
-      compactDateTime: `${year}${month}${day}${hour}${minute}`,
-      isoDate: `${year}-${month}-${day}`,
-      isoTime: `${hour}:${minute}`,
-      isoDateTime: `${year}-${month}-${day} ${hour}:${minute}`,
-    };
-  }
-
-  return { raw };
-}
-
-function getMatchDateSearchTerms(match) {
-  const values = [
-    match?.matchDateTimeText,
-    match?.matchDateLocal,
-    match?.matchDateUtc,
-  ].filter(Boolean);
-  const terms = new Set();
-
-  values.forEach((value) => {
-    const parsed = parseMatchDateTimeValue(value);
-    if (!parsed) {
-      return;
-    }
-    if (parsed.raw) {
-      terms.add(parsed.raw);
-    }
-    if (parsed.compactDate) {
-      terms.add(parsed.compactDate);
-    }
-    if (parsed.compactTime) {
-      terms.add(parsed.compactTime);
-    }
-    if (parsed.compactDateTime) {
-      terms.add(parsed.compactDateTime);
-    }
-    if (parsed.isoDate) {
-      terms.add(parsed.isoDate);
-      terms.add(parsed.isoDate.replace(/-/g, "/"));
-    }
-    if (parsed.isoTime) {
-      terms.add(parsed.isoTime);
-    }
-    if (parsed.isoDateTime) {
-      terms.add(parsed.isoDateTime);
-      terms.add(parsed.isoDateTime.replace(" ", "T"));
-      terms.add(parsed.isoDateTime.replace(/-/g, "/"));
-    }
-  });
-
-  return [...terms];
-}
-
-function normalizeDateRangeBound(token, isEnd = false) {
-  const digits = String(token || "").trim();
-  if (/^\d{8}$/.test(digits)) {
-    return `${digits}${isEnd ? "2359" : "0000"}`;
-  }
-  if (/^\d{12}$/.test(digits)) {
-    return digits;
-  }
-  return null;
-}
-
-function parseContainsDateRange(value) {
-  const text = String(value || "").trim();
-  if (!text || !text.includes("-")) {
-    return null;
-  }
-
-  const openStart = text.match(/^-(\d{8}|\d{12})$/);
-  if (openStart) {
-    return {
-      from: null,
-      to: normalizeDateRangeBound(openStart[1], true),
-    };
-  }
-
-  const openEnd = text.match(/^(\d{8}|\d{12})-$/);
-  if (openEnd) {
-    return {
-      from: normalizeDateRangeBound(openEnd[1], false),
-      to: null,
-    };
-  }
-
-  const closed = text.match(/^(\d{8}|\d{12})-(\d{8}|\d{12})$/);
-  if (closed) {
-    return {
-      from: normalizeDateRangeBound(closed[1], false),
-      to: normalizeDateRangeBound(closed[2], true),
-    };
-  }
-
-  return null;
-}
-
-function getComparableMatchDateTime(match) {
-  const values = [
-    match?.matchDateLocal,
-    match?.matchDateTimeText,
-    match?.matchDateUtc,
-  ].filter(Boolean);
-
-  for (const value of values) {
-    const parsed = parseMatchDateTimeValue(value);
-    if (!parsed?.isoDate) {
-      continue;
-    }
-    const compactDate = parsed.isoDate.replace(/-/g, "");
-    const compactTime = (parsed.isoTime || "00:00").replace(":", "");
-    return `${compactDate}${compactTime}`;
-  }
-
-  return "";
 }
 
 function inferGender(value) {
@@ -1114,7 +941,11 @@ function buildMatchSearchText(match, translations) {
       match.subEventType,
       match.roundLabel,
       match.roundKey,
-      ...getMatchDateSearchTerms(match),
+      match.venue,
+      match.table,
+      match.startDateLocal,
+      match.startDateUtc,
+      ...(match.searchDateTokens || []),
       ...match.teams.flatMap((team) => getSearchTermsForTeam(team, translations)),
       ...match.singles.flatMap((single) => getSearchTermsForSingle(single, translations)),
       ...(match.competitors || []).flatMap((competitor) => getSearchTermsForCompetitor(competitor, translations)),
@@ -1238,10 +1069,6 @@ function shouldReuseCachedPayload(source, payload) {
   return true;
 }
 
-function isSyntheticWttFallbackPayload(payload) {
-  return Array.isArray(payload) && payload.some((item) => item?.syntheticSource === "wtt_pool_standings");
-}
-
 function normalizeIndividualMatch(entry, index) {
   const result = entry?.match_result ?? entry?.matchResult ?? null;
   const competitors = Array.isArray(result?.competitiors)
@@ -1292,47 +1119,65 @@ function inferWinnerOrg(result) {
   return null;
 }
 
-function buildSpecialTeamSinglesOverride(item) {
-  const eventId = String(item?.eventId || item?.match_card?.eventId || "").trim();
-  const documentCode = String(item?.documentCode || item?.match_card?.documentCode || "").trim();
-  if (
-    eventId !== "2751" ||
-    documentCode !== "TTEMTEAM--------------GP0600010000--------"
-  ) {
-    return null;
+function padTwoDigits(value) {
+  return String(value).padStart(2, "0");
+}
+
+function buildSearchDateTokens(startDateLocal, startDateUtc) {
+  const tokens = new Set();
+
+  const localText = String(startDateLocal || "").trim();
+  if (localText) {
+    tokens.add(localText);
+    const localMatch = localText.match(/^(\d{2})\/(\d{2})\/(\d{4})\s+(\d{2}):(\d{2})(?::(\d{2}))?$/);
+    if (localMatch) {
+      const [, month, day, year, hour, minute] = localMatch;
+      tokens.add(`${year}${month}${day}${hour}${minute}`);
+      tokens.add(`${year}${month}${day}${hour}${minute}-`);
+      tokens.add(`${year}-${month}-${day}`);
+      tokens.add(`${year}-${month}-${day} ${hour}:${minute}`);
+      tokens.add(`${year}/${month}/${day}`);
+      tokens.add(`${year}/${month}/${day} ${hour}:${minute}`);
+    }
   }
 
-  return [
-    {
-      order: 1,
-      documentCode: `${documentCode}::override-m1`,
-      description: "Men's Teams - Group 6 - Match 1 M1",
-      overallScore: "3-1",
-      resultStatus: "OFFICIAL",
-      gameScores: ["9-11", "11-7", "14-12", "11-3"],
-      competitors: [
-        {
-          type: "H",
-          id: "116853",
-          name: "Anton KALLBERG",
-          org: "SWE",
-          orgCode: "SWE",
-          irm: "OK",
-          players: [{ id: "116853", name: "Anton KALLBERG", org: "SWE", orgCode: "SWE" }],
-        },
-        {
-          type: "A",
-          id: "107445",
-          name: "Lubomir PISTEJ",
-          org: "SVK",
-          orgCode: "SVK",
-          irm: "OK",
-          players: [{ id: "107445", name: "Lubomir PISTEJ", org: "SVK", orgCode: "SVK" }],
-        },
-      ],
-      winnerOrg: "SWE",
-    },
-  ];
+  const utcText = String(startDateUtc || "").trim();
+  if (utcText) {
+    tokens.add(utcText);
+    const parsedUtc = new Date(utcText);
+    if (!Number.isNaN(parsedUtc.getTime())) {
+      const year = parsedUtc.getUTCFullYear();
+      const month = padTwoDigits(parsedUtc.getUTCMonth() + 1);
+      const day = padTwoDigits(parsedUtc.getUTCDate());
+      const hour = padTwoDigits(parsedUtc.getUTCHours());
+      const minute = padTwoDigits(parsedUtc.getUTCMinutes());
+      tokens.add(`${year}${month}${day}${hour}${minute}`);
+      tokens.add(`${year}${month}${day}${hour}${minute}-`);
+      tokens.add(`${year}-${month}-${day}`);
+      tokens.add(`${year}-${month}-${day} ${hour}:${minute}`);
+    }
+  }
+
+  return [...tokens];
+}
+
+function extractMatchSchedule(card, item = null) {
+  const startDateLocal = String(
+    card?.matchDateTime?.startDateLocal ||
+    item?.startDateLocal ||
+    "",
+  ).trim() || null;
+  const startDateUtc = String(
+    card?.matchDateTime?.startDateUTC ||
+    card?.matchStartTimeUTC ||
+    "",
+  ).trim() || null;
+
+  return {
+    startDateLocal,
+    startDateUtc,
+    searchDateTokens: buildSearchDateTokens(startDateLocal, startDateUtc),
+  };
 }
 
 function normalizeTeamMatch(item) {
@@ -1350,24 +1195,12 @@ function normalizeTeamMatch(item) {
     return null;
   }
   const teams = competitors.map((competitor) => ({
-    name: looksLikePersonalName(competitor?.name) && competitor?.org
-      ? competitor.org
-      : (competitor?.name ?? null),
+    name: competitor?.name ?? null,
     org: competitor?.org ?? null,
   }));
   const round = extractRound(card.subEventDescription);
   const nested = card?.teamParentData?.extended_info?.matches;
-  const singles = Array.isArray(nested) ? nested.map(normalizeIndividualMatch) : [];
-  const specialSingles = buildSpecialTeamSinglesOverride(item);
-  if (Array.isArray(specialSingles) && specialSingles.length > 0) {
-    singles.unshift(...specialSingles);
-  }
-  singles.forEach((single, index) => {
-    single.order = index + 1;
-  });
-  const matchDateLocal = item?.startDateLocal || card?.matchDateTime?.startDateLocal || null;
-  const matchDateUtc = card?.matchDateTime?.startDateUTC || card?.matchStartTimeUTC || null;
-  const matchDateTimeText = card?.matchDateTime?.startDateLocal || matchDateLocal || matchDateUtc || null;
+  const schedule = extractMatchSchedule(card, item);
 
   return {
     matchType: "team",
@@ -1384,13 +1217,13 @@ function normalizeTeamMatch(item) {
     description: card.subEventDescription ?? null,
     venue: card.venueName ?? null,
     table: card.tableName ?? card.tableNumber ?? null,
-    matchDateTimeText,
-    matchDateLocal,
-    matchDateUtc,
+    startDateLocal: schedule.startDateLocal,
+    startDateUtc: schedule.startDateUtc,
+    searchDateTokens: schedule.searchDateTokens,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
     teams,
-    singles,
+    singles: Array.isArray(nested) ? nested.map(normalizeIndividualMatch) : [],
     competitors: [],
     gameScores: [],
   };
@@ -1407,14 +1240,8 @@ function normalizeStandaloneMatch(item) {
   const discipline = normalizeDiscipline(rawCategoryName);
   const gender = inferGender(rawCategoryName);
   const paraCategoryName = resolveParaCategoryName(rawCategoryName, card.subEventDescription);
-  const categoryName = paraCategoryName || resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline);
-  if (!paraCategoryName && /\bTeams$/i.test(String(categoryName || "").trim())) {
-    return null;
-  }
   const round = extractRound(card.subEventDescription);
-  const matchDateLocal = item?.startDateLocal || card?.matchDateTime?.startDateLocal || null;
-  const matchDateUtc = card?.matchDateTime?.startDateUTC || card?.matchStartTimeUTC || null;
-  const matchDateTimeText = card?.matchDateTime?.startDateLocal || matchDateLocal || matchDateUtc || null;
+  const schedule = extractMatchSchedule(card, item);
 
   return {
     matchType: "individual",
@@ -1422,7 +1249,7 @@ function normalizeStandaloneMatch(item) {
     eventId: item.eventId ?? card.eventId ?? null,
     documentCode: item.documentCode ?? card.documentCode ?? null,
     subEventType: rawCategoryName,
-    categoryName,
+    categoryName: paraCategoryName || resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline),
     discipline,
     gender,
     roundLabel: round.roundLabel,
@@ -1431,9 +1258,9 @@ function normalizeStandaloneMatch(item) {
     description: card.subEventDescription ?? null,
     venue: card.venueName ?? null,
     table: card.tableName ?? card.tableNumber ?? null,
-    matchDateTimeText,
-    matchDateLocal,
-    matchDateUtc,
+    startDateLocal: schedule.startDateLocal,
+    startDateUtc: schedule.startDateUtc,
+    searchDateTokens: schedule.searchDateTokens,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
     isParaClass: Boolean(paraCategoryName),
@@ -1456,17 +1283,6 @@ function isPreNormalizedMatch(item) {
     Array.isArray(item.competitors) &&
     typeof item.categoryName === "string",
   );
-}
-
-function getNormalizedPayloadCacheKey(args) {
-  return JSON.stringify({
-    source: args.source,
-    event: args.event,
-    take: args.take,
-    cacheDir: args.cacheDir,
-    wttArchiveDir: args.wttArchiveDir,
-    zennihonArchiveDir: args.zennihonArchiveDir,
-  });
 }
 
 function getZennihonResultBaseUrl(eventId) {
@@ -1828,22 +1644,30 @@ function getBornanBaseUrls(eventId) {
     return [];
   }
 
-  const urls = [`${ITTF_RESULTS_BASE_URL}/TTE${normalizedId}/`];
-  if (/^\d+$/.test(normalizedId)) {
-    urls.push(`${ITTF_RESULTS_BASE_URL}/${normalizedId}/`);
-  }
-  return [...new Set(urls)];
+  return [
+    {
+      source: "bornan",
+      baseUrl: `${ITTF_RESULTS_BASE_URL}/TTE${normalizedId}/`,
+    },
+    {
+      source: "ittf",
+      baseUrl: `${ITTF_RESULTS_BASE_URL}/${normalizedId}/`,
+    },
+  ];
 }
 
-async function resolveBornanBaseUrl(eventId) {
-  const baseUrls = getBornanBaseUrls(eventId);
-  for (const baseUrl of baseUrls) {
-    const champ = await fetchJson(new URL("champ.json", baseUrl).toString(), { allowNotFound: true });
+async function fetchBornanChamp(eventId) {
+  for (const candidate of getBornanBaseUrls(eventId)) {
+    const champ = await fetchJson(new URL("champ.json", candidate.baseUrl).toString(), { allowNotFound: true });
     if (champ) {
-      return { baseUrl, champ };
+      return {
+        ...candidate,
+        champ,
+      };
     }
   }
-  return { baseUrl: baseUrls[0] || "", champ: null };
+
+  return null;
 }
 
 function getBornanEventKey(matchKey) {
@@ -2002,8 +1826,6 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
       description: match?.Desc || `${categoryName} - ${roundLabel}`,
       venue: match?.Venue || null,
       table: match?.LocDesc || match?.Loc || null,
-      matchDateTimeText: match?.Date || null,
-      matchDateLocal: match?.Date || null,
       overallScore: `${match?.Home?.Res ?? "0"}-${match?.Away?.Res ?? "0"}`,
       resultStatus: String(match?.Status || "").trim() || null,
       teams: [
@@ -2034,8 +1856,6 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
     description: match?.Desc || `${categoryName} - ${roundLabel}`,
     venue: match?.Venue || null,
     table: match?.LocDesc || match?.Loc || null,
-    matchDateTimeText: match?.Date || null,
-    matchDateLocal: match?.Date || null,
     overallScore: `${match?.Home?.Res ?? "0"}-${match?.Away?.Res ?? "0"}`,
     resultStatus: String(match?.Status || "").trim() || null,
     isParaClass: false,
@@ -2051,8 +1871,10 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
 }
 
 async function fetchBornanOfficialResults(eventId) {
-  const { baseUrl, champ } = await resolveBornanBaseUrl(eventId);
-  if (!champ || !Array.isArray(champ.dates) || champ.dates.length === 0) {
+  const resolved = await fetchBornanChamp(eventId);
+  const baseUrl = resolved?.baseUrl;
+  const champ = resolved?.champ;
+  if (!baseUrl || !champ || !Array.isArray(champ.dates) || champ.dates.length === 0) {
     return null;
   }
 
@@ -2084,7 +1906,8 @@ async function fetchBornanOfficialResults(eventId) {
 }
 
 async function fetchBornanEventMeta(eventId) {
-  const { champ } = await resolveBornanBaseUrl(eventId);
+  const resolved = await fetchBornanChamp(eventId);
+  const champ = resolved?.champ;
   if (!champ) {
     return null;
   }
@@ -2099,7 +1922,7 @@ async function fetchBornanEventMeta(eventId) {
 
   return {
     eventId: String(eventId),
-    source: "bornan",
+    source: resolved.source,
     title: String(champ.champDesc || champ.champ || ""),
     startDate,
     endDate,
@@ -2114,503 +1937,24 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   url.searchParams.set("include_match_card", "true");
   url.searchParams.set("take", String(take));
 
-  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
+  const response = await fetch(url, {
+    headers: {
+      accept: "application/json, text/plain, */*",
+      origin: "https://www.worldtabletennis.com",
+      referer: "https://www.worldtabletennis.com/",
+      "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+    },
+  });
 
   if (!response.ok) {
     throw new Error(`API request failed: ${response.status} ${response.statusText}`);
   }
 
   return response.json();
-}
-
-async function fetchWttOfficialResultByDocumentCode(eventId, documentCode) {
-  const url = new URL(WTT_API_URL);
-  url.searchParams.set("EventId", String(eventId));
-  url.searchParams.set("DocumentCode", String(documentCode || "").trim());
-  url.searchParams.set("include_match_card", "true");
-  url.searchParams.set("take", "10");
-
-  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
-  if (!response.ok) {
-    throw new Error(`API request failed: ${response.status} ${response.statusText}`);
-  }
-
-  return response.json();
-}
-
-async function fetchWttEventSchedule(eventId) {
-  const url = new URL(`${WTT_EVENT_SCHEDULE_URL}/${encodeURIComponent(String(eventId || "").trim())}`);
-  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
-  if (!response.ok) {
-    throw new Error(`Schedule request failed: ${response.status} ${response.statusText}`);
-  }
-  return response.json();
-}
-
-async function fetchWithTimeout(url, options = {}, timeoutMs = WTT_FETCH_TIMEOUT_MS) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
-  try {
-    return await fetch(url, {
-      ...options,
-      signal: controller.signal,
-    });
-  } catch (error) {
-    if (error?.name === "AbortError") {
-      throw new Error(`Fetch timed out after ${timeoutMs}ms`);
-    }
-    throw error;
-  } finally {
-    clearTimeout(timeout);
-  }
-}
-
-function getFirstDefinedValue(object, keys) {
-  for (const key of keys) {
-    if (object && object[key] !== undefined && object[key] !== null && object[key] !== "") {
-      return object[key];
-    }
-  }
-  return null;
-}
-
-function toArray(value) {
-  return Array.isArray(value) ? value : [];
-}
-
-function buildSyntheticTeamPlaceholderSingles(teams) {
-  if (!Array.isArray(teams) || teams.length < 2) {
-    return [];
-  }
-  return Array.from({ length: 3 }, (_, index) => {
-    const leftOrder = `A${index + 1}`;
-    const rightOrder = `B${index + 1}`;
-    return {
-      order: index + 1,
-      documentCode: null,
-      description: null,
-      overallScore: null,
-      resultStatus: "SCHEDULED",
-      gameScores: [],
-      competitors: [
-        {
-          type: "H",
-          id: `${teams[0].org || teams[0].name || "TEAM1"}-${leftOrder}`,
-          name: leftOrder,
-          org: teams[0].org || null,
-          orgCode: teams[0].org || null,
-          irm: "OK",
-          players: [{ id: leftOrder, name: leftOrder, org: teams[0].org || null, orgCode: teams[0].org || null }],
-        },
-        {
-          type: "A",
-          id: `${teams[1].org || teams[1].name || "TEAM2"}-${rightOrder}`,
-          name: rightOrder,
-          org: teams[1].org || null,
-          orgCode: teams[1].org || null,
-          irm: "OK",
-          players: [{ id: rightOrder, name: rightOrder, org: teams[1].org || null, orgCode: teams[1].org || null }],
-        },
-      ],
-      winnerOrg: null,
-    };
-  });
-}
-
-function normalizePoolStandingTeam(entry) {
-  if (!entry || typeof entry !== "object") {
-    return null;
-  }
-  const competitor = entry.Competitor && typeof entry.Competitor === "object" ? entry.Competitor : null;
-  const nestedOrg = competitor
-    ? getFirstDefinedValue(competitor, ["Code", "IfId", "competitiorOrg", "OrgCode", "Org", "CountryCode"])
-    : null;
-  const nestedName = competitor
-    ? getFirstDefinedValue(competitor, ["Name", "Description", "competitiorName", "DisplayName"])
-    : null;
-  const org = String(
-    getFirstDefinedValue(entry, ["Code", "IfId", "competitiorOrg", "OrgCode", "Org", "CountryCode"]) || nestedOrg || "",
-  ).trim();
-  const name = String(
-    getFirstDefinedValue(entry, ["Name", "Description", "DisplayName", "TeamName"]) || nestedName || org,
-  ).trim();
-  if (!org && !name) {
-    return null;
-  }
-  return {
-    name: name || org,
-    org: org || name || null,
-  };
-}
-
-function collectPoolStandingTeams(node) {
-  if (!node || typeof node !== "object") {
-    return [];
-  }
-
-  const directTeams = [
-    ...toArray(node.Competitors),
-    ...toArray(node.competitors),
-    ...toArray(node.competitiors),
-    ...toArray(node.Teams),
-    ...toArray(node.teams),
-  ].map(normalizePoolStandingTeam).filter(Boolean);
-
-  if (directTeams.length >= 2) {
-    return directTeams.slice(0, 2);
-  }
-
-  const homeTeam = normalizePoolStandingTeam(getFirstDefinedValue(node, ["Home", "home", "HomeTeam", "homeTeam"]));
-  const awayTeam = normalizePoolStandingTeam(getFirstDefinedValue(node, ["Away", "away", "AwayTeam", "awayTeam"]));
-  return [homeTeam, awayTeam].filter(Boolean);
-}
-
-function normalizePoolStandingGroupLabel(value) {
-  const text = String(value || "").trim();
-  if (!text) {
-    return "Group";
-  }
-  if (/^(group|pool)\b/i.test(text)) {
-    return text.replace(/\s+/g, " ");
-  }
-  return `Group ${text}`;
-}
-
-function getWttDocumentCodeKey(value) {
-  return String(value || "").trim().replace(/-+$/g, "");
-}
-
-function collectScheduleUnits(payload) {
-  if (!Array.isArray(payload)) {
-    return [];
-  }
-  return payload.flatMap((entry) => {
-    const competition = entry?.Competition;
-    const units = Array.isArray(competition?.Unit) ? competition.Unit : [];
-    return units.filter((unit) => unit && typeof unit === "object");
-  });
-}
-
-function shouldSupplementFromScheduleStatus(status) {
-  return ["official"].includes(String(status || "").trim().toLowerCase());
-}
-
-function extractMissingOfficialScheduleDocumentCodes(schedulePayload, existingPayload) {
-  const existingDocumentCodeKeys = new Set(
-    toArray(existingPayload)
-      .map((item) => getWttDocumentCodeKey(item?.documentCode || item?.match_card?.documentCode))
-      .filter(Boolean),
-  );
-
-  const scheduleUnits = collectScheduleUnits(schedulePayload);
-  const missingCodes = [];
-  const seen = new Set();
-
-  for (const unit of scheduleUnits) {
-    if (!shouldSupplementFromScheduleStatus(unit?.ScheduleStatus)) {
-      continue;
-    }
-    const code = String(unit?.Code || "").trim();
-    const key = getWttDocumentCodeKey(code);
-    if (!key || seen.has(key) || existingDocumentCodeKeys.has(key)) {
-      continue;
-    }
-    seen.add(key);
-    missingCodes.push(code);
-  }
-
-  return missingCodes;
-}
-
-async function supplementWttOfficialResultsFromSchedule(eventId, primaryPayload) {
-  let schedulePayload = null;
-  try {
-    schedulePayload = await fetchWttEventSchedule(eventId);
-  } catch {
-    return [];
-  }
-
-  const missingDocumentCodes = extractMissingOfficialScheduleDocumentCodes(schedulePayload, primaryPayload);
-  if (missingDocumentCodes.length === 0) {
-    return [];
-  }
-
-  const supplementalPayloads = await Promise.all(
-    missingDocumentCodes.map(async (documentCode) => {
-      try {
-        const payload = await fetchWttOfficialResultByDocumentCode(eventId, documentCode);
-        return Array.isArray(payload) ? payload : [];
-      } catch {
-        return [];
-      }
-    }),
-  );
-
-  return supplementalPayloads.flat().filter(Boolean);
-}
-
-function mergeWttPayloads(...payloadGroups) {
-  const merged = [];
-  const seen = new Set();
-
-  for (const group of payloadGroups) {
-    for (const item of toArray(group)) {
-      const key = getWttDocumentCodeKey(item?.documentCode || item?.match_card?.documentCode) || `id:${item?.id || ""}`;
-      if (!key || seen.has(key)) {
-        continue;
-      }
-      seen.add(key);
-      merged.push(item);
-    }
-  }
-
-  return merged;
-}
-
-function looksLikeAssociationName(value) {
-  const text = String(value || "").trim();
-  if (!text) {
-    return false;
-  }
-  return /\b(association|federation|federacao|federación|fédération|federazione|federasyon|board|table tennis|tennis de mesa|tenis de mesa|tenis de table|tischtennis|ttenis|ligue|national|olympic|committee|kong|union|team)\b/i.test(text);
-}
-
-function looksLikePersonalName(value) {
-  const text = String(value || "").trim();
-  if (!text || /,|\d/.test(text)) {
-    return false;
-  }
-  const tokens = text.split(/\s+/).filter(Boolean);
-  if (tokens.length < 2 || tokens.length > 3) {
-    return false;
-  }
-  return tokens.every((token) => /^[A-Za-zÀ-ÿ'’.-]+$/.test(token));
-}
-
-function buildSyntheticTeamDescription(categoryName, groupLabel, matchNumber) {
-  const parts = [categoryName, groupLabel].filter(Boolean);
-  if (Number.isFinite(matchNumber)) {
-    parts.push(`Match ${matchNumber}`);
-  }
-  return parts.join(" - ");
-}
-
-function shouldTreatAsPoolStandingMatch(node, pathParts) {
-  if (!node || typeof node !== "object") {
-    return false;
-  }
-  const keys = Object.keys(node).join(" ").toLowerCase();
-  const pathText = pathParts.join(".").toLowerCase();
-  return (
-    /\bmatch\b|\bfixture\b|\bschedule\b|\bunit\b/.test(keys) ||
-    /\bmatch\b|\bfixture\b|\bschedule\b/.test(pathText) ||
-    getFirstDefinedValue(node, [
-      "MatchNumber",
-      "matchNumber",
-      "MatchNo",
-      "matchNo",
-      "UnitCode",
-      "unitCode",
-      "DateTime",
-      "dateTime",
-      "StartDateTime",
-      "startDateTime",
-      "StartDateTimeUtc",
-      "startDateTimeUtc",
-      "ScheduledDateTime",
-      "scheduledDateTime",
-    ]) !== null
-  );
-}
-
-function normalizePoolStandingMatch(node, pathParts, options) {
-  const teams = collectPoolStandingTeams(node);
-  if (teams.length < 2 || !shouldTreatAsPoolStandingMatch(node, pathParts)) {
-    return null;
-  }
-  if (
-    teams.every((team) => looksLikePersonalName(team?.name)) &&
-    !teams.some((team) => looksLikeAssociationName(team?.name))
-  ) {
-    return null;
-  }
-  if (!teams.some((team) => looksLikeAssociationName(team?.name))) {
-    return null;
-  }
-
-  const groupLabel = normalizePoolStandingGroupLabel(
-    getFirstDefinedValue(node, ["GroupName", "groupName", "PoolName", "poolName", "Group", "group", "Pool", "pool"])
-      || pathParts.find((part) => /^(group|pool)\b/i.test(String(part || "").trim()))
-      || "",
-  );
-  const matchNumberRaw = getFirstDefinedValue(node, ["MatchNumber", "matchNumber", "MatchNo", "matchNo", "Order", "order"]);
-  const matchNumber = Number(matchNumberRaw);
-  const description = buildSyntheticTeamDescription(
-    options.categoryName,
-    groupLabel,
-    Number.isFinite(matchNumber) ? matchNumber : null,
-  );
-  const round = extractRound(description);
-  const unitCode = String(getFirstDefinedValue(node, ["UnitCode", "unitCode", "DocumentCode", "documentCode"]) || "").trim();
-  const table = getFirstDefinedValue(node, ["Table", "table", "TableName", "tableName", "TableNumber", "tableNumber"]);
-
-  return {
-    source: "wtt",
-    syntheticSource: "wtt_pool_standings",
-    matchType: "team",
-    id: unitCode || null,
-    eventId: options.eventId,
-    documentCode: unitCode || null,
-    subEventType: options.categoryName,
-    categoryName: options.categoryName,
-    discipline: "teams",
-    gender: inferGender(options.categoryName),
-    roundLabel: round.roundLabel,
-    roundKey: round.roundKey,
-    matchNumber: Number.isFinite(matchNumber) ? matchNumber : null,
-    description,
-    venue: null,
-    table: table ? String(table).trim() : null,
-    matchDateTimeText: String(
-      getFirstDefinedValue(node, [
-        "DateTime",
-        "dateTime",
-        "StartDateTime",
-        "startDateTime",
-        "StartDateTimeUtc",
-        "startDateTimeUtc",
-        "ScheduledDateTime",
-        "scheduledDateTime",
-      ]) || "",
-    ).trim() || null,
-    overallScore: null,
-    resultStatus: "SCHEDULED",
-    teams,
-    singles: buildSyntheticTeamPlaceholderSingles(teams),
-    competitors: [],
-    gameScores: [],
-  };
-}
-
-function normalizeWttPoolStandingsPayload(payload, options) {
-  const matches = [];
-  const seen = new Set();
-
-  function visit(node, pathParts = []) {
-    if (Array.isArray(node)) {
-      node.forEach((entry, index) => visit(entry, [...pathParts, String(index)]));
-      return;
-    }
-    if (!node || typeof node !== "object") {
-      return;
-    }
-
-    const match = normalizePoolStandingMatch(node, pathParts, options);
-    if (match) {
-      const dedupeKey = [
-        match.categoryName,
-        match.roundLabel || "",
-        match.matchNumber || "",
-        match.teams[0]?.org || match.teams[0]?.name || "",
-        match.teams[1]?.org || match.teams[1]?.name || "",
-      ].join("|");
-      if (!seen.has(dedupeKey)) {
-        seen.add(dedupeKey);
-        matches.push(match);
-      }
-      return;
-    }
-
-    Object.entries(node).forEach(([key, value]) => visit(value, [...pathParts, key]));
-  }
-
-  visit(payload);
-  return matches;
-}
-
-async function fetchWttTeamPoolStandings(eventId, subeventCode) {
-  const url = new URL(WTT_POOL_STANDINGS_URL);
-  url.pathname = `${url.pathname.replace(/\/$/, "")}/${encodeURIComponent(String(eventId || "").trim())}`;
-  url.searchParams.set("subeventcode", subeventCode);
-
-  const response = await fetchWithTimeout(url, { headers: WTT_REQUEST_HEADERS });
-  if (!response.ok) {
-    throw new Error(`Pool standings request failed: ${response.status} ${response.statusText}`);
-  }
-  return response.json();
-}
-
-async function fetchWttTeamFallbackResults(eventId) {
-  const fallbackDefinitions = WTT_TEAM_EVENT_FALLBACKS[String(eventId || "").trim()];
-  if (!Array.isArray(fallbackDefinitions) || fallbackDefinitions.length === 0) {
-    return [];
-  }
-
-  const payloads = await Promise.all(fallbackDefinitions.map(async (definition) => {
-    try {
-      const payload = await fetchWttTeamPoolStandings(eventId, definition.subeventCode);
-      return normalizeWttPoolStandingsPayload(payload, {
-        eventId: String(eventId || "").trim(),
-        categoryName: definition.categoryName,
-      });
-    } catch {
-      return [];
-    }
-  }));
-
-  return payloads.flat().sort((left, right) => {
-    if (left.categoryName !== right.categoryName) {
-      return String(left.categoryName).localeCompare(String(right.categoryName));
-    }
-    if (left.roundLabel !== right.roundLabel) {
-      return String(left.roundLabel || "").localeCompare(String(right.roundLabel || ""));
-    }
-    return Number(left.matchNumber || 0) - Number(right.matchNumber || 0);
-  });
 }
 
 function isLikelyBornanFallbackCandidate(eventId) {
   return /^\d+$/.test(String(eventId || "").trim());
-}
-
-function isWttHostedEventName(eventName) {
-  const name = String(eventName || "").trim().toLowerCase();
-  if (!name) {
-    return false;
-  }
-  return /\bwtt\b/.test(name) || /world team table tennis championships finals/.test(name);
-}
-
-function isIttfResultsPreferredEventName(eventName) {
-  const name = String(eventName || "").trim().toLowerCase();
-  if (!name || isWttHostedEventName(name)) {
-    return false;
-  }
-  return (
-    /^ittf\b/.test(name) ||
-    /\bworld para\b/.test(name) ||
-    /special event qualifier/.test(name) ||
-    /youth championships?/.test(name) ||
-    /youth cup/.test(name) ||
-    /para (future|open|event)/.test(name)
-  );
-}
-
-function getIndexedWttEventName(eventId, options = {}) {
-  const eventIdText = String(eventId || "").trim();
-  if (!eventIdText) {
-    return "";
-  }
-  const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
-  const dateIndexPath = options.wttDateIndexPath || DEFAULT_WTT_DATE_INDEX_PATH;
-  const archiveIndex = readWttArchiveIndex(archiveIndexPath);
-  const dateIndex = readWttDateIndex(dateIndexPath);
-  return String(
-    archiveIndex[eventIdText]?.title ||
-    dateIndex[eventIdText]?.eventName ||
-    dateIndex[eventIdText]?.title ||
-    "",
-  ).trim();
 }
 
 async function getWttEventLifecycleMeta(eventId, options = {}) {
@@ -2623,14 +1967,14 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   const datedEntry = dateIndex[eventIdText];
 
   const mergedEntry = {
-    ...(indexedEntry || {}),
     ...(datedEntry || {}),
+    ...(indexedEntry || {}),
   };
 
   if (indexedEntry?.archived && !indexedEntry?.forced) {
     return {
       eventId: eventIdText,
-      source: indexedEntry.source || mergedEntry.source || "wtt",
+      source: mergedEntry.source || "wtt",
       title: mergedEntry.title || indexedEntry.title || "",
       startDate: mergedEntry.startDate || null,
       endDate: mergedEntry.endDate || null,
@@ -2665,35 +2009,17 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   };
 }
 
-async function fetchWttOfficialResults(eventId, take, options = {}) {
-  const indexedName = getIndexedWttEventName(eventId, options);
-  if (isIttfResultsPreferredEventName(indexedName) && isLikelyBornanFallbackCandidate(eventId)) {
-    const bornanPayload = await fetchBornanOfficialResults(eventId);
-    if (Array.isArray(bornanPayload) && bornanPayload.length > 0) {
-      return bornanPayload;
-    }
-  }
-
+async function fetchWttOfficialResults(eventId, take) {
   let primaryPayload = null;
   let primaryError = null;
 
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload) && primaryPayload.length > 0) {
-      const supplementalPayload = await supplementWttOfficialResultsFromSchedule(eventId, primaryPayload);
-      return mergeWttPayloads(primaryPayload, supplementalPayload);
-    }
-    const teamFallbackPayload = await fetchWttTeamFallbackResults(eventId);
-    if (teamFallbackPayload.length > 0) {
-      return teamFallbackPayload;
+      return primaryPayload;
     }
   } catch (error) {
     primaryError = error;
-  }
-
-  const teamFallbackPayload = await fetchWttTeamFallbackResults(eventId);
-  if (teamFallbackPayload.length > 0) {
-    return teamFallbackPayload;
   }
 
   if (isLikelyBornanFallbackCandidate(eventId)) {
@@ -2712,7 +2038,7 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
 
 async function fetchSourceResults(source, eventId, take, options = {}) {
   if (source === "wtt") {
-    return fetchWttOfficialResults(eventId, take, options);
+    return fetchWttOfficialResults(eventId, take);
   }
 
   if (source === "zennihon") {
@@ -2736,7 +2062,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     try {
       const payload = await fetchSourceResults(source, eventId, take, options);
 
-      if (shouldReuseCachedPayload(source, payload) && !isSyntheticWttFallbackPayload(payload)) {
+      if (shouldReuseCachedPayload(source, payload)) {
         const timestamp = new Date().toISOString();
         writeWttArchive(archiveDir, eventId, payload);
         updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
@@ -2843,25 +2169,8 @@ function applyFilters(matches, args, translations) {
   }
 
   if (args.contains) {
-    const range = parseContainsDateRange(args.contains);
-    if (range) {
-      filtered = filtered.filter((match) => {
-        const comparable = getComparableMatchDateTime(match);
-        if (!comparable) {
-          return false;
-        }
-        if (range.from && comparable < range.from) {
-          return false;
-        }
-        if (range.to && comparable > range.to) {
-          return false;
-        }
-        return true;
-      });
-    } else {
-      const needle = normalizeSearchText(args.contains);
-      filtered = filtered.filter((match) => buildMatchSearchText(match, translations).includes(needle));
-    }
+    const needle = normalizeSearchText(args.contains);
+    filtered = filtered.filter((match) => buildMatchSearchText(match, translations).includes(needle));
   }
 
   if (args.docCode) {
@@ -2959,68 +2268,13 @@ function getTieDisplaySide(match) {
   return winnerIndex === 1 ? 1 : 0;
 }
 
-function inferTeamScoreIndexesFromSingles(match) {
-  const orgToTeamIndex = new Map();
-  (match?.teams || []).forEach((team, index) => {
-    const org = String(team?.org || "").trim();
-    if (org && !orgToTeamIndex.has(org)) {
-      orgToTeamIndex.set(org, index);
-    }
-  });
-
-  const leftCounts = new Map();
-  const rightCounts = new Map();
-  (match?.singles || []).forEach((single) => {
-    const leftOrg = String(single?.competitors?.[0]?.org || "").trim();
-    const rightOrg = String(single?.competitors?.[1]?.org || "").trim();
-    if (leftOrg && orgToTeamIndex.has(leftOrg)) {
-      leftCounts.set(leftOrg, (leftCounts.get(leftOrg) || 0) + 1);
-    }
-    if (rightOrg && orgToTeamIndex.has(rightOrg)) {
-      rightCounts.set(rightOrg, (rightCounts.get(rightOrg) || 0) + 1);
-    }
-  });
-
-  const getTopOrg = (counts) => {
-    let bestOrg = "";
-    let bestCount = -1;
-    counts.forEach((count, org) => {
-      if (count > bestCount) {
-        bestOrg = org;
-        bestCount = count;
-      }
-    });
-    return bestOrg;
-  };
-
-  const leftOrg = getTopOrg(leftCounts);
-  const rightOrg = getTopOrg(rightCounts);
-  const scoreLeftTeamIndex = leftOrg ? orgToTeamIndex.get(leftOrg) : undefined;
-  const scoreRightTeamIndex = rightOrg ? orgToTeamIndex.get(rightOrg) : undefined;
-
-  if (
-    Number.isInteger(scoreLeftTeamIndex) &&
-    Number.isInteger(scoreRightTeamIndex) &&
-    scoreLeftTeamIndex !== scoreRightTeamIndex
-  ) {
-    return { scoreLeftTeamIndex, scoreRightTeamIndex };
-  }
-
-  return { scoreLeftTeamIndex: 0, scoreRightTeamIndex: 1 };
-}
-
 function getDisplayedTeamIndexes(match) {
-  const { scoreLeftTeamIndex, scoreRightTeamIndex } = inferTeamScoreIndexesFromSingles(match);
-  const winnerIndex = getWinnerIndexFromScore(match.overallScore);
-  const leftIndex = winnerIndex === 1 ? scoreRightTeamIndex : scoreLeftTeamIndex;
-  const rightIndex = leftIndex === scoreLeftTeamIndex ? scoreRightTeamIndex : scoreLeftTeamIndex;
+  const leftIndex = getTieDisplaySide(match);
   return {
     leftIndex,
-    rightIndex,
+    rightIndex: leftIndex === 0 ? 1 : 0,
     leftOrg: match?.teams?.[leftIndex]?.org ?? null,
-    rightOrg: match?.teams?.[rightIndex]?.org ?? null,
-    scoreLeftTeamIndex,
-    scoreRightTeamIndex,
+    rightOrg: match?.teams?.[leftIndex === 0 ? 1 : 0]?.org ?? null,
   };
 }
 
@@ -3175,51 +2429,9 @@ function getSinglePlayerFromCompetitor(competitor) {
   };
 }
 
-function getPendingScheduleFromFirstFourSingles(match, displayedTeams) {
-  if (!match || match.singles.length < 4) {
-    return null;
-  }
-
-  const [firstMatch, secondMatch, , fourthMatch] = match.singles;
-  const firstIndexes = getSingleDisplayIndexes(firstMatch, displayedTeams);
-  const secondIndexes = getSingleDisplayIndexes(secondMatch, displayedTeams);
-  const fourthIndexes = getSingleDisplayIndexes(fourthMatch, displayedTeams);
-  const firstLeft = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[firstIndexes.leftCompetitorIndex]);
-  const firstRight = getSinglePlayerFromCompetitor(firstMatch?.competitors?.[firstIndexes.rightCompetitorIndex]);
-  const secondLeft = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[secondIndexes.leftCompetitorIndex]);
-  const secondRight = getSinglePlayerFromCompetitor(secondMatch?.competitors?.[secondIndexes.rightCompetitorIndex]);
-  const fourthLeft = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[fourthIndexes.leftCompetitorIndex]);
-  const fourthRight = getSinglePlayerFromCompetitor(fourthMatch?.competitors?.[fourthIndexes.rightCompetitorIndex]);
-
-  if (!firstLeft || !firstRight || !secondLeft || !secondRight || !fourthLeft || !fourthRight) {
-    return null;
-  }
-
-  const firstLeftKey = getPlayerIdentityKey(firstLeft);
-  const firstRightKey = getPlayerIdentityKey(firstRight);
-  const secondLeftKey = getPlayerIdentityKey(secondLeft);
-  const secondRightKey = getPlayerIdentityKey(secondRight);
-  const fourthLeftKey = getPlayerIdentityKey(fourthLeft);
-  const fourthRightKey = getPlayerIdentityKey(fourthRight);
-
-  if (fourthLeftKey === firstLeftKey && fourthRightKey === secondRightKey) {
-    return [[secondLeft.name || "", firstRight.name || ""]];
-  }
-  if (fourthLeftKey === secondLeftKey && fourthRightKey === firstRightKey) {
-    return [[firstLeft.name || "", secondRight.name || ""]];
-  }
-
-  return null;
-}
-
 function inferOlympicPendingTeamSchedule(match, displayedTeams) {
   if (!match || match.discipline !== "teams" || match.singles.length < 3) {
     return null;
-  }
-
-  const firstFourSchedule = getPendingScheduleFromFirstFourSingles(match, displayedTeams);
-  if (firstFourSchedule) {
-    return firstFourSchedule;
   }
 
   const [doublesMatch, secondMatch, thirdMatch] = match.singles;
@@ -3227,15 +2439,13 @@ function inferOlympicPendingTeamSchedule(match, displayedTeams) {
     return null;
   }
 
-  const doublesIndexes = getSingleDisplayIndexes(doublesMatch, displayedTeams);
-  const secondIndexes = getSingleDisplayIndexes(secondMatch, displayedTeams);
-  const thirdIndexes = getSingleDisplayIndexes(thirdMatch, displayedTeams);
-  const doublesLeft = doublesMatch.competitors?.[doublesIndexes.leftCompetitorIndex];
-  const doublesRight = doublesMatch.competitors?.[doublesIndexes.rightCompetitorIndex];
-  const secondLeft = getSinglePlayerFromCompetitor(secondMatch.competitors?.[secondIndexes.leftCompetitorIndex]);
-  const secondRight = getSinglePlayerFromCompetitor(secondMatch.competitors?.[secondIndexes.rightCompetitorIndex]);
-  const thirdLeft = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[thirdIndexes.leftCompetitorIndex]);
-  const thirdRight = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[thirdIndexes.rightCompetitorIndex]);
+  const { leftIndex, rightIndex } = displayedTeams;
+  const doublesLeft = doublesMatch.competitors?.[leftIndex];
+  const doublesRight = doublesMatch.competitors?.[rightIndex];
+  const secondLeft = getSinglePlayerFromCompetitor(secondMatch.competitors?.[leftIndex]);
+  const secondRight = getSinglePlayerFromCompetitor(secondMatch.competitors?.[rightIndex]);
+  const thirdLeft = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[leftIndex]);
+  const thirdRight = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[rightIndex]);
 
   const doublesLeftPlayers = Array.isArray(doublesLeft?.players) ? doublesLeft.players.filter(Boolean) : [];
   const doublesRightPlayers = Array.isArray(doublesRight?.players) ? doublesRight.players.filter(Boolean) : [];
@@ -3279,9 +2489,6 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   }
   const leftSets = leftCompetitorIndex === 0 ? rawLeftSets : rawRightSets;
   const rightSets = leftCompetitorIndex === 0 ? rawRightSets : rawLeftSets;
-  if (!hasGameScores) {
-    return `${leftSets}-${rightSets}`;
-  }
 
   const normalizedGames = match.gameScores.map((game) => {
     const [rawLeft, rawRight] = String(game).split("-");
@@ -3588,14 +2795,16 @@ function formatMatchCategoryJa(match) {
 }
 
 function formatJaHeader(match, translations, rules) {
-  const categoryLabel = formatMatchCategoryJa(match);
-  const roundLabel = translateRoundJaForMatch(match, translations, rules, match.roundContext);
-  return `▼${categoryLabel}${roundLabel} 　`;
+  const categoryLabel = String(formatMatchCategoryJa(match) || "").trim();
+  const roundLabel = String(
+    translateRoundJaForMatch(match, translations, rules, match.roundContext) || "",
+  ).trim();
+  return `▼${categoryLabel}${roundLabel}`.trim();
 }
 
 function formatJaTeamLine(match, translations) {
   const displayedTeams = getDisplayedTeamIndexes(match);
-  const { leftIndex, rightIndex, scoreLeftTeamIndex } = displayedTeams;
+  const { leftIndex, rightIndex } = displayedTeams;
   const left = translateTeam(match.teams[leftIndex], translations);
   const right = translateTeam(match.teams[rightIndex], translations);
   if (isMixedTeamMatch(match)) {
@@ -3604,7 +2813,7 @@ function formatJaTeamLine(match, translations) {
   }
   const rawScore = String(match.overallScore || "-");
   const [scoreA, scoreB] = rawScore.split("-");
-  const score = leftIndex === scoreLeftTeamIndex ? rawScore : `${scoreB}-${scoreA}`;
+  const score = leftIndex === 1 ? `${scoreB}-${scoreA}` : rawScore;
   return `　${left}　${score}　${right}`;
 }
 
@@ -3648,9 +2857,7 @@ function formatJaPendingLine(match, index, translations, displayedTeams) {
     [leftPlayers[0], rightPlayers[1]],
     [leftPlayers[1], rightPlayers[0]],
   ];
-  const pair = inferredSchedule && inferredSchedule.length === 1 && match.singles.length === 4 && index === 5
-    ? inferredSchedule[0]
-    : (schedule[index - 4] || []);
+  const pair = schedule[index - 4] || [];
   const left = translatePlayer(pair[0] || "", translations);
   const right = translatePlayer(pair[1] || "", translations);
   return `　${left}　-　${right}`;
@@ -3849,31 +3056,23 @@ async function getProcessedMatches(options = {}) {
     }
   }
 
-  const normalizedCacheKey = getNormalizedPayloadCacheKey(args);
-  let payload = null;
-  let normalized = !args.refreshCache ? normalizedPayloadCache.get(normalizedCacheKey) : null;
-  if (!normalized) {
-    payload = await fetchOfficialResultsCached(
-      args.source,
-      args.event,
-      args.take,
-      args.cacheDir,
-      args.refreshCache,
-      {
-        zennihonArchiveDir: args.zennihonArchiveDir,
-        wttArchiveDir: args.wttArchiveDir,
-        wttArchiveIndexPath: args.wttArchiveIndexPath,
-        allowNetworkForZennihonArchiveMiss: args.allowNetworkForZennihonArchiveMiss,
-        writeZennihonArchive: args.writeZennihonArchive,
-      },
-    );
-    normalized = args.source === "zennihon"
-      ? payload.filter(Boolean)
-      : payload.map((item) => (isPreNormalizedMatch(item) ? item : normalizeOfficialResultItem(item))).filter(Boolean);
-    if (!args.refreshCache) {
-      normalizedPayloadCache.set(normalizedCacheKey, normalized);
-    }
-  }
+  const payload = await fetchOfficialResultsCached(
+    args.source,
+    args.event,
+    args.take,
+    args.cacheDir,
+    args.refreshCache,
+    {
+      zennihonArchiveDir: args.zennihonArchiveDir,
+      wttArchiveDir: args.wttArchiveDir,
+      wttArchiveIndexPath: args.wttArchiveIndexPath,
+      allowNetworkForZennihonArchiveMiss: args.allowNetworkForZennihonArchiveMiss,
+      writeZennihonArchive: args.writeZennihonArchive,
+    },
+  );
+  const normalized = args.source === "zennihon"
+    ? payload.filter(Boolean)
+    : payload.map((item) => (isPreNormalizedMatch(item) ? item : normalizeOfficialResultItem(item))).filter(Boolean);
   const translations = readTranslations(args.translations);
   const filtered = applyFilters(normalized, args, translations);
   const rules = readRules(args.rules);
