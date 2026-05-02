@@ -2816,6 +2816,41 @@ function inferOlympicPendingTeamSchedule(match, displayedTeams) {
   ];
 }
 
+function inferStandardPendingTeamSchedule(match, displayedTeams) {
+  if (!match || match.discipline !== "teams" || match.singles.length < 3) {
+    return null;
+  }
+
+  const [firstMatch, secondMatch, thirdMatch] = match.singles;
+  if (!firstMatch || !secondMatch || !thirdMatch) {
+    return null;
+  }
+
+  const { leftIndex, rightIndex } = displayedTeams;
+  const firstLeft = getSinglePlayerFromCompetitor(firstMatch.competitors?.[leftIndex]);
+  const firstRight = getSinglePlayerFromCompetitor(firstMatch.competitors?.[rightIndex]);
+  const secondLeft = getSinglePlayerFromCompetitor(secondMatch.competitors?.[leftIndex]);
+  const secondRight = getSinglePlayerFromCompetitor(secondMatch.competitors?.[rightIndex]);
+  const thirdLeft = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[leftIndex]);
+  const thirdRight = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[rightIndex]);
+
+  if (
+    !firstLeft ||
+    !firstRight ||
+    !secondLeft ||
+    !secondRight ||
+    !thirdLeft ||
+    !thirdRight
+  ) {
+    return null;
+  }
+
+  return [
+    [secondLeft.name || "", firstRight.name || ""],
+    [firstLeft.name || "", secondRight.name || ""],
+  ];
+}
+
 function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   const specialResult = getSpecialResultJa(match);
   if (specialResult) {
@@ -3184,7 +3219,8 @@ function formatJaSinglesLine(single, translations, displayedTeams, options = {})
 }
 
 function formatJaPendingLine(match, index, translations, displayedTeams) {
-  const inferredSchedule = inferOlympicPendingTeamSchedule(match, displayedTeams);
+  const inferredSchedule = inferStandardPendingTeamSchedule(match, displayedTeams)
+    || inferOlympicPendingTeamSchedule(match, displayedTeams);
   const leftPlayers = match.singles.slice(0, 3).map((single) => {
     const { leftCompetitorIndex } = getSingleDisplayIndexes(single, displayedTeams);
     return single.competitors[leftCompetitorIndex]?.name || "";
