@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 
 const WTT_API_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult";
-const WTT_POOL_STANDINGS_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings";
+const WTT_POOL_STANDINGS_URLS = [
+  "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings",
+  "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetPoolStandings",
+];
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
 const DEFAULT_TAKE = 800;
@@ -1306,13 +1309,30 @@ async function fetchText(url, encoding = "utf-8") {
   return new TextDecoder(encoding).decode(arrayBuffer);
 }
 
-async function fetchJson(url, { allowNotFound = false } = {}) {
-  const response = await fetch(url, {
-    headers: {
-      accept: "application/json, text/plain, */*",
-      "user-agent": "Mozilla/5.0 (compatible; Codex/1.0)",
-    },
-  });
+async function fetchJson(url, { allowNotFound = false, headers = null, timeoutMs = 0 } = {}) {
+  const controller = timeoutMs > 0 ? new AbortController() : null;
+  const timeout = controller ? setTimeout(() => controller.abort(), timeoutMs) : null;
+
+  let response;
+  try {
+    response = await fetch(url, {
+      headers: {
+        accept: "application/json, text/plain, */*",
+        "user-agent": "Mozilla/5.0 (compatible; Codex/1.0)",
+        ...(headers || {}),
+      },
+      signal: controller?.signal,
+    });
+  } catch (error) {
+    if (error?.name === "AbortError") {
+      throw new Error(`Timed out fetching ${url}`);
+    }
+    throw error;
+  } finally {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+  }
 
   if (allowNotFound && response.status === 404) {
     return null;
@@ -2085,6 +2105,53 @@ function chooseBetterPoolStandingMatch(existing, candidate) {
   return existing;
 }
 
+function shouldPreferSupplementalMatch(existing, supplemental) {
+  if (!existing) {
+    return true;
+  }
+
+  if (isPreNormalizedMatch(existing)) {
+    if (existing.matchType !== "team") {
+      return true;
+    }
+    if (existing.discipline !== "teams") {
+      return true;
+    }
+    if (!Array.isArray(existing.teams) || existing.teams.length < 2) {
+      return true;
+    }
+    if (!existing.startDateLocal && supplemental.startDateLocal) {
+      return true;
+    }
+    if (isZeroScoreline(existing.overallScore) && !isZeroScoreline(supplemental.overallScore)) {
+      return true;
+    }
+    return false;
+  }
+
+  const card = existing?.match_card;
+  if (!card?.teamParentData) {
+    return true;
+  }
+
+  const competitorCount = Array.isArray(card?.competitiors) ? card.competitiors.length : 0;
+  if (competitorCount < 2) {
+    return true;
+  }
+
+  const startDateLocal = String(card?.matchDateTime?.startDateLocal || "").trim();
+  if (!startDateLocal && supplemental.startDateLocal) {
+    return true;
+  }
+
+  const overallScore = String(card?.overallScores || "").trim();
+  if (isZeroScoreline(overallScore) && !isZeroScoreline(supplemental.overallScore)) {
+    return true;
+  }
+
+  return false;
+}
+
 async function fetchWttPoolStandingMatches(eventId) {
   const eventIdText = String(eventId || "").trim();
   if (!eventIdText) {
@@ -2092,10 +2159,25 @@ async function fetchWttPoolStandingMatches(eventId) {
   }
 
   const subEventCodes = ["MTEAM---", "WTEAM---"];
+  const headers = {
+    origin: "https://www.worldtabletennis.com",
+    referer: "https://www.worldtabletennis.com/",
+    "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+  };
   const responses = await Promise.all(
-    subEventCodes.map((subeventcode) =>
-      fetchJson(`${WTT_POOL_STANDINGS_URL}/${eventIdText}?subeventcode=${subeventcode}`, { allowNotFound: true }),
-    ),
+    subEventCodes.map(async (subeventcode) => {
+      for (const baseUrl of WTT_POOL_STANDINGS_URLS) {
+        const response = await fetchJson(`${baseUrl}/${eventIdText}?subeventcode=${subeventcode}`, {
+          allowNotFound: true,
+          headers,
+          timeoutMs: 15000,
+        }).catch(() => null);
+        if (Array.isArray(response)) {
+          return response;
+        }
+      }
+      return null;
+    }),
   );
 
   const deduped = new Map();
@@ -2131,18 +2213,40 @@ async function fetchWttPoolStandingMatches(eventId) {
 }
 
 function mergeWttSupplementalMatches(primaryPayload, supplementalMatches) {
-  const existingDocumentCodes = new Set(
-    (Array.isArray(primaryPayload) ? primaryPayload : [])
-      .map((item) => item?.documentCode ?? item?.match_card?.documentCode ?? null)
-      .filter(Boolean)
-      .map((value) => String(value)),
-  );
+  const merged = [];
+  const indexByDocumentCode = new Map();
 
-  const additions = (Array.isArray(supplementalMatches) ? supplementalMatches : []).filter((match) =>
-    match?.documentCode && !existingDocumentCodes.has(String(match.documentCode)),
-  );
+  for (const item of Array.isArray(primaryPayload) ? primaryPayload : []) {
+    const documentCode = item?.documentCode ?? item?.match_card?.documentCode ?? null;
+    if (!documentCode) {
+      merged.push(item);
+      continue;
+    }
+    indexByDocumentCode.set(String(documentCode), merged.length);
+    merged.push(item);
+  }
 
-  return [...(Array.isArray(primaryPayload) ? primaryPayload : []), ...additions];
+  for (const supplemental of Array.isArray(supplementalMatches) ? supplementalMatches : []) {
+    const documentCode = supplemental?.documentCode;
+    if (!documentCode) {
+      merged.push(supplemental);
+      continue;
+    }
+
+    const key = String(documentCode);
+    const existingIndex = indexByDocumentCode.get(key);
+    if (existingIndex === undefined) {
+      indexByDocumentCode.set(key, merged.length);
+      merged.push(supplemental);
+      continue;
+    }
+
+    if (shouldPreferSupplementalMatch(merged[existingIndex], supplemental)) {
+      merged[existingIndex] = supplemental;
+    }
+  }
+
+  return merged;
 }
 
 function isLikelyBornanFallbackCandidate(eventId) {
