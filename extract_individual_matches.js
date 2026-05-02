@@ -2284,6 +2284,23 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       return payload;
     } catch (error) {
       if (archived) {
+        const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
+        if (supplementalMatches.length > 0) {
+          const mergedArchived = mergeWttSupplementalMatches(archived, supplementalMatches);
+          const timestamp = new Date().toISOString();
+          writeWttArchive(archiveDir, eventId, mergedArchived);
+          updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
+            pooled: true,
+            source: meta.source || "wtt",
+            title: meta.title || "",
+            startDate: meta.startDate || null,
+            endDate: meta.endDate || null,
+            canAutoArchive: Boolean(meta.canAutoArchive),
+            lastFetchedAt: timestamp,
+          });
+          return mergedArchived;
+        }
+
         return archived;
       }
       throw error;
