@@ -263,7 +263,7 @@ function requireAuthorization(request, response) {
     return true;
   }
   sendJson(response, 401, {
-    error: "Unauthorized",
+    error: "管理者トークンが未入力か正しくありません。管理者トークンを入力してから再度実行してください。",
   });
   return false;
 }
