@@ -2765,20 +2765,22 @@ function getSinglePlayerFromCompetitor(competitor) {
   };
 }
 
-function getSingleDisplayedPlayers(single, displayedTeams) {
-  if (!single || !displayedTeams) {
+function getSingleSidePlayersByType(single) {
+  if (!single) {
     return null;
   }
 
-  const { leftCompetitorIndex, rightCompetitorIndex } = getSingleDisplayIndexes(single, displayedTeams);
-  const left = getSinglePlayerFromCompetitor(single.competitors?.[leftCompetitorIndex]);
-  const right = getSinglePlayerFromCompetitor(single.competitors?.[rightCompetitorIndex]);
+  const competitors = Array.isArray(single.competitors) ? single.competitors : [];
+  const homeCompetitor = competitors.find((competitor) => competitor?.type === "H") || competitors[0] || null;
+  const awayCompetitor = competitors.find((competitor) => competitor?.type === "A") || competitors[1] || null;
+  const home = getSinglePlayerFromCompetitor(homeCompetitor);
+  const away = getSinglePlayerFromCompetitor(awayCompetitor);
 
-  if (!left || !right) {
+  if (!home || !away) {
     return null;
   }
 
-  return { left, right };
+  return { home, away };
 }
 
 function getPendingTeamPairKey(leftPlayer, rightPlayer) {
@@ -2842,91 +2844,83 @@ function inferStandardPendingTeamSchedule(match, displayedTeams) {
     return null;
   }
 
-  const displayedSingles = match.singles
-    .map((single) => getSingleDisplayedPlayers(single, displayedTeams))
+  const typedSingles = match.singles
+    .map((single) => getSingleSidePlayersByType(single))
     .filter(Boolean);
-  const [firstMatch, secondMatch, thirdMatch] = displayedSingles;
+  const [firstMatch, secondMatch, thirdMatch] = typedSingles;
 
   if (!firstMatch || !secondMatch || !thirdMatch) {
     return null;
   }
 
-  const firstLeft = firstMatch.left;
-  const firstRight = firstMatch.right;
-  const secondLeft = secondMatch.left;
-  const secondRight = secondMatch.right;
-  const thirdLeft = thirdMatch.left;
-  const thirdRight = thirdMatch.right;
+  const firstHome = firstMatch.home;
+  const firstAway = firstMatch.away;
+  const secondHome = secondMatch.home;
+  const secondAway = secondMatch.away;
+  const thirdHome = thirdMatch.home;
+  const thirdAway = thirdMatch.away;
 
   if (
-    !firstLeft ||
-    !firstRight ||
-    !secondLeft ||
-    !secondRight ||
-    !thirdLeft ||
-    !thirdRight
+    !firstHome ||
+    !firstAway ||
+    !secondHome ||
+    !secondAway ||
+    !thirdHome ||
+    !thirdAway
   ) {
     return null;
   }
 
-  const firstLeftKey = getPlayerIdentityKey(firstLeft);
-  const secondLeftKey = getPlayerIdentityKey(secondLeft);
-  const firstRightKey = getPlayerIdentityKey(firstRight);
-  const secondRightKey = getPlayerIdentityKey(secondRight);
-  const thirdLeftKey = getPlayerIdentityKey(thirdLeft);
-  const thirdRightKey = getPlayerIdentityKey(thirdRight);
+  const firstHomeKey = getPlayerIdentityKey(firstHome);
+  const secondHomeKey = getPlayerIdentityKey(secondHome);
+  const firstAwayKey = getPlayerIdentityKey(firstAway);
+  const secondAwayKey = getPlayerIdentityKey(secondAway);
+  const thirdHomeKey = getPlayerIdentityKey(thirdHome);
+  const thirdAwayKey = getPlayerIdentityKey(thirdAway);
 
   if (
-    !firstLeftKey ||
-    !secondLeftKey ||
-    !firstRightKey ||
-    !secondRightKey ||
-    firstLeftKey === secondLeftKey ||
-    firstRightKey === secondRightKey ||
-    thirdLeftKey === firstLeftKey ||
-    thirdLeftKey === secondLeftKey ||
-    thirdRightKey === firstRightKey ||
-    thirdRightKey === secondRightKey
+    !firstHomeKey ||
+    !secondHomeKey ||
+    !firstAwayKey ||
+    !secondAwayKey ||
+    firstHomeKey === secondHomeKey ||
+    firstAwayKey === secondAwayKey ||
+    thirdHomeKey === firstHomeKey ||
+    thirdHomeKey === secondHomeKey ||
+    thirdAwayKey === firstAwayKey ||
+    thirdAwayKey === secondAwayKey
   ) {
     return null;
   }
 
   const canonicalSchedule = [
-    { left: firstLeft, right: firstRight },
-    { left: secondLeft, right: secondRight },
-    { left: thirdLeft, right: thirdRight },
-    { left: firstLeft, right: secondRight },
-    { left: secondLeft, right: firstRight },
+    { home: firstHome, away: firstAway },
+    { home: secondHome, away: secondAway },
+    { home: thirdHome, away: thirdAway },
+    { home: firstHome, away: secondAway },
+    { home: secondHome, away: firstAway },
   ];
 
   const playedPairKeys = new Set(
-    displayedSingles
-      .map((single) => getPendingTeamPairKey(single.left, single.right))
+    typedSingles
+      .map((single) => getPendingTeamPairKey(single.home, single.away))
       .filter(Boolean),
   );
 
   return canonicalSchedule
     .slice(3)
-    .filter((pair) => !playedPairKeys.has(getPendingTeamPairKey(pair.left, pair.right)))
-    .map((pair) => [pair.left.name || "", pair.right.name || ""]);
-}
-
-function inferRemainingFifthTeamMatch(match, displayedTeams) {
-  if (!match || match.discipline !== "teams" || match.singles.length !== 4) {
-    return null;
-  }
-
-  const standardSchedule = inferStandardPendingTeamSchedule(match, displayedTeams);
-  if (Array.isArray(standardSchedule) && standardSchedule.length === 1) {
-    return standardSchedule[0];
-  }
-
-  const olympicSchedule = inferOlympicPendingTeamSchedule(match, displayedTeams);
-  if (Array.isArray(olympicSchedule) && olympicSchedule.length === 1) {
-    return olympicSchedule[0];
-  }
-
-  return null;
+    .filter((pair) => !playedPairKeys.has(getPendingTeamPairKey(pair.home, pair.away)))
+    .map((pair) => {
+      const homeOrg = match?.teams?.[0]?.org ?? null;
+      const awayOrg = match?.teams?.[1]?.org ?? null;
+      if (displayedTeams?.leftOrg && displayedTeams.leftOrg === homeOrg && displayedTeams.rightOrg === awayOrg) {
+        return [pair.home.name || "", pair.away.name || ""];
+      }
+      if (displayedTeams?.leftOrg && displayedTeams.leftOrg === awayOrg && displayedTeams.rightOrg === homeOrg) {
+        return [pair.away.name || "", pair.home.name || ""];
+      }
+      return [pair.home.name || "", pair.away.name || ""];
+    });
 }
 
 function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
@@ -3368,10 +3362,13 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
       ),
     ];
 
-    if (match.singles.length === 4 && !(match.discipline === "teams" && match.gender === "mixed")) {
-      const pendingPair = inferRemainingFifthTeamMatch(match, displayedTeams);
-      if (pendingPair) {
-        lines.push(`　${translatePlayer(pendingPair[0], translations)}　-　${translatePlayer(pendingPair[1], translations)}`);
+    if (match.singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
+      const inferredSchedule = inferStandardPendingTeamSchedule(match, displayedTeams)
+        || inferOlympicPendingTeamSchedule(match, displayedTeams);
+      if (Array.isArray(inferredSchedule) && inferredSchedule.length > 0) {
+        inferredSchedule.forEach((pair) => {
+          lines.push(`　${translatePlayer(pair[0], translations)}　-　${translatePlayer(pair[1], translations)}`);
+        });
       }
     }
 
