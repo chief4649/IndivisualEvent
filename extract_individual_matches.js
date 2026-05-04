@@ -2385,10 +2385,14 @@ async function fetchSourceResults(source, eventId, take, options = {}) {
 
 async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refreshCache, options = {}) {
   if (source === "wtt") {
-    const meta = await getWttEventLifecycleMeta(eventId, options);
     const archiveDir = options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR;
     const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
     const archived = readWttArchive(archiveDir, eventId);
+    if (archived && !refreshCache) {
+      return archived;
+    }
+
+    const meta = await getWttEventLifecycleMeta(eventId, options);
 
     if (archived && meta.isFinished && !refreshCache) {
       return archived;
