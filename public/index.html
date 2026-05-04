@@ -583,6 +583,7 @@
               <button class="secondary" type="button" id="load-translations">読み込む</button>
               <button class="primary" type="button" id="save-translations">保存する</button>
             </div>
+            <p class="hint" id="admin-status">辞書の読込・保存状況をここに表示します。</p>
             <textarea id="translations-editor" spellcheck="false"></textarea>
 
             <div class="bulk-box">
@@ -620,6 +621,7 @@
       const bulkTarget = document.getElementById("bulk-target");
       const bulkTranslations = document.getElementById("bulk-translations");
       const adminTokenInput = document.getElementById("admin-token");
+      const adminStatus = document.getElementById("admin-status");
       const eventName = document.getElementById("event-name");
       const eventPeriod = document.getElementById("event-period");
       const eventSearchInput = document.getElementById("event-search-input");
@@ -635,6 +637,10 @@
 
       function setStatus(message) {
         status.textContent = message;
+      }
+
+      function setAdminStatus(message) {
+        adminStatus.textContent = message;
       }
 
       function setMeta(items) {
@@ -910,6 +916,24 @@
         return token ? { Authorization: `Bearer ${token}` } : {};
       }
 
+      async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), timeoutMs);
+        try {
+          return await fetch(url, {
+            ...options,
+            signal: controller.signal,
+          });
+        } catch (error) {
+          if (error?.name === "AbortError") {
+            throw new Error(`通信がタイムアウトしました。しばらくしてから再度お試しください。 [${timeoutMs}ms]`);
+          }
+          throw error;
+        } finally {
+          clearTimeout(timeout);
+        }
+      }
+
       async function readErrorMessage(response, fallbackMessage) {
         let data = null;
         try {
@@ -937,7 +961,7 @@
 
       async function loadConfig(kind) {
         const authHeaders = buildAuthHeaders();
-        const response = await fetch(`/api/config/${kind}`, {
+        const response = await fetchWithTimeout(`/api/config/${kind}`, {
           headers: authHeaders,
         });
         if (!response.ok) {
@@ -948,12 +972,15 @@
         const text = JSON.stringify(data.data, null, 2);
         if (kind === "translations") {
           translationsEditor.value = text;
+          if (data.sync?.source === "local" && data.sync?.reason) {
+            setAdminStatus(`共有辞書の同期に失敗したため、ローカル辞書を表示しました: ${data.sync.reason}`);
+          }
         }
       }
 
       async function saveConfig(kind) {
         const body = translationsEditor.value;
-        const response = await fetch(`/api/config/${kind}`, {
+        const response = await fetchWithTimeout(`/api/config/${kind}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -1105,19 +1132,29 @@
 
       document.getElementById("load-translations").addEventListener("click", async () => {
         try {
+          setAdminStatus("辞書を読み込み中...");
           await loadConfig("translations");
           setStatus("辞書を読み込みました。");
+          if (!adminStatus.textContent.includes("ローカル辞書を表示しました")) {
+            setAdminStatus("辞書を読み込みました。");
+          }
         } catch (error) {
           setStatus(error.message);
+          setAdminStatus(error.message);
+          alert(error.message);
         }
       });
 
       document.getElementById("save-translations").addEventListener("click", async () => {
         try {
+          setAdminStatus("辞書を保存中...");
           await saveConfig("translations");
           setStatus("辞書を保存しました。");
+          setAdminStatus("辞書を保存しました。");
         } catch (error) {
           setStatus(error.message);
+          setAdminStatus(error.message);
+          alert(error.message);
         }
       });
 
