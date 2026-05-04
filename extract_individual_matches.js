@@ -1090,14 +1090,15 @@ function getWttLocalArchiveMeta(eventId, options = {}) {
     ...(datedEntry || {}),
     ...(indexedEntry || {}),
   };
+  const isDefinitelyFinished = isIsoDateBeforeToday(mergedEntry?.endDate);
 
   return {
     indexedEntry,
     datedEntry,
     mergedEntry,
     canServeArchiveImmediately:
-      Boolean(indexedEntry?.archived && !indexedEntry?.forced)
-      || isIsoDateBeforeToday(mergedEntry?.endDate),
+      (Boolean(indexedEntry?.archived && !indexedEntry?.forced) && isDefinitelyFinished)
+      || isDefinitelyFinished,
   };
 }
 
@@ -2423,8 +2424,9 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
     ...(datedEntry || {}),
     ...(indexedEntry || {}),
   };
+  const isDefinitelyFinished = isIsoDateBeforeToday(mergedEntry?.endDate);
 
-  if (indexedEntry?.archived && !indexedEntry?.forced) {
+  if (indexedEntry?.archived && !indexedEntry?.forced && isDefinitelyFinished) {
     return {
       eventId: eventIdText,
       source: mergedEntry.source || "wtt",
