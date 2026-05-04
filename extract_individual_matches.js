@@ -2106,6 +2106,96 @@ function normalizeWttDocumentCode(value) {
   return String(value || "").trim().replace(/-+$/, "");
 }
 
+function getRawWttDocumentCode(item) {
+  return item?.documentCode ?? item?.match_card?.documentCode ?? null;
+}
+
+function getRawWttNestedMatchCount(item) {
+  const nested = item?.match_card?.teamParentData?.extended_info?.matches;
+  return Array.isArray(nested) ? nested.length : 0;
+}
+
+function getRawWttCompetitorCount(item) {
+  const competitors = item?.match_card?.competitiors;
+  return Array.isArray(competitors) ? competitors.length : 0;
+}
+
+function getRawWttOverallScore(item) {
+  return String(item?.match_card?.overallScores ?? item?.overallScores ?? "").trim();
+}
+
+function getRawWttStartDateLocal(item) {
+  return String(item?.match_card?.matchDateTime?.startDateLocal ?? item?.startDateLocal ?? "").trim();
+}
+
+function chooseBetterWttOfficialResultItem(preferred, fallback) {
+  if (!preferred) {
+    return fallback;
+  }
+  if (!fallback) {
+    return preferred;
+  }
+
+  const preferredNested = getRawWttNestedMatchCount(preferred);
+  const fallbackNested = getRawWttNestedMatchCount(fallback);
+  if (preferredNested !== fallbackNested) {
+    return preferredNested > fallbackNested ? preferred : fallback;
+  }
+
+  const preferredCompetitors = getRawWttCompetitorCount(preferred);
+  const fallbackCompetitors = getRawWttCompetitorCount(fallback);
+  if (preferredCompetitors !== fallbackCompetitors) {
+    return preferredCompetitors > fallbackCompetitors ? preferred : fallback;
+  }
+
+  const preferredScore = getRawWttOverallScore(preferred);
+  const fallbackScore = getRawWttOverallScore(fallback);
+  if (isZeroScoreline(preferredScore) !== isZeroScoreline(fallbackScore)) {
+    return isZeroScoreline(preferredScore) ? fallback : preferred;
+  }
+
+  const preferredStart = getRawWttStartDateLocal(preferred);
+  const fallbackStart = getRawWttStartDateLocal(fallback);
+  if (Boolean(preferredStart) !== Boolean(fallbackStart)) {
+    return preferredStart ? preferred : fallback;
+  }
+
+  return preferred;
+}
+
+function mergeWttOfficialResultPayloads(primaryPayload, archivedPayload) {
+  const merged = [];
+  const indexByDocumentCode = new Map();
+
+  for (const item of Array.isArray(archivedPayload) ? archivedPayload : []) {
+    const documentCode = getRawWttDocumentCode(item);
+    if (!documentCode) {
+      merged.push(item);
+      continue;
+    }
+    indexByDocumentCode.set(normalizeWttDocumentCode(documentCode), merged.length);
+    merged.push(item);
+  }
+
+  for (const item of Array.isArray(primaryPayload) ? primaryPayload : []) {
+    const documentCode = getRawWttDocumentCode(item);
+    if (!documentCode) {
+      merged.push(item);
+      continue;
+    }
+    const key = normalizeWttDocumentCode(documentCode);
+    const existingIndex = indexByDocumentCode.get(key);
+    if (existingIndex === undefined) {
+      indexByDocumentCode.set(key, merged.length);
+      merged.push(item);
+      continue;
+    }
+    merged[existingIndex] = chooseBetterWttOfficialResultItem(item, merged[existingIndex]);
+  }
+
+  return merged;
+}
+
 function shouldPreferSupplementalMatch(existing, supplemental) {
   if (!existing) {
     return true;
@@ -2397,10 +2487,11 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
     try {
       const payload = await fetchSourceResults(source, eventId, take, options);
+      const mergedPayload = mergeWttOfficialResultPayloads(payload, archived);
 
-      if (shouldReuseCachedPayload(source, payload)) {
+      if (shouldReuseCachedPayload(source, mergedPayload)) {
         const timestamp = new Date().toISOString();
-        writeWttArchive(archiveDir, eventId, payload);
+        writeWttArchive(archiveDir, eventId, mergedPayload);
         updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
           pooled: true,
           source: meta.source || "wtt",
@@ -2418,7 +2509,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
         });
       }
 
-      return payload;
+      return mergedPayload;
     } catch (error) {
       if (archived) {
         return archived;
