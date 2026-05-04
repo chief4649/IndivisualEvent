@@ -1070,6 +1070,37 @@ function getLocalDateStamp(date = new Date()) {
   return `${year}-${month}-${day}`;
 }
 
+function isIsoDateBeforeToday(dateText) {
+  const raw = String(dateText || "").trim();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) {
+    return false;
+  }
+  return raw < getLocalDateStamp();
+}
+
+function getWttLocalArchiveMeta(eventId, options = {}) {
+  const eventIdText = String(eventId || "").trim();
+  const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
+  const dateIndexPath = options.wttDateIndexPath || DEFAULT_WTT_DATE_INDEX_PATH;
+  const archiveIndex = readWttArchiveIndex(archiveIndexPath);
+  const dateIndex = readWttDateIndex(dateIndexPath);
+  const indexedEntry = archiveIndex[eventIdText] || null;
+  const datedEntry = dateIndex[eventIdText] || null;
+  const mergedEntry = {
+    ...(datedEntry || {}),
+    ...(indexedEntry || {}),
+  };
+
+  return {
+    indexedEntry,
+    datedEntry,
+    mergedEntry,
+    canServeArchiveImmediately:
+      Boolean(indexedEntry?.archived && !indexedEntry?.forced)
+      || isIsoDateBeforeToday(mergedEntry?.endDate),
+  };
+}
+
 function shouldReuseCachedPayload(source, payload) {
   if (!payload) {
     return false;
@@ -2475,7 +2506,8 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     const archiveDir = options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR;
     const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
     const archived = readWttArchive(archiveDir, eventId);
-    if (archived && !refreshCache) {
+    const localArchiveMeta = getWttLocalArchiveMeta(eventId, options);
+    if (archived && !refreshCache && localArchiveMeta.canServeArchiveImmediately) {
       return archived;
     }
 
