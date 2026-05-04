@@ -2911,6 +2911,56 @@ function inferStandardPendingTeamSchedule(match, displayedTeams) {
     .map((pair) => [pair.left.name || "", pair.right.name || ""]);
 }
 
+function inferRemainingFifthTeamMatch(match, displayedTeams) {
+  if (!match || match.discipline !== "teams" || match.singles.length !== 4) {
+    return null;
+  }
+
+  const displayedSingles = match.singles
+    .map((single) => getSingleDisplayedPlayers(single, displayedTeams))
+    .filter(Boolean);
+
+  if (displayedSingles.length !== 4) {
+    return null;
+  }
+
+  const leftCounts = new Map();
+  const rightCounts = new Map();
+
+  for (const single of displayedSingles) {
+    const leftKey = getPlayerIdentityKey(single.left);
+    const rightKey = getPlayerIdentityKey(single.right);
+    if (!leftKey || !rightKey) {
+      return null;
+    }
+    leftCounts.set(leftKey, { player: single.left, count: (leftCounts.get(leftKey)?.count || 0) + 1 });
+    rightCounts.set(rightKey, { player: single.right, count: (rightCounts.get(rightKey)?.count || 0) + 1 });
+  }
+
+  const repeatedLeft = [...leftCounts.values()].filter((entry) => entry.count >= 2).map((entry) => entry.player);
+  const repeatedRight = [...rightCounts.values()].filter((entry) => entry.count >= 2).map((entry) => entry.player);
+
+  if (repeatedLeft.length !== 2 || repeatedRight.length !== 2) {
+    return null;
+  }
+
+  const playedPairKeys = new Set(
+    displayedSingles.map((single) => getPendingTeamPairKey(single.left, single.right)).filter(Boolean),
+  );
+
+  const remainingPairs = [];
+  for (const left of repeatedLeft) {
+    for (const right of repeatedRight) {
+      const key = getPendingTeamPairKey(left, right);
+      if (key && !playedPairKeys.has(key)) {
+        remainingPairs.push([left.name || "", right.name || ""]);
+      }
+    }
+  }
+
+  return remainingPairs.length === 1 ? remainingPairs[0] : null;
+}
+
 function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   const specialResult = getSpecialResultJa(match);
   if (specialResult) {
@@ -3349,6 +3399,13 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
         formatJaSinglesLine(single, translations, displayedTeams, options),
       ),
     ];
+
+    if (match.singles.length === 4 && !(match.discipline === "teams" && match.gender === "mixed")) {
+      const pendingPair = inferRemainingFifthTeamMatch(match, displayedTeams);
+      if (pendingPair) {
+        lines.push(`　${translatePlayer(pendingPair[0], translations)}　-　${translatePlayer(pendingPair[1], translations)}`);
+      }
+    }
 
     blocks.push(lines.join("\n"));
   }
