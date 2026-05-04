@@ -53,6 +53,7 @@ const VIEWER_COOKIE_NAME = "ttreport_individual_viewer_auth";
 const TEAM_TRANSLATIONS_BASE_URL = String(process.env.TEAM_TRANSLATIONS_BASE_URL || "").trim().replace(/\/+$/, "");
 const TEAM_TRANSLATIONS_ADMIN_TOKEN = process.env.TEAM_TRANSLATIONS_ADMIN_TOKEN || "";
 const TEAM_TRANSLATIONS_VIEWER_PASSWORD = process.env.TEAM_TRANSLATIONS_VIEWER_PASSWORD || "";
+const SHARED_TRANSLATIONS_TIMEOUT_MS = Number(process.env.SHARED_TRANSLATIONS_TIMEOUT_MS || 8000);
 const rateLimitStore = new Map();
 const eventNameCache = new Map();
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
@@ -165,10 +166,31 @@ function getSharedTranslationsHeaders() {
   return headers;
 }
 
+async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 0) {
+  const controller = timeoutMs > 0 ? new AbortController() : null;
+  const timeout = controller ? setTimeout(() => controller.abort(), timeoutMs) : null;
+
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller?.signal,
+    });
+  } catch (error) {
+    if (error?.name === "AbortError") {
+      throw new Error(`Timed out fetching ${url}`);
+    }
+    throw error;
+  } finally {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+  }
+}
+
 async function fetchSharedTranslations() {
-  const response = await fetch(`${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations`, {
+  const response = await fetchJsonWithTimeout(`${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations`, {
     headers: getSharedTranslationsHeaders(),
-  });
+  }, SHARED_TRANSLATIONS_TIMEOUT_MS);
   if (!response.ok) {
     throw new Error(`Failed to fetch shared translations: ${response.status} ${response.statusText}`);
   }
@@ -177,14 +199,14 @@ async function fetchSharedTranslations() {
 }
 
 async function saveSharedTranslations(payload) {
-  const response = await fetch(`${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations`, {
+  const response = await fetchJsonWithTimeout(`${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations`, {
     method: "PUT",
     headers: {
       ...getSharedTranslationsHeaders(),
       "content-type": "application/json; charset=utf-8",
     },
     body: JSON.stringify(payload),
-  });
+  }, SHARED_TRANSLATIONS_TIMEOUT_MS);
   if (!response.ok) {
     const errorText = await response.text();
     throw new Error(`Failed to save shared translations: ${response.status} ${errorText || response.statusText}`);
@@ -193,20 +215,28 @@ async function saveSharedTranslations(payload) {
 
 async function syncTranslationsFromSharedSource(force = false) {
   if (!hasSharedTranslationsSource()) {
-    return;
+    return { synced: false, source: "local", reason: "shared_source_disabled" };
   }
   if (!force && translationsSyncPromise) {
     await translationsSyncPromise;
-    return;
+    return { synced: true, source: "shared" };
   }
   translationsSyncPromise = (async () => {
     const translations = await fetchSharedTranslations();
     if (translations) {
       writePrettyJson(TRANSLATIONS_PATH, translations);
     }
+    return { synced: Boolean(translations), source: "shared" };
   })();
   try {
-    await translationsSyncPromise;
+    return await translationsSyncPromise;
+  } catch (error) {
+    console.error(`[translations sync] ${error.message}`);
+    return {
+      synced: false,
+      source: "local",
+      reason: error.message,
+    };
   } finally {
     translationsSyncPromise = null;
   }
@@ -1993,11 +2023,12 @@ function handleConfigGet(request, response, pathname) {
       return true;
     }
     syncTranslationsFromSharedSource()
-      .then(() => {
+      .then((syncMeta) => {
         sendJson(response, 200, {
           file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
           data: readTranslations(TRANSLATIONS_PATH),
           sharedSource: hasSharedTranslationsSource() ? TEAM_TRANSLATIONS_BASE_URL : null,
+          sync: syncMeta || null,
         });
       })
       .catch((error) => {
