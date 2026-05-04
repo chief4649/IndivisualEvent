@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-const WTT_API_URL = "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult";
+const WTT_OFFICIAL_RESULT_URLS = [
+  "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
+  "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult",
+];
 const WTT_POOL_STANDINGS_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetPoolStandings",
@@ -1953,37 +1956,29 @@ async function fetchBornanEventMeta(eventId) {
 }
 
 async function fetchWttOfficialResultsFromApi(eventId, take) {
-  const url = new URL(WTT_API_URL);
-  url.searchParams.set("EventId", String(eventId));
-  url.searchParams.set("include_match_card", "true");
-  url.searchParams.set("take", String(take));
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
+  let lastError = null;
 
-  try {
-    const response = await fetch(url, {
-      headers: {
-        accept: "application/json, text/plain, */*",
-        origin: "https://www.worldtabletennis.com",
-        referer: "https://www.worldtabletennis.com/",
-        "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
-      },
-      signal: controller.signal,
-    });
+  for (const baseUrl of WTT_OFFICIAL_RESULT_URLS) {
+    const url = new URL(baseUrl);
+    url.searchParams.set("EventId", String(eventId));
+    url.searchParams.set("include_match_card", "true");
+    url.searchParams.set("take", String(take));
 
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+    try {
+      return await fetchJson(url.toString(), {
+        headers: {
+          origin: "https://www.worldtabletennis.com",
+          referer: "https://www.worldtabletennis.com/",
+          "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+        },
+        timeoutMs: 30000,
+      });
+    } catch (error) {
+      lastError = error;
     }
-
-    return response.json();
-  } catch (error) {
-    if (error?.name === "AbortError") {
-      throw new Error("WTT official result request timed out");
-    }
-    throw error;
-  } finally {
-    clearTimeout(timeout);
   }
+
+  throw lastError || new Error("WTT official result request failed");
 }
 
 function parsePoolStandingUnit(unit) {
