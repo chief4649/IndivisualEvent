@@ -627,6 +627,8 @@
       const eventSearchInput = document.getElementById("event-search-input");
       const eventSearchResults = document.getElementById("event-search-results");
       const categorySelect = form.elements.namedItem("category");
+      const genderField = form.elements.namedItem("gender");
+      const disciplineField = form.elements.namedItem("discipline");
       const roundOptions = document.getElementById("round-options");
       const initialParams = new URLSearchParams(location.search);
       const initialRoundValues = new Set(initialParams.getAll("round"));
@@ -1113,13 +1115,17 @@
         loadRounds().catch(() => {});
       });
 
-      form.elements.namedItem("gender").addEventListener("change", () => {
-        loadRounds().catch(() => {});
-      });
+      if (genderField) {
+        genderField.addEventListener("change", () => {
+          loadRounds().catch(() => {});
+        });
+      }
 
-      form.elements.namedItem("discipline").addEventListener("change", () => {
-        loadRounds().catch(() => {});
-      });
+      if (disciplineField) {
+        disciplineField.addEventListener("change", () => {
+          loadRounds().catch(() => {});
+        });
+      }
 
       copyButton.addEventListener("click", async () => {
         try {
