@@ -4,6 +4,12 @@ const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult",
 ];
+const WTT_API_HEADERS = {
+  origin: "https://www.worldtabletennis.com",
+  referer: "https://www.worldtabletennis.com/",
+  "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+  secapimkey: "S_WTT_882jjh7basdj91834783mds8j2jsd81",
+};
 const WTT_POOL_STANDINGS_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetPoolStandings",
@@ -1966,11 +1972,7 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
 
     try {
       return await fetchJson(url.toString(), {
-        headers: {
-          origin: "https://www.worldtabletennis.com",
-          referer: "https://www.worldtabletennis.com/",
-          "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
-        },
+        headers: WTT_API_HEADERS,
         timeoutMs: 30000,
       });
     } catch (error) {
@@ -2166,17 +2168,12 @@ async function fetchWttPoolStandingMatches(eventId) {
   }
 
   const subEventCodes = ["MTEAM---", "WTEAM---"];
-  const headers = {
-    origin: "https://www.worldtabletennis.com",
-    referer: "https://www.worldtabletennis.com/",
-    "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
-  };
   const responses = await Promise.all(
     subEventCodes.map(async (subeventcode) => {
       for (const baseUrl of WTT_POOL_STANDINGS_URLS) {
         const response = await fetchJson(`${baseUrl}/${eventIdText}?subeventcode=${subeventcode}`, {
           allowNotFound: true,
-          headers,
+          headers: WTT_API_HEADERS,
           timeoutMs: 15000,
         }).catch(() => null);
         if (Array.isArray(response)) {
@@ -3281,28 +3278,6 @@ function formatJaSinglesLine(single, translations, displayedTeams, options = {})
   return `　${left}　${score}　${right}`;
 }
 
-function formatJaPendingLine(match, index, translations, displayedTeams) {
-  const inferredSchedule = inferStandardPendingTeamSchedule(match, displayedTeams)
-    || inferOlympicPendingTeamSchedule(match, displayedTeams);
-  const leftPlayers = match.singles.slice(0, 3).map((single) => {
-    const { leftCompetitorIndex } = getSingleDisplayIndexes(single, displayedTeams);
-    return single.competitors[leftCompetitorIndex]?.name || "";
-  });
-  const rightPlayers = match.singles.slice(0, 3).map((single) => {
-    const { rightCompetitorIndex } = getSingleDisplayIndexes(single, displayedTeams);
-    return single.competitors[rightCompetitorIndex]?.name || "";
-  });
-  const schedule = inferredSchedule || [
-    [leftPlayers[0], rightPlayers[1]],
-    [leftPlayers[1], rightPlayers[0]],
-  ];
-  const completedPendingCount = Math.max(0, match.singles.length - 3);
-  const pair = schedule[index - 4 - completedPendingCount] || [];
-  const left = translatePlayer(pair[0] || "", translations);
-  const right = translatePlayer(pair[1] || "", translations);
-  return `　${left}　-　${right}`;
-}
-
 function formatJaIndividualMatchLine(match, translations, options = {}) {
   const { leftCompetitorIndex, rightCompetitorIndex } = getIndividualDisplayIndexes(match);
   const left = getCompetitorDisplayName(match.competitors[leftCompetitorIndex], translations);
@@ -3374,12 +3349,6 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
         formatJaSinglesLine(single, translations, displayedTeams, options),
       ),
     ];
-
-    if (match.singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
-      for (let i = match.singles.length + 1; i <= 5; i += 1) {
-        lines.push(formatJaPendingLine(match, i, translations, displayedTeams));
-      }
-    }
 
     blocks.push(lines.join("\n"));
   }
