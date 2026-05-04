@@ -2769,6 +2769,31 @@ function getSinglePlayerFromCompetitor(competitor) {
   };
 }
 
+function getSingleDisplayedPlayers(single, displayedTeams) {
+  if (!single || !displayedTeams) {
+    return null;
+  }
+
+  const { leftCompetitorIndex, rightCompetitorIndex } = getSingleDisplayIndexes(single, displayedTeams);
+  const left = getSinglePlayerFromCompetitor(single.competitors?.[leftCompetitorIndex]);
+  const right = getSinglePlayerFromCompetitor(single.competitors?.[rightCompetitorIndex]);
+
+  if (!left || !right) {
+    return null;
+  }
+
+  return { left, right };
+}
+
+function getPendingTeamPairKey(leftPlayer, rightPlayer) {
+  const leftKey = getPlayerIdentityKey(leftPlayer);
+  const rightKey = getPlayerIdentityKey(rightPlayer);
+  if (!leftKey || !rightKey) {
+    return "";
+  }
+  return `${leftKey}__${rightKey}`;
+}
+
 function inferOlympicPendingTeamSchedule(match, displayedTeams) {
   if (!match || match.discipline !== "teams" || match.singles.length < 3) {
     return null;
@@ -2821,18 +2846,21 @@ function inferStandardPendingTeamSchedule(match, displayedTeams) {
     return null;
   }
 
-  const [firstMatch, secondMatch, thirdMatch] = match.singles;
+  const displayedSingles = match.singles
+    .map((single) => getSingleDisplayedPlayers(single, displayedTeams))
+    .filter(Boolean);
+  const [firstMatch, secondMatch, thirdMatch] = displayedSingles;
+
   if (!firstMatch || !secondMatch || !thirdMatch) {
     return null;
   }
 
-  const { leftIndex, rightIndex } = displayedTeams;
-  const firstLeft = getSinglePlayerFromCompetitor(firstMatch.competitors?.[leftIndex]);
-  const firstRight = getSinglePlayerFromCompetitor(firstMatch.competitors?.[rightIndex]);
-  const secondLeft = getSinglePlayerFromCompetitor(secondMatch.competitors?.[leftIndex]);
-  const secondRight = getSinglePlayerFromCompetitor(secondMatch.competitors?.[rightIndex]);
-  const thirdLeft = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[leftIndex]);
-  const thirdRight = getSinglePlayerFromCompetitor(thirdMatch.competitors?.[rightIndex]);
+  const firstLeft = firstMatch.left;
+  const firstRight = firstMatch.right;
+  const secondLeft = secondMatch.left;
+  const secondRight = secondMatch.right;
+  const thirdLeft = thirdMatch.left;
+  const thirdRight = thirdMatch.right;
 
   if (
     !firstLeft ||
@@ -2845,10 +2873,46 @@ function inferStandardPendingTeamSchedule(match, displayedTeams) {
     return null;
   }
 
-  return [
-    [secondLeft.name || "", firstRight.name || ""],
-    [firstLeft.name || "", secondRight.name || ""],
+  const firstLeftKey = getPlayerIdentityKey(firstLeft);
+  const secondLeftKey = getPlayerIdentityKey(secondLeft);
+  const firstRightKey = getPlayerIdentityKey(firstRight);
+  const secondRightKey = getPlayerIdentityKey(secondRight);
+  const thirdLeftKey = getPlayerIdentityKey(thirdLeft);
+  const thirdRightKey = getPlayerIdentityKey(thirdRight);
+
+  if (
+    !firstLeftKey ||
+    !secondLeftKey ||
+    !firstRightKey ||
+    !secondRightKey ||
+    firstLeftKey === secondLeftKey ||
+    firstRightKey === secondRightKey ||
+    thirdLeftKey === firstLeftKey ||
+    thirdLeftKey === secondLeftKey ||
+    thirdRightKey === firstRightKey ||
+    thirdRightKey === secondRightKey
+  ) {
+    return null;
+  }
+
+  const canonicalSchedule = [
+    { left: firstLeft, right: firstRight },
+    { left: secondLeft, right: secondRight },
+    { left: thirdLeft, right: thirdRight },
+    { left: firstLeft, right: secondRight },
+    { left: secondLeft, right: firstRight },
   ];
+
+  const playedPairKeys = new Set(
+    displayedSingles
+      .map((single) => getPendingTeamPairKey(single.left, single.right))
+      .filter(Boolean),
+  );
+
+  return canonicalSchedule
+    .slice(3)
+    .filter((pair) => !playedPairKeys.has(getPendingTeamPairKey(pair.left, pair.right)))
+    .map((pair) => [pair.left.name || "", pair.right.name || ""]);
 }
 
 function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
@@ -3233,7 +3297,8 @@ function formatJaPendingLine(match, index, translations, displayedTeams) {
     [leftPlayers[0], rightPlayers[1]],
     [leftPlayers[1], rightPlayers[0]],
   ];
-  const pair = schedule[index - 4] || [];
+  const completedPendingCount = Math.max(0, match.singles.length - 3);
+  const pair = schedule[index - 4 - completedPendingCount] || [];
   const left = translatePlayer(pair[0] || "", translations);
   const right = translatePlayer(pair[1] || "", translations);
   return `　${left}　-　${right}`;
