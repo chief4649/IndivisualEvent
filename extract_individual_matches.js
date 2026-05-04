@@ -2402,7 +2402,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     try {
       const payload = await fetchSourceResults(source, eventId, take, options);
 
-      if (shouldReuseCachedPayload(source, payload) && !refreshCache) {
+      if (shouldReuseCachedPayload(source, payload)) {
         const timestamp = new Date().toISOString();
         writeWttArchive(archiveDir, eventId, payload);
         updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
