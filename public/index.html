@@ -910,15 +910,40 @@
         return token ? { Authorization: `Bearer ${token}` } : {};
       }
 
+      async function readErrorMessage(response, fallbackMessage) {
+        let data = null;
+        try {
+          data = await response.json();
+        } catch (error) {
+          try {
+            const text = await response.text();
+            if (text.trim()) {
+              return `${fallbackMessage} (${response.status}): ${text.trim()}`;
+            }
+          } catch (innerError) {
+            // ignore
+          }
+        }
+
+        const baseMessage = data?.error || fallbackMessage;
+        if (response.status === 401) {
+          return `${baseMessage} [401]`;
+        }
+        if (response.status >= 500) {
+          return `${baseMessage} [${response.status}] 本番サーバーか共有辞書元の接続失敗の可能性があります。`;
+        }
+        return `${baseMessage} [${response.status}]`;
+      }
+
       async function loadConfig(kind) {
         const authHeaders = buildAuthHeaders();
         const response = await fetch(`/api/config/${kind}`, {
           headers: authHeaders,
         });
-        const data = await response.json();
         if (!response.ok) {
-          throw new Error(data.error || `${kind} の読み込みに失敗しました。`);
+          throw new Error(await readErrorMessage(response, `${kind} の読み込みに失敗しました。`));
         }
+        const data = await response.json();
 
         const text = JSON.stringify(data.data, null, 2);
         if (kind === "translations") {
@@ -936,10 +961,10 @@
           },
           body,
         });
-        const data = await response.json();
         if (!response.ok) {
-          throw new Error(data.error || `${kind} の保存に失敗しました。`);
+          throw new Error(await readErrorMessage(response, `${kind} の保存に失敗しました。`));
         }
+        await response.json();
       }
 
       function parseBulkTranslations(text) {
