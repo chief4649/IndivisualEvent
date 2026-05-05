@@ -505,14 +505,6 @@
                 種目
                 <select name="category">
                   <option value="">すべて</option>
-                  <option value="men teams">男子団体</option>
-                  <option value="women teams">女子団体</option>
-                  <option value="mixed teams">混合団体</option>
-                  <option value="men singles">男子シングルス</option>
-                  <option value="women singles">女子シングルス</option>
-                  <option value="men doubles">男子ダブルス</option>
-                  <option value="women doubles">女子ダブルス</option>
-                  <option value="mixed doubles">混合ダブルス</option>
                 </select>
               </label>
               <label>
@@ -808,6 +800,13 @@
         const previousValue = categorySelect.value;
         const restoredValue = previousValue || initialCategoryValue;
         const options = [{ value: "", label: "すべて" }, ...categories];
+        if (
+          restoredValue &&
+          restoredValue !== "" &&
+          !options.some((option) => option.value === restoredValue)
+        ) {
+          options.push({ value: restoredValue, label: restoredValue });
+        }
         categorySelect.innerHTML = "";
 
         options.forEach((option) => {
