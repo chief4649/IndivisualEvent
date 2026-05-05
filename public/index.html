@@ -631,6 +631,7 @@
       const disciplineField = form.elements.namedItem("discipline");
       const roundOptions = document.getElementById("round-options");
       const initialParams = new URLSearchParams(location.search);
+      const initialCategoryValue = initialParams.get("category") || "";
       const initialRoundValues = new Set(initialParams.getAll("round"));
       let eventNameRequestId = 0;
       let categoryRequestId = 0;
@@ -802,6 +803,7 @@
 
       function setCategoryOptions(categories) {
         const previousValue = categorySelect.value;
+        const restoredValue = previousValue || initialCategoryValue;
         const options = [{ value: "", label: "すべて" }, ...categories];
         categorySelect.innerHTML = "";
 
@@ -812,8 +814,8 @@
           categorySelect.appendChild(el);
         });
 
-        if (options.some((option) => option.value === previousValue)) {
-          categorySelect.value = previousValue;
+        if (restoredValue && options.some((option) => option.value === restoredValue)) {
+          categorySelect.value = restoredValue;
         } else {
           categorySelect.value = "";
         }
