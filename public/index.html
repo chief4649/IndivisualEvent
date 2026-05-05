@@ -626,12 +626,29 @@
       const disciplineField = form.elements.namedItem("discipline");
       const roundOptions = document.getElementById("round-options");
       const initialParams = new URLSearchParams(location.search);
-      const initialCategoryValue = initialParams.get("category") || "";
-      const initialRoundValues = new Set(initialParams.getAll("round"));
+      let pendingInitialCategoryValue = initialParams.get("category") || "";
+      let pendingInitialRoundValues = new Set(initialParams.getAll("round"));
       let eventNameRequestId = 0;
       let categoryRequestId = 0;
       let roundRequestId = 0;
       let eventSearchRequestId = 0;
+      let eventRefreshTimer = null;
+
+      function normalizeChoiceValue(value) {
+        return String(value || "")
+          .replace(/['’]/g, "")
+          .replace(/\s+/g, " ")
+          .trim()
+          .toLowerCase();
+      }
+
+      function findMatchingOptionValue(options, wantedValue) {
+        const normalizedWanted = normalizeChoiceValue(wantedValue);
+        if (!normalizedWanted) {
+          return "";
+        }
+        return options.find((option) => normalizeChoiceValue(option.value) === normalizedWanted)?.value || "";
+      }
 
       function setStatus(message) {
         status.textContent = message;
@@ -639,6 +656,15 @@
 
       function setAdminStatus(message) {
         adminStatus.textContent = message;
+      }
+
+      function reportBackgroundError(error) {
+        const message = String(error?.message || error || "").trim();
+        if (!message) {
+          return;
+        }
+        setStatus(message);
+        console.error(error);
       }
 
       function setMeta(items) {
@@ -763,10 +789,7 @@
               button.addEventListener("click", () => {
                 form.elements.namedItem("event").value = item.event;
                 eventSearchResults.innerHTML = "";
-                updateEventName();
-                loadEventName().catch(() => {});
-                loadCategories().catch(() => {});
-                loadRounds().catch(() => {});
+                refreshEventDependentUi();
               });
 
               group.appendChild(button);
@@ -798,15 +821,8 @@
 
       function setCategoryOptions(categories) {
         const previousValue = categorySelect.value;
-        const restoredValue = previousValue || initialCategoryValue;
+        const restoredValue = previousValue || pendingInitialCategoryValue;
         const options = [{ value: "", label: "すべて" }, ...categories];
-        if (
-          restoredValue &&
-          restoredValue !== "" &&
-          !options.some((option) => option.value === restoredValue)
-        ) {
-          options.push({ value: restoredValue, label: restoredValue });
-        }
         categorySelect.innerHTML = "";
 
         options.forEach((option) => {
@@ -816,11 +832,8 @@
           categorySelect.appendChild(el);
         });
 
-        if (restoredValue && options.some((option) => option.value === restoredValue)) {
-          categorySelect.value = restoredValue;
-        } else {
-          categorySelect.value = "";
-        }
+        categorySelect.value = findMatchingOptionValue(options, restoredValue);
+        pendingInitialCategoryValue = "";
       }
 
       function getSelectedRounds() {
@@ -828,8 +841,9 @@
       }
 
       function setRoundOptions(rounds) {
-        const previousValues = new Set(getSelectedRounds());
-        const restoredValues = previousValues.size ? previousValues : initialRoundValues;
+        const previousValues = getSelectedRounds();
+        const restoredValues = previousValues.length ? previousValues : Array.from(pendingInitialRoundValues);
+        const restoredNormalized = new Set(restoredValues.map((value) => normalizeChoiceValue(value)).filter(Boolean));
         roundOptions.innerHTML = "";
 
         rounds.forEach((round) => {
@@ -840,7 +854,7 @@
           input.type = "checkbox";
           input.name = "round";
           input.value = round.value;
-          input.checked = restoredValues.has(round.value);
+          input.checked = restoredNormalized.has(normalizeChoiceValue(round.value));
 
           const text = document.createElement("span");
           text.textContent = round.label;
@@ -849,18 +863,32 @@
           label.appendChild(text);
           roundOptions.appendChild(label);
         });
+
+        pendingInitialRoundValues = new Set();
       }
 
       async function loadCategories() {
         const sourceValue = form.elements.namedItem("source")?.value?.trim() || "wtt";
         const eventValue = form.elements.namedItem("event")?.value?.trim() || "";
+        const genderValue = genderField?.value?.trim() || "";
+        const disciplineValue = disciplineField?.value?.trim() || "";
         if (!eventValue) {
           setCategoryOptions([]);
+          setRoundOptions([]);
           return;
         }
 
         const requestId = ++categoryRequestId;
-        const response = await fetch(`/api/categories?source=${encodeURIComponent(sourceValue)}&event=${encodeURIComponent(eventValue)}`);
+        const searchParams = new URLSearchParams();
+        searchParams.set("source", sourceValue);
+        searchParams.set("event", eventValue);
+        if (genderValue) {
+          searchParams.set("gender", genderValue);
+        }
+        if (disciplineValue) {
+          searchParams.set("discipline", disciplineValue);
+        }
+        const response = await fetch(`/api/categories?${searchParams.toString()}`);
         const data = await readJsonResponse(response, "種目一覧の読み込みに失敗しました。");
         if (!response.ok) {
           throw new Error(data.error || "種目一覧の読み込みに失敗しました。");
@@ -869,7 +897,7 @@
           return;
         }
         setCategoryOptions(data.categories || []);
-        loadRounds().catch(() => {});
+        loadRounds().catch(reportBackgroundError);
       }
 
       async function loadRounds() {
@@ -1102,38 +1130,45 @@
         runQuery();
       });
 
-      form.elements.namedItem("event").addEventListener("input", () => {
+      function refreshEventDependentUi() {
         updateEventName();
-        loadEventName().catch(() => {});
-        loadCategories().catch(() => {});
-        loadRounds().catch(() => {});
+        loadEventName().catch(reportBackgroundError);
+        loadCategories().catch(reportBackgroundError);
+      }
+
+      function scheduleEventDependentUiRefresh() {
+        clearTimeout(eventRefreshTimer);
+        eventRefreshTimer = setTimeout(() => {
+          refreshEventDependentUi();
+        }, 250);
+      }
+
+      form.elements.namedItem("event").addEventListener("input", () => {
+        scheduleEventDependentUiRefresh();
       });
 
       form.elements.namedItem("source").addEventListener("change", () => {
-        updateEventName();
-        loadEventName().catch(() => {});
-        loadCategories().catch(() => {});
-        loadRounds().catch(() => {});
-        loadEventSearchResults().catch(() => {});
+        refreshEventDependentUi();
+        loadEventSearchResults().catch(reportBackgroundError);
       });
 
       eventSearchInput.addEventListener("input", () => {
-        loadEventSearchResults().catch(() => {});
+        loadEventSearchResults().catch(reportBackgroundError);
       });
 
       categorySelect.addEventListener("change", () => {
-        loadRounds().catch(() => {});
+        loadRounds().catch(reportBackgroundError);
       });
 
       if (genderField) {
         genderField.addEventListener("change", () => {
-          loadRounds().catch(() => {});
+          loadCategories().catch(reportBackgroundError);
         });
       }
 
       if (disciplineField) {
         disciplineField.addEventListener("change", () => {
-          loadRounds().catch(() => {});
+          loadCategories().catch(reportBackgroundError);
         });
       }
 
@@ -1205,11 +1240,8 @@
           runQuery();
         }
 
-        updateEventName();
-        loadEventName().catch(() => {});
-        loadCategories().catch(() => {});
-        loadRounds().catch(() => {});
-        loadConfig("translations").catch(() => {});
+        refreshEventDependentUi();
+        loadConfig("translations").catch(reportBackgroundError);
       })();
     </script>
   </body>
