@@ -682,7 +682,7 @@
 
         const requestId = ++eventNameRequestId;
         const response = await fetch(`/api/event-names?source=${encodeURIComponent(sourceValue)}&event=${encodeURIComponent(eventValue)}`);
-        const data = await response.json();
+        const data = await readJsonResponse(response, "大会名JSONの読み込みに失敗しました。");
         if (!response.ok) {
           throw new Error(data.error || "大会名JSONの読み込みに失敗しました。");
         }
@@ -786,7 +786,7 @@
 
         const requestId = ++eventSearchRequestId;
         const response = await fetch(`/api/events/search?source=${encodeURIComponent(sourceValue)}&q=${encodeURIComponent(query)}`);
-        const data = await response.json();
+        const data = await readJsonResponse(response, "大会候補の読み込みに失敗しました。");
         if (!response.ok) {
           throw new Error(data.error || "大会候補の読み込みに失敗しました。");
         }
@@ -861,7 +861,7 @@
 
         const requestId = ++categoryRequestId;
         const response = await fetch(`/api/categories?source=${encodeURIComponent(sourceValue)}&event=${encodeURIComponent(eventValue)}`);
-        const data = await response.json();
+        const data = await readJsonResponse(response, "種目一覧の読み込みに失敗しました。");
         if (!response.ok) {
           throw new Error(data.error || "種目一覧の読み込みに失敗しました。");
         }
@@ -897,7 +897,7 @@
         }
 
         const response = await fetch(`/api/rounds?${searchParams.toString()}`);
-        const data = await response.json();
+        const data = await readJsonResponse(response, "ラウンド一覧の読み込みに失敗しました。");
         if (!response.ok) {
           throw new Error(data.error || "ラウンド一覧の読み込みに失敗しました。");
         }
@@ -940,18 +940,24 @@
         }
       }
 
+      async function readJsonResponse(response, fallbackMessage) {
+        const text = await response.text();
+        try {
+          return JSON.parse(text);
+        } catch (error) {
+          const snippet = text.trim().slice(0, 120);
+          throw new Error(`${fallbackMessage} JSONではない応答を受け取りました。 ${snippet}`);
+        }
+      }
+
       async function readErrorMessage(response, fallbackMessage) {
         let data = null;
         try {
-          data = await response.json();
+          data = await readJsonResponse(response, fallbackMessage);
         } catch (error) {
-          try {
-            const text = await response.text();
-            if (text.trim()) {
-              return `${fallbackMessage} (${response.status}): ${text.trim()}`;
-            }
-          } catch (innerError) {
-            // ignore
+          const message = String(error?.message || "").trim();
+          if (message) {
+            return `${fallbackMessage} (${response.status}): ${message}`;
           }
         }
 
@@ -973,7 +979,7 @@
         if (!response.ok) {
           throw new Error(await readErrorMessage(response, `${kind} の読み込みに失敗しました。`));
         }
-        const data = await response.json();
+        const data = await readJsonResponse(response, `${kind} の読み込みに失敗しました。`);
 
         const text = JSON.stringify(data.data, null, 2);
         if (kind === "translations") {
@@ -997,7 +1003,7 @@
         if (!response.ok) {
           throw new Error(await readErrorMessage(response, `${kind} の保存に失敗しました。`));
         }
-        await response.json();
+        await readJsonResponse(response, `${kind} の保存に失敗しました。`);
       }
 
       function parseBulkTranslations(text) {
@@ -1068,7 +1074,7 @@
 
         try {
           const response = await fetch(`/api/individual-matches?${query}`);
-          const data = await response.json();
+          const data = await readJsonResponse(response, "取得に失敗しました。");
           if (!response.ok) {
             throw new Error(data.error || "取得に失敗しました。");
           }
