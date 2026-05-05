@@ -2014,21 +2014,78 @@ async function fetchBornanEventMeta(eventId) {
 
 async function fetchWttOfficialResultsFromApi(eventId, take) {
   let lastError = null;
+  const takeValues = [];
+  const requestedTake = Number.isFinite(Number(take)) ? Number(take) : DEFAULT_TAKE;
+
+  if (requestedTake > 0) {
+    takeValues.push(requestedTake);
+  }
+  if (requestedTake > 500) {
+    takeValues.push(500);
+  }
+  if (requestedTake > 400) {
+    takeValues.push(400);
+  }
+  if (requestedTake > 300) {
+    takeValues.push(300);
+  }
+  if (requestedTake > 200) {
+    takeValues.push(200);
+  }
+
+  const responses = [];
 
   for (const baseUrl of WTT_OFFICIAL_RESULT_URLS) {
-    const url = new URL(baseUrl);
-    url.searchParams.set("EventId", String(eventId));
-    url.searchParams.set("include_match_card", "true");
-    url.searchParams.set("take", String(take));
+    const results = await Promise.all(
+      takeValues.map(async (takeValue) => {
+        const url = new URL(baseUrl);
+        url.searchParams.set("EventId", String(eventId));
+        url.searchParams.set("include_match_card", "true");
+        url.searchParams.set("take", String(takeValue));
 
-    try {
-      return await fetchJson(url.toString(), {
-        headers: WTT_API_HEADERS,
-        timeoutMs: 30000,
-      });
-    } catch (error) {
-      lastError = error;
+        try {
+          return await fetchJson(url.toString(), {
+            headers: WTT_API_HEADERS,
+            timeoutMs: 30000,
+          });
+        } catch (error) {
+          lastError = error;
+          return null;
+        }
+      }),
+    );
+
+    for (const payload of results) {
+      if (!payload) {
+        continue;
+      }
+      if (!Array.isArray(payload)) {
+        return payload;
+      }
+      responses.push(payload);
     }
+
+    if (responses.length > 0) {
+      break;
+    }
+  }
+
+  if (responses.length > 0) {
+    const merged = [];
+    const seen = new Set();
+    for (const payload of responses) {
+      for (const item of payload) {
+        const code = normalizeWttDocumentCode(item?.documentCode ?? item?.match_card?.documentCode ?? "");
+        if (code) {
+          if (seen.has(code)) {
+            continue;
+          }
+          seen.add(code);
+        }
+        merged.push(item);
+      }
+    }
+    return merged;
   }
 
   throw lastError || new Error("WTT official result request failed");
