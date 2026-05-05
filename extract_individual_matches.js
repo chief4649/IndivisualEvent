@@ -2160,6 +2160,11 @@ async function fetchWttOfficialResultByDocumentCode(eventId, documentCode) {
   return null;
 }
 
+function isKnockoutWttDocumentCode(documentCode) {
+  const code = normalizeWttDocumentCode(documentCode);
+  return /(?:R32|R16|QF|SF|FN)/.test(code);
+}
+
 async function hydrateMissingWttOfficialResults(eventId, primaryPayload) {
   if (!Array.isArray(primaryPayload) || primaryPayload.length === 0) {
     return primaryPayload;
@@ -2179,7 +2184,7 @@ async function hydrateMissingWttOfficialResults(eventId, primaryPayload) {
   const missingCodes = [];
   for (const item of minimalPayload) {
     const documentCode = normalizeWttDocumentCode(getRawWttDocumentCode(item));
-    if (!documentCode || existingCodes.has(documentCode)) {
+    if (!documentCode || existingCodes.has(documentCode) || !isKnockoutWttDocumentCode(documentCode)) {
       continue;
     }
     existingCodes.add(documentCode);
