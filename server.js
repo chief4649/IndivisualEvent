@@ -1847,6 +1847,43 @@ function summarizeCategories(matches) {
   return categories;
 }
 
+function normalizeCategoryLookupValue(value) {
+  return String(value || "")
+    .replace(/['’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function getCategorySummaryMatches(matches, options = {}) {
+  const normalizedCategory = normalizeCategoryLookupValue(options.category);
+  const normalizedGender = String(options.gender || "").trim().toLowerCase();
+  const normalizedDiscipline = String(options.discipline || "").trim().toLowerCase();
+
+  return (Array.isArray(matches) ? matches : []).filter((match) => {
+    if (!match || match.isParaClass) {
+      return false;
+    }
+
+    if (normalizedCategory) {
+      const matchCategory = normalizeCategoryLookupValue(match.categoryName || `${match.gender || ""} ${match.discipline || ""}`.trim());
+      if (matchCategory !== normalizedCategory) {
+        return false;
+      }
+    }
+
+    if (normalizedGender && String(match.gender || "").trim().toLowerCase() !== normalizedGender) {
+      return false;
+    }
+
+    if (normalizedDiscipline && String(match.discipline || "").trim().toLowerCase() !== normalizedDiscipline) {
+      return false;
+    }
+
+    return true;
+  });
+}
+
 function buildProcessedMatchesCacheKey(options = {}) {
   return JSON.stringify({
     source: options.source || "wtt",
@@ -1909,6 +1946,15 @@ async function handleApi(requestUrl, response) {
 
     const result = await getProcessedMatchesCached(options);
     const output = renderOutput(result);
+    const categoryMatches = getCategorySummaryMatches(result.normalized, {
+      gender: options.gender,
+      discipline: options.discipline,
+    });
+    const roundMatches = getCategorySummaryMatches(result.normalized, {
+      category: options.category,
+      gender: options.gender,
+      discipline: options.discipline,
+    });
     sendJson(response, 200, {
       query: {
         source: options.source,
@@ -1928,6 +1974,8 @@ async function handleApi(requestUrl, response) {
         fetchedMatches: result.normalized.length,
         returnedMatches: result.filtered.length,
         availableRounds: summarizeRounds(result.normalized),
+        categoryOptions: summarizeCategories(categoryMatches),
+        roundOptions: summarizeRoundOptions(roundMatches, result.rules, result.translations),
       },
       output,
       matches: result.filtered,
