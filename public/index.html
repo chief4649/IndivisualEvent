@@ -1124,6 +1124,12 @@
           }
 
           output.textContent = data.output || "（出力なし）";
+          if (Array.isArray(data.meta?.categoryOptions)) {
+            setCategoryOptions(data.meta.categoryOptions);
+          }
+          if (Array.isArray(data.meta?.roundOptions)) {
+            setRoundOptions(data.meta.roundOptions);
+          }
           setStatus(
             data.meta.returnedMatches === 0
               ? "0件でした。大会前で結果 API が空の可能性があります。"
