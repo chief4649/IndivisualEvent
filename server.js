@@ -203,6 +203,26 @@ async function fetchJsonWithTimeout(url, options = {}, timeoutMs = 0) {
   }
 }
 
+async function readJsonFromResponse(response, contextLabel) {
+  const text = await response.text();
+  const contentType = String(response.headers.get("content-type") || "").toLowerCase();
+  const snippet = text.trim().replace(/\s+/g, " ").slice(0, 120);
+
+  if (!text.trim()) {
+    throw new Error(`${contextLabel} returned an empty response`);
+  }
+
+  if (contentType && !contentType.includes("application/json")) {
+    throw new Error(`${contextLabel} returned non-JSON content (${contentType}): ${snippet}`);
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    throw new Error(`${contextLabel} returned invalid JSON: ${snippet}`);
+  }
+}
+
 async function fetchSharedTranslations() {
   const response = await fetchJsonWithTimeout(`${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations`, {
     headers: getSharedTranslationsHeaders(),
@@ -210,7 +230,7 @@ async function fetchSharedTranslations() {
   if (!response.ok) {
     throw new Error(`Failed to fetch shared translations: ${response.status} ${response.statusText}`);
   }
-  const payload = await response.json();
+  const payload = await readJsonFromResponse(response, "Shared translations API");
   return payload?.data || null;
 }
 
@@ -893,7 +913,7 @@ async function fetchWttCalendarDateEntry(eventId) {
     throw new Error(`Failed to fetch WTT calendar: ${response.status} ${response.statusText}`);
   }
 
-  const payload = await response.json();
+  const payload = await readJsonFromResponse(response, "WTT calendar API");
   const rows = Array.isArray(payload?.[0]?.rows) ? payload[0].rows : [];
   for (const row of rows) {
     const normalized = normalizeWttCalendarEntry(row);
@@ -1448,7 +1468,7 @@ async function fetchEventName(eventId, source = "wtt") {
       throw new Error(`Failed to fetch event name: ${response.status} ${response.statusText}`);
     }
 
-    const payload = await response.json();
+    const payload = await readJsonFromResponse(response, "WTT event name API");
     const eventName = Array.isArray(payload)
       ? String(payload[0]?.eventName || "")
       : String(payload?.eventName || "") || storedName || indexedName;

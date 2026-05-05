@@ -1402,7 +1402,23 @@ async function fetchJson(url, { allowNotFound = false, headers = null, timeoutMs
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
 
-  return response.json();
+  const text = await response.text();
+  const contentType = String(response.headers.get("content-type") || "").toLowerCase();
+  const snippet = text.trim().replace(/\s+/g, " ").slice(0, 120);
+
+  if (!text.trim()) {
+    throw new Error(`Failed to fetch ${url}: empty response`);
+  }
+
+  if (contentType && !contentType.includes("application/json")) {
+    throw new Error(`Failed to fetch ${url}: non-JSON response (${contentType}) ${snippet}`);
+  }
+
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    throw new Error(`Failed to fetch ${url}: invalid JSON ${snippet}`);
+  }
 }
 
 function parseZennihonShowQueriesFromTimetable(html) {
