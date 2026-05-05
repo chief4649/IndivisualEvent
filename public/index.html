@@ -633,6 +633,8 @@
       let roundRequestId = 0;
       let eventSearchRequestId = 0;
       let eventRefreshTimer = null;
+      let lastBackgroundErrorMessage = "";
+      let lastBackgroundErrorAt = 0;
 
       function normalizeChoiceValue(value) {
         return String(value || "")
@@ -663,6 +665,13 @@
         if (!message) {
           return;
         }
+        const now = Date.now();
+        if (message === lastBackgroundErrorMessage && now - lastBackgroundErrorAt < 5000) {
+          console.error(error);
+          return;
+        }
+        lastBackgroundErrorMessage = message;
+        lastBackgroundErrorAt = now;
         setStatus(message);
         console.error(error);
       }
@@ -970,10 +979,17 @@
 
       async function readJsonResponse(response, fallbackMessage) {
         const text = await response.text();
+        const contentType = String(response.headers.get("content-type") || "").toLowerCase();
+        const snippet = text.trim().replace(/\s+/g, " ").slice(0, 120);
+        if (!text.trim()) {
+          throw new Error(`${fallbackMessage} 空の応答を受け取りました。`);
+        }
+        if (contentType && !contentType.includes("application/json")) {
+          throw new Error(`${fallbackMessage} JSONではない応答を受け取りました。 ${snippet}`);
+        }
         try {
           return JSON.parse(text);
         } catch (error) {
-          const snippet = text.trim().slice(0, 120);
           throw new Error(`${fallbackMessage} JSONではない応答を受け取りました。 ${snippet}`);
         }
       }
