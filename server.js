@@ -56,7 +56,9 @@ const TEAM_TRANSLATIONS_VIEWER_PASSWORD = process.env.TEAM_TRANSLATIONS_VIEWER_P
 const SHARED_TRANSLATIONS_TIMEOUT_MS = Number(process.env.SHARED_TRANSLATIONS_TIMEOUT_MS || 8000);
 const rateLimitStore = new Map();
 const eventNameCache = new Map();
+const processedMatchesCache = new Map();
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
+const PROCESSED_MATCHES_CACHE_TTL_MS = Number(process.env.PROCESSED_MATCHES_CACHE_TTL_MS || 15_000);
 const STORAGE_MANAGED_FILES = [
   ["translations.ja.json", TRANSLATIONS_PATH],
   ["rules.json", RULES_PATH],
@@ -113,11 +115,25 @@ function ensureDirectoryFilesFromDefault(targetDir, sourceDir) {
   });
 }
 
+function syncDirectoryFilesFromDefaultIfNewer(targetDir, sourceDir) {
+  ensureDir(targetDir);
+  if (!sourceDir || !fs.existsSync(sourceDir)) {
+    return;
+  }
+  const entries = fs.readdirSync(sourceDir, { withFileTypes: true });
+  entries.forEach((entry) => {
+    if (!entry.isFile()) {
+      return;
+    }
+    syncFileFromDefaultIfNewer(path.join(targetDir, entry.name), path.join(sourceDir, entry.name));
+  });
+}
+
 function ensureRuntimeFiles() {
   ensureDir(DATA_DIR);
   ensureDir(CACHE_DIR);
-  ensureDirectoryFilesFromDefault(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
-  ensureDirectoryFilesFromDefault(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
+  syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
+  syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
   syncFileFromDefaultIfNewer(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
@@ -1811,6 +1827,55 @@ function summarizeCategories(matches) {
   return categories;
 }
 
+function buildProcessedMatchesCacheKey(options = {}) {
+  return JSON.stringify({
+    source: options.source || "wtt",
+    event: options.event || "",
+    category: options.category || "",
+    gender: options.gender || "",
+    discipline: options.discipline || "",
+    round: Array.isArray(options.round) ? options.round : options.round ? [options.round] : [],
+    contains: options.contains || "",
+    docCode: options.docCode || "",
+    limit: options.limit ?? null,
+    take: options.take ?? null,
+    omitSetCounts: Boolean(options.omitSetCounts),
+  });
+}
+
+async function getProcessedMatchesCached(options = {}) {
+  if (options.refreshCache) {
+    return getProcessedMatches(options);
+  }
+
+  const now = Date.now();
+  const cacheKey = buildProcessedMatchesCacheKey(options);
+  const cached = processedMatchesCache.get(cacheKey);
+  if (cached && cached.expiresAt > now) {
+    return cached.promise;
+  }
+
+  const promise = getProcessedMatches(options).catch((error) => {
+    processedMatchesCache.delete(cacheKey);
+    throw error;
+  });
+
+  processedMatchesCache.set(cacheKey, {
+    expiresAt: now + PROCESSED_MATCHES_CACHE_TTL_MS,
+    promise,
+  });
+
+  if (processedMatchesCache.size > 100) {
+    for (const [key, entry] of processedMatchesCache.entries()) {
+      if (entry.expiresAt <= now) {
+        processedMatchesCache.delete(key);
+      }
+    }
+  }
+
+  return promise;
+}
+
 async function handleApi(requestUrl, response) {
   try {
     await syncTranslationsFromSharedSource();
@@ -1822,7 +1887,7 @@ async function handleApi(requestUrl, response) {
       return;
     }
 
-    const result = await getProcessedMatches(options);
+    const result = await getProcessedMatchesCached(options);
     const output = renderOutput(result);
     sendJson(response, 200, {
       query: {
@@ -1864,9 +1929,11 @@ async function handleCategoriesApi(requestUrl, response) {
       return;
     }
 
-    const result = await getProcessedMatches({
+    const result = await getProcessedMatchesCached({
       source: options.source,
       event: options.event,
+      gender: options.gender,
+      discipline: options.discipline,
       take: options.take,
       translations: TRANSLATIONS_PATH,
       rules: RULES_PATH,
@@ -1895,7 +1962,7 @@ async function handleRoundsApi(requestUrl, response) {
       return;
     }
 
-    const result = await getProcessedMatches({
+    const result = await getProcessedMatchesCached({
       source: options.source,
       event: options.event,
       category: options.category,

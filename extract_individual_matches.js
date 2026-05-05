@@ -2440,7 +2440,21 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
     };
   }
 
-  if (isLikelyBornanFallbackCandidate(eventIdText)) {
+  if (isDefinitelyFinished) {
+    return {
+      eventId: eventIdText,
+      source: mergedEntry?.source || "wtt",
+      title: mergedEntry?.title || mergedEntry?.eventName || "",
+      startDate: mergedEntry?.startDate || null,
+      endDate: mergedEntry?.endDate || null,
+      isFinished: true,
+      canAutoArchive: Boolean(indexedEntry?.canAutoArchive),
+      archived: false,
+      mode: "finished",
+    };
+  }
+
+  if (!mergedEntry?.startDate && !mergedEntry?.endDate && isLikelyBornanFallbackCandidate(eventIdText)) {
     const bornanMeta = await fetchBornanEventMeta(eventIdText);
     if (bornanMeta) {
       return {
@@ -2454,7 +2468,7 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   return {
     eventId: eventIdText,
     source: mergedEntry?.source || "wtt",
-    title: mergedEntry?.title || "",
+    title: mergedEntry?.title || mergedEntry?.eventName || "",
     startDate: mergedEntry?.startDate || null,
     endDate: mergedEntry?.endDate || null,
     isFinished: false,
@@ -2464,20 +2478,21 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   };
 }
 
-async function fetchWttOfficialResults(eventId, take) {
+async function fetchWttOfficialResults(eventId, take, options = {}) {
   let primaryPayload = null;
   let primaryError = null;
 
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload)) {
-      return primaryPayload;
+      const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
+      return mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
     }
   } catch (error) {
     primaryError = error;
   }
 
-  if (isLikelyBornanFallbackCandidate(eventId)) {
+  if (options.allowBornanFallback !== false && isLikelyBornanFallbackCandidate(eventId)) {
     const bornanPayload = await fetchBornanOfficialResults(eventId);
     if (Array.isArray(bornanPayload) && bornanPayload.length > 0) {
       return bornanPayload;
@@ -2493,7 +2508,7 @@ async function fetchWttOfficialResults(eventId, take) {
 
 async function fetchSourceResults(source, eventId, take, options = {}) {
   if (source === "wtt") {
-    return fetchWttOfficialResults(eventId, take);
+    return fetchWttOfficialResults(eventId, take, options);
   }
 
   if (source === "zennihon") {
@@ -2520,7 +2535,10 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     }
 
     try {
-      const payload = await fetchSourceResults(source, eventId, take, options);
+      const payload = await fetchSourceResults(source, eventId, take, {
+        ...options,
+        allowBornanFallback: !(meta?.source === "calendar" || meta?.startDate || meta?.endDate),
+      });
       const mergedPayload = mergeWttOfficialResultPayloads(payload, archived);
 
       if (shouldReuseCachedPayload(source, mergedPayload)) {
