@@ -4,6 +4,10 @@ const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult",
 ];
+const WTT_OFFICIAL_RESULT_MINIMAL_URLS = [
+  "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult_Minimal",
+  "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult_Minimal",
+];
 const WTT_API_HEADERS = {
   origin: "https://www.worldtabletennis.com",
   referer: "https://www.worldtabletennis.com/",
@@ -2033,27 +2037,27 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   const takeValues = [];
   const requestedTake = Number.isFinite(Number(take)) ? Number(take) : DEFAULT_TAKE;
 
-  if (requestedTake > 0) {
-    takeValues.push(requestedTake);
-  }
-  if (requestedTake > 500) {
-    takeValues.push(500);
-  }
   if (requestedTake > 400) {
-    takeValues.push(400);
+    takeValues.push(400, 300, 200);
+  } else {
+    if (requestedTake > 0) {
+      takeValues.push(requestedTake);
+    }
+    if (requestedTake > 300) {
+      takeValues.push(300);
+    }
+    if (requestedTake > 200) {
+      takeValues.push(200);
+    }
   }
-  if (requestedTake > 300) {
-    takeValues.push(300);
-  }
-  if (requestedTake > 200) {
-    takeValues.push(200);
-  }
+
+  const uniqueTakeValues = [...new Set(takeValues.filter((value) => Number.isFinite(value) && value > 0))];
 
   const responses = [];
 
   for (const baseUrl of WTT_OFFICIAL_RESULT_URLS) {
     const results = await Promise.all(
-      takeValues.map(async (takeValue) => {
+      uniqueTakeValues.map(async (takeValue) => {
         const url = new URL(baseUrl);
         url.searchParams.set("EventId", String(eventId));
         url.searchParams.set("include_match_card", "true");
@@ -2062,7 +2066,7 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
         try {
           return await fetchJson(url.toString(), {
             headers: WTT_API_HEADERS,
-            timeoutMs: 30000,
+            timeoutMs: 12000,
           });
         } catch (error) {
           lastError = error;
@@ -2105,6 +2109,98 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   }
 
   throw lastError || new Error("WTT official result request failed");
+}
+
+async function fetchWttOfficialResultMinimal(eventId) {
+  const eventIdText = String(eventId || "").trim();
+  if (!eventIdText) {
+    return [];
+  }
+
+  for (const baseUrl of WTT_OFFICIAL_RESULT_MINIMAL_URLS) {
+    const url = new URL(baseUrl);
+    url.searchParams.set("EventId", eventIdText);
+
+    const payload = await fetchJson(url.toString(), {
+      headers: WTT_API_HEADERS,
+      timeoutMs: 20000,
+    }).catch(() => null);
+
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+  }
+
+  return [];
+}
+
+async function fetchWttOfficialResultByDocumentCode(eventId, documentCode) {
+  const eventIdText = String(eventId || "").trim();
+  const normalizedCode = String(documentCode || "").trim();
+  if (!eventIdText || !normalizedCode) {
+    return null;
+  }
+
+  for (const baseUrl of WTT_OFFICIAL_RESULT_URLS) {
+    const url = new URL(baseUrl);
+    url.searchParams.set("EventId", eventIdText);
+    url.searchParams.set("include_match_card", "true");
+    url.searchParams.set("documentCode", normalizedCode);
+
+    const payload = await fetchJson(url.toString(), {
+      headers: WTT_API_HEADERS,
+      timeoutMs: 20000,
+    }).catch(() => null);
+
+    if (Array.isArray(payload) && payload.length > 0) {
+      return payload[0];
+    }
+  }
+
+  return null;
+}
+
+async function hydrateMissingWttOfficialResults(eventId, primaryPayload) {
+  if (!Array.isArray(primaryPayload) || primaryPayload.length === 0) {
+    return primaryPayload;
+  }
+
+  const minimalPayload = await fetchWttOfficialResultMinimal(eventId).catch(() => []);
+  if (!Array.isArray(minimalPayload) || minimalPayload.length === 0) {
+    return primaryPayload;
+  }
+
+  const existingCodes = new Set(
+    primaryPayload
+      .map((item) => normalizeWttDocumentCode(getRawWttDocumentCode(item)))
+      .filter(Boolean),
+  );
+
+  const missingCodes = [];
+  for (const item of minimalPayload) {
+    const documentCode = normalizeWttDocumentCode(getRawWttDocumentCode(item));
+    if (!documentCode || existingCodes.has(documentCode)) {
+      continue;
+    }
+    existingCodes.add(documentCode);
+    missingCodes.push(documentCode);
+  }
+
+  if (missingCodes.length === 0) {
+    return primaryPayload;
+  }
+
+  const recoveredItems = (
+    await Promise.all(
+      missingCodes.map((documentCode) => fetchWttOfficialResultByDocumentCode(eventId, documentCode)),
+    )
+  ).filter(Boolean);
+
+  if (recoveredItems.length === 0) {
+    return primaryPayload;
+  }
+
+  return mergeWttOfficialResultPayloads(recoveredItems, primaryPayload);
 }
 
 function parsePoolStandingUnit(unit) {
@@ -2577,6 +2673,7 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload)) {
+      primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
       const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
       return mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
     }
