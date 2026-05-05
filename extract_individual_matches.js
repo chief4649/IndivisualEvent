@@ -1030,6 +1030,25 @@ function writeWttArchive(archiveDir, eventId, payload) {
   fs.writeFileSync(archivePath, JSON.stringify(payload, null, 2) + "\n", "utf8");
 }
 
+function getWttArchiveLastUpdatedAt(archiveDir, eventId, archiveIndexPath = DEFAULT_WTT_ARCHIVE_INDEX_PATH) {
+  const indexedEntry = readWttArchiveIndex(archiveIndexPath)?.[String(eventId || "").trim()] || null;
+  const indexedTimestamp = Date.parse(String(indexedEntry?.lastFetchedAt || indexedEntry?.archivedAt || ""));
+  if (Number.isFinite(indexedTimestamp)) {
+    return indexedTimestamp;
+  }
+
+  const archivePath = getWttArchivePath(archiveDir, eventId);
+  if (!fs.existsSync(archivePath)) {
+    return null;
+  }
+
+  try {
+    return fs.statSync(archivePath).mtimeMs;
+  } catch {
+    return null;
+  }
+}
+
 function readWttArchiveIndex(indexPath) {
   if (!fs.existsSync(indexPath)) {
     return {};
@@ -2564,7 +2583,18 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       return mergedPayload;
     } catch (error) {
       if (archived) {
-        return archived;
+        if (meta.isFinished) {
+          return archived;
+        }
+
+        const lastUpdatedAt = getWttArchiveLastUpdatedAt(archiveDir, eventId, archiveIndexPath);
+        const staleMinutes = Number.isFinite(lastUpdatedAt)
+          ? Math.max(1, Math.round((Date.now() - lastUpdatedAt) / 60000))
+          : null;
+        const staleLabel = staleMinutes ? `${staleMinutes} minutes old` : "too old";
+        throw new Error(
+          `WTT live fetch failed and local archive is stale (${staleLabel}) for event ${eventId}: ${error.message}`,
+        );
       }
       throw error;
     }
