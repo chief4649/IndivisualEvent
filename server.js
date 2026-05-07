@@ -207,19 +207,18 @@ async function readJsonFromResponse(response, contextLabel) {
   const text = await response.text();
   const contentType = String(response.headers.get("content-type") || "").toLowerCase();
   const snippet = text.trim().replace(/\s+/g, " ").slice(0, 120);
+  const trimmed = text.trim();
 
-  if (!text.trim()) {
+  if (!trimmed) {
     throw new Error(`${contextLabel} returned an empty response`);
   }
 
-  if (contentType && !contentType.includes("application/json")) {
-    throw new Error(`${contextLabel} returned non-JSON content (${contentType}): ${snippet}`);
-  }
-
   try {
-    return JSON.parse(text);
+    return JSON.parse(trimmed);
   } catch (error) {
-    throw new Error(`${contextLabel} returned invalid JSON: ${snippet}`);
+    const isHtml = contentType.includes("html") || /^<!doctype\s+html/i.test(trimmed) || /^<html[\s>]/i.test(trimmed);
+    const kind = isHtml ? "HTML content" : "non-JSON content";
+    throw new Error(`${contextLabel} returned ${kind} (${contentType || "unknown"}): ${snippet}`);
   }
 }
 
@@ -1480,7 +1479,7 @@ async function fetchEventName(eventId, source = "wtt") {
       eventNameCache.set(cacheKey, fallbackName);
       return fallbackName;
     }
-    throw error;
+    throw new Error(`Failed to fetch event name: ${error?.message || error}`);
   }
 }
 

@@ -8,6 +8,10 @@ const WTT_OFFICIAL_RESULT_MINIMAL_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult_Minimal",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult_Minimal",
 ];
+const WTT_OFFICIAL_RESULT_STATIC_BASE_URLS = [
+  "https://wtt-web-frontdoor-withoutcache-cqakg0andqf5hchn.a01.azurefd.net/websitecacheddata",
+  "https://wtt-web-frontdoor-cthahjeqhbh6aqe3.a01.azurefd.net/websitecacheddata",
+];
 const WTT_API_HEADERS = {
   origin: "https://www.worldtabletennis.com",
   referer: "https://www.worldtabletennis.com/",
@@ -32,12 +36,14 @@ const DEFAULT_ZENNIHON_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "zennihon-recor
 const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
+const LIVE_WTT_PAYLOAD_CACHE_TTL_MS = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_TTL_MS || 30_000);
 const WTT_EVENT_ID_ALIASES = {
   "5524": "3500",
 };
 const ZENNIHON_ARCHIVE_YEARS = new Set(
   Array.from({ length: 15 }, (_, index) => String(2011 + index)),
 );
+const liveWttPayloadCache = new Map();
 
 function parseArgs(argv) {
   const args = {
@@ -1137,6 +1143,57 @@ function shouldReuseCachedPayload(source, payload) {
   return true;
 }
 
+function getLiveWttPayloadCacheKey(eventId, take) {
+  return `${String(eventId || "").trim()}:${String(take || DEFAULT_TAKE)}`;
+}
+
+function readLiveWttPayloadCache(cacheKey) {
+  const cached = liveWttPayloadCache.get(cacheKey);
+  if (!cached) {
+    return null;
+  }
+  if (cached.expiresAt <= Date.now()) {
+    liveWttPayloadCache.delete(cacheKey);
+    return null;
+  }
+  return cached.payload;
+}
+
+function writeLiveWttPayloadCache(cacheKey, payload) {
+  if (!LIVE_WTT_PAYLOAD_CACHE_TTL_MS || LIVE_WTT_PAYLOAD_CACHE_TTL_MS <= 0) {
+    return;
+  }
+
+  liveWttPayloadCache.set(cacheKey, {
+    expiresAt: Date.now() + LIVE_WTT_PAYLOAD_CACHE_TTL_MS,
+    payload,
+  });
+
+  if (liveWttPayloadCache.size > 50) {
+    const now = Date.now();
+    for (const [key, cached] of liveWttPayloadCache.entries()) {
+      if (cached.expiresAt <= now) {
+        liveWttPayloadCache.delete(key);
+      }
+    }
+  }
+}
+
+function isLikelyTransientExternalFetchError(error) {
+  const message = String(error?.message || error || "");
+  return (
+    message.includes("non-JSON response") ||
+    message.includes("HTML response") ||
+    message.includes("invalid JSON") ||
+    message.includes("empty response") ||
+    message.includes("Timed out fetching") ||
+    message.includes("fetch failed") ||
+    message.includes("ECONNRESET") ||
+    message.includes("ETIMEDOUT") ||
+    message.includes("EAI_AGAIN")
+  );
+}
+
 function normalizeIndividualMatch(entry, index) {
   const result = entry?.match_result ?? entry?.matchResult ?? null;
   const competitors = Array.isArray(result?.competitiors)
@@ -1409,19 +1466,18 @@ async function fetchJson(url, { allowNotFound = false, headers = null, timeoutMs
   const text = await response.text();
   const contentType = String(response.headers.get("content-type") || "").toLowerCase();
   const snippet = text.trim().replace(/\s+/g, " ").slice(0, 120);
+  const trimmed = text.trim();
 
-  if (!text.trim()) {
+  if (!trimmed) {
     throw new Error(`Failed to fetch ${url}: empty response`);
   }
 
-  if (contentType && !contentType.includes("application/json")) {
-    throw new Error(`Failed to fetch ${url}: non-JSON response (${contentType}) ${snippet}`);
-  }
-
   try {
-    return JSON.parse(text);
+    return JSON.parse(trimmed);
   } catch (error) {
-    throw new Error(`Failed to fetch ${url}: invalid JSON ${snippet}`);
+    const isHtml = contentType.includes("html") || /^<!doctype\s+html/i.test(trimmed) || /^<html[\s>]/i.test(trimmed);
+    const kind = isHtml ? "HTML response" : "non-JSON response";
+    throw new Error(`Failed to fetch ${url}: ${kind} (${contentType || "unknown"}) ${snippet}`);
   }
 }
 
@@ -2117,6 +2173,20 @@ async function fetchWttOfficialResultMinimal(eventId) {
     return [];
   }
 
+  for (const baseUrl of WTT_OFFICIAL_RESULT_STATIC_BASE_URLS) {
+    const url = `${baseUrl}/${eventIdText}/officialresult/officialresult_minimal.json`;
+
+    const payload = await fetchJson(url, {
+      headers: WTT_API_HEADERS,
+      timeoutMs: 8000,
+      allowNotFound: true,
+    }).catch(() => null);
+
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+  }
+
   for (const baseUrl of WTT_OFFICIAL_RESULT_MINIMAL_URLS) {
     const url = new URL(baseUrl);
     url.searchParams.set("EventId", eventIdText);
@@ -2686,15 +2756,23 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
     primaryError = error;
   }
 
+  let bornanError = null;
   if (options.allowBornanFallback !== false && isLikelyBornanFallbackCandidate(eventId)) {
-    const bornanPayload = await fetchBornanOfficialResults(eventId);
-    if (Array.isArray(bornanPayload) && bornanPayload.length > 0) {
-      return bornanPayload;
+    try {
+      const bornanPayload = await fetchBornanOfficialResults(eventId);
+      if (Array.isArray(bornanPayload) && bornanPayload.length > 0) {
+        return bornanPayload;
+      }
+    } catch (error) {
+      bornanError = error;
     }
   }
 
   if (primaryError) {
     throw primaryError;
+  }
+  if (bornanError) {
+    throw bornanError;
   }
 
   return primaryPayload || [];
@@ -2728,6 +2806,14 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       return archived;
     }
 
+    const livePayloadCacheKey = getLiveWttPayloadCacheKey(eventId, take);
+    if (!refreshCache) {
+      const liveCached = readLiveWttPayloadCache(livePayloadCacheKey);
+      if (shouldReuseCachedPayload(source, liveCached)) {
+        return liveCached;
+      }
+    }
+
     try {
       const payload = await fetchSourceResults(source, eventId, take, {
         ...options,
@@ -2736,6 +2822,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       const mergedPayload = mergeWttOfficialResultPayloads(payload, archived);
 
       if (shouldReuseCachedPayload(source, mergedPayload)) {
+        writeLiveWttPayloadCache(livePayloadCacheKey, mergedPayload);
         const timestamp = new Date().toISOString();
         writeWttArchive(archiveDir, eventId, mergedPayload);
         updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
@@ -2758,7 +2845,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       return mergedPayload;
     } catch (error) {
       if (archived) {
-        if (meta.isFinished) {
+        if (meta.isFinished || isLikelyTransientExternalFetchError(error)) {
           return archived;
         }
 
