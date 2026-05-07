@@ -11,10 +11,15 @@ const {
   DEFAULT_CACHE_DIR,
   DEFAULT_RULES_PATH,
   DEFAULT_TRANSLATIONS_PATH,
+  applyFilters,
   buildJaRoundContext,
+  createArgs,
   fetchOfficialResultsCached,
   getWttEventLifecycleMeta,
   getProcessedMatches,
+  inferGender,
+  normalizeCategory,
+  normalizeDiscipline,
   normalizeSource,
   readRules,
   readTranslations,
@@ -49,11 +54,15 @@ const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || "";
 const TRUST_PROXY = process.env.TRUST_PROXY === "1";
 const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60_000);
 const RATE_LIMIT_MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 60);
+const RATE_LIMIT_MAX_CLIENTS = Number(process.env.RATE_LIMIT_MAX_CLIENTS || 1_000);
 const VIEWER_COOKIE_NAME = "ttreport_individual_viewer_auth";
 const TEAM_TRANSLATIONS_BASE_URL = String(process.env.TEAM_TRANSLATIONS_BASE_URL || "").trim().replace(/\/+$/, "");
 const TEAM_TRANSLATIONS_ADMIN_TOKEN = process.env.TEAM_TRANSLATIONS_ADMIN_TOKEN || "";
 const TEAM_TRANSLATIONS_VIEWER_PASSWORD = process.env.TEAM_TRANSLATIONS_VIEWER_PASSWORD || "";
 const SHARED_TRANSLATIONS_TIMEOUT_MS = Number(process.env.SHARED_TRANSLATIONS_TIMEOUT_MS || 8000);
+const EVENT_NAME_CACHE_MAX_ENTRIES = Number(process.env.EVENT_NAME_CACHE_MAX_ENTRIES || 500);
+const PROCESSED_MATCHES_CACHE_MAX_ENTRIES = Number(process.env.PROCESSED_MATCHES_CACHE_MAX_ENTRIES || 3);
+const REQUEST_BODY_MAX_BYTES = Number(process.env.REQUEST_BODY_MAX_BYTES || 1_048_576);
 const rateLimitStore = new Map();
 const eventNameCache = new Map();
 const processedMatchesCache = new Map();
@@ -283,7 +292,35 @@ function sendJson(response, statusCode, payload, extraHeaders = {}) {
     "cache-control": "no-store",
     ...extraHeaders,
   });
-  response.end(JSON.stringify(payload, null, 2));
+  response.end(JSON.stringify(payload));
+}
+
+function toPositiveInteger(value, fallback) {
+  const number = Number(value);
+  return Number.isFinite(number) && number > 0 ? Math.floor(number) : fallback;
+}
+
+function setBoundedMapValue(map, key, value, maxEntries) {
+  const limit = toPositiveInteger(maxEntries, 0);
+  if (map.has(key)) {
+    map.delete(key);
+  }
+  map.set(key, value);
+
+  if (!limit) {
+    return;
+  }
+  while (map.size > limit) {
+    const oldestKey = map.keys().next().value;
+    if (oldestKey === undefined) {
+      return;
+    }
+    map.delete(oldestKey);
+  }
+}
+
+function setEventNameCache(cacheKey, eventName) {
+  setBoundedMapValue(eventNameCache, cacheKey, eventName, EVENT_NAME_CACHE_MAX_ENTRIES);
 }
 
 function getClientIp(request) {
@@ -302,7 +339,12 @@ function isRateLimited(request) {
   const entry = rateLimitStore.get(ip);
 
   if (!entry || now - entry.startedAt >= RATE_LIMIT_WINDOW_MS) {
-    rateLimitStore.set(ip, { count: 1, startedAt: now });
+    for (const [key, value] of rateLimitStore.entries()) {
+      if (now - value.startedAt >= RATE_LIMIT_WINDOW_MS) {
+        rateLimitStore.delete(key);
+      }
+    }
+    setBoundedMapValue(rateLimitStore, ip, { count: 1, startedAt: now }, RATE_LIMIT_MAX_CLIENTS);
     return false;
   }
 
@@ -508,7 +550,18 @@ function escapeHtml(value) {
 function readRequestBody(request) {
   return new Promise((resolve, reject) => {
     const chunks = [];
-    request.on("data", (chunk) => chunks.push(chunk));
+    let totalBytes = 0;
+    request.on("data", (chunk) => {
+      totalBytes += chunk.length;
+      if (REQUEST_BODY_MAX_BYTES > 0 && totalBytes > REQUEST_BODY_MAX_BYTES) {
+        const error = new Error("Request body too large");
+        error.statusCode = 413;
+        reject(error);
+        request.destroy();
+        return;
+      }
+      chunks.push(chunk);
+    });
     request.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
     request.on("error", reject);
   });
@@ -1438,13 +1491,13 @@ async function fetchEventName(eventId, source = "wtt") {
   const indexedName = normalizedSource === "wtt" ? getStoredWttIndexedName(normalizedId) : "";
   if (normalizedSource !== "wtt") {
     if (storedName) {
-      eventNameCache.set(cacheKey, storedName);
+      setEventNameCache(cacheKey, storedName);
       return storedName;
     }
     const eventName = normalizedSource === "zennihon"
       ? await fetchZennihonEventName(normalizedId)
       : "";
-    eventNameCache.set(cacheKey, eventName);
+    setEventNameCache(cacheKey, eventName);
     return eventName;
   }
 
@@ -1461,7 +1514,7 @@ async function fetchEventName(eventId, source = "wtt") {
     if (!response.ok) {
       const fallbackName = storedName || indexedName;
       if (fallbackName) {
-        eventNameCache.set(cacheKey, fallbackName);
+        setEventNameCache(cacheKey, fallbackName);
         return fallbackName;
       }
       throw new Error(`Failed to fetch event name: ${response.status} ${response.statusText}`);
@@ -1471,12 +1524,12 @@ async function fetchEventName(eventId, source = "wtt") {
     const eventName = Array.isArray(payload)
       ? String(payload[0]?.eventName || "")
       : String(payload?.eventName || "") || storedName || indexedName;
-    eventNameCache.set(cacheKey, eventName);
+    setEventNameCache(cacheKey, eventName);
     return eventName;
   } catch (error) {
     const fallbackName = storedName || indexedName;
     if (fallbackName) {
-      eventNameCache.set(cacheKey, fallbackName);
+      setEventNameCache(cacheKey, fallbackName);
       return fallbackName;
     }
     throw new Error(`Failed to fetch event name: ${error?.message || error}`);
@@ -1887,49 +1940,151 @@ function buildProcessedMatchesCacheKey(options = {}) {
   return JSON.stringify({
     source: options.source || "wtt",
     event: options.event || "",
-    category: options.category || "",
-    gender: options.gender || "",
-    discipline: options.discipline || "",
-    round: Array.isArray(options.round) ? options.round : options.round ? [options.round] : [],
-    contains: options.contains || "",
-    docCode: options.docCode || "",
-    limit: options.limit ?? null,
     take: options.take ?? null,
-    omitSetCounts: Boolean(options.omitSetCounts),
   });
 }
 
-async function getProcessedMatchesCached(options = {}) {
-  if (options.refreshCache) {
-    return getProcessedMatches(options);
+function buildBaseProcessedMatchesOptions(options = {}) {
+  return {
+    source: options.source || "wtt",
+    event: options.event || "",
+    take: options.take,
+    translations: options.translations || TRANSLATIONS_PATH,
+    rules: options.rules || RULES_PATH,
+    cacheDir: options.cacheDir || CACHE_DIR,
+    zennihonArchiveDir: options.zennihonArchiveDir || ZENNIHON_ARCHIVE_DIR,
+    wttArchiveDir: options.wttArchiveDir || WTT_ARCHIVE_DIR,
+    wttArchiveIndexPath: options.wttArchiveIndexPath || WTT_ARCHIVE_INDEX_PATH,
+    refreshCache: Boolean(options.refreshCache),
+  };
+}
+
+function compactProcessedMatchesBase(result) {
+  return {
+    args: result.args,
+    normalized: result.normalized,
+    translations: result.translations,
+    rules: result.rules,
+  };
+}
+
+function stripRawPayload(result) {
+  return {
+    ...result,
+    payload: null,
+  };
+}
+
+function pruneProcessedMatchesCache(now = Date.now()) {
+  for (const [key, entry] of processedMatchesCache.entries()) {
+    if (entry.expiresAt <= now) {
+      processedMatchesCache.delete(key);
+    }
+  }
+  const limit = toPositiveInteger(PROCESSED_MATCHES_CACHE_MAX_ENTRIES, 0);
+  while (limit > 0 && processedMatchesCache.size > limit) {
+    const oldestKey = processedMatchesCache.keys().next().value;
+    if (oldestKey === undefined) {
+      return;
+    }
+    processedMatchesCache.delete(oldestKey);
+  }
+}
+
+function clearProcessedMatchesCache() {
+  processedMatchesCache.clear();
+}
+
+function buildFilteredProcessedMatches(base, options = {}) {
+  const args = createArgs({
+    ...options,
+    translations: options.translations || TRANSLATIONS_PATH,
+    rules: options.rules || RULES_PATH,
+    cacheDir: options.cacheDir || CACHE_DIR,
+    zennihonArchiveDir: options.zennihonArchiveDir || ZENNIHON_ARCHIVE_DIR,
+    wttArchiveDir: options.wttArchiveDir || WTT_ARCHIVE_DIR,
+    wttArchiveIndexPath: options.wttArchiveIndexPath || WTT_ARCHIVE_INDEX_PATH,
+  });
+  args.source = normalizeSource(args.source);
+  args.event = resolveEventId(args.source, args.event);
+
+  let normalizedCategory = null;
+  if (args.category) {
+    normalizedCategory = normalizeCategory(args.category);
+    if (!normalizedCategory.isExactCategory && !args.gender) {
+      args.gender = normalizedCategory.gender;
+    }
+    if (!normalizedCategory.isExactCategory && !args.discipline) {
+      args.discipline = normalizedCategory.discipline;
+    }
+  }
+
+  const filtered = applyFilters(base.normalized, args, base.translations);
+  const contextMatches = base.normalized.filter((match) => {
+    if (normalizedCategory?.isExactCategory && normalizedCategory.categoryName) {
+      return match.categoryName === normalizedCategory.categoryName;
+    }
+    if (args.gender && match.gender !== inferGender(args.gender)) {
+      return false;
+    }
+    if (args.discipline && match.discipline !== normalizeDiscipline(args.discipline)) {
+      return false;
+    }
+    return true;
+  });
+
+  return {
+    args,
+    payload: null,
+    normalized: base.normalized,
+    filtered,
+    translations: base.translations,
+    rules: base.rules,
+    jaRoundContext: buildJaRoundContext(contextMatches),
+  };
+}
+
+async function getProcessedMatchesBaseCached(options = {}) {
+  const cacheTtlMs = Number(PROCESSED_MATCHES_CACHE_TTL_MS);
+  const cacheMaxEntries = toPositiveInteger(PROCESSED_MATCHES_CACHE_MAX_ENTRIES, 0);
+  const baseOptions = buildBaseProcessedMatchesOptions(options);
+
+  if (baseOptions.refreshCache || cacheTtlMs <= 0 || cacheMaxEntries <= 0) {
+    const result = await getProcessedMatches(baseOptions);
+    return compactProcessedMatchesBase(result);
   }
 
   const now = Date.now();
-  const cacheKey = buildProcessedMatchesCacheKey(options);
+  pruneProcessedMatchesCache(now);
+  const cacheKey = buildProcessedMatchesCacheKey(baseOptions);
   const cached = processedMatchesCache.get(cacheKey);
   if (cached && cached.expiresAt > now) {
     return cached.promise;
   }
 
-  const promise = getProcessedMatches(options).catch((error) => {
-    processedMatchesCache.delete(cacheKey);
-    throw error;
-  });
+  const promise = getProcessedMatches(baseOptions)
+    .then(compactProcessedMatchesBase)
+    .catch((error) => {
+      processedMatchesCache.delete(cacheKey);
+      throw error;
+    });
 
-  processedMatchesCache.set(cacheKey, {
-    expiresAt: now + PROCESSED_MATCHES_CACHE_TTL_MS,
+  setBoundedMapValue(processedMatchesCache, cacheKey, {
+    expiresAt: now + cacheTtlMs,
     promise,
-  });
-
-  if (processedMatchesCache.size > 100) {
-    for (const [key, entry] of processedMatchesCache.entries()) {
-      if (entry.expiresAt <= now) {
-        processedMatchesCache.delete(key);
-      }
-    }
-  }
+  }, cacheMaxEntries);
 
   return promise;
+}
+
+async function getProcessedMatchesCached(options = {}) {
+  if (options.refreshCache) {
+    const result = await getProcessedMatches(options);
+    return stripRawPayload(result);
+  }
+
+  const base = await getProcessedMatchesBaseCached(options);
+  return buildFilteredProcessedMatches(base, options);
 }
 
 async function handleApi(requestUrl, response) {
@@ -1945,6 +2100,7 @@ async function handleApi(requestUrl, response) {
 
     const result = await getProcessedMatchesCached(options);
     const output = renderOutput(result);
+    const includeMatches = parseBoolean(requestUrl.searchParams.get("includeMatches"));
     const categoryMatches = getCategorySummaryMatches(result.normalized, {
       gender: options.gender,
       discipline: options.discipline,
@@ -1977,7 +2133,7 @@ async function handleApi(requestUrl, response) {
         roundOptions: summarizeRoundOptions(roundMatches, result.rules, result.translations),
       },
       output,
-      matches: result.filtered,
+      ...(includeMatches ? { matches: result.filtered } : {}),
     });
   } catch (error) {
     console.error("[handleApi]", error?.stack || error);
@@ -2202,6 +2358,7 @@ async function handleConfigUpdate(request, response, pathname) {
         await saveSharedTranslations(validated);
       }
       writePrettyJson(TRANSLATIONS_PATH, validated);
+      clearProcessedMatchesCache();
       sendJson(response, 200, {
         ok: true,
         file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
@@ -2211,6 +2368,7 @@ async function handleConfigUpdate(request, response, pathname) {
 
     if (pathname === "/api/config/rules") {
       writePrettyJson(RULES_PATH, parsed);
+      clearProcessedMatchesCache();
       sendJson(response, 200, {
         ok: true,
         file: RULES_PATH,
@@ -2220,6 +2378,12 @@ async function handleConfigUpdate(request, response, pathname) {
 
     return false;
   } catch (error) {
+    if (error.statusCode === 413) {
+      sendJson(response, 413, {
+        error: error.message,
+      });
+      return true;
+    }
     sendJson(response, 400, {
       error: `Invalid JSON: ${error.message}`,
     });
@@ -2248,7 +2412,7 @@ const server = http.createServer((request, response) => {
 
   if (request.method === "POST" && requestUrl.pathname === "/login") {
     handleViewerLogin(request, response).catch((error) => {
-      sendText(response, 500, error.message);
+      sendText(response, error.statusCode || 500, error.message);
     });
     return;
   }

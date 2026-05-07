@@ -36,7 +36,8 @@ const DEFAULT_ZENNIHON_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "zennihon-recor
 const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
-const LIVE_WTT_PAYLOAD_CACHE_TTL_MS = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_TTL_MS || 30_000);
+const LIVE_WTT_PAYLOAD_CACHE_TTL_MS = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_TTL_MS || 0);
+const LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES || 3);
 const WTT_EVENT_ID_ALIASES = {
   "5524": "3500",
 };
@@ -1164,18 +1165,31 @@ function writeLiveWttPayloadCache(cacheKey, payload) {
     return;
   }
 
+  if (liveWttPayloadCache.has(cacheKey)) {
+    liveWttPayloadCache.delete(cacheKey);
+  }
+
   liveWttPayloadCache.set(cacheKey, {
     expiresAt: Date.now() + LIVE_WTT_PAYLOAD_CACHE_TTL_MS,
     payload,
   });
 
-  if (liveWttPayloadCache.size > 50) {
-    const now = Date.now();
-    for (const [key, cached] of liveWttPayloadCache.entries()) {
-      if (cached.expiresAt <= now) {
-        liveWttPayloadCache.delete(key);
-      }
+  const now = Date.now();
+  for (const [key, cached] of liveWttPayloadCache.entries()) {
+    if (cached.expiresAt <= now) {
+      liveWttPayloadCache.delete(key);
     }
+  }
+
+  const maxEntries = Number.isFinite(LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES) && LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES > 0
+    ? Math.floor(LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES)
+    : 0;
+  while (maxEntries > 0 && liveWttPayloadCache.size > maxEntries) {
+    const oldestKey = liveWttPayloadCache.keys().next().value;
+    if (oldestKey === undefined) {
+      return;
+    }
+    liveWttPayloadCache.delete(oldestKey);
   }
 }
 
@@ -2794,16 +2808,22 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
   if (source === "wtt") {
     const archiveDir = options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR;
     const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
-    const archived = readWttArchive(archiveDir, eventId);
+    let archived = null;
     const localArchiveMeta = getWttLocalArchiveMeta(eventId, options);
-    if (archived && !refreshCache && localArchiveMeta.canServeArchiveImmediately) {
-      return archived;
+    if (!refreshCache && localArchiveMeta.canServeArchiveImmediately) {
+      archived = readWttArchive(archiveDir, eventId);
+      if (archived) {
+        return archived;
+      }
     }
 
     const meta = await getWttEventLifecycleMeta(eventId, options);
 
-    if (archived && meta.isFinished && !refreshCache) {
-      return archived;
+    if (meta.isFinished && !refreshCache) {
+      archived = archived || readWttArchive(archiveDir, eventId);
+      if (archived) {
+        return archived;
+      }
     }
 
     const livePayloadCacheKey = getLiveWttPayloadCacheKey(eventId, take);
@@ -2819,7 +2839,9 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
         ...options,
         allowBornanFallback: !(meta?.source === "calendar" || meta?.startDate || meta?.endDate),
       });
-      const mergedPayload = mergeWttOfficialResultPayloads(payload, archived);
+      const mergedPayload = options.mergeLiveWttArchive
+        ? mergeWttOfficialResultPayloads(payload, archived || readWttArchive(archiveDir, eventId))
+        : payload;
 
       if (shouldReuseCachedPayload(source, mergedPayload)) {
         writeLiveWttPayloadCache(livePayloadCacheKey, mergedPayload);
@@ -2844,6 +2866,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
       return mergedPayload;
     } catch (error) {
+      archived = archived || readWttArchive(archiveDir, eventId);
       if (archived) {
         if (meta.isFinished || isLikelyTransientExternalFetchError(error)) {
           return archived;
@@ -4026,6 +4049,7 @@ module.exports = {
   inferGender,
   matchesRoundFilter,
   normalizeCategory,
+  normalizeDiscipline,
   normalizeSource,
   normalizeRound,
   normalizeOfficialResultItem,
