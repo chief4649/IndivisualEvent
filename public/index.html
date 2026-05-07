@@ -981,15 +981,17 @@
         const text = await response.text();
         const contentType = String(response.headers.get("content-type") || "").toLowerCase();
         const snippet = text.trim().replace(/\s+/g, " ").slice(0, 120);
-        if (!text.trim()) {
+        const trimmed = text.trim();
+        if (!trimmed) {
           throw new Error(`${fallbackMessage} 空の応答を受け取りました。`);
         }
-        if (contentType && !contentType.includes("application/json")) {
-          throw new Error(`${fallbackMessage} JSONではない応答を受け取りました。 ${snippet}`);
-        }
         try {
-          return JSON.parse(text);
+          return JSON.parse(trimmed);
         } catch (error) {
+          const isHtml = contentType.includes("html") || /^<!doctype\s+html/i.test(trimmed) || /^<html[\s>]/i.test(trimmed);
+          if (isHtml) {
+            throw new Error(`${fallbackMessage} APIではなくHTMLが返りました。ページを再読み込みしてください。`);
+          }
           throw new Error(`${fallbackMessage} JSONではない応答を受け取りました。 ${snippet}`);
         }
       }
