@@ -5,8 +5,8 @@ const indexPath = path.join(__dirname, "public", "index.html");
 const updatedAt = (process.env.APP_UPDATED_AT || new Date().toISOString()).replace(/\.\d{3}Z$/, "Z");
 let html = fs.readFileSync(indexPath, "utf8");
 
-function insertOnce(marker, insertion) {
-  if (html.includes(insertion.trim())) {
+function insertOnce(marker, insertion, existsMarker = insertion.trim()) {
+  if (html.includes(existsMarker)) {
     return;
   }
   if (!html.includes(marker)) {
@@ -29,18 +29,21 @@ insertOnce(
       }
 
 `,
+  ".version-info {",
 );
 
 insertOnce(
   "      </section>\n\n      <section class=\"grid\">",
   `        <p class="version-info" id="version-info">最終更新: 確認中...</p>
 `,
+  "id=\"version-info\"",
 );
 
 insertOnce(
   "      const translationsEditor = document.getElementById(\"translations-editor\");",
   `      const versionInfo = document.getElementById("version-info");
 `,
+  "const versionInfo = document.getElementById(\"version-info\");",
 );
 
 if (html.includes("const APP_UPDATED_AT = ")) {
@@ -61,7 +64,7 @@ insertOnce(
         if (Number.isNaN(date.getTime())) {
           return "";
         }
-        return `${new Intl.DateTimeFormat("ja-JP", {
+        return new Intl.DateTimeFormat("ja-JP", {
           timeZone: "Asia/Tokyo",
           year: "numeric",
           month: "2-digit",
@@ -69,21 +72,23 @@ insertOnce(
           hour: "2-digit",
           minute: "2-digit",
           hour12: false,
-        }).format(date)} JST`;
+        }).format(date) + " JST";
       }
 
       function loadVersionInfo() {
         const formatted = formatJstDateTime(APP_UPDATED_AT);
-        versionInfo.textContent = formatted ? `最終更新: ${formatted}` : "最終更新: 不明";
+        versionInfo.textContent = formatted ? "最終更新: " + formatted : "最終更新: 不明";
         versionInfo.title = "この表示は公開ファイル更新時の時刻です。";
       }
 
 `,
+  "function formatJstDateTime(value)",
 );
 
 insertOnce(
   "        loadConfig(\"translations\").catch(reportBackgroundAdminError);",
   "        loadVersionInfo();\n",
+  "loadVersionInfo();",
 );
 
 fs.writeFileSync(indexPath, html);
