@@ -11,6 +11,7 @@ COPY update_wtt_date_index.js ./
 COPY build_wtt_search_index.js ./
 COPY verify_wtt_alignment.js ./
 COPY server.js ./
+COPY patch_version_info.js ./
 COPY translations.ja.json ./
 COPY event-names.json ./
 COPY wtt-date-index.json ./
@@ -19,6 +20,8 @@ COPY rules.json ./
 COPY public ./public
 COPY zennihon-records ./zennihon-records
 COPY wtt-records ./wtt-records
+
+RUN node patch_version_info.js
 
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
