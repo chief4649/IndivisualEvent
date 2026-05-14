@@ -761,6 +761,17 @@
         console.error(error);
       }
 
+      function reportBackgroundAdminError(error) {
+        const message = String(error?.message || error || "").trim();
+        if (message.includes("[401]") && message.includes("管理者トークン")) {
+          setAdminStatus("管理トークン入力後に辞書を読み込めます。");
+          translationsSafetyNote.textContent = "保存前チェック: 管理トークン入力後に辞書件数を確認できます。";
+          console.error(error);
+          return;
+        }
+        reportBackgroundError(error);
+      }
+
       function setMeta(items) {
         meta.innerHTML = "";
         items.forEach((item) => {
@@ -1542,8 +1553,7 @@
         }
 
         refreshEventDependentUi();
-        updateTranslationsSafetyNote();
-        loadConfig("translations").catch(reportBackgroundError);
+        loadConfig("translations").catch(reportBackgroundAdminError);
       })();
     </script>
   </body>
