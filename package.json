@@ -7,9 +7,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "start": "node server.js",
-    "start:admin": "ADMIN_TOKEN=secret-token PORT=3001 node server.js",
-    "cli": "node extract_individual_matches.js",
+    "start": "node -r ./runtime_legacy_ittf_patch.js server.js",
+    "start:admin": "ADMIN_TOKEN=secret-token PORT=3001 node -r ./runtime_legacy_ittf_patch.js server.js",
+    "cli": "node -r ./runtime_legacy_ittf_patch.js extract_individual_matches.js",
     "index:wtt": "node build_wtt_search_index.js",
     "fetch:wtt-dates": "node fetch_wtt_calendar_dates.js",
     "update:wtt-dates": "node update_wtt_date_index.js",
