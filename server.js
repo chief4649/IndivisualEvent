@@ -1895,16 +1895,14 @@ function summarizeCategories(matches) {
   const categories = [];
 
   for (const match of matches) {
-    if (match.isParaClass) {
-      continue;
-    }
     const value = String(
       match.categoryName || `${match.gender || ""} ${match.discipline || ""}`.trim(),
     ).trim();
-    if (!value || seen.has(value)) {
+    const canonicalValue = normalizeCategoryLookupValue(value);
+    if (!value || !canonicalValue || seen.has(canonicalValue)) {
       continue;
     }
-    seen.add(value);
+    seen.add(canonicalValue);
     categories.push({
       value,
       label: formatCategoryLabel(match.categoryName, match.gender, match.discipline),
