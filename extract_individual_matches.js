@@ -62,6 +62,7 @@ function parseArgs(argv) {
     list: false,
     pretty: true,
     ja: false,
+    en: false,
     translations: DEFAULT_TRANSLATIONS_PATH,
     cacheDir: DEFAULT_CACHE_DIR,
     zennihonArchiveDir: DEFAULT_ZENNIHON_ARCHIVE_DIR,
@@ -141,6 +142,9 @@ function parseArgs(argv) {
       case "--ja":
         args.ja = true;
         break;
+      case "--en":
+        args.en = true;
+        break;
       case "--translations":
         args.translations = next;
         i += 1;
@@ -214,6 +218,7 @@ function printHelp(exitCode = 0) {
     "  --list           Print one-line summaries only",
     "  --compact        Compact JSON output",
     "  --ja             Print Japanese-style formatted output",
+    "  --en             Print English-style formatted output",
     "  --translations   Path to Japanese name mapping JSON",
     "  --rules          Path to formatter rules JSON",
     "  --cache-dir      Directory for API response cache",
@@ -3057,6 +3062,25 @@ function getSpecialResultJa(match) {
   return "";
 }
 
+function getSpecialResultEn(match) {
+  const rawOverall = String(match?.overallScore || "").trim();
+  const rawGames = Array.isArray(match?.gameScores) ? match.gameScores.join(" ") : "";
+  const rawStatus = String(match?.resultStatus || "");
+  const combined = `${rawOverall} ${rawGames} ${rawStatus}`.toLowerCase();
+
+  if (/\bw\s*[-/]\s*l\b|\bl\s*[-/]\s*w\b|w\s*\/\s*o|walkover|wo\b/.test(combined)) {
+    return "W/O";
+  }
+  if (/\bret\b|retired|棄権/.test(combined)) {
+    return "RET";
+  }
+  if (/\bins\b|injury|inj\./.test(combined)) {
+    return "RET";
+  }
+
+  return "";
+}
+
 function getTieDisplaySide(match) {
   const winnerIndex = getWinnerIndexFromScore(match.overallScore);
   return winnerIndex === 1 ? 1 : 0;
@@ -3415,6 +3439,40 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   return `${leftSets}(${normalizedGames.join(",")})${rightSets}`;
 }
 
+function formatIndividualScoreEn(match, leftCompetitorIndex, options = {}) {
+  const specialResult = getSpecialResultEn(match);
+  if (specialResult) {
+    return specialResult;
+  }
+
+  const [rawLeftSets, rawRightSets] = String(match.overallScore || "-").split("-");
+  const hasGameScores = Array.isArray(match.gameScores) && match.gameScores.some((game) => String(game || "").trim());
+  if (rawLeftSets === "0" && rawRightSets === "0" && !hasGameScores) {
+    return "-";
+  }
+  const leftSets = leftCompetitorIndex === 0 ? rawLeftSets : rawRightSets;
+  const rightSets = leftCompetitorIndex === 0 ? rawRightSets : rawLeftSets;
+
+  const normalizedGames = match.gameScores.map((game) => {
+    const [rawLeft, rawRight] = String(game).split("-");
+    const homePoints = Number(rawLeft);
+    const awayPoints = Number(rawRight);
+    if (Number.isNaN(homePoints) || Number.isNaN(awayPoints)) {
+      return game;
+    }
+
+    const leftPoints = leftCompetitorIndex === 0 ? homePoints : awayPoints;
+    const rightPoints = leftCompetitorIndex === 0 ? awayPoints : homePoints;
+    return leftPoints > rightPoints ? String(rightPoints) : `-${leftPoints}`;
+  });
+
+  if (options.omitSetCounts) {
+    return normalizedGames.join(",");
+  }
+
+  return `${leftSets}(${normalizedGames.join(",")})${rightSets}`;
+}
+
 function buildJaRoundContext(matches) {
   const knockoutOrder = [
     "round_of_128",
@@ -3699,6 +3757,216 @@ function formatMatchCategoryJa(match) {
   return "";
 }
 
+function formatCategoryNameEn(categoryName) {
+  const rawCategoryName = String(categoryName || "").trim();
+  if (!rawCategoryName) {
+    return "";
+  }
+
+  const youthMatch = rawCategoryName.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+  if (youthMatch) {
+    const [, age, division, eventType] = youthMatch;
+    return `U${age} ${division}${/^mixed$/i.test(division) ? "" : "'"} ${eventType}`;
+  }
+
+  const normalizedCategory = rawCategoryName
+    .replace(/['’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+  const categoryLabels = {
+    "junior boys singles": "Junior Boys' Singles",
+    "junior girls singles": "Junior Girls' Singles",
+    "men teams": "Men's Teams",
+    "mens teams": "Men's Teams",
+    "women teams": "Women's Teams",
+    "womens teams": "Women's Teams",
+    "mixed teams": "Mixed Teams",
+    "mixed team": "Mixed Teams",
+    "men singles": "Men's Singles",
+    "mens singles": "Men's Singles",
+    "women singles": "Women's Singles",
+    "womens singles": "Women's Singles",
+    "men doubles": "Men's Doubles",
+    "mens doubles": "Men's Doubles",
+    "women doubles": "Women's Doubles",
+    "womens doubles": "Women's Doubles",
+    "mixed doubles": "Mixed Doubles",
+    "mixed mixed": "Mixed Doubles",
+  };
+
+  return categoryLabels[normalizedCategory] || rawCategoryName;
+}
+
+function formatMatchCategoryEn(match) {
+  const categoryName = formatCategoryNameEn(match.categoryName);
+  if (categoryName) {
+    return categoryName;
+  }
+
+  if (match.gender === "men") {
+    if (match.discipline === "teams") {
+      return "Men's Teams";
+    }
+    return match.discipline === "doubles" ? "Men's Doubles" : "Men's Singles";
+  }
+  if (match.gender === "women") {
+    if (match.discipline === "teams") {
+      return "Women's Teams";
+    }
+    return match.discipline === "doubles" ? "Women's Doubles" : "Women's Singles";
+  }
+  if (match.gender === "mixed") {
+    if (match.discipline === "teams") {
+      return "Mixed Teams";
+    }
+    return "Mixed Doubles";
+  }
+  return "";
+}
+
+function normalizeRoundLabelEn(roundLabel) {
+  const rawRoundLabel = String(roundLabel || "").trim();
+  if (!rawRoundLabel) {
+    return "";
+  }
+
+  const normalizedRoundLabel = rawRoundLabel
+    .replace(/_/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+  const labels = {
+    final: "Final",
+    finals: "Final",
+    semifinal: "Semifinals",
+    semifinals: "Semifinals",
+    "semi final": "Semifinals",
+    "semi finals": "Semifinals",
+    "semi-final": "Semifinals",
+    "semi-finals": "Semifinals",
+    quarterfinal: "Quarterfinals",
+    quarterfinals: "Quarterfinals",
+    "quarter final": "Quarterfinals",
+    "quarter finals": "Quarterfinals",
+    "quarter-final": "Quarterfinals",
+    "quarter-finals": "Quarterfinals",
+    "bronze medal match": "Bronze Medal Match",
+    "preliminary round": "Preliminary Round",
+    group: "Group",
+  };
+  if (labels[normalizedRoundLabel]) {
+    return labels[normalizedRoundLabel];
+  }
+
+  return rawRoundLabel;
+}
+
+function translateRoundEn(roundKey, roundLabel) {
+  const normalizedRoundKey = String(roundKey || "").trim().toLowerCase();
+  const roundLabels = {
+    final: "Final",
+    semifinal: "Semifinals",
+    quarterfinal: "Quarterfinals",
+    bronze_medal_match: "Bronze Medal Match",
+    preliminary_round: "Preliminary Round",
+    round_of_128: "Round of 128",
+    round_of_64: "Round of 64",
+    round_of_32: "Round of 32",
+    round_of_16: "Round of 16",
+    round_of_8: "Quarterfinals",
+    group: "Group",
+  };
+  if (roundLabels[normalizedRoundKey]) {
+    return roundLabels[normalizedRoundKey];
+  }
+
+  const qualifyingRoundMatch = normalizedRoundKey.match(/^qualifying_round_(\d+)$/);
+  if (qualifyingRoundMatch) {
+    return `Qualifying Round ${qualifyingRoundMatch[1]}`;
+  }
+
+  const knockoutRoundMatch = normalizedRoundKey.match(/^knockout_round_(\d+)$/);
+  if (knockoutRoundMatch) {
+    return `Round ${knockoutRoundMatch[1]}`;
+  }
+
+  return normalizeRoundLabelEn(roundLabel) || roundLabel || roundKey;
+}
+
+function formatEnHeader(match) {
+  const categoryLabel = String(formatMatchCategoryEn(match) || "").trim();
+  const roundLabel = String(translateRoundEn(match?.roundKey, match?.roundLabel) || "").trim();
+  return `▼${[categoryLabel, roundLabel].filter(Boolean).join(" ")}`.trim();
+}
+
+function getEnglishOrg(value, orgCode) {
+  return String(value || orgCode || "").trim();
+}
+
+function formatNameWithOrgEn(name, org) {
+  const normalizedName = String(name || "").trim();
+  const normalizedOrg = String(org || "").trim();
+  if (!normalizedName) {
+    return "";
+  }
+  return normalizedOrg ? `${normalizedName} (${normalizedOrg})` : normalizedName;
+}
+
+function getCompetitorDisplayNameEn(competitor) {
+  if (!competitor) {
+    return "";
+  }
+
+  const players = (competitor.players || [])
+    .map((player) => ({
+      name: String(player?.name || "").trim(),
+      org: getEnglishOrg(player?.org || competitor.org, player?.orgCode || competitor.orgCode),
+    }))
+    .filter((player) => player.name);
+
+  if (players.length >= 2) {
+    const names = players.map((player) => player.name).join(" / ");
+    const orgs = [...new Set(players.map((player) => player.org).filter(Boolean))];
+    if (orgs.length === 0) {
+      return names;
+    }
+    if (orgs.length === 1) {
+      return `${names} (${orgs[0]})`;
+    }
+    return players.map((player) => formatNameWithOrgEn(player.name, player.org)).join(" / ");
+  }
+
+  if (players.length === 1) {
+    return formatNameWithOrgEn(players[0].name, players[0].org);
+  }
+
+  return formatNameWithOrgEn(competitor.name, getEnglishOrg(competitor.org, competitor.orgCode));
+}
+
+function getTeamSubMatchCompetitorNameEn(competitor) {
+  if (!competitor) {
+    return "";
+  }
+
+  const players = (competitor.players || [])
+    .map((player) => String(player?.name || "").trim())
+    .filter(Boolean);
+
+  if (players.length >= 2) {
+    return players.join(" / ");
+  }
+  if (players.length === 1) {
+    return players[0];
+  }
+
+  return String(competitor.name || "").trim();
+}
+
+function getTeamNameEn(team) {
+  return String(team?.org || team?.orgCode || team?.name || "").trim();
+}
+
 function formatJaHeader(match, translations, rules) {
   const categoryLabel = String(formatMatchCategoryJa(match) || "").trim();
   const roundLabel = String(
@@ -3837,6 +4105,131 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
   return blocks.join("\n\n");
 }
 
+function formatEnTeamLine(match) {
+  const displayedTeams = getDisplayedTeamIndexes(match);
+  const { leftIndex, rightIndex } = displayedTeams;
+  const left = getTeamNameEn(match.teams[leftIndex]);
+  const right = getTeamNameEn(match.teams[rightIndex]);
+  if (isMixedTeamMatch(match)) {
+    const totals = getMixedTeamGameTotals(match, displayedTeams);
+    return `  ${left} ${totals.left}-${totals.right} ${right}`;
+  }
+  const rawScore = String(match.overallScore || "-");
+  const [scoreA, scoreB] = rawScore.split("-");
+  const score = leftIndex === 1 ? `${scoreB}-${scoreA}` : rawScore;
+  return `  ${left} ${score} ${right}`;
+}
+
+function formatEnSinglesLine(single, displayedTeams, options = {}) {
+  const teamSideIndexes = getSingleDisplayIndexes(single, displayedTeams);
+  const winnerIndex = getWinnerIndexFromScore(single.overallScore);
+  const leftCompetitorIndex = winnerIndex === 0 || winnerIndex === 1
+    ? winnerIndex
+    : teamSideIndexes.leftCompetitorIndex;
+  const rightCompetitorIndex = leftCompetitorIndex === 0 ? 1 : 0;
+  const score = formatIndividualScoreEn(
+    single,
+    leftCompetitorIndex,
+    displayedTeams?.parentMatch && isMixedTeamMatch(displayedTeams.parentMatch)
+      ? { ...options, omitSetCounts: true }
+      : options,
+  );
+  const left = getTeamSubMatchCompetitorNameEn(single.competitors[leftCompetitorIndex]);
+  const right = getTeamSubMatchCompetitorNameEn(single.competitors[rightCompetitorIndex]);
+
+  if (winnerIndex === 0 || winnerIndex === 1) {
+    return `  ${left} d. ${right} ${score}`;
+  }
+
+  return `  ${left} ${score} ${right}`;
+}
+
+function formatEnIndividualMatchLine(match, options = {}) {
+  const { leftCompetitorIndex, rightCompetitorIndex } = getIndividualDisplayIndexes(match);
+  const left = getCompetitorDisplayNameEn(match.competitors[leftCompetitorIndex]);
+  const right = getCompetitorDisplayNameEn(match.competitors[rightCompetitorIndex]);
+  const score = formatIndividualScoreEn(match, leftCompetitorIndex, options);
+  const winnerIndex = getWinnerIndexFromScore(match.overallScore);
+  if (winnerIndex === 0 || winnerIndex === 1) {
+    return `${left} d. ${right} ${score}`;
+  }
+  return `${left} ${score} ${right}`;
+}
+
+function formatEnglish(matches, roundContext, options = {}) {
+  const sortedMatches = sortIndividualMatches(matches, roundContext);
+  const blocks = [];
+  let individualGroup = null;
+
+  const flushIndividualGroup = () => {
+    if (!individualGroup) {
+      return;
+    }
+    blocks.push([
+      formatEnHeader({
+        source: individualGroup.matches[0]?.source,
+        gender: individualGroup.matches[0]?.gender,
+        discipline: individualGroup.matches[0]?.discipline,
+        categoryName: individualGroup.matches[0]?.categoryName,
+        roundKey: individualGroup.roundKey,
+        roundLabel: individualGroup.roundLabel,
+        roundContext,
+      }),
+      ...individualGroup.matches.map((match) => formatEnIndividualMatchLine(match, options)),
+    ].join("\n"));
+    individualGroup = null;
+  };
+
+  for (const match of sortedMatches) {
+    if (match.matchType === "individual") {
+      if (
+        individualGroup &&
+        individualGroup.roundKey === match.roundKey &&
+        individualGroup.roundLabel === match.roundLabel &&
+        individualGroup.categoryName === match.categoryName
+      ) {
+        individualGroup.matches.push(match);
+      } else {
+        flushIndividualGroup();
+        individualGroup = {
+          categoryName: match.categoryName,
+          roundKey: match.roundKey,
+          roundLabel: match.roundLabel,
+          matches: [match],
+        };
+      }
+      continue;
+    }
+
+    flushIndividualGroup();
+
+    const displayedTeams = getDisplayedTeamIndexes(match);
+    displayedTeams.parentMatch = match;
+    const lines = [
+      formatEnHeader({ ...match, roundContext }),
+      formatEnTeamLine(match),
+      ...match.singles.map((single) =>
+        formatEnSinglesLine(single, displayedTeams, options),
+      ),
+    ];
+
+    if (match.singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
+      const inferredSchedule = inferStandardPendingTeamSchedule(match, displayedTeams)
+        || inferOlympicPendingTeamSchedule(match, displayedTeams);
+      if (Array.isArray(inferredSchedule) && inferredSchedule.length > 0) {
+        inferredSchedule.forEach((pair) => {
+          lines.push(`  ${pair[0]} - ${pair[1]}`);
+        });
+      }
+    }
+
+    blocks.push(lines.join("\n"));
+  }
+
+  flushIndividualGroup();
+  return blocks.join("\n\n");
+}
+
 function formatList(matches) {
   return matches
     .map((match, index) => {
@@ -3906,6 +4299,7 @@ function createArgs(overrides = {}) {
     list: false,
     pretty: true,
     ja: false,
+    en: false,
     translations: DEFAULT_TRANSLATIONS_PATH,
     rules: DEFAULT_RULES_PATH,
     cacheDir: DEFAULT_CACHE_DIR,
@@ -4009,6 +4403,12 @@ function renderOutput(result) {
     });
   }
 
+  if (args.en) {
+    return formatEnglish(filtered, jaRoundContext, {
+      omitSetCounts: args.omitSetCounts,
+    });
+  }
+
   return formatText(filtered);
 }
 
@@ -4041,6 +4441,7 @@ module.exports = {
   createArgs,
   extractRound,
   fetchOfficialResultsCached,
+  formatEnglish,
   formatJapanese,
   formatList,
   formatText,

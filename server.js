@@ -1570,7 +1570,7 @@ function toOptionalNumber(value) {
 
 function pickFormat(searchParams) {
   const format = String(searchParams.get("format") || "ja").toLowerCase();
-  if (["ja", "list", "json", "text"].includes(format)) {
+  if (["ja", "en", "list", "json", "text"].includes(format)) {
     return format;
   }
   return "ja";
@@ -1596,6 +1596,7 @@ function buildOptions(searchParams) {
     list: format === "list",
     json: format === "json",
     ja: format === "ja",
+    en: format === "en",
     translations: TRANSLATIONS_PATH,
     rules: RULES_PATH,
     cacheDir: CACHE_DIR,
