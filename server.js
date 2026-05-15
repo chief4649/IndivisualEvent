@@ -47,6 +47,7 @@ const WTT_EVENT_ID_ALIASES = {
   "5524": "3500",
 };
 const WTT_EVENT_PUBLIC_URLS = {
+  "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
   "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",
 };
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
@@ -596,7 +597,7 @@ function getFileMeta(filePath, options = {}) {
     path: normalizedPath,
     size: stat.size,
     mtime: stat.mtime.toISOString(),
-    sha256: includeSha256 ? computeFileSha256(normalizedPath) : null,
+    sha256: includeSha256 ? computeFileSha256(filePath) : null,
   };
 }
 
@@ -787,6 +788,17 @@ function getStoredWttIndexedName(eventId) {
   return "";
 }
 
+function shouldPreferStoredWttEventName(eventId, indexedName = "") {
+  const normalizedId = String(eventId || "").trim();
+  if (!/^\d+$/.test(normalizedId) || !String(indexedName || "").trim()) {
+    return false;
+  }
+
+  // Historical ITTF/Bornan numeric IDs can collide with newer WTT event-name API IDs.
+  // If we already have an indexed name for old IDs, it is more reliable than GetEventName.
+  return Number(normalizedId) < 3000;
+}
+
 function isWttTeamEventName(eventName) {
   const name = String(eventName || "").trim().toLowerCase();
   if (!name) {
@@ -906,7 +918,9 @@ function getMergedWttSearchEntry(eventId, entry, dateIndex, archiveIndex) {
     ...(entry || {}),
     ...(dateEntry || {}),
   };
-  if (entry?.source) {
+  if (archiveEntry?.source && archiveEntry.source !== "calendar") {
+    merged.source = archiveEntry.source;
+  } else if (entry?.source) {
     merged.source = entry.source;
   } else if (archiveEntry?.source) {
     merged.source = archiveEntry.source;
@@ -1501,6 +1515,12 @@ async function fetchEventName(eventId, source = "wtt") {
     return eventName;
   }
 
+  const localWttName = storedName || indexedName;
+  if (shouldPreferStoredWttEventName(normalizedId, localWttName)) {
+    setEventNameCache(cacheKey, localWttName);
+    return localWttName;
+  }
+
   try {
     const response = await fetch(`https://liveeventsapi.worldtabletennis.com/api/cms/GetEventName/${encodeURIComponent(normalizedId)}`, {
       headers: {
@@ -1719,14 +1739,22 @@ function getRoundOptionSortValue(match, context) {
     return Number(knockoutRoundMatch[1]);
   }
 
-  const groupMatch = String(match.roundLabel || "").match(/^Group\s+(\d+)$/i);
+  const groupMatch = String(match.roundLabel || "").match(/^Group\s+([A-Z0-9]+)$/i);
   if (groupMatch) {
-    return Number(groupMatch[1]);
+    const groupValue = groupMatch[1].toUpperCase();
+    if (/^\d+$/.test(groupValue)) {
+      return Number(groupValue);
+    }
+    return groupValue.charCodeAt(0) - 64;
   }
 
   const qualifyingMatch = String(match.roundKey || "").match(/^qualifying_round_(\d+)$/);
   if (qualifyingMatch) {
     return Number(qualifyingMatch[1]);
+  }
+
+  if (match.roundKey === "round_2" || /^Round\s+2$/i.test(String(match.roundLabel || ""))) {
+    return 100;
   }
 
   const knockoutLabel = context?.knockoutRoundNumbers?.[match.roundKey] || "";
