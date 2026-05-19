@@ -1751,7 +1751,11 @@ function getRoundOptionSortValue(match, context) {
 
   const qualifyingMatch = String(match.roundKey || "").match(/^qualifying_round_(\d+)$/);
   if (qualifyingMatch) {
-    return Number(qualifyingMatch[1]);
+    return 90 + Number(qualifyingMatch[1]);
+  }
+
+  if (match.roundKey === "qualification_elimination_round") {
+    return 99;
   }
 
   if (match.roundKey === "round_2" || /^Round\s+2$/i.test(String(match.roundLabel || ""))) {

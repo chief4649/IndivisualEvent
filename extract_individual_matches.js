@@ -399,6 +399,10 @@ function normalizeRound(value) {
     return "preliminary_round";
   }
 
+  if (text.includes("qualification elimination round")) {
+    return "qualification_elimination_round";
+  }
+
   if (text.includes("bronze medal match")) {
     return "bronze_medal_match";
   }
@@ -426,6 +430,7 @@ function normalizeRound(value) {
     ["qualifying_round_1", ["予選1回戦", "予選１回戦", "予選第1回戦", "予選第１回戦"]],
     ["qualifying_round_2", ["予選2回戦", "予選２回戦", "予選第2回戦", "予選第２回戦"]],
     ["qualifying_round_3", ["予選3回戦", "予選３回戦", "予選第3回戦", "予選第３回戦"]],
+    ["qualification_elimination_round", ["予選決定戦", "予選トーナメント決定戦"]],
     ["round_of_128", ["ベスト128", "128強"]],
     ["round_of_64", ["ベスト64", "64強"]],
     ["round_of_32", ["ベスト32", "32強"]],
@@ -447,6 +452,7 @@ function normalizeRound(value) {
     ["qualifying_round_1", ["qualifying round 1", "qr1"]],
     ["qualifying_round_2", ["qualifying round 2", "qr2"]],
     ["qualifying_round_3", ["qualifying round 3", "qr3"]],
+    ["qualification_elimination_round", ["qualification elimination round"]],
     ["round_of_128", ["round of 128", "r128", "best 128"]],
     ["round_of_64", ["round of 64", "r64", "best 64"]],
     ["round_of_16", ["round of 16", "r16", "best 16"]],
@@ -3516,6 +3522,10 @@ function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
     return `予選トーナメント${qualifyingRoundMatch[1]}回戦`;
   }
 
+  if (roundKey === "qualification_elimination_round") {
+    return "予選トーナメント決定戦";
+  }
+
   const knockoutRoundMatch = String(roundKey || "").match(/^knockout_round_(\d+)$/);
   if (knockoutRoundMatch) {
     return `${knockoutRoundMatch[1]}回戦`;
@@ -3589,7 +3599,11 @@ function getRoundSortValue(match, context) {
 
   const qualifyingMatch = String(match.roundKey || "").match(/^qualifying_round_(\d+)$/);
   if (qualifyingMatch) {
-    return Number(qualifyingMatch[1]);
+    return 90 + Number(qualifyingMatch[1]);
+  }
+
+  if (match.roundKey === "qualification_elimination_round") {
+    return 99;
   }
 
   if (match.roundKey === "preliminary_round") {
@@ -3872,6 +3886,7 @@ function translateRoundEn(roundKey, roundLabel) {
     quarterfinal: "Quarterfinals",
     bronze_medal_match: "Bronze Medal Match",
     preliminary_round: "Preliminary Round",
+    qualification_elimination_round: "Qualification Elimination Round",
     round_of_128: "Round of 128",
     round_of_64: "Round of 64",
     round_of_32: "Round of 32",
