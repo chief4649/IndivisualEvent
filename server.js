@@ -1197,7 +1197,20 @@ function normalizeSearchText(value) {
 
 function buildDateSearchValues(startDate, endDate, dateLabel) {
   const values = [startDate, endDate, dateLabel].filter(Boolean).map((value) => String(value));
-  const addParts = (rawDate) => {
+  const addMonthParts = (year, month) => {
+    const monthNum = String(Number(month));
+    const monthPadded = String(month).padStart(2, "0");
+    const shortYear = String(year).slice(-2);
+    values.push(`${year}/${monthNum}`);
+    values.push(`${year}-${monthNum}`);
+    values.push(`${year} ${monthNum}`);
+    values.push(`${year}${monthPadded}`);
+    values.push(`${shortYear}/${monthNum}`);
+    values.push(`${shortYear}-${monthNum}`);
+    values.push(`${shortYear} ${monthNum}`);
+    values.push(`${shortYear}${monthPadded}`);
+  };
+  const addDateParts = (rawDate) => {
     const match = String(rawDate || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
     if (!match) {
       return;
@@ -1205,17 +1218,55 @@ function buildDateSearchValues(startDate, endDate, dateLabel) {
     const [, year, month, day] = match;
     const monthNum = String(Number(month));
     const dayNum = String(Number(day));
-    values.push(`${year}/${monthNum}`);
-    values.push(`${year}-${monthNum}`);
-    values.push(`${year} ${monthNum}`);
+    addMonthParts(year, month);
     values.push(`${year}/${monthNum}/${dayNum}`);
     values.push(`${year}-${monthNum}-${dayNum}`);
     values.push(`${year} ${monthNum} ${dayNum}`);
   };
 
-  addParts(startDate);
-  addParts(endDate);
-  return values;
+  addDateParts(startDate);
+  addDateParts(endDate);
+
+  const startMatch = String(startDate || "").match(/^(\d{4})-(\d{2})-\d{2}$/);
+  const endMatch = String(endDate || "").match(/^(\d{4})-(\d{2})-\d{2}$/);
+  if (startMatch && endMatch) {
+    const startMonthIndex = Number(startMatch[1]) * 12 + Number(startMatch[2]) - 1;
+    const endMonthIndex = Number(endMatch[1]) * 12 + Number(endMatch[2]) - 1;
+    const startYear = Number(startMatch[1]);
+    const endYear = Number(endMatch[1]);
+    const monthSpan = endMonthIndex - startMonthIndex;
+    if (
+      startYear >= 1900 &&
+      endYear >= 1900 &&
+      Number.isFinite(startMonthIndex) &&
+      Number.isFinite(endMonthIndex) &&
+      monthSpan > 1 &&
+      monthSpan <= 24
+    ) {
+      for (let index = startMonthIndex + 1; index < endMonthIndex; index += 1) {
+        const year = Math.floor(index / 12);
+        const month = String((index % 12) + 1).padStart(2, "0");
+        addMonthParts(String(year), month);
+      }
+    }
+  }
+
+  return [...new Set(values)];
+}
+
+function isDateLikeSearchQuery(rawQuery, normalizedQuery) {
+  const raw = String(rawQuery || "").trim();
+  const normalized = String(normalizedQuery || "").trim();
+  if (/^\d{4}\s*年\s*\d{1,2}\s*月?(?:\s*\d{1,2}\s*日?)?$/.test(raw)) {
+    return true;
+  }
+  if (/^\d{2,4}\s*[\/-]\s*\d{1,2}(?:\s*[\/-]\s*\d{1,2})?$/.test(raw)) {
+    return true;
+  }
+  if (/^\d{2,4}\s+\d{1,2}(?:\s+\d{1,2})?$/.test(normalized)) {
+    return true;
+  }
+  return /^\d{4,8}$/.test(normalized);
 }
 
 function matchesSearchQuery(eventId, eventName, query, extraValues = []) {
@@ -1227,18 +1278,18 @@ function matchesSearchQuery(eventId, eventName, query, extraValues = []) {
 
   const normalizedEventId = String(eventId || "").trim().toLowerCase();
   const normalizedName = normalizeSearchText(eventName);
-  const normalizedExtras = extraValues
+  const normalizedExtraValues = extraValues
     .map((value) => normalizeSearchText(value))
-    .filter(Boolean)
-    .join(" ");
+    .filter(Boolean);
+  const normalizedExtras = normalizedExtraValues.join(" ");
+  const isDateLikeQuery = isDateLikeSearchQuery(rawQuery, normalizedQuery);
+  if (isDateLikeQuery) {
+    return normalizedEventId === normalizedQuery || normalizedExtraValues.some((value) => value === normalizedQuery);
+  }
+
   const haystack = `${normalizedEventId} ${normalizedName} ${normalizedExtras}`.trim();
   if (haystack.includes(normalizedQuery)) {
     return true;
-  }
-
-  const isDateLikeQuery = /^\d{4}\s*[\/-]\s*\d{1,2}(?:\s*[\/-]\s*\d{1,2})?$/.test(rawQuery);
-  if (isDateLikeQuery) {
-    return false;
   }
 
   const haystackTokens = new Set(haystack.split(/\s+/).filter(Boolean));
