@@ -2112,18 +2112,20 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
   const takeValues = [];
   const requestedTake = Number.isFinite(Number(take)) ? Number(take) : DEFAULT_TAKE;
 
+  if (requestedTake > 0) {
+    takeValues.push(requestedTake);
+  }
+  if (requestedTake > 800) {
+    takeValues.push(800);
+  }
   if (requestedTake > 400) {
-    takeValues.push(400, 300, 200);
-  } else {
-    if (requestedTake > 0) {
-      takeValues.push(requestedTake);
-    }
-    if (requestedTake > 300) {
-      takeValues.push(300);
-    }
-    if (requestedTake > 200) {
-      takeValues.push(200);
-    }
+    takeValues.push(400);
+  }
+  if (requestedTake > 300) {
+    takeValues.push(300);
+  }
+  if (requestedTake > 200) {
+    takeValues.push(200);
   }
 
   const uniqueTakeValues = [...new Set(takeValues.filter((value) => Number.isFinite(value) && value > 0))];
