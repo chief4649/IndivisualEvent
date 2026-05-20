@@ -2567,6 +2567,14 @@ function getRawWttNestedMatchCount(item) {
   return Array.isArray(nested) ? nested.length : 0;
 }
 
+function hasWttTeamOfficialResultPayload(payload) {
+  return (Array.isArray(payload) ? payload : []).some((item) => {
+    const card = item?.match_card || {};
+    const rawCategoryName = item?.subEventType ?? card?.subEventName ?? "";
+    return Boolean(card?.teamParentData) || /\bteams?$/i.test(String(rawCategoryName || "").trim());
+  });
+}
+
 function getRawWttCompetitorCount(item) {
   const competitors = item?.match_card?.competitiors;
   return Array.isArray(competitors) ? competitors.length : 0;
@@ -2905,10 +2913,14 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload)) {
-      primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
-      const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
+      if (primaryPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE) {
+        primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
+      }
+      const supplementalMatches = hasWttTeamOfficialResultPayload(primaryPayload)
+        ? await fetchWttPoolStandingMatches(eventId).catch(() => [])
+        : [];
       let mergedPayload = mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
-      if (mergedPayload.length >= WTT_RESULT_FALLBACK_PAGE_SIZE) {
+      if (mergedPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE) {
         const subEventPayload = await fetchWttOfficialResultsBySubEvents(eventId).catch(() => []);
         if (subEventPayload.length > 0) {
           mergedPayload = mergeWttOfficialResultPayloads(subEventPayload, mergedPayload);

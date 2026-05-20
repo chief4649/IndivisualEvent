@@ -338,6 +338,7 @@ async function main() {
   for (let index = 0; index < candidates.length; index += 1) {
     const candidate = candidates[index];
     try {
+      console.log(`fetching: ${candidate.eventId}${candidate.suspiciousArchive ? " (refresh suspicious 400)" : ""}`);
       const result = await archiveEvent(candidate, args);
       if (result.status === "archived") {
         summary.archived += 1;
