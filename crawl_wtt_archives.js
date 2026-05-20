@@ -263,6 +263,7 @@ function markCrawlSkipped(candidate, reason) {
 }
 
 async function archiveEvent(candidate, args) {
+  const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive);
   const meta = await getWttEventLifecycleMeta(candidate.eventId, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
@@ -278,7 +279,7 @@ async function archiveEvent(candidate, args) {
     take: args.take,
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
-    refreshCache: args.force,
+    refreshCache: shouldRefresh,
   });
 
   if (!Array.isArray(result.normalized) || result.normalized.length === 0) {
@@ -305,6 +306,7 @@ async function archiveEvent(candidate, args) {
     canAutoArchive: Boolean(meta.canAutoArchive),
     archiveMatchCount: result.normalized.length,
     archiveFetchTake: args.take,
+    archiveRefreshed: shouldRefresh,
     archiveVerifiedAt: new Date().toISOString(),
     crawlSkipped: false,
     crawlSkipReason: null,
