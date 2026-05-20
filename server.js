@@ -48,6 +48,7 @@ const WTT_EVENT_ID_ALIASES = {
 };
 const WTT_EVENT_PUBLIC_URLS = {
   "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
+  "3124": "https://www.worldtabletennis.com/eventInfo?eventId=3085",
   "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",
 };
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
