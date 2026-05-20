@@ -6,6 +6,7 @@ COPY package.json ./
 COPY extract_individual_matches.js ./
 COPY export_zennihon_archives.js ./
 COPY export_wtt_archive.js ./
+COPY crawl_wtt_archives.js ./
 COPY fetch_wtt_calendar_dates.js ./
 COPY update_wtt_date_index.js ./
 COPY build_wtt_search_index.js ./
