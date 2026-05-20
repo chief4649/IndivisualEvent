@@ -2777,7 +2777,11 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
     if (Array.isArray(primaryPayload)) {
       primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
       const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
-      return mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
+      const mergedPayload = mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
+      if (mergedPayload.length > 0) {
+        return mergedPayload;
+      }
+      primaryPayload = mergedPayload;
     }
   } catch (error) {
     primaryError = error;
@@ -2850,7 +2854,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     try {
       const payload = await fetchSourceResults(source, eventId, take, {
         ...options,
-        allowBornanFallback: !(meta?.source === "calendar" || meta?.startDate || meta?.endDate),
+        allowBornanFallback: options.allowBornanFallback,
       });
       const mergedPayload = options.mergeLiveWttArchive
         ? mergeWttOfficialResultPayloads(payload, archived || readWttArchive(archiveDir, eventId))

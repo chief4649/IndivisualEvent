@@ -242,6 +242,10 @@ async function archiveEvent(candidate, args) {
     refreshCache: args.force,
   });
 
+  if (!Array.isArray(result.normalized) || result.normalized.length === 0) {
+    return { eventId: candidate.eventId, status: "skipped", reason: "zero_matches" };
+  }
+
   writeWttArchive(WTT_ARCHIVE_DIR, candidate.eventId, result.normalized);
   updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, candidate.eventId, {
     archived: true,
