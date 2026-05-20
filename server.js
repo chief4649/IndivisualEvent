@@ -2039,6 +2039,8 @@ function buildBaseProcessedMatchesOptions(options = {}) {
     zennihonArchiveDir: options.zennihonArchiveDir || ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: options.wttArchiveDir || WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: options.wttArchiveIndexPath || WTT_ARCHIVE_INDEX_PATH,
+    wttDateIndexPath: options.wttDateIndexPath || WTT_DATE_INDEX_PATH,
+    wttRecordResolutionCachePath: options.wttRecordResolutionCachePath || path.join(CACHE_DIR, "wtt-record-source-resolutions.json"),
     refreshCache: Boolean(options.refreshCache),
   };
 }

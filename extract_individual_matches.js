@@ -42,6 +42,7 @@ const DEFAULT_ZENNIHON_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "zennihon-recor
 const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
+const DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH = path.join(DEFAULT_CACHE_DIR, "wtt-record-source-resolutions.json");
 const LIVE_WTT_PAYLOAD_CACHE_TTL_MS = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_TTL_MS || 0);
 const LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES || 3);
 const WTT_EVENT_ID_ALIASES = {
@@ -75,6 +76,7 @@ function parseArgs(argv) {
     wttArchiveDir: DEFAULT_WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: DEFAULT_WTT_ARCHIVE_INDEX_PATH,
     wttDateIndexPath: DEFAULT_WTT_DATE_INDEX_PATH,
+    wttRecordResolutionCachePath: DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH,
     refreshCache: false,
     omitSetCounts: false,
   };
@@ -161,6 +163,10 @@ function parseArgs(argv) {
         break;
       case "--wtt-date-index":
         args.wttDateIndexPath = next;
+        i += 1;
+        break;
+      case "--wtt-record-resolution-cache":
+        args.wttRecordResolutionCachePath = next;
         i += 1;
         break;
       case "--cache-dir":
@@ -1868,9 +1874,12 @@ function getBornanBaseUrls(eventId) {
   ];
 }
 
-async function fetchBornanChamp(eventId) {
+async function fetchBornanChamp(eventId, options = {}) {
   for (const candidate of getBornanBaseUrls(eventId)) {
-    const champ = await fetchJson(new URL("champ.json", candidate.baseUrl).toString(), { allowNotFound: true });
+    const champ = await fetchJson(new URL("champ.json", candidate.baseUrl).toString(), {
+      allowNotFound: true,
+      timeoutMs: options.timeoutMs || 0,
+    });
     if (champ) {
       return {
         ...candidate,
@@ -2141,6 +2150,213 @@ async function fetchBornanEventMeta(eventId) {
     isFinished,
     canAutoArchive: true,
   };
+}
+
+function normalizeEventTitleForResolution(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\b\d{4}\b/g, " ")
+    .replace(/\bfinals?\b/g, " ")
+    .replace(/\bchampionships?\b/g, "championship")
+    .replace(/\basian\b/g, "asia")
+    .replace(/\bcontinental\b/g, "continental")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function getResolutionTokens(value) {
+  const stopWords = new Set(["of", "the", "and", "presented", "by"]);
+  return normalizeEventTitleForResolution(value)
+    .split(/\s+/)
+    .filter((token) => token && !stopWords.has(token));
+}
+
+function getTitleTokenScore(wttTitle, bornanTitle) {
+  const wttTokens = new Set(getResolutionTokens(wttTitle));
+  const bornanTokens = new Set(getResolutionTokens(bornanTitle));
+  if (wttTokens.size === 0 || bornanTokens.size === 0) {
+    return 0;
+  }
+
+  let overlap = 0;
+  for (const token of wttTokens) {
+    if (bornanTokens.has(token)) {
+      overlap += 1;
+    }
+  }
+
+  return overlap / wttTokens.size;
+}
+
+function datesOverlapOrMatch(aStart, aEnd, bStart, bEnd) {
+  if (!aStart || !bStart) {
+    return false;
+  }
+  const leftStart = String(aStart);
+  const leftEnd = String(aEnd || aStart);
+  const rightStart = String(bStart);
+  const rightEnd = String(bEnd || bStart);
+  return leftStart <= rightEnd && rightStart <= leftEnd;
+}
+
+function getBornanSearchRangesForYear(year) {
+  const numericYear = Number(year);
+  if (!Number.isFinite(numericYear)) {
+    return [];
+  }
+
+  if (numericYear <= 2021) {
+    return [[2200, 2550]];
+  }
+  if (numericYear === 2022) {
+    return [[2450, 2750]];
+  }
+  if (numericYear === 2023) {
+    return [[2650, 2920]];
+  }
+  if (numericYear === 2024) {
+    return [[2750, 3050]];
+  }
+  if (numericYear === 2025) {
+    return [[2980, 3230]];
+  }
+  if (numericYear === 2026) {
+    return [[3200, 3550]];
+  }
+  return [[2200, 3600]];
+}
+
+function getBornanResolutionCandidateIds(startDate, endDate) {
+  const years = new Set(
+    [startDate, endDate]
+      .map((date) => String(date || "").slice(0, 4))
+      .filter((year) => /^\d{4}$/.test(year)),
+  );
+  const ids = new Set();
+  for (const year of years) {
+    for (const [start, end] of getBornanSearchRangesForYear(year)) {
+      for (let id = start; id <= end; id += 1) {
+        ids.add(String(id));
+      }
+    }
+  }
+  return [...ids];
+}
+
+function readWttRecordResolutionCache(cachePath) {
+  try {
+    if (!cachePath || !fs.existsSync(cachePath)) {
+      return {};
+    }
+    return JSON.parse(fs.readFileSync(cachePath, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function writeWttRecordResolutionCache(cachePath, payload) {
+  if (!cachePath) {
+    return;
+  }
+  ensureDir(path.dirname(cachePath));
+  fs.writeFileSync(cachePath, JSON.stringify(payload, null, 2) + "\n", "utf8");
+}
+
+function getWttResolutionSeedMeta(eventId, options = {}) {
+  const eventIdText = String(eventId || "").trim();
+  const archiveIndex = readWttArchiveIndex(options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH);
+  const dateIndex = readWttDateIndex(options.wttDateIndexPath || DEFAULT_WTT_DATE_INDEX_PATH);
+  const merged = {
+    ...(dateIndex[eventIdText] || {}),
+    ...(archiveIndex[eventIdText] || {}),
+  };
+  return {
+    eventId: eventIdText,
+    title: String(merged.title || merged.eventName || "").trim(),
+    startDate: merged.startDate || null,
+    endDate: merged.endDate || null,
+  };
+}
+
+async function mapWithConcurrency(items, concurrency, mapper) {
+  const results = new Array(items.length);
+  let nextIndex = 0;
+  const workers = Array.from({ length: Math.min(concurrency, items.length) }, async () => {
+    while (nextIndex < items.length) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+      results[currentIndex] = await mapper(items[currentIndex], currentIndex);
+    }
+  });
+  await Promise.all(workers);
+  return results;
+}
+
+async function resolveWttRecordSourceByNameDate(eventId, options = {}) {
+  const seed = getWttResolutionSeedMeta(eventId, options);
+  if (!seed.title || !seed.startDate) {
+    return null;
+  }
+
+  const cachePath = options.wttRecordResolutionCachePath || DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH;
+  const cache = readWttRecordResolutionCache(cachePath);
+  const cached = cache[seed.eventId];
+  if (
+    cached?.recordSource === "ittf" &&
+    cached?.recordEventId &&
+    cached?.confidence === "high" &&
+    datesOverlapOrMatch(seed.startDate, seed.endDate, cached.startDate, cached.endDate)
+  ) {
+    return cached;
+  }
+
+  const candidateIds = getBornanResolutionCandidateIds(seed.startDate, seed.endDate);
+  const candidates = (await mapWithConcurrency(candidateIds, 24, async (candidateId) => {
+    try {
+      const resolved = await fetchBornanChamp(candidateId, { timeoutMs: 2500 });
+      const champ = resolved?.champ;
+      const rawDates = Array.isArray(champ?.dates)
+        ? champ.dates.map((date) => String(date?.raw || "")).filter(Boolean)
+        : [];
+      const candidateStartDate = rawDates[0] || null;
+      const candidateEndDate = rawDates[rawDates.length - 1] || null;
+      const title = String(champ?.champDesc || champ?.champ || "").trim();
+      if (!title || !datesOverlapOrMatch(seed.startDate, seed.endDate, candidateStartDate, candidateEndDate)) {
+        return null;
+      }
+      const titleScore = getTitleTokenScore(seed.title, title);
+      if (titleScore < 0.75) {
+        return null;
+      }
+      return {
+        publicSource: "wtt",
+        publicEventId: seed.eventId,
+        recordSource: "ittf",
+        recordEventId: candidateId,
+        recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE${candidateId}/results.html#/results`,
+        title,
+        startDate: candidateStartDate,
+        endDate: candidateEndDate,
+        titleScore,
+        confidence: "high",
+        resolvedBy: "name_date_match",
+        resolvedAt: new Date().toISOString(),
+      };
+    } catch {
+      return null;
+    }
+  })).filter(Boolean);
+
+  if (candidates.length !== 1) {
+    return null;
+  }
+
+  const resolution = candidates[0];
+  cache[seed.eventId] = resolution;
+  writeWttRecordResolutionCache(cachePath, cache);
+  return resolution;
 }
 
 async function fetchWttOfficialResultsFromApi(eventId, take) {
@@ -2949,6 +3165,27 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
     primaryError = error;
   }
 
+  let resolvedRecordError = null;
+  if (options.allowWttRecordSourceResolution !== false) {
+    try {
+      const recordResolution = await resolveWttRecordSourceByNameDate(eventId, options);
+      if (recordResolution?.recordSource === "ittf" && recordResolution.recordEventId) {
+        const resolvedPayload = await fetchBornanOfficialResults(recordResolution.recordEventId);
+        if (Array.isArray(resolvedPayload) && resolvedPayload.length > 0) {
+          return resolvedPayload.map((match) => ({
+            ...match,
+            eventId: String(eventId),
+            recordSource: recordResolution.recordSource,
+            recordEventId: String(recordResolution.recordEventId),
+            recordUrl: recordResolution.recordUrl,
+          }));
+        }
+      }
+    } catch (error) {
+      resolvedRecordError = error;
+    }
+  }
+
   let bornanError = null;
   if (options.allowBornanFallback !== false && isLikelyBornanFallbackCandidate(eventId)) {
     try {
@@ -2963,6 +3200,9 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
 
   if (primaryError) {
     throw primaryError;
+  }
+  if (resolvedRecordError) {
+    throw resolvedRecordError;
   }
   if (bornanError) {
     throw bornanError;
@@ -4491,6 +4731,8 @@ function createArgs(overrides = {}) {
     zennihonArchiveDir: DEFAULT_ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: DEFAULT_WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: DEFAULT_WTT_ARCHIVE_INDEX_PATH,
+    wttDateIndexPath: DEFAULT_WTT_DATE_INDEX_PATH,
+    wttRecordResolutionCachePath: DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH,
     allowNetworkForZennihonArchiveMiss: false,
     writeZennihonArchive: false,
     refreshCache: false,
@@ -4534,6 +4776,8 @@ async function getProcessedMatches(options = {}) {
       zennihonArchiveDir: args.zennihonArchiveDir,
       wttArchiveDir: args.wttArchiveDir,
       wttArchiveIndexPath: args.wttArchiveIndexPath,
+      wttDateIndexPath: args.wttDateIndexPath,
+      wttRecordResolutionCachePath: args.wttRecordResolutionCachePath,
       allowNetworkForZennihonArchiveMiss: args.allowNetworkForZennihonArchiveMiss,
       writeZennihonArchive: args.writeZennihonArchive,
       skipWttMinimalHydration: args.skipWttMinimalHydration,
