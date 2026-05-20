@@ -30,6 +30,7 @@ const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
 const DEFAULT_TAKE = 1200;
 const WTT_RESULT_FALLBACK_PAGE_SIZE = 400;
+const WTT_SUSPICIOUS_RESULT_COUNTS = new Set([30, 200, 300, WTT_RESULT_FALLBACK_PAGE_SIZE, 800]);
 const fs = require("fs");
 const path = require("path");
 
@@ -2922,10 +2923,21 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
         ? await fetchWttPoolStandingMatches(eventId).catch(() => [])
         : [];
       let mergedPayload = mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
-      if (options.forceWttSubEventSupplement || mergedPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE) {
+      const needsSubEventSupplement = options.forceWttSubEventSupplement ||
+        WTT_SUSPICIOUS_RESULT_COUNTS.has(mergedPayload.length);
+      if (needsSubEventSupplement) {
         const subEventPayload = await fetchWttOfficialResultsBySubEvents(eventId).catch(() => []);
+        if (subEventPayload.length === 0 && options.requireWttSubEventSupplementForSuspicious) {
+          throw new Error(`WTT subevent supplement unavailable for suspicious result count ${mergedPayload.length}`);
+        }
         if (subEventPayload.length > 0) {
           mergedPayload = mergeWttOfficialResultPayloads(subEventPayload, mergedPayload);
+        }
+        if (
+          options.requireWttSubEventSupplementForSuspicious &&
+          WTT_SUSPICIOUS_RESULT_COUNTS.has(mergedPayload.length)
+        ) {
+          throw new Error(`WTT suspicious result count remained after supplement: ${mergedPayload.length}`);
         }
       }
       if (mergedPayload.length > 0) {
@@ -4526,6 +4538,7 @@ async function getProcessedMatches(options = {}) {
       writeZennihonArchive: args.writeZennihonArchive,
       skipWttMinimalHydration: args.skipWttMinimalHydration,
       forceWttSubEventSupplement: args.forceWttSubEventSupplement,
+      requireWttSubEventSupplementForSuspicious: args.requireWttSubEventSupplementForSuspicious,
     },
   );
   const normalized = args.source === "zennihon"
@@ -4607,6 +4620,7 @@ module.exports = {
   DEFAULT_TAKE,
   DEFAULT_TRANSLATIONS_PATH,
   WTT_RESULT_FALLBACK_PAGE_SIZE,
+  WTT_SUSPICIOUS_RESULT_COUNTS,
   DEFAULT_WTT_ARCHIVE_DIR,
   DEFAULT_WTT_ARCHIVE_INDEX_PATH,
   DEFAULT_WTT_DATE_INDEX_PATH,
