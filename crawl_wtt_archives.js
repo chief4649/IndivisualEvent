@@ -9,7 +9,7 @@ const {
   getProcessedMatches,
   getWttEventLifecycleMeta,
   updateWttArchiveIndexEntry,
-  writeWttArchive,
+  writeWttArchiveIfNotSmaller,
 } = require("./extract_individual_matches");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
@@ -246,7 +246,17 @@ async function archiveEvent(candidate, args) {
     return { eventId: candidate.eventId, status: "skipped", reason: "zero_matches" };
   }
 
-  writeWttArchive(WTT_ARCHIVE_DIR, candidate.eventId, result.normalized);
+  const archiveWrite = writeWttArchiveIfNotSmaller(WTT_ARCHIVE_DIR, candidate.eventId, result.normalized, {
+    force: args.force,
+  });
+  if (!archiveWrite.written) {
+    return {
+      eventId: candidate.eventId,
+      status: "skipped",
+      reason: `${archiveWrite.reason}:${archiveWrite.nextCount}<${archiveWrite.existingCount}`,
+    };
+  }
+
   updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, candidate.eventId, {
     archived: true,
     source: meta.source || candidate.source || "wtt",

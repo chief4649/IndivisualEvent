@@ -8,7 +8,7 @@ const {
   DEFAULT_WTT_ARCHIVE_INDEX_PATH,
   getProcessedMatches,
   getWttEventLifecycleMeta,
-  writeWttArchive,
+  writeWttArchiveIfNotSmaller,
   updateWttArchiveIndexEntry,
 } = require("./extract_individual_matches");
 
@@ -81,7 +81,16 @@ async function main() {
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
   });
 
-  writeWttArchive(WTT_ARCHIVE_DIR, args.event, result.normalized);
+  const archiveWrite = writeWttArchiveIfNotSmaller(WTT_ARCHIVE_DIR, args.event, result.normalized, {
+    force: args.force,
+  });
+  if (!archiveWrite.written) {
+    console.log(`skipped: ${args.event}`);
+    console.log(`reason: ${archiveWrite.reason}`);
+    console.log(`matches: ${archiveWrite.nextCount} < ${archiveWrite.existingCount}`);
+    return;
+  }
+
   updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, args.event, {
     archived: true,
     source: meta.source || "wtt",

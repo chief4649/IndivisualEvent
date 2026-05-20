@@ -1052,6 +1052,30 @@ function writeWttArchive(archiveDir, eventId, payload) {
   fs.writeFileSync(archivePath, JSON.stringify(payload, null, 2) + "\n", "utf8");
 }
 
+function writeWttArchiveIfNotSmaller(archiveDir, eventId, payload, options = {}) {
+  const nextPayload = Array.isArray(payload) ? payload : [];
+  const archivePath = getWttArchivePath(archiveDir, eventId);
+  const existingPayload = fs.existsSync(archivePath) ? readWttArchive(archiveDir, eventId) : null;
+  const existingCount = Array.isArray(existingPayload) ? existingPayload.length : 0;
+  const nextCount = nextPayload.length;
+
+  if (!options.force && existingCount > 0 && nextCount < existingCount) {
+    return {
+      written: false,
+      reason: "smaller_payload",
+      existingCount,
+      nextCount,
+    };
+  }
+
+  writeWttArchive(archiveDir, eventId, nextPayload);
+  return {
+    written: true,
+    existingCount,
+    nextCount,
+  };
+}
+
 function getWttArchiveLastUpdatedAt(archiveDir, eventId, archiveIndexPath = DEFAULT_WTT_ARCHIVE_INDEX_PATH) {
   const indexedEntry = readWttArchiveIndex(archiveIndexPath)?.[String(eventId || "").trim()] || null;
   const indexedTimestamp = Date.parse(String(indexedEntry?.lastFetchedAt || indexedEntry?.archivedAt || ""));
@@ -2863,22 +2887,24 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       if (shouldReuseCachedPayload(source, mergedPayload)) {
         writeLiveWttPayloadCache(livePayloadCacheKey, mergedPayload);
         const timestamp = new Date().toISOString();
-        writeWttArchive(archiveDir, eventId, mergedPayload);
-        updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
-          pooled: true,
-          source: meta.source || "wtt",
-          title: meta.title || "",
-          startDate: meta.startDate || null,
-          endDate: meta.endDate || null,
-          canAutoArchive: Boolean(meta.canAutoArchive),
-          lastFetchedAt: timestamp,
-          ...(meta.isFinished
-            ? {
-                archived: true,
-                archivedAt: timestamp,
-              }
-            : {}),
-        });
+        const archiveWrite = writeWttArchiveIfNotSmaller(archiveDir, eventId, mergedPayload, { force: refreshCache });
+        if (archiveWrite.written) {
+          updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
+            pooled: true,
+            source: meta.source || "wtt",
+            title: meta.title || "",
+            startDate: meta.startDate || null,
+            endDate: meta.endDate || null,
+            canAutoArchive: Boolean(meta.canAutoArchive),
+            lastFetchedAt: timestamp,
+            ...(meta.isFinished
+              ? {
+                  archived: true,
+                  archivedAt: timestamp,
+                }
+              : {}),
+          });
+        }
       }
 
       return mergedPayload;
@@ -4488,6 +4514,7 @@ module.exports = {
   translateRoundJa,
   updateWttArchiveIndexEntry,
   writeWttArchive,
+  writeWttArchiveIfNotSmaller,
   writeWttDateIndex,
   writeZennihonArchive,
 };
