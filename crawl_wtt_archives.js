@@ -176,6 +176,11 @@ function isSuspiciousArchiveCount(count, entry) {
   return SUSPICIOUS_ARCHIVE_COUNTS.has(count) && entry?.archiveCompletenessVersion !== ARCHIVE_COMPLETENESS_VERSION;
 }
 
+function isTransientCrawlSkip(entry) {
+  const reason = String(entry?.crawlSkipReason || "");
+  return reason.startsWith("error:") || reason.includes("Timed out fetching") || reason.includes("fetch failed");
+}
+
 function buildCandidates(args) {
   const dateIndex = readJson(WTT_DATE_INDEX_PATH);
   const searchIndex = readJson(WTT_SEARCH_INDEX_PATH);
@@ -210,7 +215,7 @@ function buildCandidates(args) {
         archived: archiveCount > 0,
         archiveCount,
         suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry),
-        crawlSkipped: Boolean(entry.crawlSkipped),
+        crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
         crawlSkipReason: entry.crawlSkipReason || "",
         finished: isFinished(entry),
       };
@@ -249,7 +254,14 @@ function sleep(ms) {
 }
 
 function markCrawlSkipped(candidate, reason) {
-  if (reason === "not_finished" || String(reason || "").startsWith("smaller_payload:")) {
+  const reasonText = String(reason || "");
+  if (
+    reasonText === "not_finished" ||
+    reasonText.startsWith("smaller_payload:") ||
+    reasonText.startsWith("error:") ||
+    reasonText.includes("Timed out fetching") ||
+    reasonText.includes("fetch failed")
+  ) {
     return;
   }
 
