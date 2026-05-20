@@ -22,9 +22,14 @@ const WTT_POOL_STANDINGS_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetPoolStandings",
 ];
+const WTT_SUBEVENTS_DETAILS_URLS = [
+  "https://liveeventsapi.worldtabletennis.com/api/cms/GetAllLiveOrActiveSubEventsDetails",
+  "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetAllLiveOrActiveSubEventsDetails",
+];
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
 const DEFAULT_TAKE = 1200;
+const WTT_RESULT_FALLBACK_PAGE_SIZE = 400;
 const fs = require("fs");
 const path = require("path");
 
@@ -2281,6 +2286,107 @@ async function fetchWttOfficialResultByDocumentCode(eventId, documentCode) {
   return null;
 }
 
+async function fetchWttSubEventsDetails(eventId) {
+  const eventIdText = String(eventId || "").trim();
+  if (!eventIdText) {
+    return [];
+  }
+
+  for (const baseUrl of WTT_SUBEVENTS_DETAILS_URLS) {
+    const url = `${baseUrl}/${encodeURIComponent(eventIdText)}`;
+    const payload = await fetchJson(url, {
+      headers: WTT_API_HEADERS,
+      timeoutMs: 12000,
+    }).catch(() => null);
+
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+  }
+
+  return [];
+}
+
+async function fetchWttOfficialResultsBySearchText(eventId, searchText) {
+  const eventIdText = String(eventId || "").trim();
+  const queryText = String(searchText || "").trim();
+  if (!eventIdText || !queryText) {
+    return null;
+  }
+
+  for (const baseUrl of WTT_OFFICIAL_RESULT_URLS) {
+    const url = new URL(baseUrl);
+    url.searchParams.set("EventId", eventIdText);
+    url.searchParams.set("include_match_card", "true");
+    url.searchParams.set("take", String(WTT_RESULT_FALLBACK_PAGE_SIZE));
+    url.searchParams.set("search_text", queryText);
+
+    const payload = await fetchJson(url.toString(), {
+      headers: WTT_API_HEADERS,
+      timeoutMs: 6000,
+    }).catch(() => null);
+
+    if (Array.isArray(payload)) {
+      return payload;
+    }
+  }
+
+  return null;
+}
+
+function getWttSubEventFallbackSearchTexts(subEventName) {
+  const name = String(subEventName || "").trim();
+  if (!name) {
+    return [];
+  }
+
+  return [
+    name,
+    `${name} Semifinal`,
+    `${name} Quarterfinal`,
+    `${name} Round of 16`,
+    `${name} Round of 32`,
+    `${name} Round of 64`,
+    `${name} Round of 128`,
+    `${name} Preliminary Round`,
+    `${name} Qualifying Round`,
+  ];
+}
+
+async function fetchWttOfficialResultsBySubEvents(eventId) {
+  const subEvents = await fetchWttSubEventsDetails(eventId);
+  const subEventNames = [...new Set(
+    subEvents
+      .map((item) => String(item?.subEventName || "").trim())
+      .filter(Boolean),
+  )];
+
+  if (subEventNames.length === 0) {
+    return [];
+  }
+
+  const supplementalPayloads = await Promise.all(
+    subEventNames.map(async (subEventName) => {
+      const payloads = [];
+      for (const searchText of getWttSubEventFallbackSearchTexts(subEventName)) {
+        const payload = await fetchWttOfficialResultsBySearchText(eventId, searchText);
+        if (!Array.isArray(payload)) {
+          continue;
+        }
+        if (payload.length > 0) {
+          payloads.push(payload);
+        }
+        if (searchText === subEventName && payload.length > 0 && payload.length < WTT_RESULT_FALLBACK_PAGE_SIZE) {
+          break;
+        }
+      }
+      return payloads.flat();
+    }),
+  );
+
+  return supplementalPayloads.flat();
+}
+
 function isKnockoutWttDocumentCode(documentCode) {
   const code = normalizeWttDocumentCode(documentCode);
   return /(?:R32|R16|QF|SF|FN)/.test(code);
@@ -2801,7 +2907,13 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
     if (Array.isArray(primaryPayload)) {
       primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
       const supplementalMatches = await fetchWttPoolStandingMatches(eventId).catch(() => []);
-      const mergedPayload = mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
+      let mergedPayload = mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
+      if (mergedPayload.length >= WTT_RESULT_FALLBACK_PAGE_SIZE) {
+        const subEventPayload = await fetchWttOfficialResultsBySubEvents(eventId).catch(() => []);
+        if (subEventPayload.length > 0) {
+          mergedPayload = mergeWttOfficialResultPayloads(subEventPayload, mergedPayload);
+        }
+      }
       if (mergedPayload.length > 0) {
         return mergedPayload;
       }
@@ -4478,6 +4590,7 @@ module.exports = {
   DEFAULT_RULES_PATH,
   DEFAULT_TAKE,
   DEFAULT_TRANSLATIONS_PATH,
+  WTT_RESULT_FALLBACK_PAGE_SIZE,
   DEFAULT_WTT_ARCHIVE_DIR,
   DEFAULT_WTT_ARCHIVE_INDEX_PATH,
   DEFAULT_WTT_DATE_INDEX_PATH,

@@ -6,6 +6,7 @@ const path = require("path");
 const {
   DEFAULT_DATA_DIR,
   DEFAULT_TAKE,
+  WTT_RESULT_FALLBACK_PAGE_SIZE,
   getProcessedMatches,
   getWttEventLifecycleMeta,
   updateWttArchiveIndexEntry,
@@ -159,6 +160,20 @@ function archivePath(eventId) {
   return path.join(WTT_ARCHIVE_DIR, `${String(eventId).trim()}.json`);
 }
 
+function getArchiveMatchCount(eventId) {
+  const filePath = archivePath(eventId);
+  if (!fs.existsSync(filePath)) {
+    return 0;
+  }
+
+  const payload = JSON.parse(fs.readFileSync(filePath, "utf8"));
+  return Array.isArray(payload) ? payload.length : 0;
+}
+
+function isSuspiciousArchiveCount(count, entry) {
+  return count === WTT_RESULT_FALLBACK_PAGE_SIZE && !entry?.archiveVerifiedAt;
+}
+
 function buildCandidates(args) {
   const dateIndex = readJson(WTT_DATE_INDEX_PATH);
   const searchIndex = readJson(WTT_SEARCH_INDEX_PATH);
@@ -183,13 +198,16 @@ function buildCandidates(args) {
       };
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
+      const archiveCount = getArchiveMatchCount(eventId);
       return {
         eventId,
         title: entry.eventName || entry.title || "",
         source: entry.source || "wtt",
         startDate,
         endDate,
-        archived: fs.existsSync(archivePath(eventId)),
+        archived: archiveCount > 0,
+        archiveCount,
+        suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry),
         crawlSkipped: Boolean(entry.crawlSkipped),
         crawlSkipReason: entry.crawlSkipReason || "",
         finished: isFinished(entry),
@@ -205,7 +223,7 @@ function buildCandidates(args) {
       if (!args.includeActive && !candidate.finished) {
         return false;
       }
-      if (!args.force && candidate.archived) {
+      if (!args.force && candidate.archived && !candidate.suspiciousArchive) {
         return false;
       }
       if (!args.force && candidate.crawlSkipped) {
@@ -285,6 +303,9 @@ async function archiveEvent(candidate, args) {
     startDate: meta.startDate || candidate.startDate || null,
     endDate: meta.endDate || candidate.endDate || null,
     canAutoArchive: Boolean(meta.canAutoArchive),
+    archiveMatchCount: result.normalized.length,
+    archiveFetchTake: args.take,
+    archiveVerifiedAt: new Date().toISOString(),
     crawlSkipped: false,
     crawlSkipReason: null,
     crawlSkippedAt: null,
