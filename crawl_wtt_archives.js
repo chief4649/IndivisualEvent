@@ -190,6 +190,8 @@ function buildCandidates(args) {
         startDate,
         endDate,
         archived: fs.existsSync(archivePath(eventId)),
+        crawlSkipped: Boolean(entry.crawlSkipped),
+        crawlSkipReason: entry.crawlSkipReason || "",
         finished: isFinished(entry),
       };
     })
@@ -204,6 +206,9 @@ function buildCandidates(args) {
         return false;
       }
       if (!args.force && candidate.archived) {
+        return false;
+      }
+      if (!args.force && candidate.crawlSkipped) {
         return false;
       }
       return true;
@@ -221,6 +226,22 @@ function buildCandidates(args) {
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function markCrawlSkipped(candidate, reason) {
+  if (reason === "not_finished" || String(reason || "").startsWith("smaller_payload:")) {
+    return;
+  }
+
+  updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, candidate.eventId, {
+    source: candidate.source || "wtt",
+    title: candidate.title || "",
+    startDate: candidate.startDate || null,
+    endDate: candidate.endDate || null,
+    crawlSkipped: true,
+    crawlSkipReason: reason,
+    crawlSkippedAt: new Date().toISOString(),
+  });
 }
 
 async function archiveEvent(candidate, args) {
@@ -264,6 +285,9 @@ async function archiveEvent(candidate, args) {
     startDate: meta.startDate || candidate.startDate || null,
     endDate: meta.endDate || candidate.endDate || null,
     canAutoArchive: Boolean(meta.canAutoArchive),
+    crawlSkipped: false,
+    crawlSkipReason: null,
+    crawlSkippedAt: null,
     archivedAt: new Date().toISOString(),
     forced: Boolean(args.includeActive && !meta.isFinished),
   });
@@ -295,10 +319,12 @@ async function main() {
         console.log(`archived: ${result.eventId} (${result.matches} matches)`);
       } else {
         summary.skipped += 1;
+        markCrawlSkipped(candidate, result.reason);
         console.log(`skipped: ${result.eventId} (${result.reason})`);
       }
     } catch (error) {
       summary.failed += 1;
+      markCrawlSkipped(candidate, `error:${error?.message || error}`);
       console.error(`failed: ${candidate.eventId} ${error?.message || error}`);
     }
 
