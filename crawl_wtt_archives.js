@@ -105,7 +105,7 @@ function printHelp(exitCode = 0) {
     "  --to YYYY-MM[-DD]    Include events starting on or before this date/month",
     "  --limit N           Maximum events to fetch in this run, default 20",
     "  --delay-ms N        Delay between API fetches, default 2000",
-    "  --take N            WTT API page size, default 800",
+    `  --take N            WTT API page size, default ${DEFAULT_TAKE}`,
     "  --event ID[,ID]     Fetch specific event IDs",
     "  --force             Re-fetch even when wtt-records/{event}.json exists",
     "  --include-active    Also fetch events that are not finished yet",

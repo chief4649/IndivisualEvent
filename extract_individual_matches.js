@@ -24,7 +24,7 @@ const WTT_POOL_STANDINGS_URLS = [
 ];
 const ITTF_RESULTS_BASE_URL = "https://results.ittf.com/ittf-web-results/html";
 const ZENNIHON_BASE_URL = "https://www.japantabletennis.com/AJ";
-const DEFAULT_TAKE = 800;
+const DEFAULT_TAKE = 1200;
 const fs = require("fs");
 const path = require("path");
 
@@ -213,7 +213,7 @@ function printHelp(exitCode = 0) {
     "  --contains, -q   Free-text filter across description and team names",
     "  --doc-code, -d   Exact match document code",
     "  --limit, -n      Limit output matches",
-    "  --take           API page size to request, default 200",
+    `  --take           API page size to request, default ${DEFAULT_TAKE}`,
     "  --json           Print normalized JSON",
     "  --list           Print one-line summaries only",
     "  --compact        Compact JSON output",
