@@ -15,6 +15,7 @@
     "update:wtt-dates": "node update_wtt_date_index.js",
     "export:zennihon": "node export_zennihon_archives.js",
     "export:wtt": "node export_wtt_archive.js",
+    "crawl:wtt": "node crawl_wtt_archives.js",
     "verify:wtt": "node verify_wtt_alignment.js"
   }
 }
