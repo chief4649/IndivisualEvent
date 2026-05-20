@@ -2178,7 +2178,7 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
         try {
           return await fetchJson(url.toString(), {
             headers: WTT_API_HEADERS,
-            timeoutMs: 12000,
+            timeoutMs: 6000,
           });
         } catch (error) {
           lastError = error;
@@ -2323,7 +2323,7 @@ async function fetchWttOfficialResultsBySearchText(eventId, searchText) {
 
     const payload = await fetchJson(url.toString(), {
       headers: WTT_API_HEADERS,
-      timeoutMs: 6000,
+      timeoutMs: 3000,
     }).catch(() => null);
 
     if (Array.isArray(payload)) {
@@ -2346,10 +2346,6 @@ function getWttSubEventFallbackSearchTexts(subEventName) {
     `${name} Quarterfinal`,
     `${name} Round of 16`,
     `${name} Round of 32`,
-    `${name} Round of 64`,
-    `${name} Round of 128`,
-    `${name} Preliminary Round`,
-    `${name} Qualifying Round`,
   ];
 }
 
@@ -2367,20 +2363,26 @@ async function fetchWttOfficialResultsBySubEvents(eventId) {
 
   const supplementalPayloads = await Promise.all(
     subEventNames.map(async (subEventName) => {
-      const payloads = [];
-      for (const searchText of getWttSubEventFallbackSearchTexts(subEventName)) {
-        const payload = await fetchWttOfficialResultsBySearchText(eventId, searchText);
-        if (!Array.isArray(payload)) {
-          continue;
-        }
-        if (payload.length > 0) {
-          payloads.push(payload);
-        }
-        if (searchText === subEventName && payload.length > 0 && payload.length < WTT_RESULT_FALLBACK_PAGE_SIZE) {
-          break;
-        }
+      const searchTexts = getWttSubEventFallbackSearchTexts(subEventName);
+      const primaryPayload = await fetchWttOfficialResultsBySearchText(eventId, searchTexts[0]);
+      if (
+        Array.isArray(primaryPayload) &&
+        primaryPayload.length > 0 &&
+        primaryPayload.length < WTT_RESULT_FALLBACK_PAGE_SIZE
+      ) {
+        return primaryPayload;
       }
-      return payloads.flat();
+
+      const fallbackPayloads = await Promise.all(
+        searchTexts
+          .slice(1)
+          .map((searchText) => fetchWttOfficialResultsBySearchText(eventId, searchText)),
+      );
+
+      return [
+        ...(Array.isArray(primaryPayload) ? primaryPayload : []),
+        ...fallbackPayloads.filter(Array.isArray).flat(),
+      ];
     }),
   );
 
@@ -2913,14 +2915,14 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload)) {
-      if (primaryPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE) {
+      if (primaryPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE && !options.skipWttMinimalHydration) {
         primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
       }
       const supplementalMatches = hasWttTeamOfficialResultPayload(primaryPayload)
         ? await fetchWttPoolStandingMatches(eventId).catch(() => [])
         : [];
       let mergedPayload = mergeWttSupplementalMatches(primaryPayload, supplementalMatches);
-      if (mergedPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE) {
+      if (options.forceWttSubEventSupplement || mergedPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE) {
         const subEventPayload = await fetchWttOfficialResultsBySubEvents(eventId).catch(() => []);
         if (subEventPayload.length > 0) {
           mergedPayload = mergeWttOfficialResultPayloads(subEventPayload, mergedPayload);
@@ -4522,6 +4524,8 @@ async function getProcessedMatches(options = {}) {
       wttArchiveIndexPath: args.wttArchiveIndexPath,
       allowNetworkForZennihonArchiveMiss: args.allowNetworkForZennihonArchiveMiss,
       writeZennihonArchive: args.writeZennihonArchive,
+      skipWttMinimalHydration: args.skipWttMinimalHydration,
+      forceWttSubEventSupplement: args.forceWttSubEventSupplement,
     },
   );
   const normalized = args.source === "zennihon"

@@ -18,7 +18,8 @@ const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
-const ARCHIVE_COMPLETENESS_VERSION = 2;
+const ARCHIVE_COMPLETENESS_VERSION = 3;
+const SUSPICIOUS_ARCHIVE_COUNTS = new Set([200, 300, WTT_RESULT_FALLBACK_PAGE_SIZE, 800]);
 
 function parseArgs(argv) {
   const args = {
@@ -172,7 +173,7 @@ function getArchiveMatchCount(eventId) {
 }
 
 function isSuspiciousArchiveCount(count, entry) {
-  return count === WTT_RESULT_FALLBACK_PAGE_SIZE && entry?.archiveCompletenessVersion !== ARCHIVE_COMPLETENESS_VERSION;
+  return SUSPICIOUS_ARCHIVE_COUNTS.has(count) && entry?.archiveCompletenessVersion !== ARCHIVE_COMPLETENESS_VERSION;
 }
 
 function buildCandidates(args) {
@@ -281,6 +282,8 @@ async function archiveEvent(candidate, args) {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache: shouldRefresh,
+    skipWttMinimalHydration: true,
+    forceWttSubEventSupplement: candidate.suspiciousArchive,
   });
 
   if (!Array.isArray(result.normalized) || result.normalized.length === 0) {
@@ -338,7 +341,7 @@ async function main() {
   for (let index = 0; index < candidates.length; index += 1) {
     const candidate = candidates[index];
     try {
-      console.log(`fetching: ${candidate.eventId}${candidate.suspiciousArchive ? " (refresh suspicious 400)" : ""}`);
+      console.log(`fetching: ${candidate.eventId}${candidate.suspiciousArchive ? ` (refresh suspicious ${candidate.archiveCount})` : ""}`);
       const result = await archiveEvent(candidate, args);
       if (result.status === "archived") {
         summary.archived += 1;
