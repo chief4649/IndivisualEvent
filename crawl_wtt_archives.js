@@ -19,7 +19,7 @@ const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const ARCHIVE_COMPLETENESS_VERSION = 3;
-const SUSPICIOUS_ARCHIVE_COUNTS = new Set([200, 300, WTT_RESULT_FALLBACK_PAGE_SIZE, 800]);
+const SUSPICIOUS_ARCHIVE_COUNTS = new Set([30, 200, 300, WTT_RESULT_FALLBACK_PAGE_SIZE, 800]);
 
 function parseArgs(argv) {
   const args = {
