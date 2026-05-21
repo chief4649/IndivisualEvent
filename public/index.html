@@ -1429,6 +1429,10 @@
         loadEventSearchResults().catch(reportBackgroundError);
       });
 
+      eventSearchInput.addEventListener("focus", () => {
+        loadEventSearchResults().catch(reportBackgroundError);
+      });
+
       categorySelect.addEventListener("change", () => {
         loadRounds().catch(reportBackgroundError);
       });
