@@ -1000,6 +1000,15 @@ function buildMatchSearchText(match, translations) {
   );
 }
 
+function matchesContainsQuery(match, translations, query) {
+  const haystack = buildMatchSearchText(match, translations);
+  const tokens = normalizeSearchText(query).split(/\s+/).filter(Boolean);
+  if (tokens.length === 0) {
+    return true;
+  }
+  return tokens.every((token) => haystack.includes(token));
+}
+
 function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
@@ -3384,8 +3393,7 @@ function applyFilters(matches, args, translations) {
   }
 
   if (args.contains) {
-    const needle = normalizeSearchText(args.contains);
-    filtered = filtered.filter((match) => buildMatchSearchText(match, translations).includes(needle));
+    filtered = filtered.filter((match) => matchesContainsQuery(match, translations, args.contains));
   }
 
   if (args.docCode) {

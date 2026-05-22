@@ -1293,6 +1293,7 @@ function matchesSearchQuery(eventId, eventName, query, extraValues = []) {
   }
 
   const haystackTokens = new Set(haystack.split(/\s+/).filter(Boolean));
+  const haystackTokenList = [...haystackTokens];
   const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
   const isDirectEventIdQuery = /^\d+$/.test(normalizedQuery);
   if (queryTokens.length === 0) {
@@ -1303,7 +1304,7 @@ function matchesSearchQuery(eventId, eventName, query, extraValues = []) {
     if (isDirectEventIdQuery && /^\d+$/.test(token)) {
       return normalizedEventId.includes(token) || haystackTokens.has(token);
     }
-    return haystackTokens.has(token);
+    return normalizedEventId.includes(token) || haystackTokenList.some((value) => value.includes(token));
   });
 }
 
