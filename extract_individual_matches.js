@@ -4464,11 +4464,25 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
   const sortedMatches = sortIndividualMatches(matches, roundContext);
   const blocks = [];
   let individualGroup = null;
+  const roundContextsByCategory = new Map();
+  const getRoundContextForMatch = (match) => {
+    const categoryKey = String(match?.categoryName || "").trim() || "__uncategorized";
+    if (!roundContextsByCategory.has(categoryKey)) {
+      roundContextsByCategory.set(
+        categoryKey,
+        buildJaRoundContext(sortedMatches.filter((item) =>
+          String(item?.categoryName || "").trim() === String(match?.categoryName || "").trim(),
+        )),
+      );
+    }
+    return roundContextsByCategory.get(categoryKey) || roundContext;
+  };
 
   const flushIndividualGroup = () => {
     if (!individualGroup) {
       return;
     }
+    const groupRoundContext = getRoundContextForMatch(individualGroup.matches[0]);
     blocks.push([
       formatJaHeader(
         {
@@ -4478,7 +4492,7 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
           categoryName: individualGroup.matches[0]?.categoryName,
           roundKey: individualGroup.roundKey,
           roundLabel: individualGroup.roundLabel,
-          roundContext,
+          roundContext: groupRoundContext,
         },
         translations,
         rules,
@@ -4513,8 +4527,9 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
 
     const displayedTeams = getDisplayedTeamIndexes(match);
     displayedTeams.parentMatch = match;
+    const matchRoundContext = getRoundContextForMatch(match);
     const lines = [
-      formatJaHeader({ ...match, roundContext }, translations, rules),
+      formatJaHeader({ ...match, roundContext: matchRoundContext }, translations, rules),
       formatJaTeamLine(match, translations),
       ...match.singles.map((single) =>
         formatJaSinglesLine(single, translations, displayedTeams, options),
