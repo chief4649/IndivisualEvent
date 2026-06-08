@@ -398,7 +398,9 @@ function serveFile(response, filePath) {
       ? "text/css; charset=utf-8"
       : ext === ".js"
         ? "text/javascript; charset=utf-8"
-        : "application/octet-stream";
+        : ext === ".svg"
+          ? "image/svg+xml"
+          : "application/octet-stream";
 
   sendText(response, 200, fs.readFileSync(filePath), contentType);
 }
