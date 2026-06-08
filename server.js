@@ -460,6 +460,7 @@ function getLoginPage(errorMessage = "") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ログイン | 個人戦記録出力システム</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <style>
       :root {
         --bg: #f7f1e6;
@@ -2511,6 +2512,11 @@ const server = http.createServer((request, response) => {
       location: "/",
       "set-cookie": clearViewerCookie(),
     });
+    return;
+  }
+
+  if (request.method === "GET" && requestUrl.pathname === "/favicon.svg") {
+    serveFile(response, path.join(PUBLIC_DIR, "favicon.svg"));
     return;
   }
 
