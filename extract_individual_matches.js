@@ -740,6 +740,17 @@ function splitGameScores(value) {
     .filter((entry) => entry !== "0-0");
 }
 
+function chooseGameScores(...values) {
+  let best = [];
+  for (const value of values) {
+    const scores = splitGameScores(value);
+    if (scores.length > best.length) {
+      best = scores;
+    }
+  }
+  return best;
+}
+
 function normalizePlayer(player) {
   if (!player) {
     return null;
@@ -1278,7 +1289,7 @@ function normalizeIndividualMatch(entry, index) {
     description: result?.subEventDescription ?? null,
     overallScore: result?.overallScores ?? null,
     resultStatus: result?.resultStatus ?? null,
-    gameScores: splitGameScores(result?.gameScores ?? result?.resultsGameScores),
+    gameScores: chooseGameScores(result?.resultsGameScores, result?.gameScores),
     competitors,
     winnerOrg: inferWinnerOrg(result),
   };
@@ -1462,7 +1473,7 @@ function normalizeStandaloneMatch(item) {
     teams: [],
     singles: [],
     competitors,
-    gameScores: splitGameScores(card.gameScores ?? card.resultsGameScores),
+    gameScores: chooseGameScores(card.resultsGameScores, card.gameScores),
   };
 }
 
