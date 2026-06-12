@@ -1836,22 +1836,63 @@ function getRoundOptionSortValue(match, context) {
   return 999;
 }
 
+function getRoundContextKey(match) {
+  return [
+    match?.source || "",
+    match?.categoryName || "",
+    match?.gender || "",
+    match?.discipline || "",
+  ].join("\u0000");
+}
+
+function buildRoundContextsByCategory(matches) {
+  const grouped = new Map();
+  for (const match of matches) {
+    const key = getRoundContextKey(match);
+    if (!grouped.has(key)) {
+      grouped.set(key, []);
+    }
+    grouped.get(key).push(match);
+  }
+
+  return new Map([...grouped.entries()].map(([key, categoryMatches]) => [
+    key,
+    buildJaRoundContext(categoryMatches),
+  ]));
+}
+
+function getRoundOptionValue(match, context) {
+  const knockoutLabel = context?.knockoutRoundNumbers?.[match.roundKey] || "";
+  const knockoutMatch = knockoutLabel.match(/^(\d+)回戦$/);
+  if (knockoutMatch) {
+    return `knockout_round_${knockoutMatch[1]}`;
+  }
+  return String(match.roundLabel || "").trim();
+}
+
 function summarizeRoundOptions(matches, rules, translations) {
-  const context = buildJaRoundContext(matches);
+  const contextsByCategory = buildRoundContextsByCategory(matches);
+  const fallbackContext = buildJaRoundContext(matches);
   const seen = new Set();
   const options = [];
 
   for (const match of matches) {
     const value = String(match.roundLabel || "").trim();
-    if (!value || seen.has(value)) {
+    if (!value) {
       continue;
     }
-    seen.add(value);
+    const contextKey = getRoundContextKey(match);
+    const context = contextsByCategory.get(contextKey) || fallbackContext;
+    const optionValue = getRoundOptionValue(match, context);
+    if (seen.has(optionValue)) {
+      continue;
+    }
+    seen.add(optionValue);
     const translatedLabel = String(
       translateRoundJa(match.roundKey, match.roundLabel, translations, rules, context) || match.roundLabel || value,
     );
     options.push({
-      value,
+      value: optionValue,
       label: match?.source === "zennihon"
         ? translatedLabel.replace(/^決勝トーナメント/, "")
         : translatedLabel,

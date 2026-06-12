@@ -419,6 +419,11 @@ function normalizeRound(value) {
     return "bronze_medal_match";
   }
 
+  const knockoutInternalMatch = text.match(/\bknockout\s+round\s+(\d+)\b/);
+  if (knockoutInternalMatch) {
+    return `knockout_round_${knockoutInternalMatch[1]}`;
+  }
+
   if (text.includes("gold medal match") || text.includes("gold medal team match")) {
     return "final";
   }
@@ -3354,6 +3359,31 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
   return payload;
 }
 
+function getRoundContextKey(match) {
+  return [
+    match?.source || "",
+    match?.categoryName || "",
+    match?.gender || "",
+    match?.discipline || "",
+  ].join("\u0000");
+}
+
+function buildRoundContextsByCategory(matches) {
+  const grouped = new Map();
+  for (const match of matches) {
+    const key = getRoundContextKey(match);
+    if (!grouped.has(key)) {
+      grouped.set(key, []);
+    }
+    grouped.get(key).push(match);
+  }
+
+  return new Map([...grouped.entries()].map(([key, categoryMatches]) => [
+    key,
+    buildJaRoundContext(categoryMatches),
+  ]));
+}
+
 function applyFilters(matches, args, translations) {
   let filtered = matches.filter(Boolean).filter((match) => !match.isParaClass);
 
@@ -3394,12 +3424,17 @@ function applyFilters(matches, args, translations) {
   }
 
   if (args.round) {
-    const roundContext = buildJaRoundContext(filtered);
+    const roundContextsByCategory = buildRoundContextsByCategory(filtered);
+    const fallbackRoundContext = buildJaRoundContext(filtered);
     const wantedRounds = (Array.isArray(args.round) ? args.round : [args.round])
       .map((round) => normalizeRound(round))
       .filter(Boolean);
     filtered = filtered.filter((match) =>
-      wantedRounds.some((wantedRound) => matchesRoundFilter(match.roundKey, wantedRound, roundContext)),
+      wantedRounds.some((wantedRound) => matchesRoundFilter(
+        match.roundKey,
+        wantedRound,
+        roundContextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext,
+      )),
     );
   }
 
