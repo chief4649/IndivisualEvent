@@ -726,6 +726,9 @@ function matchesRoundFilter(matchRoundKey, wantedRound, context = null) {
 
   const knockoutRoundMatch = String(wantedRound).match(/^knockout_round_(\d+)$/);
   if (knockoutRoundMatch) {
+    if (!["round_of_128", "round_of_64", "round_of_32", "round_of_16"].includes(matchRoundKey)) {
+      return false;
+    }
     return context?.knockoutRoundNumbers?.[matchRoundKey] === `${knockoutRoundMatch[1]}回戦`;
   }
 
@@ -3974,7 +3977,9 @@ function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
     return mapped;
   }
 
-  const dynamicKnockoutLabel = context?.knockoutRoundNumbers?.[roundKey];
+  const dynamicKnockoutLabel = ["round_of_128", "round_of_64", "round_of_32", "round_of_16"].includes(roundKey)
+    ? context?.knockoutRoundNumbers?.[roundKey]
+    : null;
   if (dynamicKnockoutLabel) {
     return `${rules.labels.knockoutPrefix}${dynamicKnockoutLabel}`;
   }

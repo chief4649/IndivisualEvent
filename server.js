@@ -1862,6 +1862,9 @@ function buildRoundContextsByCategory(matches) {
 }
 
 function getRoundOptionValue(match, context) {
+  if (!["round_of_128", "round_of_64", "round_of_32", "round_of_16"].includes(match.roundKey)) {
+    return String(match.roundLabel || "").trim();
+  }
   const knockoutLabel = context?.knockoutRoundNumbers?.[match.roundKey] || "";
   const knockoutMatch = knockoutLabel.match(/^(\d+)回戦$/);
   if (knockoutMatch) {
