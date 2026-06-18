@@ -902,7 +902,7 @@ function translatePlayer(value, translations) {
 
   for (const candidate of candidates) {
     if (translations.players?.[candidate]) {
-      return compactJapaneseName(translations.players[candidate]);
+      return translations.players[candidate];
     }
   }
 
