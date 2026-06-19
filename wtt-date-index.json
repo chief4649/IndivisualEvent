@@ -19751,6 +19751,14 @@
     "source": "calendar",
     "updatedAt": "2026-04-07T07:59:50.699Z"
   },
+  "wmc2026": {
+    "event": "wmc2026",
+    "eventName": "ITTF World Masters Championships Gangneung 2026",
+    "startDate": "2026-06-07",
+    "endDate": "2026-06-12",
+    "source": "webgen",
+    "updatedAt": "2026-06-19T00:00:00.000Z"
+  },
   "21027": {
     "event": "21027",
     "eventName": "Pan American Veteran Championships",

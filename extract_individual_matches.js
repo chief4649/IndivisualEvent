@@ -48,10 +48,22 @@ const LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES = Number(process.env.LIVE_WTT_PAYLOAD_C
 const WTT_EVENT_ID_ALIASES = {
   "5524": "3500",
 };
+const WTT_WEBGEN_EVENTS = {
+  wmc2026: {
+    baseUrl: "https://wmc2026.ittf.com/",
+    title: "ITTF World Masters Championships Gangneung 2026",
+    startDate: "2026-06-07",
+    endDate: "2026-06-12",
+  },
+};
 const ZENNIHON_ARCHIVE_YEARS = new Set(
   Array.from({ length: 15 }, (_, index) => String(2011 + index)),
 );
 const liveWttPayloadCache = new Map();
+
+function isWebgenWttEvent(eventId) {
+  return Boolean(WTT_WEBGEN_EVENTS[String(eventId || "").trim().toLowerCase()]);
+}
 
 function parseArgs(argv) {
   const args = {
@@ -448,6 +460,7 @@ function normalizeRound(value) {
     ["qualifying_round_2", ["予選2回戦", "予選２回戦", "予選第2回戦", "予選第２回戦"]],
     ["qualifying_round_3", ["予選3回戦", "予選３回戦", "予選第3回戦", "予選第３回戦"]],
     ["qualification_elimination_round", ["予選決定戦", "予選トーナメント決定戦"]],
+    ["round_of_256", ["ベスト256", "256強"]],
     ["round_of_128", ["ベスト128", "128強"]],
     ["round_of_64", ["ベスト64", "64強"]],
     ["round_of_32", ["ベスト32", "32強"]],
@@ -470,10 +483,12 @@ function normalizeRound(value) {
     ["qualifying_round_2", ["qualifying round 2", "qr2"]],
     ["qualifying_round_3", ["qualifying round 3", "qr3"]],
     ["qualification_elimination_round", ["qualification elimination round"]],
+    ["round_of_256", ["round of 256", "r256", "best 256"]],
     ["round_of_128", ["round of 128", "r128", "best 128"]],
     ["round_of_64", ["round of 64", "r64", "best 64"]],
     ["round_of_16", ["round of 16", "r16", "best 16"]],
     ["round_of_32", ["round of 32", "r32", "best 32"]],
+    ["quarterfinal", ["round of 8", "r8", "best 8"]],
     ["final", ["final", "finals", "f"]],
     ["group", ["group", "pool"]],
   ];
@@ -1517,6 +1532,270 @@ async function fetchText(url, encoding = "utf-8") {
 
   const arrayBuffer = await response.arrayBuffer();
   return new TextDecoder(encoding).decode(arrayBuffer);
+}
+
+function decodeHtmlText(value) {
+  return String(value || "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'")
+    .replace(/<br\s*\/?>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getHtmlAttribute(value, attributeName) {
+  const html = String(value || "");
+  const doubleQuoted = html.match(new RegExp(`${attributeName}="([^"]*)"`, "i"));
+  if (doubleQuoted) {
+    return decodeHtmlText(doubleQuoted[1]);
+  }
+  const singleQuoted = html.match(new RegExp(`${attributeName}='([^']*)'`, "i"));
+  return singleQuoted ? decodeHtmlText(singleQuoted[1]) : "";
+}
+
+function normalizeWebgenPlayerName(value) {
+  const text = decodeHtmlText(value);
+  const commaIndex = text.indexOf(",");
+  if (commaIndex >= 0) {
+    const familyName = text.slice(0, commaIndex).trim();
+    const givenNames = text.slice(commaIndex + 1).trim();
+    if (familyName && givenNames) {
+      return `${familyName} ${givenNames}`;
+    }
+  }
+  return text;
+}
+
+function parseWebgenDataI18nOptions(value) {
+  const raw = getHtmlAttribute(value, "data-i18n-options");
+  if (!raw) {
+    return {};
+  }
+  try {
+    return JSON.parse(raw.replace(/&quot;/g, "\""));
+  } catch {
+    return {};
+  }
+}
+
+function parseWebgenEventLinks(eventsHtml) {
+  const links = [];
+  const pattern = /<a\s+href="([^"]+\.html)"[^>]*>\s*<span>([\s\S]*?)<\/span>\s*<\/a>/gi;
+  let match;
+  while ((match = pattern.exec(eventsHtml)) !== null) {
+    const href = String(match[1] || "").trim();
+    const name = decodeHtmlText(match[2]);
+    if (href && name) {
+      links.push({ code: href.replace(/\.html$/i, ""), href, name });
+    }
+  }
+  return links;
+}
+
+function parseWebgenDateLinks(datesHtml) {
+  return Array.from(String(datesHtml || "").matchAll(/href="(\d{4}-\d{2}-\d{2}\.html)"/g))
+    .map((match) => match[1])
+    .filter(Boolean);
+}
+
+function parseWebgenPlayers(sideHtml) {
+  const players = [];
+  const pattern = /<div class="player">([\s\S]*?)<\/div>/gi;
+  let match;
+  while ((match = pattern.exec(sideHtml)) !== null) {
+    const playerHtml = match[1];
+    const nameMatch = playerHtml.match(/<span class="name">([\s\S]*?)<\/span>/i);
+    const assocMatch = playerHtml.match(/<span class="assoc">([\s\S]*?)<\/span>/i);
+    const idMatch = playerHtml.match(/<span class="plnr">([\s\S]*?)<\/span>/i);
+    const name = normalizeWebgenPlayerName(nameMatch?.[1] || "");
+    if (!name) {
+      continue;
+    }
+    const org = decodeHtmlText(assocMatch?.[1] || "");
+    players.push({
+      id: decodeHtmlText(idMatch?.[1] || ""),
+      name,
+      org,
+      orgCode: org,
+    });
+  }
+  return players;
+}
+
+function buildWebgenCompetitor(sideHtml) {
+  const players = parseWebgenPlayers(sideHtml);
+  if (players.length === 0) {
+    return null;
+  }
+  const orgs = [...new Set(players.map((player) => player.org).filter(Boolean))];
+  return {
+    id: players.map((player) => player.id).filter(Boolean).join("/"),
+    name: players.map((player) => player.name).join("/"),
+    org: orgs.join("/"),
+    orgCode: orgs.join("/"),
+    players,
+  };
+}
+
+function parseWebgenScore(matchHtml) {
+  const hasWalkover = /w\s*\/\s*o|walkover|\bwo\b|data-i18n="result\.format\.short\.wo"/i.test(String(matchHtml || ""));
+  const resultMatch = String(matchHtml || "").match(/<td class="result">([\s\S]*?)<\/td>/i);
+  const resultHtml = resultMatch?.[1] || "";
+  if (hasWalkover && !resultHtml) {
+    return { overallScore: "W-L", resultStatus: "WO" };
+  }
+  const leftResult = resultHtml.match(/<div class="left[^"]*">([\s\S]*?)<\/div>/i);
+  const rightResult = resultHtml.match(/<div class="right[^"]*">([\s\S]*?)<\/div>/i);
+  const leftSets = decodeHtmlText(leftResult?.[1] || "");
+  const rightSets = decodeHtmlText(rightResult?.[1] || "");
+  const overallScore = leftSets || rightSets ? `${leftSets || "0"}-${rightSets || "0"}` : "0-0";
+
+  const gameScores = [];
+  const gamePattern = /<td class="game(?! empty)[^"]*">([\s\S]*?)<\/td>/gi;
+  let gameMatch;
+  while ((gameMatch = gamePattern.exec(matchHtml)) !== null) {
+    const gameHtml = gameMatch[1];
+    const leftGame = gameHtml.match(/<div class="left[^"]*">([\s\S]*?)<\/div>/i);
+    const rightGame = gameHtml.match(/<div class="right[^"]*">([\s\S]*?)<\/div>/i);
+    const leftPoints = decodeHtmlText(leftGame?.[1] || "");
+    const rightPoints = decodeHtmlText(rightGame?.[1] || "");
+    if (leftPoints || rightPoints) {
+      gameScores.push(`${leftPoints || "0"}-${rightPoints || "0"}`);
+    }
+  }
+
+  return { overallScore, gameScores, resultStatus: hasWalkover ? "WO" : "" };
+}
+
+function getWebgenRoundLabel(groupName, roundText) {
+  const group = String(groupName || "").trim();
+  if (/^Group\s+\d+/i.test(group)) {
+    return group;
+  }
+  if (/Main Draw/i.test(group)) {
+    return roundText || group;
+  }
+  return group || roundText || "";
+}
+
+function getWebgenRoundText(roundSpan) {
+  const html = String(roundSpan || "");
+  const key = getHtmlAttribute(html, "data-i18n");
+  const options = parseWebgenDataI18nOptions(html);
+
+  if (key === "rr.format.short.round" && options.round) {
+    return `Round ${options.round}`;
+  }
+  if (key === "ko.format.short.roundof" && options.entries) {
+    return `Round of ${options.entries}`;
+  }
+  if (key === "ko.format.short.final") {
+    return "Final";
+  }
+  if (key === "ko.format.short.semifinal") {
+    return "Semifinal";
+  }
+  if (key === "ko.format.short.quarterfinal") {
+    return "Quarterfinal";
+  }
+
+  return "";
+}
+
+function parseWebgenDateMatches(html, eventId, dateText, eventNameByCode) {
+  const matches = [];
+  const blocks = String(html || "").split(/<tbody>/i).slice(1);
+  let index = 0;
+
+  for (const block of blocks) {
+    const tbody = block.split(/<\/tbody>/i)[0] || "";
+    const headerMatch = tbody.match(/<tr class="header">([\s\S]*?)<\/tr>/i);
+    const matchMatch = tbody.match(/<tr class="match">([\s\S]*?)<\/tr>/i);
+    if (!headerMatch || !matchMatch) {
+      continue;
+    }
+
+    const headerHtml = headerMatch[1];
+    const matchHtml = matchMatch[1];
+    const eventCode = decodeHtmlText(headerHtml.match(/<span class="event">([\s\S]*?)<\/span>/i)?.[1] || "");
+    const groupName = decodeHtmlText(headerHtml.match(/<span class="group">([\s\S]*?)<\/span>/i)?.[1] || "");
+    const roundSpan = headerHtml.match(/<span class="round"[\s\S]*?<\/span>/i)?.[0] || "";
+    const roundText = getWebgenRoundText(roundSpan);
+    const tableOptions = parseWebgenDataI18nOptions(headerHtml.match(/<span class="mttable"[\s\S]*?<\/span>/i)?.[0] || "");
+    const sideBlocks = Array.from(matchHtml.matchAll(/<div class="(left|right)[^"]*">([\s\S]*?)<\/div>\s*<\/div>/gi));
+    if (sideBlocks.length < 2) {
+      continue;
+    }
+
+    const leftCompetitor = buildWebgenCompetitor(sideBlocks[0][0]);
+    const rightCompetitor = buildWebgenCompetitor(sideBlocks[1][0]);
+    if (!leftCompetitor || !rightCompetitor) {
+      continue;
+    }
+
+    const categoryName = eventNameByCode[eventCode] || eventCode;
+    const roundLabel = getWebgenRoundLabel(groupName, roundText);
+    const score = parseWebgenScore(matchHtml);
+    index += 1;
+    matches.push({
+      matchType: "individual",
+      id: `${eventId}-${dateText}-${index}`,
+      eventId,
+      documentCode: `${dateText}-${index}`,
+      source: "webgen",
+      subEventType: categoryName,
+      categoryName,
+      discipline: normalizeDiscipline(categoryName),
+      gender: inferGender(categoryName),
+      roundLabel,
+      roundKey: normalizeRound(roundLabel),
+      matchNumber: index,
+      description: `${categoryName} - ${roundLabel} - Match ${index}`,
+      venue: "",
+      table: tableOptions.table ? String(tableOptions.table) : "",
+      startDateLocal: dateText,
+      startDateUtc: "",
+      searchDateTokens: [dateText],
+      overallScore: score.overallScore,
+      resultStatus: score.resultStatus,
+      teams: [],
+      singles: [],
+      competitors: [leftCompetitor, rightCompetitor],
+      gameScores: score.gameScores || [],
+    });
+  }
+
+  return matches;
+}
+
+async function fetchWebgenOfficialResults(eventId) {
+  const normalizedId = String(eventId || "").trim().toLowerCase();
+  const config = WTT_WEBGEN_EVENTS[normalizedId];
+  if (!config) {
+    return null;
+  }
+
+  const baseUrl = config.baseUrl;
+  const [eventsHtml, datesHtml] = await Promise.all([
+    fetchText(new URL("events.html", baseUrl).toString()),
+    fetchText(new URL("dates.html", baseUrl).toString()),
+  ]);
+  const eventNameByCode = Object.fromEntries(
+    parseWebgenEventLinks(eventsHtml).map((event) => [event.code, event.name]),
+  );
+  const dateLinks = parseWebgenDateLinks(datesHtml);
+  const pages = await Promise.all(
+    dateLinks.map(async (href) => ({
+      dateText: href.replace(/\.html$/i, ""),
+      html: await fetchText(new URL(href, baseUrl).toString()),
+    })),
+  );
+
+  return pages.flatMap((page) => parseWebgenDateMatches(page.html, normalizedId, page.dateText, eventNameByCode));
 }
 
 async function fetchJson(url, { allowNotFound = false, headers = null, timeoutMs = 0 } = {}) {
@@ -3154,6 +3433,11 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
 }
 
 async function fetchWttOfficialResults(eventId, take, options = {}) {
+  const webgenPayload = await fetchWebgenOfficialResults(eventId);
+  if (Array.isArray(webgenPayload)) {
+    return webgenPayload;
+  }
+
   let primaryPayload = null;
   let primaryError = null;
 
@@ -3293,7 +3577,9 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       if (shouldReuseCachedPayload(source, mergedPayload)) {
         writeLiveWttPayloadCache(livePayloadCacheKey, mergedPayload);
         const timestamp = new Date().toISOString();
-        const archiveWrite = writeWttArchiveIfNotSmaller(archiveDir, eventId, mergedPayload, { force: refreshCache });
+        const archiveWrite = isWebgenWttEvent(eventId)
+          ? { written: false }
+          : writeWttArchiveIfNotSmaller(archiveDir, eventId, mergedPayload, { force: refreshCache });
         if (archiveWrite.written) {
           updateWttArchiveIndexEntry(archiveIndexPath, eventId, {
             pooled: true,
@@ -3948,6 +4234,7 @@ function formatIndividualScoreEn(match, leftCompetitorIndex, options = {}) {
 
 function buildJaRoundContext(matches) {
   const knockoutOrder = [
+    "round_of_256",
     "round_of_128",
     "round_of_64",
     "round_of_32",
@@ -3977,11 +4264,15 @@ function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
     return mapped;
   }
 
-  const dynamicKnockoutLabel = ["round_of_128", "round_of_64", "round_of_32", "round_of_16"].includes(roundKey)
+  const dynamicKnockoutLabel = ["round_of_256", "round_of_128", "round_of_64", "round_of_32", "round_of_16"].includes(roundKey)
     ? context?.knockoutRoundNumbers?.[roundKey]
     : null;
   if (dynamicKnockoutLabel) {
     return `${rules.labels.knockoutPrefix}${dynamicKnockoutLabel}`;
+  }
+
+  if (roundKey === "round_of_8") {
+    return "決勝トーナメント準々決勝";
   }
 
   const qualifyingRoundMatch = String(roundKey || "").match(/^qualifying_round_(\d+)$/);
