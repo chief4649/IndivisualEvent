@@ -18047,6 +18047,30 @@
     "source": "calendar",
     "updatedAt": "2026-04-07T07:59:50.700Z"
   },
+  "3421": {
+    "event": "3421",
+    "eventName": "ITTF World Para Future Costa Brava 2026",
+    "startDate": "2026-03-26",
+    "endDate": "2026-03-29",
+    "source": "bornan",
+    "updatedAt": "2026-06-23T02:45:00.000Z"
+  },
+  "3424": {
+    "event": "3424",
+    "eventName": "ITTF World Para Future Buenos Aires 2026",
+    "startDate": "2026-06-12",
+    "endDate": "2026-06-14",
+    "source": "bornan",
+    "updatedAt": "2026-06-18T01:18:38.806Z"
+  },
+  "3437": {
+    "event": "3437",
+    "eventName": "ITTF World Para Future Ostrava 2026",
+    "startDate": "2026-06-18",
+    "endDate": "2026-06-20",
+    "source": "bornan",
+    "updatedAt": "2026-06-23T02:45:00.000Z"
+  },
   "3449": {
     "event": "3449",
     "eventName": "ITTF-Africa Southern Africa Regional Championships Harare 2026",

@@ -1222,10 +1222,13 @@ function buildDateSearchValues(startDate, endDate, dateLabel) {
     const [, year, month, day] = match;
     const monthNum = String(Number(month));
     const dayNum = String(Number(day));
+    const shortYear = String(year).slice(-2);
     addMonthParts(year, month);
     values.push(`${year}/${monthNum}/${dayNum}`);
     values.push(`${year}-${monthNum}-${dayNum}`);
     values.push(`${year} ${monthNum} ${dayNum}`);
+    values.push(`${year}${month}${day}`);
+    values.push(`${shortYear}${month}${day}`);
   };
 
   addDateParts(startDate);
