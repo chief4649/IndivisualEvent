@@ -358,6 +358,34 @@
         line-height: 1.45;
       }
 
+      .player-search-panel {
+        display: grid;
+        gap: 14px;
+      }
+
+      .player-search-results {
+        display: grid;
+        gap: 8px;
+        max-height: 360px;
+        overflow-y: auto;
+      }
+
+      .player-search-line {
+        display: block;
+        font-size: 0.95rem;
+        font-weight: 600;
+        line-height: 1.6;
+      }
+
+      .player-search-empty {
+        padding: 12px 14px;
+        border: 1px dashed var(--line);
+        border-radius: 14px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.38);
+        line-height: 1.6;
+      }
+
       .admin-note {
         margin-top: 10px;
         padding: 10px 12px;
@@ -594,6 +622,22 @@
         </section>
       </section>
 
+      <details class="panel" open>
+        <summary class="admin-summary">
+          <strong>選手名検索</strong>
+        </summary>
+        <div class="admin-content player-search-panel">
+          <label>
+            選手名
+            <input id="player-search-input" placeholder="wang / chuqin / 王楚欽">
+          </label>
+          <p class="hint">辞書の選手名表記を検索します。英字名・日本語名のどちらでも検索できます。</p>
+          <div class="player-search-results" id="player-search-results">
+            <div class="player-search-empty">選手名を入力すると候補が表示されます。</div>
+          </div>
+        </div>
+      </details>
+
       <details class="panel">
         <summary class="admin-summary">
           <strong>管理画面</strong>
@@ -707,6 +751,8 @@
       const eventPeriod = document.getElementById("event-period");
       const eventSearchInput = document.getElementById("event-search-input");
       const eventSearchResults = document.getElementById("event-search-results");
+      const playerSearchInput = document.getElementById("player-search-input");
+      const playerSearchResults = document.getElementById("player-search-results");
       const categorySelect = form.elements.namedItem("category");
       const genderField = form.elements.namedItem("gender");
       const disciplineField = form.elements.namedItem("discipline");
@@ -718,6 +764,7 @@
       let categoryRequestId = 0;
       let roundRequestId = 0;
       let eventSearchRequestId = 0;
+      let playerSearchRequestId = 0;
       let eventRefreshTimer = null;
       let lastBackgroundErrorMessage = "";
       let lastBackgroundErrorAt = 0;
@@ -924,6 +971,74 @@
           return;
         }
         renderEventSearchResults(data.events || []);
+      }
+
+      function renderPlayerSearchResults(data) {
+        playerSearchResults.innerHTML = "";
+        const rows = Array.isArray(data?.results) ? [...data.results] : [];
+        if (data?.fallback) {
+          rows.push(data.fallback);
+        }
+
+        if (rows.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "player-search-empty";
+          empty.textContent = "該当する選手名はありません。";
+          playerSearchResults.appendChild(empty);
+          return;
+        }
+
+        rows.forEach((item) => {
+          const lineText = `${item.name || ""}　${item.translatedName || "未登録"}`.trim();
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "search-result";
+          button.title = "クリックでコピー";
+
+          const line = document.createElement("span");
+          line.className = "player-search-line";
+          line.textContent = lineText;
+          button.appendChild(line);
+
+          const meta = document.createElement("span");
+          meta.className = "search-result-meta";
+          meta.textContent = item.registered ? "辞書登録あり" : "未登録";
+          button.appendChild(meta);
+
+          button.addEventListener("click", async () => {
+            try {
+              await navigator.clipboard.writeText(lineText);
+              setStatus("選手名表記をコピーしました。");
+            } catch {
+              setStatus("コピーできませんでした。");
+            }
+          });
+
+          playerSearchResults.appendChild(button);
+        });
+      }
+
+      async function loadPlayerSearchResults() {
+        const query = playerSearchInput.value.trim();
+        if (!query) {
+          playerSearchResults.innerHTML = "";
+          const empty = document.createElement("div");
+          empty.className = "player-search-empty";
+          empty.textContent = "選手名を入力すると候補が表示されます。";
+          playerSearchResults.appendChild(empty);
+          return;
+        }
+
+        const requestId = ++playerSearchRequestId;
+        const response = await fetchWithTimeout(`/api/players/search?q=${encodeURIComponent(query)}`);
+        const data = await readJsonResponse(response, "選手名候補の読み込みに失敗しました。");
+        if (!response.ok) {
+          throw new Error(data.error || "選手名候補の読み込みに失敗しました。");
+        }
+        if (requestId !== playerSearchRequestId) {
+          return;
+        }
+        renderPlayerSearchResults(data);
       }
 
       function setCategoryOptions(categories) {
@@ -1432,6 +1547,14 @@
 
       eventSearchInput.addEventListener("focus", () => {
         loadEventSearchResults().catch(reportBackgroundError);
+      });
+
+      playerSearchInput.addEventListener("input", () => {
+        loadPlayerSearchResults().catch(reportBackgroundError);
+      });
+
+      playerSearchInput.addEventListener("focus", () => {
+        loadPlayerSearchResults().catch(reportBackgroundError);
       });
 
       categorySelect.addEventListener("change", () => {

@@ -2425,6 +2425,80 @@ async function handleEventSearchApi(requestUrl, response) {
   }
 }
 
+async function handlePlayerSearchApi(requestUrl, response) {
+  try {
+    await syncTranslationsFromSharedSource();
+    const query = String(requestUrl.searchParams.get("q") || "").trim();
+    const limit = Math.min(Math.max(Number(requestUrl.searchParams.get("limit") || 50) || 50, 1), 100);
+    const translations = readTranslations(TRANSLATIONS_PATH);
+    const players = translations.players && typeof translations.players === "object" && !Array.isArray(translations.players)
+      ? translations.players
+      : {};
+    const tokens = normalizeSearchText(query).split(/\s+/).filter(Boolean);
+    const results = [];
+
+    if (tokens.length > 0) {
+      Object.entries(players).forEach(([name, translatedName]) => {
+        const haystack = normalizeSearchText(`${name} ${translatedName}`);
+        if (tokens.every((token) => haystack.includes(token))) {
+          results.push({
+            name,
+            translatedName: String(translatedName || "").trim() || "未登録",
+            registered: Boolean(String(translatedName || "").trim()),
+            score: getPlayerSearchScore(query, name, translatedName),
+          });
+        }
+      });
+    }
+
+    results.sort((left, right) =>
+      (left.score || 0) - (right.score || 0) ||
+      String(left.name || "").localeCompare(String(right.name || ""), "en", {
+        numeric: true,
+        sensitivity: "base",
+      }),
+    );
+
+    sendJson(response, 200, {
+      query,
+      results: results.slice(0, limit).map(({ score, ...item }) => item),
+      fallback: query && results.length === 0
+        ? {
+            name: query,
+            translatedName: "未登録",
+            registered: false,
+          }
+        : null,
+    });
+  } catch (error) {
+    sendJson(response, 500, {
+      error: createFriendlyErrorMessage(error),
+    });
+  }
+}
+
+function getPlayerSearchScore(query, name, translatedName) {
+  const normalizedQuery = normalizeSearchText(query);
+  const normalizedName = normalizeSearchText(name);
+  const normalizedTranslatedName = normalizeSearchText(translatedName);
+  if (!normalizedQuery) {
+    return 99;
+  }
+  if (normalizedName === normalizedQuery) {
+    return 0;
+  }
+  if (normalizedName.startsWith(`${normalizedQuery} `) || normalizedName.startsWith(normalizedQuery)) {
+    return 1;
+  }
+  if (normalizedName.split(/\s+/).some((token) => token.startsWith(normalizedQuery))) {
+    return 2;
+  }
+  if (normalizedTranslatedName.startsWith(normalizedQuery)) {
+    return 3;
+  }
+  return 4;
+}
+
 async function handleViewerLogin(request, response) {
   if (!VIEWER_PASSWORD) {
     sendText(response, 302, "", "text/plain; charset=utf-8", {
@@ -2630,7 +2704,8 @@ const server = http.createServer((request, response) => {
       requestUrl.pathname === "/api/individual-matches" ||
       requestUrl.pathname === "/api/categories" ||
       requestUrl.pathname === "/api/rounds" ||
-      requestUrl.pathname === "/api/events/search"
+      requestUrl.pathname === "/api/events/search" ||
+      requestUrl.pathname === "/api/players/search"
     )
   ) {
     if (requestUrl.pathname === "/api/categories") {
@@ -2639,6 +2714,8 @@ const server = http.createServer((request, response) => {
       handleRoundsApi(requestUrl, response);
     } else if (requestUrl.pathname === "/api/events/search") {
       handleEventSearchApi(requestUrl, response);
+    } else if (requestUrl.pathname === "/api/players/search") {
+      handlePlayerSearchApi(requestUrl, response);
     } else {
       handleApi(requestUrl, response);
     }
