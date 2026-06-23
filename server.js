@@ -1199,6 +1199,18 @@ function normalizeSearchText(value) {
     .trim();
 }
 
+function normalizePlayerSearchText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^\p{Letter}\p{Number}]+/gu, " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((token) => (/^\d+$/.test(token) ? String(Number(token)) : token))
+    .join(" ")
+    .trim();
+}
+
 function buildDateSearchValues(startDate, endDate, dateLabel) {
   const values = [startDate, endDate, dateLabel].filter(Boolean).map((value) => String(value));
   const addMonthParts = (year, month) => {
@@ -2434,12 +2446,12 @@ async function handlePlayerSearchApi(requestUrl, response) {
     const players = translations.players && typeof translations.players === "object" && !Array.isArray(translations.players)
       ? translations.players
       : {};
-    const tokens = normalizeSearchText(query).split(/\s+/).filter(Boolean);
+    const tokens = normalizePlayerSearchText(query).split(/\s+/).filter(Boolean);
     const results = [];
 
     if (tokens.length > 0) {
       Object.entries(players).forEach(([name, translatedName]) => {
-        const haystack = normalizeSearchText(`${name} ${translatedName}`);
+        const haystack = normalizePlayerSearchText(`${name} ${translatedName}`);
         if (tokens.every((token) => haystack.includes(token))) {
           results.push({
             name,
@@ -2478,9 +2490,9 @@ async function handlePlayerSearchApi(requestUrl, response) {
 }
 
 function getPlayerSearchScore(query, name, translatedName) {
-  const normalizedQuery = normalizeSearchText(query);
-  const normalizedName = normalizeSearchText(name);
-  const normalizedTranslatedName = normalizeSearchText(translatedName);
+  const normalizedQuery = normalizePlayerSearchText(query);
+  const normalizedName = normalizePlayerSearchText(name);
+  const normalizedTranslatedName = normalizePlayerSearchText(translatedName);
   if (!normalizedQuery) {
     return 99;
   }
