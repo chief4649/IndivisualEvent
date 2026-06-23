@@ -1970,6 +1970,11 @@ function formatCategoryLabel(categoryName, gender, discipline) {
 function getCategorySortKey(category) {
   const value = String(category?.value || "").trim();
   const label = String(category?.label || "").trim();
+  const paraSortKey = getParaCategorySortKey(value);
+  if (paraSortKey) {
+    return paraSortKey;
+  }
+
   if (/^Junior Boys Singles$/i.test(value)) {
     return [0, 0, -18, 0, value.toLowerCase()];
   }
@@ -1995,6 +2000,36 @@ function getCategorySortKey(category) {
   }
 
   return [2, 0, 0, 0, label.toLowerCase()];
+}
+
+function getParaCategorySortKey(value) {
+  const text = String(value || "")
+    .replace(/['’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const match = text.match(/^(Men|Women|Mixed)\s+(Singles|Doubles)\s+Class(?:es)?\s+([A-Z]*)(\d+)(?:-(\d+))?$/i);
+  if (!match) {
+    return null;
+  }
+
+  const [, divisionRaw, eventTypeRaw, classPrefixRaw, classStartRaw, classEndRaw] = match;
+  const eventType = eventTypeRaw.toLowerCase();
+  const division = divisionRaw.toLowerCase();
+  const classPrefix = classPrefixRaw.toUpperCase();
+  const classStart = Number(classStartRaw);
+  const classEnd = Number(classEndRaw || classStartRaw);
+  const disciplineOrder = eventType === "singles" ? 0 : division === "mixed" ? 2 : 1;
+  const divisionOrder = division === "men" ? 0 : division === "women" ? 1 : 2;
+
+  return [
+    1,
+    disciplineOrder,
+    divisionOrder,
+    Number.isFinite(classStart) ? classStart : 999,
+    Number.isFinite(classEnd) ? classEnd : 999,
+    classPrefix,
+    text.toLowerCase(),
+  ];
 }
 
 function summarizeCategories(matches) {

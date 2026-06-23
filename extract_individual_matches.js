@@ -4389,6 +4389,11 @@ function getRoundSortValue(match, context) {
 
 function getCategorySortValue(match) {
   const categoryName = String(match.categoryName || "").trim();
+  const paraSortKey = getParaCategorySortValue(categoryName);
+  if (paraSortKey) {
+    return paraSortKey;
+  }
+
   if (/^Junior Boys Singles$/i.test(categoryName)) {
     return [0, 0, -18, 0, categoryName.toLowerCase()];
   }
@@ -4432,6 +4437,36 @@ function getCategorySortValue(match) {
   }
 
   return [2, 0, 0, categoryName.toLowerCase()];
+}
+
+function getParaCategorySortValue(categoryName) {
+  const text = String(categoryName || "")
+    .replace(/['’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const match = text.match(/^(Men|Women|Mixed)\s+(Singles|Doubles)\s+Class(?:es)?\s+([A-Z]*)(\d+)(?:-(\d+))?$/i);
+  if (!match) {
+    return null;
+  }
+
+  const [, divisionRaw, eventTypeRaw, classPrefixRaw, classStartRaw, classEndRaw] = match;
+  const eventType = eventTypeRaw.toLowerCase();
+  const division = divisionRaw.toLowerCase();
+  const classPrefix = classPrefixRaw.toUpperCase();
+  const classStart = Number(classStartRaw);
+  const classEnd = Number(classEndRaw || classStartRaw);
+  const disciplineOrder = eventType === "singles" ? 0 : division === "mixed" ? 2 : 1;
+  const divisionOrder = division === "men" ? 0 : division === "women" ? 1 : 2;
+
+  return [
+    1,
+    disciplineOrder,
+    divisionOrder,
+    Number.isFinite(classStart) ? classStart : 999,
+    Number.isFinite(classEnd) ? classEnd : 999,
+    classPrefix,
+    text.toLowerCase(),
+  ];
 }
 
 function sortIndividualMatches(matches, context) {
