@@ -2525,6 +2525,53 @@ function listWttRecordEventIds() {
   }
 }
 
+let playerRecordCache = null;
+
+function getPathStatToken(filePath) {
+  try {
+    const stat = fs.statSync(filePath);
+    return `${stat.size}:${Math.trunc(stat.mtimeMs)}`;
+  } catch {
+    return "missing";
+  }
+}
+
+function getWttRecordFileSnapshot() {
+  try {
+    if (!fs.existsSync(WTT_ARCHIVE_DIR)) {
+      return [];
+    }
+    return fs.readdirSync(WTT_ARCHIVE_DIR)
+      .filter((fileName) => /^\d+\.json$/.test(fileName))
+      .map((fileName) => {
+        const filePath = path.join(WTT_ARCHIVE_DIR, fileName);
+        const stat = fs.statSync(filePath);
+        return {
+          eventId: fileName.replace(/\.json$/, ""),
+          filePath,
+          size: stat.size,
+          mtimeMs: Math.trunc(stat.mtimeMs),
+        };
+      })
+      .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
+  } catch {
+    return [];
+  }
+}
+
+function getPlayerRecordCacheSignature(snapshot) {
+  const dataSignature = snapshot.map((file) => `${file.eventId}:${file.size}:${file.mtimeMs}`).join("|");
+  const configSignature = [
+    TRANSLATIONS_PATH,
+    RULES_PATH,
+    WTT_ARCHIVE_INDEX_PATH,
+    WTT_DATE_INDEX_PATH,
+    WTT_SEARCH_INDEX_PATH,
+    EVENT_NAMES_PATH,
+  ].map((filePath) => `${path.basename(filePath)}:${getPathStatToken(filePath)}`).join("|");
+  return `${dataSignature}::${configSignature}`;
+}
+
 function readWttRecordPayload(eventId) {
   const filePath = path.join(WTT_ARCHIVE_DIR, `${eventId}.json`);
   try {
@@ -2579,6 +2626,20 @@ function playerMatchesCompetitor(competitor, needles, translations) {
   ].flatMap(buildPlayerNameSearchValues).filter(Boolean);
 
   return values.some((value) => needles.some((needle) => value === needle));
+}
+
+function buildCompetitorPlayerRecordKeys(competitor, translations) {
+  if (!competitor) {
+    return [];
+  }
+  return Array.from(new Set([
+    competitor.name,
+    translations.players?.[competitor.name || ""],
+    ...(Array.isArray(competitor.players) ? competitor.players.flatMap((player) => [
+      player?.name,
+      translations.players?.[player?.name || ""],
+    ]) : []),
+  ].flatMap(buildPlayerNameSearchValues).filter(Boolean)));
 }
 
 function findPlayerCompetitorIndex(match, needles, translations) {
@@ -2683,6 +2744,93 @@ function comparePlayerRecordEvents(left, right) {
   return String(right?.event || "").localeCompare(String(left?.event || ""), "en", { numeric: true });
 }
 
+function addPlayerRecordIndexEntry(index, key, eventMeta, matchEntry) {
+  if (!key) {
+    return;
+  }
+  if (!index.has(key)) {
+    index.set(key, new Map());
+  }
+  const eventMap = index.get(key);
+  if (!eventMap.has(eventMeta.event)) {
+    eventMap.set(eventMeta.event, {
+      ...eventMeta,
+      matches: [],
+    });
+  }
+  eventMap.get(eventMeta.event).matches.push(matchEntry);
+}
+
+function readWttRecordPayloadFromPath(filePath) {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function buildPlayerRecordCache(snapshot) {
+  const translations = readTranslations(TRANSLATIONS_PATH);
+  const rules = readRules(RULES_PATH);
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  const archiveIndex = readWttArchiveIndex();
+  const eventNames = getEventNamesMap();
+  const index = new Map();
+  let indexedMatches = 0;
+
+  snapshot.forEach((file) => {
+    const eventMeta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
+    const payload = readWttRecordPayloadFromPath(file.filePath);
+    payload.forEach((item) => {
+      const match = normalizeArchivedMatch(item);
+      if (!match || match.matchType !== "individual") {
+        return;
+      }
+      const competitors = Array.isArray(match.competitors) ? match.competitors : [];
+      if (competitors.length === 0) {
+        return;
+      }
+      const roundLabel = translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match]));
+      competitors.forEach((competitor, competitorIndex) => {
+        const keys = buildCompetitorPlayerRecordKeys(competitor, translations);
+        if (keys.length === 0) {
+          return;
+        }
+        const matchEntry = {
+          categoryName: match.categoryName || "",
+          roundLabel,
+          line: buildPlayerRecordLine(match, competitorIndex, translations),
+          documentCode: match.documentCode || "",
+        };
+        keys.forEach((key) => addPlayerRecordIndexEntry(index, key, eventMeta, matchEntry));
+      });
+      indexedMatches += 1;
+    });
+  });
+
+  return {
+    index,
+    scannedEvents: snapshot.length,
+    indexedMatches,
+  };
+}
+
+function getPlayerRecordCache() {
+  const snapshot = getWttRecordFileSnapshot();
+  const signature = getPlayerRecordCacheSignature(snapshot);
+  if (!playerRecordCache || playerRecordCache.signature !== signature) {
+    const rebuilt = buildPlayerRecordCache(snapshot);
+    playerRecordCache = {
+      signature,
+      builtAt: Date.now(),
+      ...rebuilt,
+    };
+  }
+  return playerRecordCache;
+}
+
 async function handlePlayerRecordsApi(requestUrl, response) {
   try {
     await syncTranslationsFromSharedSource();
@@ -2690,60 +2838,81 @@ async function handlePlayerRecordsApi(requestUrl, response) {
     const translatedName = String(requestUrl.searchParams.get("translatedName") || "").trim();
     const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
     const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
-    const translations = readTranslations(TRANSLATIONS_PATH);
-    const rules = readRules(RULES_PATH);
     const needles = buildPlayerRecordNeedles(name, translatedName);
-    const searchIndex = readWttSearchIndex();
-    const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
-    const archiveIndex = readWttArchiveIndex();
-    const eventNames = getEventNamesMap();
-    const recordEventIds = listWttRecordEventIds();
-    const events = [];
-    let returnedMatches = 0;
+    if (needles.length === 0) {
+      sendJson(response, 200, {
+        name,
+        translatedName,
+        events: [],
+        meta: {
+          cacheBuiltAt: null,
+          scannedEvents: 0,
+          indexedMatches: 0,
+          returnedEvents: 0,
+          returnedMatches: 0,
+        },
+      });
+      return;
+    }
+    const cache = getPlayerRecordCache();
+    const eventMap = new Map();
 
-    for (const eventId of recordEventIds) {
-      if (returnedMatches >= matchLimit) {
-        break;
+    needles.forEach((needle) => {
+      const needleEvents = cache.index.get(needle);
+      if (!needleEvents) {
+        return;
       }
-      const payload = readWttRecordPayload(eventId);
-      const matches = [];
-      payload.forEach((item) => {
-        if (returnedMatches + matches.length >= matchLimit) {
-          return;
+      needleEvents.forEach((eventRecord, eventId) => {
+        if (!eventMap.has(eventId)) {
+          eventMap.set(eventId, {
+            ...eventRecord,
+            matches: [],
+          });
         }
-        const match = normalizeArchivedMatch(item);
-        if (!match || match.matchType !== "individual") {
-          return;
-        }
-        const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
-        if (competitorIndex < 0) {
-          return;
-        }
-        matches.push({
-          categoryName: match.categoryName || "",
-          roundLabel: translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match])),
-          line: buildPlayerRecordLine(match, competitorIndex, translations),
-          documentCode: match.documentCode || "",
+        eventRecord.matches.forEach((match) => {
+          const target = eventMap.get(eventId);
+          const duplicate = target.matches.some((existing) => (
+            existing.documentCode === match.documentCode &&
+            existing.categoryName === match.categoryName &&
+            existing.roundLabel === match.roundLabel &&
+            existing.line === match.line
+          ));
+          if (!duplicate) {
+            target.matches.push(match);
+          }
         });
       });
+    });
+
+    const events = Array.from(eventMap.values());
+    events.sort(comparePlayerRecordEvents);
+    let returnedMatches = 0;
+    const limitedEvents = [];
+    for (const event of events) {
+      if (limitedEvents.length >= eventLimit || returnedMatches >= matchLimit) {
+        break;
+      }
+      const remainingMatches = matchLimit - returnedMatches;
+      const matches = event.matches.slice(0, remainingMatches);
       if (matches.length === 0) {
         continue;
       }
       returnedMatches += matches.length;
-      events.push({
-        ...getEventRecordMeta(eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+      limitedEvents.push({
+        ...event,
         matches,
       });
     }
 
-    events.sort(comparePlayerRecordEvents);
     sendJson(response, 200, {
       name,
       translatedName,
-      events: events.slice(0, eventLimit),
+      events: limitedEvents,
       meta: {
-        scannedEvents: recordEventIds.length,
-        returnedEvents: Math.min(events.length, eventLimit),
+        cacheBuiltAt: cache.builtAt,
+        scannedEvents: cache.scannedEvents,
+        indexedMatches: cache.indexedMatches,
+        returnedEvents: limitedEvents.length,
         returnedMatches,
       },
     });
