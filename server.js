@@ -2512,20 +2512,8 @@ function getPlayerSearchScore(query, name, translatedName) {
   return 4;
 }
 
-function listWttRecordEventIds() {
-  try {
-    if (!fs.existsSync(WTT_ARCHIVE_DIR)) {
-      return [];
-    }
-    return fs.readdirSync(WTT_ARCHIVE_DIR)
-      .filter((fileName) => /^\d+\.json$/.test(fileName))
-      .map((fileName) => fileName.replace(/\.json$/, ""));
-  } catch {
-    return [];
-  }
-}
-
-let playerRecordCache = null;
+const playerRecordResultCache = new Map();
+const PLAYER_RECORD_RESULT_CACHE_MAX = 100;
 
 function getPathStatToken(filePath) {
   try {
@@ -2572,16 +2560,14 @@ function getPlayerRecordCacheSignature(snapshot) {
   return `${dataSignature}::${configSignature}`;
 }
 
-function readWttRecordPayload(eventId) {
-  const filePath = path.join(WTT_ARCHIVE_DIR, `${eventId}.json`);
-  try {
-    if (!fs.existsSync(filePath)) {
-      return [];
-    }
-    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
+function setPlayerRecordResultCacheValue(key, value) {
+  if (playerRecordResultCache.has(key)) {
+    playerRecordResultCache.delete(key);
+  }
+  playerRecordResultCache.set(key, value);
+  while (playerRecordResultCache.size > PLAYER_RECORD_RESULT_CACHE_MAX) {
+    const oldestKey = playerRecordResultCache.keys().next().value;
+    playerRecordResultCache.delete(oldestKey);
   }
 }
 
@@ -2626,20 +2612,6 @@ function playerMatchesCompetitor(competitor, needles, translations) {
   ].flatMap(buildPlayerNameSearchValues).filter(Boolean);
 
   return values.some((value) => needles.some((needle) => value === needle));
-}
-
-function buildCompetitorPlayerRecordKeys(competitor, translations) {
-  if (!competitor) {
-    return [];
-  }
-  return Array.from(new Set([
-    competitor.name,
-    translations.players?.[competitor.name || ""],
-    ...(Array.isArray(competitor.players) ? competitor.players.flatMap((player) => [
-      player?.name,
-      translations.players?.[player?.name || ""],
-    ]) : []),
-  ].flatMap(buildPlayerNameSearchValues).filter(Boolean)));
 }
 
 function findPlayerCompetitorIndex(match, needles, translations) {
@@ -2744,91 +2716,131 @@ function comparePlayerRecordEvents(left, right) {
   return String(right?.event || "").localeCompare(String(left?.event || ""), "en", { numeric: true });
 }
 
-function addPlayerRecordIndexEntry(index, key, eventMeta, matchEntry) {
-  if (!key) {
-    return;
+function readTextFile(filePath) {
+  try {
+    return fs.readFileSync(filePath, "utf8");
+  } catch {
+    return "";
   }
-  if (!index.has(key)) {
-    index.set(key, new Map());
-  }
-  const eventMap = index.get(key);
-  if (!eventMap.has(eventMeta.event)) {
-    eventMap.set(eventMeta.event, {
-      ...eventMeta,
-      matches: [],
-    });
-  }
-  eventMap.get(eventMeta.event).matches.push(matchEntry);
 }
 
-function readWttRecordPayloadFromPath(filePath) {
+function parseJsonArrayFromText(text) {
   try {
-    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    const parsed = JSON.parse(text);
     return Array.isArray(parsed) ? parsed : [];
   } catch {
     return [];
   }
 }
 
-function buildPlayerRecordCache(snapshot) {
+function buildPlayerRecordTextNeedles(name) {
+  const normalizedValues = buildPlayerNameSearchValues(name)
+    .filter((value) => /^[a-z0-9 ]+$/.test(value))
+    .map((value) => {
+      const tokens = value.split(/\s+/).filter(Boolean);
+      return {
+        phrase: value.toLowerCase(),
+        compact: tokens.join("").toLowerCase(),
+        tokens: tokens.map((token) => token.toLowerCase()),
+      };
+    })
+    .filter((value) => value.phrase.length >= 2);
+  return normalizedValues;
+}
+
+function textLikelyContainsPlayer(text, textNeedles) {
+  if (textNeedles.length === 0) {
+    return true;
+  }
+  const haystack = text.toLowerCase();
+  const compactHaystack = haystack.replace(/[^a-z0-9]+/g, "");
+  return textNeedles.some((needle) => {
+    if (haystack.includes(needle.phrase) || compactHaystack.includes(needle.compact)) {
+      return true;
+    }
+    if (needle.tokens.length > 1) {
+      return needle.tokens.every((token) => haystack.includes(token));
+    }
+    return needle.tokens.some((token) => token.length >= 2 && haystack.includes(token));
+  });
+}
+
+function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
   const searchIndex = readWttSearchIndex();
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
   const archiveIndex = readWttArchiveIndex();
   const eventNames = getEventNamesMap();
-  const index = new Map();
-  let indexedMatches = 0;
+  const events = [];
+  let parsedEvents = 0;
+  let scannedMatches = 0;
 
   snapshot.forEach((file) => {
-    const eventMeta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
-    const payload = readWttRecordPayloadFromPath(file.filePath);
+    const text = readTextFile(file.filePath);
+    if (!text || !textLikelyContainsPlayer(text, textNeedles)) {
+      return;
+    }
+    parsedEvents += 1;
+    const payload = parseJsonArrayFromText(text);
+    const matches = [];
     payload.forEach((item) => {
       const match = normalizeArchivedMatch(item);
       if (!match || match.matchType !== "individual") {
         return;
       }
-      const competitors = Array.isArray(match.competitors) ? match.competitors : [];
-      if (competitors.length === 0) {
+      scannedMatches += 1;
+      const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
+      if (competitorIndex < 0) {
         return;
       }
-      const roundLabel = translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match]));
-      competitors.forEach((competitor, competitorIndex) => {
-        const keys = buildCompetitorPlayerRecordKeys(competitor, translations);
-        if (keys.length === 0) {
-          return;
-        }
-        const matchEntry = {
-          categoryName: match.categoryName || "",
-          roundLabel,
-          line: buildPlayerRecordLine(match, competitorIndex, translations),
-          documentCode: match.documentCode || "",
-        };
-        keys.forEach((key) => addPlayerRecordIndexEntry(index, key, eventMeta, matchEntry));
+      matches.push({
+        categoryName: match.categoryName || "",
+        roundLabel: translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match])),
+        line: buildPlayerRecordLine(match, competitorIndex, translations),
+        documentCode: match.documentCode || "",
       });
-      indexedMatches += 1;
+    });
+    if (matches.length === 0) {
+      return;
+    }
+    events.push({
+      ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+      matches,
     });
   });
 
+  events.sort(comparePlayerRecordEvents);
   return {
-    index,
-    scannedEvents: snapshot.length,
-    indexedMatches,
+    events,
+    parsedEvents,
+    scannedMatches,
   };
 }
 
-function getPlayerRecordCache() {
+function getPlayerRecordSearchResult(name, translatedName, needles) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
-  if (!playerRecordCache || playerRecordCache.signature !== signature) {
-    const rebuilt = buildPlayerRecordCache(snapshot);
-    playerRecordCache = {
-      signature,
-      builtAt: Date.now(),
-      ...rebuilt,
+  const cacheKey = `${signature}::${needles.join("|")}`;
+  const cached = playerRecordResultCache.get(cacheKey);
+  if (cached) {
+    return {
+      ...cached,
+      cacheHit: true,
     };
   }
-  return playerRecordCache;
+  const collected = collectPlayerRecordEvents(snapshot, needles, buildPlayerRecordTextNeedles(name));
+  const result = {
+      signature,
+      builtAt: Date.now(),
+    scannedEvents: snapshot.length,
+    ...collected,
+  };
+  setPlayerRecordResultCacheValue(cacheKey, result);
+  return {
+    ...result,
+    cacheHit: false,
+  };
 }
 
 async function handlePlayerRecordsApi(requestUrl, response) {
@@ -2854,38 +2866,8 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       });
       return;
     }
-    const cache = getPlayerRecordCache();
-    const eventMap = new Map();
-
-    needles.forEach((needle) => {
-      const needleEvents = cache.index.get(needle);
-      if (!needleEvents) {
-        return;
-      }
-      needleEvents.forEach((eventRecord, eventId) => {
-        if (!eventMap.has(eventId)) {
-          eventMap.set(eventId, {
-            ...eventRecord,
-            matches: [],
-          });
-        }
-        eventRecord.matches.forEach((match) => {
-          const target = eventMap.get(eventId);
-          const duplicate = target.matches.some((existing) => (
-            existing.documentCode === match.documentCode &&
-            existing.categoryName === match.categoryName &&
-            existing.roundLabel === match.roundLabel &&
-            existing.line === match.line
-          ));
-          if (!duplicate) {
-            target.matches.push(match);
-          }
-        });
-      });
-    });
-
-    const events = Array.from(eventMap.values());
-    events.sort(comparePlayerRecordEvents);
+    const searchResult = getPlayerRecordSearchResult(name, translatedName, needles);
+    const events = searchResult.events;
     let returnedMatches = 0;
     const limitedEvents = [];
     for (const event of events) {
@@ -2909,9 +2891,11 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       translatedName,
       events: limitedEvents,
       meta: {
-        cacheBuiltAt: cache.builtAt,
-        scannedEvents: cache.scannedEvents,
-        indexedMatches: cache.indexedMatches,
+        cacheBuiltAt: searchResult.builtAt,
+        cacheHit: searchResult.cacheHit,
+        scannedEvents: searchResult.scannedEvents,
+        parsedEvents: searchResult.parsedEvents,
+        scannedMatches: searchResult.scannedMatches,
         returnedEvents: limitedEvents.length,
         returnedMatches,
       },
