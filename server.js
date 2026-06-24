@@ -60,6 +60,7 @@ const TRUST_PROXY = process.env.TRUST_PROXY === "1";
 const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60_000);
 const RATE_LIMIT_MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 60);
 const RATE_LIMIT_MAX_CLIENTS = Number(process.env.RATE_LIMIT_MAX_CLIENTS || 1_000);
+const SKIP_RUNTIME_ARCHIVE_SYNC = process.env.SKIP_RUNTIME_ARCHIVE_SYNC === "1" || process.env.RENDER === "true";
 const VIEWER_COOKIE_NAME = "ttreport_individual_viewer_auth";
 const TEAM_TRANSLATIONS_BASE_URL = String(process.env.TEAM_TRANSLATIONS_BASE_URL || "").trim().replace(/\/+$/, "");
 const TEAM_TRANSLATIONS_ADMIN_TOKEN = process.env.TEAM_TRANSLATIONS_ADMIN_TOKEN || "";
@@ -146,8 +147,11 @@ function syncDirectoryFilesFromDefaultIfNewer(targetDir, sourceDir) {
 function ensureRuntimeFiles() {
   ensureDir(DATA_DIR);
   ensureDir(CACHE_DIR);
-  syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
-  syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
+  if (!SKIP_RUNTIME_ARCHIVE_SYNC) {
+    syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
+    syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
+  }
+  syncDirectoryFilesFromDefaultIfNewer(PLAYER_RECORDS_INDEX_DIR, path.join(__dirname, "player-records-index"));
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
   syncFileFromDefaultIfNewer(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
@@ -3296,6 +3300,11 @@ const server = http.createServer((request, response) => {
       ok: true,
       adminProtected: Boolean(ADMIN_TOKEN),
       viewerProtected: Boolean(VIEWER_PASSWORD),
+      runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
+      playerRecordsIndex: {
+        exists: fs.existsSync(PLAYER_RECORDS_INDEX_DIR),
+        manifestExists: fs.existsSync(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
+      },
     });
     return;
   }
