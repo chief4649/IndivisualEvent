@@ -18,6 +18,7 @@ const {
   getWttEventLifecycleMeta,
   getProcessedMatches,
   inferGender,
+  normalizeOfficialResultItem,
   normalizeCategory,
   normalizeDiscipline,
   normalizeSource,
@@ -2511,6 +2512,248 @@ function getPlayerSearchScore(query, name, translatedName) {
   return 4;
 }
 
+function listWttRecordEventIds() {
+  try {
+    if (!fs.existsSync(WTT_ARCHIVE_DIR)) {
+      return [];
+    }
+    return fs.readdirSync(WTT_ARCHIVE_DIR)
+      .filter((fileName) => /^\d+\.json$/.test(fileName))
+      .map((fileName) => fileName.replace(/\.json$/, ""));
+  } catch {
+    return [];
+  }
+}
+
+function readWttRecordPayload(eventId) {
+  const filePath = path.join(WTT_ARCHIVE_DIR, `${eventId}.json`);
+  try {
+    if (!fs.existsSync(filePath)) {
+      return [];
+    }
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function normalizeArchivedMatch(item) {
+  if (item && typeof item === "object" && typeof item.matchType === "string" && Array.isArray(item.competitors)) {
+    return item;
+  }
+  return normalizeOfficialResultItem(item);
+}
+
+function buildPlayerRecordNeedles(name, translatedName) {
+  return [
+    ...buildPlayerNameSearchValues(name),
+    ...buildPlayerNameSearchValues(translatedName),
+  ].filter(Boolean);
+}
+
+function buildPlayerNameSearchValues(value) {
+  const normalized = normalizePlayerSearchText(value);
+  if (!normalized) {
+    return [];
+  }
+  const values = [normalized];
+  const tokens = normalized.split(/\s+/).filter(Boolean);
+  if (tokens.length > 1 && tokens.every((token) => /^[a-z]+$/i.test(token))) {
+    values.push([...tokens].reverse().join(" "));
+  }
+  return Array.from(new Set(values));
+}
+
+function playerMatchesCompetitor(competitor, needles, translations) {
+  if (!competitor || needles.length === 0) {
+    return false;
+  }
+  const values = [
+    competitor.name,
+    translations.players?.[competitor.name || ""],
+    ...(Array.isArray(competitor.players) ? competitor.players.flatMap((player) => [
+      player?.name,
+      translations.players?.[player?.name || ""],
+    ]) : []),
+  ].flatMap(buildPlayerNameSearchValues).filter(Boolean);
+
+  return values.some((value) => needles.some((needle) => value === needle));
+}
+
+function findPlayerCompetitorIndex(match, needles, translations) {
+  const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
+  return competitors.findIndex((competitor) => playerMatchesCompetitor(competitor, needles, translations));
+}
+
+function translatePlayerNameForRecord(name, translations) {
+  const raw = String(name || "").trim();
+  if (!raw) {
+    return "";
+  }
+  const reversed = raw.split(/\s+/).filter(Boolean).reverse().join(" ");
+  return translations.players?.[raw] || translations.players?.[reversed] || raw;
+}
+
+function formatCompetitorForRecord(competitor, translations) {
+  if (!competitor) {
+    return "TBD";
+  }
+  const players = Array.isArray(competitor.players) ? competitor.players.filter(Boolean) : [];
+  if (players.length > 0) {
+    return players.map((player) => translatePlayerNameForRecord(player?.name, translations)).filter(Boolean).join("／");
+  }
+  return translatePlayerNameForRecord(competitor.name, translations) || "TBD";
+}
+
+function getWinnerIndexFromOverallScore(score) {
+  const [leftRaw, rightRaw] = String(score || "").split("-");
+  const left = Number(leftRaw);
+  const right = Number(String(rightRaw || "").match(/\d+/)?.[0]);
+  if (Number.isNaN(left) || Number.isNaN(right)) {
+    return null;
+  }
+  if (left > right) {
+    return 0;
+  }
+  if (right > left) {
+    return 1;
+  }
+  return null;
+}
+
+function formatGameScoresForRecord(match, leftCompetitorIndex) {
+  const games = Array.isArray(match?.gameScores) ? match.gameScores : [];
+  const statusText = `${match?.overallScore || ""} ${match?.resultStatus || ""}`.toLowerCase();
+  if (statusText.includes("wo")) {
+    return "不戦勝";
+  }
+  if (games.length === 0) {
+    return String(match?.overallScore || "").trim() || "-";
+  }
+  return games.map((game) => {
+    const [rawLeft, rawRight] = String(game).split("-");
+    const homePoints = Number(rawLeft);
+    const awayPoints = Number(rawRight);
+    if (Number.isNaN(homePoints) || Number.isNaN(awayPoints)) {
+      return String(game);
+    }
+    const leftPoints = leftCompetitorIndex === 0 ? homePoints : awayPoints;
+    const rightPoints = leftCompetitorIndex === 0 ? awayPoints : homePoints;
+    return leftPoints > rightPoints ? String(rightPoints) : `-${leftPoints}`;
+  }).join(",");
+}
+
+function buildPlayerRecordLine(match, playerCompetitorIndex, translations) {
+  const winnerIndex = getWinnerIndexFromOverallScore(match.overallScore);
+  const leftIndex = winnerIndex === playerCompetitorIndex ? playerCompetitorIndex : winnerIndex === null ? playerCompetitorIndex : winnerIndex;
+  const rightIndex = leftIndex === 0 ? 1 : 0;
+  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations);
+  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations);
+  const score = formatGameScoresForRecord(match, leftIndex);
+  return `${left}　${score}　${right}`;
+}
+
+function getEventRecordMeta(eventId, searchIndex, dateIndex, archiveIndex, eventNames) {
+  const merged = getMergedWttSearchEntry(eventId, searchIndex[eventId], dateIndex, archiveIndex);
+  const eventName = String(merged?.eventName || merged?.title || eventNames[eventId] || eventId);
+  const startDate = merged?.startDate || null;
+  const endDate = merged?.endDate || null;
+  return {
+    event: eventId,
+    eventName,
+    startDate,
+    endDate,
+    dateLabel: formatDateRange(startDate, endDate),
+  };
+}
+
+function comparePlayerRecordEvents(left, right) {
+  const leftDate = toComparableDate(left?.endDate || left?.startDate, true);
+  const rightDate = toComparableDate(right?.endDate || right?.startDate, true);
+  if (leftDate && rightDate && leftDate.getTime() !== rightDate.getTime()) {
+    return rightDate - leftDate;
+  }
+  if (leftDate && !rightDate) {
+    return -1;
+  }
+  if (!leftDate && rightDate) {
+    return 1;
+  }
+  return String(right?.event || "").localeCompare(String(left?.event || ""), "en", { numeric: true });
+}
+
+async function handlePlayerRecordsApi(requestUrl, response) {
+  try {
+    await syncTranslationsFromSharedSource();
+    const name = String(requestUrl.searchParams.get("name") || "").trim();
+    const translatedName = String(requestUrl.searchParams.get("translatedName") || "").trim();
+    const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
+    const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
+    const translations = readTranslations(TRANSLATIONS_PATH);
+    const rules = readRules(RULES_PATH);
+    const needles = buildPlayerRecordNeedles(name, translatedName);
+    const searchIndex = readWttSearchIndex();
+    const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+    const archiveIndex = readWttArchiveIndex();
+    const eventNames = getEventNamesMap();
+    const recordEventIds = listWttRecordEventIds();
+    const events = [];
+    let returnedMatches = 0;
+
+    for (const eventId of recordEventIds) {
+      if (returnedMatches >= matchLimit) {
+        break;
+      }
+      const payload = readWttRecordPayload(eventId);
+      const matches = [];
+      payload.forEach((item) => {
+        if (returnedMatches + matches.length >= matchLimit) {
+          return;
+        }
+        const match = normalizeArchivedMatch(item);
+        if (!match || match.matchType !== "individual") {
+          return;
+        }
+        const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
+        if (competitorIndex < 0) {
+          return;
+        }
+        matches.push({
+          categoryName: match.categoryName || "",
+          roundLabel: translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match])),
+          line: buildPlayerRecordLine(match, competitorIndex, translations),
+          documentCode: match.documentCode || "",
+        });
+      });
+      if (matches.length === 0) {
+        continue;
+      }
+      returnedMatches += matches.length;
+      events.push({
+        ...getEventRecordMeta(eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+        matches,
+      });
+    }
+
+    events.sort(comparePlayerRecordEvents);
+    sendJson(response, 200, {
+      name,
+      translatedName,
+      events: events.slice(0, eventLimit),
+      meta: {
+        scannedEvents: recordEventIds.length,
+        returnedEvents: Math.min(events.length, eventLimit),
+        returnedMatches,
+      },
+    });
+  } catch (error) {
+    sendJson(response, 500, {
+      error: createFriendlyErrorMessage(error),
+    });
+  }
+}
+
 async function handleViewerLogin(request, response) {
   if (!VIEWER_PASSWORD) {
     sendText(response, 302, "", "text/plain; charset=utf-8", {
@@ -2717,7 +2960,8 @@ const server = http.createServer((request, response) => {
       requestUrl.pathname === "/api/categories" ||
       requestUrl.pathname === "/api/rounds" ||
       requestUrl.pathname === "/api/events/search" ||
-      requestUrl.pathname === "/api/players/search"
+      requestUrl.pathname === "/api/players/search" ||
+      requestUrl.pathname === "/api/players/records"
     )
   ) {
     if (requestUrl.pathname === "/api/categories") {
@@ -2728,6 +2972,8 @@ const server = http.createServer((request, response) => {
       handleEventSearchApi(requestUrl, response);
     } else if (requestUrl.pathname === "/api/players/search") {
       handlePlayerSearchApi(requestUrl, response);
+    } else if (requestUrl.pathname === "/api/players/records") {
+      handlePlayerRecordsApi(requestUrl, response);
     } else {
       handleApi(requestUrl, response);
     }
