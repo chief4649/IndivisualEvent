@@ -13,6 +13,7 @@
     "index:wtt": "node build_wtt_search_index.js",
     "fetch:wtt-dates": "node fetch_wtt_calendar_dates.js",
     "update:wtt-dates": "node update_wtt_date_index.js",
+    "index:player-records": "node build_player_record_index.js",
     "export:zennihon": "node export_zennihon_archives.js",
     "export:wtt": "node export_wtt_archive.js",
     "crawl:wtt": "node crawl_wtt_archives.js",
