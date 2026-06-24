@@ -1105,12 +1105,21 @@
           name: item?.name || "",
           translatedName: item?.translatedName || "",
         });
-        const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`);
-        const data = await readJsonResponse(response, "戦績の読み込みに失敗しました。");
-        if (!response.ok) {
-          throw new Error(data.error || "戦績の読み込みに失敗しました。");
+        try {
+          const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 30000);
+          const data = await readJsonResponse(response, "戦績の読み込みに失敗しました。");
+          if (!response.ok) {
+            throw new Error(data.error || "戦績の読み込みに失敗しました。");
+          }
+          renderPlayerRecords(data);
+        } catch (error) {
+          playerRecords.innerHTML = "";
+          const empty = document.createElement("div");
+          empty.className = "player-search-empty";
+          empty.textContent = error?.message || "戦績の読み込みに失敗しました。";
+          playerRecords.appendChild(empty);
+          throw error;
         }
-        renderPlayerRecords(data);
       }
 
       async function loadPlayerSearchResults() {

@@ -2517,6 +2517,7 @@ function getPlayerSearchScore(query, name, translatedName) {
 
 const playerRecordResultCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 100;
+let playerRecordEventIndexCache = null;
 
 function getPathStatToken(filePath) {
   try {
@@ -2572,6 +2573,80 @@ function setPlayerRecordResultCacheValue(key, value) {
     const oldestKey = playerRecordResultCache.keys().next().value;
     playerRecordResultCache.delete(oldestKey);
   }
+}
+
+function addPlayerRecordEventIndexKey(index, key, eventId) {
+  if (!key) {
+    return;
+  }
+  if (!index.has(key)) {
+    index.set(key, new Set());
+  }
+  index.get(key).add(eventId);
+}
+
+function addPlayerRecordEventIndexName(index, name, eventId) {
+  const raw = String(name || "").trim();
+  if (!raw) {
+    return;
+  }
+  const parts = raw.split(/[\/／]/).map((part) => part.trim()).filter(Boolean);
+  const names = parts.length > 1 ? parts : [raw];
+  names.forEach((value) => {
+    buildPlayerNameSearchValues(value).forEach((key) => addPlayerRecordEventIndexKey(index, key, eventId));
+  });
+}
+
+function extractQuotedJsonValues(text, propertyName) {
+  const escapedName = propertyName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`"${escapedName}"\\s*:\\s*"([^"]+)"`, "g");
+  const values = [];
+  let match = pattern.exec(text);
+  while (match) {
+    values.push(match[1]);
+    match = pattern.exec(text);
+  }
+  return values;
+}
+
+function buildPlayerRecordEventIndex(snapshot) {
+  const index = new Map();
+  snapshot.forEach((file) => {
+    const text = readTextFile(file.filePath);
+    if (!text) {
+      return;
+    }
+    [
+      ...extractQuotedJsonValues(text, "playerName"),
+      ...extractQuotedJsonValues(text, "competitiorName"),
+      ...extractQuotedJsonValues(text, "name"),
+    ].forEach((name) => addPlayerRecordEventIndexName(index, name, file.eventId));
+  });
+  return index;
+}
+
+function getPlayerRecordEventIndex(snapshot, signature) {
+  if (!playerRecordEventIndexCache || playerRecordEventIndexCache.signature !== signature) {
+    playerRecordEventIndexCache = {
+      signature,
+      index: buildPlayerRecordEventIndex(snapshot),
+    };
+  }
+  return playerRecordEventIndexCache.index;
+}
+
+function filterSnapshotForPlayer(snapshot, eventIndex, needles, textNeedles) {
+  const candidateIds = new Set();
+  needles.forEach((needle) => {
+    const eventIds = eventIndex.get(needle);
+    if (eventIds) {
+      eventIds.forEach((eventId) => candidateIds.add(eventId));
+    }
+  });
+  if (candidateIds.size === 0 && textNeedles.length === 0) {
+    return snapshot;
+  }
+  return snapshot.filter((file) => candidateIds.has(file.eventId));
 }
 
 function normalizeArchivedMatch(item) {
@@ -2832,11 +2907,15 @@ function getPlayerRecordSearchResult(name, translatedName, needles) {
       cacheHit: true,
     };
   }
-  const collected = collectPlayerRecordEvents(snapshot, needles, buildPlayerRecordTextNeedles(name));
+  const textNeedles = buildPlayerRecordTextNeedles(name);
+  const eventIndex = getPlayerRecordEventIndex(snapshot, signature);
+  const filteredSnapshot = filterSnapshotForPlayer(snapshot, eventIndex, needles, textNeedles);
+  const collected = collectPlayerRecordEvents(filteredSnapshot, needles, textNeedles);
   const result = {
-      signature,
-      builtAt: Date.now(),
+    signature,
+    builtAt: Date.now(),
     scannedEvents: snapshot.length,
+    candidateEvents: filteredSnapshot.length,
     ...collected,
   };
   setPlayerRecordResultCacheValue(cacheKey, result);
@@ -2862,7 +2941,9 @@ async function handlePlayerRecordsApi(requestUrl, response) {
         meta: {
           cacheBuiltAt: null,
           scannedEvents: 0,
-          indexedMatches: 0,
+          candidateEvents: 0,
+          parsedEvents: 0,
+          scannedMatches: 0,
           returnedEvents: 0,
           returnedMatches: 0,
         },
@@ -2897,6 +2978,7 @@ async function handlePlayerRecordsApi(requestUrl, response) {
         cacheBuiltAt: searchResult.builtAt,
         cacheHit: searchResult.cacheHit,
         scannedEvents: searchResult.scannedEvents,
+        candidateEvents: searchResult.candidateEvents,
         parsedEvents: searchResult.parsedEvents,
         scannedMatches: searchResult.scannedMatches,
         returnedEvents: limitedEvents.length,
