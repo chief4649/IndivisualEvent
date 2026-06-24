@@ -42,6 +42,7 @@ const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const PLAYER_RECORD_EVENT_INDEX_PATH = path.join(DATA_DIR, "player-record-event-index.json");
+const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
@@ -2518,6 +2519,8 @@ function getPlayerSearchScore(query, name, translatedName) {
 
 const playerRecordResultCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 100;
+const playerRecordShardCache = new Map();
+const PLAYER_RECORD_SHARD_CACHE_MAX = 12;
 let playerRecordEventIndexCache = null;
 
 function getPathStatToken(filePath) {
@@ -2575,6 +2578,111 @@ function setPlayerRecordResultCacheValue(key, value) {
     const oldestKey = playerRecordResultCache.keys().next().value;
     playerRecordResultCache.delete(oldestKey);
   }
+}
+
+function getPlayerRecordShardName(key) {
+  const match = String(key || "").match(/[a-z0-9]/i);
+  return match ? match[0].toLowerCase() : "_";
+}
+
+function setPlayerRecordShardCacheValue(key, value) {
+  if (playerRecordShardCache.has(key)) {
+    playerRecordShardCache.delete(key);
+  }
+  playerRecordShardCache.set(key, value);
+  while (playerRecordShardCache.size > PLAYER_RECORD_SHARD_CACHE_MAX) {
+    const oldestKey = playerRecordShardCache.keys().next().value;
+    playerRecordShardCache.delete(oldestKey);
+  }
+}
+
+function readPlayerRecordShard(shardName) {
+  const safeShardName = /^[a-z0-9_]$/.test(String(shardName || "")) ? String(shardName) : "_";
+  const filePath = path.join(PLAYER_RECORDS_INDEX_DIR, `${safeShardName}.json`);
+  const signature = getPathStatToken(filePath);
+  const cacheKey = `${safeShardName}:${signature}`;
+  const cached = playerRecordShardCache.get(cacheKey);
+  if (cached) {
+    return cached;
+  }
+  try {
+    if (!fs.existsSync(filePath)) {
+      return {};
+    }
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    const shard = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    setPlayerRecordShardCacheValue(cacheKey, shard);
+    return shard;
+  } catch (error) {
+    console.error(`[player records] failed to read shard ${safeShardName}: ${error.message}`);
+    return {};
+  }
+}
+
+function readJsonFileSafe(filePath, fallback) {
+  try {
+    if (!fs.existsSync(filePath)) {
+      return fallback;
+    }
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch {
+    return fallback;
+  }
+}
+
+function readPlayerRecordsManifest() {
+  return readJsonFileSafe(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json"), null);
+}
+
+function clonePlayerRecordEvents(events) {
+  return (Array.isArray(events) ? events : []).map((event) => ({
+    ...event,
+    matches: Array.isArray(event.matches) ? event.matches.map((match) => ({ ...match })) : [],
+  }));
+}
+
+function getPrebuiltPlayerRecordSearchResult(needles) {
+  const manifest = readPlayerRecordsManifest();
+  if (!manifest || !fs.existsSync(PLAYER_RECORDS_INDEX_DIR)) {
+    return null;
+  }
+  const eventMap = new Map();
+  needles.forEach((needle) => {
+    const shard = readPlayerRecordShard(getPlayerRecordShardName(needle));
+    clonePlayerRecordEvents(shard[needle]).forEach((eventRecord) => {
+      if (!eventMap.has(eventRecord.event)) {
+        eventMap.set(eventRecord.event, {
+          ...eventRecord,
+          matches: [],
+        });
+      }
+      const target = eventMap.get(eventRecord.event);
+      eventRecord.matches.forEach((match) => {
+        const duplicate = target.matches.some((existing) => (
+          existing.documentCode === match.documentCode &&
+          existing.categoryName === match.categoryName &&
+          existing.roundLabel === match.roundLabel &&
+          existing.line === match.line
+        ));
+        if (!duplicate) {
+          target.matches.push(match);
+        }
+      });
+    });
+  });
+  const events = Array.from(eventMap.values());
+  events.sort(comparePlayerRecordEvents);
+  return {
+    signature: getPathStatToken(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
+    builtAt: Date.now(),
+    eventIndexSource: "record-shards",
+    eventIndexGeneratedAt: manifest.generatedAt || null,
+    scannedEvents: Number(manifest.eventCount || 0) || 0,
+    candidateEvents: events.length,
+    parsedEvents: 0,
+    scannedMatches: 0,
+    events,
+  };
 }
 
 function addPlayerRecordEventIndexKey(index, key, eventId) {
@@ -2931,6 +3039,10 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
 }
 
 function getPlayerRecordSearchResult(name, translatedName, needles) {
+  const prebuilt = getPrebuiltPlayerRecordSearchResult(needles);
+  if (prebuilt) {
+    return prebuilt;
+  }
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
   const cacheKey = `${signature}::${needles.join("|")}`;
