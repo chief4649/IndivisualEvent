@@ -2497,8 +2497,14 @@ function getPlayerSearchScore(query, name, translatedName) {
   if (!normalizedQuery) {
     return 99;
   }
+  if (normalizedTranslatedName === normalizedQuery) {
+    return 0;
+  }
   if (normalizedName === normalizedQuery) {
     return 0;
+  }
+  if (normalizedTranslatedName.startsWith(normalizedQuery)) {
+    return 1;
   }
   if (normalizedName.startsWith(`${normalizedQuery} `) || normalizedName.startsWith(normalizedQuery)) {
     return 1;
@@ -2506,10 +2512,7 @@ function getPlayerSearchScore(query, name, translatedName) {
   if (normalizedName.split(/\s+/).some((token) => token.startsWith(normalizedQuery))) {
     return 2;
   }
-  if (normalizedTranslatedName.startsWith(normalizedQuery)) {
-    return 3;
-  }
-  return 4;
+  return 3;
 }
 
 const playerRecordResultCache = new Map();
