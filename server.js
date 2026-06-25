@@ -2456,27 +2456,30 @@ async function handlePlayerSearchApi(requestUrl, response) {
       : {};
     const tokens = normalizePlayerSearchText(query).split(/\s+/).filter(Boolean);
     const results = [];
+    const resultByPlayerKey = new Map();
 
     if (tokens.length > 0) {
       Object.entries(players).forEach(([name, translatedName]) => {
         const haystack = normalizePlayerSearchText(`${name} ${translatedName}`);
         if (tokens.every((token) => haystack.includes(token))) {
-          results.push({
+          const item = {
             name,
             translatedName: String(translatedName || "").trim() || "未登録",
             registered: Boolean(String(translatedName || "").trim()),
             score: getPlayerSearchScore(query, name, translatedName),
-          });
+          };
+          const playerKey = `${normalizePlayerSearchText(name)}\t${normalizePlayerSearchText(translatedName)}`;
+          const existing = resultByPlayerKey.get(playerKey);
+          if (!existing || comparePlayerSearchResult(item, existing) < 0) {
+            resultByPlayerKey.set(playerKey, item);
+          }
         }
       });
     }
 
+    results.push(...resultByPlayerKey.values());
     results.sort((left, right) =>
-      (left.score || 0) - (right.score || 0) ||
-      String(left.name || "").localeCompare(String(right.name || ""), "en", {
-        numeric: true,
-        sensitivity: "base",
-      }),
+      comparePlayerSearchResult(left, right),
     );
 
     sendJson(response, 200, {
@@ -2520,6 +2523,28 @@ function getPlayerSearchScore(query, name, translatedName) {
     return 2;
   }
   return 3;
+}
+
+function getPlayerNameDisplayPriority(name) {
+  const parts = String(name || "").trim().split(/\s+/).filter(Boolean);
+  if (parts.length > 1 && /^[A-Z0-9.'-]+$/.test(parts[0])) {
+    return 0;
+  }
+  if (parts.length > 1 && /^[A-Z0-9.'-]+$/.test(parts[parts.length - 1])) {
+    return 1;
+  }
+  return 2;
+}
+
+function comparePlayerSearchResult(left, right) {
+  return (
+    (left.score || 0) - (right.score || 0) ||
+    getPlayerNameDisplayPriority(left.name) - getPlayerNameDisplayPriority(right.name) ||
+    String(left.name || "").localeCompare(String(right.name || ""), "en", {
+      numeric: true,
+      sensitivity: "base",
+    })
+  );
 }
 
 const playerRecordResultCache = new Map();
