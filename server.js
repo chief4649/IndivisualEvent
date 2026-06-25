@@ -3166,74 +3166,31 @@ function runGrepFileCandidates(files, token) {
   return results;
 }
 
-function getPlayerRecordPhraseNeedles(textNeedles) {
-  const phrases = new Set();
-
-  (Array.isArray(textNeedles) ? textNeedles : []).forEach((needle) => {
-    const phrase = String(needle?.phrase || "").trim();
-    const tokens = Array.isArray(needle?.tokens) ? needle.tokens.filter(Boolean) : [];
-
-    if (phrase && phrase.length >= 4 && tokens.length >= 2) {
-      phrases.add(phrase);
-      phrases.add(tokens.join(" "));
-      phrases.add([...tokens].reverse().join(" "));
-    }
-  });
-
-  return [...phrases]
-    .map((phrase) => phrase.replace(/\s+/g, " ").trim())
-    .filter((phrase) => phrase.length >= 4)
-    .sort((left, right) => right.length - left.length || left.localeCompare(right, "en"));
-}
-
-function getPlayerRecordTokenGroups(textNeedles) {
-  const tokenGroups = [];
-  (Array.isArray(textNeedles) ? textNeedles : []).forEach((needle) => {
-    const tokens = Array.isArray(needle.tokens)
-      ? needle.tokens.filter((token) => String(token || "").length >= 2)
-      : [];
-    if (tokens.length > 0) {
-      tokenGroups.push(tokens);
-    }
-  });
-  return tokenGroups.sort((left, right) => right.length - left.length);
-}
-
-function getPlayerRecordCandidateSnapshotByPhrases(snapshot, phraseNeedles) {
-  if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(phraseNeedles) || phraseNeedles.length === 0) {
-    return [];
-  }
-
-  const candidatePaths = new Set();
-
-  for (const phrase of phraseNeedles) {
-    const matchedPaths = runGrepFileCandidates(snapshot, phrase);
-    if (matchedPaths === null) {
-      return null;
-    }
-    matchedPaths.forEach((filePath) => candidatePaths.add(filePath));
-  }
-
-  return snapshot.filter((file) => candidatePaths.has(file.filePath));
-}
-
-function getPlayerRecordCandidateSnapshotByTokens(snapshot, textNeedles) {
+function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
   if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
     return snapshot;
   }
 
-  const tokenGroups = getPlayerRecordTokenGroups(textNeedles);
+  const tokenGroups = [];
+  textNeedles.forEach((needle) => {
+    const tokens = Array.isArray(needle.tokens) ? needle.tokens.filter((token) => String(token || "").length >= 2) : [];
+    if (tokens.length > 0) {
+      tokenGroups.push(tokens);
+    }
+  });
+
   if (tokenGroups.length === 0) {
     return snapshot;
   }
 
-  const bestGroup = tokenGroups[0];
+  const bestGroup = tokenGroups.sort((left, right) => right.length - left.length)[0];
   let candidatePaths = new Set(snapshot.map((file) => file.filePath));
 
   for (const token of bestGroup) {
     const currentFiles = snapshot.filter((file) => candidatePaths.has(file.filePath));
     const matchedPaths = runGrepFileCandidates(currentFiles, token);
     if (matchedPaths === null) {
+      // grep is unavailable. Fall back to JS prefilter in collectPlayerRecordEvents.
       return snapshot;
     }
     candidatePaths = matchedPaths;
@@ -3245,22 +3202,6 @@ function getPlayerRecordCandidateSnapshotByTokens(snapshot, textNeedles) {
   return snapshot.filter((file) => candidatePaths.has(file.filePath));
 }
 
-function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
-  if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
-    return snapshot;
-  }
-
-  const phraseNeedles = getPlayerRecordPhraseNeedles(textNeedles);
-  const phraseCandidates = getPlayerRecordCandidateSnapshotByPhrases(snapshot, phraseNeedles);
-
-  // Fast path: exact phrase candidates are safer and usually much fewer.
-  // Fallback to token intersection only if phrase grep is unavailable or found nothing.
-  if (Array.isArray(phraseCandidates) && phraseCandidates.length > 0) {
-    return phraseCandidates;
-  }
-
-  return getPlayerRecordCandidateSnapshotByTokens(snapshot, textNeedles);
-}
 
 function getPlayerRecordCategorySortValue(categoryName) {
   const text = String(categoryName || "")
@@ -3366,9 +3307,12 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
     parsedEvents += 1;
     const matches = [];
 
-    // Use the same category-level round context approach as the normal record output.
-    // This is necessary for labels such as 決勝トーナメント1回戦 / 2回戦 / 準々決勝
-    // to match the regular output instead of being inferred from a single player match.
+    // Match the normal record output:
+    // build round context from the full event/category, then translate each target match.
+    // This keeps labels such as:
+    // 女子シングルス決勝トーナメント1回戦
+    // 女子シングルス決勝トーナメント2回戦
+    // 女子シングルス決勝トーナメント準々決勝
     const contextsByCategory = buildRoundContextsByCategory(normalized);
     const fallbackContext = buildJaRoundContext(normalized);
 
@@ -3453,7 +3397,6 @@ function getPlayerRecordSearchResult(name, translatedName, needles) {
     builtAt: Date.now(),
     eventIndexSource: "wtt-records",
     eventIndexGeneratedAt: null,
-    candidateStrategy: "phrase-grep-with-token-fallback",
     scannedEvents: snapshot.length,
     candidateEvents: candidateSnapshot.length,
     ...collected,
@@ -3520,7 +3463,6 @@ async function handlePlayerRecordsApi(requestUrl, response) {
         cacheHit: searchResult.cacheHit,
         eventIndexSource: searchResult.eventIndexSource,
         eventIndexGeneratedAt: searchResult.eventIndexGeneratedAt,
-        candidateStrategy: searchResult.candidateStrategy,
         scannedEvents: searchResult.scannedEvents,
         candidateEvents: searchResult.candidateEvents,
         parsedEvents: searchResult.parsedEvents,
@@ -3697,7 +3639,7 @@ const server = http.createServer((request, response) => {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
-        displayMode: "player-record-org-v8-normal-output-rounds",
+        displayMode: "player-record-org-v10-stable-groups-normal-rounds",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
