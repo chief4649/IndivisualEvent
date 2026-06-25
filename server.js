@@ -2764,72 +2764,84 @@ function findPlayerCompetitorIndex(match, needles, translations) {
   return competitors.findIndex((competitor) => playerMatchesCompetitor(competitor, needles, translations));
 }
 
-function getPlayerRecordTranslationMaps(translations) {
-  const cacheKey = "__playerRecordTranslationMaps";
-  if (translations && translations[cacheKey]) {
-    return translations[cacheKey];
-  }
-
-  const exact = new Map();
-  const lower = new Map();
-  const normalized = new Map();
-  const players = translations?.players && typeof translations.players === "object" ? translations.players : {};
-
-  Object.entries(players).forEach(([rawName, translatedName]) => {
-    const raw = String(rawName || "").trim();
-    const translated = String(translatedName || "").trim();
-    if (!raw || !translated) {
-      return;
-    }
-
-    const reversed = raw.split(/\s+/).filter(Boolean).reverse().join(" ");
-    const candidates = [raw, reversed].filter(Boolean);
-
-    candidates.forEach((candidate) => {
-      exact.set(candidate, translated);
-      lower.set(candidate.toLowerCase(), translated);
-      const normalizedCandidate = normalizePlayerSearchText(candidate);
-      if (normalizedCandidate) {
-        normalized.set(normalizedCandidate, translated);
-      }
-    });
-  });
-
-  const maps = { exact, lower, normalized };
-  if (translations && typeof translations === "object") {
-    try {
-      Object.defineProperty(translations, cacheKey, {
-        value: maps,
-        enumerable: false,
-        configurable: true,
-      });
-    } catch {
-      // Ignore cache attachment failures.
-    }
-  }
-  return maps;
-}
-
-function translateSinglePlayerNameForRecord(name, translations) {
-  const raw = String(name || "").trim();
+function compactJapaneseName(value) {
+  const raw = String(value || "").trim();
   if (!raw) {
     return "";
   }
 
-  const reversed = raw.split(/\s+/).filter(Boolean).reverse().join(" ");
-  const maps = getPlayerRecordTranslationMaps(translations);
+  if (/^[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々ヶ]+ [\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}ー々ヶ]+$/u.test(raw)) {
+    return raw.replace(/ /g, "");
+  }
 
-  return (
-    translations.players?.[raw] ||
-    translations.players?.[reversed] ||
-    maps.exact.get(raw) ||
-    maps.exact.get(reversed) ||
-    maps.lower.get(raw.toLowerCase()) ||
-    maps.lower.get(reversed.toLowerCase()) ||
-    maps.normalized.get(normalizePlayerSearchText(raw)) ||
-    maps.normalized.get(normalizePlayerSearchText(reversed)) ||
-    raw
-  );
+  return raw;
+}
+
+function getNameTranslationCandidates(value) {
+  const raw = String(value || "").trim();
+  if (!raw) {
+    return [];
+  }
+
+  const collapsed = raw.replace(/\s+/g, " ");
+  const candidates = [raw];
+
+  if (collapsed !== raw) {
+    candidates.push(collapsed);
+  }
+
+  const parts = collapsed.split(" ").filter(Boolean);
+  if (parts.length === 2) {
+    candidates.push(`${parts[1]} ${parts[0]}`);
+    candidates.push(`${parts[1].toUpperCase()} ${parts[0]}`);
+    candidates.push(`${parts[0]} ${parts[1].toUpperCase()}`);
+  }
+
+  if (parts.length >= 2) {
+    const givenNames = parts.slice(0, -1).join(" ");
+    const familyName = parts[parts.length - 1];
+    candidates.push(`${familyName} ${givenNames}`);
+    candidates.push(`${familyName.toUpperCase()} ${givenNames}`);
+    candidates.push(`${givenNames} ${familyName.toUpperCase()}`);
+  }
+
+  return [...new Set(candidates)];
+}
+
+function translatePlayer(value, translations) {
+  const candidates = getNameTranslationCandidates(value);
+
+  for (const candidate of candidates) {
+    if (translations.players?.[candidate]) {
+      return translations.players[candidate];
+    }
+  }
+
+  return compactJapaneseName(value);
+}
+
+function translateOrg(value, translations, options = {}) {
+  const raw = String(value || "").trim();
+  const rawCode = String(options.orgCode || "").trim();
+  if (rawCode && translations.teams?.[rawCode]) {
+    return translations.teams[rawCode];
+  }
+  if (!raw) {
+    return "";
+  }
+
+  if (translations.teams?.[raw]) {
+    return translations.teams[raw];
+  }
+
+  if (raw.includes("/")) {
+    return raw
+      .split("/")
+      .map((part) => translations.teams?.[part] || part)
+      .join("/");
+  }
+
+  return raw;
 }
 
 function translatePlayerNameForRecord(name, translations) {
@@ -2840,10 +2852,10 @@ function translatePlayerNameForRecord(name, translations) {
 
   const parts = raw.split(/\s*(?:\/|／|\+|&| and )\s*/i).map((part) => part.trim()).filter(Boolean);
   if (parts.length > 1) {
-    return parts.map((part) => translateSinglePlayerNameForRecord(part, translations)).filter(Boolean).join("／");
+    return parts.map((part) => translatePlayer(part, translations)).filter(Boolean).join("／");
   }
 
-  return translateSinglePlayerNameForRecord(raw, translations);
+  return translatePlayer(raw, translations);
 }
 
 function getCompetitorNameCandidates(competitor) {
@@ -2874,28 +2886,52 @@ function getCompetitorNameCandidates(competitor) {
   return values.map((value) => String(value || "").trim()).filter(Boolean);
 }
 
-function formatCompetitorForRecord(competitor, translations) {
+function getCompetitorDisplayNameForRecord(competitor, translations) {
   if (!competitor) {
-    return "TBD";
+    return "";
   }
 
-  const players = Array.isArray(competitor.players) ? competitor.players.filter(Boolean) : [];
-  const playerNames = players
-    .map((player) => translatePlayerNameForRecord(player?.name || player?.playerName || player?.competitorName || player?.description || player?.desc, translations))
-    .filter(Boolean);
+  const players = (competitor.players || [])
+    .map((player) => ({
+      name: translatePlayer(player?.name || "", translations),
+      org: translateOrg(player?.org || competitor.org || "", translations, {
+        orgCode: player?.orgCode || competitor.orgCode,
+      }),
+    }))
+    .filter((player) => player.name);
 
-  if (playerNames.length > 0) {
-    return playerNames.join("／");
+  if (players.length >= 2) {
+    const names = players.map((player) => player.name).join("／");
+    const orgs = [...new Set(players.map((player) => player.org).filter(Boolean))];
+    if (orgs.length === 0) {
+      return names;
+    }
+    if (orgs.length === 1) {
+      return `${names}（${orgs[0]}）`;
+    }
+    return `${names}（${orgs.join("／")}）`;
+  }
+
+  if (players.length === 1) {
+    return players[0].org ? `${players[0].name}（${players[0].org}）` : players[0].name;
   }
 
   for (const candidate of getCompetitorNameCandidates(competitor)) {
-    const translated = translatePlayerNameForRecord(candidate, translations);
-    if (translated) {
-      return translated;
+    const name = translatePlayerNameForRecord(candidate, translations);
+    if (!name) {
+      continue;
     }
+    const translatedOrg = translateOrg(competitor.org || "", translations, {
+      orgCode: competitor.orgCode,
+    });
+    return translatedOrg ? `${name}（${translatedOrg}）` : name;
   }
 
-  return "TBD";
+  return "";
+}
+
+function formatCompetitorForRecord(competitor, translations) {
+  return getCompetitorDisplayNameForRecord(competitor, translations) || "TBD";
 }
 
 function getWinnerIndexFromOverallScore(score) {
@@ -3466,6 +3502,7 @@ const server = http.createServer((request, response) => {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
+        displayMode: "player-record-org-v1",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
