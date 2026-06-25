@@ -2633,10 +2633,25 @@ function normalizeArchivedMatch(item) {
   return normalizeOfficialResultItem(item);
 }
 
-function buildPlayerRecordNeedles(name, translatedName) {
+function getPlayerTranslationAliasNames(value, translations) {
+  const normalized = normalizePlayerSearchText(value);
+  if (!normalized) {
+    return [];
+  }
+  return Object.entries(translations.players || {})
+    .filter(([, translated]) => normalizePlayerSearchText(translated) === normalized)
+    .map(([rawName]) => rawName);
+}
+
+function buildPlayerRecordNeedles(name, translatedName, translations) {
+  const aliasNames = [
+    ...getPlayerTranslationAliasNames(name, translations),
+    ...getPlayerTranslationAliasNames(translatedName, translations),
+  ];
   return [
     ...buildPlayerNameSearchValues(name),
     ...buildPlayerNameSearchValues(translatedName),
+    ...aliasNames.flatMap(buildPlayerNameSearchValues),
   ].filter(Boolean);
 }
 
@@ -2805,7 +2820,7 @@ function buildPlayerRecordTextNeedles(...names) {
 
 function textLikelyContainsPlayer(text, textNeedles) {
   if (textNeedles.length === 0) {
-    return true;
+    return false;
   }
   const haystack = text.toLowerCase();
   const compactHaystack = haystack.replace(/[^a-z0-9]+/g, "");
@@ -2906,7 +2921,7 @@ function getPlayerRecordSearchResult(name, translatedName, needles) {
       cacheHit: true,
     };
   }
-  const textNeedles = buildPlayerRecordTextNeedles(name, translatedName);
+  const textNeedles = buildPlayerRecordTextNeedles(...needles);
   const collected = collectPlayerRecordEvents(snapshot, needles, textNeedles);
   const result = {
     signature,
@@ -2931,7 +2946,8 @@ async function handlePlayerRecordsApi(requestUrl, response) {
     const translatedName = String(requestUrl.searchParams.get("translatedName") || "").trim();
     const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
     const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
-    const needles = buildPlayerRecordNeedles(name, translatedName);
+    const translations = readTranslations(TRANSLATIONS_PATH);
+    const needles = buildPlayerRecordNeedles(name, translatedName, translations);
     if (needles.length === 0) {
       sendJson(response, 200, {
         name,

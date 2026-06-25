@@ -1106,7 +1106,7 @@
           translatedName: item?.translatedName || "",
         });
         try {
-          const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 30000);
+          const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 120000);
           const data = await readJsonResponse(response, "戦績の読み込みに失敗しました。");
           if (!response.ok) {
             throw new Error(data.error || "戦績の読み込みに失敗しました。");
