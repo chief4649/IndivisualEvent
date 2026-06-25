@@ -3202,6 +3202,81 @@ function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
   return snapshot.filter((file) => candidatePaths.has(file.filePath));
 }
 
+
+function getPlayerRecordCategorySortValue(categoryName) {
+  const text = String(categoryName || "")
+    .replace(/['’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+
+  if (!text) {
+    return [9, 9, text];
+  }
+
+  const isPara = /\bclass(?:es)?\b|para/.test(text);
+  const genderOrder = /\bmen\b|\bmens\b|男子/.test(text)
+    ? 0
+    : /\bwomen\b|\bwomens\b|女子/.test(text)
+      ? 1
+      : /\bmixed\b|混合/.test(text)
+        ? 2
+        : 3;
+  const disciplineOrder = /\bsingles\b|シングルス/.test(text)
+    ? 0
+    : /\bteams?\b|団体/.test(text)
+      ? 1
+      : /\bdoubles\b|ダブルス/.test(text)
+        ? 2
+        : 3;
+
+  return [isPara ? 1 : 0, disciplineOrder, genderOrder, text];
+}
+
+function comparePlayerRecordCategoryName(left, right) {
+  const leftKey = getPlayerRecordCategorySortValue(left);
+  const rightKey = getPlayerRecordCategorySortValue(right);
+  for (let index = 0; index < Math.max(leftKey.length, rightKey.length); index += 1) {
+    if (leftKey[index] < rightKey[index]) {
+      return -1;
+    }
+    if (leftKey[index] > rightKey[index]) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+function comparePlayerRecordMatches(left, right) {
+  const categoryCompare = comparePlayerRecordCategoryName(left?.categoryName, right?.categoryName);
+  if (categoryCompare !== 0) {
+    return categoryCompare;
+  }
+  return String(left?.documentCode || "").localeCompare(String(right?.documentCode || ""), "en", { numeric: true });
+}
+
+function buildPlayerRecordMatchGroups(matches) {
+  const grouped = new Map();
+
+  // Keep the original match order within each category.
+  // The source order is used by the existing record output, where later rounds
+  // such as finals appear above earlier rounds.
+  (Array.isArray(matches) ? matches : []).forEach((match) => {
+    const categoryName = String(match?.categoryName || "その他").trim() || "その他";
+    if (!grouped.has(categoryName)) {
+      grouped.set(categoryName, []);
+    }
+    grouped.get(categoryName).push(match);
+  });
+
+  return [...grouped.entries()]
+    .sort(([leftCategory], [rightCategory]) => comparePlayerRecordCategoryName(leftCategory, rightCategory))
+    .map(([categoryName, groupMatches]) => ({
+      categoryName,
+      matches: groupMatches,
+    }));
+}
+
 function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
@@ -3276,10 +3351,12 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
       return;
     }
 
+    const matchGroups = buildPlayerRecordMatchGroups(matches);
     events.push({
       ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
       source: file.sourceLabel || "",
-      matches,
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
     });
   });
 
@@ -3552,7 +3629,7 @@ const server = http.createServer((request, response) => {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
-        displayMode: "player-record-org-v2-dedupe",
+        displayMode: "player-record-org-v4-category-groups-keep-round-order",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
