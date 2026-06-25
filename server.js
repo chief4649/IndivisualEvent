@@ -3183,15 +3183,7 @@ function getPlayerRecordPhraseNeedles(textNeedles) {
   return [...phrases]
     .map((phrase) => phrase.replace(/\s+/g, " ").trim())
     .filter((phrase) => phrase.length >= 4)
-    .sort((left, right) => {
-      const leftTokens = left.split(/\s+/).length;
-      const rightTokens = right.split(/\s+/).length;
-      return (
-        rightTokens - leftTokens ||
-        right.length - left.length ||
-        left.localeCompare(right, "en")
-      );
-    });
+    .sort((left, right) => right.length - left.length || left.localeCompare(right, "en"));
 }
 
 function getPlayerRecordTokenGroups(textNeedles) {
@@ -3207,27 +3199,22 @@ function getPlayerRecordTokenGroups(textNeedles) {
   return tokenGroups.sort((left, right) => right.length - left.length);
 }
 
-function getPlayerRecordCandidateSnapshotByFirstMatchingPhrase(snapshot, phraseNeedles) {
+function getPlayerRecordCandidateSnapshotByPhrases(snapshot, phraseNeedles) {
   if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(phraseNeedles) || phraseNeedles.length === 0) {
     return [];
   }
 
-  // Performance guard:
-  // Try the strongest phrase first, and stop as soon as it finds candidates.
-  // Previous versions grepped every alias phrase and unioned the results, which
-  // was safer but could exceed the 30s browser timeout for common players.
-  const maxPhraseAttempts = Math.min(Number(process.env.PLAYER_RECORD_MAX_PHRASE_ATTEMPTS || 6) || 6, phraseNeedles.length);
-  for (const phrase of phraseNeedles.slice(0, maxPhraseAttempts)) {
+  const candidatePaths = new Set();
+
+  for (const phrase of phraseNeedles) {
     const matchedPaths = runGrepFileCandidates(snapshot, phrase);
     if (matchedPaths === null) {
       return null;
     }
-    if (matchedPaths.size > 0) {
-      return snapshot.filter((file) => matchedPaths.has(file.filePath));
-    }
+    matchedPaths.forEach((filePath) => candidatePaths.add(filePath));
   }
 
-  return [];
+  return snapshot.filter((file) => candidatePaths.has(file.filePath));
 }
 
 function getPlayerRecordCandidateSnapshotByTokens(snapshot, textNeedles) {
@@ -3264,14 +3251,14 @@ function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
   }
 
   const phraseNeedles = getPlayerRecordPhraseNeedles(textNeedles);
-  const phraseCandidates = getPlayerRecordCandidateSnapshotByFirstMatchingPhrase(snapshot, phraseNeedles);
+  const phraseCandidates = getPlayerRecordCandidateSnapshotByPhrases(snapshot, phraseNeedles);
 
+  // Fast path: exact phrase candidates are safer and usually much fewer.
+  // Fallback to token intersection only if phrase grep is unavailable or found nothing.
   if (Array.isArray(phraseCandidates) && phraseCandidates.length > 0) {
     return phraseCandidates;
   }
 
-  // Fallback keeps recall for data sources that do not contain the full name
-  // phrase, but this path is only used when phrase search finds nothing.
   return getPlayerRecordCandidateSnapshotByTokens(snapshot, textNeedles);
 }
 
@@ -3466,7 +3453,7 @@ function getPlayerRecordSearchResult(name, translatedName, needles) {
     builtAt: Date.now(),
     eventIndexSource: "wtt-records",
     eventIndexGeneratedAt: null,
-    candidateStrategy: "first-hit-phrase-grep-with-token-fallback",
+    candidateStrategy: "phrase-grep-with-token-fallback",
     scannedEvents: snapshot.length,
     candidateEvents: candidateSnapshot.length,
     ...collected,
@@ -3710,7 +3697,7 @@ const server = http.createServer((request, response) => {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
-        displayMode: "player-record-org-v9-timeout-safe-fast-candidates",
+        displayMode: "player-record-org-v8-normal-output-rounds",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
