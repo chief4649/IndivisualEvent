@@ -405,6 +405,23 @@
         line-height: 1.5;
       }
 
+      .player-record-category-group {
+        display: grid;
+        gap: 6px;
+        padding-top: 4px;
+      }
+
+      .player-record-category-title {
+        margin-top: 4px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        background: rgba(28, 25, 23, 0.06);
+        color: var(--ink);
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
       .player-record-match {
         display: grid;
         gap: 3px;
@@ -1073,21 +1090,40 @@
           title.textContent = `▼${event.eventName || event.event || ""}${dateLabel}`;
           eventBox.appendChild(title);
 
-          (Array.isArray(event.matches) ? event.matches : []).forEach((match) => {
-            const matchBox = document.createElement("div");
-            matchBox.className = "player-record-match";
+          const rawGroups = Array.isArray(event.matchGroups) && event.matchGroups.length > 0
+            ? event.matchGroups
+            : [{
+                categoryName: "",
+                matches: Array.isArray(event.matches) ? event.matches : [],
+              }];
 
-            const round = document.createElement("div");
-            round.className = "player-record-round";
-            round.textContent = [match.categoryName, match.roundLabel].filter(Boolean).join(" ");
-            matchBox.appendChild(round);
+          rawGroups.forEach((group) => {
+            const groupBox = document.createElement("div");
+            groupBox.className = "player-record-category-group";
 
-            const line = document.createElement("div");
-            line.className = "player-record-line";
-            line.textContent = match.line || "";
-            matchBox.appendChild(line);
+            const groupTitle = document.createElement("div");
+            groupTitle.className = "player-record-category-title";
+            groupTitle.textContent = group.categoryName || "その他";
+            groupBox.appendChild(groupTitle);
 
-            eventBox.appendChild(matchBox);
+            (Array.isArray(group.matches) ? group.matches : []).forEach((match) => {
+              const matchBox = document.createElement("div");
+              matchBox.className = "player-record-match";
+
+              const round = document.createElement("div");
+              round.className = "player-record-round";
+              round.textContent = match.roundLabel || "";
+              matchBox.appendChild(round);
+
+              const line = document.createElement("div");
+              line.className = "player-record-line";
+              line.textContent = match.line || "";
+              matchBox.appendChild(line);
+
+              groupBox.appendChild(matchBox);
+            });
+
+            eventBox.appendChild(groupBox);
           });
 
           playerRecords.appendChild(eventBox);
@@ -1106,7 +1142,7 @@
           translatedName: item?.translatedName || "",
         });
         try {
-          const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 120000);
+          const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 30000);
           const data = await readJsonResponse(response, "戦績の読み込みに失敗しました。");
           if (!response.ok) {
             throw new Error(data.error || "戦績の読み込みに失敗しました。");
