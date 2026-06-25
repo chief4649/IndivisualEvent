@@ -2442,6 +2442,58 @@ async function handleEventSearchApi(requestUrl, response) {
   }
 }
 
+
+function getCanonicalLatinNameKey(name) {
+  const normalized = normalizePlayerSearchText(name);
+  if (!normalized) {
+    return "";
+  }
+
+  const values = buildPlayerNameSearchValues(normalized);
+  if (values.length === 0) {
+    return normalized;
+  }
+
+  return values
+    .map((value) => value.split(/\s+/).filter(Boolean).join(" "))
+    .sort((left, right) => (
+      left.length - right.length ||
+      left.localeCompare(right, "en", { sensitivity: "base" })
+    ))[0];
+}
+
+function getPlayerSearchIdentityKey(name, translatedName) {
+  const normalizedTranslatedName = normalizePlayerSearchText(translatedName);
+  if (normalizedTranslatedName && normalizedTranslatedName !== normalizePlayerSearchText("未登録")) {
+    return `ja:${normalizedTranslatedName}`;
+  }
+
+  const canonicalName = getCanonicalLatinNameKey(name);
+  return canonicalName ? `name:${canonicalName}` : "";
+}
+
+function mergePlayerSearchResultCandidate(existing, candidate) {
+  if (!existing) {
+    return candidate;
+  }
+
+  const compared = comparePlayerSearchResult(candidate, existing);
+  const winner = compared < 0 ? candidate : existing;
+  const loser = winner === candidate ? existing : candidate;
+
+  return {
+    ...winner,
+    aliases: Array.from(new Set([
+      ...(Array.isArray(winner.aliases) ? winner.aliases : [winner.name].filter(Boolean)),
+      ...(Array.isArray(loser.aliases) ? loser.aliases : [loser.name].filter(Boolean)),
+    ].filter(Boolean))),
+    registered: Boolean(winner.registered || loser.registered),
+    translatedName: String(winner.translatedName || "").trim() && winner.translatedName !== "未登録"
+      ? winner.translatedName
+      : loser.translatedName,
+  };
+}
+
 async function handlePlayerSearchApi(requestUrl, response) {
   try {
     await syncTranslationsFromSharedSource();
@@ -2465,11 +2517,9 @@ async function handlePlayerSearchApi(requestUrl, response) {
             registered: Boolean(String(translatedName || "").trim()),
             score: getPlayerSearchScore(query, name, translatedName),
           };
-          const playerKey = `${normalizePlayerSearchText(name)}\t${normalizePlayerSearchText(translatedName)}`;
+          const playerKey = getPlayerSearchIdentityKey(name, translatedName);
           const existing = resultByPlayerKey.get(playerKey);
-          if (!existing || comparePlayerSearchResult(item, existing) < 0) {
-            resultByPlayerKey.set(playerKey, item);
-          }
+          resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
         }
       });
     }
@@ -3502,7 +3552,7 @@ const server = http.createServer((request, response) => {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
-        displayMode: "player-record-org-v1",
+        displayMode: "player-record-org-v2-dedupe",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
