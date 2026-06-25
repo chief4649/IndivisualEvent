@@ -3299,44 +3299,34 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
       return;
     }
 
-    const normalized = payload.map(normalizeArchivedMatch).filter(Boolean);
-    if (normalized.length === 0) {
-      return;
-    }
-
     parsedEvents += 1;
     const matches = [];
 
-    // Match the normal record output:
-    // build round context from the full event/category, then translate each target match.
-    // This keeps labels such as:
-    // 女子シングルス決勝トーナメント1回戦
-    // 女子シングルス決勝トーナメント2回戦
-    // 女子シングルス決勝トーナメント準々決勝
-    const contextsByCategory = buildRoundContextsByCategory(normalized);
-    const fallbackContext = buildJaRoundContext(normalized);
+    for (const item of payload) {
+      const match = normalizeArchivedMatch(item);
+      if (!match) {
+        continue;
+      }
 
-    normalized.forEach((match) => {
       scannedMatches += 1;
 
       if (match.matchType === "individual") {
         const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
         if (competitorIndex >= 0) {
-          const roundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackContext;
           pushPlayerRecordMatch(
             matches,
             match,
             competitorIndex,
             translations,
             rules,
-            roundContext,
+            buildJaRoundContext([match]),
           );
         }
-        return;
+        continue;
       }
 
       if (match.matchType !== "team") {
-        return;
+        continue;
       }
 
       const teamRoundContext = buildJaRoundContext([match]);
@@ -3355,7 +3345,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
           );
         }
       });
-    });
+    }
 
     if (matches.length === 0) {
       return;
@@ -3639,7 +3629,7 @@ const server = http.createServer((request, response) => {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
-        displayMode: "player-record-org-v10-stable-groups-normal-rounds",
+        displayMode: "player-record-org-v4-category-groups-keep-round-order",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
