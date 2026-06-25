@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const crypto = require("crypto");
-const { spawn } = require("child_process");
+const { spawn, spawnSync } = require("child_process");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -2922,6 +2922,82 @@ function pushPlayerRecordMatch(matches, match, competitorIndex, translations, ru
   });
 }
 
+
+function escapeGrepFixedPattern(value) {
+  return String(value || "").replace(/\n/g, " ").trim();
+}
+
+function runGrepFileCandidates(files, token) {
+  const pattern = escapeGrepFixedPattern(token);
+  if (!pattern || files.length === 0) {
+    return [];
+  }
+
+  const results = new Set();
+  const chunkSize = 100;
+  for (let index = 0; index < files.length; index += chunkSize) {
+    const chunk = files.slice(index, index + chunkSize);
+    const grep = spawnSync("grep", [
+      "-I",
+      "-l",
+      "-i",
+      "-F",
+      "--",
+      pattern,
+      ...chunk.map((file) => file.filePath),
+    ], {
+      encoding: "utf8",
+      maxBuffer: 10 * 1024 * 1024,
+    });
+
+    if (grep.status === 0 && grep.stdout) {
+      grep.stdout.split(/\n/).filter(Boolean).forEach((filePath) => results.add(filePath));
+    }
+
+    if (grep.error && grep.error.code === "ENOENT") {
+      return null;
+    }
+  }
+
+  return results;
+}
+
+function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
+  if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
+    return snapshot;
+  }
+
+  const tokenGroups = [];
+  textNeedles.forEach((needle) => {
+    const tokens = Array.isArray(needle.tokens) ? needle.tokens.filter((token) => String(token || "").length >= 2) : [];
+    if (tokens.length > 0) {
+      tokenGroups.push(tokens);
+    }
+  });
+
+  if (tokenGroups.length === 0) {
+    return snapshot;
+  }
+
+  const bestGroup = tokenGroups.sort((left, right) => right.length - left.length)[0];
+  let candidatePaths = new Set(snapshot.map((file) => file.filePath));
+
+  for (const token of bestGroup) {
+    const currentFiles = snapshot.filter((file) => candidatePaths.has(file.filePath));
+    const matchedPaths = runGrepFileCandidates(currentFiles, token);
+    if (matchedPaths === null) {
+      // grep is unavailable. Fall back to JS prefilter in collectPlayerRecordEvents.
+      return snapshot;
+    }
+    candidatePaths = matchedPaths;
+    if (candidatePaths.size === 0) {
+      break;
+    }
+  }
+
+  return snapshot.filter((file) => candidatePaths.has(file.filePath));
+}
+
 function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
@@ -2935,7 +3011,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
 
   snapshot.forEach((file) => {
     const text = readTextFile(file.filePath);
-    if (!text || !textLikelyContainsPlayer(text, textNeedles)) {
+    if (!text || (Array.isArray(textNeedles) && textNeedles.length > 0 && !textLikelyContainsPlayer(text, textNeedles))) {
       return;
     }
 
@@ -3023,14 +3099,15 @@ function getPlayerRecordSearchResult(name, translatedName, needles) {
     };
   }
   const textNeedles = buildPlayerRecordTextNeedles(...needles);
-  const collected = collectPlayerRecordEvents(snapshot, needles, textNeedles);
+  const candidateSnapshot = getPlayerRecordCandidateSnapshot(snapshot, textNeedles);
+  const collected = collectPlayerRecordEvents(candidateSnapshot, needles, []);
   const result = {
     signature,
     builtAt: Date.now(),
     eventIndexSource: "wtt-records",
     eventIndexGeneratedAt: null,
     scannedEvents: snapshot.length,
-    candidateEvents: snapshot.length,
+    candidateEvents: candidateSnapshot.length,
     ...collected,
   };
   setPlayerRecordResultCacheValue(cacheKey, result);
@@ -3270,6 +3347,7 @@ const server = http.createServer((request, response) => {
       playerRecords: {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
+        candidateMode: "grep-prefilter",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
         snapshotRecords: getWttRecordFileSnapshot().length,
