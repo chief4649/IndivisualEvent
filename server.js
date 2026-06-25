@@ -2668,10 +2668,37 @@ function buildPlayerNameSearchValues(value) {
   return Array.from(new Set(values));
 }
 
-function playerMatchesCompetitor(competitor, needles, translations) {
+function playerRecordNameMatchesNeedle(value, needle) {
+  const normalizedValue = normalizePlayerSearchText(value);
+  const normalizedNeedle = normalizePlayerSearchText(needle);
+  
+  if (!normalizedValue || !normalizedNeedle) {
+    return false;
+  }
+  
+  if (normalizedValue === normalizedNeedle) {
+    return true;
+  }
+  
+  const valueTokens = normalizedValue.split(/\s+/).filter(Boolean);
+  const needleTokens = normalizedNeedle.split(/\s+/).filter(Boolean);
+  
+  if (needleTokens.length === 0) {
+    return false;
+  }
+  
+  if (` ${normalizedValue} `.includes(` ${normalizedNeedle} `)) {
+    return true;
+  }
+  
+  return needleTokens.every((token) => valueTokens.includes(token));
+  }
+  
+  function playerMatchesCompetitor(competitor, needles, translations) {
   if (!competitor || needles.length === 0) {
     return false;
   }
+  
   const values = [
     competitor.name,
     translations.players?.[competitor.name || ""],
@@ -2679,10 +2706,18 @@ function playerMatchesCompetitor(competitor, needles, translations) {
       player?.name,
       translations.players?.[player?.name || ""],
     ]) : []),
-  ].flatMap(buildPlayerNameSearchValues).filter(Boolean);
+  ].filter(Boolean);
+  
+  const expandedValues = values.flatMap((value) => [
+    value,
+    ...buildPlayerNameSearchValues(value),
+  ]).filter(Boolean);
+  
+  return expandedValues.some((value) =>
+    needles.some((needle) => playerRecordNameMatchesNeedle(value, needle)),
+  );
+  }
 
-  return values.some((value) => needles.some((needle) => value === needle));
-}
 
 function findPlayerCompetitorIndex(match, needles, translations) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
