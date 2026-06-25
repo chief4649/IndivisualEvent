@@ -43,6 +43,7 @@ const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const PLAYER_RECORD_EVENT_INDEX_PATH = path.join(DATA_DIR, "player-record-event-index.json");
 const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
+const BUNDLED_PLAYER_RECORDS_INDEX_DIR = path.join(__dirname, "player-records-index");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
@@ -151,7 +152,7 @@ function ensureRuntimeFiles() {
     syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
     syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
   }
-  syncDirectoryFilesFromDefaultIfNewer(PLAYER_RECORDS_INDEX_DIR, path.join(__dirname, "player-records-index"));
+  syncDirectoryFilesFromDefaultIfNewer(PLAYER_RECORDS_INDEX_DIR, BUNDLED_PLAYER_RECORDS_INDEX_DIR);
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
   syncFileFromDefaultIfNewer(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
@@ -2600,9 +2601,22 @@ function setPlayerRecordShardCacheValue(key, value) {
   }
 }
 
+function getAvailablePlayerRecordsIndexDir() {
+  const runtimeManifest = path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json");
+  if (fs.existsSync(runtimeManifest)) {
+    return PLAYER_RECORDS_INDEX_DIR;
+  }
+  const bundledManifest = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "manifest.json");
+  if (fs.existsSync(bundledManifest)) {
+    return BUNDLED_PLAYER_RECORDS_INDEX_DIR;
+  }
+  return PLAYER_RECORDS_INDEX_DIR;
+}
+
 function readPlayerRecordShard(shardName) {
   const safeShardName = /^[a-z0-9_]$/.test(String(shardName || "")) ? String(shardName) : "_";
-  const filePath = path.join(PLAYER_RECORDS_INDEX_DIR, `${safeShardName}.json`);
+  const indexDir = getAvailablePlayerRecordsIndexDir();
+  const filePath = path.join(indexDir, `${safeShardName}.json`);
   const signature = getPathStatToken(filePath);
   const cacheKey = `${safeShardName}:${signature}`;
   const cached = playerRecordShardCache.get(cacheKey);
@@ -2635,7 +2649,7 @@ function readJsonFileSafe(filePath, fallback) {
 }
 
 function readPlayerRecordsManifest() {
-  return readJsonFileSafe(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json"), null);
+  return readJsonFileSafe(path.join(getAvailablePlayerRecordsIndexDir(), "manifest.json"), null);
 }
 
 function clonePlayerRecordEvents(events) {
@@ -2647,7 +2661,8 @@ function clonePlayerRecordEvents(events) {
 
 function getPrebuiltPlayerRecordSearchResult(needles) {
   const manifest = readPlayerRecordsManifest();
-  if (!manifest || !fs.existsSync(PLAYER_RECORDS_INDEX_DIR)) {
+  const indexDir = getAvailablePlayerRecordsIndexDir();
+  if (!manifest || !fs.existsSync(indexDir)) {
     return null;
   }
   const eventMap = new Map();
@@ -2677,7 +2692,7 @@ function getPrebuiltPlayerRecordSearchResult(needles) {
   const events = Array.from(eventMap.values());
   events.sort(comparePlayerRecordEvents);
   return {
-    signature: getPathStatToken(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
+    signature: getPathStatToken(path.join(indexDir, "manifest.json")),
     builtAt: Date.now(),
     eventIndexSource: "record-shards",
     eventIndexGeneratedAt: manifest.generatedAt || null,
@@ -3304,6 +3319,9 @@ const server = http.createServer((request, response) => {
       playerRecordsIndex: {
         exists: fs.existsSync(PLAYER_RECORDS_INDEX_DIR),
         manifestExists: fs.existsSync(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
+        bundledExists: fs.existsSync(BUNDLED_PLAYER_RECORDS_INDEX_DIR),
+        bundledManifestExists: fs.existsSync(path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
+        activeDir: getAvailablePlayerRecordsIndexDir() === BUNDLED_PLAYER_RECORDS_INDEX_DIR ? "bundled" : "runtime",
       },
     });
     return;
