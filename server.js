@@ -38,12 +38,10 @@ const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const CACHE_DIR = path.join(DATA_DIR, ".cache");
 const ZENNIHON_ARCHIVE_DIR = path.join(DATA_DIR, "zennihon-records");
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
+const BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
-const PLAYER_RECORD_EVENT_INDEX_PATH = path.join(DATA_DIR, "player-record-event-index.json");
-const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
-const BUNDLED_PLAYER_RECORDS_INDEX_DIR = path.join(__dirname, "player-records-index");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
@@ -152,7 +150,6 @@ function ensureRuntimeFiles() {
     syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
     syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
   }
-  syncDirectoryFilesFromDefaultIfNewer(PLAYER_RECORDS_INDEX_DIR, BUNDLED_PLAYER_RECORDS_INDEX_DIR);
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
   syncFileFromDefaultIfNewer(WTT_DATE_INDEX_PATH, path.join(__dirname, "wtt-date-index.json"));
@@ -2549,9 +2546,7 @@ function comparePlayerSearchResult(left, right) {
 
 const playerRecordResultCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 100;
-const playerRecordShardCache = new Map();
-const PLAYER_RECORD_SHARD_CACHE_MAX = 12;
-let playerRecordEventIndexCache = null;
+const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 300_000);
 
 function getPathStatToken(filePath) {
   try {
@@ -2562,15 +2557,33 @@ function getPathStatToken(filePath) {
   }
 }
 
+function getAvailableWttArchiveDir() {
+  const hasJsonRecords = (dirPath) => {
+    try {
+      return fs.existsSync(dirPath) && fs.readdirSync(dirPath).some((fileName) => /^\d+\.json$/.test(fileName));
+    } catch {
+      return false;
+    }
+  };
+  if (hasJsonRecords(WTT_ARCHIVE_DIR)) {
+    return WTT_ARCHIVE_DIR;
+  }
+  if (hasJsonRecords(BUNDLED_WTT_ARCHIVE_DIR)) {
+    return BUNDLED_WTT_ARCHIVE_DIR;
+  }
+  return WTT_ARCHIVE_DIR;
+}
+
 function getWttRecordFileSnapshot() {
   try {
-    if (!fs.existsSync(WTT_ARCHIVE_DIR)) {
+    const archiveDir = getAvailableWttArchiveDir();
+    if (!fs.existsSync(archiveDir)) {
       return [];
     }
-    return fs.readdirSync(WTT_ARCHIVE_DIR)
+    return fs.readdirSync(archiveDir)
       .filter((fileName) => /^\d+\.json$/.test(fileName))
       .map((fileName) => {
-        const filePath = path.join(WTT_ARCHIVE_DIR, fileName);
+        const filePath = path.join(archiveDir, fileName);
         const stat = fs.statSync(filePath);
         return {
           eventId: fileName.replace(/\.json$/, ""),
@@ -2593,7 +2606,6 @@ function getPlayerRecordCacheSignature(snapshot) {
     WTT_ARCHIVE_INDEX_PATH,
     WTT_DATE_INDEX_PATH,
     WTT_SEARCH_INDEX_PATH,
-    PLAYER_RECORD_EVENT_INDEX_PATH,
     EVENT_NAMES_PATH,
   ].map((filePath) => `${path.basename(filePath)}:${getPathStatToken(filePath)}`).join("|");
   return `${dataSignature}::${configSignature}`;
@@ -2610,229 +2622,8 @@ function setPlayerRecordResultCacheValue(key, value) {
   }
 }
 
-function getPlayerRecordShardName(key) {
-  const match = String(key || "").match(/[a-z0-9]/i);
-  return match ? match[0].toLowerCase() : "_";
-}
-
-function setPlayerRecordShardCacheValue(key, value) {
-  if (playerRecordShardCache.has(key)) {
-    playerRecordShardCache.delete(key);
-  }
-  playerRecordShardCache.set(key, value);
-  while (playerRecordShardCache.size > PLAYER_RECORD_SHARD_CACHE_MAX) {
-    const oldestKey = playerRecordShardCache.keys().next().value;
-    playerRecordShardCache.delete(oldestKey);
-  }
-}
-
-function getAvailablePlayerRecordsIndexDir() {
-  const runtimeManifest = path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json");
-  if (fs.existsSync(runtimeManifest)) {
-    return PLAYER_RECORDS_INDEX_DIR;
-  }
-  const bundledManifest = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "manifest.json");
-  if (fs.existsSync(bundledManifest)) {
-    return BUNDLED_PLAYER_RECORDS_INDEX_DIR;
-  }
-  return PLAYER_RECORDS_INDEX_DIR;
-}
-
-function readPlayerRecordShard(shardName) {
-  const safeShardName = /^[a-z0-9_]$/.test(String(shardName || "")) ? String(shardName) : "_";
-  const indexDir = getAvailablePlayerRecordsIndexDir();
-  const filePath = path.join(indexDir, `${safeShardName}.json`);
-  const signature = getPathStatToken(filePath);
-  const cacheKey = `${safeShardName}:${signature}`;
-  const cached = playerRecordShardCache.get(cacheKey);
-  if (cached) {
-    return cached;
-  }
-  try {
-    if (!fs.existsSync(filePath)) {
-      return {};
-    }
-    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    const shard = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
-    setPlayerRecordShardCacheValue(cacheKey, shard);
-    return shard;
-  } catch (error) {
-    console.error(`[player records] failed to read shard ${safeShardName}: ${error.message}`);
-    return {};
-  }
-}
-
-function readJsonFileSafe(filePath, fallback) {
-  try {
-    if (!fs.existsSync(filePath)) {
-      return fallback;
-    }
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
-  } catch {
-    return fallback;
-  }
-}
-
-function readPlayerRecordsManifest() {
-  return readJsonFileSafe(path.join(getAvailablePlayerRecordsIndexDir(), "manifest.json"), null);
-}
-
-function clonePlayerRecordEvents(events) {
-  return (Array.isArray(events) ? events : []).map((event) => ({
-    ...event,
-    matches: Array.isArray(event.matches) ? event.matches.map((match) => ({ ...match })) : [],
-  }));
-}
-
-function getPrebuiltPlayerRecordSearchResult(needles) {
-  const manifest = readPlayerRecordsManifest();
-  const indexDir = getAvailablePlayerRecordsIndexDir();
-  if (!manifest || !fs.existsSync(indexDir)) {
-    return null;
-  }
-  const eventMap = new Map();
-  needles.forEach((needle) => {
-    const shard = readPlayerRecordShard(getPlayerRecordShardName(needle));
-    clonePlayerRecordEvents(shard[needle]).forEach((eventRecord) => {
-      if (!eventMap.has(eventRecord.event)) {
-        eventMap.set(eventRecord.event, {
-          ...eventRecord,
-          matches: [],
-        });
-      }
-      const target = eventMap.get(eventRecord.event);
-      eventRecord.matches.forEach((match) => {
-        const duplicate = target.matches.some((existing) => (
-          existing.documentCode === match.documentCode &&
-          existing.categoryName === match.categoryName &&
-          existing.roundLabel === match.roundLabel &&
-          existing.line === match.line
-        ));
-        if (!duplicate) {
-          target.matches.push(match);
-        }
-      });
-    });
-  });
-  const events = Array.from(eventMap.values());
-  events.sort(comparePlayerRecordEvents);
-  return {
-    signature: getPathStatToken(path.join(indexDir, "manifest.json")),
-    builtAt: Date.now(),
-    eventIndexSource: "record-shards",
-    eventIndexGeneratedAt: manifest.generatedAt || null,
-    scannedEvents: Number(manifest.eventCount || 0) || 0,
-    candidateEvents: events.length,
-    parsedEvents: 0,
-    scannedMatches: 0,
-    events,
-  };
-}
-
-function addPlayerRecordEventIndexKey(index, key, eventId) {
-  if (!key) {
-    return;
-  }
-  if (!index.has(key)) {
-    index.set(key, new Set());
-  }
-  index.get(key).add(eventId);
-}
-
-function addPlayerRecordEventIndexName(index, name, eventId) {
-  const raw = String(name || "").trim();
-  if (!raw) {
-    return;
-  }
-  const parts = raw.split(/[\/／]/).map((part) => part.trim()).filter(Boolean);
-  const names = parts.length > 1 ? parts : [raw];
-  names.forEach((value) => {
-    buildPlayerNameSearchValues(value).forEach((key) => addPlayerRecordEventIndexKey(index, key, eventId));
-  });
-}
-
-function extractQuotedJsonValues(text, propertyName) {
-  const escapedName = propertyName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const pattern = new RegExp(`"${escapedName}"\\s*:\\s*"([^"]+)"`, "g");
-  const values = [];
-  let match = pattern.exec(text);
-  while (match) {
-    values.push(match[1]);
-    match = pattern.exec(text);
-  }
-  return values;
-}
-
-function buildPlayerRecordEventIndex(snapshot) {
-  const index = new Map();
-  snapshot.forEach((file) => {
-    const text = readTextFile(file.filePath);
-    if (!text) {
-      return;
-    }
-    [
-      ...extractQuotedJsonValues(text, "playerName"),
-      ...extractQuotedJsonValues(text, "competitiorName"),
-      ...extractQuotedJsonValues(text, "name"),
-    ].forEach((name) => addPlayerRecordEventIndexName(index, name, file.eventId));
-  });
-  return index;
-}
-
-function readPlayerRecordEventIndexFile() {
-  try {
-    if (!fs.existsSync(PLAYER_RECORD_EVENT_INDEX_PATH)) {
-      return null;
-    }
-    const parsed = JSON.parse(fs.readFileSync(PLAYER_RECORD_EVENT_INDEX_PATH, "utf8"));
-    const rawIndex = parsed?.index;
-    if (!rawIndex || typeof rawIndex !== "object" || Array.isArray(rawIndex)) {
-      return null;
-    }
-    const index = new Map();
-    Object.entries(rawIndex).forEach(([key, eventIds]) => {
-      if (!Array.isArray(eventIds)) {
-        return;
-      }
-      index.set(key, new Set(eventIds.map((eventId) => String(eventId))));
-    });
-    return {
-      index,
-      generatedAt: parsed.generatedAt || null,
-      eventCount: Number(parsed.eventCount || 0) || 0,
-    };
-  } catch (error) {
-    console.error(`[player records] failed to read event index: ${error.message}`);
-    return null;
-  }
-}
-
-function getPlayerRecordEventIndex(snapshot, signature) {
-  if (!playerRecordEventIndexCache || playerRecordEventIndexCache.signature !== signature) {
-    const fileIndex = readPlayerRecordEventIndexFile();
-    playerRecordEventIndexCache = {
-      signature,
-      source: fileIndex ? "file" : "runtime",
-      eventCount: fileIndex?.eventCount || snapshot.length,
-      generatedAt: fileIndex?.generatedAt || null,
-      index: fileIndex?.index || buildPlayerRecordEventIndex(snapshot),
-    };
-  }
-  return playerRecordEventIndexCache;
-}
-
-function filterSnapshotForPlayer(snapshot, eventIndexCache, needles, textNeedles) {
-  const candidateIds = new Set();
-  needles.forEach((needle) => {
-    const eventIds = eventIndexCache.index.get(needle);
-    if (eventIds) {
-      eventIds.forEach((eventId) => candidateIds.add(eventId));
-    }
-  });
-  if (candidateIds.size === 0 && textNeedles.length === 0) {
-    return snapshot;
-  }
-  return snapshot.filter((file) => candidateIds.has(file.eventId));
+function clearPlayerRecordResultCache() {
+  playerRecordResultCache.clear();
 }
 
 function normalizeArchivedMatch(item) {
@@ -2997,8 +2788,8 @@ function parseJsonArrayFromText(text) {
   }
 }
 
-function buildPlayerRecordTextNeedles(name) {
-  const normalizedValues = buildPlayerNameSearchValues(name)
+function buildPlayerRecordTextNeedles(...names) {
+  const normalizedValues = names.flatMap(buildPlayerNameSearchValues)
     .filter((value) => /^[a-z0-9 ]+$/.test(value))
     .map((value) => {
       const tokens = value.split(/\s+/).filter(Boolean);
@@ -3029,6 +2820,22 @@ function textLikelyContainsPlayer(text, textNeedles) {
   });
 }
 
+function pushPlayerRecordMatch(matches, match, competitorIndex, translations, rules, roundContext, parentMatch = null) {
+  const sourceMatch = parentMatch || match;
+  matches.push({
+    categoryName: sourceMatch.categoryName || match.categoryName || "",
+    roundLabel: translateRoundJa(
+      sourceMatch.roundKey || match.roundKey,
+      sourceMatch.roundLabel || match.roundLabel,
+      translations,
+      rules,
+      roundContext,
+    ),
+    line: buildPlayerRecordLine(match, competitorIndex, translations),
+    documentCode: match.documentCode || sourceMatch.documentCode || "",
+  });
+}
+
 function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
@@ -3047,22 +2854,28 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
     }
     parsedEvents += 1;
     const payload = parseJsonArrayFromText(text);
+    const normalized = payload.map(normalizeArchivedMatch).filter(Boolean);
+    const roundContext = buildJaRoundContext(normalized);
     const matches = [];
-    payload.forEach((item) => {
-      const match = normalizeArchivedMatch(item);
-      if (!match || match.matchType !== "individual") {
-        return;
-      }
+    normalized.forEach((match) => {
       scannedMatches += 1;
-      const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
-      if (competitorIndex < 0) {
+      if (match.matchType === "individual") {
+        const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
+        if (competitorIndex >= 0) {
+          pushPlayerRecordMatch(matches, match, competitorIndex, translations, rules, roundContext);
+        }
         return;
       }
-      matches.push({
-        categoryName: match.categoryName || "",
-        roundLabel: translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match])),
-        line: buildPlayerRecordLine(match, competitorIndex, translations),
-        documentCode: match.documentCode || "",
+
+      if (match.matchType !== "team") {
+        return;
+      }
+      (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
+        scannedMatches += 1;
+        const competitorIndex = findPlayerCompetitorIndex(single, needles, translations);
+        if (competitorIndex >= 0) {
+          pushPlayerRecordMatch(matches, single, competitorIndex, translations, rules, roundContext, match);
+        }
       });
     });
     if (matches.length === 0) {
@@ -3083,31 +2896,25 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
 }
 
 function getPlayerRecordSearchResult(name, translatedName, needles) {
-  const prebuilt = getPrebuiltPlayerRecordSearchResult(needles);
-  if (prebuilt) {
-    return prebuilt;
-  }
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
   const cacheKey = `${signature}::${needles.join("|")}`;
   const cached = playerRecordResultCache.get(cacheKey);
-  if (cached) {
+  if (cached && Date.now() - cached.builtAt < PLAYER_RECORD_RESULT_CACHE_TTL_MS) {
     return {
       ...cached,
       cacheHit: true,
     };
   }
-  const textNeedles = buildPlayerRecordTextNeedles(name);
-  const eventIndex = getPlayerRecordEventIndex(snapshot, signature);
-  const filteredSnapshot = filterSnapshotForPlayer(snapshot, eventIndex, needles, textNeedles);
-  const collected = collectPlayerRecordEvents(filteredSnapshot, needles, textNeedles);
+  const textNeedles = buildPlayerRecordTextNeedles(name, translatedName);
+  const collected = collectPlayerRecordEvents(snapshot, needles, textNeedles);
   const result = {
     signature,
     builtAt: Date.now(),
-    eventIndexSource: eventIndex.source,
-    eventIndexGeneratedAt: eventIndex.generatedAt,
+    eventIndexSource: "wtt-records",
+    eventIndexGeneratedAt: null,
     scannedEvents: snapshot.length,
-    candidateEvents: filteredSnapshot.length,
+    candidateEvents: snapshot.length,
     ...collected,
   };
   setPlayerRecordResultCacheValue(cacheKey, result);
@@ -3293,6 +3100,7 @@ async function handleConfigUpdate(request, response, pathname) {
       }
       writePrettyJson(TRANSLATIONS_PATH, validated);
       clearProcessedMatchesCache();
+      clearPlayerRecordResultCache();
       sendJson(response, 200, {
         ok: true,
         file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
@@ -3303,6 +3111,7 @@ async function handleConfigUpdate(request, response, pathname) {
     if (pathname === "/api/config/rules") {
       writePrettyJson(RULES_PATH, parsed);
       clearProcessedMatchesCache();
+      clearPlayerRecordResultCache();
       sendJson(response, 200, {
         ok: true,
         file: RULES_PATH,
@@ -3341,12 +3150,11 @@ const server = http.createServer((request, response) => {
       adminProtected: Boolean(ADMIN_TOKEN),
       viewerProtected: Boolean(VIEWER_PASSWORD),
       runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
-      playerRecordsIndex: {
-        exists: fs.existsSync(PLAYER_RECORDS_INDEX_DIR),
-        manifestExists: fs.existsSync(path.join(PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
-        bundledExists: fs.existsSync(BUNDLED_PLAYER_RECORDS_INDEX_DIR),
-        bundledManifestExists: fs.existsSync(path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "manifest.json")),
-        activeDir: getAvailablePlayerRecordsIndexDir() === BUNDLED_PLAYER_RECORDS_INDEX_DIR ? "bundled" : "runtime",
+      playerRecords: {
+        source: "wtt-records",
+        activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
+        archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
+        cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
       },
     });
     return;
