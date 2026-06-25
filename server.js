@@ -2545,8 +2545,8 @@ function comparePlayerSearchResult(left, right) {
 }
 
 const playerRecordResultCache = new Map();
-const PLAYER_RECORD_RESULT_CACHE_MAX = 100;
-const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 300_000);
+const PLAYER_RECORD_RESULT_CACHE_MAX = 10;
+const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 60_000);
 
 function getPathStatToken(filePath) {
   try {
@@ -2575,27 +2575,61 @@ function getAvailableWttArchiveDir() {
 }
 
 function getWttRecordFileSnapshot() {
-  try {
-    const archiveDir = getAvailableWttArchiveDir();
-    if (!fs.existsSync(archiveDir)) {
-      return [];
+  const recordsByEventId = new Map();
+
+  const addDirectory = (dirPath, sourcePriority, sourceLabel) => {
+    try {
+      if (!dirPath || !fs.existsSync(dirPath)) {
+        return;
+      }
+
+      fs.readdirSync(dirPath)
+        .filter((fileName) => /^\d+\.json$/.test(fileName))
+        .forEach((fileName) => {
+          const eventId = fileName.replace(/\.json$/, "");
+          const filePath = path.join(dirPath, fileName);
+          const stat = fs.statSync(filePath);
+          const next = {
+            eventId,
+            filePath,
+            size: stat.size,
+            mtimeMs: Math.trunc(stat.mtimeMs),
+            sourcePriority,
+            sourceLabel,
+          };
+
+          const current = recordsByEventId.get(eventId);
+          if (!current) {
+            recordsByEventId.set(eventId, next);
+            return;
+          }
+
+          // Runtime DATA_DIR can contain stale persistent files on Render.
+          // Bundled repo files can contain newer deployed records.
+          // Prefer larger/newer files; if tied, prefer bundled deployment data.
+          if (
+            next.size > current.size ||
+            (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
+            (
+              next.size === current.size &&
+              next.mtimeMs === current.mtimeMs &&
+              next.sourcePriority > current.sourcePriority
+            )
+          ) {
+            recordsByEventId.set(eventId, next);
+          }
+        });
+    } catch {
+      // Ignore unreadable archive directories.
     }
-    return fs.readdirSync(archiveDir)
-      .filter((fileName) => /^\d+\.json$/.test(fileName))
-      .map((fileName) => {
-        const filePath = path.join(archiveDir, fileName);
-        const stat = fs.statSync(filePath);
-        return {
-          eventId: fileName.replace(/\.json$/, ""),
-          filePath,
-          size: stat.size,
-          mtimeMs: Math.trunc(stat.mtimeMs),
-        };
-      })
-      .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
-  } catch {
-    return [];
-  }
+  };
+
+  addDirectory(WTT_ARCHIVE_DIR, 1, "runtime");
+  addDirectory(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled");
+
+  return [...recordsByEventId.values()]
+    .map(({ sourcePriority, ...file }) => file)
+    .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
 }
 
 function getPlayerRecordCacheSignature(snapshot) {
@@ -2671,34 +2705,37 @@ function buildPlayerNameSearchValues(value) {
 function playerRecordNameMatchesNeedle(value, needle) {
   const normalizedValue = normalizePlayerSearchText(value);
   const normalizedNeedle = normalizePlayerSearchText(needle);
-  
+
   if (!normalizedValue || !normalizedNeedle) {
     return false;
   }
-  
+
   if (normalizedValue === normalizedNeedle) {
     return true;
   }
-  
+
   const valueTokens = normalizedValue.split(/\s+/).filter(Boolean);
   const needleTokens = normalizedNeedle.split(/\s+/).filter(Boolean);
-  
+
   if (needleTokens.length === 0) {
     return false;
   }
-  
+
+  // Source records may include country codes, pair names, descriptors,
+  // or other suffixes/prefixes around the player name.
   if (` ${normalizedValue} `.includes(` ${normalizedNeedle} `)) {
     return true;
   }
-  
+
+  // Generalized token match: "UDA Yukiya JPN", "Yukiya UDA", etc.
   return needleTokens.every((token) => valueTokens.includes(token));
-  }
-  
-  function playerMatchesCompetitor(competitor, needles, translations) {
+}
+
+function playerMatchesCompetitor(competitor, needles, translations) {
   if (!competitor || needles.length === 0) {
     return false;
   }
-  
+
   const values = [
     competitor.name,
     translations.players?.[competitor.name || ""],
@@ -2707,17 +2744,16 @@ function playerRecordNameMatchesNeedle(value, needle) {
       translations.players?.[player?.name || ""],
     ]) : []),
   ].filter(Boolean);
-  
+
   const expandedValues = values.flatMap((value) => [
     value,
     ...buildPlayerNameSearchValues(value),
   ]).filter(Boolean);
-  
+
   return expandedValues.some((value) =>
     needles.some((needle) => playerRecordNameMatchesNeedle(value, needle)),
   );
-  }
-
+}
 
 function findPlayerCompetitorIndex(match, needles, translations) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
@@ -2902,37 +2938,67 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
     if (!text || !textLikelyContainsPlayer(text, textNeedles)) {
       return;
     }
-    parsedEvents += 1;
+
     const payload = parseJsonArrayFromText(text);
-    const normalized = payload.map(normalizeArchivedMatch).filter(Boolean);
-    const roundContext = buildJaRoundContext(normalized);
+    if (!Array.isArray(payload) || payload.length === 0) {
+      return;
+    }
+
+    parsedEvents += 1;
     const matches = [];
-    normalized.forEach((match) => {
+
+    for (const item of payload) {
+      const match = normalizeArchivedMatch(item);
+      if (!match) {
+        continue;
+      }
+
       scannedMatches += 1;
+
       if (match.matchType === "individual") {
         const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
         if (competitorIndex >= 0) {
-          pushPlayerRecordMatch(matches, match, competitorIndex, translations, rules, roundContext);
+          pushPlayerRecordMatch(
+            matches,
+            match,
+            competitorIndex,
+            translations,
+            rules,
+            buildJaRoundContext([match]),
+          );
         }
-        return;
+        continue;
       }
 
       if (match.matchType !== "team") {
-        return;
+        continue;
       }
+
+      const teamRoundContext = buildJaRoundContext([match]);
       (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
         scannedMatches += 1;
         const competitorIndex = findPlayerCompetitorIndex(single, needles, translations);
         if (competitorIndex >= 0) {
-          pushPlayerRecordMatch(matches, single, competitorIndex, translations, rules, roundContext, match);
+          pushPlayerRecordMatch(
+            matches,
+            single,
+            competitorIndex,
+            translations,
+            rules,
+            teamRoundContext,
+            match,
+          );
         }
       });
-    });
+    }
+
     if (matches.length === 0) {
       return;
     }
+
     events.push({
       ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+      source: file.sourceLabel || "",
       matches,
     });
   });
@@ -3203,8 +3269,10 @@ const server = http.createServer((request, response) => {
       runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
       playerRecords: {
         source: "wtt-records",
+        archiveMode: "runtime+bundled",
         activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
         archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
+        snapshotRecords: getWttRecordFileSnapshot().length,
         cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
       },
     });
