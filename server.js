@@ -2494,6 +2494,137 @@ function mergePlayerSearchResultCandidate(existing, candidate) {
   };
 }
 
+const playerSearchArchiveResultCache = new Map();
+const PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_MAX = Number(process.env.PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_MAX || 20);
+const PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_TTL_MS || 60_000);
+const PLAYER_SEARCH_ARCHIVE_FILE_LIMIT = Number(process.env.PLAYER_SEARCH_ARCHIVE_FILE_LIMIT || 80);
+
+function setPlayerSearchArchiveResultCacheValue(key, value) {
+  if (playerSearchArchiveResultCache.has(key)) {
+    playerSearchArchiveResultCache.delete(key);
+  }
+  playerSearchArchiveResultCache.set(key, value);
+  while (playerSearchArchiveResultCache.size > PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_MAX) {
+    const oldestKey = playerSearchArchiveResultCache.keys().next().value;
+    playerSearchArchiveResultCache.delete(oldestKey);
+  }
+}
+
+function unquoteJsonStringLiteral(value) {
+  try {
+    return JSON.parse(`"${String(value || "")}"`);
+  } catch {
+    return String(value || "").replace(/\\"/g, "\"").replace(/\\\\/g, "\\");
+  }
+}
+
+function splitArchivedPlayerSearchName(value) {
+  const raw = String(value || "").replace(/\s+/g, " ").trim();
+  if (!raw || /^(?:tbd|bye|n\/a|null|undefined)$/i.test(raw)) {
+    return [];
+  }
+  return raw
+    .split(/\s*(?:\/|／|\+|&|\band\b)\s*/i)
+    .map((part) => part.replace(/\s+/g, " ").trim())
+    .filter((part) => part && !/^(?:tbd|bye|n\/a|null|undefined)$/i.test(part));
+}
+
+function extractPlayerSearchNamesFromArchiveText(text) {
+  const names = new Set();
+  const source = String(text || "");
+  const pattern = /"(?:playerName|player_name|competitiorName|competitior_name|competitorName|competitor_name)"\s*:\s*"((?:\\.|[^"\\])*)"/g;
+  let match;
+  while ((match = pattern.exec(source))) {
+    splitArchivedPlayerSearchName(unquoteJsonStringLiteral(match[1]))
+      .forEach((name) => names.add(name));
+  }
+  return [...names];
+}
+
+function getPlayerSearchTranslatedName(name, translations) {
+  for (const candidate of getNameTranslationCandidates(name)) {
+    const translatedName = String(translations.players?.[candidate] || "").trim();
+    if (translatedName) {
+      return translatedName;
+    }
+  }
+  return "";
+}
+
+function addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, translations) {
+  const normalizedName = normalizePlayerSearchText(name);
+  if (!normalizedName) {
+    return;
+  }
+  const tokens = normalizePlayerSearchText(query).split(/\s+/).filter(Boolean);
+  const translatedName = getPlayerSearchTranslatedName(name, translations);
+  const haystack = normalizePlayerSearchText(`${name} ${translatedName}`);
+  if (!tokens.every((token) => haystack.includes(token))) {
+    return;
+  }
+
+  const item = {
+    name: String(name || "").trim(),
+    translatedName: translatedName || "未登録",
+    registered: Boolean(translatedName),
+    score: getPlayerSearchScore(query, name, translatedName),
+  };
+  const playerKey = getPlayerSearchIdentityKey(item.name, item.translatedName);
+  if (!playerKey) {
+    return;
+  }
+  const existing = resultByPlayerKey.get(playerKey);
+  resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
+}
+
+async function collectPlayerSearchArchiveCandidates(query, translations, limit) {
+  const normalizedQuery = normalizePlayerSearchText(query);
+  const queryTokens = normalizedQuery.split(/\s+/).filter((token) => token.length >= 2);
+  if (queryTokens.length === 0) {
+    return [];
+  }
+
+  const snapshot = getWttRecordFileSnapshot();
+  const signature = getPlayerRecordCacheSignature(snapshot);
+  const cacheKey = `${signature}::${normalizedQuery}`;
+  const cached = playerSearchArchiveResultCache.get(cacheKey);
+  if (cached && Date.now() - cached.builtAt < PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_TTL_MS) {
+    return cached.results;
+  }
+
+  const textNeedles = buildPlayerRecordTextNeedles(query);
+  if (textNeedles.length === 0) {
+    return [];
+  }
+
+  const candidateSnapshot = (await getPlayerRecordCandidateSnapshot(snapshot, textNeedles))
+    .slice(0, PLAYER_SEARCH_ARCHIVE_FILE_LIMIT);
+  const resultByPlayerKey = new Map();
+
+  for (const file of candidateSnapshot) {
+    await yieldToEventLoop();
+    const text = readTextFile(file.filePath);
+    if (!text || !textLikelyContainsPlayer(text, textNeedles)) {
+      continue;
+    }
+    extractPlayerSearchNamesFromArchiveText(text).forEach((name) => {
+      addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, translations);
+    });
+    if (resultByPlayerKey.size >= limit * 3) {
+      break;
+    }
+  }
+
+  const results = [...resultByPlayerKey.values()]
+    .sort(comparePlayerSearchResult)
+    .slice(0, limit);
+  setPlayerSearchArchiveResultCacheValue(cacheKey, {
+    builtAt: Date.now(),
+    results,
+  });
+  return results;
+}
+
 async function handlePlayerSearchApi(requestUrl, response) {
   try {
     await syncTranslationsFromSharedSource();
@@ -2523,6 +2654,15 @@ async function handlePlayerSearchApi(requestUrl, response) {
         }
       });
     }
+
+    const archiveResults = tokens.length > 0
+      ? await collectPlayerSearchArchiveCandidates(query, translations, limit)
+      : [];
+    archiveResults.forEach((item) => {
+      const playerKey = getPlayerSearchIdentityKey(item.name, item.translatedName);
+      const existing = resultByPlayerKey.get(playerKey);
+      resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
+    });
 
     results.push(...resultByPlayerKey.values());
     results.sort((left, right) =>
