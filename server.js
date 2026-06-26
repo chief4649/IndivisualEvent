@@ -2497,7 +2497,13 @@ function mergePlayerSearchResultCandidate(existing, candidate) {
 const playerSearchArchiveResultCache = new Map();
 const PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_MAX = Number(process.env.PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_MAX || 20);
 const PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_SEARCH_ARCHIVE_RESULT_CACHE_TTL_MS || 60_000);
-const PLAYER_SEARCH_ARCHIVE_FILE_LIMIT = Number(process.env.PLAYER_SEARCH_ARCHIVE_FILE_LIMIT || 80);
+const PLAYER_SEARCH_ARCHIVE_INDEX_GREP_MAX_BYTES = Number(process.env.PLAYER_SEARCH_ARCHIVE_INDEX_GREP_MAX_BYTES || 64_000_000);
+const playerSearchArchiveIndexState = {
+  signature: "",
+  builtAt: 0,
+  names: [],
+  building: null,
+};
 
 function setPlayerSearchArchiveResultCacheValue(key, value) {
   if (playerSearchArchiveResultCache.has(key)) {
@@ -2577,6 +2583,97 @@ function addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, transla
   resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
 }
 
+function runGrepPlayerSearchFieldLines(files) {
+  if (files.length === 0) {
+    return Promise.resolve([]);
+  }
+
+  const lines = [];
+  const chunkSize = 80;
+  const runChunk = (chunk) => new Promise((resolve) => {
+    let stdout = "";
+    let settled = false;
+    const grep = spawn("grep", [
+      "-I",
+      "-h",
+      "-E",
+      "--",
+      "\"(playerName|player_name|competitiorName|competitior_name|competitorName|competitor_name)\"[[:space:]]*:",
+      ...chunk.map((file) => file.filePath),
+    ]);
+
+    const finish = (value) => {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      resolve(value);
+    };
+
+    grep.stdout.on("data", (data) => {
+      stdout += data.toString("utf8");
+      if (Buffer.byteLength(stdout, "utf8") > PLAYER_SEARCH_ARCHIVE_INDEX_GREP_MAX_BYTES) {
+        grep.kill("SIGTERM");
+      }
+    });
+
+    grep.on("error", (error) => {
+      if (error && error.code === "ENOENT") {
+        finish(null);
+        return;
+      }
+      finish([]);
+    });
+
+    grep.on("close", (code) => {
+      if ((code === 0 || stdout) && stdout) {
+        finish(stdout.split(/\n/).filter(Boolean));
+        return;
+      }
+      finish([]);
+    });
+  });
+
+  return (async () => {
+    for (let index = 0; index < files.length; index += chunkSize) {
+      const chunk = files.slice(index, index + chunkSize);
+      const matchedLines = await runChunk(chunk);
+      if (matchedLines === null) {
+        return [];
+      }
+      lines.push(...matchedLines);
+      if (Buffer.byteLength(lines.join("\n"), "utf8") > PLAYER_SEARCH_ARCHIVE_INDEX_GREP_MAX_BYTES) {
+        break;
+      }
+    }
+    return lines;
+  })();
+}
+
+async function buildPlayerSearchArchiveNameIndex(snapshot, signature) {
+  const lines = await runGrepPlayerSearchFieldLines(snapshot);
+  const names = new Set();
+  lines.forEach((line) => {
+    extractPlayerSearchNamesFromArchiveText(line).forEach((name) => names.add(name));
+  });
+  playerSearchArchiveIndexState.signature = signature;
+  playerSearchArchiveIndexState.builtAt = Date.now();
+  playerSearchArchiveIndexState.names = [...names];
+  playerSearchArchiveIndexState.building = null;
+}
+
+function getPlayerSearchArchiveIndexNames(snapshot, signature) {
+  if (playerSearchArchiveIndexState.signature === signature && playerSearchArchiveIndexState.names.length > 0) {
+    return playerSearchArchiveIndexState.names;
+  }
+  if (!playerSearchArchiveIndexState.building) {
+    playerSearchArchiveIndexState.building = buildPlayerSearchArchiveNameIndex(snapshot, signature).catch(() => {
+      playerSearchArchiveIndexState.building = null;
+    });
+  }
+  return null;
+}
+
 async function collectPlayerSearchArchiveCandidates(query, translations, limit) {
   const normalizedQuery = normalizePlayerSearchText(query);
   const queryTokens = normalizedQuery.split(/\s+/).filter((token) => token.length >= 2);
@@ -2592,24 +2689,15 @@ async function collectPlayerSearchArchiveCandidates(query, translations, limit) 
     return cached.results;
   }
 
-  const textNeedles = buildPlayerRecordTextNeedles(query);
-  if (textNeedles.length === 0) {
+  const archiveNames = getPlayerSearchArchiveIndexNames(snapshot, signature);
+  if (!archiveNames) {
     return [];
   }
 
-  const candidateSnapshot = (await getPlayerRecordCandidateSnapshot(snapshot, textNeedles))
-    .slice(0, PLAYER_SEARCH_ARCHIVE_FILE_LIMIT);
   const resultByPlayerKey = new Map();
 
-  for (const file of candidateSnapshot) {
-    await yieldToEventLoop();
-    const text = readTextFile(file.filePath);
-    if (!text || !textLikelyContainsPlayer(text, textNeedles)) {
-      continue;
-    }
-    extractPlayerSearchNamesFromArchiveText(text).forEach((name) => {
-      addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, translations);
-    });
+  for (const name of archiveNames) {
+    addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, translations);
     if (resultByPlayerKey.size >= limit * 3) {
       break;
     }
