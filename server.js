@@ -3300,13 +3300,19 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
     }
 
     parsedEvents += 1;
-    const matches = [];
-
+    const normalizedMatches = [];
     for (const item of payload) {
       const match = normalizeArchivedMatch(item);
-      if (!match) {
-        continue;
+      if (match) {
+        normalizedMatches.push(match);
       }
+    }
+    const contextsByCategory = buildRoundContextsByCategory(normalizedMatches);
+    const fallbackRoundContext = buildJaRoundContext(normalizedMatches);
+    const matches = [];
+
+    for (const match of normalizedMatches) {
+      const matchRoundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext;
 
       scannedMatches += 1;
 
@@ -3319,7 +3325,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
             competitorIndex,
             translations,
             rules,
-            buildJaRoundContext([match]),
+            matchRoundContext,
           );
         }
         continue;
@@ -3329,7 +3335,6 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
         continue;
       }
 
-      const teamRoundContext = buildJaRoundContext([match]);
       (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
         scannedMatches += 1;
         const competitorIndex = findPlayerCompetitorIndex(single, needles, translations);
@@ -3340,7 +3345,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
             competitorIndex,
             translations,
             rules,
-            teamRoundContext,
+            matchRoundContext,
             match,
           );
         }
