@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const crypto = require("crypto");
-const { spawn, spawnSync } = require("child_process");
+const { spawn } = require("child_process");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -3176,14 +3176,14 @@ function escapeGrepFixedPattern(value) {
 function runGrepFileCandidates(files, token) {
   const pattern = escapeGrepFixedPattern(token);
   if (!pattern || files.length === 0) {
-    return [];
+    return Promise.resolve([]);
   }
 
   const results = new Set();
   const chunkSize = 100;
-  for (let index = 0; index < files.length; index += chunkSize) {
-    const chunk = files.slice(index, index + chunkSize);
-    const grep = spawnSync("grep", [
+  const runChunk = (chunk) => new Promise((resolve) => {
+    let stdout = "";
+    const grep = spawn("grep", [
       "-I",
       "-l",
       "-i",
@@ -3191,24 +3191,44 @@ function runGrepFileCandidates(files, token) {
       "--",
       pattern,
       ...chunk.map((file) => file.filePath),
-    ], {
-      encoding: "utf8",
-      maxBuffer: 10 * 1024 * 1024,
+    ]);
+
+    grep.stdout.on("data", (data) => {
+      stdout += data.toString("utf8");
     });
 
-    if (grep.status === 0 && grep.stdout) {
-      grep.stdout.split(/\n/).filter(Boolean).forEach((filePath) => results.add(filePath));
+    grep.on("error", (error) => {
+      if (error && error.code === "ENOENT") {
+        resolve(null);
+        return;
+      }
+      resolve(new Set());
+    });
+
+    grep.on("close", (code) => {
+      if (code === 0 && stdout) {
+        resolve(new Set(stdout.split(/\n/).filter(Boolean)));
+        return;
+      }
+      resolve(new Set());
+    });
+  });
+
+  return (async () => {
+    for (let index = 0; index < files.length; index += chunkSize) {
+      const chunk = files.slice(index, index + chunkSize);
+      const matchedPaths = await runChunk(chunk);
+      if (matchedPaths === null) {
+        return null;
+      }
+      matchedPaths.forEach((filePath) => results.add(filePath));
     }
 
-    if (grep.error && grep.error.code === "ENOENT") {
-      return null;
-    }
-  }
-
-  return results;
+    return results;
+  })();
 }
 
-function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
+async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
   if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
     return snapshot;
   }
@@ -3230,7 +3250,7 @@ function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
 
   for (const token of bestGroup) {
     const currentFiles = snapshot.filter((file) => candidatePaths.has(file.filePath));
-    const matchedPaths = runGrepFileCandidates(currentFiles, token);
+    const matchedPaths = await runGrepFileCandidates(currentFiles, token);
     if (matchedPaths === null) {
       // grep is unavailable. Fall back to JS prefilter in collectPlayerRecordEvents.
       return snapshot;
@@ -3319,7 +3339,11 @@ function buildPlayerRecordMatchGroups(matches) {
     }));
 }
 
-function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
+function yieldToEventLoop() {
+  return new Promise((resolve) => setImmediate(resolve));
+}
+
+async function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
   const searchIndex = readWttSearchIndex();
@@ -3330,10 +3354,11 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   let parsedEvents = 0;
   let scannedMatches = 0;
 
-  snapshot.forEach((file) => {
+  for (const file of snapshot) {
+    await yieldToEventLoop();
     const text = readTextFile(file.filePath);
     if (!text || (Array.isArray(textNeedles) && textNeedles.length > 0 && !textLikelyContainsPlayer(text, textNeedles))) {
-      return;
+      continue;
     }
 
     const {
@@ -3342,7 +3367,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
       fallbackRoundContext,
     } = getParsedPlayerRecordArchive(file, text);
     if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
-      return;
+      continue;
     }
 
     parsedEvents += 1;
@@ -3390,7 +3415,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
     }
 
     if (matches.length === 0) {
-      return;
+      continue;
     }
 
     const matchGroups = buildPlayerRecordMatchGroups(matches);
@@ -3400,7 +3425,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
       matches: matchGroups.flatMap((group) => group.matches),
       matchGroups,
     });
-  });
+  }
 
   events.sort(comparePlayerRecordEvents);
   return {
@@ -3410,7 +3435,7 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
   };
 }
 
-function getPlayerRecordSearchResult(name, translatedName, needles) {
+async function getPlayerRecordSearchResult(name, translatedName, needles) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
   const cacheKey = `${signature}::${needles.join("|")}`;
@@ -3422,8 +3447,8 @@ function getPlayerRecordSearchResult(name, translatedName, needles) {
     };
   }
   const textNeedles = buildPlayerRecordTextNeedles(...needles);
-  const candidateSnapshot = getPlayerRecordCandidateSnapshot(snapshot, textNeedles);
-  const collected = collectPlayerRecordEvents(candidateSnapshot, needles, []);
+  const candidateSnapshot = await getPlayerRecordCandidateSnapshot(snapshot, textNeedles);
+  const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, []);
   const result = {
     signature,
     builtAt: Date.now(),
@@ -3466,7 +3491,7 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       });
       return;
     }
-    const searchResult = getPlayerRecordSearchResult(name, translatedName, needles);
+    const searchResult = await getPlayerRecordSearchResult(name, translatedName, needles);
     const events = searchResult.events;
     let returnedMatches = 0;
     const limitedEvents = [];
@@ -3674,9 +3699,8 @@ const server = http.createServer((request, response) => {
         archiveMode: "runtime+bundled",
         candidateMode: "grep-prefilter",
         displayMode: "player-record-org-v4-category-groups-keep-round-order",
-        activeArchiveDir: getAvailableWttArchiveDir() === BUNDLED_WTT_ARCHIVE_DIR ? "bundled" : "runtime",
-        archiveDirExists: fs.existsSync(getAvailableWttArchiveDir()),
-        snapshotRecords: getWttRecordFileSnapshot().length,
+        runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
+        bundledArchiveDirExists: fs.existsSync(BUNDLED_WTT_ARCHIVE_DIR),
         cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
       },
     });
