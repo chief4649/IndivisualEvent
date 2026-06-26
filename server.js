@@ -2597,6 +2597,8 @@ function comparePlayerSearchResult(left, right) {
 const playerRecordResultCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 10;
 const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 60_000);
+const playerRecordArchiveParseCache = new Map();
+const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
 
 function getPathStatToken(filePath) {
   try {
@@ -2708,6 +2710,21 @@ function setPlayerRecordResultCacheValue(key, value) {
 
 function clearPlayerRecordResultCache() {
   playerRecordResultCache.clear();
+}
+
+function setPlayerRecordArchiveParseCacheValue(key, value) {
+  if (playerRecordArchiveParseCache.has(key)) {
+    playerRecordArchiveParseCache.delete(key);
+  }
+  playerRecordArchiveParseCache.set(key, value);
+  while (playerRecordArchiveParseCache.size > PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX) {
+    const oldestKey = playerRecordArchiveParseCache.keys().next().value;
+    playerRecordArchiveParseCache.delete(oldestKey);
+  }
+}
+
+function clearPlayerRecordArchiveParseCache() {
+  playerRecordArchiveParseCache.clear();
 }
 
 function normalizeArchivedMatch(item) {
@@ -3078,6 +3095,31 @@ function parseJsonArrayFromText(text) {
   }
 }
 
+function getParsedPlayerRecordArchive(file, existingText = null) {
+  const cacheKey = `${file.filePath}:${file.size}:${file.mtimeMs}`;
+  const cached = playerRecordArchiveParseCache.get(cacheKey);
+  if (cached) {
+    return cached;
+  }
+  const text = typeof existingText === "string" ? existingText : readTextFile(file.filePath);
+  const payload = parseJsonArrayFromText(text);
+  const normalizedMatches = [];
+  for (const item of payload) {
+    const match = normalizeArchivedMatch(item);
+    if (match) {
+      normalizedMatches.push(match);
+    }
+  }
+  const parsedArchive = {
+    text,
+    normalizedMatches,
+    contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
+    fallbackRoundContext: buildJaRoundContext(normalizedMatches),
+  };
+  setPlayerRecordArchiveParseCacheValue(cacheKey, parsedArchive);
+  return parsedArchive;
+}
+
 function buildPlayerRecordTextNeedles(...names) {
   const normalizedValues = names.flatMap(buildPlayerNameSearchValues)
     .filter((value) => /^[a-z0-9 ]+$/.test(value))
@@ -3294,21 +3336,16 @@ function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
       return;
     }
 
-    const payload = parseJsonArrayFromText(text);
-    if (!Array.isArray(payload) || payload.length === 0) {
+    const {
+      normalizedMatches,
+      contextsByCategory,
+      fallbackRoundContext,
+    } = getParsedPlayerRecordArchive(file, text);
+    if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
       return;
     }
 
     parsedEvents += 1;
-    const normalizedMatches = [];
-    for (const item of payload) {
-      const match = normalizeArchivedMatch(item);
-      if (match) {
-        normalizedMatches.push(match);
-      }
-    }
-    const contextsByCategory = buildRoundContextsByCategory(normalizedMatches);
-    const fallbackRoundContext = buildJaRoundContext(normalizedMatches);
     const matches = [];
 
     for (const match of normalizedMatches) {
@@ -3581,6 +3618,7 @@ async function handleConfigUpdate(request, response, pathname) {
       writePrettyJson(TRANSLATIONS_PATH, validated);
       clearProcessedMatchesCache();
       clearPlayerRecordResultCache();
+      clearPlayerRecordArchiveParseCache();
       sendJson(response, 200, {
         ok: true,
         file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
@@ -3592,6 +3630,7 @@ async function handleConfigUpdate(request, response, pathname) {
       writePrettyJson(RULES_PATH, parsed);
       clearProcessedMatchesCache();
       clearPlayerRecordResultCache();
+      clearPlayerRecordArchiveParseCache();
       sendJson(response, 200, {
         ok: true,
         file: RULES_PATH,
