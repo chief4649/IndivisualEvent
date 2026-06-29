@@ -47,9 +47,11 @@ const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2had
 const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
   "5524": "3500",
+  "5513": "2755",
 };
 const WTT_EVENT_PUBLIC_URLS = {
   "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
+  "3150": "https://results.ittf.com/ittf-web-results/html/TTE5676/results.html#/results",
   "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",
   "wmc2026": "https://wmc2026.ittf.com/",
 };

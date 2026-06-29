@@ -8,6 +8,7 @@ const {
   DEFAULT_WTT_ARCHIVE_INDEX_PATH,
   getProcessedMatches,
   getWttEventLifecycleMeta,
+  resolveEventId,
   writeWttArchiveIfNotSmaller,
   updateWttArchiveIndexEntry,
 } = require("./extract_individual_matches");
@@ -65,7 +66,8 @@ function printHelp(exitCode = 0) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
-  const meta = await getWttEventLifecycleMeta(args.event, {
+  const archiveEventId = resolveEventId("wtt", args.event);
+  const meta = await getWttEventLifecycleMeta(archiveEventId, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
   });
@@ -76,22 +78,22 @@ async function main() {
 
   const result = await getProcessedMatches({
     source: "wtt",
-    event: args.event,
+    event: archiveEventId,
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
   });
 
-  const archiveWrite = writeWttArchiveIfNotSmaller(WTT_ARCHIVE_DIR, args.event, result.normalized, {
+  const archiveWrite = writeWttArchiveIfNotSmaller(WTT_ARCHIVE_DIR, archiveEventId, result.normalized, {
     force: args.force,
   });
   if (!archiveWrite.written) {
-    console.log(`skipped: ${args.event}`);
+    console.log(`skipped: ${archiveEventId}`);
     console.log(`reason: ${archiveWrite.reason}`);
     console.log(`matches: ${archiveWrite.nextCount} < ${archiveWrite.existingCount}`);
     return;
   }
 
-  updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, args.event, {
+  updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, archiveEventId, {
     archived: true,
     source: meta.source || "wtt",
     title: meta.title || "",
@@ -102,7 +104,7 @@ async function main() {
     forced: Boolean(args.force && !meta.isFinished),
   });
 
-  console.log(`archived: ${args.event}`);
+  console.log(`archived: ${archiveEventId}`);
   console.log(`matches: ${result.normalized.length}`);
   if (meta.startDate || meta.endDate) {
     console.log(`dates: ${meta.startDate || "?"} - ${meta.endDate || "?"}`);

@@ -46,7 +46,19 @@ const DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH = path.join(DEFAULT_CACHE_DIR, "w
 const LIVE_WTT_PAYLOAD_CACHE_TTL_MS = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_TTL_MS || 0);
 const LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES = Number(process.env.LIVE_WTT_PAYLOAD_CACHE_MAX_ENTRIES || 3);
 const WTT_EVENT_ID_ALIASES = {
+  "3487": "34031",
   "5524": "3500",
+  "5513": "2755",
+};
+const WTT_RECORD_SOURCE_OVERRIDES = {
+  "3150": {
+    recordSource: "ittf",
+    recordEventId: "5676",
+    recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE5676/results.html#/results`,
+    title: "ITTF Oceania Para Championships 2025",
+    confidence: "manual",
+    resolvedBy: "manual_event_mapping",
+  },
 };
 const WTT_WEBGEN_EVENTS = {
   wmc2026: {
@@ -2603,6 +2615,17 @@ async function mapWithConcurrency(items, concurrency, mapper) {
 
 async function resolveWttRecordSourceByNameDate(eventId, options = {}) {
   const seed = getWttResolutionSeedMeta(eventId, options);
+  const override = WTT_RECORD_SOURCE_OVERRIDES[seed.eventId];
+  if (override) {
+    return {
+      publicSource: "wtt",
+      publicEventId: seed.eventId,
+      startDate: seed.startDate,
+      endDate: seed.endDate,
+      ...override,
+    };
+  }
+
   if (!seed.title || !seed.startDate) {
     return null;
   }
@@ -5297,6 +5320,7 @@ module.exports = {
   readWttArchive,
   readWttDateIndex,
   renderOutput,
+  resolveEventId,
   shouldUseZennihonArchive,
   translateRoundJa,
   updateWttArchiveIndexEntry,
