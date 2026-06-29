@@ -47,6 +47,9 @@ const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
 const PLAYER_RECORD_CANDIDATE_INDEX_VERSION = 1;
 const PLAYER_RECORD_CANDIDATE_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-events.json");
 const PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-manifest.json");
+const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION = 1;
+const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names.json");
+const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names-manifest.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
@@ -2514,6 +2517,7 @@ const PLAYER_SEARCH_ARCHIVE_INDEX_GREP_MAX_BYTES = Number(process.env.PLAYER_SEA
 const playerSearchArchiveIndexState = {
   signature: "",
   builtAt: 0,
+  generatedAt: null,
   names: [],
   building: null,
 };
@@ -2558,6 +2562,58 @@ function extractPlayerSearchNamesFromArchiveText(text) {
       .forEach((name) => names.add(name));
   }
   return [...names];
+}
+
+function setPlayerSearchArchiveIndexState(indexState) {
+  playerSearchArchiveIndexState.signature = indexState.signature;
+  playerSearchArchiveIndexState.builtAt = indexState.builtAt || Date.now();
+  playerSearchArchiveIndexState.generatedAt = indexState.generatedAt || null;
+  playerSearchArchiveIndexState.names = Array.isArray(indexState.names) ? indexState.names : [];
+  playerSearchArchiveIndexState.building = null;
+}
+
+function readPlayerSearchArchiveNameIndexFromDisk(signature) {
+  try {
+    const manifest = JSON.parse(fs.readFileSync(PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH, "utf8"));
+    if (
+      manifest?.version !== PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION ||
+      manifest?.signature !== signature
+    ) {
+      return null;
+    }
+
+    const names = JSON.parse(fs.readFileSync(PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH, "utf8"));
+    if (!Array.isArray(names) || names.length === 0) {
+      return null;
+    }
+
+    return {
+      signature,
+      builtAt: Date.parse(manifest.generatedAt || "") || Date.now(),
+      generatedAt: manifest.generatedAt || null,
+      names,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function writePlayerSearchArchiveNameIndexToDisk(indexState) {
+  const names = Array.isArray(indexState?.names) ? indexState.names : [];
+  const generatedAt = indexState?.generatedAt || new Date().toISOString();
+  const manifest = {
+    version: PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION,
+    generatedAt,
+    signature: indexState?.signature || "",
+    nameCount: names.length,
+  };
+
+  try {
+    writeJsonFileAtomic(PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH, names);
+    writeJsonFileAtomic(PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH, manifest);
+  } catch (error) {
+    console.warn("[player-search-archive-index] write failed:", error?.message || error);
+  }
 }
 
 function getPlayerSearchTranslatedName(name, translations) {
@@ -2669,16 +2725,27 @@ async function buildPlayerSearchArchiveNameIndex(snapshot, signature) {
   lines.forEach((line) => {
     extractPlayerSearchNamesFromArchiveText(line).forEach((name) => names.add(name));
   });
-  playerSearchArchiveIndexState.signature = signature;
-  playerSearchArchiveIndexState.builtAt = Date.now();
-  playerSearchArchiveIndexState.names = [...names];
-  playerSearchArchiveIndexState.building = null;
+  const indexState = {
+    signature,
+    builtAt: Date.now(),
+    generatedAt: new Date().toISOString(),
+    names: [...names].sort((left, right) => left.localeCompare(right, "en", { sensitivity: "base" })),
+  };
+  setPlayerSearchArchiveIndexState(indexState);
+  writePlayerSearchArchiveNameIndexToDisk(indexState);
 }
 
 function getPlayerSearchArchiveIndexNames(snapshot, signature) {
   if (playerSearchArchiveIndexState.signature === signature && playerSearchArchiveIndexState.names.length > 0) {
     return playerSearchArchiveIndexState.names;
   }
+
+  const diskIndex = readPlayerSearchArchiveNameIndexFromDisk(signature);
+  if (diskIndex) {
+    setPlayerSearchArchiveIndexState(diskIndex);
+    return playerSearchArchiveIndexState.names;
+  }
+
   if (!playerSearchArchiveIndexState.building) {
     playerSearchArchiveIndexState.building = buildPlayerSearchArchiveNameIndex(snapshot, signature).catch(() => {
       playerSearchArchiveIndexState.building = null;
