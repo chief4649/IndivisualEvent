@@ -1680,6 +1680,7 @@ function buildOptions(searchParams) {
     cacheDir: CACHE_DIR,
     zennihonArchiveDir: ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: WTT_ARCHIVE_DIR,
+    bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache: parseBoolean(searchParams.get("refreshCache")),
     omitSetCounts: parseBoolean(searchParams.get("omitSetCounts")),
@@ -2353,6 +2354,9 @@ async function handleCategoriesApi(requestUrl, response) {
       translations: TRANSLATIONS_PATH,
       rules: RULES_PATH,
       cacheDir: CACHE_DIR,
+      wttArchiveDir: WTT_ARCHIVE_DIR,
+      bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+      wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
       refreshCache: options.refreshCache,
     });
 
@@ -2387,6 +2391,9 @@ async function handleRoundsApi(requestUrl, response) {
       translations: TRANSLATIONS_PATH,
       rules: RULES_PATH,
       cacheDir: CACHE_DIR,
+      wttArchiveDir: WTT_ARCHIVE_DIR,
+      bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+      wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
       refreshCache: options.refreshCache,
     });
 

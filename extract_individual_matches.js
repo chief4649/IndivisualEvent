@@ -1113,6 +1113,17 @@ function readWttArchive(archiveDir, eventId) {
   return JSON.parse(fs.readFileSync(archivePath, "utf8"));
 }
 
+function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = null) {
+  const archived = readWttArchive(archiveDir, eventId);
+  if (archived) {
+    return archived;
+  }
+  if (!fallbackArchiveDir || path.resolve(fallbackArchiveDir) === path.resolve(archiveDir)) {
+    return null;
+  }
+  return readWttArchive(fallbackArchiveDir, eventId);
+}
+
 function writeWttArchive(archiveDir, eventId, payload) {
   const archivePath = getWttArchivePath(archiveDir, eventId);
   ensureDir(path.dirname(archivePath));
@@ -3561,11 +3572,12 @@ async function fetchSourceResults(source, eventId, take, options = {}) {
 async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refreshCache, options = {}) {
   if (source === "wtt") {
     const archiveDir = options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR;
+    const fallbackArchiveDir = options.bundledWttArchiveDir || null;
     const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
     let archived = null;
     const localArchiveMeta = getWttLocalArchiveMeta(eventId, options);
     if (!refreshCache && localArchiveMeta.canServeArchiveImmediately) {
-      archived = readWttArchive(archiveDir, eventId);
+      archived = readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir);
       if (archived) {
         return archived;
       }
@@ -3574,7 +3586,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     const meta = await getWttEventLifecycleMeta(eventId, options);
 
     if (meta.isFinished && !refreshCache) {
-      archived = archived || readWttArchive(archiveDir, eventId);
+      archived = archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir);
       if (archived) {
         return archived;
       }
@@ -3594,7 +3606,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
         allowBornanFallback: options.allowBornanFallback,
       });
       const mergedPayload = options.mergeLiveWttArchive
-        ? mergeWttOfficialResultPayloads(payload, archived || readWttArchive(archiveDir, eventId))
+        ? mergeWttOfficialResultPayloads(payload, archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir))
         : payload;
 
       if (shouldReuseCachedPayload(source, mergedPayload)) {
@@ -3624,7 +3636,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
       return mergedPayload;
     } catch (error) {
-      archived = archived || readWttArchive(archiveDir, eventId);
+      archived = archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir);
       if (archived) {
         if (meta.isFinished || isLikelyTransientExternalFetchError(error)) {
           return archived;
