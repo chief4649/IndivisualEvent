@@ -3837,6 +3837,49 @@ function getWinnerIndexFromScore(score) {
   return null;
 }
 
+function getSetWinCountsFromGameScores(gameScores) {
+  const games = Array.isArray(gameScores) ? gameScores : [];
+  let left = 0;
+  let right = 0;
+
+  games.forEach((game) => {
+    const [rawLeft, rawRight] = String(game || "").split("-");
+    const leftPoints = Number(rawLeft);
+    const rightPoints = Number(rawRight);
+    if (Number.isNaN(leftPoints) || Number.isNaN(rightPoints) || leftPoints === rightPoints) {
+      return;
+    }
+    if (leftPoints > rightPoints) {
+      left += 1;
+    } else {
+      right += 1;
+    }
+  });
+
+  return { left, right };
+}
+
+function getInferredOverallScore(match) {
+  const rawOverall = String(match?.overallScore || "").trim();
+  if (!isZeroScoreline(rawOverall)) {
+    return rawOverall;
+  }
+
+  const counts = getSetWinCountsFromGameScores(match?.gameScores);
+  if (!counts.left && !counts.right) {
+    return rawOverall;
+  }
+  return `${counts.left}-${counts.right}`;
+}
+
+function getWinnerIndexForMatch(match) {
+  const winnerIndex = getWinnerIndexFromScore(match?.overallScore);
+  if (winnerIndex !== null) {
+    return winnerIndex;
+  }
+  return getWinnerIndexFromScore(getInferredOverallScore(match));
+}
+
 function getSpecialResultJa(match) {
   const rawOverall = String(match?.overallScore || "").trim();
   const rawGames = Array.isArray(match?.gameScores) ? match.gameScores.join(" ") : "";
@@ -3876,7 +3919,7 @@ function getSpecialResultEn(match) {
 }
 
 function getTieDisplaySide(match) {
-  const winnerIndex = getWinnerIndexFromScore(match.overallScore);
+  const winnerIndex = getWinnerIndexForMatch(match);
   return winnerIndex === 1 ? 1 : 0;
 }
 
@@ -3913,7 +3956,7 @@ function getSingleDisplayIndexes(single, displayedTeams) {
 }
 
 function getIndividualDisplayIndexes(match) {
-  const winnerIndex = getWinnerIndexFromScore(match.overallScore);
+  const winnerIndex = getWinnerIndexForMatch(match);
   return {
     leftCompetitorIndex: winnerIndex === 1 ? 1 : 0,
     rightCompetitorIndex: winnerIndex === 1 ? 0 : 1,
@@ -4205,7 +4248,7 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
     return specialResult;
   }
 
-  const [rawLeftSets, rawRightSets] = String(match.overallScore || "-").split("-");
+  const [rawLeftSets, rawRightSets] = String(getInferredOverallScore(match) || "-").split("-");
   const hasGameScores = Array.isArray(match.gameScores) && match.gameScores.some((game) => String(game || "").trim());
   if (rawLeftSets === "0" && rawRightSets === "0" && !hasGameScores) {
     return "-";
@@ -4239,7 +4282,7 @@ function formatIndividualScoreEn(match, leftCompetitorIndex, options = {}) {
     return specialResult;
   }
 
-  const [rawLeftSets, rawRightSets] = String(match.overallScore || "-").split("-");
+  const [rawLeftSets, rawRightSets] = String(getInferredOverallScore(match) || "-").split("-");
   const hasGameScores = Array.isArray(match.gameScores) && match.gameScores.some((game) => String(game || "").trim());
   if (rawLeftSets === "0" && rawRightSets === "0" && !hasGameScores) {
     return "-";
@@ -4850,7 +4893,7 @@ function formatJaSinglesLine(single, translations, displayedTeams, options = {})
     const overall = getDisplayedOverallScoreValues(single, leftCompetitorIndex);
     return `【${overall.left}】${left}　${score}　${right}【${overall.right}】`;
   }
-  const winnerIndex = getWinnerIndexFromScore(single.overallScore);
+  const winnerIndex = getWinnerIndexForMatch(single);
 
   if (winnerIndex === leftCompetitorIndex) {
     return `○${left}　${score}　${right}`;
@@ -4982,7 +5025,7 @@ function formatEnTeamLine(match) {
 
 function formatEnSinglesLine(single, displayedTeams, options = {}) {
   const teamSideIndexes = getSingleDisplayIndexes(single, displayedTeams);
-  const winnerIndex = getWinnerIndexFromScore(single.overallScore);
+  const winnerIndex = getWinnerIndexForMatch(single);
   const leftCompetitorIndex = winnerIndex === 0 || winnerIndex === 1
     ? winnerIndex
     : teamSideIndexes.leftCompetitorIndex;
@@ -5009,7 +5052,7 @@ function formatEnIndividualMatchLine(match, options = {}) {
   const left = getCompetitorDisplayNameEn(match.competitors[leftCompetitorIndex]);
   const right = getCompetitorDisplayNameEn(match.competitors[rightCompetitorIndex]);
   const score = formatIndividualScoreEn(match, leftCompetitorIndex, options);
-  const winnerIndex = getWinnerIndexFromScore(match.overallScore);
+  const winnerIndex = getWinnerIndexForMatch(match);
   if (winnerIndex === 0 || winnerIndex === 1) {
     return `${left} d. ${right} ${score}`;
   }
