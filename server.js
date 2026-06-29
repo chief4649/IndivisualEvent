@@ -43,6 +43,10 @@ const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
+const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
+const PLAYER_RECORD_CANDIDATE_INDEX_VERSION = 1;
+const PLAYER_RECORD_CANDIDATE_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-events.json");
+const PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-manifest.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
@@ -3389,6 +3393,243 @@ function textLikelyContainsPlayer(text, textNeedles) {
   });
 }
 
+const playerRecordCandidateIndexState = {
+  signature: null,
+  generatedAt: null,
+  index: null,
+  building: null,
+  buildingSignature: null,
+};
+
+function writeJsonFileAtomic(filePath, payload) {
+  ensureDir(path.dirname(filePath));
+  const tempPath = `${filePath}.${process.pid}.${Date.now()}.tmp`;
+  fs.writeFileSync(tempPath, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
+  fs.renameSync(tempPath, filePath);
+}
+
+function readPlayerRecordCandidateIndexFromDisk(signature) {
+  try {
+    const manifest = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, "utf8"));
+    if (
+      manifest?.version !== PLAYER_RECORD_CANDIDATE_INDEX_VERSION ||
+      manifest?.signature !== signature
+    ) {
+      return null;
+    }
+    const index = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_PATH, "utf8"));
+    if (!index || typeof index !== "object" || Array.isArray(index)) {
+      return null;
+    }
+    return {
+      signature,
+      generatedAt: manifest.generatedAt || null,
+      index,
+    };
+  } catch {
+    return null;
+  }
+}
+
+function setPlayerRecordCandidateIndexState(indexState) {
+  playerRecordCandidateIndexState.signature = indexState.signature;
+  playerRecordCandidateIndexState.generatedAt = indexState.generatedAt;
+  playerRecordCandidateIndexState.index = indexState.index;
+}
+
+function getPlayerRecordCandidateIndexNameValues(competitor, translations) {
+  if (!competitor || typeof competitor !== "object") {
+    return [];
+  }
+  const values = [
+    ...getCompetitorNameCandidates(competitor),
+    ...(Array.isArray(competitor.players) ? competitor.players.flatMap((player) => [
+      player?.name,
+      player?.playerName,
+      player?.competitorName,
+      player?.description,
+      player?.desc,
+    ]) : []),
+  ].filter(Boolean);
+
+  return values.flatMap((value) => [
+    value,
+    translatePlayerNameForRecord(value, translations),
+    ...buildPlayerNameSearchValues(value),
+  ]).filter(Boolean);
+}
+
+function addPlayerRecordCandidateIndexName(index, eventId, value) {
+  const normalizedValues = buildPlayerNameSearchValues(value);
+  normalizedValues.forEach((normalizedValue) => {
+    if (normalizedValue.length < 2) {
+      return;
+    }
+    if (!index[normalizedValue]) {
+      index[normalizedValue] = [];
+    }
+    const eventIds = index[normalizedValue];
+    if (eventIds[eventIds.length - 1] !== eventId && !eventIds.includes(eventId)) {
+      eventIds.push(eventId);
+    }
+  });
+}
+
+function addPlayerRecordCandidateIndexMatch(index, eventId, match, translations) {
+  (Array.isArray(match?.competitors) ? match.competitors : []).forEach((competitor) => {
+    getPlayerRecordCandidateIndexNameValues(competitor, translations).forEach((name) => {
+      addPlayerRecordCandidateIndexName(index, eventId, name);
+    });
+  });
+
+  (Array.isArray(match?.singles) ? match.singles : []).forEach((single) => {
+    addPlayerRecordCandidateIndexMatch(index, eventId, single, translations);
+  });
+}
+
+async function buildPlayerRecordCandidateIndex(snapshot, signature) {
+  const translations = readTranslations(TRANSLATIONS_PATH);
+  const index = {};
+  let indexedMatches = 0;
+
+  for (let indexPosition = 0; indexPosition < snapshot.length; indexPosition += 1) {
+    if (indexPosition % 20 === 0) {
+      await yieldToEventLoop();
+    }
+    const file = snapshot[indexPosition];
+    const { normalizedMatches } = getParsedPlayerRecordArchive(file);
+    if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
+      continue;
+    }
+    indexedMatches += normalizedMatches.length;
+    normalizedMatches.forEach((match) => {
+      addPlayerRecordCandidateIndexMatch(index, file.eventId, match, translations);
+    });
+  }
+
+  Object.keys(index).forEach((key) => {
+    index[key].sort((left, right) => String(left).localeCompare(String(right), "en", { numeric: true }));
+  });
+
+  const generatedAt = new Date().toISOString();
+  const manifest = {
+    version: PLAYER_RECORD_CANDIDATE_INDEX_VERSION,
+    generatedAt,
+    signature,
+    eventCount: snapshot.length,
+    indexedMatches,
+    keyCount: Object.keys(index).length,
+  };
+
+  try {
+    writeJsonFileAtomic(PLAYER_RECORD_CANDIDATE_INDEX_PATH, index);
+    writeJsonFileAtomic(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, manifest);
+  } catch (error) {
+    console.warn("[player-record-candidate-index] write failed:", error?.message || error);
+  }
+
+  return {
+    signature,
+    generatedAt,
+    index,
+  };
+}
+
+async function getPlayerRecordCandidateIndex(snapshot, signature) {
+  if (process.env.PLAYER_RECORD_CANDIDATE_INDEX_DISABLED === "1") {
+    return null;
+  }
+
+  if (
+    playerRecordCandidateIndexState.signature === signature &&
+    playerRecordCandidateIndexState.index
+  ) {
+    return playerRecordCandidateIndexState;
+  }
+
+  const diskIndex = readPlayerRecordCandidateIndexFromDisk(signature);
+  if (diskIndex) {
+    setPlayerRecordCandidateIndexState(diskIndex);
+    return playerRecordCandidateIndexState;
+  }
+
+  return null;
+}
+
+function startPlayerRecordCandidateIndexBuild(snapshot, signature) {
+  if (process.env.PLAYER_RECORD_CANDIDATE_INDEX_DISABLED === "1") {
+    return;
+  }
+  if (
+    playerRecordCandidateIndexState.signature === signature &&
+    playerRecordCandidateIndexState.index
+  ) {
+    return;
+  }
+  if (
+    playerRecordCandidateIndexState.building &&
+    playerRecordCandidateIndexState.buildingSignature === signature
+  ) {
+    return;
+  }
+
+  playerRecordCandidateIndexState.buildingSignature = signature;
+  playerRecordCandidateIndexState.building = buildPlayerRecordCandidateIndex(snapshot, signature)
+    .then((builtIndex) => {
+      setPlayerRecordCandidateIndexState(builtIndex);
+      return playerRecordCandidateIndexState;
+    })
+    .catch((error) => {
+      console.warn("[player-record-candidate-index] build failed:", error?.message || error);
+      return null;
+    })
+    .finally(() => {
+      playerRecordCandidateIndexState.building = null;
+      playerRecordCandidateIndexState.buildingSignature = null;
+    });
+}
+
+function getPlayerRecordIndexedEventIds(candidateIndex, textNeedles) {
+  if (!candidateIndex || !candidateIndex.index || !Array.isArray(textNeedles) || textNeedles.length === 0) {
+    return null;
+  }
+
+  const eventIds = new Set();
+  const index = candidateIndex.index;
+  const keys = Object.keys(index);
+
+  textNeedles.forEach((needle) => {
+    const phrase = String(needle?.phrase || "").trim();
+    if (phrase && Array.isArray(index[phrase])) {
+      index[phrase].forEach((eventId) => eventIds.add(eventId));
+    }
+  });
+
+  if (eventIds.size > 0) {
+    return eventIds;
+  }
+
+  for (const key of keys) {
+    if (textNeedles.some((needle) => playerRecordNameMatchesNeedle(key, needle?.phrase || ""))) {
+      index[key].forEach((eventId) => eventIds.add(eventId));
+    }
+  }
+
+  return eventIds.size > 0 ? eventIds : null;
+}
+
+async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature) {
+  const candidateIndex = await getPlayerRecordCandidateIndex(snapshot, signature);
+  const eventIds = getPlayerRecordIndexedEventIds(candidateIndex, textNeedles);
+  if (!eventIds) {
+    return null;
+  }
+  return {
+    snapshot: snapshot.filter((file) => eventIds.has(file.eventId)),
+    generatedAt: candidateIndex.generatedAt,
+  };
+}
+
 function pushPlayerRecordMatch(matches, match, competitorIndex, translations, rules, roundContext, parentMatch = null) {
   const sourceMatch = parentMatch || match;
   matches.push({
@@ -3465,9 +3706,22 @@ function runGrepFileCandidates(files, token) {
   })();
 }
 
-async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
+async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature) {
   if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
-    return snapshot;
+    return {
+      snapshot,
+      source: "all",
+      generatedAt: null,
+    };
+  }
+
+  const indexedCandidate = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
+  if (indexedCandidate) {
+    return {
+      snapshot: indexedCandidate.snapshot,
+      source: "candidate-index",
+      generatedAt: indexedCandidate.generatedAt,
+    };
   }
 
   const tokenGroups = [];
@@ -3479,7 +3733,11 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
   });
 
   if (tokenGroups.length === 0) {
-    return snapshot;
+    return {
+      snapshot,
+      source: "all",
+      generatedAt: null,
+    };
   }
 
   const bestGroup = tokenGroups.sort((left, right) => right.length - left.length)[0];
@@ -3490,7 +3748,11 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
     const matchedPaths = await runGrepFileCandidates(currentFiles, token);
     if (matchedPaths === null) {
       // grep is unavailable. Fall back to JS prefilter in collectPlayerRecordEvents.
-      return snapshot;
+      return {
+        snapshot,
+        source: "all",
+        generatedAt: null,
+      };
     }
     candidatePaths = matchedPaths;
     if (candidatePaths.size === 0) {
@@ -3498,7 +3760,11 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles) {
     }
   }
 
-  return snapshot.filter((file) => candidatePaths.has(file.filePath));
+  return {
+    snapshot: snapshot.filter((file) => candidatePaths.has(file.filePath)),
+    source: "grep-prefilter",
+    generatedAt: null,
+  };
 }
 
 
@@ -3684,18 +3950,24 @@ async function getPlayerRecordSearchResult(name, translatedName, needles) {
     };
   }
   const textNeedles = buildPlayerRecordTextNeedles(...needles);
-  const candidateSnapshot = await getPlayerRecordCandidateSnapshot(snapshot, textNeedles);
+  const candidateResult = await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
+  const candidateSnapshot = candidateResult.snapshot;
   const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, []);
   const result = {
     signature,
     builtAt: Date.now(),
     eventIndexSource: "wtt-records",
+    candidateIndexSource: candidateResult.source,
+    candidateIndexGeneratedAt: candidateResult.generatedAt,
     eventIndexGeneratedAt: null,
     scannedEvents: snapshot.length,
     candidateEvents: candidateSnapshot.length,
     ...collected,
   };
   setPlayerRecordResultCacheValue(cacheKey, result);
+  if (candidateResult.source !== "candidate-index") {
+    startPlayerRecordCandidateIndexBuild(snapshot, signature);
+  }
   return {
     ...result,
     cacheHit: false,
@@ -3724,6 +3996,8 @@ async function handlePlayerRecordsApi(requestUrl, response) {
           scannedMatches: 0,
           returnedEvents: 0,
           returnedMatches: 0,
+          candidateIndexSource: null,
+          candidateIndexGeneratedAt: null,
         },
       });
       return;
@@ -3757,6 +4031,8 @@ async function handlePlayerRecordsApi(requestUrl, response) {
         cacheHit: searchResult.cacheHit,
         eventIndexSource: searchResult.eventIndexSource,
         eventIndexGeneratedAt: searchResult.eventIndexGeneratedAt,
+        candidateIndexSource: searchResult.candidateIndexSource,
+        candidateIndexGeneratedAt: searchResult.candidateIndexGeneratedAt,
         scannedEvents: searchResult.scannedEvents,
         candidateEvents: searchResult.candidateEvents,
         parsedEvents: searchResult.parsedEvents,
@@ -3934,7 +4210,7 @@ const server = http.createServer((request, response) => {
       playerRecords: {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
-        candidateMode: "grep-prefilter",
+        candidateMode: "candidate-index+grep-fallback",
         displayMode: "player-record-org-v4-category-groups-keep-round-order",
         runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
         bundledArchiveDirExists: fs.existsSync(BUNDLED_WTT_ARCHIVE_DIR),
