@@ -3258,6 +3258,42 @@ function getWinnerIndexFromOverallScore(score) {
   return null;
 }
 
+function getWinnerIndexFromGameScores(gameScores) {
+  const games = Array.isArray(gameScores) ? gameScores : [];
+  let leftWins = 0;
+  let rightWins = 0;
+
+  games.forEach((game) => {
+    const [rawLeft, rawRight] = String(game || "").split("-");
+    const left = Number(rawLeft);
+    const right = Number(rawRight);
+    if (Number.isNaN(left) || Number.isNaN(right) || left === right) {
+      return;
+    }
+    if (left > right) {
+      leftWins += 1;
+    } else {
+      rightWins += 1;
+    }
+  });
+
+  if (leftWins >= 3 && leftWins > rightWins) {
+    return 0;
+  }
+  if (rightWins >= 3 && rightWins > leftWins) {
+    return 1;
+  }
+  return null;
+}
+
+function getWinnerIndexForRecord(match) {
+  const overallWinnerIndex = getWinnerIndexFromOverallScore(match?.overallScore);
+  if (overallWinnerIndex !== null) {
+    return overallWinnerIndex;
+  }
+  return getWinnerIndexFromGameScores(match?.gameScores);
+}
+
 function formatGameScoresForRecord(match, leftCompetitorIndex) {
   const games = Array.isArray(match?.gameScores) ? match.gameScores : [];
   const statusText = `${match?.overallScore || ""} ${match?.resultStatus || ""}`.toLowerCase();
@@ -3281,7 +3317,7 @@ function formatGameScoresForRecord(match, leftCompetitorIndex) {
 }
 
 function buildPlayerRecordLine(match, playerCompetitorIndex, translations) {
-  const winnerIndex = getWinnerIndexFromOverallScore(match.overallScore);
+  const winnerIndex = getWinnerIndexForRecord(match);
   const leftIndex = winnerIndex === playerCompetitorIndex ? playerCompetitorIndex : winnerIndex === null ? playerCompetitorIndex : winnerIndex;
   const rightIndex = leftIndex === 0 ? 1 : 0;
   const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations);
