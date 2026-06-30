@@ -620,10 +620,38 @@ function toCanonicalCategoryName(value, gender = null, discipline = null) {
       .trim();
   }
 
-  const youthMatch = raw.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+  const underAgeMatch = raw.match(/^Under\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)(?:['’]s)?\s+(Singles|Doubles|Teams)$/i);
+  if (underAgeMatch) {
+    const [, age, division, eventType] = underAgeMatch;
+    const divisionCanonical = /^men$/i.test(division)
+      ? "Men"
+      : /^women$/i.test(division)
+        ? "Women"
+        : /^boys$/i.test(division)
+          ? "Boys"
+          : /^girls$/i.test(division)
+            ? "Girls"
+            : "Mixed";
+    const eventTypeCanonical = /^singles$/i.test(eventType)
+      ? "Singles"
+      : /^doubles$/i.test(eventType)
+        ? "Doubles"
+        : "Teams";
+    return `U${age} ${divisionCanonical} ${eventTypeCanonical}`;
+  }
+
+  const youthMatch = raw.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
   if (youthMatch) {
     const [, age, division, eventType] = youthMatch;
-    const divisionCanonical = /^boys$/i.test(division) ? "Boys" : /^girls$/i.test(division) ? "Girls" : "Mixed";
+    const divisionCanonical = /^men$/i.test(division)
+      ? "Men"
+      : /^women$/i.test(division)
+        ? "Women"
+        : /^boys$/i.test(division)
+          ? "Boys"
+          : /^girls$/i.test(division)
+            ? "Girls"
+            : "Mixed";
     const eventTypeCanonical = /^singles$/i.test(eventType)
       ? "Singles"
       : /^doubles$/i.test(eventType)
@@ -666,7 +694,12 @@ function extractCategoryNameFromDescription(description) {
     return null;
   }
 
-  const youthMatch = text.match(/^(U\s*\d+\s+(?:Boys|Girls|Mixed)(?:\s*'?s?)?\s+(?:Singles|Doubles|Teams))/i);
+  const underAgeMatch = text.match(/^(Under\s*\d+\s+(?:Men|Women|Boys|Girls|Mixed)(?:['’]s)?\s+(?:Singles|Doubles|Teams))/i);
+  if (underAgeMatch) {
+    return underAgeMatch[1].replace(/\s+/g, " ").trim();
+  }
+
+  const youthMatch = text.match(/^(U\s*\d+\s+(?:Men|Women|Boys|Girls|Mixed)(?:\s*'?s?)?\s+(?:Singles|Doubles|Teams))/i);
   if (youthMatch) {
     return youthMatch[1].replace(/\s+/g, " ").trim();
   }
@@ -1535,6 +1568,25 @@ function isPreNormalizedMatch(item) {
     Array.isArray(item.competitors) &&
     typeof item.categoryName === "string",
   );
+}
+
+function normalizePreNormalizedMatch(item) {
+  if (!isPreNormalizedMatch(item)) {
+    return null;
+  }
+  const categoryName = resolveCanonicalCategoryName(
+    item.subEventType || item.categoryName,
+    item.description,
+    item.gender,
+    item.discipline,
+  );
+  if (!categoryName || categoryName === item.categoryName) {
+    return item;
+  }
+  return {
+    ...item,
+    categoryName,
+  };
 }
 
 function getZennihonResultBaseUrl(eventId) {
@@ -4478,12 +4530,12 @@ function getCategorySortValue(match) {
   if (/^Junior Girls Singles$/i.test(categoryName)) {
     return [0, 0, -18, 1, categoryName.toLowerCase()];
   }
-  const youthMatch = categoryName.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+  const youthMatch = categoryName.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
   if (youthMatch) {
     const [, ageRaw, division, eventType] = youthMatch;
     const age = Number(ageRaw);
     const disciplineOrder = /^singles$/i.test(eventType) ? 0 : /^doubles$/i.test(eventType) ? 1 : 2;
-    const divisionOrder = /^boys$/i.test(division) ? 0 : /^girls$/i.test(division) ? 1 : 2;
+    const divisionOrder = /^(men|boys)$/i.test(division) ? 0 : /^(women|girls)$/i.test(division) ? 1 : 2;
     return [0, disciplineOrder, -age, divisionOrder, categoryName.toLowerCase()];
   }
 
@@ -4580,11 +4632,11 @@ function sortIndividualMatches(matches, context) {
 function formatMatchCategoryJa(match) {
   const categoryName = String(match.categoryName || "").trim();
   if (categoryName) {
-    const youthMatch = categoryName.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+    const youthMatch = categoryName.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
     if (youthMatch) {
       const [, age, division, eventType] = youthMatch;
       const divisionJa =
-        /^boys$/i.test(division) ? "男子" : /^girls$/i.test(division) ? "女子" : "混合";
+        /^(men|boys)$/i.test(division) ? "男子" : /^(women|girls)$/i.test(division) ? "女子" : "混合";
       const eventTypeJa = /^singles$/i.test(eventType)
         ? "シングルス"
         : /^doubles$/i.test(eventType)
@@ -4650,10 +4702,19 @@ function formatCategoryNameEn(categoryName) {
     return "";
   }
 
-  const youthMatch = rawCategoryName.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+  const youthMatch = rawCategoryName.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
   if (youthMatch) {
     const [, age, division, eventType] = youthMatch;
-    return `U${age} ${division}${/^mixed$/i.test(division) ? "" : "'"} ${eventType}`;
+    const divisionLabel = /^men$/i.test(division)
+      ? "Men's"
+      : /^women$/i.test(division)
+        ? "Women's"
+        : /^boys$/i.test(division)
+          ? "Boys'"
+          : /^girls$/i.test(division)
+            ? "Girls'"
+            : "Mixed";
+    return `U${age} ${divisionLabel} ${eventType}`;
   }
 
   const normalizedCategory = rawCategoryName
@@ -5265,7 +5326,7 @@ async function getProcessedMatches(options = {}) {
   );
   const normalized = args.source === "zennihon"
     ? payload.filter(Boolean)
-    : payload.map((item) => (isPreNormalizedMatch(item) ? item : normalizeOfficialResultItem(item))).filter(Boolean);
+    : payload.map((item) => (isPreNormalizedMatch(item) ? normalizePreNormalizedMatch(item) : normalizeOfficialResultItem(item))).filter(Boolean);
   const translations = readTranslations(args.translations);
   const filtered = applyFilters(normalized, args, translations);
   const rules = readRules(args.rules);
@@ -5363,6 +5424,7 @@ module.exports = {
   matchesRoundFilter,
   normalizeCategory,
   normalizeDiscipline,
+  normalizePreNormalizedMatch,
   normalizeSource,
   normalizeRound,
   normalizeOfficialResultItem,

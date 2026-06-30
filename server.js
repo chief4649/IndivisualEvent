@@ -19,6 +19,7 @@ const {
   getProcessedMatches,
   inferGender,
   normalizeOfficialResultItem,
+  normalizePreNormalizedMatch,
   normalizeCategory,
   normalizeDiscipline,
   normalizeSource,
@@ -2073,11 +2074,11 @@ function formatCategoryLabel(categoryName, gender, discipline) {
     return genericLabels[value] || value;
   }
 
-  const youthMatch = text.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+  const youthMatch = text.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
   if (youthMatch) {
     const [, age, division, eventType] = youthMatch;
     const divisionJa =
-      /^boys$/i.test(division) ? "男子" : /^girls$/i.test(division) ? "女子" : "混合";
+      /^(men|boys)$/i.test(division) ? "男子" : /^(women|girls)$/i.test(division) ? "女子" : "混合";
     const eventTypeJa = /^singles$/i.test(eventType)
       ? "シングルス"
       : /^doubles$/i.test(eventType)
@@ -2109,13 +2110,13 @@ function getCategorySortKey(category) {
   if (/^Junior Girls Singles$/i.test(value)) {
     return [0, 0, -18, 1, value.toLowerCase()];
   }
-  const youthMatch = value.match(/^U\s*(\d+)\s+(Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
+  const youthMatch = value.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
 
   if (youthMatch) {
     const [, ageRaw, division, eventType] = youthMatch;
     const age = Number(ageRaw);
     const disciplineOrder = /^singles$/i.test(eventType) ? 0 : /^teams$/i.test(eventType) ? 1 : 2;
-    const divisionOrder = /^boys$/i.test(division) ? 0 : /^girls$/i.test(division) ? 1 : 2;
+    const divisionOrder = /^(men|boys)$/i.test(division) ? 0 : /^(women|girls)$/i.test(division) ? 1 : 2;
     return [0, disciplineOrder, -age, divisionOrder, value.toLowerCase()];
   }
 
@@ -3180,7 +3181,7 @@ function clearPlayerRecordArchiveParseCache() {
 
 function normalizeArchivedMatch(item) {
   if (item && typeof item === "object" && typeof item.matchType === "string" && Array.isArray(item.competitors)) {
-    return item;
+    return normalizePreNormalizedMatch(item) || item;
   }
   return normalizeOfficialResultItem(item);
 }
