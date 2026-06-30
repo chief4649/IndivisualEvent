@@ -2899,6 +2899,9 @@ function comparePlayerSearchResult(left, right) {
 const playerRecordResultCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 10;
 const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 60_000);
+const headToHeadResultCache = new Map();
+const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
+const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
 
@@ -3041,6 +3044,21 @@ function setPlayerRecordResultCacheValue(key, value) {
 
 function clearPlayerRecordResultCache() {
   playerRecordResultCache.clear();
+}
+
+function setHeadToHeadResultCacheValue(key, value) {
+  if (headToHeadResultCache.has(key)) {
+    headToHeadResultCache.delete(key);
+  }
+  headToHeadResultCache.set(key, value);
+  while (headToHeadResultCache.size > HEAD_TO_HEAD_RESULT_CACHE_MAX) {
+    const oldestKey = headToHeadResultCache.keys().next().value;
+    headToHeadResultCache.delete(oldestKey);
+  }
+}
+
+function clearHeadToHeadResultCache() {
+  headToHeadResultCache.clear();
 }
 
 function setPlayerRecordArchiveParseCacheValue(key, value) {
@@ -3758,6 +3776,29 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
   };
 }
 
+async function getHeadToHeadIndexedCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles, signature) {
+  const candidateIndex = await getPlayerRecordCandidateIndex(snapshot, signature);
+  const playerAEventIds = getPlayerRecordIndexedEventIds(candidateIndex, playerATextNeedles);
+  const playerBEventIds = getPlayerRecordIndexedEventIds(candidateIndex, playerBTextNeedles);
+  if (!playerAEventIds || !playerBEventIds) {
+    return null;
+  }
+
+  const bothEventIds = new Set();
+  playerAEventIds.forEach((eventId) => {
+    if (playerBEventIds.has(eventId)) {
+      bothEventIds.add(eventId);
+    }
+  });
+
+  return {
+    snapshot: snapshot.filter((file) => bothEventIds.has(file.eventId)),
+    generatedAt: candidateIndex.generatedAt,
+    playerAEventCount: playerAEventIds.size,
+    playerBEventCount: playerBEventIds.size,
+  };
+}
+
 function pushPlayerRecordMatch(matches, match, competitorIndex, translations, rules, roundContext, parentMatch = null) {
   const sourceMatch = parentMatch || match;
   matches.push({
@@ -4254,25 +4295,56 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
 async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, playerBName, playerBTranslatedName, playerANeedles, playerBNeedles) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
+  const cacheKey = [
+    signature,
+    playerAName,
+    playerATranslatedName,
+    playerBName,
+    playerBTranslatedName,
+  ].join("::");
+  const cached = headToHeadResultCache.get(cacheKey);
+  if (cached && Date.now() - cached.builtAt < HEAD_TO_HEAD_RESULT_CACHE_TTL_MS) {
+    return {
+      ...cached,
+      cacheHit: true,
+    };
+  }
+
   const playerATextNeedles = buildPlayerRecordTextNeedles(...playerANeedles);
   const playerBTextNeedles = buildPlayerRecordTextNeedles(...playerBNeedles);
-  const candidateAResult = await getPlayerRecordCandidateSnapshot(snapshot, playerATextNeedles, signature);
-  const candidateBResult = await getPlayerRecordCandidateSnapshot(candidateAResult.snapshot, playerBTextNeedles, signature);
-  const collected = await collectHeadToHeadMatches(candidateBResult.snapshot, playerANeedles, playerBNeedles);
-  if (candidateAResult.source !== "candidate-index" || candidateBResult.source !== "candidate-index") {
+  const indexedCandidate = await getHeadToHeadIndexedCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles, signature);
+  let candidateSnapshot = indexedCandidate?.snapshot || null;
+  let candidateIndexSource = indexedCandidate ? "candidate-index-intersection" : "";
+  let candidateIndexGeneratedAt = indexedCandidate?.generatedAt || null;
+  let playerAEventCount = indexedCandidate?.playerAEventCount || null;
+  let playerBEventCount = indexedCandidate?.playerBEventCount || null;
+
+  if (!candidateSnapshot) {
+    const candidateAResult = await getPlayerRecordCandidateSnapshot(snapshot, playerATextNeedles, signature);
+    const candidateBResult = await getPlayerRecordCandidateSnapshot(candidateAResult.snapshot, playerBTextNeedles, signature);
+    candidateSnapshot = candidateBResult.snapshot;
+    candidateIndexSource = [candidateAResult.source, candidateBResult.source].filter(Boolean).join("+");
+    candidateIndexGeneratedAt = candidateAResult.generatedAt || candidateBResult.generatedAt || null;
     startPlayerRecordCandidateIndexBuild(snapshot, signature);
   }
-  return {
+
+  const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
+  const result = {
     signature,
     builtAt: Date.now(),
     eventIndexSource: "wtt-records",
-    candidateIndexSource: [candidateAResult.source, candidateBResult.source].filter(Boolean).join("+"),
-    candidateIndexGeneratedAt: candidateAResult.generatedAt || candidateBResult.generatedAt || null,
+    candidateIndexSource,
+    candidateIndexGeneratedAt,
     eventIndexGeneratedAt: null,
     scannedEvents: snapshot.length,
-    candidateEvents: candidateBResult.snapshot.length,
+    candidateEvents: candidateSnapshot.length,
+    playerAEventCount,
+    playerBEventCount,
     ...collected,
+    cacheHit: false,
   };
+  setHeadToHeadResultCacheValue(cacheKey, result);
+  return result;
 }
 
 async function handleHeadToHeadApi(requestUrl, response) {
@@ -4304,6 +4376,9 @@ async function handleHeadToHeadApi(requestUrl, response) {
           returnedMatches: 0,
           candidateIndexSource: null,
           candidateIndexGeneratedAt: null,
+          cacheHit: false,
+          playerAEventCount: 0,
+          playerBEventCount: 0,
         },
       });
       return;
@@ -4350,8 +4425,11 @@ async function handleHeadToHeadApi(requestUrl, response) {
         eventIndexGeneratedAt: searchResult.eventIndexGeneratedAt,
         candidateIndexSource: searchResult.candidateIndexSource,
         candidateIndexGeneratedAt: searchResult.candidateIndexGeneratedAt,
+        cacheHit: searchResult.cacheHit,
         scannedEvents: searchResult.scannedEvents,
         candidateEvents: searchResult.candidateEvents,
+        playerAEventCount: searchResult.playerAEventCount,
+        playerBEventCount: searchResult.playerBEventCount,
         parsedEvents: searchResult.parsedEvents,
         scannedMatches: searchResult.scannedMatches,
         returnedEvents: limitedEvents.length,
@@ -4547,6 +4625,7 @@ async function handleConfigUpdate(request, response, pathname) {
       writePrettyJson(TRANSLATIONS_PATH, validated);
       clearProcessedMatchesCache();
       clearPlayerRecordResultCache();
+      clearHeadToHeadResultCache();
       clearPlayerRecordArchiveParseCache();
       sendJson(response, 200, {
         ok: true,
@@ -4559,6 +4638,7 @@ async function handleConfigUpdate(request, response, pathname) {
       writePrettyJson(RULES_PATH, parsed);
       clearProcessedMatchesCache();
       clearPlayerRecordResultCache();
+      clearHeadToHeadResultCache();
       clearPlayerRecordArchiveParseCache();
       sendJson(response, 200, {
         ok: true,
