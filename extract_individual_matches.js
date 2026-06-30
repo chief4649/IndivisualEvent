@@ -620,6 +620,22 @@ function toCanonicalCategoryName(value, gender = null, discipline = null) {
       .trim();
   }
 
+  const cadetMatch = raw.match(/^Cadet\s+(Boys|Girls|Mixed)(?:['’]s?)?\s+(Singles|Doubles|Teams)$/i);
+  if (cadetMatch) {
+    const [, division, eventType] = cadetMatch;
+    const divisionCanonical = /^boys$/i.test(division)
+      ? "Boys"
+      : /^girls$/i.test(division)
+        ? "Girls"
+        : "Mixed";
+    const eventTypeCanonical = /^singles$/i.test(eventType)
+      ? "Singles"
+      : /^doubles$/i.test(eventType)
+        ? "Doubles"
+        : "Teams";
+    return `U15 ${divisionCanonical} ${eventTypeCanonical}`;
+  }
+
   const underAgeMatch = raw.match(/^Under\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)(?:['’]s)?\s+(Singles|Doubles|Teams)$/i);
   if (underAgeMatch) {
     const [, age, division, eventType] = underAgeMatch;
@@ -697,6 +713,11 @@ function extractCategoryNameFromDescription(description) {
   const underAgeMatch = text.match(/^(Under\s*\d+\s+(?:Men|Women|Boys|Girls|Mixed)(?:['’]s)?\s+(?:Singles|Doubles|Teams))/i);
   if (underAgeMatch) {
     return underAgeMatch[1].replace(/\s+/g, " ").trim();
+  }
+
+  const cadetMatch = text.match(/^(Cadet\s+(?:Boys|Girls|Mixed)(?:['’]s?)?\s+(?:Singles|Doubles|Teams))/i);
+  if (cadetMatch) {
+    return cadetMatch[1].replace(/\s+/g, " ").trim();
   }
 
   const youthMatch = text.match(/^(U\s*\d+\s+(?:Men|Women|Boys|Girls|Mixed)(?:\s*'?s?)?\s+(?:Singles|Doubles|Teams))/i);
