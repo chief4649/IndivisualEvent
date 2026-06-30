@@ -4300,7 +4300,7 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
       normalizedMatches,
       contextsByCategory,
       fallbackRoundContext,
-    } = getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles);
+    } = getParsedPlayerRecordArchive(file);
     if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
       continue;
     }
