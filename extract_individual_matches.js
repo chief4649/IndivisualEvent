@@ -3980,9 +3980,69 @@ function getDisplayedTeamIndexes(match) {
   return {
     leftIndex,
     rightIndex: leftIndex === 0 ? 1 : 0,
+    leftTeam: match?.teams?.[leftIndex] || null,
+    rightTeam: match?.teams?.[leftIndex === 0 ? 1 : 0] || null,
     leftOrg: match?.teams?.[leftIndex]?.org ?? null,
     rightOrg: match?.teams?.[leftIndex === 0 ? 1 : 0]?.org ?? null,
   };
+}
+
+function normalizeTeamSideToken(value) {
+  return String(value || "")
+    .replace(/['’]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toUpperCase();
+}
+
+function getTeamSideTokens(team) {
+  const tokens = new Set();
+  [
+    team?.orgCode,
+    team?.org,
+    team?.name,
+  ].forEach((value) => {
+    const normalized = normalizeTeamSideToken(value);
+    if (!normalized || normalized === "MIX" || normalized === "MIXED") {
+      return;
+    }
+    tokens.add(normalized);
+    normalized.split(/[-/]/).forEach((part) => {
+      const token = normalizeTeamSideToken(part);
+      if (token && token !== "MIX" && token !== "MIXED") {
+        tokens.add(token);
+      }
+    });
+  });
+  return tokens;
+}
+
+function getCompetitorSideTokens(competitor) {
+  const tokens = new Set();
+  [
+    competitor?.orgCode,
+    competitor?.org,
+    ...(Array.isArray(competitor?.players)
+      ? competitor.players.flatMap((player) => [player?.orgCode, player?.org])
+      : []),
+  ].forEach((value) => {
+    const token = normalizeTeamSideToken(value);
+    if (token) {
+      tokens.add(token);
+    }
+  });
+  return tokens;
+}
+
+function competitorMatchesTeamSide(competitor, team) {
+  const teamTokens = getTeamSideTokens(team);
+  const competitorTokens = getCompetitorSideTokens(competitor);
+  for (const token of competitorTokens) {
+    if (teamTokens.has(token)) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function getSingleDisplayIndexes(single, displayedTeams) {
@@ -3990,8 +4050,14 @@ function getSingleDisplayIndexes(single, displayedTeams) {
   const rightOrg = displayedTeams?.rightOrg ?? null;
   const competitors = Array.isArray(single?.competitors) ? single.competitors : [];
 
-  const leftByOrg = competitors.findIndex((competitor) => competitor?.org && competitor.org === leftOrg);
-  const rightByOrg = competitors.findIndex((competitor) => competitor?.org && competitor.org === rightOrg);
+  const leftByOrg = competitors.findIndex((competitor) =>
+    competitorMatchesTeamSide(competitor, displayedTeams?.leftTeam)
+      || (competitor?.org && competitor.org === leftOrg),
+  );
+  const rightByOrg = competitors.findIndex((competitor) =>
+    competitorMatchesTeamSide(competitor, displayedTeams?.rightTeam)
+      || (competitor?.org && competitor.org === rightOrg),
+  );
 
   if (leftByOrg >= 0 && rightByOrg >= 0 && leftByOrg !== rightByOrg) {
     return {
