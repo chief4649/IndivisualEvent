@@ -38,7 +38,9 @@ const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const CACHE_DIR = path.join(DATA_DIR, ".cache");
 const ZENNIHON_ARCHIVE_DIR = path.join(DATA_DIR, "zennihon-records");
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
+const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
 const BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
+const BUNDLED_WTT_SLIM_ARCHIVE_DIR = path.join(__dirname, "wtt-records-slim");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
@@ -2555,7 +2557,7 @@ function splitArchivedPlayerSearchName(value) {
 function extractPlayerSearchNamesFromArchiveText(text) {
   const names = new Set();
   const source = String(text || "");
-  const pattern = /"(?:playerName|player_name|competitiorName|competitior_name|competitorName|competitor_name)"\s*:\s*"((?:\\.|[^"\\])*)"/g;
+  const pattern = /"(?:name|playerName|player_name|competitiorName|competitior_name|competitorName|competitor_name)"\s*:\s*"((?:\\.|[^"\\])*)"/g;
   let match;
   while ((match = pattern.exec(source))) {
     splitArchivedPlayerSearchName(unquoteJsonStringLiteral(match[1]))
@@ -2667,8 +2669,8 @@ function runGrepPlayerSearchFieldLines(files) {
       "-h",
       "-E",
       "--",
-      "\"(playerName|player_name|competitiorName|competitior_name|competitorName|competitor_name)\"[[:space:]]*:",
-      ...chunk.map((file) => file.filePath),
+      "\"(name|playerName|player_name|competitiorName|competitior_name|competitorName|competitor_name)\"[[:space:]]*:",
+      ...chunk.map((file) => file.parseFilePath || file.filePath),
     ]);
 
     const finish = (value) => {
@@ -2934,10 +2936,34 @@ function getAvailableWttArchiveDir() {
   return WTT_ARCHIVE_DIR;
 }
 
+function getSlimWttRecordFile(originalFilePath, slimDir) {
+  if (process.env.WTT_SLIM_RECORDS_DISABLED === "1") {
+    return null;
+  }
+  if (!originalFilePath || !slimDir) {
+    return null;
+  }
+
+  const slimFilePath = path.join(slimDir, path.basename(originalFilePath));
+  try {
+    const stat = fs.statSync(slimFilePath);
+    if (!stat.isFile() || stat.size <= 0) {
+      return null;
+    }
+    return {
+      filePath: slimFilePath,
+      size: stat.size,
+      mtimeMs: Math.trunc(stat.mtimeMs),
+    };
+  } catch {
+    return null;
+  }
+}
+
 function getWttRecordFileSnapshot() {
   const recordsByEventId = new Map();
 
-  const addDirectory = (dirPath, sourcePriority, sourceLabel) => {
+  const addDirectory = (dirPath, slimDirPath, sourcePriority, sourceLabel) => {
     try {
       if (!dirPath || !fs.existsSync(dirPath)) {
         return;
@@ -2949,9 +2975,14 @@ function getWttRecordFileSnapshot() {
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(dirPath, fileName);
           const stat = fs.statSync(filePath);
+          const slimFile = getSlimWttRecordFile(filePath, slimDirPath);
           const next = {
             eventId,
             filePath,
+            parseFilePath: slimFile?.filePath || filePath,
+            parseSize: slimFile?.size || stat.size,
+            parseMtimeMs: slimFile?.mtimeMs || Math.trunc(stat.mtimeMs),
+            parseSource: slimFile ? "slim" : "raw",
             size: stat.size,
             mtimeMs: Math.trunc(stat.mtimeMs),
             sourcePriority,
@@ -2984,8 +3015,8 @@ function getWttRecordFileSnapshot() {
     }
   };
 
-  addDirectory(WTT_ARCHIVE_DIR, 1, "runtime");
-  addDirectory(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled");
+  addDirectory(WTT_ARCHIVE_DIR, WTT_SLIM_ARCHIVE_DIR, 1, "runtime");
+  addDirectory(BUNDLED_WTT_ARCHIVE_DIR, BUNDLED_WTT_SLIM_ARCHIVE_DIR, 2, "bundled");
 
   return [...recordsByEventId.values()]
     .map(({ sourcePriority, ...file }) => file)
@@ -2993,7 +3024,7 @@ function getWttRecordFileSnapshot() {
 }
 
 function getPlayerRecordCacheSignature(snapshot) {
-  const dataSignature = snapshot.map((file) => `${file.eventId}:${file.size}:${file.mtimeMs}`).join("|");
+  const dataSignature = snapshot.map((file) => `${file.eventId}:${file.size}:${file.mtimeMs}:${file.parseSource || "raw"}:${file.parseSize || file.size}:${file.parseMtimeMs || file.mtimeMs}`).join("|");
   const configSignature = [
     TRANSLATIONS_PATH,
     RULES_PATH,
@@ -3440,12 +3471,15 @@ function parseJsonArrayFromText(text) {
 }
 
 function getParsedPlayerRecordArchive(file, existingText = null) {
-  const cacheKey = `${file.filePath}:${file.size}:${file.mtimeMs}`;
+  const parseFilePath = file.parseFilePath || file.filePath;
+  const parseSize = file.parseSize || file.size;
+  const parseMtimeMs = file.parseMtimeMs || file.mtimeMs;
+  const cacheKey = `${parseFilePath}:${parseSize}:${parseMtimeMs}`;
   const cached = playerRecordArchiveParseCache.get(cacheKey);
   if (cached) {
     return cached;
   }
-  const text = typeof existingText === "string" ? existingText : readTextFile(file.filePath);
+  const text = typeof existingText === "string" ? existingText : readTextFile(parseFilePath);
   const payload = parseJsonArrayFromText(text);
   const normalizedMatches = [];
   for (const item of payload) {
@@ -3455,7 +3489,6 @@ function getParsedPlayerRecordArchive(file, existingText = null) {
     }
   }
   const parsedArchive = {
-    text,
     normalizedMatches,
     contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
     fallbackRoundContext: buildJaRoundContext(normalizedMatches),
@@ -3771,7 +3804,7 @@ function runGrepFileCandidates(files, token) {
       "-F",
       "--",
       pattern,
-      ...chunk.map((file) => file.filePath),
+      ...chunk.map((file) => file.parseFilePath || file.filePath),
     ]);
 
     grep.stdout.on("data", (data) => {
@@ -3844,10 +3877,10 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature
   }
 
   const bestGroup = tokenGroups.sort((left, right) => right.length - left.length)[0];
-  let candidatePaths = new Set(snapshot.map((file) => file.filePath));
+  let candidatePaths = new Set(snapshot.map((file) => file.parseFilePath || file.filePath));
 
   for (const token of bestGroup) {
-    const currentFiles = snapshot.filter((file) => candidatePaths.has(file.filePath));
+    const currentFiles = snapshot.filter((file) => candidatePaths.has(file.parseFilePath || file.filePath));
     const matchedPaths = await runGrepFileCandidates(currentFiles, token);
     if (matchedPaths === null) {
       // grep is unavailable. Fall back to JS prefilter in collectPlayerRecordEvents.
@@ -3864,7 +3897,7 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature
   }
 
   return {
-    snapshot: snapshot.filter((file) => candidatePaths.has(file.filePath)),
+    snapshot: snapshot.filter((file) => candidatePaths.has(file.parseFilePath || file.filePath)),
     source: "grep-prefilter",
     generatedAt: null,
   };
@@ -3962,7 +3995,7 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
 
   for (const file of snapshot) {
     await yieldToEventLoop();
-    const text = readTextFile(file.filePath);
+    const text = readTextFile(file.parseFilePath || file.filePath);
     if (!text || (Array.isArray(textNeedles) && textNeedles.length > 0 && !textLikelyContainsPlayer(text, textNeedles))) {
       continue;
     }
@@ -4313,6 +4346,7 @@ const server = http.createServer((request, response) => {
       playerRecords: {
         source: "wtt-records",
         archiveMode: "runtime+bundled",
+        parseMode: process.env.WTT_SLIM_RECORDS_DISABLED === "1" ? "raw" : "slim-preferred",
         candidateMode: "candidate-index+grep-fallback",
         displayMode: "player-record-org-v4-category-groups-keep-round-order",
         runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
