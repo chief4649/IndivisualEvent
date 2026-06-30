@@ -713,10 +713,12 @@
               <label>
                 選手A
                 <input id="head-to-head-player-a" placeholder="HARIMOTO Miwa / 張本美和">
+                <div class="player-search-results" id="head-to-head-player-a-results"></div>
               </label>
               <label>
                 選手B
                 <input id="head-to-head-player-b" placeholder="SUN Yingsha / 孫穎莎">
+                <div class="player-search-results" id="head-to-head-player-b-results"></div>
               </label>
             </div>
             <div class="actions">
@@ -848,6 +850,8 @@
       const playerRecords = document.getElementById("player-records");
       const headToHeadPlayerA = document.getElementById("head-to-head-player-a");
       const headToHeadPlayerB = document.getElementById("head-to-head-player-b");
+      const headToHeadPlayerAResults = document.getElementById("head-to-head-player-a-results");
+      const headToHeadPlayerBResults = document.getElementById("head-to-head-player-b-results");
       const headToHeadRun = document.getElementById("head-to-head-run");
       const headToHeadSummary = document.getElementById("head-to-head-summary");
       const headToHeadResults = document.getElementById("head-to-head-results");
@@ -863,6 +867,10 @@
       let roundRequestId = 0;
       let eventSearchRequestId = 0;
       let playerSearchRequestId = 0;
+      let headToHeadPlayerARequestId = 0;
+      let headToHeadPlayerBRequestId = 0;
+      let selectedHeadToHeadPlayerA = null;
+      let selectedHeadToHeadPlayerB = null;
       let eventRefreshTimer = null;
       let lastBackgroundErrorMessage = "";
       let lastBackgroundErrorAt = 0;
@@ -1112,6 +1120,83 @@
         });
       }
 
+      function getPlayerCandidateLabel(item) {
+        return `${item?.name || ""}　${item?.translatedName || "未登録"}`.trim();
+      }
+
+      function renderHeadToHeadPlayerCandidates(target, data) {
+        const resultsEl = target === "a" ? headToHeadPlayerAResults : headToHeadPlayerBResults;
+        const inputEl = target === "a" ? headToHeadPlayerA : headToHeadPlayerB;
+        resultsEl.innerHTML = "";
+        const rows = Array.isArray(data?.results) ? [...data.results] : [];
+        if (data?.fallback) {
+          rows.push(data.fallback);
+        }
+
+        rows.slice(0, 8).forEach((item) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "search-result";
+          button.title = "この選手を選択";
+
+          const line = document.createElement("span");
+          line.className = "player-search-line";
+          line.textContent = getPlayerCandidateLabel(item);
+          button.appendChild(line);
+
+          const meta = document.createElement("span");
+          meta.className = "search-result-meta";
+          meta.textContent = item.registered ? "辞書登録あり" : "未登録";
+          button.appendChild(meta);
+
+          button.addEventListener("click", () => {
+            const selected = {
+              name: item.name || "",
+              translatedName: item.translatedName || "",
+              registered: Boolean(item.registered),
+            };
+            if (target === "a") {
+              selectedHeadToHeadPlayerA = selected;
+            } else {
+              selectedHeadToHeadPlayerB = selected;
+            }
+            inputEl.value = getPlayerCandidateLabel(item);
+            resultsEl.innerHTML = "";
+          });
+
+          resultsEl.appendChild(button);
+        });
+      }
+
+      async function loadHeadToHeadPlayerCandidates(target) {
+        const inputEl = target === "a" ? headToHeadPlayerA : headToHeadPlayerB;
+        const resultsEl = target === "a" ? headToHeadPlayerAResults : headToHeadPlayerBResults;
+        const query = inputEl.value.trim();
+        if (target === "a") {
+          selectedHeadToHeadPlayerA = null;
+        } else {
+          selectedHeadToHeadPlayerB = null;
+        }
+        if (!query) {
+          resultsEl.innerHTML = "";
+          return;
+        }
+
+        const requestId = target === "a" ? ++headToHeadPlayerARequestId : ++headToHeadPlayerBRequestId;
+        const response = await fetchWithTimeout(`/api/players/search?q=${encodeURIComponent(query)}&limit=8`);
+        const data = await readJsonResponse(response, "Head To Head の選手候補の読み込みに失敗しました。");
+        if (!response.ok) {
+          throw new Error(data.error || "Head To Head の選手候補の読み込みに失敗しました。");
+        }
+        if (
+          (target === "a" && requestId !== headToHeadPlayerARequestId) ||
+          (target === "b" && requestId !== headToHeadPlayerBRequestId)
+        ) {
+          return;
+        }
+        renderHeadToHeadPlayerCandidates(target, data);
+      }
+
       function renderPlayerRecords(data) {
         playerRecords.innerHTML = "";
         const events = Array.isArray(data?.events) ? data.events : [];
@@ -1278,8 +1363,8 @@
       }
 
       async function loadHeadToHead() {
-        const playerA = headToHeadPlayerA.value.trim();
-        const playerB = headToHeadPlayerB.value.trim();
+        const playerA = selectedHeadToHeadPlayerA?.name || headToHeadPlayerA.value.trim();
+        const playerB = selectedHeadToHeadPlayerB?.name || headToHeadPlayerB.value.trim();
         headToHeadSummary.innerHTML = "";
         headToHeadResults.innerHTML = "";
         if (!playerA || !playerB) {
@@ -1299,6 +1384,12 @@
           playerA,
           playerB,
         });
+        if (selectedHeadToHeadPlayerA?.translatedName && selectedHeadToHeadPlayerA.translatedName !== "未登録") {
+          params.set("translatedA", selectedHeadToHeadPlayerA.translatedName);
+        }
+        if (selectedHeadToHeadPlayerB?.translatedName && selectedHeadToHeadPlayerB.translatedName !== "未登録") {
+          params.set("translatedB", selectedHeadToHeadPlayerB.translatedName);
+        }
         try {
           const response = await fetchWithTimeout(`/api/head-to-head?${params.toString()}`, {}, 120000);
           const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
@@ -1854,6 +1945,22 @@
 
       playerSearchInput.addEventListener("focus", () => {
         loadPlayerSearchResults().catch(reportBackgroundError);
+      });
+
+      headToHeadPlayerA.addEventListener("input", () => {
+        loadHeadToHeadPlayerCandidates("a").catch(reportBackgroundError);
+      });
+
+      headToHeadPlayerB.addEventListener("input", () => {
+        loadHeadToHeadPlayerCandidates("b").catch(reportBackgroundError);
+      });
+
+      headToHeadPlayerA.addEventListener("focus", () => {
+        loadHeadToHeadPlayerCandidates("a").catch(reportBackgroundError);
+      });
+
+      headToHeadPlayerB.addEventListener("focus", () => {
+        loadHeadToHeadPlayerCandidates("b").catch(reportBackgroundError);
       });
 
       headToHeadRun.addEventListener("click", () => {
