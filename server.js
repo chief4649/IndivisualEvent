@@ -4102,6 +4102,269 @@ async function getPlayerRecordSearchResult(name, translatedName, needles) {
   };
 }
 
+function buildHeadToHeadMatchLine(match, translations) {
+  const winnerIndex = getWinnerIndexForRecord(match);
+  const leftIndex = winnerIndex === 0 || winnerIndex === 1 ? winnerIndex : 0;
+  const rightIndex = leftIndex === 0 ? 1 : 0;
+  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations);
+  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations);
+  const score = formatGameScoresForRecord(match, leftIndex);
+  return `${left}　${score}　${right}`;
+}
+
+function isSinglesHeadToHeadMatch(match) {
+  const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
+  if (competitors.length < 2) {
+    return false;
+  }
+  return competitors.slice(0, 2).every((competitor) => {
+    const players = Array.isArray(competitor?.players) ? competitor.players.filter((player) => player?.name) : [];
+    if (players.length > 1) {
+      return false;
+    }
+    const type = String(competitor?.type || "").toLowerCase();
+    return type !== "pair" && type !== "doubles";
+  });
+}
+
+function pushHeadToHeadMatch(matches, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null) {
+  const winnerIndex = getWinnerIndexForRecord(match);
+  if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
+    return;
+  }
+
+  const sourceMatch = parentMatch || match;
+  matches.push({
+    categoryName: sourceMatch.categoryName || match.categoryName || "",
+    roundLabel: translateRoundJa(
+      sourceMatch.roundKey || match.roundKey,
+      sourceMatch.roundLabel || match.roundLabel,
+      translations,
+      rules,
+      roundContext,
+    ),
+    line: buildHeadToHeadMatchLine(match, translations),
+    documentCode: match.documentCode || sourceMatch.documentCode || "",
+    winner: winnerIndex === playerAIndex ? "a" : "b",
+  });
+}
+
+async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles) {
+  const translations = readTranslations(TRANSLATIONS_PATH);
+  const rules = readRules(RULES_PATH);
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  const archiveIndex = readWttArchiveIndex();
+  const eventNames = getEventNamesMap();
+  const events = [];
+  let parsedEvents = 0;
+  let scannedMatches = 0;
+  let aWins = 0;
+  let bWins = 0;
+
+  for (const file of snapshot) {
+    await yieldToEventLoop();
+    const {
+      normalizedMatches,
+      contextsByCategory,
+      fallbackRoundContext,
+    } = getParsedPlayerRecordArchive(file);
+    if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
+      continue;
+    }
+
+    parsedEvents += 1;
+    const matches = [];
+
+    for (const match of normalizedMatches) {
+      const matchRoundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext;
+      scannedMatches += 1;
+
+      if (match.matchType === "individual") {
+        if (match.discipline && match.discipline !== "singles") {
+          continue;
+        }
+        if (!isSinglesHeadToHeadMatch(match)) {
+          continue;
+        }
+        const playerAIndex = findPlayerCompetitorIndex(match, playerANeedles, translations);
+        const playerBIndex = findPlayerCompetitorIndex(match, playerBNeedles, translations);
+        if (playerAIndex >= 0 && playerBIndex >= 0 && playerAIndex !== playerBIndex) {
+          const before = matches.length;
+          pushHeadToHeadMatch(matches, match, playerAIndex, playerBIndex, translations, rules, matchRoundContext);
+          if (matches.length > before) {
+            if (matches[matches.length - 1].winner === "a") {
+              aWins += 1;
+            } else {
+              bWins += 1;
+            }
+          }
+        }
+        continue;
+      }
+
+      if (match.matchType !== "team") {
+        continue;
+      }
+
+      (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
+        scannedMatches += 1;
+        if (!isSinglesHeadToHeadMatch(single)) {
+          return;
+        }
+        const playerAIndex = findPlayerCompetitorIndex(single, playerANeedles, translations);
+        const playerBIndex = findPlayerCompetitorIndex(single, playerBNeedles, translations);
+        if (playerAIndex >= 0 && playerBIndex >= 0 && playerAIndex !== playerBIndex) {
+          const before = matches.length;
+          pushHeadToHeadMatch(matches, single, playerAIndex, playerBIndex, translations, rules, matchRoundContext, match);
+          if (matches.length > before) {
+            if (matches[matches.length - 1].winner === "a") {
+              aWins += 1;
+            } else {
+              bWins += 1;
+            }
+          }
+        }
+      });
+    }
+
+    if (matches.length === 0) {
+      continue;
+    }
+
+    const matchGroups = buildPlayerRecordMatchGroups(matches);
+    events.push({
+      ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+      source: file.sourceLabel || "",
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
+    });
+  }
+
+  events.sort(comparePlayerRecordEvents);
+  return {
+    events,
+    parsedEvents,
+    scannedMatches,
+    aWins,
+    bWins,
+  };
+}
+
+async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, playerBName, playerBTranslatedName, playerANeedles, playerBNeedles) {
+  const snapshot = getWttRecordFileSnapshot();
+  const signature = getPlayerRecordCacheSignature(snapshot);
+  const playerATextNeedles = buildPlayerRecordTextNeedles(...playerANeedles);
+  const playerBTextNeedles = buildPlayerRecordTextNeedles(...playerBNeedles);
+  const candidateAResult = await getPlayerRecordCandidateSnapshot(snapshot, playerATextNeedles, signature);
+  const candidateBResult = await getPlayerRecordCandidateSnapshot(candidateAResult.snapshot, playerBTextNeedles, signature);
+  const collected = await collectHeadToHeadMatches(candidateBResult.snapshot, playerANeedles, playerBNeedles);
+  if (candidateAResult.source !== "candidate-index" || candidateBResult.source !== "candidate-index") {
+    startPlayerRecordCandidateIndexBuild(snapshot, signature);
+  }
+  return {
+    signature,
+    builtAt: Date.now(),
+    eventIndexSource: "wtt-records",
+    candidateIndexSource: [candidateAResult.source, candidateBResult.source].filter(Boolean).join("+"),
+    candidateIndexGeneratedAt: candidateAResult.generatedAt || candidateBResult.generatedAt || null,
+    eventIndexGeneratedAt: null,
+    scannedEvents: snapshot.length,
+    candidateEvents: candidateBResult.snapshot.length,
+    ...collected,
+  };
+}
+
+async function handleHeadToHeadApi(requestUrl, response) {
+  try {
+    await syncTranslationsFromSharedSource();
+    const playerAName = String(requestUrl.searchParams.get("playerA") || requestUrl.searchParams.get("nameA") || "").trim();
+    const playerATranslatedName = String(requestUrl.searchParams.get("translatedA") || requestUrl.searchParams.get("translatedNameA") || "").trim();
+    const playerBName = String(requestUrl.searchParams.get("playerB") || requestUrl.searchParams.get("nameB") || "").trim();
+    const playerBTranslatedName = String(requestUrl.searchParams.get("translatedB") || requestUrl.searchParams.get("translatedNameB") || "").trim();
+    const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
+    const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
+    const translations = readTranslations(TRANSLATIONS_PATH);
+    const playerANeedles = buildPlayerRecordNeedles(playerAName, playerATranslatedName, translations);
+    const playerBNeedles = buildPlayerRecordNeedles(playerBName, playerBTranslatedName, translations);
+
+    if (playerANeedles.length === 0 || playerBNeedles.length === 0) {
+      sendJson(response, 200, {
+        playerA: { name: playerAName, translatedName: playerATranslatedName },
+        playerB: { name: playerBName, translatedName: playerBTranslatedName },
+        summary: { playerAWins: 0, playerBWins: 0, totalMatches: 0 },
+        events: [],
+        meta: {
+          cacheBuiltAt: null,
+          scannedEvents: 0,
+          candidateEvents: 0,
+          parsedEvents: 0,
+          scannedMatches: 0,
+          returnedEvents: 0,
+          returnedMatches: 0,
+          candidateIndexSource: null,
+          candidateIndexGeneratedAt: null,
+        },
+      });
+      return;
+    }
+
+    const searchResult = await getHeadToHeadSearchResult(
+      playerAName,
+      playerATranslatedName,
+      playerBName,
+      playerBTranslatedName,
+      playerANeedles,
+      playerBNeedles,
+    );
+    let returnedMatches = 0;
+    const limitedEvents = [];
+    for (const event of searchResult.events) {
+      if (limitedEvents.length >= eventLimit || returnedMatches >= matchLimit) {
+        break;
+      }
+      const remainingMatches = matchLimit - returnedMatches;
+      const matches = event.matches.slice(0, remainingMatches);
+      if (matches.length === 0) {
+        continue;
+      }
+      returnedMatches += matches.length;
+      limitedEvents.push({
+        ...event,
+        matches,
+      });
+    }
+
+    sendJson(response, 200, {
+      playerA: { name: playerAName, translatedName: playerATranslatedName },
+      playerB: { name: playerBName, translatedName: playerBTranslatedName },
+      summary: {
+        playerAWins: searchResult.aWins,
+        playerBWins: searchResult.bWins,
+        totalMatches: searchResult.aWins + searchResult.bWins,
+      },
+      events: limitedEvents,
+      meta: {
+        cacheBuiltAt: searchResult.builtAt,
+        eventIndexSource: searchResult.eventIndexSource,
+        eventIndexGeneratedAt: searchResult.eventIndexGeneratedAt,
+        candidateIndexSource: searchResult.candidateIndexSource,
+        candidateIndexGeneratedAt: searchResult.candidateIndexGeneratedAt,
+        scannedEvents: searchResult.scannedEvents,
+        candidateEvents: searchResult.candidateEvents,
+        parsedEvents: searchResult.parsedEvents,
+        scannedMatches: searchResult.scannedMatches,
+        returnedEvents: limitedEvents.length,
+        returnedMatches,
+      },
+    });
+  } catch (error) {
+    sendJson(response, 500, {
+      error: createFriendlyErrorMessage(error),
+    });
+  }
+}
+
 async function handlePlayerRecordsApi(requestUrl, response) {
   try {
     await syncTranslationsFromSharedSource();
@@ -4398,7 +4661,8 @@ const server = http.createServer((request, response) => {
       requestUrl.pathname === "/api/rounds" ||
       requestUrl.pathname === "/api/events/search" ||
       requestUrl.pathname === "/api/players/search" ||
-      requestUrl.pathname === "/api/players/records"
+      requestUrl.pathname === "/api/players/records" ||
+      requestUrl.pathname === "/api/head-to-head"
     )
   ) {
     if (requestUrl.pathname === "/api/categories") {
@@ -4411,6 +4675,8 @@ const server = http.createServer((request, response) => {
       handlePlayerSearchApi(requestUrl, response);
     } else if (requestUrl.pathname === "/api/players/records") {
       handlePlayerRecordsApi(requestUrl, response);
+    } else if (requestUrl.pathname === "/api/head-to-head") {
+      handleHeadToHeadApi(requestUrl, response);
     } else {
       handleApi(requestUrl, response);
     }

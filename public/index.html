@@ -439,6 +439,17 @@
         line-height: 1.7;
       }
 
+      .head-to-head-form {
+        display: grid;
+        gap: 14px;
+      }
+
+      .head-to-head-summary {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
       .admin-note {
         margin-top: 10px;
         padding: 10px 12px;
@@ -694,6 +705,33 @@
 
       <details class="panel">
         <summary class="admin-summary">
+          <strong>Head To Head</strong>
+        </summary>
+        <div class="admin-content player-search-panel">
+          <div class="head-to-head-form">
+            <div class="row">
+              <label>
+                選手A
+                <input id="head-to-head-player-a" placeholder="HARIMOTO Miwa / 張本美和">
+              </label>
+              <label>
+                選手B
+                <input id="head-to-head-player-b" placeholder="SUN Yingsha / 孫穎莎">
+              </label>
+            </div>
+            <div class="actions">
+              <button class="primary" type="button" id="head-to-head-run">検索</button>
+            </div>
+          </div>
+          <div class="head-to-head-summary" id="head-to-head-summary"></div>
+          <div class="player-records" id="head-to-head-results">
+            <div class="player-search-empty">選手名を2人入力すると直接対戦が表示されます。</div>
+          </div>
+        </div>
+      </details>
+
+      <details class="panel">
+        <summary class="admin-summary">
           <strong>管理画面</strong>
         </summary>
         <div class="admin-content">
@@ -808,6 +846,11 @@
       const playerSearchInput = document.getElementById("player-search-input");
       const playerSearchResults = document.getElementById("player-search-results");
       const playerRecords = document.getElementById("player-records");
+      const headToHeadPlayerA = document.getElementById("head-to-head-player-a");
+      const headToHeadPlayerB = document.getElementById("head-to-head-player-b");
+      const headToHeadRun = document.getElementById("head-to-head-run");
+      const headToHeadSummary = document.getElementById("head-to-head-summary");
+      const headToHeadResults = document.getElementById("head-to-head-results");
       const categorySelect = form.elements.namedItem("category");
       const genderField = form.elements.namedItem("gender");
       const disciplineField = form.elements.namedItem("discipline");
@@ -1154,6 +1197,121 @@
           empty.className = "player-search-empty";
           empty.textContent = error?.message || "戦績の読み込みに失敗しました。";
           playerRecords.appendChild(empty);
+          throw error;
+        }
+      }
+
+      function renderHeadToHead(data) {
+        headToHeadSummary.innerHTML = "";
+        headToHeadResults.innerHTML = "";
+        const summary = data?.summary || {};
+        const playerAName = data?.playerA?.translatedName || data?.playerA?.name || "選手A";
+        const playerBName = data?.playerB?.translatedName || data?.playerB?.name || "選手B";
+        [
+          `${playerAName}: ${summary.playerAWins || 0}勝`,
+          `${playerBName}: ${summary.playerBWins || 0}勝`,
+          `対戦数: ${summary.totalMatches || 0}`,
+        ].forEach((item) => {
+          const chip = document.createElement("span");
+          chip.className = "chip";
+          chip.textContent = item;
+          headToHeadSummary.appendChild(chip);
+        });
+
+        const events = Array.isArray(data?.events) ? data.events : [];
+        if (events.length === 0) {
+          const empty = document.createElement("div");
+          empty.className = "player-search-empty";
+          empty.textContent = "該当する直接対戦はありません。";
+          headToHeadResults.appendChild(empty);
+          return;
+        }
+
+        events.forEach((event) => {
+          const eventBox = document.createElement("div");
+          eventBox.className = "player-record-event";
+
+          const title = document.createElement("div");
+          title.className = "player-record-event-title";
+          const dateLabel = event.dateLabel ? `（${event.dateLabel}）` : "";
+          title.textContent = `▼${event.eventName || event.event || ""}${dateLabel}`;
+          eventBox.appendChild(title);
+
+          const rawGroups = Array.isArray(event.matchGroups) && event.matchGroups.length > 0
+            ? event.matchGroups
+            : [{
+                categoryName: "",
+                matches: Array.isArray(event.matches) ? event.matches : [],
+              }];
+
+          rawGroups.forEach((group) => {
+            const groupBox = document.createElement("div");
+            groupBox.className = "player-record-category-group";
+
+            const groupTitle = document.createElement("div");
+            groupTitle.className = "player-record-category-title";
+            groupTitle.textContent = group.categoryName || "その他";
+            groupBox.appendChild(groupTitle);
+
+            (Array.isArray(group.matches) ? group.matches : []).forEach((match) => {
+              const matchBox = document.createElement("div");
+              matchBox.className = "player-record-match";
+
+              const round = document.createElement("div");
+              round.className = "player-record-round";
+              round.textContent = match.roundLabel || "";
+              matchBox.appendChild(round);
+
+              const line = document.createElement("div");
+              line.className = "player-record-line";
+              line.textContent = match.line || "";
+              matchBox.appendChild(line);
+
+              groupBox.appendChild(matchBox);
+            });
+
+            eventBox.appendChild(groupBox);
+          });
+
+          headToHeadResults.appendChild(eventBox);
+        });
+      }
+
+      async function loadHeadToHead() {
+        const playerA = headToHeadPlayerA.value.trim();
+        const playerB = headToHeadPlayerB.value.trim();
+        headToHeadSummary.innerHTML = "";
+        headToHeadResults.innerHTML = "";
+        if (!playerA || !playerB) {
+          const empty = document.createElement("div");
+          empty.className = "player-search-empty";
+          empty.textContent = "選手名を2人入力してください。";
+          headToHeadResults.appendChild(empty);
+          return;
+        }
+
+        const loading = document.createElement("div");
+        loading.className = "player-search-empty";
+        loading.textContent = "直接対戦を読み込んでいます。";
+        headToHeadResults.appendChild(loading);
+
+        const params = new URLSearchParams({
+          playerA,
+          playerB,
+        });
+        try {
+          const response = await fetchWithTimeout(`/api/head-to-head?${params.toString()}`, {}, 120000);
+          const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
+          if (!response.ok) {
+            throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
+          }
+          renderHeadToHead(data);
+        } catch (error) {
+          headToHeadResults.innerHTML = "";
+          const empty = document.createElement("div");
+          empty.className = "player-search-empty";
+          empty.textContent = error?.message || "Head To Head の読み込みに失敗しました。";
+          headToHeadResults.appendChild(empty);
           throw error;
         }
       }
@@ -1696,6 +1854,19 @@
 
       playerSearchInput.addEventListener("focus", () => {
         loadPlayerSearchResults().catch(reportBackgroundError);
+      });
+
+      headToHeadRun.addEventListener("click", () => {
+        loadHeadToHead().catch(reportBackgroundError);
+      });
+
+      [headToHeadPlayerA, headToHeadPlayerB].forEach((input) => {
+        input.addEventListener("keydown", (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            loadHeadToHead().catch(reportBackgroundError);
+          }
+        });
       });
 
       categorySelect.addEventListener("change", () => {
