@@ -46,12 +46,20 @@ const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
+const BUNDLED_PLAYER_RECORDS_INDEX_DIR = path.join(__dirname, "player-records-index");
 const PLAYER_RECORD_CANDIDATE_INDEX_VERSION = 1;
 const PLAYER_RECORD_CANDIDATE_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-events.json");
 const PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-manifest.json");
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION = 1;
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names.json");
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names-manifest.json");
+const HEAD_TO_HEAD_INDEX_VERSION = 1;
+const HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
+const HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
+const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
+const BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
+const BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
+const BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
@@ -3483,6 +3491,14 @@ function parseJsonArrayFromText(text) {
   }
 }
 
+function getFileHashToken(filePath) {
+  try {
+    return crypto.createHash("sha1").update(fs.readFileSync(filePath)).digest("hex");
+  } catch {
+    return "missing";
+  }
+}
+
 function getParsedPlayerRecordArchive(file, existingText = null) {
   const parseFilePath = file.parseFilePath || file.filePath;
   const parseSize = file.parseSize || file.size;
@@ -4187,6 +4203,250 @@ function buildHeadToHeadMatchLine(match, translations) {
   return `${left}　${score}　${right}`;
 }
 
+const headToHeadPersistentIndexState = {
+  signature: null,
+  generatedAt: null,
+  index: null,
+};
+
+function getHeadToHeadPersistentIndexSignature(snapshot) {
+  const dataSignature = snapshot.map((file) => [
+    file.eventId,
+    file.size,
+    file.parseSource || "raw",
+    file.parseSize || file.size,
+  ].join(":")).join("|");
+  const configSignature = [
+    TRANSLATIONS_PATH,
+    RULES_PATH,
+    WTT_ARCHIVE_INDEX_PATH,
+    WTT_DATE_INDEX_PATH,
+    WTT_SEARCH_INDEX_PATH,
+    EVENT_NAMES_PATH,
+  ].map((filePath) => `${path.basename(filePath)}:${getFileHashToken(filePath)}`).join("|");
+  return crypto.createHash("sha1").update(`${dataSignature}::${configSignature}`).digest("hex");
+}
+
+function readHeadToHeadPersistentIndexFromDisk(signature) {
+  const candidates = [
+    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, HEAD_TO_HEAD_PAIR_SHARDS_DIR],
+    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH, BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR],
+  ];
+
+  for (const [manifestPath, playerIndexPath, pairShardsDir] of candidates) {
+    try {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+      if (
+        manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION ||
+        manifest?.signature !== signature
+      ) {
+        continue;
+      }
+      const playerIndex = JSON.parse(fs.readFileSync(playerIndexPath, "utf8"));
+      if (!playerIndex?.players || typeof playerIndex.players !== "object" || Array.isArray(playerIndex.players)) {
+        continue;
+      }
+      return {
+        signature,
+        generatedAt: manifest.generatedAt || null,
+        index: {
+          players: playerIndex.players,
+          pairShardsDir,
+          pairShardCache: new Map(),
+        },
+      };
+    } catch {
+      // Try the next index location.
+    }
+  }
+
+  return null;
+}
+
+function setHeadToHeadPersistentIndexState(indexState) {
+  headToHeadPersistentIndexState.signature = indexState.signature;
+  headToHeadPersistentIndexState.generatedAt = indexState.generatedAt;
+  headToHeadPersistentIndexState.index = indexState.index;
+}
+
+function getHeadToHeadPersistentIndex(signature) {
+  if (
+    headToHeadPersistentIndexState.signature === signature &&
+    headToHeadPersistentIndexState.index
+  ) {
+    return headToHeadPersistentIndexState;
+  }
+
+  const diskIndex = readHeadToHeadPersistentIndexFromDisk(signature);
+  if (diskIndex) {
+    setHeadToHeadPersistentIndexState(diskIndex);
+    return headToHeadPersistentIndexState;
+  }
+
+  return null;
+}
+
+function getHeadToHeadPairShardName(pairKey) {
+  return `${crypto.createHash("sha1").update(String(pairKey || "")).digest("hex").slice(0, 2)}.json`;
+}
+
+function getHeadToHeadIndexedPair(index, pairKey) {
+  if (!index?.pairShardsDir || !index?.pairShardCache) {
+    return null;
+  }
+  const shardName = getHeadToHeadPairShardName(pairKey);
+  if (!index.pairShardCache.has(shardName)) {
+    try {
+      const shardPath = path.join(index.pairShardsDir, shardName);
+      const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
+      index.pairShardCache.set(shardName, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+    } catch {
+      index.pairShardCache.set(shardName, {});
+    }
+  }
+  return index.pairShardCache.get(shardName)?.[pairKey] || null;
+}
+
+function getHeadToHeadCompetitorKeyValues(competitor, translations) {
+  return Array.from(new Set(
+    getPlayerRecordCandidateIndexNameValues(competitor, translations)
+      .flatMap(buildPlayerNameSearchValues)
+      .filter((value) => value.length >= 2),
+  ));
+}
+
+function getHeadToHeadCanonicalKey(competitor, translations) {
+  const preferredValues = getCompetitorNameCandidates(competitor)
+    .flatMap(buildPlayerNameSearchValues)
+    .filter((value) => /^[a-z0-9 ]+$/.test(value));
+  const fallbackValues = getHeadToHeadCompetitorKeyValues(competitor, translations);
+  return (preferredValues[0] || fallbackValues[0] || "").trim();
+}
+
+function addHeadToHeadPlayerKey(index, key, pairKey) {
+  if (!key) {
+    return;
+  }
+  if (!index.players[key]) {
+    index.players[key] = [];
+  }
+  if (!index.players[key].includes(pairKey)) {
+    index.players[key].push(pairKey);
+  }
+}
+
+function getHeadToHeadIndexPlayerKeys(index, needles) {
+  const keys = new Set();
+  const players = index?.players || {};
+  const playerKeys = Object.keys(players);
+  needles.forEach((needle) => {
+    const normalizedNeedle = normalizePlayerSearchText(needle);
+    if (!normalizedNeedle) {
+      return;
+    }
+    if (players[normalizedNeedle]) {
+      keys.add(normalizedNeedle);
+      return;
+    }
+    playerKeys.forEach((key) => {
+      if (playerRecordNameMatchesNeedle(key, normalizedNeedle)) {
+        keys.add(key);
+      }
+    });
+  });
+  return keys;
+}
+
+function getHeadToHeadIndexPairKeysForPlayer(index, playerKeys) {
+  const pairKeys = new Set();
+  playerKeys.forEach((playerKey) => {
+    (index.players?.[playerKey] || []).forEach((pairKey) => pairKeys.add(pairKey));
+  });
+  return pairKeys;
+}
+
+function setsIntersect(left, right) {
+  for (const value of left) {
+    if (right.has(value)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null) {
+  const winnerIndex = getWinnerIndexForRecord(match);
+  if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
+    return false;
+  }
+
+  const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
+  const leftCompetitor = competitors[playerAIndex];
+  const rightCompetitor = competitors[playerBIndex];
+  const leftCanonical = getHeadToHeadCanonicalKey(leftCompetitor, translations);
+  const rightCanonical = getHeadToHeadCanonicalKey(rightCompetitor, translations);
+  if (!leftCanonical || !rightCanonical || leftCanonical === rightCanonical) {
+    return false;
+  }
+
+  const orderedCanonicals = [leftCanonical, rightCanonical].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
+  const pairKey = orderedCanonicals.join("||");
+  const leftKeys = getHeadToHeadCompetitorKeyValues(leftCompetitor, translations);
+  const rightKeys = getHeadToHeadCompetitorKeyValues(rightCompetitor, translations);
+  const sourceMatch = parentMatch || match;
+
+  if (!index.pairs[pairKey]) {
+    index.pairs[pairKey] = {
+      playerKeys: [[], []],
+      events: [],
+    };
+  }
+
+  const pair = index.pairs[pairKey];
+  const leftPairIndex = orderedCanonicals.indexOf(leftCanonical);
+  const rightPairIndex = orderedCanonicals.indexOf(rightCanonical);
+  if (leftPairIndex < 0 || rightPairIndex < 0 || leftPairIndex === rightPairIndex) {
+    return false;
+  }
+
+  [
+    [leftKeys, leftPairIndex],
+    [rightKeys, rightPairIndex],
+  ].forEach(([keys, playerIndex]) => {
+    const currentKeys = new Set(pair.playerKeys[playerIndex] || []);
+    keys.forEach((key) => {
+      currentKeys.add(key);
+      addHeadToHeadPlayerKey(index, key, pairKey);
+    });
+    pair.playerKeys[playerIndex] = [...currentKeys].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
+  });
+
+  let event = pair.events.find((entry) => entry.event === file.eventId);
+  if (!event) {
+    event = {
+      ...eventMeta,
+      source: file.sourceLabel || "",
+      matches: [],
+    };
+    pair.events.push(event);
+  }
+
+  event.matches.push({
+    categoryName: sourceMatch.categoryName || match.categoryName || "",
+    roundLabel: translateRoundJa(
+      sourceMatch.roundKey || match.roundKey,
+      sourceMatch.roundLabel || match.roundLabel,
+      translations,
+      rules,
+      roundContext,
+    ),
+    line: buildHeadToHeadMatchLine(match, translations),
+    documentCode: match.documentCode || sourceMatch.documentCode || "",
+    winnerPlayerIndex: winnerIndex === playerAIndex ? leftPairIndex : rightPairIndex,
+  });
+  return true;
+}
+
 function isSinglesHeadToHeadMatch(match) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
   if (competitors.length < 2) {
@@ -4383,11 +4643,238 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
   };
 }
 
+async function buildHeadToHeadPersistentIndex(snapshot, signature) {
+  const translations = readTranslations(TRANSLATIONS_PATH);
+  const rules = readRules(RULES_PATH);
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  const archiveIndex = readWttArchiveIndex();
+  const eventNames = getEventNamesMap();
+  const index = {
+    players: {},
+    pairs: {},
+  };
+  let parsedEvents = 0;
+  let scannedMatches = 0;
+  let indexedMatches = 0;
+
+  for (let indexPosition = 0; indexPosition < snapshot.length; indexPosition += 1) {
+    if (indexPosition % 20 === 0) {
+      await yieldToEventLoop();
+    }
+    const file = snapshot[indexPosition];
+    const {
+      normalizedMatches,
+      contextsByCategory,
+      fallbackRoundContext,
+    } = getParsedPlayerRecordArchive(file);
+    if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
+      continue;
+    }
+
+    parsedEvents += 1;
+    const eventMeta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
+
+    for (const match of normalizedMatches) {
+      const matchRoundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext;
+      scannedMatches += 1;
+
+      if (match.matchType === "individual") {
+        if (match.discipline && match.discipline !== "singles") {
+          continue;
+        }
+        if (!isSinglesHeadToHeadMatch(match)) {
+          continue;
+        }
+        if (addHeadToHeadIndexedMatch(index, file, eventMeta, match, 0, 1, translations, rules, matchRoundContext)) {
+          indexedMatches += 1;
+        }
+        continue;
+      }
+
+      if (match.matchType !== "team") {
+        continue;
+      }
+
+      (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
+        scannedMatches += 1;
+        if (!isSinglesHeadToHeadMatch(single)) {
+          return;
+        }
+        if (addHeadToHeadIndexedMatch(index, file, eventMeta, single, 0, 1, translations, rules, matchRoundContext, match)) {
+          indexedMatches += 1;
+        }
+      });
+    }
+  }
+
+  Object.values(index.pairs).forEach((pair) => {
+    pair.events.sort(comparePlayerRecordEvents);
+    pair.events.forEach((event) => {
+      const matchGroups = buildPlayerRecordMatchGroups(event.matches);
+      event.matches = matchGroups.flatMap((group) => group.matches);
+      event.matchGroups = matchGroups;
+    });
+  });
+  Object.keys(index.players).forEach((key) => {
+    index.players[key].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
+  });
+
+  const generatedAt = new Date().toISOString();
+  const manifest = {
+    version: HEAD_TO_HEAD_INDEX_VERSION,
+    generatedAt,
+    signature,
+    eventCount: snapshot.length,
+    parsedEvents,
+    scannedMatches,
+    indexedMatches,
+    pairCount: Object.keys(index.pairs).length,
+    playerKeyCount: Object.keys(index.players).length,
+  };
+
+  writeJsonFileAtomic(HEAD_TO_HEAD_PLAYER_INDEX_PATH, { players: index.players });
+  ensureDir(HEAD_TO_HEAD_PAIR_SHARDS_DIR);
+  const shards = {};
+  Object.entries(index.pairs).forEach(([pairKey, pair]) => {
+    const shardName = getHeadToHeadPairShardName(pairKey);
+    if (!shards[shardName]) {
+      shards[shardName] = {};
+    }
+    shards[shardName][pairKey] = pair;
+  });
+  Object.entries(shards).forEach(([shardName, shard]) => {
+    writeJsonFileAtomic(path.join(HEAD_TO_HEAD_PAIR_SHARDS_DIR, shardName), shard);
+  });
+  writeJsonFileAtomic(HEAD_TO_HEAD_INDEX_MANIFEST_PATH, manifest);
+  return {
+    signature,
+    generatedAt,
+    index: {
+      players: index.players,
+      pairShardsDir: HEAD_TO_HEAD_PAIR_SHARDS_DIR,
+      pairShardCache: new Map(),
+    },
+    manifest,
+  };
+}
+
+function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANeedles, playerBNeedles) {
+  const index = indexState?.index;
+  if (!index?.players || !index?.pairShardsDir) {
+    return null;
+  }
+
+  const playerAKeys = getHeadToHeadIndexPlayerKeys(index, playerANeedles);
+  const playerBKeys = getHeadToHeadIndexPlayerKeys(index, playerBNeedles);
+  if (playerAKeys.size === 0 || playerBKeys.size === 0) {
+    return {
+      events: [],
+      parsedEvents: 0,
+      scannedMatches: 0,
+      aWins: 0,
+      bWins: 0,
+      pairCount: 0,
+      playerAKeyCount: playerAKeys.size,
+      playerBKeyCount: playerBKeys.size,
+    };
+  }
+
+  const playerAPairKeys = getHeadToHeadIndexPairKeysForPlayer(index, playerAKeys);
+  const playerBPairKeys = getHeadToHeadIndexPairKeysForPlayer(index, playerBKeys);
+  const pairKeys = [...playerAPairKeys].filter((pairKey) => playerBPairKeys.has(pairKey));
+  const eventsById = new Map();
+  let aWins = 0;
+  let bWins = 0;
+  let scannedMatches = 0;
+
+  pairKeys.forEach((pairKey) => {
+    const pair = getHeadToHeadIndexedPair(index, pairKey);
+    if (!pair) {
+      return;
+    }
+    const pairPlayerAIndexes = [];
+    const pairPlayerBIndexes = [];
+    (pair.playerKeys || []).forEach((keys, playerIndex) => {
+      const keySet = new Set(keys || []);
+      if (setsIntersect(keySet, playerAKeys)) {
+        pairPlayerAIndexes.push(playerIndex);
+      }
+      if (setsIntersect(keySet, playerBKeys)) {
+        pairPlayerBIndexes.push(playerIndex);
+      }
+    });
+    if (pairPlayerAIndexes.length === 0 || pairPlayerBIndexes.length === 0) {
+      return;
+    }
+
+    (pair.events || []).forEach((event) => {
+      const matches = [];
+      (event.matches || []).forEach((match) => {
+        scannedMatches += 1;
+        const playerAIndex = pairPlayerAIndexes[0];
+        const playerBIndex = pairPlayerBIndexes.find((index) => index !== playerAIndex);
+        if (playerBIndex === undefined) {
+          return;
+        }
+        const winner = match.winnerPlayerIndex === playerAIndex ? "a" : "b";
+        if (winner === "a") {
+          aWins += 1;
+        } else {
+          bWins += 1;
+        }
+        matches.push({
+          categoryName: match.categoryName || "",
+          roundLabel: match.roundLabel || "",
+          line: match.line || "",
+          documentCode: match.documentCode || "",
+          winner,
+        });
+      });
+      if (matches.length === 0) {
+        return;
+      }
+      const current = eventsById.get(event.event) || {
+        event: event.event,
+        eventName: event.eventName,
+        startDate: event.startDate,
+        endDate: event.endDate,
+        dateLabel: event.dateLabel,
+        source: event.source || "",
+        matches: [],
+      };
+      current.matches.push(...matches);
+      eventsById.set(event.event, current);
+    });
+  });
+
+  const events = [...eventsById.values()].map((event) => {
+    const matchGroups = buildPlayerRecordMatchGroups(event.matches);
+    return {
+      ...event,
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
+    };
+  }).sort(comparePlayerRecordEvents);
+
+  return {
+    events,
+    parsedEvents: 0,
+    scannedMatches,
+    aWins,
+    bWins,
+    pairCount: pairKeys.length,
+    playerAKeyCount: playerAKeys.size,
+    playerBKeyCount: playerBKeys.size,
+  };
+}
+
 async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, playerBName, playerBTranslatedName, playerANeedles, playerBNeedles) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
+  const persistentIndexSignature = getHeadToHeadPersistentIndexSignature(snapshot);
   const cacheKey = [
-    signature,
+    persistentIndexSignature,
     playerAName,
     playerATranslatedName,
     playerBName,
@@ -4399,6 +4886,29 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
       ...cached,
       cacheHit: true,
     };
+  }
+
+  const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
+  if (persistentIndex) {
+    const indexed = collectHeadToHeadMatchesFromPersistentIndex(persistentIndex, playerANeedles, playerBNeedles);
+    if (indexed) {
+      const result = {
+        signature: persistentIndexSignature,
+        builtAt: Date.now(),
+        eventIndexSource: "head-to-head-index",
+        candidateIndexSource: "head-to-head-index",
+        candidateIndexGeneratedAt: persistentIndex.generatedAt,
+        eventIndexGeneratedAt: null,
+        scannedEvents: snapshot.length,
+        candidateEvents: indexed.events.length,
+        playerAEventCount: indexed.playerAKeyCount,
+        playerBEventCount: indexed.playerBKeyCount,
+        ...indexed,
+        cacheHit: false,
+      };
+      setHeadToHeadResultCacheValue(cacheKey, result);
+      return result;
+    }
   }
 
   const playerATextNeedles = buildPlayerRecordTextNeedles(...playerANeedles);
@@ -4759,133 +5269,158 @@ async function handleConfigUpdate(request, response, pathname) {
   }
 }
 
-const server = http.createServer((request, response) => {
-  const requestUrl = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`);
+function startServer() {
+  const server = http.createServer((request, response) => {
+    const requestUrl = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`);
 
-  if (isRateLimited(request)) {
-    sendJson(response, 429, {
-      error: "Too many requests",
-    });
-    return;
-  }
-
-  if (request.method === "GET" && requestUrl.pathname === "/api/health") {
-    sendJson(response, 200, {
-      ok: true,
-      adminProtected: Boolean(ADMIN_TOKEN),
-      viewerProtected: Boolean(VIEWER_PASSWORD),
-      runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
-      playerRecords: {
-        source: "wtt-records",
-        archiveMode: "runtime+bundled",
-        parseMode: process.env.WTT_SLIM_RECORDS_DISABLED === "1" ? "raw" : "slim-preferred",
-        candidateMode: "candidate-index+grep-fallback",
-        displayMode: "player-record-org-v4-category-groups-keep-round-order",
-        runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
-        bundledArchiveDirExists: fs.existsSync(BUNDLED_WTT_ARCHIVE_DIR),
-        cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
-      },
-    });
-    return;
-  }
-
-  if (request.method === "POST" && requestUrl.pathname === "/login") {
-    handleViewerLogin(request, response).catch((error) => {
-      sendText(response, error.statusCode || 500, error.message);
-    });
-    return;
-  }
-
-  if (request.method === "GET" && requestUrl.pathname === "/logout") {
-    sendText(response, 302, "", "text/plain; charset=utf-8", {
-      location: "/",
-      "set-cookie": clearViewerCookie(),
-    });
-    return;
-  }
-
-  if (request.method === "GET" && requestUrl.pathname === "/favicon.svg") {
-    serveFile(response, path.join(PUBLIC_DIR, "favicon.svg"));
-    return;
-  }
-
-  const viewerAuthorized = isViewerAuthorized(request);
-
-  if (!viewerAuthorized) {
-    if (requestUrl.pathname.startsWith("/api/")) {
-      sendJson(response, 401, {
-        error: "Login required",
+    if (isRateLimited(request)) {
+      sendJson(response, 429, {
+        error: "Too many requests",
       });
       return;
     }
 
-    if (request.method === "GET" && requestUrl.pathname === "/") {
-      sendText(response, 200, getLoginPage(), "text/html; charset=utf-8");
+    if (request.method === "GET" && requestUrl.pathname === "/api/health") {
+      sendJson(response, 200, {
+        ok: true,
+        adminProtected: Boolean(ADMIN_TOKEN),
+        viewerProtected: Boolean(VIEWER_PASSWORD),
+        runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
+        playerRecords: {
+          source: "wtt-records",
+          archiveMode: "runtime+bundled",
+          parseMode: process.env.WTT_SLIM_RECORDS_DISABLED === "1" ? "raw" : "slim-preferred",
+          candidateMode: "candidate-index+grep-fallback",
+          displayMode: "player-record-org-v4-category-groups-keep-round-order",
+          runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
+          bundledArchiveDirExists: fs.existsSync(BUNDLED_WTT_ARCHIVE_DIR),
+          cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
+        },
+      });
       return;
     }
 
-    sendText(response, 302, "", "text/plain; charset=utf-8", {
-      location: "/",
-    });
-    return;
-  }
-
-  if (
-    request.method === "GET" &&
-    (
-      requestUrl.pathname === "/api/individual-matches" ||
-      requestUrl.pathname === "/api/categories" ||
-      requestUrl.pathname === "/api/rounds" ||
-      requestUrl.pathname === "/api/events/search" ||
-      requestUrl.pathname === "/api/players/search" ||
-      requestUrl.pathname === "/api/players/records" ||
-      requestUrl.pathname === "/api/head-to-head"
-    )
-  ) {
-    if (requestUrl.pathname === "/api/categories") {
-      handleCategoriesApi(requestUrl, response);
-    } else if (requestUrl.pathname === "/api/rounds") {
-      handleRoundsApi(requestUrl, response);
-    } else if (requestUrl.pathname === "/api/events/search") {
-      handleEventSearchApi(requestUrl, response);
-    } else if (requestUrl.pathname === "/api/players/search") {
-      handlePlayerSearchApi(requestUrl, response);
-    } else if (requestUrl.pathname === "/api/players/records") {
-      handlePlayerRecordsApi(requestUrl, response);
-    } else if (requestUrl.pathname === "/api/head-to-head") {
-      handleHeadToHeadApi(requestUrl, response);
-    } else {
-      handleApi(requestUrl, response);
+    if (request.method === "POST" && requestUrl.pathname === "/login") {
+      handleViewerLogin(request, response).catch((error) => {
+        sendText(response, error.statusCode || 500, error.message);
+      });
+      return;
     }
-    return;
-  }
 
-  if (request.method === "GET" && handleConfigGet(request, response, requestUrl.pathname)) {
-    return;
-  }
+    if (request.method === "GET" && requestUrl.pathname === "/logout") {
+      sendText(response, 302, "", "text/plain; charset=utf-8", {
+        location: "/",
+        "set-cookie": clearViewerCookie(),
+      });
+      return;
+    }
 
-  if (request.method === "PUT") {
-    handleConfigUpdate(request, response, requestUrl.pathname).then((handled) => {
-      if (!handled) {
-        sendJson(response, 404, { error: "Not found" });
+    if (request.method === "GET" && requestUrl.pathname === "/favicon.svg") {
+      serveFile(response, path.join(PUBLIC_DIR, "favicon.svg"));
+      return;
+    }
+
+    const viewerAuthorized = isViewerAuthorized(request);
+
+    if (!viewerAuthorized) {
+      if (requestUrl.pathname.startsWith("/api/")) {
+        sendJson(response, 401, {
+          error: "Login required",
+        });
+        return;
       }
-    });
-    return;
-  }
 
-  if (request.method !== "GET") {
-    sendJson(response, 405, { error: "Method not allowed" });
-    return;
-  }
+      if (request.method === "GET" && requestUrl.pathname === "/") {
+        sendText(response, 200, getLoginPage(), "text/html; charset=utf-8");
+        return;
+      }
 
-  const filePath = requestUrl.pathname === "/"
-    ? path.join(PUBLIC_DIR, "index.html")
-    : path.join(PUBLIC_DIR, requestUrl.pathname);
-  serveFile(response, filePath);
-});
+      sendText(response, 302, "", "text/plain; charset=utf-8", {
+        location: "/",
+      });
+      return;
+    }
 
-ensureRuntimeFiles();
+    if (
+      request.method === "GET" &&
+      (
+        requestUrl.pathname === "/api/individual-matches" ||
+        requestUrl.pathname === "/api/categories" ||
+        requestUrl.pathname === "/api/rounds" ||
+        requestUrl.pathname === "/api/events/search" ||
+        requestUrl.pathname === "/api/players/search" ||
+        requestUrl.pathname === "/api/players/records" ||
+        requestUrl.pathname === "/api/head-to-head"
+      )
+    ) {
+      if (requestUrl.pathname === "/api/categories") {
+        handleCategoriesApi(requestUrl, response);
+      } else if (requestUrl.pathname === "/api/rounds") {
+        handleRoundsApi(requestUrl, response);
+      } else if (requestUrl.pathname === "/api/events/search") {
+        handleEventSearchApi(requestUrl, response);
+      } else if (requestUrl.pathname === "/api/players/search") {
+        handlePlayerSearchApi(requestUrl, response);
+      } else if (requestUrl.pathname === "/api/players/records") {
+        handlePlayerRecordsApi(requestUrl, response);
+      } else if (requestUrl.pathname === "/api/head-to-head") {
+        handleHeadToHeadApi(requestUrl, response);
+      } else {
+        handleApi(requestUrl, response);
+      }
+      return;
+    }
 
-server.listen(PORT, HOST, () => {
-  console.log(`WTT Individual Match Formatter web server: http://${HOST}:${PORT}`);
-});
+    if (request.method === "GET" && handleConfigGet(request, response, requestUrl.pathname)) {
+      return;
+    }
+
+    if (request.method === "PUT") {
+      handleConfigUpdate(request, response, requestUrl.pathname).then((handled) => {
+        if (!handled) {
+          sendJson(response, 404, { error: "Not found" });
+        }
+      });
+      return;
+    }
+
+    if (request.method !== "GET") {
+      sendJson(response, 405, { error: "Method not allowed" });
+      return;
+    }
+
+    const filePath = requestUrl.pathname === "/"
+      ? path.join(PUBLIC_DIR, "index.html")
+      : path.join(PUBLIC_DIR, requestUrl.pathname);
+    serveFile(response, filePath);
+  });
+
+  ensureRuntimeFiles();
+
+  server.listen(PORT, HOST, () => {
+    console.log(`WTT Individual Match Formatter web server: http://${HOST}:${PORT}`);
+  });
+}
+
+async function runHeadToHeadIndexBuildCli() {
+  ensureRuntimeFiles();
+  const snapshot = getWttRecordFileSnapshot();
+  const signature = getHeadToHeadPersistentIndexSignature(snapshot);
+  const result = await buildHeadToHeadPersistentIndex(snapshot, signature);
+  console.log(JSON.stringify({
+    ok: true,
+    players: HEAD_TO_HEAD_PLAYER_INDEX_PATH,
+    pairShards: HEAD_TO_HEAD_PAIR_SHARDS_DIR,
+    manifest: HEAD_TO_HEAD_INDEX_MANIFEST_PATH,
+    ...result.manifest,
+  }, null, 2));
+}
+
+if (process.argv.includes("--build-head-to-head-index")) {
+  runHeadToHeadIndexBuildCli().catch((error) => {
+    console.error(error.stack || error.message || error);
+    process.exitCode = 1;
+  });
+} else {
+  startServer();
+}
