@@ -4195,8 +4195,45 @@ function isSinglesHeadToHeadMatch(match) {
       return false;
     }
     const type = String(competitor?.type || "").toLowerCase();
-    return type !== "pair" && type !== "doubles";
+  return type !== "pair" && type !== "doubles";
   });
+}
+
+function archiveItemMightContainPlayerNeedles(item, needles) {
+  if (!item || !Array.isArray(needles) || needles.length === 0) {
+    return false;
+  }
+  const text = normalizePlayerSearchText(JSON.stringify(item));
+  return needles.some((needle) => playerRecordNameMatchesNeedle(text, needle));
+}
+
+function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
+  const parseFilePath = file.parseFilePath || file.filePath;
+  const text = readTextFile(parseFilePath);
+  const payload = parseJsonArrayFromText(text);
+  if (!Array.isArray(payload) || payload.length === 0) {
+    return getParsedPlayerRecordArchive(file, text);
+  }
+
+  const normalizedMatches = [];
+  for (const item of payload) {
+    if (
+      !archiveItemMightContainPlayerNeedles(item, playerANeedles) ||
+      !archiveItemMightContainPlayerNeedles(item, playerBNeedles)
+    ) {
+      continue;
+    }
+    const match = normalizeArchivedMatch(item);
+    if (match) {
+      normalizedMatches.push(match);
+    }
+  }
+
+  return {
+    normalizedMatches,
+    contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
+    fallbackRoundContext: buildJaRoundContext(normalizedMatches),
+  };
 }
 
 function pushHeadToHeadMatch(matches, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null) {
@@ -4240,7 +4277,7 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
       normalizedMatches,
       contextsByCategory,
       fallbackRoundContext,
-    } = getParsedPlayerRecordArchive(file);
+    } = getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles);
     if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
       continue;
     }
