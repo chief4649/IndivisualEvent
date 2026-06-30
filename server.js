@@ -3776,6 +3776,64 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
   };
 }
 
+async function getPlayerRecordGrepCandidatePaths(snapshot, textNeedles) {
+  if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
+    return null;
+  }
+
+  const tokenGroups = [];
+  textNeedles.forEach((needle) => {
+    const tokens = Array.isArray(needle.tokens) ? needle.tokens.filter((token) => String(token || "").length >= 2) : [];
+    if (tokens.length > 0) {
+      tokenGroups.push(tokens);
+    }
+  });
+
+  if (tokenGroups.length === 0) {
+    return null;
+  }
+
+  const bestGroup = tokenGroups.sort((left, right) => right.length - left.length)[0];
+  let candidatePaths = new Set(snapshot.map((file) => file.parseFilePath || file.filePath));
+
+  for (const token of bestGroup) {
+    const currentFiles = snapshot.filter((file) => candidatePaths.has(file.parseFilePath || file.filePath));
+    const matchedPaths = await runGrepFileCandidates(currentFiles, token);
+    if (matchedPaths === null) {
+      return null;
+    }
+    candidatePaths = matchedPaths;
+    if (candidatePaths.size === 0) {
+      break;
+    }
+  }
+
+  return candidatePaths;
+}
+
+async function getHeadToHeadGrepCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles) {
+  const [playerAPaths, playerBPaths] = await Promise.all([
+    getPlayerRecordGrepCandidatePaths(snapshot, playerATextNeedles),
+    getPlayerRecordGrepCandidatePaths(snapshot, playerBTextNeedles),
+  ]);
+  if (!playerAPaths || !playerBPaths) {
+    return null;
+  }
+
+  const bothPaths = new Set();
+  playerAPaths.forEach((filePath) => {
+    if (playerBPaths.has(filePath)) {
+      bothPaths.add(filePath);
+    }
+  });
+
+  return {
+    snapshot: snapshot.filter((file) => bothPaths.has(file.parseFilePath || file.filePath)),
+    playerAEventCount: playerAPaths.size,
+    playerBEventCount: playerBPaths.size,
+  };
+}
+
 async function getHeadToHeadIndexedCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles, signature) {
   const candidateIndex = await getPlayerRecordCandidateIndex(snapshot, signature);
   const playerAEventIds = getPlayerRecordIndexedEventIds(candidateIndex, playerATextNeedles);
@@ -3893,40 +3951,13 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature
     };
   }
 
-  const tokenGroups = [];
-  textNeedles.forEach((needle) => {
-    const tokens = Array.isArray(needle.tokens) ? needle.tokens.filter((token) => String(token || "").length >= 2) : [];
-    if (tokens.length > 0) {
-      tokenGroups.push(tokens);
-    }
-  });
-
-  if (tokenGroups.length === 0) {
+  const candidatePaths = await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles);
+  if (!candidatePaths) {
     return {
       snapshot,
       source: "all",
       generatedAt: null,
     };
-  }
-
-  const bestGroup = tokenGroups.sort((left, right) => right.length - left.length)[0];
-  let candidatePaths = new Set(snapshot.map((file) => file.parseFilePath || file.filePath));
-
-  for (const token of bestGroup) {
-    const currentFiles = snapshot.filter((file) => candidatePaths.has(file.parseFilePath || file.filePath));
-    const matchedPaths = await runGrepFileCandidates(currentFiles, token);
-    if (matchedPaths === null) {
-      // grep is unavailable. Fall back to JS prefilter in collectPlayerRecordEvents.
-      return {
-        snapshot,
-        source: "all",
-        generatedAt: null,
-      };
-    }
-    candidatePaths = matchedPaths;
-    if (candidatePaths.size === 0) {
-      break;
-    }
   }
 
   return {
@@ -4320,11 +4351,21 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
   let playerBEventCount = indexedCandidate?.playerBEventCount || null;
 
   if (!candidateSnapshot) {
-    const candidateAResult = await getPlayerRecordCandidateSnapshot(snapshot, playerATextNeedles, signature);
-    const candidateBResult = await getPlayerRecordCandidateSnapshot(candidateAResult.snapshot, playerBTextNeedles, signature);
-    candidateSnapshot = candidateBResult.snapshot;
-    candidateIndexSource = [candidateAResult.source, candidateBResult.source].filter(Boolean).join("+");
-    candidateIndexGeneratedAt = candidateAResult.generatedAt || candidateBResult.generatedAt || null;
+    const grepCandidate = await getHeadToHeadGrepCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles);
+    if (grepCandidate) {
+      candidateSnapshot = grepCandidate.snapshot;
+      candidateIndexSource = "grep-prefilter-intersection";
+      playerAEventCount = grepCandidate.playerAEventCount;
+      playerBEventCount = grepCandidate.playerBEventCount;
+    }
+  }
+
+  if (!candidateSnapshot) {
+    candidateSnapshot = snapshot;
+    candidateIndexSource = "all";
+  }
+
+  if (candidateIndexSource !== "candidate-index-intersection") {
     startPlayerRecordCandidateIndexBuild(snapshot, signature);
   }
 
