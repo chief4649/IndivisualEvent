@@ -2951,6 +2951,9 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
       mtimeMs: Math.trunc(stat.mtimeMs),
     };
   } catch {
+    if (slimDir !== BUNDLED_WTT_SLIM_ARCHIVE_DIR) {
+      return getSlimWttRecordFile(originalFilePath, BUNDLED_WTT_SLIM_ARCHIVE_DIR);
+    }
     return null;
   }
 }
