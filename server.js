@@ -4349,6 +4349,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
   let candidateIndexGeneratedAt = indexedCandidate?.generatedAt || null;
   let playerAEventCount = indexedCandidate?.playerAEventCount || null;
   let playerBEventCount = indexedCandidate?.playerBEventCount || null;
+  let shouldBuildCandidateIndex = false;
 
   if (!candidateSnapshot) {
     const grepCandidate = await getHeadToHeadGrepCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles);
@@ -4366,7 +4367,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
   }
 
   if (candidateIndexSource !== "candidate-index-intersection") {
-    startPlayerRecordCandidateIndexBuild(snapshot, signature);
+    shouldBuildCandidateIndex = true;
   }
 
   const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
@@ -4385,6 +4386,9 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
     cacheHit: false,
   };
   setHeadToHeadResultCacheValue(cacheKey, result);
+  if (shouldBuildCandidateIndex) {
+    setTimeout(() => startPlayerRecordCandidateIndexBuild(snapshot, signature), 0);
+  }
   return result;
 }
 
