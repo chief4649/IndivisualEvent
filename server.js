@@ -2461,32 +2461,24 @@ async function handleEventSearchApi(requestUrl, response) {
 }
 
 
-function getCanonicalLatinNameKey(name) {
+function getCanonicalPlayerSearchNameKey(name) {
   const normalized = normalizePlayerSearchText(name);
   if (!normalized) {
     return "";
   }
 
-  const values = buildPlayerNameSearchValues(normalized);
-  if (values.length === 0) {
-    return normalized;
+  const tokens = normalized.split(/\s+/).filter(Boolean);
+  if (tokens.length === 0) {
+    return "";
   }
 
-  return values
-    .map((value) => value.split(/\s+/).filter(Boolean).join(" "))
-    .sort((left, right) => (
-      left.length - right.length ||
-      left.localeCompare(right, "en", { sensitivity: "base" })
-    ))[0];
+  return tokens
+    .sort((left, right) => left.localeCompare(right, "en", { sensitivity: "base" }))
+    .join(" ");
 }
 
-function getPlayerSearchIdentityKey(name, translatedName) {
-  const normalizedTranslatedName = normalizePlayerSearchText(translatedName);
-  if (normalizedTranslatedName && normalizedTranslatedName !== normalizePlayerSearchText("未登録")) {
-    return `ja:${normalizedTranslatedName}`;
-  }
-
-  const canonicalName = getCanonicalLatinNameKey(name);
+function getPlayerSearchIdentityKey(name) {
+  const canonicalName = getCanonicalPlayerSearchNameKey(name);
   return canonicalName ? `name:${canonicalName}` : "";
 }
 
