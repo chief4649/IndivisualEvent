@@ -4232,35 +4232,40 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
     [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, HEAD_TO_HEAD_PAIR_SHARDS_DIR],
     [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH, BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR],
   ];
+  let staleIndex = null;
 
   for (const [manifestPath, playerIndexPath, pairShardsDir] of candidates) {
     try {
       const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-      if (
-        manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION ||
-        manifest?.signature !== signature
-      ) {
+      if (manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION) {
         continue;
       }
       const playerIndex = JSON.parse(fs.readFileSync(playerIndexPath, "utf8"));
       if (!playerIndex?.players || typeof playerIndex.players !== "object" || Array.isArray(playerIndex.players)) {
         continue;
       }
-      return {
-        signature,
+      const indexState = {
+        signature: manifest.signature || null,
+        currentSignature: signature,
         generatedAt: manifest.generatedAt || null,
+        stale: manifest.signature !== signature,
+        eventIds: Array.isArray(manifest.eventIds) ? manifest.eventIds.map(String) : [],
         index: {
           players: playerIndex.players,
           pairShardsDir,
           pairShardCache: new Map(),
         },
       };
+      if (manifest.signature === signature) {
+        return indexState;
+      }
+      staleIndex = staleIndex || indexState;
     } catch {
       // Try the next index location.
     }
   }
 
-  return null;
+  return staleIndex;
 }
 
 function setHeadToHeadPersistentIndexState(indexState) {
@@ -4725,6 +4730,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
     version: HEAD_TO_HEAD_INDEX_VERSION,
     generatedAt,
     signature,
+    eventIds: snapshot.map((file) => String(file.eventId)),
     eventCount: snapshot.length,
     parsedEvents,
     scannedMatches,
@@ -4869,6 +4875,37 @@ function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANeedles,
   };
 }
 
+function mergeHeadToHeadCollectedResults(primary, extra) {
+  if (!extra || !Array.isArray(extra.events) || extra.events.length === 0) {
+    return primary;
+  }
+  const eventsById = new Map();
+  [...(primary.events || []), ...extra.events].forEach((event) => {
+    const current = eventsById.get(event.event) || {
+      ...event,
+      matches: [],
+    };
+    current.matches.push(...(event.matches || []));
+    eventsById.set(event.event, current);
+  });
+  const events = [...eventsById.values()].map((event) => {
+    const matchGroups = buildPlayerRecordMatchGroups(event.matches);
+    return {
+      ...event,
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
+    };
+  }).sort(comparePlayerRecordEvents);
+  return {
+    ...primary,
+    events,
+    parsedEvents: (primary.parsedEvents || 0) + (extra.parsedEvents || 0),
+    scannedMatches: (primary.scannedMatches || 0) + (extra.scannedMatches || 0),
+    aWins: (primary.aWins || 0) + (extra.aWins || 0),
+    bWins: (primary.bWins || 0) + (extra.bWins || 0),
+  };
+}
+
 async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, playerBName, playerBTranslatedName, playerANeedles, playerBNeedles) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
@@ -4890,19 +4927,30 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
 
   const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
   if (persistentIndex) {
-    const indexed = collectHeadToHeadMatchesFromPersistentIndex(persistentIndex, playerANeedles, playerBNeedles);
+    let indexed = collectHeadToHeadMatchesFromPersistentIndex(persistentIndex, playerANeedles, playerBNeedles);
     if (indexed) {
+      let deltaEventCount = 0;
+      if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
+        const indexedEventIds = new Set(persistentIndex.eventIds);
+        const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
+        deltaEventCount = deltaSnapshot.length;
+        if (deltaSnapshot.length > 0) {
+          const delta = await collectHeadToHeadMatches(deltaSnapshot, playerANeedles, playerBNeedles);
+          indexed = mergeHeadToHeadCollectedResults(indexed, delta);
+        }
+      }
       const result = {
         signature: persistentIndexSignature,
         builtAt: Date.now(),
         eventIndexSource: "head-to-head-index",
-        candidateIndexSource: "head-to-head-index",
+        candidateIndexSource: persistentIndex.stale ? "head-to-head-index+delta" : "head-to-head-index",
         candidateIndexGeneratedAt: persistentIndex.generatedAt,
         eventIndexGeneratedAt: null,
         scannedEvents: snapshot.length,
         candidateEvents: indexed.events.length,
         playerAEventCount: indexed.playerAKeyCount,
         playerBEventCount: indexed.playerBKeyCount,
+        deltaEvents: deltaEventCount,
         ...indexed,
         cacheHit: false,
       };
@@ -4986,6 +5034,7 @@ async function handleHeadToHeadApi(requestUrl, response) {
           cacheHit: false,
           playerAEventCount: 0,
           playerBEventCount: 0,
+          deltaEvents: 0,
         },
       });
       return;
@@ -5037,6 +5086,7 @@ async function handleHeadToHeadApi(requestUrl, response) {
         candidateEvents: searchResult.candidateEvents,
         playerAEventCount: searchResult.playerAEventCount,
         playerBEventCount: searchResult.playerBEventCount,
+        deltaEvents: searchResult.deltaEvents || 0,
         parsedEvents: searchResult.parsedEvents,
         scannedMatches: searchResult.scannedMatches,
         returnedEvents: limitedEvents.length,
