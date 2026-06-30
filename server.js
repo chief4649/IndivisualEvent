@@ -4203,8 +4203,28 @@ function archiveItemMightContainPlayerNeedles(item, needles) {
   if (!item || !Array.isArray(needles) || needles.length === 0) {
     return false;
   }
-  const text = normalizePlayerSearchText(JSON.stringify(item));
-  return needles.some((needle) => playerRecordNameMatchesNeedle(text, needle));
+  const stack = [item];
+  while (stack.length > 0) {
+    const current = stack.pop();
+    if (current === null || current === undefined) {
+      continue;
+    }
+    if (typeof current === "string" || typeof current === "number") {
+      const text = normalizePlayerSearchText(current);
+      if (needles.some((needle) => playerRecordNameMatchesNeedle(text, needle))) {
+        return true;
+      }
+      continue;
+    }
+    if (Array.isArray(current)) {
+      current.forEach((value) => stack.push(value));
+      continue;
+    }
+    if (typeof current === "object") {
+      Object.values(current).forEach((value) => stack.push(value));
+    }
+  }
+  return false;
 }
 
 function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
