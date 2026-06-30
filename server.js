@@ -90,6 +90,7 @@ const REQUEST_BODY_MAX_BYTES = Number(process.env.REQUEST_BODY_MAX_BYTES || 1_04
 const rateLimitStore = new Map();
 const eventNameCache = new Map();
 const processedMatchesCache = new Map();
+let headToHeadIndexBuildProcess = null;
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
 const PROCESSED_MATCHES_CACHE_TTL_MS = Number(process.env.PROCESSED_MATCHES_CACHE_TTL_MS || 15_000);
 const STORAGE_MANAGED_FILES = [
@@ -1822,6 +1823,57 @@ function handleAdminExportData(request, response) {
     if (code !== 0 && !response.destroyed) {
       response.destroy(new Error(`tar exited with code ${code}`));
     }
+  });
+  return true;
+}
+
+function handleAdminBuildHeadToHeadIndex(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+
+  if (headToHeadIndexBuildProcess) {
+    sendJson(response, 202, {
+      ok: true,
+      status: "running",
+      pid: headToHeadIndexBuildProcess.pid,
+    });
+    return true;
+  }
+
+  const child = spawn(process.execPath, [__filename, "--build-head-to-head-index"], {
+    cwd: __dirname,
+    env: process.env,
+    stdio: ["ignore", "ignore", "pipe"],
+  });
+  headToHeadIndexBuildProcess = child;
+  let stderr = "";
+  child.stderr.on("data", (chunk) => {
+    stderr += chunk.toString("utf8");
+    if (stderr.length > 4000) {
+      stderr = stderr.slice(-4000);
+    }
+  });
+  child.on("error", (error) => {
+    console.error("[head-to-head-index] build spawn failed:", error?.message || error);
+  });
+  child.on("close", (code) => {
+    if (code !== 0) {
+      console.error("[head-to-head-index] build failed:", stderr.trim() || `exit ${code}`);
+    }
+    headToHeadIndexBuildProcess = null;
+    headToHeadPersistentIndexState.signature = null;
+    headToHeadPersistentIndexState.generatedAt = null;
+    headToHeadPersistentIndexState.index = null;
+  });
+
+  sendJson(response, 202, {
+    ok: true,
+    status: "started",
+    pid: child.pid,
+    manifest: HEAD_TO_HEAD_INDEX_MANIFEST_PATH,
+    players: HEAD_TO_HEAD_PLAYER_INDEX_PATH,
+    pairShards: HEAD_TO_HEAD_PAIR_SHARDS_DIR,
   });
   return true;
 }
@@ -5206,6 +5258,10 @@ function handleConfigGet(request, response, pathname) {
 
   if (pathname === "/api/admin/export-data") {
     return handleAdminExportData(request, response);
+  }
+
+  if (pathname === "/api/admin/build-head-to-head-index") {
+    return handleAdminBuildHeadToHeadIndex(request, response);
   }
 
   if (pathname === "/api/admin/sync-manifest") {
