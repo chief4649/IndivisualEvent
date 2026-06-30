@@ -53,10 +53,11 @@ const PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_IND
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION = 1;
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names.json");
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names-manifest.json");
-const HEAD_TO_HEAD_INDEX_VERSION = 1;
+const HEAD_TO_HEAD_INDEX_VERSION = 2;
 const HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
 const HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
 const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
+const HEAD_TO_HEAD_INDEX_STATUS_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-status.json");
 const BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
 const BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
 const BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
@@ -1860,10 +1861,19 @@ function handleAdminBuildHeadToHeadIndex(request, response) {
   child.on("close", (code) => {
     if (code !== 0) {
       console.error("[head-to-head-index] build failed:", stderr.trim() || `exit ${code}`);
+      writeHeadToHeadIndexStatus({
+        ok: false,
+        status: "failed",
+        exitCode: code,
+        error: stderr.trim() || `exit ${code}`,
+      });
     }
     headToHeadIndexBuildProcess = null;
     headToHeadPersistentIndexState.signature = null;
+    headToHeadPersistentIndexState.currentSignature = null;
     headToHeadPersistentIndexState.generatedAt = null;
+    headToHeadPersistentIndexState.stale = false;
+    headToHeadPersistentIndexState.eventIds = [];
     headToHeadPersistentIndexState.index = null;
   });
 
@@ -1874,6 +1884,35 @@ function handleAdminBuildHeadToHeadIndex(request, response) {
     manifest: HEAD_TO_HEAD_INDEX_MANIFEST_PATH,
     players: HEAD_TO_HEAD_PLAYER_INDEX_PATH,
     pairShards: HEAD_TO_HEAD_PAIR_SHARDS_DIR,
+  });
+  return true;
+}
+
+function handleAdminHeadToHeadIndexStatus(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+
+  let status = null;
+  try {
+    status = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_INDEX_STATUS_PATH, "utf8"));
+  } catch {
+    status = null;
+  }
+
+  let manifest = null;
+  try {
+    manifest = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH, "utf8"));
+  } catch {
+    manifest = null;
+  }
+
+  sendJson(response, 200, {
+    ok: true,
+    running: Boolean(headToHeadIndexBuildProcess),
+    pid: headToHeadIndexBuildProcess?.pid || null,
+    status,
+    manifest,
   });
   return true;
 }
@@ -3625,6 +3664,17 @@ function writeJsonFileAtomic(filePath, payload) {
   fs.renameSync(tempPath, filePath);
 }
 
+function writeHeadToHeadIndexStatus(status) {
+  try {
+    writeJsonFileAtomic(HEAD_TO_HEAD_INDEX_STATUS_PATH, {
+      updatedAt: new Date().toISOString(),
+      ...status,
+    });
+  } catch (error) {
+    console.error("[head-to-head-index] failed to write status:", error?.message || error);
+  }
+}
+
 function readPlayerRecordCandidateIndexFromDisk(signature) {
   try {
     const manifest = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, "utf8"));
@@ -4257,7 +4307,10 @@ function buildHeadToHeadMatchLine(match, translations) {
 
 const headToHeadPersistentIndexState = {
   signature: null,
+  currentSignature: null,
   generatedAt: null,
+  stale: false,
+  eventIds: [],
   index: null,
 };
 
@@ -4281,12 +4334,12 @@ function getHeadToHeadPersistentIndexSignature(snapshot) {
 
 function readHeadToHeadPersistentIndexFromDisk(signature) {
   const candidates = [
-    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, HEAD_TO_HEAD_PAIR_SHARDS_DIR],
-    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH, BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR],
+    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH],
+    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH],
   ];
   let staleIndex = null;
 
-  for (const [manifestPath, playerIndexPath, pairShardsDir] of candidates) {
+  for (const [manifestPath, playerIndexPath] of candidates) {
     try {
       const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
       if (manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION) {
@@ -4304,8 +4357,6 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
         eventIds: Array.isArray(manifest.eventIds) ? manifest.eventIds.map(String) : [],
         index: {
           players: playerIndex.players,
-          pairShardsDir,
-          pairShardCache: new Map(),
         },
       };
       if (manifest.signature === signature) {
@@ -4322,13 +4373,16 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
 
 function setHeadToHeadPersistentIndexState(indexState) {
   headToHeadPersistentIndexState.signature = indexState.signature;
+  headToHeadPersistentIndexState.currentSignature = indexState.currentSignature;
   headToHeadPersistentIndexState.generatedAt = indexState.generatedAt;
+  headToHeadPersistentIndexState.stale = Boolean(indexState.stale);
+  headToHeadPersistentIndexState.eventIds = Array.isArray(indexState.eventIds) ? indexState.eventIds : [];
   headToHeadPersistentIndexState.index = indexState.index;
 }
 
 function getHeadToHeadPersistentIndex(signature) {
   if (
-    headToHeadPersistentIndexState.signature === signature &&
+    headToHeadPersistentIndexState.currentSignature === signature &&
     headToHeadPersistentIndexState.index
   ) {
     return headToHeadPersistentIndexState;
@@ -4380,15 +4434,16 @@ function getHeadToHeadCanonicalKey(competitor, translations) {
   return (preferredValues[0] || fallbackValues[0] || "").trim();
 }
 
-function addHeadToHeadPlayerKey(index, key, pairKey) {
+function addHeadToHeadPlayerKey(index, key, eventId) {
   if (!key) {
     return;
   }
   if (!index.players[key]) {
     index.players[key] = [];
   }
-  if (!index.players[key].includes(pairKey)) {
-    index.players[key].push(pairKey);
+  const normalizedEventId = String(eventId || "");
+  if (normalizedEventId && !index.players[key].includes(normalizedEventId)) {
+    index.players[key].push(normalizedEventId);
   }
 }
 
@@ -4414,12 +4469,12 @@ function getHeadToHeadIndexPlayerKeys(index, needles) {
   return keys;
 }
 
-function getHeadToHeadIndexPairKeysForPlayer(index, playerKeys) {
-  const pairKeys = new Set();
+function getHeadToHeadIndexEventIdsForPlayer(index, playerKeys) {
+  const eventIds = new Set();
   playerKeys.forEach((playerKey) => {
-    (index.players?.[playerKey] || []).forEach((pairKey) => pairKeys.add(pairKey));
+    (index.players?.[playerKey] || []).forEach((eventId) => eventIds.add(String(eventId)));
   });
-  return pairKeys;
+  return eventIds;
 }
 
 function setsIntersect(left, right) {
@@ -4447,60 +4502,15 @@ function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, 
   }
 
   const orderedCanonicals = [leftCanonical, rightCanonical].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
-  const pairKey = orderedCanonicals.join("||");
   const leftKeys = getHeadToHeadCompetitorKeyValues(leftCompetitor, translations);
   const rightKeys = getHeadToHeadCompetitorKeyValues(rightCompetitor, translations);
-  const sourceMatch = parentMatch || match;
-
-  if (!index.pairs[pairKey]) {
-    index.pairs[pairKey] = {
-      playerKeys: [[], []],
-      events: [],
-    };
-  }
-
-  const pair = index.pairs[pairKey];
   const leftPairIndex = orderedCanonicals.indexOf(leftCanonical);
   const rightPairIndex = orderedCanonicals.indexOf(rightCanonical);
   if (leftPairIndex < 0 || rightPairIndex < 0 || leftPairIndex === rightPairIndex) {
     return false;
   }
 
-  [
-    [leftKeys, leftPairIndex],
-    [rightKeys, rightPairIndex],
-  ].forEach(([keys, playerIndex]) => {
-    const currentKeys = new Set(pair.playerKeys[playerIndex] || []);
-    keys.forEach((key) => {
-      currentKeys.add(key);
-      addHeadToHeadPlayerKey(index, key, pairKey);
-    });
-    pair.playerKeys[playerIndex] = [...currentKeys].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
-  });
-
-  let event = pair.events.find((entry) => entry.event === file.eventId);
-  if (!event) {
-    event = {
-      ...eventMeta,
-      source: file.sourceLabel || "",
-      matches: [],
-    };
-    pair.events.push(event);
-  }
-
-  event.matches.push({
-    categoryName: sourceMatch.categoryName || match.categoryName || "",
-    roundLabel: translateRoundJa(
-      sourceMatch.roundKey || match.roundKey,
-      sourceMatch.roundLabel || match.roundLabel,
-      translations,
-      rules,
-      roundContext,
-    ),
-    line: buildHeadToHeadMatchLine(match, translations),
-    documentCode: match.documentCode || sourceMatch.documentCode || "",
-    winnerPlayerIndex: winnerIndex === playerAIndex ? leftPairIndex : rightPairIndex,
-  });
+  [...leftKeys, ...rightKeys].forEach((key) => addHeadToHeadPlayerKey(index, key, file.eventId));
   return true;
 }
 
@@ -4709,11 +4719,10 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
   const eventNames = getEventNamesMap();
   const index = {
     players: {},
-    pairs: {},
   };
   let parsedEvents = 0;
   let scannedMatches = 0;
-  let indexedMatches = 0;
+  let indexedLinks = 0;
 
   for (let indexPosition = 0; indexPosition < snapshot.length; indexPosition += 1) {
     if (indexPosition % 20 === 0) {
@@ -4744,7 +4753,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
           continue;
         }
         if (addHeadToHeadIndexedMatch(index, file, eventMeta, match, 0, 1, translations, rules, matchRoundContext)) {
-          indexedMatches += 1;
+          indexedLinks += 1;
         }
         continue;
       }
@@ -4759,20 +4768,12 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
           return;
         }
         if (addHeadToHeadIndexedMatch(index, file, eventMeta, single, 0, 1, translations, rules, matchRoundContext, match)) {
-          indexedMatches += 1;
+          indexedLinks += 1;
         }
       });
     }
   }
 
-  Object.values(index.pairs).forEach((pair) => {
-    pair.events.sort(comparePlayerRecordEvents);
-    pair.events.forEach((event) => {
-      const matchGroups = buildPlayerRecordMatchGroups(event.matches);
-      event.matches = matchGroups.flatMap((group) => group.matches);
-      event.matchGroups = matchGroups;
-    });
-  });
   Object.keys(index.players).forEach((key) => {
     index.players[key].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
   });
@@ -4786,40 +4787,25 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
     eventCount: snapshot.length,
     parsedEvents,
     scannedMatches,
-    indexedMatches,
-    pairCount: Object.keys(index.pairs).length,
+    indexedLinks,
     playerKeyCount: Object.keys(index.players).length,
   };
 
   writeJsonFileAtomic(HEAD_TO_HEAD_PLAYER_INDEX_PATH, { players: index.players });
-  ensureDir(HEAD_TO_HEAD_PAIR_SHARDS_DIR);
-  const shards = {};
-  Object.entries(index.pairs).forEach(([pairKey, pair]) => {
-    const shardName = getHeadToHeadPairShardName(pairKey);
-    if (!shards[shardName]) {
-      shards[shardName] = {};
-    }
-    shards[shardName][pairKey] = pair;
-  });
-  Object.entries(shards).forEach(([shardName, shard]) => {
-    writeJsonFileAtomic(path.join(HEAD_TO_HEAD_PAIR_SHARDS_DIR, shardName), shard);
-  });
   writeJsonFileAtomic(HEAD_TO_HEAD_INDEX_MANIFEST_PATH, manifest);
   return {
     signature,
     generatedAt,
     index: {
       players: index.players,
-      pairShardsDir: HEAD_TO_HEAD_PAIR_SHARDS_DIR,
-      pairShardCache: new Map(),
     },
     manifest,
   };
 }
 
-function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANeedles, playerBNeedles) {
+async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANeedles, playerBNeedles, snapshot) {
   const index = indexState?.index;
-  if (!index?.players || !index?.pairShardsDir) {
+  if (!index?.players) {
     return null;
   }
 
@@ -4838,90 +4824,16 @@ function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANeedles,
     };
   }
 
-  const playerAPairKeys = getHeadToHeadIndexPairKeysForPlayer(index, playerAKeys);
-  const playerBPairKeys = getHeadToHeadIndexPairKeysForPlayer(index, playerBKeys);
-  const pairKeys = [...playerAPairKeys].filter((pairKey) => playerBPairKeys.has(pairKey));
-  const eventsById = new Map();
-  let aWins = 0;
-  let bWins = 0;
-  let scannedMatches = 0;
-
-  pairKeys.forEach((pairKey) => {
-    const pair = getHeadToHeadIndexedPair(index, pairKey);
-    if (!pair) {
-      return;
-    }
-    const pairPlayerAIndexes = [];
-    const pairPlayerBIndexes = [];
-    (pair.playerKeys || []).forEach((keys, playerIndex) => {
-      const keySet = new Set(keys || []);
-      if (setsIntersect(keySet, playerAKeys)) {
-        pairPlayerAIndexes.push(playerIndex);
-      }
-      if (setsIntersect(keySet, playerBKeys)) {
-        pairPlayerBIndexes.push(playerIndex);
-      }
-    });
-    if (pairPlayerAIndexes.length === 0 || pairPlayerBIndexes.length === 0) {
-      return;
-    }
-
-    (pair.events || []).forEach((event) => {
-      const matches = [];
-      (event.matches || []).forEach((match) => {
-        scannedMatches += 1;
-        const playerAIndex = pairPlayerAIndexes[0];
-        const playerBIndex = pairPlayerBIndexes.find((index) => index !== playerAIndex);
-        if (playerBIndex === undefined) {
-          return;
-        }
-        const winner = match.winnerPlayerIndex === playerAIndex ? "a" : "b";
-        if (winner === "a") {
-          aWins += 1;
-        } else {
-          bWins += 1;
-        }
-        matches.push({
-          categoryName: match.categoryName || "",
-          roundLabel: match.roundLabel || "",
-          line: match.line || "",
-          documentCode: match.documentCode || "",
-          winner,
-        });
-      });
-      if (matches.length === 0) {
-        return;
-      }
-      const current = eventsById.get(event.event) || {
-        event: event.event,
-        eventName: event.eventName,
-        startDate: event.startDate,
-        endDate: event.endDate,
-        dateLabel: event.dateLabel,
-        source: event.source || "",
-        matches: [],
-      };
-      current.matches.push(...matches);
-      eventsById.set(event.event, current);
-    });
-  });
-
-  const events = [...eventsById.values()].map((event) => {
-    const matchGroups = buildPlayerRecordMatchGroups(event.matches);
-    return {
-      ...event,
-      matches: matchGroups.flatMap((group) => group.matches),
-      matchGroups,
-    };
-  }).sort(comparePlayerRecordEvents);
+  const playerAEventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerAKeys);
+  const playerBEventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerBKeys);
+  const candidateEventIds = new Set([...playerAEventIds].filter((eventId) => playerBEventIds.has(eventId)));
+  const candidateSnapshot = snapshot.filter((file) => candidateEventIds.has(String(file.eventId)));
+  const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
 
   return {
-    events,
-    parsedEvents: 0,
-    scannedMatches,
-    aWins,
-    bWins,
-    pairCount: pairKeys.length,
+    ...collected,
+    candidateEventCount: candidateSnapshot.length,
+    pairCount: candidateEventIds.size,
     playerAKeyCount: playerAKeys.size,
     playerBKeyCount: playerBKeys.size,
   };
@@ -4979,7 +4891,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
 
   const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
   if (persistentIndex) {
-    let indexed = collectHeadToHeadMatchesFromPersistentIndex(persistentIndex, playerANeedles, playerBNeedles);
+    let indexed = await collectHeadToHeadMatchesFromPersistentIndex(persistentIndex, playerANeedles, playerBNeedles, snapshot);
     if (indexed) {
       let deltaEventCount = 0;
       if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
@@ -5264,6 +5176,10 @@ function handleConfigGet(request, response, pathname) {
     return handleAdminBuildHeadToHeadIndex(request, response);
   }
 
+  if (pathname === "/api/admin/head-to-head-index-status") {
+    return handleAdminHeadToHeadIndexStatus(request, response);
+  }
+
   if (pathname === "/api/admin/sync-manifest") {
     return handleAdminSyncManifest(request, response);
   }
@@ -5512,7 +5428,19 @@ async function runHeadToHeadIndexBuildCli() {
   ensureRuntimeFiles();
   const snapshot = getWttRecordFileSnapshot();
   const signature = getHeadToHeadPersistentIndexSignature(snapshot);
+  writeHeadToHeadIndexStatus({
+    ok: true,
+    status: "running",
+    signature,
+    eventCount: snapshot.length,
+  });
   const result = await buildHeadToHeadPersistentIndex(snapshot, signature);
+  writeHeadToHeadIndexStatus({
+    ok: true,
+    status: "complete",
+    signature,
+    manifest: result.manifest,
+  });
   console.log(JSON.stringify({
     ok: true,
     players: HEAD_TO_HEAD_PLAYER_INDEX_PATH,
@@ -5524,6 +5452,11 @@ async function runHeadToHeadIndexBuildCli() {
 
 if (process.argv.includes("--build-head-to-head-index")) {
   runHeadToHeadIndexBuildCli().catch((error) => {
+    writeHeadToHeadIndexStatus({
+      ok: false,
+      status: "failed",
+      error: error.stack || error.message || String(error),
+    });
     console.error(error.stack || error.message || error);
     process.exitCode = 1;
   });
