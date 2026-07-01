@@ -1008,7 +1008,7 @@ function buildBackfill5000Plan(options = {}) {
       ? previous.failed.map((item) => String(item.eventId || "")).filter(Boolean)
       : [],
   );
-  const blockedIds = retryFailed
+  const blockedIds = retryFailed || onlyFailed
     ? new Set()
     : new Set([
       ...(Array.isArray(previous?.failed) ? previous.failed.map((item) => String(item.eventId || "")) : []),
