@@ -1879,6 +1879,8 @@ function pickFormat(searchParams) {
 function buildOptions(searchParams) {
   const format = pickFormat(searchParams);
   const source = normalizeSource(searchParams.get("source") || "wtt");
+  const refreshCache = parseBoolean(searchParams.get("refreshCache"));
+  const useSlimWttArchive = source === "wtt" && !refreshCache;
   const rounds = searchParams.getAll("round").map((value) => String(value || "").trim()).filter(Boolean);
 
   return {
@@ -1901,10 +1903,10 @@ function buildOptions(searchParams) {
     rules: RULES_PATH,
     cacheDir: CACHE_DIR,
     zennihonArchiveDir: ZENNIHON_ARCHIVE_DIR,
-    wttArchiveDir: WTT_ARCHIVE_DIR,
-    bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+    wttArchiveDir: useSlimWttArchive ? WTT_SLIM_ARCHIVE_DIR : WTT_ARCHIVE_DIR,
+    bundledWttArchiveDir: useSlimWttArchive ? BUNDLED_WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
-    refreshCache: parseBoolean(searchParams.get("refreshCache")),
+    refreshCache,
     omitSetCounts: parseBoolean(searchParams.get("omitSetCounts")),
   };
 }
