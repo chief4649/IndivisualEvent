@@ -4632,60 +4632,55 @@ function translateRoundJaForMatch(match, translations, rules, context) {
 }
 
 function getRoundSortValue(match, context) {
-  if (match.roundKey === "final") {
-    return 10;
-  }
-  if (match.roundKey === "semifinal") {
-    return 20;
-  }
-  if (match.roundKey === "quarterfinal") {
-    return 30;
-  }
-
-  const knockoutRoundOrder = {
-    round_of_16: 40,
-    round_of_32: 50,
-    round_of_64: 60,
-    round_of_128: 70,
-    round_of_256: 80,
-  };
-  if (knockoutRoundOrder[match.roundKey]) {
-    return knockoutRoundOrder[match.roundKey];
-  }
-
   const knockoutRoundMatch = String(match.roundKey || "").match(/^knockout_round_(\d+)$/);
   if (knockoutRoundMatch) {
-    return 100 - Number(knockoutRoundMatch[1]);
-  }
-
-  const qualifyingMatch = String(match.roundKey || "").match(/^qualifying_round_(\d+)$/);
-  if (qualifyingMatch) {
-    return 200 - Number(qualifyingMatch[1]);
-  }
-
-  if (match.roundKey === "qualification_elimination_round") {
-    return 210;
-  }
-
-  if (match.roundKey === "preliminary_round") {
-    return 220;
+    return Number(knockoutRoundMatch[1]);
   }
 
   const groupMatch = String(match.roundLabel || "").match(/^Group\s+(\d+)$/i);
   if (groupMatch) {
-    return 300 + Number(groupMatch[1]);
+    return Number(groupMatch[1]);
   }
 
   const splitStageGroupMatch = String(match.roundLabel || "").match(/^Stage\s*1([AB])\s*-\s*Group\s+(\d+)$/i);
   if (splitStageGroupMatch) {
     const stageOffset = splitStageGroupMatch[1].toUpperCase() === "A" ? 0 : 100;
-    return 300 + stageOffset + Number(splitStageGroupMatch[2]);
+    return stageOffset + Number(splitStageGroupMatch[2]);
   }
 
   const stageGroupMatch = String(match.roundLabel || "").match(/^Stage\s*1([AB])(?:\s*[\(-]?\s*Group\s+(\d+)\)?)?$/i);
   if (stageGroupMatch && stageGroupMatch[2]) {
     const stageOffset = stageGroupMatch[1].toUpperCase() === "A" ? 0 : 100;
-    return 300 + stageOffset + Number(stageGroupMatch[2]);
+    return stageOffset + Number(stageGroupMatch[2]);
+  }
+
+  const qualifyingMatch = String(match.roundKey || "").match(/^qualifying_round_(\d+)$/);
+  if (qualifyingMatch) {
+    return 90 + Number(qualifyingMatch[1]);
+  }
+
+  if (match.roundKey === "qualification_elimination_round") {
+    return 99;
+  }
+
+  if (match.roundKey === "preliminary_round") {
+    return 99;
+  }
+
+  const knockoutLabel = context?.knockoutRoundNumbers?.[match.roundKey] || "";
+  const knockoutMatch = knockoutLabel.match(/^(\d+)回戦$/);
+  if (knockoutMatch) {
+    return 100 + Number(knockoutMatch[1]);
+  }
+
+  if (match.roundKey === "quarterfinal") {
+    return 103;
+  }
+  if (match.roundKey === "semifinal") {
+    return 104;
+  }
+  if (match.roundKey === "final") {
+    return 105;
   }
 
   return 999;
