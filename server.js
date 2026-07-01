@@ -4821,7 +4821,7 @@ function createPlayerRecordMatchShardWriter(dirPath) {
   fs.rmSync(dirPath, { recursive: true, force: true });
   ensureDir(dirPath);
   const buffers = new Map();
-  const maxBufferLength = 8192;
+  const maxBufferLength = 32768;
   const flush = (shardName) => {
     const buffer = buffers.get(shardName);
     if (!buffer) {
@@ -5246,7 +5246,6 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
           }
         });
       }
-      clearPlayerRecordArchiveParseCache();
     }
   } finally {
     recordShardWriter.close();
