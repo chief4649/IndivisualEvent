@@ -1113,6 +1113,8 @@
           button.appendChild(meta);
 
           button.addEventListener("click", () => {
+            playerSearchInput.value = lineText;
+            playerSearchResults.innerHTML = "";
             loadPlayerRecords(item).catch(reportBackgroundError);
           });
 

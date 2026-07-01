@@ -60,9 +60,11 @@ const HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head
 const HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
 const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
 const HEAD_TO_HEAD_INDEX_STATUS_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-status.json");
+const PLAYER_RECORD_MATCH_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "player-record-match-shards");
 const BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
 const BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
 const BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
+const BUNDLED_PLAYER_RECORD_MATCH_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "player-record-match-shards");
 const WTT_CALENDAR_API_URL = "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/eventcalendar";
 const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
@@ -4425,15 +4427,41 @@ function comparePlayerRecordMatches(left, right) {
   if (categoryCompare !== 0) {
     return categoryCompare;
   }
+  const roundCompare = getPlayerRecordRoundSortValue(left) - getPlayerRecordRoundSortValue(right);
+  if (roundCompare !== 0) {
+    return roundCompare;
+  }
   return String(left?.documentCode || "").localeCompare(String(right?.documentCode || ""), "en", { numeric: true });
+}
+
+function getPlayerRecordRoundSortValue(match) {
+  const label = String(match?.roundLabel || "").toLowerCase();
+  const documentCode = String(match?.documentCode || "").toUpperCase();
+  const value = `${label} ${documentCode}`;
+
+  if (/決勝|final/.test(label) || /FNL/.test(documentCode)) {
+    if (/準決勝|semi/.test(label) || /SFNL/.test(documentCode)) return 20;
+    if (/準々決勝|quarter/.test(label) || /QFNL/.test(documentCode)) return 30;
+    if (/8FNL|round\s+of\s+16|ベスト16|4回戦/.test(value)) return 40;
+    if (/R32|round\s+of\s+32|3回戦/.test(value)) return 50;
+    if (/R64|round\s+of\s+64|2回戦/.test(value)) return 60;
+    if (/R128|round\s+of\s+128|1回戦/.test(value)) return 70;
+    if (/決勝トーナメント1回戦/.test(label)) return 80;
+    return 10;
+  }
+
+  if (/予選|予備|qualification|qualifying|RND/i.test(value)) {
+    return 200;
+  }
+  if (/グループ|group|GP\d+/i.test(value)) {
+    return 300;
+  }
+  return 400;
 }
 
 function buildPlayerRecordMatchGroups(matches) {
   const grouped = new Map();
 
-  // Keep the original match order within each category.
-  // The source order is used by the existing record output, where later rounds
-  // such as finals appear above earlier rounds.
   (Array.isArray(matches) ? matches : []).forEach((match) => {
     const categoryName = String(match?.categoryName || "その他").trim() || "その他";
     if (!grouped.has(categoryName)) {
@@ -4446,7 +4474,7 @@ function buildPlayerRecordMatchGroups(matches) {
     .sort(([leftCategory], [rightCategory]) => comparePlayerRecordCategoryName(leftCategory, rightCategory))
     .map(([categoryName, groupMatches]) => ({
       categoryName,
-      matches: groupMatches,
+      matches: [...groupMatches].sort(comparePlayerRecordMatches),
     }));
 }
 
@@ -4624,6 +4652,78 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
   };
 }
 
+function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
+  const index = indexState?.index;
+  if (!index?.players || !index?.playerRecordMatchShardsDir) {
+    return null;
+  }
+
+  const playerKeys = getHeadToHeadIndexPlayerKeys(index, needles);
+  if (playerKeys.size === 0) {
+    return {
+      events: [],
+      parsedEvents: 0,
+      scannedMatches: 0,
+      candidateEventCount: 0,
+      playerKeyCount: 0,
+    };
+  }
+
+  const eventMap = new Map();
+  let scannedShardLines = 0;
+  const recordKeys = new Set([...playerKeys].map((key) => index.recordAliases?.[key] || key));
+  recordKeys.forEach((recordKey) => {
+    const keyToken = `"key":${JSON.stringify(recordKey)}`;
+    getPlayerRecordShardLines(index, recordKey).forEach((line) => {
+      scannedShardLines += 1;
+      if (!line.includes(keyToken)) {
+        return;
+      }
+      let entry;
+      try {
+        entry = JSON.parse(line);
+      } catch {
+        return;
+      }
+      if (entry?.key !== recordKey || !entry?.event || !entry?.match) {
+        return;
+      }
+      const eventId = String(entry.event.event || "");
+      if (!eventId) {
+        return;
+      }
+      if (!eventMap.has(eventId)) {
+        eventMap.set(eventId, {
+          ...entry.event,
+          matches: [],
+        });
+      }
+      const event = eventMap.get(eventId);
+      const matchId = getPlayerRecordIndexMatchId(entry.match);
+      if (!event.matches.some((existing) => getPlayerRecordIndexMatchId(existing) === matchId)) {
+        event.matches.push(entry.match);
+      }
+    });
+  });
+
+  const events = [...eventMap.values()].map((event) => {
+    const matchGroups = buildPlayerRecordMatchGroups(event.matches || []);
+    return {
+      ...event,
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
+    };
+  }).sort(comparePlayerRecordEvents);
+
+  return {
+    events,
+    parsedEvents: 0,
+    scannedMatches: scannedShardLines,
+    candidateEventCount: events.length,
+    playerKeyCount: playerKeys.size,
+  };
+}
+
 function getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(indexState, snapshot, needles) {
   const index = indexState?.index;
   if (!index?.players) {
@@ -4675,7 +4775,8 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
 
   const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
   if (persistentIndex) {
-    let indexed = collectPlayerRecordEventsFromPersistentIndex(persistentIndex, needles);
+    let indexed = collectPlayerRecordEventsFromPersistentIndex(persistentIndex, needles)
+      || collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
     if (indexed) {
       let deltaEventCount = 0;
       if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
@@ -4775,12 +4876,12 @@ function getHeadToHeadPersistentIndexSignature(snapshot) {
 
 function readHeadToHeadPersistentIndexFromDisk(signature) {
   const candidates = [
-    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH],
-    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH],
+    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, PLAYER_RECORD_MATCH_SHARDS_DIR],
+    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH, BUNDLED_PLAYER_RECORD_MATCH_SHARDS_DIR],
   ];
   let staleIndex = null;
 
-  for (const [manifestPath, playerIndexPath] of candidates) {
+  for (const [manifestPath, playerIndexPath, playerRecordMatchShardsDir] of candidates) {
     try {
       const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
       if (manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION) {
@@ -4804,6 +4905,13 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
           pairs: playerIndex.pairs && typeof playerIndex.pairs === "object" && !Array.isArray(playerIndex.pairs)
             ? playerIndex.pairs
             : {},
+          recordAliases: playerIndex.recordAliases && typeof playerIndex.recordAliases === "object" && !Array.isArray(playerIndex.recordAliases)
+            ? playerIndex.recordAliases
+            : {},
+          playerRecordMatchShardsDir: manifest.playerRecordMatchShardIndex && fs.existsSync(playerRecordMatchShardsDir)
+            ? playerRecordMatchShardsDir
+            : null,
+          playerRecordMatchShardCache: new Map(),
         },
       };
       if (manifest.signature === signature) {
@@ -4848,6 +4956,49 @@ function getHeadToHeadPairShardName(pairKey) {
   return `${crypto.createHash("sha1").update(String(pairKey || "")).digest("hex").slice(0, 2)}.json`;
 }
 
+function getPlayerRecordMatchShardName(key) {
+  return `${crypto.createHash("sha1").update(String(key || "")).digest("hex").slice(0, 2)}.jsonl`;
+}
+
+function createPlayerRecordMatchShardWriter(baseDir) {
+  const tempDir = `${baseDir}.tmp-${process.pid}-${Date.now()}`;
+  fs.rmSync(tempDir, { recursive: true, force: true });
+  fs.mkdirSync(tempDir, { recursive: true });
+  const streams = new Map();
+
+  function getStream(shardName) {
+    if (!streams.has(shardName)) {
+      streams.set(shardName, fs.createWriteStream(path.join(tempDir, shardName), { flags: "a" }));
+    }
+    return streams.get(shardName);
+  }
+
+  return {
+    write(key, file, eventMeta, matchEntry) {
+      const normalizedKey = String(key || "").trim();
+      if (!normalizedKey || !matchEntry) {
+        return;
+      }
+      const payload = {
+        key: normalizedKey,
+        event: {
+          ...eventMeta,
+          source: file.sourceLabel || "",
+        },
+        match: matchEntry,
+      };
+      getStream(getPlayerRecordMatchShardName(normalizedKey)).write(`${JSON.stringify(payload)}\n`);
+    },
+    async close() {
+      await Promise.all([...streams.values()].map((stream) => new Promise((resolve, reject) => {
+        stream.end((error) => (error ? reject(error) : resolve()));
+      })));
+      fs.rmSync(baseDir, { recursive: true, force: true });
+      fs.renameSync(tempDir, baseDir);
+    },
+  };
+}
+
 function getHeadToHeadIndexedPair(index, pairKey) {
   if (!index?.pairShardsDir || !index?.pairShardCache) {
     return null;
@@ -4863,6 +5014,23 @@ function getHeadToHeadIndexedPair(index, pairKey) {
     }
   }
   return index.pairShardCache.get(shardName)?.[pairKey] || null;
+}
+
+function getPlayerRecordShardLines(index, key) {
+  if (!index?.playerRecordMatchShardsDir || !index?.playerRecordMatchShardCache) {
+    return [];
+  }
+  const shardName = getPlayerRecordMatchShardName(key);
+  if (!index.playerRecordMatchShardCache.has(shardName)) {
+    try {
+      const shardPath = path.join(index.playerRecordMatchShardsDir, shardName);
+      const text = fs.readFileSync(shardPath, "utf8");
+      index.playerRecordMatchShardCache.set(shardName, text.split(/\n/).filter(Boolean));
+    } catch {
+      index.playerRecordMatchShardCache.set(shardName, []);
+    }
+  }
+  return index.playerRecordMatchShardCache.get(shardName) || [];
 }
 
 function getHeadToHeadCompetitorKeyValues(competitor, translations) {
@@ -4955,7 +5123,7 @@ function addPlayerRecordIndexedEntry(index, key, file, eventMeta, matchEntry) {
   return true;
 }
 
-function addPlayerRecordIndexedMatch(index, file, eventMeta, match, competitorIndex, translations, rules, roundContext, parentMatch = null) {
+function addPlayerRecordIndexedMatch(index, file, eventMeta, match, competitorIndex, translations, rules, roundContext, parentMatch = null, options = {}) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
   const competitor = competitors[competitorIndex];
   const keys = getHeadToHeadCompetitorKeyValues(competitor, translations);
@@ -4970,12 +5138,22 @@ function addPlayerRecordIndexedMatch(index, file, eventMeta, match, competitorIn
   }
 
   let indexed = 0;
+  const recordKey = getHeadToHeadCanonicalKey(competitor, translations) || keys[0];
+  if (recordKey) {
+    keys.forEach((key) => {
+      index.recordAliases[key] = recordKey;
+    });
+  }
   keys.forEach((key) => {
     addHeadToHeadPlayerKey(index, key, file.eventId);
-    if (addPlayerRecordIndexedEntry(index, key, file, eventMeta, matchEntry)) {
-      indexed += 1;
-    }
   });
+  if (recordKey && options.shardWriter) {
+    options.shardWriter.write(recordKey, file, eventMeta, matchEntry);
+    indexed += 1;
+  }
+  if (recordKey && options.storeInlineRecords && addPlayerRecordIndexedEntry(index, recordKey, file, eventMeta, matchEntry)) {
+    indexed += 1;
+  }
   return indexed;
 }
 
@@ -5252,10 +5430,15 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
   const eventNames = getEventNamesMap();
   const playerRecordMatchIndexEventLimit = Number(process.env.PLAYER_RECORD_MATCH_INDEX_EVENT_LIMIT || 300);
   const buildPlayerRecordMatchIndex = snapshot.length <= playerRecordMatchIndexEventLimit;
+  const buildPlayerRecordMatchShardIndex = process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED !== "1";
+  const playerRecordMatchShardWriter = buildPlayerRecordMatchShardIndex
+    ? createPlayerRecordMatchShardWriter(PLAYER_RECORD_MATCH_SHARDS_DIR)
+    : null;
   const index = {
     players: {},
     pairs: {},
     records: {},
+    recordAliases: {},
   };
   let parsedEvents = 0;
   let scannedMatches = 0;
@@ -5284,7 +5467,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
       scannedMatches += 1;
 
       if (match.matchType === "individual") {
-        if (buildPlayerRecordMatchIndex) {
+        if (buildPlayerRecordMatchIndex || playerRecordMatchShardWriter) {
           (Array.isArray(match.competitors) ? match.competitors.slice(0, 2) : []).forEach((competitor, competitorIndex) => {
             indexedPlayerRecordLinks += addPlayerRecordIndexedMatch(
               index,
@@ -5295,6 +5478,11 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
               translations,
               rules,
               matchRoundContext,
+              null,
+              {
+                shardWriter: playerRecordMatchShardWriter,
+                storeInlineRecords: buildPlayerRecordMatchIndex,
+              },
             );
           });
         }
@@ -5317,7 +5505,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
 
       (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
         scannedMatches += 1;
-        if (buildPlayerRecordMatchIndex) {
+        if (buildPlayerRecordMatchIndex || playerRecordMatchShardWriter) {
           (Array.isArray(single?.competitors) ? single.competitors.slice(0, 2) : []).forEach((competitor, competitorIndex) => {
             indexedPlayerRecordLinks += addPlayerRecordIndexedMatch(
               index,
@@ -5329,6 +5517,10 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
               rules,
               matchRoundContext,
               match,
+              {
+                shardWriter: playerRecordMatchShardWriter,
+                storeInlineRecords: buildPlayerRecordMatchIndex,
+              },
             );
           });
         }
@@ -5355,6 +5547,9 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
       });
     });
   }
+  if (playerRecordMatchShardWriter) {
+    await playerRecordMatchShardWriter.close();
+  }
 
   const generatedAt = new Date().toISOString();
   const manifest = {
@@ -5368,13 +5563,20 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
     indexedLinks,
     indexedPlayerRecordLinks,
     playerRecordMatchIndexSkipped: !buildPlayerRecordMatchIndex,
+    playerRecordMatchShardIndex: buildPlayerRecordMatchShardIndex,
     playerRecordMatchIndexEventLimit,
     playerKeyCount: Object.keys(index.players).length,
     pairKeyCount: Object.keys(index.pairs).length,
     playerRecordKeyCount: Object.keys(index.records).length,
+    playerRecordAliasKeyCount: Object.keys(index.recordAliases).length,
   };
 
-  writeJsonFileAtomic(HEAD_TO_HEAD_PLAYER_INDEX_PATH, { players: index.players, pairs: index.pairs, records: index.records });
+  writeJsonFileAtomic(HEAD_TO_HEAD_PLAYER_INDEX_PATH, {
+    players: index.players,
+    pairs: index.pairs,
+    records: index.records,
+    recordAliases: index.recordAliases,
+  });
   writeJsonFileAtomic(HEAD_TO_HEAD_INDEX_MANIFEST_PATH, manifest);
   return {
     signature,
@@ -5383,6 +5585,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
       players: index.players,
       pairs: index.pairs,
       records: index.records,
+      recordAliases: index.recordAliases,
     },
     manifest,
   };
