@@ -177,6 +177,15 @@ function ensureRuntimeFiles() {
   } catch {
     // Best-effort cleanup for aborted experimental index builds.
   }
+  try {
+    if (fs.existsSync(PLAYER_RECORDS_INDEX_DIR)) {
+      fs.readdirSync(PLAYER_RECORDS_INDEX_DIR)
+        .filter((name) => /^player-record-match-shards\.tmp-/.test(name))
+        .forEach((name) => fs.rmSync(path.join(PLAYER_RECORDS_INDEX_DIR, name), { recursive: true, force: true }));
+    }
+  } catch {
+    // Best-effort cleanup for aborted shard builds.
+  }
   if (!SKIP_RUNTIME_ARCHIVE_SYNC) {
     syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
     syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
