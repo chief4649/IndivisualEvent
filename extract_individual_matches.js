@@ -59,6 +59,14 @@ const WTT_RECORD_SOURCE_OVERRIDES = {
     confidence: "manual",
     resolvedBy: "manual_event_mapping",
   },
+  "5068": {
+    recordSource: "ittf",
+    recordEventId: "5068",
+    recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE5068/results.html#/results`,
+    title: "2019 ITTF-ATTU Asian Table Tennis Championships",
+    confidence: "manual",
+    resolvedBy: "manual_event_mapping",
+  },
 };
 const WTT_WEBGEN_EVENTS = {
   wmc2026: {
@@ -1164,7 +1172,11 @@ function readWttArchive(archiveDir, eventId) {
   if (!fs.existsSync(archivePath)) {
     return null;
   }
-  return JSON.parse(fs.readFileSync(archivePath, "utf8"));
+  try {
+    return JSON.parse(fs.readFileSync(archivePath, "utf8"));
+  } catch {
+    return null;
+  }
 }
 
 function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = null) {
