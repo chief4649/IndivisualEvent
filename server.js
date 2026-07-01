@@ -5509,6 +5509,20 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
           indexed = mergeHeadToHeadCollectedResults(indexed, delta);
         }
       }
+      if (persistentIndex.stale) {
+        const playerATextNeedles = buildPlayerRecordTextNeedles(...playerANeedles);
+        const playerBTextNeedles = buildPlayerRecordTextNeedles(...playerBNeedles);
+        const textCandidate = await getHeadToHeadGrepCandidateSnapshot(snapshot, playerATextNeedles, playerBTextNeedles);
+        if (textCandidate?.snapshot?.length > 0) {
+          const existingEventIds = new Set((indexed.events || []).map((event) => String(event.event)));
+          const extraSnapshot = textCandidate.snapshot.filter((file) => !existingEventIds.has(String(file.eventId)));
+          if (extraSnapshot.length > 0) {
+            const extra = await collectHeadToHeadMatches(extraSnapshot, playerANeedles, playerBNeedles);
+            indexed = mergeHeadToHeadCollectedResults(indexed, extra);
+            indexed.candidateEventCount = (indexed.candidateEventCount || 0) + extraSnapshot.length;
+          }
+        }
+      }
       const result = {
         signature: persistentIndexSignature,
         builtAt: Date.now(),
