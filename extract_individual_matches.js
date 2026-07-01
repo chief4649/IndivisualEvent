@@ -744,18 +744,39 @@ function resolveCanonicalCategoryName(rawCategoryName, description, gender = nul
   return toCanonicalCategoryName(rawCategoryName, gender, discipline);
 }
 
-function resolveParaCategoryName(rawCategoryName, description) {
-  const source = String(rawCategoryName || description || "").trim();
-  if (!/\bclass(?:es)?\b/i.test(source)) {
+function normalizeParaCategoryNameText(value) {
+  const source = String(value || "").split(/\s+-\s+/)[0].trim();
+  const match = source.match(/\b(Men|Women|Mixed)(?:['’]s)?\s+(Singles|Doubles|Teams)\s+Class(?:es)?\s+([0-9]+(?:\s*[-–]\s*[0-9]+)?)/i);
+  if (!match) {
     return null;
   }
-  return source
-    .replace(/\bMen['’]s\b/i, "Men")
-    .replace(/\bWomen['’]s\b/i, "Women")
-    .replace(/\bMixed['’]s\b/i, "Mixed")
-    .replace(/\s*[-–]\s*/g, "-")
-    .replace(/\s+/g, " ")
-    .trim();
+  const gender = match[1].replace(/^men$/i, "Men").replace(/^women$/i, "Women").replace(/^mixed$/i, "Mixed");
+  const discipline = match[2].replace(/^singles$/i, "Singles").replace(/^doubles$/i, "Doubles").replace(/^teams$/i, "Teams");
+  const classValue = match[3].replace(/\s*[-–]\s*/g, "-");
+  return `${gender} ${discipline} ${classValue.includes("-") ? "Classes" : "Class"} ${classValue}`;
+}
+
+function resolveParaCategoryNameFromDocumentCode(documentCode) {
+  const code = String(documentCode || "").toUpperCase();
+  const match = code.match(/----([MWX][SDT][0-9]+(?:-[0-9]+)?)-*/);
+  if (!match) {
+    return null;
+  }
+  const token = match[1];
+  const gender = token[0] === "M" ? "Men" : token[0] === "W" ? "Women" : "Mixed";
+  const discipline = token[1] === "S" ? "Singles" : token[1] === "D" ? "Doubles" : "Teams";
+  const classValue = token.slice(2);
+  return `${gender} ${discipline} ${classValue.includes("-") ? "Classes" : "Class"} ${classValue}`;
+}
+
+function resolveParaCategoryName(rawCategoryName, description, documentCode = null) {
+  for (const value of [rawCategoryName, description]) {
+    const categoryName = normalizeParaCategoryNameText(value);
+    if (categoryName) {
+      return categoryName;
+    }
+  }
+  return resolveParaCategoryNameFromDocumentCode(documentCode);
 }
 
 function extractRound(description) {
@@ -986,12 +1007,43 @@ function getNameTranslationCandidates(value) {
   return [...new Set(candidates)];
 }
 
+const playerTranslationLookupCache = new WeakMap();
+
+function normalizePlayerTranslationKey(value) {
+  return String(value || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("en-US");
+}
+
+function getPlayerTranslationLookup(translations) {
+  const players = translations?.players;
+  if (!players || typeof players !== "object") {
+    return null;
+  }
+  const cached = playerTranslationLookupCache.get(players);
+  if (cached) {
+    return cached;
+  }
+  const lookup = new Map();
+  for (const [key, value] of Object.entries(players)) {
+    const normalizedKey = normalizePlayerTranslationKey(key);
+    if (normalizedKey && !lookup.has(normalizedKey)) {
+      lookup.set(normalizedKey, value);
+    }
+  }
+  playerTranslationLookupCache.set(players, lookup);
+  return lookup;
+}
+
 function translatePlayer(value, translations) {
   const candidates = getNameTranslationCandidates(value);
+  const lookup = getPlayerTranslationLookup(translations);
 
   for (const candidate of candidates) {
     if (translations.players?.[candidate]) {
       return translations.players[candidate];
+    }
+    const normalizedCandidate = normalizePlayerTranslationKey(candidate);
+    if (lookup?.has(normalizedCandidate)) {
+      return lookup.get(normalizedCandidate);
     }
   }
 
@@ -1557,7 +1609,8 @@ function normalizeStandaloneMatch(item) {
   const rawCategoryName = item.subEventType ?? card.subEventName ?? null;
   const discipline = normalizeDiscipline(rawCategoryName);
   const gender = inferGender(rawCategoryName);
-  const paraCategoryName = resolveParaCategoryName(rawCategoryName, card.subEventDescription);
+  const documentCode = item.documentCode ?? card.documentCode ?? null;
+  const paraCategoryName = resolveParaCategoryName(rawCategoryName, card.subEventDescription, documentCode);
   const round = extractRound(card.subEventDescription);
   const schedule = extractMatchSchedule(card, item);
 
@@ -1565,7 +1618,7 @@ function normalizeStandaloneMatch(item) {
     matchType: "individual",
     id: item.id ?? null,
     eventId: item.eventId ?? card.eventId ?? null,
-    documentCode: item.documentCode ?? card.documentCode ?? null,
+    documentCode,
     subEventType: rawCategoryName,
     categoryName: paraCategoryName || resolveCanonicalCategoryName(rawCategoryName, card.subEventDescription, gender, discipline),
     discipline,
@@ -1607,18 +1660,25 @@ function normalizePreNormalizedMatch(item) {
   if (!isPreNormalizedMatch(item)) {
     return null;
   }
-  const categoryName = resolveCanonicalCategoryName(
+  const paraCategoryName = resolveParaCategoryName(
     item.subEventType || item.categoryName,
+    item.description,
+    item.documentCode,
+  );
+  const categoryName = resolveCanonicalCategoryName(
+    paraCategoryName || item.subEventType || item.categoryName,
     item.description,
     item.gender,
     item.discipline,
   );
-  if (!categoryName || categoryName === item.categoryName) {
+  const isParaClass = Boolean(item.isParaClass || paraCategoryName);
+  if (!categoryName || (categoryName === item.categoryName && isParaClass === Boolean(item.isParaClass))) {
     return item;
   }
   return {
     ...item,
     categoryName,
+    isParaClass,
   };
 }
 

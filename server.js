@@ -3624,12 +3624,43 @@ function getNameTranslationCandidates(value) {
   return [...new Set(candidates)];
 }
 
+const playerTranslationLookupCache = new WeakMap();
+
+function normalizePlayerTranslationKey(value) {
+  return String(value || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("en-US");
+}
+
+function getPlayerTranslationLookup(translations) {
+  const players = translations?.players;
+  if (!players || typeof players !== "object") {
+    return null;
+  }
+  const cached = playerTranslationLookupCache.get(players);
+  if (cached) {
+    return cached;
+  }
+  const lookup = new Map();
+  for (const [key, value] of Object.entries(players)) {
+    const normalizedKey = normalizePlayerTranslationKey(key);
+    if (normalizedKey && !lookup.has(normalizedKey)) {
+      lookup.set(normalizedKey, value);
+    }
+  }
+  playerTranslationLookupCache.set(players, lookup);
+  return lookup;
+}
+
 function translatePlayer(value, translations) {
   const candidates = getNameTranslationCandidates(value);
+  const lookup = getPlayerTranslationLookup(translations);
 
   for (const candidate of candidates) {
     if (translations.players?.[candidate]) {
       return translations.players[candidate];
+    }
+    const normalizedCandidate = normalizePlayerTranslationKey(candidate);
+    if (lookup?.has(normalizedCandidate)) {
+      return lookup.get(normalizedCandidate);
     }
   }
 
