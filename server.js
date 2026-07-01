@@ -5125,6 +5125,8 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
   const archiveIndex = readWttArchiveIndex();
   const eventNames = getEventNamesMap();
+  const playerRecordMatchIndexEventLimit = Number(process.env.PLAYER_RECORD_MATCH_INDEX_EVENT_LIMIT || 300);
+  const buildPlayerRecordMatchIndex = snapshot.length <= playerRecordMatchIndexEventLimit;
   const index = {
     players: {},
     records: {},
@@ -5156,18 +5158,20 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
       scannedMatches += 1;
 
       if (match.matchType === "individual") {
-        (Array.isArray(match.competitors) ? match.competitors.slice(0, 2) : []).forEach((competitor, competitorIndex) => {
-          indexedPlayerRecordLinks += addPlayerRecordIndexedMatch(
-            index,
-            file,
-            eventMeta,
-            match,
-            competitorIndex,
-            translations,
-            rules,
-            matchRoundContext,
-          );
-        });
+        if (buildPlayerRecordMatchIndex) {
+          (Array.isArray(match.competitors) ? match.competitors.slice(0, 2) : []).forEach((competitor, competitorIndex) => {
+            indexedPlayerRecordLinks += addPlayerRecordIndexedMatch(
+              index,
+              file,
+              eventMeta,
+              match,
+              competitorIndex,
+              translations,
+              rules,
+              matchRoundContext,
+            );
+          });
+        }
 
         if (match.discipline && match.discipline !== "singles") {
           continue;
@@ -5187,19 +5191,21 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
 
       (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
         scannedMatches += 1;
-        (Array.isArray(single?.competitors) ? single.competitors.slice(0, 2) : []).forEach((competitor, competitorIndex) => {
-          indexedPlayerRecordLinks += addPlayerRecordIndexedMatch(
-            index,
-            file,
-            eventMeta,
-            single,
-            competitorIndex,
-            translations,
-            rules,
-            matchRoundContext,
-            match,
-          );
-        });
+        if (buildPlayerRecordMatchIndex) {
+          (Array.isArray(single?.competitors) ? single.competitors.slice(0, 2) : []).forEach((competitor, competitorIndex) => {
+            indexedPlayerRecordLinks += addPlayerRecordIndexedMatch(
+              index,
+              file,
+              eventMeta,
+              single,
+              competitorIndex,
+              translations,
+              rules,
+              matchRoundContext,
+              match,
+            );
+          });
+        }
         if (!isSinglesHeadToHeadMatch(single)) {
           return;
         }
@@ -5213,11 +5219,13 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
   Object.keys(index.players).forEach((key) => {
     index.players[key].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
   });
-  Object.values(index.records).forEach((eventsById) => {
-    Object.values(eventsById || {}).forEach((event) => {
-      event.matches = buildPlayerRecordMatchGroups(event.matches || []).flatMap((group) => group.matches);
+  if (buildPlayerRecordMatchIndex) {
+    Object.values(index.records).forEach((eventsById) => {
+      Object.values(eventsById || {}).forEach((event) => {
+        event.matches = buildPlayerRecordMatchGroups(event.matches || []).flatMap((group) => group.matches);
+      });
     });
-  });
+  }
 
   const generatedAt = new Date().toISOString();
   const manifest = {
@@ -5230,6 +5238,8 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
     scannedMatches,
     indexedLinks,
     indexedPlayerRecordLinks,
+    playerRecordMatchIndexSkipped: !buildPlayerRecordMatchIndex,
+    playerRecordMatchIndexEventLimit,
     playerKeyCount: Object.keys(index.players).length,
     playerRecordKeyCount: Object.keys(index.records).length,
   };
