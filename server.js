@@ -46,6 +46,7 @@ const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
+const BACKFILL_5000_STATUS_PATH = path.join(DATA_DIR, "backfill-5000-status.json");
 const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
 const BUNDLED_PLAYER_RECORDS_INDEX_DIR = path.join(__dirname, "player-records-index");
 const PLAYER_RECORD_CANDIDATE_INDEX_VERSION = 1;
@@ -93,6 +94,7 @@ const rateLimitStore = new Map();
 const eventNameCache = new Map();
 const processedMatchesCache = new Map();
 let headToHeadIndexBuildProcess = null;
+let backfill5000Promise = null;
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
 const PROCESSED_MATCHES_CACHE_TTL_MS = Number(process.env.PROCESSED_MATCHES_CACHE_TTL_MS || 15_000);
 const STORAGE_MANAGED_FILES = [
@@ -942,6 +944,187 @@ function readWttSearchIndex() {
   }
 }
 
+function readBackfill5000Status() {
+  try {
+    if (!fs.existsSync(BACKFILL_5000_STATUS_PATH)) {
+      return null;
+    }
+    return JSON.parse(fs.readFileSync(BACKFILL_5000_STATUS_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function writeBackfill5000Status(status) {
+  ensureDir(path.dirname(BACKFILL_5000_STATUS_PATH));
+  writePrettyJson(BACKFILL_5000_STATUS_PATH, {
+    ...status,
+    statusPath: BACKFILL_5000_STATUS_PATH,
+    updatedAt: new Date().toISOString(),
+  });
+}
+
+function getBackfill5000StoredEventIds() {
+  const ids = new Set();
+  if (!fs.existsSync(WTT_ARCHIVE_DIR)) {
+    return ids;
+  }
+  fs.readdirSync(WTT_ARCHIVE_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && /^\d+\.json$/i.test(entry.name))
+    .forEach((entry) => ids.add(entry.name.replace(/\.json$/i, "")));
+  return ids;
+}
+
+function getBackfill5000CandidateEvents() {
+  const searchIndex = readWttSearchIndex();
+  const storedIds = getBackfill5000StoredEventIds();
+  return Object.keys(searchIndex)
+    .filter((eventId) => /^5\d\d\d$/.test(eventId))
+    .sort((left, right) => Number(left) - Number(right))
+    .map((eventId) => {
+      const aliasId = WTT_EVENT_ID_ALIASES[eventId] || "";
+      const entry = searchIndex[eventId] || {};
+      const storedAs = storedIds.has(eventId)
+        ? eventId
+        : aliasId && storedIds.has(aliasId)
+          ? aliasId
+          : "";
+      return {
+        eventId,
+        eventName: String(entry.eventName || entry.title || ""),
+        startDate: entry.startDate || null,
+        endDate: entry.endDate || null,
+        storedAs,
+      };
+    });
+}
+
+function buildBackfill5000Plan(options = {}) {
+  const retryFailed = String(options.retryFailed || "0") === "1";
+  const previous = readBackfill5000Status();
+  const blockedIds = retryFailed
+    ? new Set()
+    : new Set([
+      ...(Array.isArray(previous?.failed) ? previous.failed.map((item) => String(item.eventId || "")) : []),
+      ...(Array.isArray(previous?.empty) ? previous.empty.map((item) => String(item.eventId || "")) : []),
+    ].filter(Boolean));
+  const candidates = getBackfill5000CandidateEvents();
+  const missing = candidates.filter((item) => !item.storedAs);
+  const pending = missing.filter((item) => !blockedIds.has(item.eventId));
+  return {
+    candidateCount: candidates.length,
+    coveredCount: candidates.length - missing.length,
+    missingCount: missing.length,
+    pending,
+  };
+}
+
+function getBackfill5000StatusPayload() {
+  const storedStatus = readBackfill5000Status();
+  const plan = buildBackfill5000Plan();
+  return {
+    ok: true,
+    running: Boolean(backfill5000Promise),
+    status: storedStatus || {
+      state: "idle",
+      statusPath: BACKFILL_5000_STATUS_PATH,
+    },
+    plan: {
+      candidateCount: plan.candidateCount,
+      coveredCount: plan.coveredCount,
+      missingCount: plan.missingCount,
+      pendingCount: plan.pending.length,
+      next: plan.pending.slice(0, 20),
+    },
+  };
+}
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function runBackfill5000Job(options = {}) {
+  const maxEvents = Math.max(1, Math.min(Number(options.maxEvents) || 20, 50));
+  const requestedDelayMs = Number(options.delayMs);
+  const delayMs = Math.max(0, Math.min(Number.isFinite(requestedDelayMs) ? requestedDelayMs : 1000, 10000));
+  const retryFailed = String(options.retryFailed || "0") === "1";
+  const previous = readBackfill5000Status();
+  const carriedFailed = !retryFailed && Array.isArray(previous?.failed) ? previous.failed : [];
+  const carriedEmpty = !retryFailed && Array.isArray(previous?.empty) ? previous.empty : [];
+  const startedAt = new Date().toISOString();
+  const plan = buildBackfill5000Plan({ retryFailed });
+  const batch = plan.pending.slice(0, maxEvents);
+  const status = {
+    state: "running",
+    startedAt,
+    finishedAt: null,
+    maxEvents,
+    delayMs,
+    retryFailed,
+    candidateCount: plan.candidateCount,
+    coveredCountAtStart: plan.coveredCount,
+    missingCountAtStart: plan.missingCount,
+    batchCount: batch.length,
+    currentEventId: null,
+    processed: [],
+    succeeded: [],
+    empty: carriedEmpty,
+    failed: carriedFailed,
+  };
+  writeBackfill5000Status(status);
+
+  for (const item of batch) {
+    status.currentEventId = item.eventId;
+    status.processed.push(item.eventId);
+    writeBackfill5000Status(status);
+    try {
+      const payload = await fetchOfficialResultsCached("wtt", item.eventId, 1200, CACHE_DIR, true, {
+        wttArchiveDir: WTT_ARCHIVE_DIR,
+        wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
+        wttDateIndexPath: WTT_DATE_INDEX_PATH,
+        allowBornanFallback: true,
+      });
+      const matchCount = Array.isArray(payload) ? payload.length : 0;
+      if (matchCount > 0) {
+        status.succeeded.push({
+          eventId: item.eventId,
+          eventName: item.eventName,
+          matchCount,
+        });
+        clearProcessedMatchesCache();
+        clearPlayerRecordResultCache();
+        clearHeadToHeadResultCache();
+        clearPlayerRecordArchiveParseCache();
+      } else {
+        status.empty.push({
+          eventId: item.eventId,
+          eventName: item.eventName,
+          reason: "no_matches",
+        });
+      }
+    } catch (error) {
+      status.failed.push({
+        eventId: item.eventId,
+        eventName: item.eventName,
+        error: createFriendlyErrorMessage(error),
+      });
+    }
+    writeBackfill5000Status(status);
+    if (delayMs > 0) {
+      await wait(delayMs);
+    }
+  }
+
+  const nextPlan = buildBackfill5000Plan({ retryFailed: false });
+  status.state = "complete";
+  status.finishedAt = new Date().toISOString();
+  status.currentEventId = null;
+  status.coveredCountAtFinish = nextPlan.coveredCount;
+  status.missingCountAtFinish = nextPlan.missingCount;
+  status.pendingCountAtFinish = nextPlan.pending.length;
+  writeBackfill5000Status(status);
+}
+
 function getMergedWttSearchEntry(eventId, entry, dateIndex, archiveIndex) {
   const dateEntry = dateIndex[String(eventId || "").trim()] || {};
   const archiveEntry = archiveIndex[String(eventId || "").trim()] || {};
@@ -1775,6 +1958,52 @@ function handleAdminSyncManifest(request, response) {
       includeZennihon: searchParams.get("includeZennihon") || "0",
       sha256: searchParams.get("sha256") || "1",
     }));
+  } catch (error) {
+    sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
+  }
+  return true;
+}
+
+function handleAdminBackfill5000Status(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+  try {
+    sendJson(response, 200, getBackfill5000StatusPayload());
+  } catch (error) {
+    sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
+  }
+  return true;
+}
+
+function handleAdminBackfill5000Start(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+  try {
+    const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+    if (!backfill5000Promise) {
+      const options = {
+        maxEvents: searchParams.get("maxEvents") || searchParams.get("limit") || "20",
+        delayMs: searchParams.get("delayMs") || "1000",
+        retryFailed: searchParams.get("retryFailed") || "0",
+      };
+      backfill5000Promise = runBackfill5000Job(options)
+        .catch((error) => {
+          const previous = readBackfill5000Status() || {};
+          writeBackfill5000Status({
+            ...previous,
+            state: "failed",
+            finishedAt: new Date().toISOString(),
+            currentEventId: null,
+            fatalError: createFriendlyErrorMessage(error),
+          });
+        })
+        .finally(() => {
+          backfill5000Promise = null;
+        });
+    }
+    sendJson(response, 202, getBackfill5000StatusPayload());
   } catch (error) {
     sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
   }
@@ -5182,6 +5411,10 @@ function handleConfigGet(request, response, pathname) {
     return handleAdminHeadToHeadIndexStatus(request, response);
   }
 
+  if (pathname === "/api/admin/backfill-5000-status") {
+    return handleAdminBackfill5000Status(request, response);
+  }
+
   if (pathname === "/api/admin/sync-manifest") {
     return handleAdminSyncManifest(request, response);
   }
@@ -5293,6 +5526,13 @@ async function handleConfigUpdate(request, response, pathname) {
   }
 }
 
+function handleAdminPost(request, response, pathname) {
+  if (pathname === "/api/admin/backfill-5000-records") {
+    return handleAdminBackfill5000Start(request, response);
+  }
+  return false;
+}
+
 function startServer() {
   const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`);
@@ -5396,6 +5636,10 @@ function startServer() {
     }
 
     if (request.method === "GET" && handleConfigGet(request, response, requestUrl.pathname)) {
+      return;
+    }
+
+    if (request.method === "POST" && handleAdminPost(request, response, requestUrl.pathname)) {
       return;
     }
 
