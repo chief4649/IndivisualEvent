@@ -4591,7 +4591,7 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
 
 function getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(indexState, snapshot, needles) {
   const index = indexState?.index;
-  if (indexState?.stale || !index?.players) {
+  if (!index?.players) {
     return null;
   }
 
@@ -4605,14 +4605,18 @@ function getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(indexState, snapsho
     return null;
   }
 
-  const candidateSnapshot = snapshot.filter((file) => eventIds.has(String(file.eventId)));
+  const indexedEventIds = new Set(Array.isArray(indexState.eventIds) ? indexState.eventIds.map(String) : []);
+  const candidateSnapshot = snapshot.filter((file) => {
+    const eventId = String(file.eventId);
+    return eventIds.has(eventId) || (indexState.stale && indexedEventIds.size > 0 && !indexedEventIds.has(eventId));
+  });
   if (candidateSnapshot.length === 0) {
     return null;
   }
 
   return {
     snapshot: candidateSnapshot,
-    source: "head-to-head-player-events",
+    source: indexState.stale ? "head-to-head-player-events+delta" : "head-to-head-player-events",
     generatedAt: indexState.generatedAt,
     playerKeyCount: playerKeys.size,
     eventIdCount: eventIds.size,
