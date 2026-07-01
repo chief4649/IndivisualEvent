@@ -4964,14 +4964,6 @@ function createPlayerRecordMatchShardWriter(baseDir) {
   const tempDir = `${baseDir}.tmp-${process.pid}-${Date.now()}`;
   fs.rmSync(tempDir, { recursive: true, force: true });
   fs.mkdirSync(tempDir, { recursive: true });
-  const streams = new Map();
-
-  function getStream(shardName) {
-    if (!streams.has(shardName)) {
-      streams.set(shardName, fs.createWriteStream(path.join(tempDir, shardName), { flags: "a" }));
-    }
-    return streams.get(shardName);
-  }
 
   return {
     write(key, file, eventMeta, matchEntry) {
@@ -4987,12 +4979,9 @@ function createPlayerRecordMatchShardWriter(baseDir) {
         },
         match: matchEntry,
       };
-      getStream(getPlayerRecordMatchShardName(normalizedKey)).write(`${JSON.stringify(payload)}\n`);
+      fs.appendFileSync(path.join(tempDir, getPlayerRecordMatchShardName(normalizedKey)), `${JSON.stringify(payload)}\n`);
     },
-    async close() {
-      await Promise.all([...streams.values()].map((stream) => new Promise((resolve, reject) => {
-        stream.end((error) => (error ? reject(error) : resolve()));
-      })));
+    close() {
       fs.rmSync(baseDir, { recursive: true, force: true });
       fs.renameSync(tempDir, baseDir);
     },
