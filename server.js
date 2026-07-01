@@ -4511,7 +4511,7 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
 
 function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
   const index = indexState?.index;
-  if (!index?.players || !index?.records) {
+  if (!index?.players || !index?.records || Object.keys(index.records).length === 0) {
     return null;
   }
 
@@ -4527,8 +4527,12 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
   }
 
   const eventsById = new Map();
+  let hasIndexedRecordForPlayer = false;
   playerKeys.forEach((key) => {
     const recordsByEventId = index.records[key] || {};
+    if (Object.keys(recordsByEventId).length > 0) {
+      hasIndexedRecordForPlayer = true;
+    }
     Object.entries(recordsByEventId).forEach(([eventId, event]) => {
       if (!eventsById.has(eventId)) {
         eventsById.set(eventId, {
@@ -4547,6 +4551,10 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
       });
     });
   });
+
+  if (!hasIndexedRecordForPlayer) {
+    return null;
+  }
 
   const events = [...eventsById.values()].map((event) => {
     const matchGroups = buildPlayerRecordMatchGroups(event.matches || []);
