@@ -1001,7 +1001,13 @@ function getBackfill5000CandidateEvents() {
 
 function buildBackfill5000Plan(options = {}) {
   const retryFailed = String(options.retryFailed || "0") === "1";
+  const onlyFailed = String(options.onlyFailed || "0") === "1";
   const previous = readBackfill5000Status();
+  const failedIds = new Set(
+    Array.isArray(previous?.failed)
+      ? previous.failed.map((item) => String(item.eventId || "")).filter(Boolean)
+      : [],
+  );
   const blockedIds = retryFailed
     ? new Set()
     : new Set([
@@ -1010,7 +1016,12 @@ function buildBackfill5000Plan(options = {}) {
     ].filter(Boolean));
   const candidates = getBackfill5000CandidateEvents();
   const missing = candidates.filter((item) => !item.storedAs);
-  const pending = missing.filter((item) => !blockedIds.has(item.eventId));
+  const pending = missing.filter((item) => {
+    if (onlyFailed && !failedIds.has(item.eventId)) {
+      return false;
+    }
+    return !blockedIds.has(item.eventId);
+  });
   return {
     candidateCount: candidates.length,
     coveredCount: candidates.length - missing.length,
@@ -1048,11 +1059,12 @@ async function runBackfill5000Job(options = {}) {
   const requestedDelayMs = Number(options.delayMs);
   const delayMs = Math.max(0, Math.min(Number.isFinite(requestedDelayMs) ? requestedDelayMs : 1000, 10000));
   const retryFailed = String(options.retryFailed || "0") === "1";
+  const onlyFailed = String(options.onlyFailed || "0") === "1";
   const previous = readBackfill5000Status();
-  const carriedFailed = !retryFailed && Array.isArray(previous?.failed) ? previous.failed : [];
+  const carriedFailed = !retryFailed && !onlyFailed && Array.isArray(previous?.failed) ? previous.failed : [];
   const carriedEmpty = !retryFailed && Array.isArray(previous?.empty) ? previous.empty : [];
   const startedAt = new Date().toISOString();
-  const plan = buildBackfill5000Plan({ retryFailed });
+  const plan = buildBackfill5000Plan({ retryFailed, onlyFailed });
   const batch = plan.pending.slice(0, maxEvents);
   const status = {
     state: "running",
@@ -1061,6 +1073,7 @@ async function runBackfill5000Job(options = {}) {
     maxEvents,
     delayMs,
     retryFailed,
+    onlyFailed,
     candidateCount: plan.candidateCount,
     coveredCountAtStart: plan.coveredCount,
     missingCountAtStart: plan.missingCount,
@@ -1987,6 +2000,7 @@ function handleAdminBackfill5000Start(request, response) {
         maxEvents: searchParams.get("maxEvents") || searchParams.get("limit") || "20",
         delayMs: searchParams.get("delayMs") || "1000",
         retryFailed: searchParams.get("retryFailed") || "0",
+        onlyFailed: searchParams.get("onlyFailed") || "0",
       };
       backfill5000Promise = runBackfill5000Job(options)
         .catch((error) => {
