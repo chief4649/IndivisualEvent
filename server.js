@@ -3364,8 +3364,43 @@ function getWttRecordFileSnapshot() {
     }
   };
 
+  const addSlimOnlyDirectory = (slimDirPath, sourcePriority, sourceLabel) => {
+    try {
+      if (!slimDirPath || !fs.existsSync(slimDirPath)) {
+        return;
+      }
+
+      fs.readdirSync(slimDirPath)
+        .filter((fileName) => /^\d+\.json$/.test(fileName))
+        .forEach((fileName) => {
+          const eventId = fileName.replace(/\.json$/, "");
+          if (recordsByEventId.has(eventId)) {
+            return;
+          }
+          const filePath = path.join(slimDirPath, fileName);
+          const stat = fs.statSync(filePath);
+          recordsByEventId.set(eventId, {
+            eventId,
+            filePath,
+            parseFilePath: filePath,
+            parseSize: stat.size,
+            parseMtimeMs: Math.trunc(stat.mtimeMs),
+            parseSource: "slim",
+            size: stat.size,
+            mtimeMs: Math.trunc(stat.mtimeMs),
+            sourcePriority,
+            sourceLabel,
+          });
+        });
+    } catch {
+      // Ignore unreadable slim archive directories.
+    }
+  };
+
   addDirectory(WTT_ARCHIVE_DIR, WTT_SLIM_ARCHIVE_DIR, 1, "runtime");
   addDirectory(BUNDLED_WTT_ARCHIVE_DIR, BUNDLED_WTT_SLIM_ARCHIVE_DIR, 2, "bundled");
+  addSlimOnlyDirectory(WTT_SLIM_ARCHIVE_DIR, 1, "runtime-slim");
+  addSlimOnlyDirectory(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 2, "bundled-slim");
 
   return [...recordsByEventId.values()]
     .map(({ sourcePriority, ...file }) => file)
@@ -5125,7 +5160,7 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
       normalizedMatches,
       contextsByCategory,
       fallbackRoundContext,
-    } = getParsedPlayerRecordArchive(file);
+    } = getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles);
     if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
       continue;
     }
