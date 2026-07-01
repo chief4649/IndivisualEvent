@@ -4417,18 +4417,30 @@ function yieldToEventLoop() {
   return new Promise((resolve) => setImmediate(resolve));
 }
 
-async function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
+async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options = {}) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
   const searchIndex = readWttSearchIndex();
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
   const archiveIndex = readWttArchiveIndex();
   const eventNames = getEventNamesMap();
+  const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
+  const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
+  const files = (Array.isArray(snapshot) ? snapshot : [])
+    .map((file) => ({
+      file,
+      meta: getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+    }))
+    .sort((left, right) => comparePlayerRecordEvents(left.meta, right.meta));
   const events = [];
+  let collectedMatches = 0;
   let parsedEvents = 0;
   let scannedMatches = 0;
 
-  for (const file of snapshot) {
+  for (const { file, meta } of files) {
+    if (events.length >= eventLimit || collectedMatches >= matchLimit) {
+      break;
+    }
     await yieldToEventLoop();
     const text = readTextFile(file.parseFilePath || file.filePath);
     if (!text || (Array.isArray(textNeedles) && textNeedles.length > 0 && !textLikelyContainsPlayer(text, textNeedles))) {
@@ -4493,8 +4505,9 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles) {
     }
 
     const matchGroups = buildPlayerRecordMatchGroups(matches);
+    collectedMatches += matches.length;
     events.push({
-      ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+      ...meta,
       source: file.sourceLabel || "",
       matches: matchGroups.flatMap((group) => group.matches),
       matchGroups,
@@ -4604,11 +4617,13 @@ function getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(indexState, snapsho
   };
 }
 
-async function getPlayerRecordSearchResult(name, translatedName, needles) {
+async function getPlayerRecordSearchResult(name, translatedName, needles, options = {}) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
   const persistentIndexSignature = getHeadToHeadPersistentIndexSignature(snapshot);
-  const cacheKey = `${signature}::${needles.join("|")}`;
+  const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : null;
+  const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : null;
+  const cacheKey = `${signature}::${needles.join("|")}::events=${eventLimit || "all"}::matches=${matchLimit || "all"}`;
   const cached = playerRecordResultCache.get(cacheKey);
   if (cached && Date.now() - cached.builtAt < PLAYER_RECORD_RESULT_CACHE_TTL_MS) {
     return {
@@ -4627,7 +4642,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles) {
         const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
         deltaEventCount = deltaSnapshot.length;
         if (deltaSnapshot.length > 0) {
-          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, []);
+          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit });
           indexed = mergeHeadToHeadCollectedResults(indexed, delta);
         }
       }
@@ -4656,7 +4671,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles) {
   const textNeedles = h2hCandidateResult ? [] : buildPlayerRecordTextNeedles(...needles);
   const candidateResult = h2hCandidateResult || await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
   const candidateSnapshot = candidateResult.snapshot;
-  const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, []);
+  const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, [], { eventLimit, matchLimit });
   const result = {
     signature,
     builtAt: Date.now(),
@@ -5644,7 +5659,7 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       });
       return;
     }
-    const searchResult = await getPlayerRecordSearchResult(name, translatedName, needles);
+    const searchResult = await getPlayerRecordSearchResult(name, translatedName, needles, { eventLimit, matchLimit });
     const events = searchResult.events;
     let returnedMatches = 0;
     const limitedEvents = [];

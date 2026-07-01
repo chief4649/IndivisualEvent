@@ -26,6 +26,17 @@
     "canAutoArchive": false,
     "lastFetchedAt": "2026-04-16T05:35:44.597Z"
   },
+  "2603": {
+    "pooled": true,
+    "source": "calendar",
+    "title": "Paris 2024 Olympic Games",
+    "startDate": "2024-07-26",
+    "endDate": "2024-08-11",
+    "canAutoArchive": false,
+    "lastFetchedAt": "2026-07-01T04:57:18.019Z",
+    "archived": true,
+    "archivedAt": "2026-07-01T04:57:18.019Z"
+  },
   "2751": {
     "pooled": true,
     "source": "calendar",

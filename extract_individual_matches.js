@@ -3468,6 +3468,13 @@ function enrichWttTeamMatchesWithArchivedDetails(matches, archivedMatches) {
   });
 }
 
+function wttArchiveNeedsTeamDetailRefresh(payload) {
+  return (Array.isArray(payload) ? payload : []).some((match) => (
+    match?.matchType === "team" &&
+    (!Array.isArray(match.singles) || match.singles.length === 0)
+  ));
+}
+
 function isLikelyBornanFallbackCandidate(eventId) {
   return /^\d+$/.test(String(eventId || "").trim());
 }
@@ -3651,7 +3658,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     const localArchiveMeta = getWttLocalArchiveMeta(eventId, options);
     if (!refreshCache && localArchiveMeta.canServeArchiveImmediately) {
       archived = readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir);
-      if (archived) {
+      if (archived && !wttArchiveNeedsTeamDetailRefresh(archived)) {
         return archived;
       }
     }
@@ -3660,7 +3667,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
     if (meta.isFinished && !refreshCache) {
       archived = archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir);
-      if (archived) {
+      if (archived && !wttArchiveNeedsTeamDetailRefresh(archived)) {
         return archived;
       }
     }
