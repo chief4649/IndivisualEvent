@@ -4574,6 +4574,36 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
   };
 }
 
+function getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(indexState, snapshot, needles) {
+  const index = indexState?.index;
+  if (indexState?.stale || !index?.players) {
+    return null;
+  }
+
+  const playerKeys = getHeadToHeadIndexPlayerKeys(index, needles);
+  if (playerKeys.size === 0) {
+    return null;
+  }
+
+  const eventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerKeys);
+  if (eventIds.size === 0) {
+    return null;
+  }
+
+  const candidateSnapshot = snapshot.filter((file) => eventIds.has(String(file.eventId)));
+  if (candidateSnapshot.length === 0) {
+    return null;
+  }
+
+  return {
+    snapshot: candidateSnapshot,
+    source: "head-to-head-player-events",
+    generatedAt: indexState.generatedAt,
+    playerKeyCount: playerKeys.size,
+    eventIdCount: eventIds.size,
+  };
+}
+
 async function getPlayerRecordSearchResult(name, translatedName, needles) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
@@ -4622,8 +4652,9 @@ async function getPlayerRecordSearchResult(name, translatedName, needles) {
     }
   }
 
-  const textNeedles = buildPlayerRecordTextNeedles(...needles);
-  const candidateResult = await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
+  const h2hCandidateResult = getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(persistentIndex, snapshot, needles);
+  const textNeedles = h2hCandidateResult ? [] : buildPlayerRecordTextNeedles(...needles);
+  const candidateResult = h2hCandidateResult || await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
   const candidateSnapshot = candidateResult.snapshot;
   const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, []);
   const result = {
@@ -4635,10 +4666,12 @@ async function getPlayerRecordSearchResult(name, translatedName, needles) {
     eventIndexGeneratedAt: null,
     scannedEvents: snapshot.length,
     candidateEvents: candidateSnapshot.length,
+    playerKeyCount: candidateResult.playerKeyCount || 0,
+    h2hCandidateEventIds: candidateResult.eventIdCount || 0,
     ...collected,
   };
   setPlayerRecordResultCacheValue(cacheKey, result);
-  if (candidateResult.source !== "candidate-index") {
+  if (!h2hCandidateResult && candidateResult.source !== "candidate-index") {
     startPlayerRecordCandidateIndexBuild(snapshot, signature);
   }
   return {
