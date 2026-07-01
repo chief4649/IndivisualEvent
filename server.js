@@ -170,6 +170,11 @@ function syncDirectoryFilesFromDefaultIfNewer(targetDir, sourceDir) {
 function ensureRuntimeFiles() {
   ensureDir(DATA_DIR);
   ensureDir(CACHE_DIR);
+  try {
+    fs.rmSync(path.join(PLAYER_RECORDS_INDEX_DIR, "player-record-matches"), { recursive: true, force: true });
+  } catch {
+    // Best-effort cleanup for aborted experimental index builds.
+  }
   if (!SKIP_RUNTIME_ARCHIVE_SYNC) {
     syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
     syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
