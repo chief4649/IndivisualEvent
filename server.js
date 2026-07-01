@@ -852,7 +852,8 @@ function isIttfResultsPreferredEventName(eventName) {
     return false;
   }
   return (
-    /^ittf\b/.test(name) ||
+    /\bittf\b/.test(name) ||
+    /\bworld table tennis championships\b/.test(name) ||
     /\bworld para\b/.test(name) ||
     /special event qualifier/.test(name) ||
     /youth championships?/.test(name) ||
