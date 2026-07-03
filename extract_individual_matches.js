@@ -3864,7 +3864,7 @@ function buildRoundContextsByCategory(matches) {
 }
 
 function applyFilters(matches, args, translations) {
-  let filtered = matches.filter(Boolean).filter((match) => !match.isParaClass);
+  let filtered = matches.filter(Boolean);
 
   if (args.category) {
     const categoryBase = filtered;

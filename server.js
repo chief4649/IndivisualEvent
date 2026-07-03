@@ -2427,9 +2427,6 @@ function summarizeCategories(matches) {
   const categories = [];
 
   for (const match of matches) {
-    if (match.isParaClass) {
-      continue;
-    }
     const value = String(
       match.categoryName || `${match.gender || ""} ${match.discipline || ""}`.trim(),
     ).trim();
@@ -2474,7 +2471,7 @@ function getCategorySummaryMatches(matches, options = {}) {
   const normalizedDiscipline = String(options.discipline || "").trim().toLowerCase();
 
   return (Array.isArray(matches) ? matches : []).filter((match) => {
-    if (!match || match.isParaClass) {
+    if (!match) {
       return false;
     }
 
