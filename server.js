@@ -83,6 +83,8 @@ const TRUST_PROXY = process.env.TRUST_PROXY === "1";
 const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60_000);
 const RATE_LIMIT_MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 60);
 const RATE_LIMIT_MAX_CLIENTS = Number(process.env.RATE_LIMIT_MAX_CLIENTS || 1_000);
+const HEAVY_API_MAX_CONCURRENT = Math.max(Number(process.env.HEAVY_API_MAX_CONCURRENT || 2) || 2, 1);
+const HEAVY_API_MAX_QUEUE = Math.max(Number(process.env.HEAVY_API_MAX_QUEUE || 20) || 20, 0);
 const SKIP_RUNTIME_ARCHIVE_SYNC = process.env.SKIP_RUNTIME_ARCHIVE_SYNC === "1" || process.env.RENDER === "true";
 const VIEWER_COOKIE_NAME = "ttreport_individual_viewer_auth";
 const TEAM_TRANSLATIONS_BASE_URL = String(process.env.TEAM_TRANSLATIONS_BASE_URL || "").trim().replace(/\/+$/, "");
@@ -95,6 +97,8 @@ const REQUEST_BODY_MAX_BYTES = Number(process.env.REQUEST_BODY_MAX_BYTES || 1_04
 const rateLimitStore = new Map();
 const eventNameCache = new Map();
 const processedMatchesCache = new Map();
+let heavyApiActiveCount = 0;
+const heavyApiQueue = [];
 let headToHeadIndexBuildProcess = null;
 let backfill5000Promise = null;
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
@@ -397,6 +401,70 @@ function isRateLimited(request) {
 
   entry.count += 1;
   return entry.count > RATE_LIMIT_MAX_REQUESTS;
+}
+
+function buildHealthPayload() {
+  return {
+    ok: true,
+    adminProtected: Boolean(ADMIN_TOKEN),
+    viewerProtected: Boolean(VIEWER_PASSWORD),
+    runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
+    playerRecords: {
+      source: "wtt-records",
+      archiveMode: "runtime+bundled",
+      parseMode: "raw",
+      candidateMode: "candidate-index+grep-fallback",
+      displayMode: "player-record-org-v4-category-groups-keep-round-order",
+      cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
+    },
+    heavyApi: {
+      active: heavyApiActiveCount,
+      queued: heavyApiQueue.length,
+      maxConcurrent: HEAVY_API_MAX_CONCURRENT,
+      maxQueue: HEAVY_API_MAX_QUEUE,
+    },
+  };
+}
+
+function runHeavyApi(task, response) {
+  const start = () => {
+    heavyApiActiveCount += 1;
+    Promise.resolve()
+      .then(task)
+      .catch((error) => {
+        console.error("[heavy-api]", error?.stack || error);
+        if (!response.headersSent && !response.destroyed) {
+          sendJson(response, 500, {
+            error: createFriendlyErrorMessage(error),
+          });
+        }
+      })
+      .finally(() => {
+        heavyApiActiveCount = Math.max(heavyApiActiveCount - 1, 0);
+        const next = heavyApiQueue.shift();
+        if (next) {
+          setImmediate(next);
+        }
+      });
+  };
+
+  if (heavyApiActiveCount < HEAVY_API_MAX_CONCURRENT) {
+    start();
+    return;
+  }
+
+  if (heavyApiQueue.length >= HEAVY_API_MAX_QUEUE) {
+    sendJson(response, 503, {
+      error: "Server is busy. Please retry shortly.",
+      active: heavyApiActiveCount,
+      queued: heavyApiQueue.length,
+    }, {
+      "retry-after": "3",
+    });
+    return;
+  }
+
+  heavyApiQueue.push(start);
 }
 
 function getBearerToken(request) {
@@ -6108,29 +6176,14 @@ function startServer() {
   const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`);
 
-    if (isRateLimited(request)) {
-      sendJson(response, 429, {
-        error: "Too many requests",
-      });
+    if (request.method === "GET" && requestUrl.pathname === "/api/health") {
+      sendJson(response, 200, buildHealthPayload());
       return;
     }
 
-    if (request.method === "GET" && requestUrl.pathname === "/api/health") {
-      sendJson(response, 200, {
-        ok: true,
-        adminProtected: Boolean(ADMIN_TOKEN),
-        viewerProtected: Boolean(VIEWER_PASSWORD),
-        runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
-        playerRecords: {
-          source: "wtt-records",
-          archiveMode: "runtime+bundled",
-          parseMode: "raw",
-          candidateMode: "candidate-index+grep-fallback",
-          displayMode: "player-record-org-v4-category-groups-keep-round-order",
-          runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
-          bundledArchiveDirExists: fs.existsSync(BUNDLED_WTT_ARCHIVE_DIR),
-          cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
-        },
+    if (isRateLimited(request)) {
+      sendJson(response, 429, {
+        error: "Too many requests",
       });
       return;
     }
@@ -6189,19 +6242,19 @@ function startServer() {
       )
     ) {
       if (requestUrl.pathname === "/api/categories") {
-        handleCategoriesApi(requestUrl, response);
+        runHeavyApi(() => handleCategoriesApi(requestUrl, response), response);
       } else if (requestUrl.pathname === "/api/rounds") {
-        handleRoundsApi(requestUrl, response);
+        runHeavyApi(() => handleRoundsApi(requestUrl, response), response);
       } else if (requestUrl.pathname === "/api/events/search") {
         handleEventSearchApi(requestUrl, response);
       } else if (requestUrl.pathname === "/api/players/search") {
         handlePlayerSearchApi(requestUrl, response);
       } else if (requestUrl.pathname === "/api/players/records") {
-        handlePlayerRecordsApi(requestUrl, response);
+        runHeavyApi(() => handlePlayerRecordsApi(requestUrl, response), response);
       } else if (requestUrl.pathname === "/api/head-to-head") {
-        handleHeadToHeadApi(requestUrl, response);
+        runHeavyApi(() => handleHeadToHeadApi(requestUrl, response), response);
       } else {
-        handleApi(requestUrl, response);
+        runHeavyApi(() => handleApi(requestUrl, response), response);
       }
       return;
     }
