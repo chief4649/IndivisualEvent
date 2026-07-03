@@ -1891,7 +1891,6 @@ function buildOptions(searchParams) {
   const format = pickFormat(searchParams);
   const source = normalizeSource(searchParams.get("source") || "wtt");
   const refreshCache = parseBoolean(searchParams.get("refreshCache"));
-  const useSlimWttArchive = source === "wtt" && !refreshCache;
   const rounds = searchParams.getAll("round").map((value) => String(value || "").trim()).filter(Boolean);
 
   return {
@@ -1914,8 +1913,8 @@ function buildOptions(searchParams) {
     rules: RULES_PATH,
     cacheDir: CACHE_DIR,
     zennihonArchiveDir: ZENNIHON_ARCHIVE_DIR,
-    wttArchiveDir: useSlimWttArchive ? WTT_SLIM_ARCHIVE_DIR : WTT_ARCHIVE_DIR,
-    bundledWttArchiveDir: useSlimWttArchive ? BUNDLED_WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_ARCHIVE_DIR,
+    wttArchiveDir: WTT_ARCHIVE_DIR,
+    bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache,
     omitSetCounts: parseBoolean(searchParams.get("omitSetCounts")),
@@ -3323,7 +3322,7 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
 function getWttRecordFileSnapshot() {
   const recordsByEventId = new Map();
 
-  const addDirectory = (dirPath, slimDirPath, sourcePriority, sourceLabel) => {
+  const addDirectory = (dirPath, sourcePriority, sourceLabel) => {
     try {
       if (!dirPath || !fs.existsSync(dirPath)) {
         return;
@@ -3335,14 +3334,13 @@ function getWttRecordFileSnapshot() {
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(dirPath, fileName);
           const stat = fs.statSync(filePath);
-          const slimFile = getSlimWttRecordFile(filePath, slimDirPath);
           const next = {
             eventId,
             filePath,
-            parseFilePath: slimFile?.filePath || filePath,
-            parseSize: slimFile?.size || stat.size,
-            parseMtimeMs: slimFile?.mtimeMs || Math.trunc(stat.mtimeMs),
-            parseSource: slimFile ? "slim" : "raw",
+            parseFilePath: filePath,
+            parseSize: stat.size,
+            parseMtimeMs: Math.trunc(stat.mtimeMs),
+            parseSource: "raw",
             size: stat.size,
             mtimeMs: Math.trunc(stat.mtimeMs),
             sourcePriority,
@@ -3375,43 +3373,8 @@ function getWttRecordFileSnapshot() {
     }
   };
 
-  const addSlimOnlyDirectory = (slimDirPath, sourcePriority, sourceLabel) => {
-    try {
-      if (!slimDirPath || !fs.existsSync(slimDirPath)) {
-        return;
-      }
-
-      fs.readdirSync(slimDirPath)
-        .filter((fileName) => /^\d+\.json$/.test(fileName))
-        .forEach((fileName) => {
-          const eventId = fileName.replace(/\.json$/, "");
-          if (recordsByEventId.has(eventId)) {
-            return;
-          }
-          const filePath = path.join(slimDirPath, fileName);
-          const stat = fs.statSync(filePath);
-          recordsByEventId.set(eventId, {
-            eventId,
-            filePath,
-            parseFilePath: filePath,
-            parseSize: stat.size,
-            parseMtimeMs: Math.trunc(stat.mtimeMs),
-            parseSource: "slim",
-            size: stat.size,
-            mtimeMs: Math.trunc(stat.mtimeMs),
-            sourcePriority,
-            sourceLabel,
-          });
-        });
-    } catch {
-      // Ignore unreadable slim archive directories.
-    }
-  };
-
-  addDirectory(WTT_ARCHIVE_DIR, WTT_SLIM_ARCHIVE_DIR, 1, "runtime");
-  addDirectory(BUNDLED_WTT_ARCHIVE_DIR, BUNDLED_WTT_SLIM_ARCHIVE_DIR, 2, "bundled");
-  addSlimOnlyDirectory(WTT_SLIM_ARCHIVE_DIR, 1, "runtime-slim");
-  addSlimOnlyDirectory(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 2, "bundled-slim");
+  addDirectory(WTT_ARCHIVE_DIR, 1, "runtime");
+  addDirectory(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled");
 
   return [...recordsByEventId.values()]
     .map(({ sourcePriority, ...file }) => file)
@@ -6164,7 +6127,7 @@ function startServer() {
         playerRecords: {
           source: "wtt-records",
           archiveMode: "runtime+bundled",
-          parseMode: process.env.WTT_SLIM_RECORDS_DISABLED === "1" ? "raw" : "slim-preferred",
+          parseMode: "raw",
           candidateMode: "candidate-index+grep-fallback",
           displayMode: "player-record-org-v4-category-groups-keep-round-order",
           runtimeArchiveDirExists: fs.existsSync(WTT_ARCHIVE_DIR),
