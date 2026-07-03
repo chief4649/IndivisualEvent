@@ -3330,6 +3330,7 @@ const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CAC
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
+const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 
 function getPathStatToken(filePath) {
   try {
@@ -3907,6 +3908,65 @@ function getEventRecordMeta(eventId, searchIndex, dateIndex, archiveIndex, event
   };
 }
 
+function parseDateOnly(value) {
+  const text = String(value || "").trim();
+  const match = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) {
+    return null;
+  }
+  const date = new Date(`${match[1]}-${match[2]}-${match[3]}T00:00:00Z`);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function shouldRefreshLiveEventMeta(meta, now = new Date()) {
+  const startDate = parseDateOnly(meta?.startDate);
+  const endDate = parseDateOnly(meta?.endDate || meta?.startDate);
+  if (!endDate) {
+    return false;
+  }
+
+  const dayMs = 24 * 60 * 60 * 1000;
+  const todayUtc = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const refreshUntil = new Date(endDate.getTime() + LIVE_EVENT_REFRESH_GRACE_DAYS * dayMs);
+  if (todayUtc > refreshUntil) {
+    return false;
+  }
+  if (startDate && todayUtc < new Date(startDate.getTime() - dayMs)) {
+    return false;
+  }
+  return true;
+}
+
+async function getLiveEventSnapshot(file, meta) {
+  if (!file?.eventId || !shouldRefreshLiveEventMeta(meta)) {
+    return null;
+  }
+  try {
+    const result = await getProcessedMatchesCached({
+      source: "wtt",
+      event: String(file.eventId),
+      translations: TRANSLATIONS_PATH,
+      rules: RULES_PATH,
+      cacheDir: CACHE_DIR,
+      wttArchiveDir: WTT_ARCHIVE_DIR,
+      bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+      refreshCache: true,
+    });
+    const normalizedMatches = Array.isArray(result?.normalized) ? result.normalized : [];
+    if (normalizedMatches.length === 0) {
+      return null;
+    }
+    return {
+      ...file,
+      sourceLabel: "live",
+      liveNormalizedMatches: normalizedMatches,
+    };
+  } catch (error) {
+    console.warn(`[live-event-refresh] ${file.eventId} failed:`, error?.message || error);
+    return null;
+  }
+}
+
 function comparePlayerRecordEvents(left, right) {
   const leftDate = toComparableDate(left?.endDate || left?.startDate, true);
   const rightDate = toComparableDate(right?.endDate || right?.startDate, true);
@@ -3948,6 +4008,15 @@ function getFileHashToken(filePath) {
 }
 
 function getParsedPlayerRecordArchive(file, existingText = null) {
+  if (Array.isArray(file?.liveNormalizedMatches)) {
+    const normalizedMatches = file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean);
+    return {
+      normalizedMatches,
+      contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
+      fallbackRoundContext: buildJaRoundContext(normalizedMatches),
+    };
+  }
+
   const parseFilePath = file.parseFilePath || file.filePath;
   const parseSize = file.parseSize || file.size;
   const parseMtimeMs = file.parseMtimeMs || file.mtimeMs;
@@ -5244,6 +5313,47 @@ function getHeadToHeadIndexEventIdsForPlayer(index, playerKeys) {
   return eventIds;
 }
 
+function getHeadToHeadCandidateEventIds(index, playerANeedles, playerBNeedles) {
+  const playerAKeys = getHeadToHeadIndexPlayerKeys(index, playerANeedles);
+  const playerBKeys = getHeadToHeadIndexPlayerKeys(index, playerBNeedles);
+  if (playerAKeys.size === 0 || playerBKeys.size === 0) {
+    return {
+      eventIds: new Set(),
+      playerAKeyCount: playerAKeys.size,
+      playerBKeyCount: playerBKeys.size,
+    };
+  }
+
+  const pairEventIds = new Set();
+  const playerAEventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerAKeys);
+  const playerBEventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerBKeys);
+  const intersectionEventIds = new Set([...playerAEventIds].filter((eventId) => playerBEventIds.has(eventId)));
+  if (index.pairs && typeof index.pairs === "object") {
+    playerAKeys.forEach((playerAKey) => {
+      playerBKeys.forEach((playerBKey) => {
+        const pairKey = getHeadToHeadPairKey(playerAKey, playerBKey);
+        (index.pairs[pairKey] || []).forEach((eventId) => pairEventIds.add(String(eventId)));
+      });
+    });
+  }
+
+  if (pairEventIds.size > 0) {
+    return {
+      eventIds: pairEventIds,
+      liveEventIds: intersectionEventIds,
+      playerAKeyCount: playerAKeys.size,
+      playerBKeyCount: playerBKeys.size,
+    };
+  }
+
+  return {
+    eventIds: intersectionEventIds,
+    liveEventIds: intersectionEventIds,
+    playerAKeyCount: playerAKeys.size,
+    playerBKeyCount: playerBKeys.size,
+  };
+}
+
 function setsIntersect(left, right) {
   for (const value of left) {
     if (right.has(value)) {
@@ -5326,6 +5436,19 @@ function archiveItemMightContainPlayerNeedles(item, needles) {
 }
 
 function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
+  if (Array.isArray(file?.liveNormalizedMatches)) {
+    const allNormalizedMatches = file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean);
+    const normalizedMatches = allNormalizedMatches.filter((item) =>
+        archiveItemMightContainPlayerNeedles(item, playerANeedles) &&
+        archiveItemMightContainPlayerNeedles(item, playerBNeedles),
+      );
+    return {
+      normalizedMatches,
+      contextsByCategory: buildRoundContextsByCategory(allNormalizedMatches),
+      fallbackRoundContext: buildJaRoundContext(allNormalizedMatches),
+    };
+  }
+
   const parseFilePath = file.parseFilePath || file.filePath;
   const text = readTextFile(parseFilePath);
   const payload = parseJsonArrayFromText(text);
@@ -5333,24 +5456,22 @@ function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
     return getParsedPlayerRecordArchive(file, text);
   }
 
+  const allNormalizedMatches = payload.map(normalizeArchivedMatch).filter(Boolean);
   const normalizedMatches = [];
-  for (const item of payload) {
+  for (const match of allNormalizedMatches) {
     if (
-      !archiveItemMightContainPlayerNeedles(item, playerANeedles) ||
-      !archiveItemMightContainPlayerNeedles(item, playerBNeedles)
+      !archiveItemMightContainPlayerNeedles(match, playerANeedles) ||
+      !archiveItemMightContainPlayerNeedles(match, playerBNeedles)
     ) {
       continue;
     }
-    const match = normalizeArchivedMatch(item);
-    if (match) {
-      normalizedMatches.push(match);
-    }
+    normalizedMatches.push(match);
   }
 
   return {
     normalizedMatches,
-    contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
-    fallbackRoundContext: buildJaRoundContext(normalizedMatches),
+    contextsByCategory: buildRoundContextsByCategory(allNormalizedMatches),
+    fallbackRoundContext: buildJaRoundContext(allNormalizedMatches),
   };
 }
 
@@ -5475,6 +5596,42 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
     scannedMatches,
     aWins,
     bWins,
+  };
+}
+
+async function collectLiveHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles, eventIds = null) {
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  const archiveIndex = readWttArchiveIndex();
+  const eventNames = getEventNamesMap();
+  const liveSnapshot = [];
+  const snapshotByEventId = new Map((Array.isArray(snapshot) ? snapshot : []).map((file) => [String(file.eventId), file]));
+  const files = eventIds
+    ? [...eventIds].map((eventId) => snapshotByEventId.get(String(eventId)) || {
+        eventId: String(eventId),
+        sourceLabel: "live",
+      })
+    : (Array.isArray(snapshot) ? snapshot : []);
+
+  for (const file of files) {
+    const meta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
+    if (!shouldRefreshLiveEventMeta(meta)) {
+      continue;
+    }
+    const liveFile = await getLiveEventSnapshot(file, meta);
+    if (liveFile) {
+      liveSnapshot.push(liveFile);
+    }
+  }
+
+  if (liveSnapshot.length === 0) {
+    return null;
+  }
+
+  const collected = await collectHeadToHeadMatches(liveSnapshot, playerANeedles, playerBNeedles);
+  return {
+    ...collected,
+    candidateEventCount: liveSnapshot.length,
   };
 }
 
@@ -5654,9 +5811,8 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     return null;
   }
 
-  const playerAKeys = getHeadToHeadIndexPlayerKeys(index, playerANeedles);
-  const playerBKeys = getHeadToHeadIndexPlayerKeys(index, playerBNeedles);
-  if (playerAKeys.size === 0 || playerBKeys.size === 0) {
+  const candidate = getHeadToHeadCandidateEventIds(index, playerANeedles, playerBNeedles);
+  if (candidate.playerAKeyCount === 0 || candidate.playerBKeyCount === 0) {
     return {
       events: [],
       parsedEvents: 0,
@@ -5664,44 +5820,22 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
       aWins: 0,
       bWins: 0,
       pairCount: 0,
-      playerAKeyCount: playerAKeys.size,
-      playerBKeyCount: playerBKeys.size,
+      playerAKeyCount: candidate.playerAKeyCount,
+      playerBKeyCount: candidate.playerBKeyCount,
     };
   }
 
-  const playerAEventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerAKeys);
-  const playerBEventIds = getHeadToHeadIndexEventIdsForPlayer(index, playerBKeys);
-  const pairEventIds = new Set();
-  if (index.pairs && typeof index.pairs === "object") {
-    playerAKeys.forEach((playerAKey) => {
-      playerBKeys.forEach((playerBKey) => {
-        const pairKey = getHeadToHeadPairKey(playerAKey, playerBKey);
-        (index.pairs[pairKey] || []).forEach((eventId) => pairEventIds.add(String(eventId)));
-      });
-    });
-  }
-  if (pairEventIds.size > 0) {
-    const candidateSnapshot = snapshot.filter((file) => pairEventIds.has(String(file.eventId)));
-    const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
-    return {
-      ...collected,
-      candidateEventCount: candidateSnapshot.length,
-      pairCount: pairEventIds.size,
-      playerAKeyCount: playerAKeys.size,
-      playerBKeyCount: playerBKeys.size,
-    };
-  }
-
-  const candidateEventIds = new Set([...playerAEventIds].filter((eventId) => playerBEventIds.has(eventId)));
-  const candidateSnapshot = snapshot.filter((file) => candidateEventIds.has(String(file.eventId)));
+  const candidateSnapshot = snapshot.filter((file) => candidate.eventIds.has(String(file.eventId)));
   const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
 
   return {
     ...collected,
     candidateEventCount: candidateSnapshot.length,
-    pairCount: candidateEventIds.size,
-    playerAKeyCount: playerAKeys.size,
-    playerBKeyCount: playerBKeys.size,
+    pairCount: candidate.eventIds.size,
+    candidateEventIds: [...candidate.eventIds],
+    liveCandidateEventIds: [...(candidate.liveEventIds || candidate.eventIds)],
+    playerAKeyCount: candidate.playerAKeyCount,
+    playerBKeyCount: candidate.playerBKeyCount,
   };
 }
 
@@ -5715,7 +5849,12 @@ function mergeHeadToHeadCollectedResults(primary, extra) {
       ...event,
       matches: [],
     };
-    current.matches.push(...(event.matches || []));
+    for (const match of event.matches || []) {
+      const matchId = getPlayerRecordIndexMatchId(match);
+      if (!current.matches.some((existing) => getPlayerRecordIndexMatchId(existing) === matchId)) {
+        current.matches.push(match);
+      }
+    }
     eventsById.set(event.event, current);
   });
   const events = [...eventsById.values()].map((event) => {
@@ -5760,6 +5899,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
     let indexed = await collectHeadToHeadMatchesFromPersistentIndex(persistentIndex, playerANeedles, playerBNeedles, snapshot);
     if (indexed) {
       let deltaEventCount = 0;
+      let liveEventCount = 0;
       if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
         const indexedEventIds = new Set(persistentIndex.eventIds);
         const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
@@ -5769,11 +5909,24 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
           indexed = mergeHeadToHeadCollectedResults(indexed, delta);
         }
       }
+      const live = await collectLiveHeadToHeadMatches(
+        snapshot,
+        playerANeedles,
+        playerBNeedles,
+        indexed.liveCandidateEventIds || indexed.candidateEventIds,
+      );
+      if (live) {
+        liveEventCount = live.candidateEventCount || 0;
+        indexed = mergeHeadToHeadCollectedResults(indexed, live);
+      }
       const result = {
         signature: persistentIndexSignature,
         builtAt: Date.now(),
         eventIndexSource: "head-to-head-index",
-        candidateIndexSource: persistentIndex.stale ? "head-to-head-index+delta" : "head-to-head-index",
+        candidateIndexSource: [
+          persistentIndex.stale ? "head-to-head-index+delta" : "head-to-head-index",
+          liveEventCount > 0 ? "live-refresh" : "",
+        ].filter(Boolean).join("+"),
         candidateIndexGeneratedAt: persistentIndex.generatedAt,
         eventIndexGeneratedAt: null,
         scannedEvents: snapshot.length,
@@ -5781,6 +5934,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
         playerAEventCount: indexed.playerAKeyCount,
         playerBEventCount: indexed.playerBKeyCount,
         deltaEvents: deltaEventCount,
+        liveEvents: liveEventCount,
         ...indexed,
         cacheHit: false,
       };
@@ -5813,18 +5967,28 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
     candidateIndexSource = "all";
   }
 
-  const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
+  let collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
+  let liveEventCount = 0;
+  const live = await collectLiveHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
+  if (live) {
+    liveEventCount = live.candidateEventCount || 0;
+    collected = mergeHeadToHeadCollectedResults(collected, live);
+  }
   const result = {
     signature,
     builtAt: Date.now(),
     eventIndexSource: "wtt-records",
-    candidateIndexSource,
+    candidateIndexSource: [
+      candidateIndexSource,
+      liveEventCount > 0 ? "live-refresh" : "",
+    ].filter(Boolean).join("+"),
     candidateIndexGeneratedAt,
     eventIndexGeneratedAt: null,
     scannedEvents: snapshot.length,
     candidateEvents: candidateSnapshot.length,
     playerAEventCount,
     playerBEventCount,
+    liveEvents: liveEventCount,
     ...collected,
     cacheHit: false,
   };
