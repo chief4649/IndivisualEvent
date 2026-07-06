@@ -91,6 +91,7 @@ const TEAM_TRANSLATIONS_BASE_URL = String(process.env.TEAM_TRANSLATIONS_BASE_URL
 const TEAM_TRANSLATIONS_ADMIN_TOKEN = process.env.TEAM_TRANSLATIONS_ADMIN_TOKEN || "";
 const TEAM_TRANSLATIONS_VIEWER_PASSWORD = process.env.TEAM_TRANSLATIONS_VIEWER_PASSWORD || "";
 const SHARED_TRANSLATIONS_TIMEOUT_MS = Number(process.env.SHARED_TRANSLATIONS_TIMEOUT_MS || 8000);
+const SHARED_TRANSLATIONS_SYNC_TTL_MS = Number(process.env.SHARED_TRANSLATIONS_SYNC_TTL_MS || 60_000);
 const EVENT_NAME_CACHE_MAX_ENTRIES = Number(process.env.EVENT_NAME_CACHE_MAX_ENTRIES || 500);
 const PROCESSED_MATCHES_CACHE_MAX_ENTRIES = Number(process.env.PROCESSED_MATCHES_CACHE_MAX_ENTRIES || 3);
 const REQUEST_BODY_MAX_BYTES = Number(process.env.REQUEST_BODY_MAX_BYTES || 1_048_576);
@@ -101,6 +102,8 @@ let heavyApiActiveCount = 0;
 const heavyApiQueue = [];
 let headToHeadIndexBuildProcess = null;
 let backfill5000Promise = null;
+let translationsLastSyncAt = 0;
+let translationsLastSyncMeta = null;
 const EVENT_NAME_API_KEY = "S_WTT_882jjh7basdj91834783mds8j2jsd81";
 const PROCESSED_MATCHES_CACHE_TTL_MS = Number(process.env.PROCESSED_MATCHES_CACHE_TTL_MS || 15_000);
 const STORAGE_MANAGED_FILES = [
@@ -312,9 +315,24 @@ async function syncTranslationsFromSharedSource(force = false) {
   if (!hasSharedTranslationsSource()) {
     return { synced: false, source: "local", reason: "shared_source_disabled" };
   }
+  const now = Date.now();
+  if (
+    !force &&
+    translationsLastSyncMeta &&
+    SHARED_TRANSLATIONS_SYNC_TTL_MS > 0 &&
+    now - translationsLastSyncAt < SHARED_TRANSLATIONS_SYNC_TTL_MS
+  ) {
+    return {
+      ...translationsLastSyncMeta,
+      cacheHit: true,
+    };
+  }
   if (!force && translationsSyncPromise) {
     await translationsSyncPromise;
-    return { synced: true, source: "shared" };
+    return {
+      ...(translationsLastSyncMeta || { synced: true, source: "shared" }),
+      cacheHit: true,
+    };
   }
   translationsSyncPromise = (async () => {
     const translations = await fetchSharedTranslations();
@@ -324,14 +342,20 @@ async function syncTranslationsFromSharedSource(force = false) {
     return { synced: Boolean(translations), source: "shared" };
   })();
   try {
-    return await translationsSyncPromise;
+    const result = await translationsSyncPromise;
+    translationsLastSyncAt = Date.now();
+    translationsLastSyncMeta = result;
+    return result;
   } catch (error) {
     console.error(`[translations sync] ${error.message}`);
-    return {
+    const result = {
       synced: false,
       source: "local",
       reason: error.message,
     };
+    translationsLastSyncAt = Date.now();
+    translationsLastSyncMeta = result;
+    return result;
   } finally {
     translationsSyncPromise = null;
   }
@@ -427,7 +451,15 @@ function buildHealthPayload() {
 }
 
 function runHeavyApi(task, response) {
+  let queued = false;
+  let started = false;
+  let cancelled = false;
   const start = () => {
+    queued = false;
+    if (cancelled || response.destroyed) {
+      return;
+    }
+    started = true;
     heavyApiActiveCount += 1;
     Promise.resolve()
       .then(task)
@@ -448,6 +480,17 @@ function runHeavyApi(task, response) {
       });
   };
 
+  response.once("close", () => {
+    if (!queued || started) {
+      return;
+    }
+    cancelled = true;
+    const index = heavyApiQueue.indexOf(start);
+    if (index >= 0) {
+      heavyApiQueue.splice(index, 1);
+    }
+  });
+
   if (heavyApiActiveCount < HEAVY_API_MAX_CONCURRENT) {
     start();
     return;
@@ -464,6 +507,7 @@ function runHeavyApi(task, response) {
     return;
   }
 
+  queued = true;
   heavyApiQueue.push(start);
 }
 
