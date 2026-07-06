@@ -1679,6 +1679,85 @@ function matchesSearchQuery(eventId, eventName, query, extraValues = []) {
   });
 }
 
+function getSearchQueryScore(eventId, eventName, query, extraValues = []) {
+  const rawQuery = String(query || "").trim();
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) {
+    return 0;
+  }
+
+  const normalizedEventId = String(eventId || "").trim().toLowerCase();
+  const normalizedName = normalizeSearchText(eventName);
+  const normalizedExtraValues = extraValues
+    .map((value) => normalizeSearchText(value))
+    .filter(Boolean);
+  const isDateLikeQuery = isDateLikeSearchQuery(rawQuery, normalizedQuery);
+  if (isDateLikeQuery) {
+    if (normalizedEventId === normalizedQuery) return 0;
+    if (normalizedExtraValues.some((value) => value === normalizedQuery)) return 1;
+    return 99;
+  }
+
+  const haystack = `${normalizedEventId} ${normalizedName} ${normalizedExtraValues.join(" ")}`.trim();
+  const queryTokens = normalizedQuery.split(/\s+/).filter(Boolean);
+  if (normalizedEventId === normalizedQuery) return 0;
+  if (/^\d+$/.test(normalizedQuery) && normalizedEventId.includes(normalizedQuery)) return 1;
+  if (normalizedName === normalizedQuery) return 2;
+  if (normalizedName.includes(normalizedQuery)) return 3;
+  if (haystack.includes(normalizedQuery)) return 4;
+
+  const haystackTokens = haystack.split(/\s+/).filter(Boolean);
+  if (queryTokens.length > 0 && queryTokens.every((token) => haystackTokens.includes(token))) {
+    return 5;
+  }
+  if (queryTokens.length > 0 && queryTokens.every((token) => haystackTokens.some((value) => value.includes(token)))) {
+    return 6;
+  }
+  return 99;
+}
+
+function compareSearchEventsByRecency(left, right) {
+  const leftStart = toComparableDate(left?.startDate, false);
+  const rightStart = toComparableDate(right?.startDate, false);
+  if (leftStart && rightStart && leftStart.getTime() !== rightStart.getTime()) {
+    return rightStart - leftStart;
+  }
+  if (leftStart && !rightStart) {
+    return -1;
+  }
+  if (!leftStart && rightStart) {
+    return 1;
+  }
+
+  const leftEnd = toComparableDate(left?.endDate, true);
+  const rightEnd = toComparableDate(right?.endDate, true);
+  if (leftEnd && rightEnd && leftEnd.getTime() !== rightEnd.getTime()) {
+    return rightEnd - leftEnd;
+  }
+  if (leftEnd && !rightEnd) {
+    return -1;
+  }
+  if (!leftEnd && rightEnd) {
+    return 1;
+  }
+
+  return String(right?.event || "").localeCompare(String(left?.event || ""), "en", { numeric: true });
+}
+
+function compareSearchEventsForQuery(left, right, query) {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery || isDateLikeSearchQuery(query, normalizedQuery)) {
+    return compareSearchEvents(left, right);
+  }
+
+  const leftScore = getSearchQueryScore(left.event, left.eventName, query, left.searchValues || []);
+  const rightScore = getSearchQueryScore(right.event, right.eventName, query, right.searchValues || []);
+  if (leftScore !== rightScore) {
+    return leftScore - rightScore;
+  }
+  return compareSearchEventsByRecency(left, right);
+}
+
 function buildSearchableEvents(source, query) {
   const normalizedSource = normalizeSource(source);
   const eventNames = getEventNamesMap();
@@ -1721,13 +1800,12 @@ function buildSearchableEvents(source, query) {
     );
     const name = String(mergedEntry?.eventName || mergedEntry?.title || eventNames[eventId] || "");
     const dateLabel = formatDateRange(mergedEntry?.startDate, mergedEntry?.endDate);
+    const searchValues = buildDateSearchValues(mergedEntry?.startDate, mergedEntry?.endDate, dateLabel);
     if (!shouldDisplayWttSearchEntry(name)) {
       return;
     }
     if (
-      matchesSearchQuery(eventId, name, query, [
-        ...buildDateSearchValues(mergedEntry?.startDate, mergedEntry?.endDate, dateLabel),
-      ])
+      matchesSearchQuery(eventId, name, query, searchValues)
     ) {
       results.push({
         source: normalizedSource,
@@ -1746,13 +1824,15 @@ function buildSearchableEvents(source, query) {
         ),
         series: mergedEntry?.series || classifyWttSeries(name),
         governingBody: classifyWttGoverningBody(name),
+        searchValues,
       });
     }
   });
 
   return results
-    .sort(compareSearchEvents)
-    .slice(0, 50);
+    .sort((left, right) => compareSearchEventsForQuery(left, right, query))
+    .slice(0, 50)
+    .map(({ searchValues, ...event }) => event);
 }
 
 function classifyWttSeries(eventName) {
