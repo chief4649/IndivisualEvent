@@ -816,6 +816,46 @@ function getStorageLookup(source, eventId) {
   };
 }
 
+function syncBundledRecordToRuntime(source, eventId) {
+  const normalizedSource = normalizeSource(source || "wtt");
+  const normalizedId = String(eventId || "").trim();
+  if (!/^[A-Za-z0-9_-]+$/.test(normalizedId)) {
+    const error = new Error("event must be a simple event id.");
+    error.statusCode = 400;
+    throw error;
+  }
+  if (normalizedSource !== "wtt") {
+    const error = new Error("Bundled record sync currently supports WTT records only.");
+    error.statusCode = 400;
+    throw error;
+  }
+
+  const sourcePath = path.join(BUNDLED_WTT_ARCHIVE_DIR, `${normalizedId}.json`);
+  const targetPath = path.join(WTT_ARCHIVE_DIR, `${normalizedId}.json`);
+  if (!fs.existsSync(sourcePath)) {
+    const error = new Error(`Bundled record not found: ${normalizedId}.json`);
+    error.statusCode = 404;
+    throw error;
+  }
+
+  ensureDir(WTT_ARCHIVE_DIR);
+  fs.copyFileSync(sourcePath, targetPath);
+  clearProcessedMatchesCache();
+  clearPlayerRecordResultCache();
+  clearHeadToHeadResultCache();
+  clearPlayerRecordArchiveParseCache();
+
+  return {
+    source: normalizedSource,
+    eventId: normalizedId,
+    copied: true,
+    from: sourcePath,
+    to: targetPath,
+    runtime: getFileMeta(targetPath, { includeSha256: false }),
+    bundled: getFileMeta(sourcePath, { includeSha256: false }),
+  };
+}
+
 function buildStorageStatus(options = {}) {
   const source = normalizeSource(options.source || "wtt");
   const eventId = String(options.event || "").trim();
@@ -2182,6 +2222,23 @@ function handleAdminSyncManifest(request, response) {
     }));
   } catch (error) {
     sendJson(response, 500, { error: createFriendlyErrorMessage(error) });
+  }
+  return true;
+}
+
+function handleAdminSyncBundledRecord(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+  try {
+    const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+    const result = syncBundledRecordToRuntime(
+      searchParams.get("source") || "wtt",
+      searchParams.get("event") || "",
+    );
+    sendJson(response, 200, result);
+  } catch (error) {
+    sendJson(response, error.statusCode || 500, { error: createFriendlyErrorMessage(error) });
   }
   return true;
 }
@@ -6456,6 +6513,9 @@ async function handleConfigUpdate(request, response, pathname) {
 function handleAdminPost(request, response, pathname) {
   if (pathname === "/api/admin/backfill-5000-records") {
     return handleAdminBackfill5000Start(request, response);
+  }
+  if (pathname === "/api/admin/sync-bundled-record") {
+    return handleAdminSyncBundledRecord(request, response);
   }
   return false;
 }
