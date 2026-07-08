@@ -1866,7 +1866,9 @@ function buildSearchableEvents(source, query) {
           name,
         ),
         series: mergedEntry?.series || classifyWttSeries(name),
-        governingBody: classifyWttGoverningBody(name),
+        governingBody: /^TTE\d+$/i.test(eventId) || mergedEntry?.source === "ittf"
+          ? "ITTF"
+          : classifyWttGoverningBody(name),
         searchValues,
       });
     }
