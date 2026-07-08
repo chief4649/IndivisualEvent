@@ -3551,7 +3551,7 @@ function enrichWttTeamMatchesWithArchivedDetails(matches, archivedMatches) {
 
 
 function isLikelyBornanFallbackCandidate(eventId) {
-  return /^\d+$/.test(String(eventId || "").trim());
+  return /^(?:TTE)?\d+$/i.test(String(eventId || "").trim());
 }
 
 async function getWttEventLifecycleMeta(eventId, options = {}) {
@@ -3622,6 +3622,11 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
 }
 
 async function fetchWttOfficialResults(eventId, take, options = {}) {
+  if (/^TTE\d+$/i.test(String(eventId || "").trim())) {
+    const bornanPayload = await fetchBornanOfficialResults(eventId);
+    return Array.isArray(bornanPayload) ? bornanPayload : [];
+  }
+
   const webgenPayload = await fetchWebgenOfficialResults(eventId);
   if (Array.isArray(webgenPayload)) {
     return webgenPayload;

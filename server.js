@@ -991,13 +991,13 @@ function getStoredWttIndexedName(eventId) {
 
 function shouldPreferStoredWttEventName(eventId, indexedName = "") {
   const normalizedId = String(eventId || "").trim();
-  if (!/^\d+$/.test(normalizedId) || !String(indexedName || "").trim()) {
+  if (!/^(?:TTE)?\d+$/i.test(normalizedId) || !String(indexedName || "").trim()) {
     return false;
   }
 
   // Historical ITTF/Bornan numeric IDs can collide with newer WTT event-name API IDs.
   // If we already have an indexed name for old IDs, it is more reliable than GetEventName.
-  return Number(normalizedId) < 3000;
+  return /^TTE/i.test(normalizedId) || Number(normalizedId) < 3000;
 }
 
 function isWttTeamEventName(eventName) {
@@ -1066,6 +1066,9 @@ function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
   const normalizedId = String(eventId || "").trim();
   if (!normalizedId) {
     return "";
+  }
+  if (/^TTE\d+$/i.test(normalizedId)) {
+    return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
   }
   if (WTT_EVENT_PUBLIC_URLS[normalizedId]) {
     return WTT_EVENT_PUBLIC_URLS[normalizedId];
@@ -3576,7 +3579,7 @@ function getWttRecordFileSnapshot() {
       }
 
       fs.readdirSync(dirPath)
-        .filter((fileName) => /^\d+\.json$/.test(fileName))
+        .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
         .forEach((fileName) => {
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(dirPath, fileName);

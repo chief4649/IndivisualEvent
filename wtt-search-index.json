@@ -11987,6 +11987,18 @@
     "series": "Other",
     "verifiedAt": "2026-04-09T06:31:20.473Z"
   },
+  "21027": {
+    "event": "21027",
+    "eventName": "Pan American Veteran Championships",
+    "startDate": "2021-11-30",
+    "endDate": "2021-11-30",
+    "dateLabel": "2021/11/30-30",
+    "archived": false,
+    "status": "finished",
+    "source": "calendar",
+    "series": "Other",
+    "verifiedAt": "2026-04-09T06:31:20.473Z"
+  },
   "wmc2026": {
     "event": "wmc2026",
     "eventName": "ITTF World Masters Championships Gangneung 2026",
@@ -11999,16 +12011,16 @@
     "series": "Other",
     "verifiedAt": "2026-06-19T00:00:00.000Z"
   },
-  "21027": {
-    "event": "21027",
-    "eventName": "Pan American Veteran Championships",
-    "startDate": "2021-11-30",
-    "endDate": "2021-11-30",
-    "dateLabel": "2021/11/30-30",
-    "archived": false,
+  "TTE2879": {
+    "event": "TTE2879",
+    "eventName": "2018 World Junior Championships",
+    "startDate": "2018-12-02",
+    "endDate": "2018-12-09",
+    "dateLabel": "2018/12/2-9",
+    "archived": true,
     "status": "finished",
-    "source": "calendar",
-    "series": "Other",
-    "verifiedAt": "2026-04-09T06:31:20.473Z"
+    "source": "ittf",
+    "series": "World Junior Championships",
+    "verifiedAt": "2026-07-08T04:30:17.337Z"
   }
 }
