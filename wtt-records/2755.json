@@ -1,0 +1,2178 @@
+[
+  {
+    "iD": 5726763,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------FNL-000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "106050",
+          "competitiorName": "MENGEL Steffen",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "106050",
+              "playerName": "MENGEL Steffen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,12,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121408",
+          "competitiorName": "LIU Dingshuo",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121408",
+              "playerName": "LIU Dingshuo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,10,9,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "10-12,12-10,11-9,11-9,0-0",
+      "resultsGameScores": "10-12,12-10,11-9,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121408",
+        "serverReceiver": "106050",
+        "serverNext": "121408",
+        "serverCompetitor": "121408",
+        "receiverNext": "106050"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:48:01",
+        "startDateLocal": "12/01/2023 17:45:00",
+        "startDateUTC": "12/01/2023 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "231",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T17:45:00"
+  },
+  {
+    "iD": 5726108,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------FNL-000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "111849",
+          "competitiorName": "SHAN Xiaona",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111849",
+              "playerName": "SHAN Xiaona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,11,9,11,10",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "119730",
+          "competitiorName": "HE Zhuojia",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119730",
+              "playerName": "HE Zhuojia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,11,9,12",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "9-11,11-7,9-11,11-9,10-12",
+      "resultsGameScores": "9-11,11-7,9-11,11-9,10-12",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111849",
+        "serverReceiver": "119730",
+        "serverNext": "111849",
+        "serverCompetitor": "111849",
+        "receiverNext": "119730"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:54:19",
+        "startDateLocal": "12/01/2023 17:10:00",
+        "startDateUTC": "12/01/2023 16:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "288",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T17:10:00"
+  },
+  {
+    "iD": 5725206,
+    "eventId": "2755",
+    "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMDOUBLES-----------FNL-000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100118480",
+          "competitiorName": "WALTHER Ricardo/MEISSNER Cedric",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "109946",
+              "playerName": "WALTHER Ricardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133455",
+              "playerName": "MEISSNER Cedric",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,11,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "62737",
+          "competitiorName": "YU Ziyang/ZHOU Kai",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119532",
+              "playerName": "YU Ziyang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "117345",
+              "playerName": "ZHOU Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "9,12,6,8,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "11-9,10-12,11-6,11-8,0-0",
+      "resultsGameScores": "11-9,10-12,11-6,11-8,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "119532",
+        "serverReceiver": "109946",
+        "serverNext": "119532",
+        "serverCompetitor": "62737",
+        "receiverNext": "109946"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:30:00",
+        "startDateLocal": "12/01/2023 16:35:00",
+        "startDateUTC": "12/01/2023 15:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "214",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T16:35:00"
+  },
+  {
+    "iD": 5724477,
+    "eventId": "2755",
+    "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWDOUBLES-----------FNL-000100----------",
+      "subEventName": "Women's Doubles",
+      "subEventDescription": "Women's Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "36125",
+          "competitiorName": "MATELOVA Hana/BALAZOVA Barbora",
+          "competitiorOrg": "CZE/SVK",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "105913",
+              "playerName": "MATELOVA Hana",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CZE",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "100868",
+              "playerName": "BALAZOVA Barbora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "SVK",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,12,7,6,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100118439",
+          "competitiorName": "HE Zhuojia/WANG Tianyi",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119730",
+              "playerName": "HE Zhuojia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133528",
+              "playerName": "WANG Tianyi",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,12-10,7-11,6-11,0-0",
+      "resultsGameScores": "5-11,12-10,7-11,6-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "119730",
+        "serverReceiver": "100868",
+        "serverNext": "119730",
+        "serverCompetitor": "100118439",
+        "receiverNext": "100868"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:31:35",
+        "startDateLocal": "12/01/2023 16:00:00",
+        "startDateUTC": "12/01/2023 15:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "211",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T16:00:00"
+  },
+  {
+    "iD": 5722126,
+    "eventId": "2755",
+    "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEXDOUBLES-----------FNL-000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Final - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "76744",
+          "competitiorName": "ZHOU Kai/HE Zhuojia",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117345",
+              "playerName": "ZHOU Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "119730",
+              "playerName": "HE Zhuojia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,12,11,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "46380",
+          "competitiorName": "MEISSNER Cedric/WAN Yuan",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133455",
+              "playerName": "MEISSNER Cedric",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "118777",
+              "playerName": "WAN Yuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,6,10,9,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "10-12,11-6,12-10,11-9,0-0",
+      "resultsGameScores": "10-12,11-6,12-10,11-9,0-0",
+      "overallScores": "3-1",
+      "resultOverallScores": "3-1",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117345",
+        "serverReceiver": "118777",
+        "serverNext": "117345",
+        "serverCompetitor": "76744",
+        "receiverNext": "118777"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:36:24",
+        "startDateLocal": "12/01/2023 12:20:00",
+        "startDateUTC": "12/01/2023 11:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "243",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T12:20:00"
+  },
+  {
+    "iD": 5720903,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------SFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121408",
+          "competitiorName": "LIU Dingshuo",
+          "competitiorOrg": "CHN",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121408",
+              "playerName": "LIU Dingshuo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "13,11,9,8,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134442",
+          "competitiorName": "SHINOZUKA Hiroto",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134442",
+              "playerName": "SHINOZUKA Hiroto",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,4,11,11,6",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "13-11,11-4,9-11,8-11,11-6",
+      "resultsGameScores": "13-11,11-4,9-11,8-11,11-6",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121408",
+        "serverReceiver": "134442",
+        "serverNext": "121408",
+        "serverCompetitor": "121408",
+        "receiverNext": "134442"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:54:34",
+        "startDateLocal": "12/01/2023 11:45:00",
+        "startDateUTC": "12/01/2023 10:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "270",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T11:45:00"
+  },
+  {
+    "iD": 5719460,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------SFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "117345",
+          "competitiorName": "ZHOU Kai",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117345",
+              "playerName": "ZHOU Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,6,4,7,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "106050",
+          "competitiorName": "MENGEL Steffen",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "106050",
+              "playerName": "MENGEL Steffen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,11,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "12-10,6-11,4-11,7-11,0-0",
+      "resultsGameScores": "12-10,6-11,4-11,7-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "106050",
+        "serverReceiver": "117345",
+        "serverNext": "106050",
+        "serverCompetitor": "106050",
+        "receiverNext": "117345"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:34:17",
+        "startDateLocal": "12/01/2023 11:10:00",
+        "startDateUTC": "12/01/2023 10:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "207",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T11:10:00"
+  },
+  {
+    "iD": 5718191,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------SFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123120",
+          "competitiorName": "SHI Xunyao",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123120",
+              "playerName": "SHI Xunyao",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "10,8,11,11,5",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "111849",
+          "competitiorName": "SHAN Xiaona",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111849",
+              "playerName": "SHAN Xiaona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "12,11,8,7,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "10-12,8-11,11-8,11-7,5-11",
+      "resultsGameScores": "10-12,8-11,11-8,11-7,5-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111849",
+        "serverReceiver": "123120",
+        "serverNext": "111849",
+        "serverCompetitor": "111849",
+        "receiverNext": "123120"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:23",
+        "startDateLocal": "12/01/2023 10:35:00",
+        "startDateUTC": "12/01/2023 09:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "261",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T10:35:00"
+  },
+  {
+    "iD": 5716691,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------SFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "119730",
+          "competitiorName": "HE Zhuojia",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119730",
+              "playerName": "HE Zhuojia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "111066",
+          "competitiorName": "WINTER Sabine",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111066",
+              "playerName": "WINTER Sabine",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "6,9,5,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-6,11-9,11-5,0-0,0-0",
+      "resultsGameScores": "11-6,11-9,11-5,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111066",
+        "serverReceiver": "119730",
+        "serverNext": "111066",
+        "serverCompetitor": "111066",
+        "receiverNext": "119730"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:26:45",
+        "startDateLocal": "12/01/2023 10:00:00",
+        "startDateUTC": "12/01/2023 09:00:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "160",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-12-01T10:00:00"
+  },
+  {
+    "iD": 5713355,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------QFNL000100----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "114715",
+          "competitiorName": "QIU Dang",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "6,12,10,11,9",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "117345",
+          "competitiorName": "ZHOU Kai",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117345",
+              "playerName": "ZHOU Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,12,6,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "6-11,12-10,10-12,11-6,9-11",
+      "resultsGameScores": "6-11,12-10,10-12,11-6,9-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "114715",
+        "serverReceiver": "117345",
+        "serverNext": "114715",
+        "serverCompetitor": "114715",
+        "receiverNext": "117345"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:42:30",
+        "startDateLocal": "11/30/2023 18:20:00",
+        "startDateUTC": "11/30/2023 17:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "265",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T18:20:00"
+  },
+  {
+    "iD": 5712743,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------QFNL000200----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "121514",
+          "competitiorName": "AN Jaehyun",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121514",
+              "playerName": "AN Jaehyun",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,11,7,9,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "106050",
+          "competitiorName": "MENGEL Steffen",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "106050",
+              "playerName": "MENGEL Steffen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,9,11,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "5-11,11-9,7-11,9-11,0-0",
+      "resultsGameScores": "5-11,11-9,7-11,9-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "106050",
+        "serverReceiver": "121514",
+        "serverNext": "106050",
+        "serverCompetitor": "106050",
+        "receiverNext": "121514"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:46",
+        "startDateLocal": "11/30/2023 18:20:00",
+        "startDateUTC": "11/30/2023 17:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "207",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T18:20:00"
+  },
+  {
+    "iD": 5712086,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------QFNL000400----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "116820",
+          "competitiorName": "PARK Ganghyeon",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "116820",
+              "playerName": "PARK Ganghyeon",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "8,11,11,8,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "134442",
+          "competitiorName": "SHINOZUKA Hiroto",
+          "competitiorOrg": "JPN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "134442",
+              "playerName": "SHINOZUKA Hiroto",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "JPN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,7,13,11,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 4,
+      "full_msg": null,
+      "gameScores": "8-11,11-7,11-13,8-11,0-0",
+      "resultsGameScores": "8-11,11-7,11-13,8-11,0-0",
+      "overallScores": "1-3",
+      "resultOverallScores": "1-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "134442",
+        "serverReceiver": "116820",
+        "serverNext": "134442",
+        "serverCompetitor": "134442",
+        "receiverNext": "116820"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:35:34",
+        "startDateLocal": "11/30/2023 18:20:00",
+        "startDateUTC": "11/30/2023 17:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "224",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T18:20:00"
+  },
+  {
+    "iD": 5711857,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------QFNL000300----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "133814",
+          "competitiorName": "KIM Nayeong",
+          "competitiorOrg": "KOR",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133814",
+              "playerName": "KIM Nayeong",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KOR",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "5,15,9,11,7",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "119730",
+          "competitiorName": "HE Zhuojia",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "119730",
+              "playerName": "HE Zhuojia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,13,11,8,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "5-11,15-13,9-11,11-8,7-11",
+      "resultsGameScores": "5-11,15-13,9-11,11-8,7-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133814",
+        "serverReceiver": "119730",
+        "serverNext": "133814",
+        "serverCompetitor": "133814",
+        "receiverNext": "119730"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:50:04",
+        "startDateLocal": "11/30/2023 17:45:00",
+        "startDateUTC": "11/30/2023 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "280",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T17:45:00"
+  },
+  {
+    "iD": 5711446,
+    "eventId": "2755",
+    "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+    "messagePayload": null,
+    "subEventType": "Men Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMSINGLES-----------QFNL000300----------",
+      "subEventName": "Men's Singles",
+      "subEventDescription": "Men's Singles - Quarterfinal - Match 3",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "117890",
+          "competitiorName": "GERASSIMENKO Kirill",
+          "competitiorOrg": "KAZ",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117890",
+              "playerName": "GERASSIMENKO Kirill",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "KAZ",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "9,10,4,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "121408",
+          "competitiorName": "LIU Dingshuo",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "121408",
+              "playerName": "LIU Dingshuo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,11,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "9-11,10-12,4-11,0-0,0-0",
+      "resultsGameScores": "9-11,10-12,4-11,0-0,0-0",
+      "overallScores": "0-3",
+      "resultOverallScores": "0-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "121408",
+        "serverReceiver": "117890",
+        "serverNext": "121408",
+        "serverCompetitor": "121408",
+        "receiverNext": "117890"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:33:17",
+        "startDateLocal": "11/30/2023 18:20:00",
+        "startDateUTC": "11/30/2023 17:20:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "158",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T18:20:00"
+  },
+  {
+    "iD": 5711115,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------QFNL000400----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 4",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "136101",
+          "competitiorName": "WU Yangchen",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "136101",
+              "playerName": "WU Yangchen",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,11,4,4,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "111066",
+          "competitiorName": "WINTER Sabine",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111066",
+              "playerName": "WINTER Sabine",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,8,11,11,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,11-8,4-11,4-11,8-11",
+      "resultsGameScores": "11-8,11-8,4-11,4-11,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111066",
+        "serverReceiver": "136101",
+        "serverNext": "111066",
+        "serverCompetitor": "111066",
+        "receiverNext": "136101"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:38:31",
+        "startDateLocal": "11/30/2023 17:45:00",
+        "startDateUTC": "11/30/2023 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "232",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T17:45:00"
+  },
+  {
+    "iD": 5710373,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------QFNL000100----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T04",
+      "tableName": "Table 4",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "123120",
+          "competitiorName": "SHI Xunyao",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "123120",
+              "playerName": "SHI Xunyao",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "11,8,6,11,11",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "113701",
+          "competitiorName": "EERLAND Britt",
+          "competitiorOrg": "NED",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "113701",
+              "playerName": "EERLAND Britt",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "NED",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,11,11,4,3",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-5,8-11,6-11,11-4,11-3",
+      "resultsGameScores": "11-5,8-11,6-11,11-4,11-3",
+      "overallScores": "3-2",
+      "resultOverallScores": "3-2",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "113701",
+        "serverReceiver": "123120",
+        "serverNext": "113701",
+        "serverCompetitor": "113701",
+        "receiverNext": "123120"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:37:47",
+        "startDateLocal": "11/30/2023 17:45:00",
+        "startDateUTC": "11/30/2023 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "213",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T17:45:00"
+  },
+  {
+    "iD": 5709689,
+    "eventId": "2755",
+    "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Women Singles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEWSINGLES-----------QFNL000200----------",
+      "subEventName": "Women's Singles",
+      "subEventDescription": "Women's Singles - Quarterfinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T03",
+      "tableName": "Table 3",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "111849",
+          "competitiorName": "SHAN Xiaona",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "111849",
+              "playerName": "SHAN Xiaona",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            }
+          ],
+          "scores": "12,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "115454",
+          "competitiorName": "BAJOR Natalia",
+          "competitiorOrg": "POL",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "115454",
+              "playerName": "BAJOR Natalia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "POL",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "10,3,6,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "12-10,11-3,11-6,0-0,0-0",
+      "resultsGameScores": "12-10,11-3,11-6,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111849",
+        "serverReceiver": "115454",
+        "serverNext": "111849",
+        "serverCompetitor": "111849",
+        "receiverNext": "115454"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:19:43",
+        "startDateLocal": "11/30/2023 17:45:00",
+        "startDateUTC": "11/30/2023 16:45:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "152",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T17:45:00"
+  },
+  {
+    "iD": 5709305,
+    "eventId": "2755",
+    "documentCode": "TTEXDOUBLES-----------SFNL000200----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEXDOUBLES-----------SFNL000200----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Semifinal - Match 2",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "46380",
+          "competitiorName": "MEISSNER Cedric/WAN Yuan",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "0",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "133455",
+              "playerName": "MEISSNER Cedric",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "118777",
+              "playerName": "WAN Yuan",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,11,11,0,0",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "37034",
+          "competitiorName": "ECSEKI Nandor/MADARASZ Dora",
+          "competitiorOrg": "HUN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114716",
+              "playerName": "ECSEKI Nandor",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "111213",
+              "playerName": "MADARASZ Dora",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "HUN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "7,5,3,0,0",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 3,
+      "full_msg": null,
+      "gameScores": "11-7,11-5,11-3,0-0,0-0",
+      "resultsGameScores": "11-7,11-5,11-3,0-0,0-0",
+      "overallScores": "3-0",
+      "resultOverallScores": "3-0",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "111213",
+        "serverReceiver": "118777",
+        "serverNext": "111213",
+        "serverCompetitor": "37034",
+        "receiverNext": "118777"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:18:44",
+        "startDateLocal": "11/30/2023 17:10:00",
+        "startDateUTC": "11/30/2023 16:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "139",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T17:10:00"
+  },
+  {
+    "iD": 5709243,
+    "eventId": "2755",
+    "documentCode": "TTEXDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Mixed Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEXDOUBLES-----------SFNL000100----------",
+      "subEventName": "Mixed Doubles",
+      "subEventDescription": "Mixed Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T02",
+      "tableName": "Table 2",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "39772",
+          "competitiorName": "QIU Dang/MITTELHAM Nina",
+          "competitiorOrg": "GER",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "114715",
+              "playerName": "QIU Dang",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "114726",
+              "playerName": "MITTELHAM Nina",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,10,11,16,8",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "76744",
+          "competitiorName": "ZHOU Kai/HE Zhuojia",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "117345",
+              "playerName": "ZHOU Kai",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "119730",
+              "playerName": "HE Zhuojia",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "8,12,8,18,11",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-8,10-12,11-8,16-18,8-11",
+      "resultsGameScores": "11-8,10-12,11-8,16-18,8-11",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "117345",
+        "serverReceiver": "114715",
+        "serverNext": "117345",
+        "serverCompetitor": "76744",
+        "receiverNext": "114715"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:46:43",
+        "startDateLocal": "11/30/2023 17:10:00",
+        "startDateUTC": "11/30/2023 16:10:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "328",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T17:10:00"
+  },
+  {
+    "iD": 5708547,
+    "eventId": "2755",
+    "documentCode": "TTEMDOUBLES-----------SFNL000100----------",
+    "messagePayload": null,
+    "subEventType": "Men Doubles",
+    "fullResults": "OFFICIAL",
+    "extended_info": null,
+    "match_card": {
+      "eventId": "2755",
+      "documentCode": "TTEMDOUBLES-----------SFNL000100----------",
+      "subEventName": "Men's Doubles",
+      "subEventDescription": "Men's Doubles - Semifinal - Match 1",
+      "matchConfig": {
+        "bestOfXGames": 5,
+        "maxPointsPerGame": 11,
+        "advantagePerGame": 2,
+        "suddenDeathPoint": 99,
+        "maxChallengesPerCompetitor": 99,
+        "yellowCard": true,
+        "yellowRed1": true,
+        "yellowRed2": true,
+        "tTRReview": false
+      },
+      "venueName": "Deutsches Tischtennis- Zentrum",
+      "tableNumber": "T01",
+      "tableName": "Table 1",
+      "competitiors": [
+        {
+          "competitorType": "H",
+          "competitiorId": "100118437",
+          "competitiorName": "CAO Wei/LIU Dingshuo",
+          "competitiorOrg": "CHN",
+          "compCardY": "0",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "132137",
+              "playerName": "CAO Wei",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "121408",
+              "playerName": "LIU Dingshuo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "CHN",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "11,12,11,4,10",
+          "irm": null
+        },
+        {
+          "competitorType": "A",
+          "competitiorId": "100118480",
+          "competitiorName": "WALTHER Ricardo/MEISSNER Cedric",
+          "competitiorOrg": "GER",
+          "compCardY": "1",
+          "compCardYR1": "0",
+          "compCardYR2": "0",
+          "compTimeout": "1",
+          "compMedicalTimeout": "",
+          "players": [
+            {
+              "playerId": "109946",
+              "playerName": "WALTHER Ricardo",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 1
+            },
+            {
+              "playerId": "133455",
+              "playerName": "MEISSNER Cedric",
+              "playerGivenName": null,
+              "playerFamilyName": null,
+              "playerOrgCode": "GER",
+              "playerPosition": 2
+            }
+          ],
+          "scores": "5,14,8,11,12",
+          "irm": null
+        }
+      ],
+      "currentGameNumber": 5,
+      "full_msg": null,
+      "gameScores": "11-5,12-14,11-8,4-11,10-12",
+      "resultsGameScores": "11-5,12-14,11-8,4-11,10-12",
+      "overallScores": "2-3",
+      "resultOverallScores": "2-3",
+      "resultStatus": "OFFICIAL",
+      "action": {
+        "actionType": "OF",
+        "serverPlayer": "133455",
+        "serverReceiver": "121408",
+        "serverNext": "133455",
+        "serverCompetitor": "100118480",
+        "receiverNext": "121408"
+      },
+      "resultSet": null,
+      "matchDateTime": {
+        "duration": "00:45:26",
+        "startDateLocal": "11/30/2023 16:35:00",
+        "startDateUTC": "11/30/2023 15:35:00"
+      },
+      "teamParentData": null,
+      "playByPlaySequenceNumber": "276",
+      "teamMatchNo": "0",
+      "teamMatchScores": "0-0,0-0,0-0,0-0,0-0",
+      "teamMatchScoresSummary": "0"
+    },
+    "startDateLocal": "2023-11-30T16:35:00"
+  }
+]
