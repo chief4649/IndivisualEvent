@@ -2,7 +2,6 @@
 
 const fs = require("fs");
 const path = require("path");
-const { execFileSync } = require("child_process");
 
 const {
   buildJaRoundContext,
@@ -41,26 +40,6 @@ function readJson(filePath, fallback) {
 }
 
 function listWttRecordFiles() {
-  try {
-    const tracked = execFileSync("git", ["ls-files", "wtt-records/*.json"], {
-      cwd: DATA_DIR,
-      encoding: "utf8",
-    }).split(/\n/).filter(Boolean);
-    if (tracked.length > 0) {
-      return tracked.map((fileName) => {
-        const filePath = path.join(DATA_DIR, fileName);
-        const stat = fs.statSync(filePath);
-        return {
-          eventId: path.basename(fileName, ".json"),
-          filePath,
-          size: stat.size,
-          mtimeMs: Math.trunc(stat.mtimeMs),
-        };
-      });
-    }
-  } catch {
-    // Fall back to filesystem scan outside a git checkout.
-  }
   const recordsByEventId = new Map();
   const addDir = (dirPath, priority) => {
     if (!fs.existsSync(dirPath)) {
