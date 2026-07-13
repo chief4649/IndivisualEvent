@@ -15,6 +15,7 @@ const {
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
+const BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
 const TRANSLATIONS_PATH = path.join(DATA_DIR, "translations.ja.json");
 const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
@@ -23,6 +24,9 @@ const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
 const OUTPUT_DIR = path.join(DATA_DIR, "player-records-index");
 const MANIFEST_PATH = path.join(OUTPUT_DIR, "manifest.json");
+const CANDIDATE_INDEX_VERSION = 1;
+const CANDIDATE_INDEX_PATH = path.join(OUTPUT_DIR, "candidate-events.json");
+const CANDIDATE_MANIFEST_PATH = path.join(OUTPUT_DIR, "candidate-manifest.json");
 
 function readJson(filePath, fallback) {
   try {
@@ -42,23 +46,54 @@ function listWttRecordFiles() {
       encoding: "utf8",
     }).split(/\n/).filter(Boolean);
     if (tracked.length > 0) {
-      return tracked.map((fileName) => ({
-        eventId: path.basename(fileName, ".json"),
-        filePath: path.join(DATA_DIR, fileName),
-      }));
+      return tracked.map((fileName) => {
+        const filePath = path.join(DATA_DIR, fileName);
+        const stat = fs.statSync(filePath);
+        return {
+          eventId: path.basename(fileName, ".json"),
+          filePath,
+          size: stat.size,
+          mtimeMs: Math.trunc(stat.mtimeMs),
+        };
+      });
     }
   } catch {
     // Fall back to filesystem scan outside a git checkout.
   }
-  if (!fs.existsSync(WTT_ARCHIVE_DIR)) {
-    return [];
-  }
-  return fs.readdirSync(WTT_ARCHIVE_DIR)
-    .filter((fileName) => /^\d+\.json$/.test(fileName))
-    .map((fileName) => ({
-      eventId: fileName.replace(/\.json$/, ""),
-      filePath: path.join(WTT_ARCHIVE_DIR, fileName),
-    }));
+  const recordsByEventId = new Map();
+  const addDir = (dirPath, priority) => {
+    if (!fs.existsSync(dirPath)) {
+      return;
+    }
+    fs.readdirSync(dirPath)
+      .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+      .forEach((fileName) => {
+        const eventId = fileName.replace(/\.json$/i, "");
+        const filePath = path.join(dirPath, fileName);
+        const stat = fs.statSync(filePath);
+        const next = {
+          eventId,
+          filePath,
+          size: stat.size,
+          mtimeMs: Math.trunc(stat.mtimeMs),
+          priority,
+        };
+        const current = recordsByEventId.get(eventId);
+        if (
+          !current ||
+          next.size > current.size ||
+          (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
+          (next.size === current.size && next.mtimeMs === current.mtimeMs && next.priority > current.priority)
+        ) {
+          recordsByEventId.set(eventId, next);
+        }
+      });
+  };
+  addDir(WTT_ARCHIVE_DIR, 1);
+  addDir(BUNDLED_WTT_ARCHIVE_DIR, 2);
+  return [...recordsByEventId.values()]
+    .map(({ priority, ...file }) => file)
+    .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
 }
 
 function normalizePlayerSearchText(value) {
@@ -408,6 +443,149 @@ function writeManifest(payload) {
   }));
 }
 
+function getPathStatToken(filePath) {
+  try {
+    const stat = fs.statSync(filePath);
+    return `${stat.size}:${Math.trunc(stat.mtimeMs)}`;
+  } catch {
+    return "missing";
+  }
+}
+
+function getPlayerRecordCacheSignature(files) {
+  const dataSignature = files.map((file) => `${file.eventId}:${file.size}:${file.mtimeMs}:raw:${file.size}:${file.mtimeMs}`).join("|");
+  const configSignature = [
+    TRANSLATIONS_PATH,
+    RULES_PATH,
+    WTT_ARCHIVE_INDEX_PATH,
+    WTT_DATE_INDEX_PATH,
+    WTT_SEARCH_INDEX_PATH,
+    EVENT_NAMES_PATH,
+  ].map((filePath) => `${path.basename(filePath)}:${getPathStatToken(filePath)}`).join("|");
+  return `${dataSignature}::${configSignature}`;
+}
+
+function addCandidateRecord(index, key, eventId) {
+  const normalizedValues = buildPlayerNameSearchValues(key);
+  normalizedValues.forEach((normalizedValue) => {
+    if (normalizedValue.length < 2) {
+      return;
+    }
+    if (!index[normalizedValue]) {
+      index[normalizedValue] = [];
+    }
+    if (!index[normalizedValue].includes(eventId)) {
+      index[normalizedValue].push(eventId);
+    }
+  });
+}
+
+function addCandidateMatch(index, eventId, match, translations) {
+  (Array.isArray(match?.competitors) ? match.competitors : []).forEach((competitor) => {
+    getCompetitorKeys(competitor, translations).forEach((key) => {
+      addCandidateRecord(index, key, eventId);
+    });
+  });
+  (Array.isArray(match?.singles) ? match.singles : []).forEach((single) => {
+    addCandidateMatch(index, eventId, single, translations);
+  });
+}
+
+function buildCandidateIndex(files, deps) {
+  const index = {};
+  let indexedMatches = 0;
+
+  files.forEach(({ eventId, filePath }) => {
+    const payload = readJson(filePath, []);
+    if (!Array.isArray(payload)) {
+      return;
+    }
+    payload.forEach((item) => {
+      const match = normalizeArchivedMatch(item);
+      if (!match) {
+        return;
+      }
+      addCandidateMatch(index, eventId, match, deps.translations);
+      indexedMatches += 1;
+    });
+  });
+
+  Object.keys(index).forEach((key) => {
+    index[key].sort((left, right) => String(left).localeCompare(String(right), "en", { numeric: true }));
+  });
+  return { index, indexedMatches };
+}
+
+function writeCandidateIndex(files, index, indexedMatches) {
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.writeFileSync(CANDIDATE_INDEX_PATH, JSON.stringify(index));
+  fs.writeFileSync(CANDIDATE_MANIFEST_PATH, JSON.stringify({
+    version: CANDIDATE_INDEX_VERSION,
+    generatedAt: new Date().toISOString(),
+    signature: getPlayerRecordCacheSignature(files),
+    eventCount: files.length,
+    indexedMatches,
+    keyCount: Object.keys(index).length,
+  }));
+}
+
+function updatePlayerRecordCandidateIndexForEvents(eventIds) {
+  const requested = new Set(eventIds.map((eventId) => String(eventId || "").trim()).filter(Boolean));
+  if (requested.size === 0) {
+    return { eventCount: 0, indexedMatches: 0, keyCount: 0 };
+  }
+
+  const allFiles = listWttRecordFiles();
+  const files = allFiles.filter((file) => requested.has(String(file.eventId)));
+  if (files.length === 0) {
+    return { eventCount: 0, indexedMatches: 0, keyCount: 0 };
+  }
+
+  const deps = readBuildDeps();
+  const existingIndex = readJson(CANDIDATE_INDEX_PATH, {});
+  Object.keys(existingIndex).forEach((key) => {
+    const nextEventIds = (Array.isArray(existingIndex[key]) ? existingIndex[key] : [])
+      .filter((eventId) => !requested.has(String(eventId)));
+    if (nextEventIds.length > 0) {
+      existingIndex[key] = nextEventIds;
+    } else {
+      delete existingIndex[key];
+    }
+  });
+
+  const { index, indexedMatches } = buildCandidateIndex(files, deps);
+  Object.entries(index).forEach(([key, eventIdsForKey]) => {
+    if (!existingIndex[key]) {
+      existingIndex[key] = [];
+    }
+    eventIdsForKey.forEach((eventId) => {
+      if (!existingIndex[key].includes(eventId)) {
+        existingIndex[key].push(eventId);
+      }
+    });
+    existingIndex[key].sort((left, right) => String(left).localeCompare(String(right), "en", { numeric: true }));
+  });
+
+  writeCandidateIndex(allFiles, existingIndex, Number(readJson(CANDIDATE_MANIFEST_PATH, {}).indexedMatches || 0) + indexedMatches);
+  return {
+    eventCount: files.length,
+    indexedMatches,
+    keyCount: Object.keys(index).length,
+  };
+}
+
+function rebuildPlayerRecordCandidateIndex() {
+  const files = listWttRecordFiles();
+  const deps = readBuildDeps();
+  const { index, indexedMatches } = buildCandidateIndex(files, deps);
+  writeCandidateIndex(files, index, indexedMatches);
+  return {
+    eventCount: files.length,
+    indexedMatches,
+    keyCount: Object.keys(index).length,
+  };
+}
+
 function readBuildDeps() {
   return {
     translations: readTranslations(TRANSLATIONS_PATH),
@@ -462,37 +640,7 @@ function parsePositiveIntegerArg(argv, name, fallback) {
 }
 
 function updateAllPlayerRecordsIndexIncrementally(argv) {
-  const batchSize = parsePositiveIntegerArg(argv, "--batch-size", 5);
-  const allEventIds = listWttRecordFiles().map((file) => String(file.eventId)).filter(Boolean);
-  let totalEvents = 0;
-  let totalIndexedMatches = 0;
-  let totalPlayerKeys = 0;
-
-  for (let index = 0; index < allEventIds.length; index += batchSize) {
-    const batch = allEventIds.slice(index, index + batchSize);
-    const result = updatePlayerRecordsIndexForEvents(batch);
-    totalEvents += result.eventCount;
-    totalIndexedMatches += result.indexedMatches;
-    totalPlayerKeys += result.keyCount;
-    console.log(`batch ${Math.floor(index / batchSize) + 1}/${Math.ceil(allEventIds.length / batchSize)}: ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
-  }
-
-  const existingManifest = readJson(MANIFEST_PATH, {});
-  writeManifest({
-    ...existingManifest,
-    generatedAt: new Date().toISOString(),
-    updateMode: "incremental-all",
-    eventCount: allEventIds.length,
-    updatedEvents: ["all"],
-    indexedMatches: totalIndexedMatches,
-    incrementalIndexedMatches: totalIndexedMatches,
-  });
-
-  return {
-    eventCount: totalEvents,
-    indexedMatches: totalIndexedMatches,
-    keyCount: totalPlayerKeys,
-  };
+  return rebuildPlayerRecordCandidateIndex();
 }
 
 function parseEventArgs(argv) {
@@ -523,7 +671,7 @@ function main() {
 
   const eventArgs = parseEventArgs(argv);
   if (eventArgs.length > 0) {
-    const result = updatePlayerRecordsIndexForEvents(eventArgs);
+    const result = updatePlayerRecordCandidateIndexForEvents(eventArgs);
     console.log(`updated ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
     console.log(OUTPUT_DIR);
     return;
@@ -562,5 +710,5 @@ if (require.main === module) {
 }
 
 module.exports = {
-  updatePlayerRecordsIndexForEvents,
+  updatePlayerRecordCandidateIndexForEvents,
 };

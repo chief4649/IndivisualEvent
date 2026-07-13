@@ -5481,6 +5481,30 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
     };
   }
 
+  const textNeedles = buildPlayerRecordTextNeedles(...needles);
+  const indexedCandidate = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
+  if (indexedCandidate) {
+    const collected = await collectPlayerRecordEvents(indexedCandidate.snapshot, needles, [], { eventLimit, matchLimit, orgFilter });
+    const result = {
+      signature,
+      builtAt: Date.now(),
+      eventIndexSource: "wtt-records",
+      candidateIndexSource: "candidate-index",
+      candidateIndexGeneratedAt: indexedCandidate.generatedAt,
+      eventIndexGeneratedAt: null,
+      scannedEvents: snapshot.length,
+      candidateEvents: indexedCandidate.snapshot.length,
+      playerKeyCount: indexedCandidate.playerKeyCount || 0,
+      deltaEvents: 0,
+      ...collected,
+    };
+    setPlayerRecordResultCacheValue(cacheKey, result);
+    return {
+      ...result,
+      cacheHit: false,
+    };
+  }
+
   if (!orgFilter) {
     const legacyIndexed = getLegacyPlayerRecordEventsForNeedles(needles);
     if (legacyIndexed) {
@@ -5540,7 +5564,6 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   }
 
   const h2hCandidateResult = getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(persistentIndex, snapshot, needles);
-  const textNeedles = h2hCandidateResult ? [] : buildPlayerRecordTextNeedles(...needles);
   const candidateResult = h2hCandidateResult || await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
   const candidateSnapshot = candidateResult.snapshot;
   const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
