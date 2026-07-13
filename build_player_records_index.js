@@ -504,7 +504,6 @@ function getCandidateShardName(key) {
 function writeCandidateIndex(files, index, indexedMatches) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.rmSync(CANDIDATE_SHARDS_DIR, { recursive: true, force: true });
-  fs.rmSync(CANDIDATE_INDEX_PATH, { force: true });
   fs.mkdirSync(CANDIDATE_SHARDS_DIR, { recursive: true });
   const shards = {};
   Object.entries(index).forEach(([key, eventIds]) => {
@@ -529,28 +528,6 @@ function writeCandidateIndex(files, index, indexedMatches) {
   }));
 }
 
-function readCandidateIndexFromShards() {
-  const index = {};
-  if (!fs.existsSync(CANDIDATE_SHARDS_DIR)) {
-    return index;
-  }
-
-  fs.readdirSync(CANDIDATE_SHARDS_DIR)
-    .filter((fileName) => fileName.endsWith(".json"))
-    .forEach((fileName) => {
-      const shard = readJson(path.join(CANDIDATE_SHARDS_DIR, fileName), {});
-      if (!shard || typeof shard !== "object" || Array.isArray(shard)) {
-        return;
-      }
-      Object.entries(shard).forEach(([key, eventIds]) => {
-        if (Array.isArray(eventIds)) {
-          index[key] = eventIds;
-        }
-      });
-    });
-  return index;
-}
-
 function updatePlayerRecordCandidateIndexForEvents(eventIds) {
   const requested = new Set(eventIds.map((eventId) => String(eventId || "").trim()).filter(Boolean));
   if (requested.size === 0) {
@@ -564,10 +541,7 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
   }
 
   const deps = readBuildDeps();
-  const existingIndex = readCandidateIndexFromShards();
-  if (Object.keys(existingIndex).length === 0) {
-    Object.assign(existingIndex, readJson(CANDIDATE_INDEX_PATH, {}));
-  }
+  const existingIndex = readJson(CANDIDATE_INDEX_PATH, {});
   if (Object.keys(existingIndex).length === 0) {
     return rebuildPlayerRecordCandidateIndex();
   }
