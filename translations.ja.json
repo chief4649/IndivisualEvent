@@ -127,6 +127,10 @@
     "WAL": "ウェールズ",
     "ZAM": "ザンビア"
   },
+  "playerOrgOverrides": {
+    "XU Yi|CHN": "徐奕",
+    "XU Yi|HKG": "許一"
+  },
   "players": {
     "Aaron SAHR": "サール",
     "ABARCA Santiago": "アバルカ",
