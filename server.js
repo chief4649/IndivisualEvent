@@ -3750,6 +3750,10 @@ function buildPlayerRecordOrgFilter(translatedName, translations) {
     normalizedTranslatedName,
     names: new Set(entries.flatMap((entry) => getNameTranslationCandidates(entry.name).map(normalizePlayerTranslationKey))),
     orgs: new Set(entries.map((entry) => entry.org)),
+    orgLabels: new Set(entries.flatMap((entry) => [
+      entry.org,
+      translations.teams?.[entry.org],
+    ]).filter(Boolean)),
   };
 }
 
@@ -5148,6 +5152,38 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
   };
 }
 
+function filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter) {
+  if (!orgFilter || !indexed || !Array.isArray(indexed.events)) {
+    return indexed;
+  }
+
+  const translatedNeedle = String(orgFilter.translatedName || "").trim();
+  const orgLabels = [...(orgFilter.orgLabels || [])].map((value) => String(value || "").trim()).filter(Boolean);
+  const events = indexed.events
+    .map((event) => {
+      const matches = (event.matches || []).filter((match) => {
+        const line = String(match?.line || "");
+        return line.includes(translatedNeedle) && orgLabels.some((label) => line.includes(`（${label}）`) || line.includes(`／${label}`));
+      });
+      if (matches.length === 0) {
+        return null;
+      }
+      const matchGroups = buildPlayerRecordMatchGroups(matches);
+      return {
+        ...event,
+        matches: matchGroups.flatMap((group) => group.matches),
+        matchGroups,
+      };
+    })
+    .filter(Boolean);
+
+  return {
+    ...indexed,
+    events,
+    candidateEventCount: events.length,
+  };
+}
+
 function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
   const index = indexState?.index;
   if (!index?.players || !index?.playerRecordMatchShardsDir) {
@@ -5274,10 +5310,14 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   }
 
   const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
-  if (persistentIndex && !persistentIndex.stale && !orgFilter) {
+  if (persistentIndex) {
     let indexed = collectPlayerRecordEventsFromPersistentIndex(persistentIndex, needles)
       || collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
     if (indexed) {
+      if (orgFilter) {
+        const translations = readTranslations(TRANSLATIONS_PATH);
+        indexed = filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, translations);
+      }
       let deltaEventCount = 0;
       if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
         const indexedEventIds = new Set(persistentIndex.eventIds);
