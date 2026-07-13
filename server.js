@@ -431,9 +431,22 @@ function isRateLimited(request) {
 function buildHealthPayload() {
   return {
     ok: true,
+    deploy: {
+      renderGitCommit: process.env.RENDER_GIT_COMMIT || null,
+      renderServiceId: process.env.RENDER_SERVICE_ID || null,
+      nodeEnv: process.env.NODE_ENV || null,
+    },
     adminProtected: Boolean(ADMIN_TOKEN),
     viewerProtected: Boolean(VIEWER_PASSWORD),
     runtimeArchiveSyncSkipped: SKIP_RUNTIME_ARCHIVE_SYNC,
+    files: {
+      server: getHealthFileMeta(path.join(__dirname, "server.js")),
+      bundledTranslations: getHealthFileMeta(path.join(__dirname, "translations.ja.json")),
+      runtimeTranslations: getHealthFileMeta(TRANSLATIONS_PATH),
+      headToHeadManifest: getHealthFileMeta(HEAD_TO_HEAD_INDEX_MANIFEST_PATH),
+      bundledHeadToHeadManifest: getHealthFileMeta(BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH),
+    },
+    playerOrgOverrides: buildPlayerOrgOverrideHealth(),
     playerRecords: {
       source: "wtt-records",
       archiveMode: "runtime+bundled",
@@ -760,6 +773,48 @@ function getFileMeta(filePath, options = {}) {
     size: stat.size,
     mtime: stat.mtime.toISOString(),
     sha256: includeSha256 ? computeFileSha256(filePath) : null,
+  };
+}
+
+function getHealthFileMeta(filePath) {
+  const meta = getFileMeta(filePath, { includeSha256: true });
+  return {
+    exists: meta.exists,
+    size: meta.size,
+    mtime: meta.mtime,
+    sha256: meta.sha256 ? meta.sha256.slice(0, 12) : null,
+  };
+}
+
+function readJsonFileSafe(filePath) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function buildPlayerOrgOverrideHealth() {
+  const runtime = readJsonFileSafe(TRANSLATIONS_PATH);
+  const bundled = readJsonFileSafe(path.join(__dirname, "translations.ja.json"));
+  const runtimeOverrides = runtime?.playerOrgOverrides || {};
+  const bundledOverrides = bundled?.playerOrgOverrides || {};
+  const merged = readTranslations(TRANSLATIONS_PATH).playerOrgOverrides || {};
+  return {
+    runtime: {
+      exists: Boolean(runtime?.playerOrgOverrides),
+      xuYiChn: runtimeOverrides["XU Yi|CHN"] || null,
+      xuYiHkg: runtimeOverrides["XU Yi|HKG"] || null,
+    },
+    bundled: {
+      exists: Boolean(bundled?.playerOrgOverrides),
+      xuYiChn: bundledOverrides["XU Yi|CHN"] || null,
+      xuYiHkg: bundledOverrides["XU Yi|HKG"] || null,
+    },
+    merged: {
+      xuYiChn: merged["XU Yi|CHN"] || null,
+      xuYiHkg: merged["XU Yi|HKG"] || null,
+    },
   };
 }
 
