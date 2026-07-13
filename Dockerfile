@@ -10,6 +10,7 @@ COPY crawl_wtt_archives.js ./
 COPY fetch_wtt_calendar_dates.js ./
 COPY update_wtt_date_index.js ./
 COPY build_wtt_search_index.js ./
+COPY build_player_records_index.js ./
 COPY verify_wtt_alignment.js ./
 COPY runtime_legacy_ittf_patch.js ./
 COPY server.js ./
