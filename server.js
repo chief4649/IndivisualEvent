@@ -3720,6 +3720,39 @@ function getPlayerOrgOverrideAliasNames(value, translations) {
     .filter(Boolean);
 }
 
+function buildPlayerRecordOrgFilter(translatedName, translations) {
+  const normalizedTranslatedName = normalizePlayerSearchText(translatedName);
+  if (!normalizedTranslatedName) {
+    return null;
+  }
+
+  const entries = Object.entries(translations.playerOrgOverrides || {})
+    .map(([key, translated]) => {
+      const [namePart, orgPart] = String(key || "").split("|");
+      return {
+        name: String(namePart || "").trim(),
+        org: String(orgPart || "").trim().toUpperCase(),
+        translated: String(translated || "").trim(),
+      };
+    })
+    .filter((entry) =>
+      entry.name &&
+      entry.org &&
+      normalizePlayerSearchText(entry.translated) === normalizedTranslatedName,
+    );
+
+  if (entries.length === 0) {
+    return null;
+  }
+
+  return {
+    translatedName,
+    normalizedTranslatedName,
+    names: new Set(entries.flatMap((entry) => getNameTranslationCandidates(entry.name).map(normalizePlayerTranslationKey))),
+    orgs: new Set(entries.map((entry) => entry.org)),
+  };
+}
+
 function buildPlayerRecordNeedles(name, translatedName, translations) {
   const aliasNames = [
     ...getPlayerTranslationAliasNames(name, translations),
@@ -3776,7 +3809,58 @@ function playerRecordNameMatchesNeedle(value, needle) {
   return needleTokens.every((token) => valueTokens.includes(token));
 }
 
-function playerMatchesCompetitor(competitor, needles, translations) {
+function getCompetitorPlayerOrgFilterCandidates(competitor) {
+  const players = Array.isArray(competitor?.players) ? competitor.players : [];
+  const candidates = [];
+
+  players.forEach((player) => {
+    candidates.push({
+      name: player?.name || player?.playerName || player?.competitorName || player?.description || player?.desc,
+      org: player?.orgCode || player?.org || competitor?.orgCode || competitor?.org,
+    });
+  });
+
+  getCompetitorNameCandidates(competitor).forEach((name) => {
+    String(name || "")
+      .split(/\s*(?:\/|／|\+|&| and )\s*/i)
+      .map((part) => part.trim())
+      .filter(Boolean)
+      .forEach((part) => {
+        candidates.push({
+          name: part,
+          org: competitor?.orgCode || competitor?.org,
+        });
+      });
+  });
+
+  return candidates.filter((candidate) => candidate.name);
+}
+
+function playerMatchesOrgFilter(competitor, orgFilter, translations) {
+  if (!orgFilter) {
+    return true;
+  }
+
+  return getCompetitorPlayerOrgFilterCandidates(competitor).some((candidate) => {
+    const nameMatches = getNameTranslationCandidates(candidate.name)
+      .map(normalizePlayerTranslationKey)
+      .some((name) => orgFilter.names.has(name));
+    if (!nameMatches) {
+      return false;
+    }
+
+    const orgMatches = getPlayerOrgOverrideOrgCandidates(candidate.org, translations)
+      .map((org) => String(org || "").toUpperCase())
+      .some((org) => orgFilter.orgs.has(org));
+    if (!orgMatches) {
+      return false;
+    }
+
+    return normalizePlayerSearchText(translatePlayerWithOrg(candidate.name, candidate.org, translations)) === orgFilter.normalizedTranslatedName;
+  });
+}
+
+function playerMatchesCompetitor(competitor, needles, translations, orgFilter = null) {
   if (!competitor || needles.length === 0) {
     return false;
   }
@@ -3800,14 +3884,16 @@ function playerMatchesCompetitor(competitor, needles, translations) {
     ...buildPlayerNameSearchValues(value),
   ]).filter(Boolean);
 
-  return expandedValues.some((value) =>
+  const nameMatches = expandedValues.some((value) =>
     needles.some((needle) => playerRecordNameMatchesNeedle(value, needle)),
   );
+
+  return nameMatches && playerMatchesOrgFilter(competitor, orgFilter, translations);
 }
 
-function findPlayerCompetitorIndex(match, needles, translations) {
+function findPlayerCompetitorIndex(match, needles, translations, orgFilter = null) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
-  return competitors.findIndex((competitor) => playerMatchesCompetitor(competitor, needles, translations));
+  return competitors.findIndex((competitor) => playerMatchesCompetitor(competitor, needles, translations, orgFilter));
 }
 
 function compactJapaneseName(value) {
@@ -4900,6 +4986,7 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options
   const eventNames = getEventNamesMap();
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
+  const orgFilter = options.orgFilter || null;
   const files = (Array.isArray(snapshot) ? snapshot : [])
     .map((file) => ({
       file,
@@ -4939,7 +5026,7 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options
       scannedMatches += 1;
 
       if (match.matchType === "individual") {
-        const competitorIndex = findPlayerCompetitorIndex(match, needles, translations);
+        const competitorIndex = findPlayerCompetitorIndex(match, needles, translations, orgFilter);
         if (competitorIndex >= 0) {
           pushPlayerRecordMatch(
             matches,
@@ -4959,7 +5046,7 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options
 
       (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
         scannedMatches += 1;
-        const competitorIndex = findPlayerCompetitorIndex(single, needles, translations);
+        const competitorIndex = findPlayerCompetitorIndex(single, needles, translations, orgFilter);
         if (competitorIndex >= 0) {
           pushPlayerRecordMatch(
             matches,
@@ -5173,7 +5260,11 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   const persistentIndexSignature = getHeadToHeadPersistentIndexSignature(snapshot);
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : null;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : null;
-  const cacheKey = `${signature}::${needles.join("|")}::events=${eventLimit || "all"}::matches=${matchLimit || "all"}`;
+  const orgFilter = options.orgFilter || null;
+  const orgFilterKey = orgFilter
+    ? `${orgFilter.normalizedTranslatedName}:${[...orgFilter.orgs].sort().join(",")}`
+    : "none";
+  const cacheKey = `${signature}::${needles.join("|")}::org=${orgFilterKey}::events=${eventLimit || "all"}::matches=${matchLimit || "all"}`;
   const cached = playerRecordResultCache.get(cacheKey);
   if (cached && Date.now() - cached.builtAt < PLAYER_RECORD_RESULT_CACHE_TTL_MS) {
     return {
@@ -5183,7 +5274,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   }
 
   const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
-  if (persistentIndex && !persistentIndex.stale) {
+  if (persistentIndex && !persistentIndex.stale && !orgFilter) {
     let indexed = collectPlayerRecordEventsFromPersistentIndex(persistentIndex, needles)
       || collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
     if (indexed) {
@@ -5193,7 +5284,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
         const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
         deltaEventCount = deltaSnapshot.length;
         if (deltaSnapshot.length > 0) {
-          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit });
+          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
           indexed = mergeHeadToHeadCollectedResults(indexed, delta);
         }
       }
@@ -5222,7 +5313,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   const textNeedles = h2hCandidateResult ? [] : buildPlayerRecordTextNeedles(...needles);
   const candidateResult = h2hCandidateResult || await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
   const candidateSnapshot = candidateResult.snapshot;
-  const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, [], { eventLimit, matchLimit });
+  const collected = await collectPlayerRecordEvents(candidateSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
   const result = {
     signature,
     builtAt: Date.now(),
@@ -6375,6 +6466,7 @@ async function handlePlayerRecordsApi(requestUrl, response) {
     const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
     const translations = readTranslations(TRANSLATIONS_PATH);
     const needles = buildPlayerRecordNeedles(name, translatedName, translations);
+    const orgFilter = buildPlayerRecordOrgFilter(translatedName, translations);
     if (needles.length === 0) {
       sendJson(response, 200, {
         name,
@@ -6396,7 +6488,7 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       });
       return;
     }
-    const searchResult = await getPlayerRecordSearchResult(name, translatedName, needles, { eventLimit, matchLimit });
+    const searchResult = await getPlayerRecordSearchResult(name, translatedName, needles, { eventLimit, matchLimit, orgFilter });
     const events = searchResult.events;
     let returnedMatches = 0;
     const limitedEvents = [];
