@@ -452,11 +452,50 @@ function updatePlayerRecordsIndexForEvents(eventIds) {
   };
 }
 
-function parseEventArgs(argv) {
-  if (argv.includes("--all-incremental")) {
-    return listWttRecordFiles().map((file) => String(file.eventId)).filter(Boolean);
+function parsePositiveIntegerArg(argv, name, fallback) {
+  const index = argv.indexOf(name);
+  if (index < 0) {
+    return fallback;
+  }
+  const value = Number(argv[index + 1]);
+  return Number.isFinite(value) && value > 0 ? Math.floor(value) : fallback;
+}
+
+function updateAllPlayerRecordsIndexIncrementally(argv) {
+  const batchSize = parsePositiveIntegerArg(argv, "--batch-size", 5);
+  const allEventIds = listWttRecordFiles().map((file) => String(file.eventId)).filter(Boolean);
+  let totalEvents = 0;
+  let totalIndexedMatches = 0;
+  let totalPlayerKeys = 0;
+
+  for (let index = 0; index < allEventIds.length; index += batchSize) {
+    const batch = allEventIds.slice(index, index + batchSize);
+    const result = updatePlayerRecordsIndexForEvents(batch);
+    totalEvents += result.eventCount;
+    totalIndexedMatches += result.indexedMatches;
+    totalPlayerKeys += result.keyCount;
+    console.log(`batch ${Math.floor(index / batchSize) + 1}/${Math.ceil(allEventIds.length / batchSize)}: ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
   }
 
+  const existingManifest = readJson(MANIFEST_PATH, {});
+  writeManifest({
+    ...existingManifest,
+    generatedAt: new Date().toISOString(),
+    updateMode: "incremental-all",
+    eventCount: allEventIds.length,
+    updatedEvents: ["all"],
+    indexedMatches: totalIndexedMatches,
+    incrementalIndexedMatches: totalIndexedMatches,
+  });
+
+  return {
+    eventCount: totalEvents,
+    indexedMatches: totalIndexedMatches,
+    keyCount: totalPlayerKeys,
+  };
+}
+
+function parseEventArgs(argv) {
   const events = [];
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
@@ -474,7 +513,15 @@ function parseEventArgs(argv) {
 }
 
 function main() {
-  const eventArgs = parseEventArgs(process.argv.slice(2));
+  const argv = process.argv.slice(2);
+  if (argv.includes("--all-incremental")) {
+    const result = updateAllPlayerRecordsIndexIncrementally(argv);
+    console.log(`updated ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
+    console.log(OUTPUT_DIR);
+    return;
+  }
+
+  const eventArgs = parseEventArgs(argv);
   if (eventArgs.length > 0) {
     const result = updatePlayerRecordsIndexForEvents(eventArgs);
     console.log(`updated ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
