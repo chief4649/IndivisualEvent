@@ -5207,19 +5207,47 @@ function collectPlayerRecordEventsFromPersistentIndex(indexState, needles) {
   };
 }
 
-function filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter) {
+function filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, translations = {}) {
   if (!orgFilter || !indexed || !Array.isArray(indexed.events)) {
     return indexed;
   }
 
   const translatedNeedle = String(orgFilter.translatedName || "").trim();
   const orgLabels = [...(orgFilter.orgLabels || [])].map((value) => String(value || "").trim()).filter(Boolean);
+  const siblingTranslatedNames = Object.entries(translations.playerOrgOverrides || {})
+    .filter(([key]) => {
+      const [namePart] = String(key || "").split("|");
+      return getNameTranslationCandidates(namePart)
+        .map(normalizePlayerTranslationKey)
+        .some((name) => orgFilter.names.has(name));
+    })
+    .map(([, translated]) => String(translated || "").trim())
+    .filter((translated) => translated && translated !== translatedNeedle);
+
+  const normalizeIndexedLine = (line) => {
+    let normalizedLine = String(line || "");
+    orgLabels.forEach((label) => {
+      siblingTranslatedNames.forEach((siblingName) => {
+        normalizedLine = normalizedLine.replaceAll(`${siblingName}（${label}）`, `${translatedNeedle}（${label}）`);
+      });
+    });
+    return normalizedLine;
+  };
+
   const events = indexed.events
     .map((event) => {
-      const matches = (event.matches || []).filter((match) => {
+      const matches = (event.matches || []).map((match) => {
         const line = String(match?.line || "");
-        return line.includes(translatedNeedle) && orgLabels.some((label) => line.includes(`（${label}）`) || line.includes(`／${label}`));
-      });
+        const hasOrgLabel = orgLabels.some((label) => line.includes(`（${label}）`) || line.includes(`／${label}`));
+        if (!hasOrgLabel) {
+          return null;
+        }
+        const normalizedLine = normalizeIndexedLine(line);
+        if (!normalizedLine.includes(translatedNeedle)) {
+          return null;
+        }
+        return normalizedLine === line ? match : { ...match, line: normalizedLine };
+      }).filter(Boolean);
       if (matches.length === 0) {
         return null;
       }
@@ -5373,36 +5401,34 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
         const translations = readTranslations(TRANSLATIONS_PATH);
         indexed = filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, translations);
       }
-      if (!orgFilter || indexed.events.length > 0) {
-        let deltaEventCount = 0;
-        if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
-          const indexedEventIds = new Set(persistentIndex.eventIds);
-          const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
-          deltaEventCount = deltaSnapshot.length;
-          if (deltaSnapshot.length > 0) {
-            const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
-            indexed = mergeHeadToHeadCollectedResults(indexed, delta);
-          }
+      let deltaEventCount = 0;
+      if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
+        const indexedEventIds = new Set(persistentIndex.eventIds);
+        const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
+        deltaEventCount = deltaSnapshot.length;
+        if (deltaSnapshot.length > 0) {
+          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
+          indexed = mergeHeadToHeadCollectedResults(indexed, delta);
         }
-        const result = {
-          signature: persistentIndexSignature,
-          builtAt: Date.now(),
-          eventIndexSource: "player-record-match-index",
-          candidateIndexSource: persistentIndex.stale ? "player-record-match-index+delta" : "player-record-match-index",
-          candidateIndexGeneratedAt: persistentIndex.generatedAt,
-          eventIndexGeneratedAt: null,
-          scannedEvents: snapshot.length,
-          candidateEvents: indexed.candidateEventCount ?? indexed.events.length,
-          playerKeyCount: indexed.playerKeyCount,
-          deltaEvents: deltaEventCount,
-          ...indexed,
-        };
-        setPlayerRecordResultCacheValue(cacheKey, result);
-        return {
-          ...result,
-          cacheHit: false,
-        };
       }
+      const result = {
+        signature: persistentIndexSignature,
+        builtAt: Date.now(),
+        eventIndexSource: "player-record-match-index",
+        candidateIndexSource: persistentIndex.stale ? "player-record-match-index+delta" : "player-record-match-index",
+        candidateIndexGeneratedAt: persistentIndex.generatedAt,
+        eventIndexGeneratedAt: null,
+        scannedEvents: snapshot.length,
+        candidateEvents: indexed.candidateEventCount ?? indexed.events.length,
+        playerKeyCount: indexed.playerKeyCount,
+        deltaEvents: deltaEventCount,
+        ...indexed,
+      };
+      setPlayerRecordResultCacheValue(cacheKey, result);
+      return {
+        ...result,
+        cacheHit: false,
+      };
     }
   }
 
