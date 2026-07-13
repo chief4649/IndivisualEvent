@@ -3565,6 +3565,7 @@ function comparePlayerSearchResult(left, right) {
 }
 
 const playerRecordResultCache = new Map();
+const legacyPlayerRecordShardCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 10;
 const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 60_000);
 const headToHeadResultCache = new Map();
@@ -3715,6 +3716,7 @@ function setPlayerRecordResultCacheValue(key, value) {
 
 function clearPlayerRecordResultCache() {
   playerRecordResultCache.clear();
+  legacyPlayerRecordShardCache.clear();
 }
 
 function setHeadToHeadResultCacheValue(key, value) {
@@ -5267,6 +5269,93 @@ function filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, translat
   };
 }
 
+function getLegacyPlayerRecordShardName(key) {
+  const first = String(key || "").trim().charAt(0).toLowerCase();
+  return /^[a-z]$/.test(first) ? `${first}.json` : "_.json";
+}
+
+function readLegacyPlayerRecordShard(dirPath, shardName) {
+  const cacheKey = `${dirPath}:${shardName}`;
+  if (legacyPlayerRecordShardCache.has(cacheKey)) {
+    return legacyPlayerRecordShardCache.get(cacheKey);
+  }
+  try {
+    const shardPath = path.join(dirPath, shardName);
+    const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
+    legacyPlayerRecordShardCache.set(cacheKey, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+  } catch {
+    legacyPlayerRecordShardCache.set(cacheKey, {});
+  }
+  while (legacyPlayerRecordShardCache.size > 4) {
+    const oldestKey = legacyPlayerRecordShardCache.keys().next().value;
+    legacyPlayerRecordShardCache.delete(oldestKey);
+  }
+  return legacyPlayerRecordShardCache.get(cacheKey) || {};
+}
+
+function getLegacyPlayerRecordEventsForNeedles(needles) {
+  const dirs = [PLAYER_RECORDS_INDEX_DIR, BUNDLED_PLAYER_RECORDS_INDEX_DIR];
+  const eventsById = new Map();
+  let playerKeyCount = 0;
+
+  Array.from(new Set(needles.map(normalizePlayerSearchText).filter(Boolean))).forEach((needle) => {
+    const shardName = getLegacyPlayerRecordShardName(needle);
+    dirs.forEach((dirPath) => {
+      if (!fs.existsSync(path.join(dirPath, shardName))) {
+        return;
+      }
+      const shard = readLegacyPlayerRecordShard(dirPath, shardName);
+      const events = Array.isArray(shard[needle]) ? shard[needle] : [];
+      if (events.length === 0) {
+        return;
+      }
+      playerKeyCount += 1;
+      events.forEach((event) => {
+        const eventId = String(event?.event || "");
+        if (!eventId) {
+          return;
+        }
+        if (!eventsById.has(eventId)) {
+          eventsById.set(eventId, {
+            ...event,
+            matches: [],
+          });
+        }
+        const target = eventsById.get(eventId);
+        const seen = new Set(target.matches.map(getPlayerRecordIndexMatchId));
+        (Array.isArray(event.matches) ? event.matches : []).forEach((match) => {
+          const matchId = getPlayerRecordIndexMatchId(match);
+          if (!seen.has(matchId)) {
+            target.matches.push(match);
+            seen.add(matchId);
+          }
+        });
+      });
+    });
+  });
+
+  if (eventsById.size === 0) {
+    return null;
+  }
+
+  const events = [...eventsById.values()].map((event) => {
+    const matchGroups = buildPlayerRecordMatchGroups(event.matches || []);
+    return {
+      ...event,
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
+    };
+  }).sort(comparePlayerRecordEvents);
+
+  return {
+    events,
+    parsedEvents: 0,
+    scannedMatches: 0,
+    candidateEventCount: events.length,
+    playerKeyCount,
+  };
+}
+
 function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
   const index = indexState?.index;
   if (!index?.players || !index?.playerRecordMatchShardsDir) {
@@ -5390,6 +5479,29 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       ...cached,
       cacheHit: true,
     };
+  }
+
+  if (!orgFilter) {
+    const legacyIndexed = getLegacyPlayerRecordEventsForNeedles(needles);
+    if (legacyIndexed) {
+      const result = {
+        signature,
+        builtAt: Date.now(),
+        eventIndexSource: "player-records-index",
+        candidateIndexSource: "player-records-index-shard",
+        candidateIndexGeneratedAt: null,
+        eventIndexGeneratedAt: null,
+        scannedEvents: snapshot.length,
+        candidateEvents: legacyIndexed.candidateEventCount ?? legacyIndexed.events.length,
+        deltaEvents: 0,
+        ...legacyIndexed,
+      };
+      setPlayerRecordResultCacheValue(cacheKey, result);
+      return {
+        ...result,
+        cacheHit: false,
+      };
+    }
   }
 
   const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
