@@ -29,6 +29,7 @@ const {
   renderOutput,
   translateRoundJa,
 } = require("./extract_individual_matches");
+const { updatePlayerRecordCandidateIndexForEvents } = require("./build_player_records_index");
 
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 3000);
@@ -2951,11 +2952,26 @@ async function getProcessedMatchesBaseCached(options = {}) {
 async function getProcessedMatchesCached(options = {}) {
   if (options.refreshCache) {
     const result = await getProcessedMatches(options);
+    updatePlayerRecordCandidateIndexAfterArchiveRefresh(options, result);
     return stripRawPayload(result);
   }
 
   const base = await getProcessedMatchesBaseCached(options);
   return buildFilteredProcessedMatches(base, options);
+}
+
+function updatePlayerRecordCandidateIndexAfterArchiveRefresh(options, result) {
+  if (normalizeSource(options?.source) !== "wtt" || !options?.event) {
+    return;
+  }
+  if (!Array.isArray(result?.normalized) || result.normalized.length === 0) {
+    return;
+  }
+  try {
+    updatePlayerRecordCandidateIndexForEvents([options.event]);
+  } catch (error) {
+    console.warn("[player-record-candidate-index] refresh update failed:", error?.message || error);
+  }
 }
 
 async function handleApi(requestUrl, response) {
