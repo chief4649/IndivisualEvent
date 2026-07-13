@@ -3860,6 +3860,45 @@ function normalizePlayerTranslationKey(value) {
   return String(value || "").trim().replace(/\s+/g, " ").toLocaleLowerCase("en-US");
 }
 
+function getPlayerOrgOverrideOrgCandidates(orgCode, translations) {
+  const raw = String(orgCode || "").trim();
+  if (!raw) {
+    return [];
+  }
+
+  const values = new Set([raw, raw.toUpperCase()]);
+  const normalizedRaw = normalizePlayerTranslationKey(raw.replace(/,/g, " "));
+
+  Object.entries(translations?.teams || {}).forEach(([code, translated]) => {
+    if (!code) {
+      return;
+    }
+    const normalizedCode = normalizePlayerTranslationKey(code);
+    const normalizedTranslated = normalizePlayerTranslationKey(translated);
+    if (normalizedCode === normalizedRaw || normalizedTranslated === normalizedRaw) {
+      values.add(code);
+      values.add(String(code).toUpperCase());
+    }
+  });
+
+  const aliases = {
+    "china": "CHN",
+    "people s republic of china": "CHN",
+    "hong kong": "HKG",
+    "hong kong china": "HKG",
+    "hong kong, china": "HKG",
+    "hong kong macau": "HKG",
+    "korea republic": "KOR",
+    "republic of korea": "KOR",
+  };
+  const alias = aliases[normalizedRaw] || aliases[normalizePlayerTranslationKey(raw)];
+  if (alias) {
+    values.add(alias);
+  }
+
+  return [...values].filter(Boolean);
+}
+
 function getPlayerTranslationLookup(translations) {
   const players = translations?.players;
   if (!players || typeof players !== "object") {
@@ -3904,7 +3943,7 @@ function translatePlayerWithOrg(value, orgCode, translations) {
     return translatePlayer(value, translations);
   }
 
-  const orgCandidates = [rawOrg, rawOrg.toUpperCase()].filter(Boolean);
+  const orgCandidates = getPlayerOrgOverrideOrgCandidates(rawOrg, translations);
   for (const candidate of getNameTranslationCandidates(value)) {
     for (const org of orgCandidates) {
       const exactKey = `${candidate}|${org}`;
