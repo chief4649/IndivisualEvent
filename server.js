@@ -5373,34 +5373,36 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
         const translations = readTranslations(TRANSLATIONS_PATH);
         indexed = filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, translations);
       }
-      let deltaEventCount = 0;
-      if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
-        const indexedEventIds = new Set(persistentIndex.eventIds);
-        const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
-        deltaEventCount = deltaSnapshot.length;
-        if (deltaSnapshot.length > 0) {
-          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
-          indexed = mergeHeadToHeadCollectedResults(indexed, delta);
+      if (!orgFilter || indexed.events.length > 0) {
+        let deltaEventCount = 0;
+        if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
+          const indexedEventIds = new Set(persistentIndex.eventIds);
+          const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
+          deltaEventCount = deltaSnapshot.length;
+          if (deltaSnapshot.length > 0) {
+            const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
+            indexed = mergeHeadToHeadCollectedResults(indexed, delta);
+          }
         }
+        const result = {
+          signature: persistentIndexSignature,
+          builtAt: Date.now(),
+          eventIndexSource: "player-record-match-index",
+          candidateIndexSource: persistentIndex.stale ? "player-record-match-index+delta" : "player-record-match-index",
+          candidateIndexGeneratedAt: persistentIndex.generatedAt,
+          eventIndexGeneratedAt: null,
+          scannedEvents: snapshot.length,
+          candidateEvents: indexed.candidateEventCount ?? indexed.events.length,
+          playerKeyCount: indexed.playerKeyCount,
+          deltaEvents: deltaEventCount,
+          ...indexed,
+        };
+        setPlayerRecordResultCacheValue(cacheKey, result);
+        return {
+          ...result,
+          cacheHit: false,
+        };
       }
-      const result = {
-        signature: persistentIndexSignature,
-        builtAt: Date.now(),
-        eventIndexSource: "player-record-match-index",
-        candidateIndexSource: persistentIndex.stale ? "player-record-match-index+delta" : "player-record-match-index",
-        candidateIndexGeneratedAt: persistentIndex.generatedAt,
-        eventIndexGeneratedAt: null,
-        scannedEvents: snapshot.length,
-        candidateEvents: indexed.candidateEventCount ?? indexed.events.length,
-        playerKeyCount: indexed.playerKeyCount,
-        deltaEvents: deltaEventCount,
-        ...indexed,
-      };
-      setPlayerRecordResultCacheValue(cacheKey, result);
-      return {
-        ...result,
-        cacheHit: false,
-      };
     }
   }
 
