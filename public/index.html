@@ -1569,6 +1569,7 @@
         const normalized = {
           teams: parsed.teams && typeof parsed.teams === "object" && !Array.isArray(parsed.teams) ? parsed.teams : {},
           players: parsed.players && typeof parsed.players === "object" && !Array.isArray(parsed.players) ? parsed.players : {},
+          playerOrgOverrides: parsed.playerOrgOverrides && typeof parsed.playerOrgOverrides === "object" && !Array.isArray(parsed.playerOrgOverrides) ? parsed.playerOrgOverrides : {},
           rounds: parsed.rounds && typeof parsed.rounds === "object" && !Array.isArray(parsed.rounds) ? parsed.rounds : {},
           headers: parsed.headers && typeof parsed.headers === "object" && !Array.isArray(parsed.headers) ? parsed.headers : {},
         };

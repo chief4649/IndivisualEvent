@@ -1550,6 +1550,10 @@
     "Zsolt PETO": "ペートー",
     "ZUO Yue": "左玥"
   },
+  "playerOrgOverrides": {
+    "XU Yi|CHN": "徐奕",
+    "XU Yi|HKG": "許一"
+  },
   "rounds": {
     "quarterfinal": "決勝トーナメント準々決勝",
     "semifinal": "決勝トーナメント準決勝",

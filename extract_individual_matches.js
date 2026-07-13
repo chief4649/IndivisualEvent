@@ -909,10 +909,11 @@ function normalizeCompetitor(competitor) {
 }
 
 function readTranslations(filePath) {
-  const parsed = readJsonFile(filePath, { teams: {}, players: {}, rounds: {}, headers: {} }, "translations");
+  const parsed = readJsonFile(filePath, { teams: {}, players: {}, playerOrgOverrides: {}, rounds: {}, headers: {} }, "translations");
   return {
     teams: parsed.teams || {},
     players: parsed.players || {},
+    playerOrgOverrides: parsed.playerOrgOverrides || {},
     rounds: parsed.rounds || {},
     headers: parsed.headers || {},
   };
@@ -1059,6 +1060,38 @@ function translatePlayer(value, translations) {
   return compactJapaneseName(value);
 }
 
+function translatePlayerWithOrg(value, orgCode, translations) {
+  const overrides = translations?.playerOrgOverrides;
+  const rawOrg = String(orgCode || "").trim();
+  if (!overrides || typeof overrides !== "object" || !rawOrg) {
+    return translatePlayer(value, translations);
+  }
+
+  const orgCandidates = [rawOrg, rawOrg.toUpperCase()].filter(Boolean);
+  for (const candidate of getNameTranslationCandidates(value)) {
+    for (const org of orgCandidates) {
+      const exactKey = `${candidate}|${org}`;
+      if (overrides[exactKey]) {
+        return overrides[exactKey];
+      }
+      const normalizedKey = `${normalizePlayerTranslationKey(candidate)}|${String(org).toUpperCase()}`;
+      const matched = Object.entries(overrides).find(([key]) => {
+        const [namePart, orgPart] = String(key).split("|");
+        return normalizePlayerTranslationKey(namePart) === normalizePlayerTranslationKey(candidate) &&
+          String(orgPart || "").toUpperCase() === String(org).toUpperCase();
+      });
+      if (matched && matched[1]) {
+        return matched[1];
+      }
+      if (overrides[normalizedKey]) {
+        return overrides[normalizedKey];
+      }
+    }
+  }
+
+  return translatePlayer(value, translations);
+}
+
 function translateTeam(team, translations) {
   const rawName = team?.name || "";
   const normalizedName = rawName.replace(/\s+\d+$/, "");
@@ -1115,12 +1148,12 @@ function getSearchTermsForSingle(single, translations) {
       competitor?.org,
       competitor?.orgCode,
       ...getNameTranslationCandidates(competitor?.name),
-      translatePlayer(competitor?.name || "", translations),
+      translatePlayerWithOrg(competitor?.name || "", competitor?.orgCode || competitor?.org, translations),
       ...((competitor?.players || []).flatMap((player) => [
         player?.name,
         player?.orgCode,
         ...getNameTranslationCandidates(player?.name),
-        translatePlayer(player?.name || "", translations),
+        translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor?.orgCode || competitor?.org, translations),
       ])),
       translations.teams?.[competitor?.org || ""],
       translations.teams?.[competitor?.orgCode || ""],
@@ -1136,12 +1169,12 @@ function getSearchTermsForCompetitor(competitor, translations) {
     competitor?.org,
     competitor?.orgCode,
     ...getNameTranslationCandidates(competitor?.name),
-    translatePlayer(competitor?.name || "", translations),
+    translatePlayerWithOrg(competitor?.name || "", competitor?.orgCode || competitor?.org, translations),
     ...((competitor?.players || []).flatMap((player) => [
       player?.name,
       player?.orgCode,
       ...getNameTranslationCandidates(player?.name),
-      translatePlayer(player?.name || "", translations),
+      translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor?.orgCode || competitor?.org, translations),
     ])),
     translations.teams?.[competitor?.org || ""],
     translations.teams?.[competitor?.orgCode || ""],
@@ -4227,7 +4260,7 @@ function getCompetitorDisplayName(competitor, translations) {
 
   const players = (competitor.players || [])
     .map((player) => ({
-      name: translatePlayer(player?.name || "", translations),
+      name: translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor.orgCode || competitor.org, translations),
       org: translateOrg(player?.org || competitor.org || "", translations, {
         orgCode: player?.orgCode || competitor.orgCode,
       }),
@@ -4250,7 +4283,7 @@ function getCompetitorDisplayName(competitor, translations) {
     return players[0].org ? `${players[0].name}（${players[0].org}）` : players[0].name;
   }
 
-  const name = translatePlayer(competitor.name || "", translations);
+  const name = translatePlayerWithOrg(competitor.name || "", competitor.orgCode || competitor.org, translations);
   const translatedOrg = translateOrg(competitor.org || "", translations, {
     orgCode: competitor.orgCode,
   });
@@ -4263,7 +4296,7 @@ function getTeamSubMatchCompetitorName(competitor, translations) {
   }
 
   const players = (competitor.players || [])
-    .map((player) => translatePlayer(player?.name || "", translations))
+    .map((player) => translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor.orgCode || competitor.org, translations))
     .filter(Boolean);
 
   if (players.length >= 2) {
@@ -4273,7 +4306,7 @@ function getTeamSubMatchCompetitorName(competitor, translations) {
     return players[0];
   }
 
-  return translatePlayer(competitor.name || "", translations);
+  return translatePlayerWithOrg(competitor.name || "", competitor.orgCode || competitor.org, translations);
 }
 
 function getPlayerIdentityKey(player) {
