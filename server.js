@@ -4843,38 +4843,15 @@ function addRecentPlayerRecordSafetySnapshot(snapshot, eventIds) {
   };
 }
 
-async function buildPlayerRecordMergedCandidateSnapshot(snapshot, eventIds, textNeedles) {
-  const withRecentSafety = addRecentPlayerRecordSafetySnapshot(snapshot, eventIds);
-  const mergedPaths = new Set(withRecentSafety.snapshot.map((file) => file.parseFilePath || file.filePath));
-  let grepEvents = 0;
-
-  const grepPaths = await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles);
-  if (grepPaths) {
-    grepPaths.forEach((filePath) => {
-      if (!mergedPaths.has(filePath)) {
-        grepEvents += 1;
-        mergedPaths.add(filePath);
-      }
-    });
-  }
-
-  return {
-    snapshot: snapshot.filter((file) => mergedPaths.has(file.parseFilePath || file.filePath)),
-    recentSafetyEvents: withRecentSafety.recentSafetyEvents,
-    grepEvents,
-  };
-}
-
 async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature) {
   const sharded = getPlayerRecordShardedEventIds(signature, textNeedles);
   if (sharded) {
-    const mergedCandidate = await buildPlayerRecordMergedCandidateSnapshot(snapshot, sharded.eventIds, textNeedles);
+    const withRecentSafety = addRecentPlayerRecordSafetySnapshot(snapshot, sharded.eventIds);
     return {
-      snapshot: mergedCandidate.snapshot,
+      snapshot: withRecentSafety.snapshot,
       generatedAt: sharded.generatedAt,
       playerKeyCount: sharded.playerKeyCount,
-      recentSafetyEvents: mergedCandidate.recentSafetyEvents,
-      grepEvents: mergedCandidate.grepEvents,
+      recentSafetyEvents: withRecentSafety.recentSafetyEvents,
     };
   }
 
@@ -4883,12 +4860,11 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
   if (!eventIds) {
     return null;
   }
-  const mergedCandidate = await buildPlayerRecordMergedCandidateSnapshot(snapshot, eventIds, textNeedles);
+  const withRecentSafety = addRecentPlayerRecordSafetySnapshot(snapshot, eventIds);
   return {
-    snapshot: mergedCandidate.snapshot,
+    snapshot: withRecentSafety.snapshot,
     generatedAt: candidateIndex.generatedAt,
-    recentSafetyEvents: mergedCandidate.recentSafetyEvents,
-    grepEvents: mergedCandidate.grepEvents,
+    recentSafetyEvents: withRecentSafety.recentSafetyEvents,
   };
 }
 
@@ -5645,7 +5621,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       scannedEvents: snapshot.length,
       candidateEvents: indexedCandidate.snapshot.length,
       playerKeyCount: indexedCandidate.playerKeyCount || 0,
-      deltaEvents: (indexedCandidate.recentSafetyEvents || 0) + (indexedCandidate.grepEvents || 0),
+      deltaEvents: indexedCandidate.recentSafetyEvents || 0,
       ...collected,
     };
     setPlayerRecordResultCacheValue(cacheKey, result);
