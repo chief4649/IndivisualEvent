@@ -3574,7 +3574,6 @@ const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CAC
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
-const PLAYER_RECORD_RECENT_SAFETY_EVENTS = Number(process.env.PLAYER_RECORD_RECENT_SAFETY_EVENTS || 40);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 
 function getPathStatToken(filePath) {
@@ -4813,45 +4812,13 @@ function getPlayerRecordIndexedEventIds(candidateIndex, textNeedles) {
   return eventIds.size > 0 ? eventIds : null;
 }
 
-function addRecentPlayerRecordSafetySnapshot(snapshot, eventIds) {
-  const safetyCount = Number.isFinite(PLAYER_RECORD_RECENT_SAFETY_EVENTS) && PLAYER_RECORD_RECENT_SAFETY_EVENTS > 0
-    ? Math.floor(PLAYER_RECORD_RECENT_SAFETY_EVENTS)
-    : 0;
-  if (!Array.isArray(snapshot) || safetyCount <= 0) {
-    return { snapshot: snapshot.filter((file) => eventIds.has(file.eventId)), recentSafetyEvents: 0 };
-  }
-
-  const mergedEventIds = new Set(eventIds);
-  const recentFiles = [...snapshot]
-    .sort((left, right) => (
-      (right.mtimeMs || 0) - (left.mtimeMs || 0) ||
-      String(right.eventId || "").localeCompare(String(left.eventId || ""), "en", { numeric: true })
-    ))
-    .slice(0, safetyCount);
-
-  let recentSafetyEvents = 0;
-  recentFiles.forEach((file) => {
-    if (!mergedEventIds.has(file.eventId)) {
-      mergedEventIds.add(file.eventId);
-      recentSafetyEvents += 1;
-    }
-  });
-
-  return {
-    snapshot: snapshot.filter((file) => mergedEventIds.has(file.eventId)),
-    recentSafetyEvents,
-  };
-}
-
 async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature) {
   const sharded = getPlayerRecordShardedEventIds(signature, textNeedles);
   if (sharded) {
-    const withRecentSafety = addRecentPlayerRecordSafetySnapshot(snapshot, sharded.eventIds);
     return {
-      snapshot: withRecentSafety.snapshot,
+      snapshot: snapshot.filter((file) => sharded.eventIds.has(file.eventId)),
       generatedAt: sharded.generatedAt,
       playerKeyCount: sharded.playerKeyCount,
-      recentSafetyEvents: withRecentSafety.recentSafetyEvents,
     };
   }
 
@@ -4860,11 +4827,9 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
   if (!eventIds) {
     return null;
   }
-  const withRecentSafety = addRecentPlayerRecordSafetySnapshot(snapshot, eventIds);
   return {
-    snapshot: withRecentSafety.snapshot,
+    snapshot: snapshot.filter((file) => eventIds.has(file.eventId)),
     generatedAt: candidateIndex.generatedAt,
-    recentSafetyEvents: withRecentSafety.recentSafetyEvents,
   };
 }
 
@@ -5621,7 +5586,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       scannedEvents: snapshot.length,
       candidateEvents: indexedCandidate.snapshot.length,
       playerKeyCount: indexedCandidate.playerKeyCount || 0,
-      deltaEvents: indexedCandidate.recentSafetyEvents || 0,
+      deltaEvents: 0,
       ...collected,
     };
     setPlayerRecordResultCacheValue(cacheKey, result);
@@ -5631,7 +5596,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
     };
   }
 
-  if (!orgFilter && process.env.PLAYER_RECORD_LEGACY_INDEX_ENABLED === "1") {
+  if (!orgFilter) {
     const legacyIndexed = getLegacyPlayerRecordEventsForNeedles(needles);
     if (legacyIndexed) {
       const result = {
