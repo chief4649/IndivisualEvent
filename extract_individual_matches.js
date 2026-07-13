@@ -35,6 +35,7 @@ const fs = require("fs");
 const path = require("path");
 
 const DEFAULT_DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
+const BUNDLED_TRANSLATIONS_PATH = path.join(__dirname, "translations.ja.json");
 const DEFAULT_TRANSLATIONS_PATH = path.join(DEFAULT_DATA_DIR, "translations.ja.json");
 const DEFAULT_RULES_PATH = path.join(DEFAULT_DATA_DIR, "rules.json");
 const DEFAULT_CACHE_DIR = path.join(DEFAULT_DATA_DIR, ".cache");
@@ -911,9 +912,9 @@ function normalizeCompetitor(competitor) {
 function readTranslations(filePath) {
   const parsed = readJsonFile(filePath, { teams: {}, players: {}, playerOrgOverrides: {}, rounds: {}, headers: {} }, "translations");
   let bundledPlayerOrgOverrides = {};
-  if (path.resolve(filePath) !== path.resolve(DEFAULT_TRANSLATIONS_PATH) && fs.existsSync(DEFAULT_TRANSLATIONS_PATH)) {
+  if (path.resolve(filePath) !== path.resolve(BUNDLED_TRANSLATIONS_PATH) && fs.existsSync(BUNDLED_TRANSLATIONS_PATH)) {
     try {
-      const bundled = JSON.parse(fs.readFileSync(DEFAULT_TRANSLATIONS_PATH, "utf8"));
+      const bundled = JSON.parse(fs.readFileSync(BUNDLED_TRANSLATIONS_PATH, "utf8"));
       bundledPlayerOrgOverrides = bundled?.playerOrgOverrides && typeof bundled.playerOrgOverrides === "object" && !Array.isArray(bundled.playerOrgOverrides)
         ? bundled.playerOrgOverrides
         : {};
