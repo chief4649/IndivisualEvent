@@ -3590,8 +3590,9 @@ const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CAC
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
-const PLAYER_RECORD_RECENT_SAFETY_EVENTS = Number(process.env.PLAYER_RECORD_RECENT_SAFETY_EVENTS || 40);
+const PLAYER_RECORD_RECENT_SAFETY_EVENTS = Number(process.env.PLAYER_RECORD_RECENT_SAFETY_EVENTS || 0);
 const PLAYER_RECORD_REQUEST_GREP_MERGE_ENABLED = process.env.PLAYER_RECORD_REQUEST_GREP_MERGE_ENABLED === "1";
+const PLAYER_RECORD_REQUEST_ALL_FALLBACK_ENABLED = process.env.PLAYER_RECORD_REQUEST_ALL_FALLBACK_ENABLED === "1";
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 
 function getPathStatToken(filePath) {
@@ -5071,8 +5072,8 @@ function runGrepFileCandidates(files, token) {
 async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature) {
   if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
     return {
-      snapshot,
-      source: "all",
+      snapshot: PLAYER_RECORD_REQUEST_ALL_FALLBACK_ENABLED ? snapshot : [],
+      source: PLAYER_RECORD_REQUEST_ALL_FALLBACK_ENABLED ? "all" : "candidate-index-miss",
       generatedAt: null,
     };
   }
@@ -5086,11 +5087,13 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature
     };
   }
 
-  const candidatePaths = await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles);
+  const candidatePaths = PLAYER_RECORD_REQUEST_GREP_MERGE_ENABLED
+    ? await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles)
+    : null;
   if (!candidatePaths) {
     return {
-      snapshot,
-      source: "all",
+      snapshot: PLAYER_RECORD_REQUEST_ALL_FALLBACK_ENABLED ? snapshot : [],
+      source: PLAYER_RECORD_REQUEST_ALL_FALLBACK_ENABLED ? "all" : "candidate-index-miss",
       generatedAt: null,
     };
   }
