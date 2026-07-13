@@ -5404,18 +5404,13 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       let deltaEventCount = 0;
       if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
         const indexedEventIds = new Set(persistentIndex.eventIds);
-        const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
-        deltaEventCount = deltaSnapshot.length;
-        if (deltaSnapshot.length > 0) {
-          const delta = await collectPlayerRecordEvents(deltaSnapshot, needles, [], { eventLimit, matchLimit, orgFilter });
-          indexed = mergeHeadToHeadCollectedResults(indexed, delta);
-        }
+        deltaEventCount = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId))).length;
       }
       const result = {
         signature: persistentIndexSignature,
         builtAt: Date.now(),
         eventIndexSource: "player-record-match-index",
-        candidateIndexSource: persistentIndex.stale ? "player-record-match-index+delta" : "player-record-match-index",
+        candidateIndexSource: persistentIndex.stale ? "player-record-match-index-stale" : "player-record-match-index",
         candidateIndexGeneratedAt: persistentIndex.generatedAt,
         eventIndexGeneratedAt: null,
         scannedEvents: snapshot.length,
