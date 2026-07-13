@@ -27,6 +27,7 @@ const MANIFEST_PATH = path.join(OUTPUT_DIR, "manifest.json");
 const CANDIDATE_INDEX_VERSION = 1;
 const CANDIDATE_INDEX_PATH = path.join(OUTPUT_DIR, "candidate-events.json");
 const CANDIDATE_MANIFEST_PATH = path.join(OUTPUT_DIR, "candidate-manifest.json");
+const CANDIDATE_SHARDS_DIR = path.join(OUTPUT_DIR, "candidate-shards");
 
 function readJson(filePath, fallback) {
   try {
@@ -516,13 +517,32 @@ function buildCandidateIndex(files, deps) {
   return { index, indexedMatches };
 }
 
+function getCandidateShardName(key) {
+  const first = String(key || "").trim().charAt(0).toLowerCase();
+  return /^[a-z0-9]$/.test(first) ? `${first}.json` : "_.json";
+}
+
 function writeCandidateIndex(files, index, indexedMatches) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-  fs.writeFileSync(CANDIDATE_INDEX_PATH, JSON.stringify(index));
+  fs.rmSync(CANDIDATE_SHARDS_DIR, { recursive: true, force: true });
+  fs.mkdirSync(CANDIDATE_SHARDS_DIR, { recursive: true });
+  const shards = {};
+  Object.entries(index).forEach(([key, eventIds]) => {
+    const shardName = getCandidateShardName(key);
+    if (!shards[shardName]) {
+      shards[shardName] = {};
+    }
+    shards[shardName][key] = eventIds;
+  });
+  Object.entries(shards).forEach(([shardName, shard]) => {
+    fs.writeFileSync(path.join(CANDIDATE_SHARDS_DIR, shardName), JSON.stringify(shard));
+  });
   fs.writeFileSync(CANDIDATE_MANIFEST_PATH, JSON.stringify({
     version: CANDIDATE_INDEX_VERSION,
     generatedAt: new Date().toISOString(),
     signature: getPlayerRecordCacheSignature(files),
+    sharded: true,
+    shardCount: Object.keys(shards).length,
     eventCount: files.length,
     indexedMatches,
     keyCount: Object.keys(index).length,
@@ -543,6 +563,9 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
 
   const deps = readBuildDeps();
   const existingIndex = readJson(CANDIDATE_INDEX_PATH, {});
+  if (Object.keys(existingIndex).length === 0) {
+    return rebuildPlayerRecordCandidateIndex();
+  }
   Object.keys(existingIndex).forEach((key) => {
     const nextEventIds = (Array.isArray(existingIndex[key]) ? existingIndex[key] : [])
       .filter((eventId) => !requested.has(String(eventId)));

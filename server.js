@@ -52,6 +52,7 @@ const BUNDLED_PLAYER_RECORDS_INDEX_DIR = path.join(__dirname, "player-records-in
 const PLAYER_RECORD_CANDIDATE_INDEX_VERSION = 1;
 const PLAYER_RECORD_CANDIDATE_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-events.json");
 const PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-manifest.json");
+const PLAYER_RECORD_CANDIDATE_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-shards");
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION = 1;
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names.json");
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "player-search-names-manifest.json");
@@ -4543,6 +4544,87 @@ function readPlayerRecordCandidateIndexFromDisk(signature) {
   }
 }
 
+function getPlayerRecordCandidateShardName(key) {
+  const first = String(key || "").trim().charAt(0).toLowerCase();
+  return /^[a-z0-9]$/.test(first) ? `${first}.json` : "_.json";
+}
+
+function readPlayerRecordCandidateManifest(signature) {
+  try {
+    const manifest = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, "utf8"));
+    if (
+      manifest?.version !== PLAYER_RECORD_CANDIDATE_INDEX_VERSION ||
+      manifest?.signature !== signature
+    ) {
+      return null;
+    }
+    return manifest;
+  } catch {
+    return null;
+  }
+}
+
+function getPlayerRecordShardedEventIds(signature, textNeedles) {
+  if (!Array.isArray(textNeedles) || textNeedles.length === 0) {
+    return null;
+  }
+  const manifest = readPlayerRecordCandidateManifest(signature);
+  if (!manifest?.sharded) {
+    return null;
+  }
+
+  const shards = new Map();
+  const getShard = (phrase) => {
+    const shardName = getPlayerRecordCandidateShardName(phrase);
+    if (!shards.has(shardName)) {
+      try {
+        const shardPath = path.join(PLAYER_RECORD_CANDIDATE_SHARDS_DIR, shardName);
+        const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
+        shards.set(shardName, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+      } catch {
+        shards.set(shardName, {});
+      }
+    }
+    return shards.get(shardName) || {};
+  };
+
+  const eventIds = new Set();
+  let playerKeyCount = 0;
+  textNeedles.forEach((needle) => {
+    const phrase = String(needle?.phrase || "").trim();
+    if (!phrase) {
+      return;
+    }
+    const shard = getShard(phrase);
+    if (Array.isArray(shard[phrase])) {
+      playerKeyCount += 1;
+      shard[phrase].forEach((eventId) => eventIds.add(eventId));
+    }
+  });
+
+  if (eventIds.size === 0) {
+    textNeedles.forEach((needle) => {
+      const phrase = String(needle?.phrase || "").trim();
+      if (!phrase) {
+        return;
+      }
+      const shard = getShard(phrase);
+      Object.keys(shard).forEach((key) => {
+        if (playerRecordNameMatchesNeedle(key, phrase)) {
+          playerKeyCount += 1;
+          shard[key].forEach((eventId) => eventIds.add(eventId));
+        }
+      });
+    });
+  }
+
+  return eventIds.size > 0 ? {
+    eventIds,
+    generatedAt: manifest.generatedAt || null,
+    playerKeyCount,
+  } : null;
+}
+
 function setPlayerRecordCandidateIndexState(indexState) {
   playerRecordCandidateIndexState.signature = indexState.signature;
   playerRecordCandidateIndexState.generatedAt = indexState.generatedAt;
@@ -4731,6 +4813,15 @@ function getPlayerRecordIndexedEventIds(candidateIndex, textNeedles) {
 }
 
 async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature) {
+  const sharded = getPlayerRecordShardedEventIds(signature, textNeedles);
+  if (sharded) {
+    return {
+      snapshot: snapshot.filter((file) => sharded.eventIds.has(file.eventId)),
+      generatedAt: sharded.generatedAt,
+      playerKeyCount: sharded.playerKeyCount,
+    };
+  }
+
   const candidateIndex = await getPlayerRecordCandidateIndex(snapshot, signature);
   const eventIds = getPlayerRecordIndexedEventIds(candidateIndex, textNeedles);
   if (!eventIds) {
