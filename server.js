@@ -3591,7 +3591,6 @@ const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
 const PLAYER_RECORD_RECENT_SAFETY_EVENTS = Number(process.env.PLAYER_RECORD_RECENT_SAFETY_EVENTS || 40);
-const PLAYER_RECORD_REQUEST_GREP_MERGE_ENABLED = process.env.PLAYER_RECORD_REQUEST_GREP_MERGE_ENABLED === "1";
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 
 function getPathStatToken(filePath) {
@@ -4865,9 +4864,7 @@ async function buildPlayerRecordMergedCandidateSnapshot(snapshot, eventIds, text
   const mergedPaths = new Set(withRecentSafety.snapshot.map((file) => file.parseFilePath || file.filePath));
   let grepEvents = 0;
 
-  const grepPaths = PLAYER_RECORD_REQUEST_GREP_MERGE_ENABLED
-    ? await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles)
-    : null;
+  const grepPaths = await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles);
   if (grepPaths) {
     grepPaths.forEach((filePath) => {
       if (!mergedPaths.has(filePath)) {
