@@ -910,10 +910,24 @@ function normalizeCompetitor(competitor) {
 
 function readTranslations(filePath) {
   const parsed = readJsonFile(filePath, { teams: {}, players: {}, playerOrgOverrides: {}, rounds: {}, headers: {} }, "translations");
+  let bundledPlayerOrgOverrides = {};
+  if (path.resolve(filePath) !== path.resolve(DEFAULT_TRANSLATIONS_PATH) && fs.existsSync(DEFAULT_TRANSLATIONS_PATH)) {
+    try {
+      const bundled = JSON.parse(fs.readFileSync(DEFAULT_TRANSLATIONS_PATH, "utf8"));
+      bundledPlayerOrgOverrides = bundled?.playerOrgOverrides && typeof bundled.playerOrgOverrides === "object" && !Array.isArray(bundled.playerOrgOverrides)
+        ? bundled.playerOrgOverrides
+        : {};
+    } catch {
+      bundledPlayerOrgOverrides = {};
+    }
+  }
   return {
     teams: parsed.teams || {},
     players: parsed.players || {},
-    playerOrgOverrides: parsed.playerOrgOverrides || {},
+    playerOrgOverrides: {
+      ...bundledPlayerOrgOverrides,
+      ...(parsed.playerOrgOverrides || {}),
+    },
     rounds: parsed.rounds || {},
     headers: parsed.headers || {},
   };
