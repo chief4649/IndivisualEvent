@@ -232,6 +232,18 @@ function addRecord(index, key, eventMeta, matchEntry) {
   }
 }
 
+function mergeRecord(index, key, eventRecord) {
+  if (!key || !eventRecord?.event) {
+    return;
+  }
+  if (!index[key]) {
+    index[key] = [];
+  }
+  index[key] = index[key].filter((item) => String(item?.event || "") !== String(eventRecord.event));
+  index[key].push(eventRecord);
+  index[key].sort(compareEvents);
+}
+
 function getCompetitorKeys(competitor, translations) {
   return Array.from(new Set([
     competitor?.name,
@@ -257,14 +269,36 @@ function getShardName(key) {
   return match ? match[0].toLowerCase() : "_";
 }
 
-function main() {
-  const translations = readTranslations(TRANSLATIONS_PATH);
-  const rules = readRules(RULES_PATH);
-  const searchIndex = readJson(WTT_SEARCH_INDEX_PATH, {});
-  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
-  const archiveIndex = readJson(WTT_ARCHIVE_INDEX_PATH, {});
-  const eventNames = readJson(EVENT_NAMES_PATH, {});
-  const files = listWttRecordFiles();
+function addMatchToIndex(index, file, eventMeta, match, translations, rules, parentMatch = null) {
+  const sourceMatch = parentMatch || match;
+  const competitors = Array.isArray(match.competitors) ? match.competitors : [];
+  if (competitors.length === 0) {
+    return 0;
+  }
+  const roundLabel = translateRoundJa(
+    sourceMatch.roundKey || match.roundKey,
+    sourceMatch.roundLabel || match.roundLabel,
+    translations,
+    rules,
+    buildJaRoundContext([sourceMatch]),
+  );
+  competitors.forEach((competitor, competitorIndex) => {
+    const keys = getCompetitorKeys(competitor, translations);
+    if (keys.length === 0) {
+      return;
+    }
+    const matchEntry = {
+      categoryName: sourceMatch.categoryName || match.categoryName || "",
+      roundLabel,
+      line: buildPlayerRecordLine(match, competitorIndex, translations),
+      documentCode: match.documentCode || sourceMatch.documentCode || "",
+    };
+    keys.forEach((key) => addRecord(index, key, eventMeta, matchEntry));
+  });
+  return 1;
+}
+
+function buildEventIndex(files, deps) {
   const index = {};
   let indexedMatches = 0;
 
@@ -273,37 +307,184 @@ function main() {
     if (!Array.isArray(payload)) {
       return;
     }
-    const eventMeta = getEventRecordMeta(eventId, searchIndex, dateIndex, archiveIndex, eventNames);
+    const eventMeta = getEventRecordMeta(eventId, deps.searchIndex, deps.dateIndex, deps.archiveIndex, deps.eventNames);
     payload.forEach((item) => {
       const match = normalizeArchivedMatch(item);
-      if (!match || match.matchType !== "individual") {
+      if (!match) {
         return;
       }
-      const competitors = Array.isArray(match.competitors) ? match.competitors : [];
-      if (competitors.length === 0) {
+      if (match.matchType === "individual") {
+        indexedMatches += addMatchToIndex(index, { eventId, filePath }, eventMeta, match, deps.translations, deps.rules);
         return;
       }
-      const roundLabel = translateRoundJa(match.roundKey, match.roundLabel, translations, rules, buildJaRoundContext([match]));
-      competitors.forEach((competitor, competitorIndex) => {
-        const keys = getCompetitorKeys(competitor, translations);
-        if (keys.length === 0) {
-          return;
-        }
-        const matchEntry = {
-          categoryName: match.categoryName || "",
-          roundLabel,
-          line: buildPlayerRecordLine(match, competitorIndex, translations),
-          documentCode: match.documentCode || "",
-        };
-        keys.forEach((key) => addRecord(index, key, eventMeta, matchEntry));
-      });
-      indexedMatches += 1;
+      if (match.matchType === "team") {
+        (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
+          indexedMatches += addMatchToIndex(index, { eventId, filePath }, eventMeta, single, deps.translations, deps.rules, match);
+        });
+      }
     });
   });
 
   Object.values(index).forEach((events) => {
     events.sort(compareEvents);
   });
+
+  return {
+    index,
+    indexedMatches,
+  };
+}
+
+function getPlayerRecordShardFiles() {
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    return [];
+  }
+  return fs.readdirSync(OUTPUT_DIR)
+    .filter((fileName) => /^(?:[a-z0-9]|_)\.json$/i.test(fileName))
+    .map((fileName) => path.join(OUTPUT_DIR, fileName));
+}
+
+function removeEventsFromExistingShards(eventIds) {
+  const eventIdSet = new Set(eventIds.map((eventId) => String(eventId || "")).filter(Boolean));
+  if (eventIdSet.size === 0) {
+    return;
+  }
+
+  getPlayerRecordShardFiles().forEach((shardPath) => {
+    const shard = readJson(shardPath, {});
+    let changed = false;
+    Object.keys(shard).forEach((key) => {
+      const nextEvents = (Array.isArray(shard[key]) ? shard[key] : [])
+        .filter((event) => !eventIdSet.has(String(event?.event || "")));
+      if (nextEvents.length !== (Array.isArray(shard[key]) ? shard[key].length : 0)) {
+        changed = true;
+      }
+      if (nextEvents.length > 0) {
+        shard[key] = nextEvents;
+      } else {
+        delete shard[key];
+      }
+    });
+    if (changed) {
+      fs.writeFileSync(shardPath, JSON.stringify(shard));
+    }
+  });
+}
+
+function mergeIndexIntoExistingShards(index) {
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  const grouped = {};
+  Object.entries(index).forEach(([key, events]) => {
+    const shardName = getShardName(key);
+    if (!grouped[shardName]) {
+      grouped[shardName] = {};
+    }
+    grouped[shardName][key] = events;
+  });
+
+  Object.entries(grouped).forEach(([shardName, shardIndex]) => {
+    const shardPath = path.join(OUTPUT_DIR, `${shardName}.json`);
+    const shard = readJson(shardPath, {});
+    Object.entries(shardIndex).forEach(([key, events]) => {
+      (Array.isArray(events) ? events : []).forEach((eventRecord) => {
+        mergeRecord(shard, key, eventRecord);
+      });
+    });
+    fs.writeFileSync(shardPath, JSON.stringify(shard));
+  });
+}
+
+function writeManifest(payload) {
+  let keyCount = 0;
+  const shardFiles = getPlayerRecordShardFiles();
+  shardFiles.forEach((shardPath) => {
+    const shard = readJson(shardPath, {});
+    keyCount += Object.keys(shard).length;
+  });
+  fs.writeFileSync(MANIFEST_PATH, JSON.stringify({
+    ...payload,
+    shardCount: shardFiles.length,
+    keyCount,
+  }));
+}
+
+function readBuildDeps() {
+  return {
+    translations: readTranslations(TRANSLATIONS_PATH),
+    rules: readRules(RULES_PATH),
+    searchIndex: readJson(WTT_SEARCH_INDEX_PATH, {}),
+    dateIndex: readWttDateIndex(WTT_DATE_INDEX_PATH),
+    archiveIndex: readJson(WTT_ARCHIVE_INDEX_PATH, {}),
+    eventNames: readJson(EVENT_NAMES_PATH, {}),
+  };
+}
+
+function updatePlayerRecordsIndexForEvents(eventIds) {
+  const requested = new Set(eventIds.map((eventId) => String(eventId || "").trim()).filter(Boolean));
+  if (requested.size === 0) {
+    return { eventCount: 0, indexedMatches: 0, keyCount: 0 };
+  }
+
+  const allFiles = listWttRecordFiles();
+  const files = allFiles.filter((file) => requested.has(String(file.eventId)));
+  if (files.length === 0) {
+    return { eventCount: 0, indexedMatches: 0, keyCount: 0 };
+  }
+  const isAllIncrementalUpdate = files.length === allFiles.length;
+  const existingManifest = readJson(MANIFEST_PATH, {});
+  const deps = readBuildDeps();
+  const { index, indexedMatches } = buildEventIndex(files, deps);
+  removeEventsFromExistingShards([...requested]);
+  mergeIndexIntoExistingShards(index);
+  writeManifest({
+    ...existingManifest,
+    generatedAt: new Date().toISOString(),
+    updateMode: isAllIncrementalUpdate ? "incremental-all" : "incremental",
+    eventCount: allFiles.length,
+    updatedEvents: [...requested],
+    indexedMatches: isAllIncrementalUpdate ? indexedMatches : existingManifest.indexedMatches,
+    incrementalIndexedMatches: indexedMatches,
+  });
+  return {
+    eventCount: files.length,
+    indexedMatches,
+    keyCount: Object.keys(index).length,
+  };
+}
+
+function parseEventArgs(argv) {
+  if (argv.includes("--all-incremental")) {
+    return listWttRecordFiles().map((file) => String(file.eventId)).filter(Boolean);
+  }
+
+  const events = [];
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+    const next = argv[index + 1];
+    if (arg === "--event" || arg === "-e") {
+      events.push(...String(next || "").split(",").map((value) => value.trim()).filter(Boolean));
+      index += 1;
+      continue;
+    }
+    if (!arg.startsWith("-")) {
+      events.push(...arg.split(",").map((value) => value.trim()).filter(Boolean));
+    }
+  }
+  return events;
+}
+
+function main() {
+  const eventArgs = parseEventArgs(process.argv.slice(2));
+  if (eventArgs.length > 0) {
+    const result = updatePlayerRecordsIndexForEvents(eventArgs);
+    console.log(`updated ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
+    console.log(OUTPUT_DIR);
+    return;
+  }
+
+  const deps = readBuildDeps();
+  const files = listWttRecordFiles();
+  const { index, indexedMatches } = buildEventIndex(files, deps);
 
   const payload = {
     generatedAt: new Date().toISOString(),
@@ -324,13 +505,15 @@ function main() {
   Object.entries(shards).forEach(([shardName, shardIndex]) => {
     fs.writeFileSync(path.join(OUTPUT_DIR, `${shardName}.json`), JSON.stringify(shardIndex));
   });
-  fs.writeFileSync(MANIFEST_PATH, JSON.stringify({
-    ...payload,
-    shardCount: Object.keys(shards).length,
-    keyCount: Object.keys(index).length,
-  }));
+  writeManifest(payload);
   console.log(`indexed ${files.length} events, ${indexedMatches} matches, ${Object.keys(index).length} player keys`);
   console.log(OUTPUT_DIR);
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  updatePlayerRecordsIndexForEvents,
+};

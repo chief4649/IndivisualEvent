@@ -12,6 +12,7 @@ const {
   updateWttArchiveIndexEntry,
   writeWttArchiveIfNotSmaller,
 } = require("./extract_individual_matches");
+const { updatePlayerRecordsIndexForEvents } = require("./build_player_records_index");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
@@ -356,7 +357,9 @@ async function main() {
       const result = await archiveEvent(candidate, args);
       if (result.status === "archived") {
         summary.archived += 1;
+        const indexResult = updatePlayerRecordsIndexForEvents([result.eventId]);
         console.log(`archived: ${result.eventId} (${result.matches} matches)`);
+        console.log(`player-records-index: ${result.eventId} (${indexResult.indexedMatches} matches, ${indexResult.keyCount} player keys)`);
       } else {
         summary.skipped += 1;
         markCrawlSkipped(candidate, result.reason);

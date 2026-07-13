@@ -17,6 +17,7 @@
     "export:zennihon": "node export_zennihon_archives.js",
     "export:wtt": "node export_wtt_archive.js",
     "crawl:wtt": "node crawl_wtt_archives.js",
+    "index:player-records": "node build_player_records_index.js",
     "verify:wtt": "node verify_wtt_alignment.js",
     "docs:generate": "node scripts/docs/generate.js"
   }
