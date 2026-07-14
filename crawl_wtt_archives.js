@@ -35,6 +35,7 @@ function parseArgs(argv) {
     includeActive: false,
     dryRun: false,
     skipDerivedIndexes: false,
+    skipH2hIndex: false,
     keepRaw: false,
     events: [],
   };
@@ -79,6 +80,9 @@ function parseArgs(argv) {
         break;
       case "--skip-derived-indexes":
         args.skipDerivedIndexes = true;
+        break;
+      case "--skip-h2h-index":
+        args.skipH2hIndex = true;
         break;
       case "--keep-raw":
         args.keepRaw = true;
@@ -125,6 +129,7 @@ function printHelp(exitCode = 0) {
     "  --include-active    Also fetch events that are not finished yet",
     "  --dry-run           Print planned work without fetching",
     "  --skip-derived-indexes  Do not build slim records or player-record event indexes",
+    "  --skip-h2h-index    Do not rebuild the head-to-head index after archiving",
     "  --keep-raw          Keep wtt-records/{event}.json after derived files are built",
   ].join("\n"));
   process.exit(exitCode);
@@ -362,6 +367,26 @@ function buildDerivedArchiveFiles(eventId, args) {
   };
 }
 
+function buildHeadToHeadIndex() {
+  const output = runNodeScript([
+    "-r",
+    "./runtime_legacy_ittf_patch.js",
+    "server.js",
+    "--build-head-to-head-index",
+  ]).trim();
+  const parsed = (() => {
+    try {
+      return JSON.parse(output);
+    } catch {
+      return null;
+    }
+  })();
+  if (!parsed?.ok) {
+    throw new Error(`head-to-head index build failed: ${output}`);
+  }
+  return parsed;
+}
+
 async function archiveEvent(candidate, args) {
   const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive);
   const meta = await getWttEventLifecycleMeta(candidate.eventId, {
@@ -445,6 +470,7 @@ async function main() {
   }
 
   const summary = { archived: 0, skipped: 0, failed: 0, derivedFailed: 0 };
+  let shouldBuildHeadToHeadIndex = false;
   for (let index = 0; index < candidates.length; index += 1) {
     const candidate = candidates[index];
     try {
@@ -461,6 +487,7 @@ async function main() {
             console.log(`derived-indexes: ${result.eventId} skipped`);
           } else {
             console.log(`derived-indexes: ${result.eventId} slim=${derivedResult.slimBytes} eventIndex=${derivedResult.eventIndexBytes} rawDeleted=${derivedResult.rawDeleted}`);
+            shouldBuildHeadToHeadIndex = true;
           }
         } catch (error) {
           summary.derivedFailed += 1;
@@ -483,6 +510,17 @@ async function main() {
 
     if (index < candidates.length - 1 && args.delayMs > 0) {
       await sleep(args.delayMs);
+    }
+  }
+
+  if (shouldBuildHeadToHeadIndex && !args.skipDerivedIndexes && !args.skipH2hIndex) {
+    try {
+      console.log("head-to-head-index: building");
+      const h2hResult = buildHeadToHeadIndex();
+      console.log(`head-to-head-index: events=${h2hResult.eventCount} players=${h2hResult.playerKeyCount} pairs=${h2hResult.pairKeyCount}`);
+    } catch (error) {
+      summary.derivedFailed += 1;
+      console.error(`head-to-head-index failed: ${error?.message || error}`);
     }
   }
 
