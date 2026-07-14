@@ -3154,9 +3154,15 @@ function getCanonicalPlayerSearchNameKey(name) {
     .join(" ");
 }
 
-function getPlayerSearchIdentityKey(name) {
+function getPlayerSearchIdentityKey(name, translatedName = "") {
   const canonicalName = getCanonicalPlayerSearchNameKey(name);
-  return canonicalName ? `name:${canonicalName}` : "";
+  if (!canonicalName) {
+    return "";
+  }
+  const normalizedTranslatedName = normalizePlayerSearchText(translatedName);
+  return normalizedTranslatedName && normalizedTranslatedName !== "未登録"
+    ? `name:${canonicalName}|translated:${normalizedTranslatedName}`
+    : `name:${canonicalName}`;
 }
 
 function mergePlayerSearchResultCandidate(existing, candidate) {
@@ -3297,6 +3303,27 @@ function getPlayerSearchTranslatedName(name, translations) {
   return "";
 }
 
+function addPlayerSearchResultCandidate(resultByPlayerKey, query, item) {
+  const normalizedName = normalizePlayerSearchText(item?.name);
+  if (!normalizedName) {
+    return;
+  }
+  const translatedName = String(item?.translatedName || "").trim() || "未登録";
+  const candidate = {
+    name: String(item.name || "").trim(),
+    translatedName,
+    registered: Boolean(item.registered || (translatedName && translatedName !== "未登録")),
+    orgCode: String(item.orgCode || "").trim().toUpperCase() || undefined,
+    score: Number.isFinite(item.score) ? item.score : getPlayerSearchScore(query, item.name, translatedName),
+  };
+  const playerKey = getPlayerSearchIdentityKey(candidate.name, candidate.translatedName);
+  if (!playerKey) {
+    return;
+  }
+  const existing = resultByPlayerKey.get(playerKey);
+  resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, candidate));
+}
+
 function addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, translations) {
   const normalizedName = normalizePlayerSearchText(name);
   if (!normalizedName) {
@@ -3315,12 +3342,7 @@ function addPlayerSearchArchiveCandidate(resultByPlayerKey, query, name, transla
     registered: Boolean(translatedName),
     score: getPlayerSearchScore(query, name, translatedName),
   };
-  const playerKey = getPlayerSearchIdentityKey(item.name, item.translatedName);
-  if (!playerKey) {
-    return;
-  }
-  const existing = resultByPlayerKey.get(playerKey);
-  resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
+  addPlayerSearchResultCandidate(resultByPlayerKey, query, item);
 }
 
 function runGrepPlayerSearchFieldLines(files) {
@@ -3481,16 +3503,33 @@ async function handlePlayerSearchApi(requestUrl, response) {
       Object.entries(players).forEach(([name, translatedName]) => {
         const haystack = normalizePlayerSearchText(`${name} ${translatedName}`);
         if (tokens.every((token) => haystack.includes(token))) {
-          const item = {
+          addPlayerSearchResultCandidate(resultByPlayerKey, query, {
             name,
             translatedName: String(translatedName || "").trim() || "未登録",
             registered: Boolean(String(translatedName || "").trim()),
             score: getPlayerSearchScore(query, name, translatedName),
-          };
-          const playerKey = getPlayerSearchIdentityKey(name, translatedName);
-          const existing = resultByPlayerKey.get(playerKey);
-          resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
+          });
         }
+      });
+      Object.entries(translations.playerOrgOverrides || {}).forEach(([key, translatedName]) => {
+        const [namePart, orgPart] = String(key || "").split("|");
+        const name = String(namePart || "").trim();
+        const orgCode = String(orgPart || "").trim().toUpperCase();
+        const translated = String(translatedName || "").trim();
+        if (!name || !translated) {
+          return;
+        }
+        const haystack = normalizePlayerSearchText(`${name} ${translated} ${orgCode}`);
+        if (!tokens.every((token) => haystack.includes(token))) {
+          return;
+        }
+        addPlayerSearchResultCandidate(resultByPlayerKey, query, {
+          name,
+          translatedName: translated,
+          registered: true,
+          orgCode,
+          score: getPlayerSearchScore(query, name, translated),
+        });
       });
     }
 
@@ -3498,9 +3537,7 @@ async function handlePlayerSearchApi(requestUrl, response) {
       ? await collectPlayerSearchArchiveCandidates(query, translations, limit)
       : [];
     archiveResults.forEach((item) => {
-      const playerKey = getPlayerSearchIdentityKey(item.name, item.translatedName);
-      const existing = resultByPlayerKey.get(playerKey);
-      resultByPlayerKey.set(playerKey, mergePlayerSearchResultCandidate(existing, item));
+      addPlayerSearchResultCandidate(resultByPlayerKey, query, item);
     });
 
     results.push(...resultByPlayerKey.values());

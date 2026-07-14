@@ -1185,7 +1185,7 @@
         }
 
         const requestId = target === "a" ? ++headToHeadPlayerARequestId : ++headToHeadPlayerBRequestId;
-        const response = await fetchWithTimeout(`/api/players/search?q=${encodeURIComponent(query)}&limit=8`);
+        const response = await fetchWithTimeout(`/api/players/search?q=${encodeURIComponent(query)}&limit=20`);
         const data = await readJsonResponse(response, "Head To Head の選手候補の読み込みに失敗しました。");
         if (!response.ok) {
           throw new Error(data.error || "Head To Head の選手候補の読み込みに失敗しました。");
