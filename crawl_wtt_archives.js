@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const {
   DEFAULT_DATA_DIR,
@@ -16,6 +17,8 @@ const { updatePlayerRecordCandidateIndexForEvents } = require("./build_player_re
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
+const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
+const PLAYER_RECORD_EVENT_INDEX_DIR = path.join(DATA_DIR, "player-records-index", "event-records");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
@@ -31,6 +34,8 @@ function parseArgs(argv) {
     force: false,
     includeActive: false,
     dryRun: false,
+    skipDerivedIndexes: false,
+    keepRaw: false,
     events: [],
   };
 
@@ -71,6 +76,12 @@ function parseArgs(argv) {
         break;
       case "--dry-run":
         args.dryRun = true;
+        break;
+      case "--skip-derived-indexes":
+        args.skipDerivedIndexes = true;
+        break;
+      case "--keep-raw":
+        args.keepRaw = true;
         break;
       case "--help":
       case "-h":
@@ -113,6 +124,8 @@ function printHelp(exitCode = 0) {
     "  --force             Re-fetch even when wtt-records/{event}.json exists",
     "  --include-active    Also fetch events that are not finished yet",
     "  --dry-run           Print planned work without fetching",
+    "  --skip-derived-indexes  Do not build slim records or player-record event indexes",
+    "  --keep-raw          Keep wtt-records/{event}.json after derived files are built",
   ].join("\n"));
   process.exit(exitCode);
 }
@@ -162,14 +175,23 @@ function archivePath(eventId) {
   return path.join(WTT_ARCHIVE_DIR, `${String(eventId).trim()}.json`);
 }
 
-function getArchiveMatchCount(eventId) {
-  const filePath = archivePath(eventId);
-  if (!fs.existsSync(filePath)) {
-    return 0;
-  }
+function slimArchivePath(eventId) {
+  return path.join(WTT_SLIM_ARCHIVE_DIR, `${String(eventId).trim()}.json`);
+}
 
-  const payload = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  return Array.isArray(payload) ? payload.length : 0;
+function playerRecordEventIndexPath(eventId) {
+  return path.join(PLAYER_RECORD_EVENT_INDEX_DIR, `${String(eventId).trim()}.json`);
+}
+
+function getArchiveMatchCount(eventId) {
+  for (const filePath of [archivePath(eventId), slimArchivePath(eventId)]) {
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+    const payload = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return Array.isArray(payload) ? payload.length : 0;
+  }
+  return 0;
 }
 
 function isSuspiciousArchiveCount(count, entry) {
@@ -276,6 +298,67 @@ function markCrawlSkipped(candidate, reason) {
   });
 }
 
+function runNodeScript(args) {
+  return execFileSync(process.execPath, args, {
+    cwd: __dirname,
+    env: {
+      ...process.env,
+      DATA_DIR,
+    },
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+}
+
+function buildDerivedArchiveFiles(eventId, args) {
+  if (args.skipDerivedIndexes) {
+    return {
+      skipped: true,
+      rawDeleted: false,
+    };
+  }
+
+  const rawPath = archivePath(eventId);
+  const slimPath = slimArchivePath(eventId);
+  const eventIndexPath = playerRecordEventIndexPath(eventId);
+  if (!fs.existsSync(rawPath)) {
+    throw new Error(`raw archive missing: ${rawPath}`);
+  }
+
+  const slimOutput = runNodeScript(["build_wtt_slim_records.js", rawPath]).trim();
+  if (!fs.existsSync(slimPath) || fs.statSync(slimPath).size <= 0) {
+    throw new Error(`slim archive was not created: ${slimPath}`);
+  }
+
+  const eventIndexOutput = runNodeScript([
+    "-r",
+    "./runtime_legacy_ittf_patch.js",
+    "server.js",
+    "--build-player-record-event-index",
+    "--event",
+    String(eventId),
+    "--force",
+  ]).trim();
+  if (!fs.existsSync(eventIndexPath) || fs.statSync(eventIndexPath).size <= 0) {
+    throw new Error(`player record event index was not created: ${eventIndexPath}`);
+  }
+
+  let rawDeleted = false;
+  if (!args.keepRaw) {
+    fs.rmSync(rawPath, { force: true });
+    rawDeleted = !fs.existsSync(rawPath);
+  }
+
+  return {
+    skipped: false,
+    rawDeleted,
+    slimBytes: fs.statSync(slimPath).size,
+    eventIndexBytes: fs.statSync(eventIndexPath).size,
+    slimOutput,
+    eventIndexOutput,
+  };
+}
+
 async function archiveEvent(candidate, args) {
   const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive);
   const meta = await getWttEventLifecycleMeta(candidate.eventId, {
@@ -300,6 +383,15 @@ async function archiveEvent(candidate, args) {
 
   if (!Array.isArray(result.normalized) || result.normalized.length === 0) {
     return { eventId: candidate.eventId, status: "skipped", reason: "zero_matches" };
+  }
+
+  const existingArchiveCount = getArchiveMatchCount(candidate.eventId);
+  if (!args.force && existingArchiveCount > 0 && result.normalized.length < existingArchiveCount) {
+    return {
+      eventId: candidate.eventId,
+      status: "skipped",
+      reason: `smaller_payload:${result.normalized.length}<${existingArchiveCount}`,
+    };
   }
 
   const archiveWrite = writeWttArchiveIfNotSmaller(WTT_ARCHIVE_DIR, candidate.eventId, result.normalized, {
@@ -349,7 +441,7 @@ async function main() {
     return;
   }
 
-  const summary = { archived: 0, skipped: 0, failed: 0 };
+  const summary = { archived: 0, skipped: 0, failed: 0, derivedFailed: 0 };
   for (let index = 0; index < candidates.length; index += 1) {
     const candidate = candidates[index];
     try {
@@ -360,6 +452,17 @@ async function main() {
         const indexResult = updatePlayerRecordCandidateIndexForEvents([result.eventId]);
         console.log(`archived: ${result.eventId} (${result.matches} matches)`);
         console.log(`player-records-index: ${result.eventId} (${indexResult.indexedMatches} matches, ${indexResult.keyCount} player keys)`);
+        try {
+          const derivedResult = buildDerivedArchiveFiles(result.eventId, args);
+          if (derivedResult.skipped) {
+            console.log(`derived-indexes: ${result.eventId} skipped`);
+          } else {
+            console.log(`derived-indexes: ${result.eventId} slim=${derivedResult.slimBytes} eventIndex=${derivedResult.eventIndexBytes} rawDeleted=${derivedResult.rawDeleted}`);
+          }
+        } catch (error) {
+          summary.derivedFailed += 1;
+          console.error(`derived-indexes failed: ${result.eventId} ${error?.message || error}`);
+        }
       } else {
         summary.skipped += 1;
         markCrawlSkipped(candidate, result.reason);
@@ -376,7 +479,7 @@ async function main() {
     }
   }
 
-  console.log(`done: archived=${summary.archived} skipped=${summary.skipped} failed=${summary.failed}`);
+  console.log(`done: archived=${summary.archived} skipped=${summary.skipped} failed=${summary.failed} derivedFailed=${summary.derivedFailed}`);
 }
 
 if (require.main === module) {
