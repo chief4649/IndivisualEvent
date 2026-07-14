@@ -5547,6 +5547,7 @@ function getPlayerRecordCandidateSnapshotFromHeadToHeadIndex(indexState, snapsho
 async function getPlayerRecordSearchResult(name, translatedName, needles, options = {}) {
   const snapshot = getWttRecordFileSnapshot();
   const signature = getPlayerRecordCacheSignature(snapshot);
+  const persistentIndexSignature = getHeadToHeadPersistentIndexSignature(snapshot);
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : null;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : null;
   const orgFilter = options.orgFilter || null;
@@ -5584,6 +5585,35 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       ...result,
       cacheHit: false,
     };
+  }
+
+  const persistentIndex = getHeadToHeadPersistentIndex(persistentIndexSignature);
+  if (persistentIndex?.index?.playerRecordMatchShardsDir) {
+    let indexed = collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
+    if (indexed) {
+      if (orgFilter) {
+        const translations = readTranslations(TRANSLATIONS_PATH);
+        indexed = filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, translations);
+      }
+      const result = {
+        signature: persistentIndexSignature,
+        builtAt: Date.now(),
+        eventIndexSource: "player-record-match-index",
+        candidateIndexSource: persistentIndex.stale ? "player-record-match-index-stale" : "player-record-match-index",
+        candidateIndexGeneratedAt: persistentIndex.generatedAt,
+        eventIndexGeneratedAt: null,
+        scannedEvents: snapshot.length,
+        candidateEvents: indexed.candidateEventCount ?? indexed.events.length,
+        playerKeyCount: indexed.playerKeyCount,
+        deltaEvents: 0,
+        ...indexed,
+      };
+      setPlayerRecordResultCacheValue(cacheKey, result);
+      return {
+        ...result,
+        cacheHit: false,
+      };
+    }
   }
 
   const candidateResult = await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
