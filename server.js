@@ -84,7 +84,7 @@ const TRUST_PROXY = process.env.TRUST_PROXY === "1";
 const RATE_LIMIT_WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60_000);
 const RATE_LIMIT_MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 60);
 const RATE_LIMIT_MAX_CLIENTS = Number(process.env.RATE_LIMIT_MAX_CLIENTS || 1_000);
-const HEAVY_API_MAX_CONCURRENT = Math.max(Number(process.env.HEAVY_API_MAX_CONCURRENT || 2) || 2, 1);
+const HEAVY_API_MAX_CONCURRENT = Math.max(Number(process.env.HEAVY_API_MAX_CONCURRENT || 1) || 1, 1);
 const HEAVY_API_MAX_QUEUE = Math.max(Number(process.env.HEAVY_API_MAX_QUEUE || 20) || 20, 0);
 const SKIP_RUNTIME_ARCHIVE_SYNC = process.env.SKIP_RUNTIME_ARCHIVE_SYNC === "1" || process.env.RENDER === "true";
 const VIEWER_COOKIE_NAME = "ttreport_individual_viewer_auth";
@@ -3573,7 +3573,7 @@ const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const playerRecordArchiveParseCache = new Map();
-const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
+const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 
 function getPathStatToken(filePath) {
