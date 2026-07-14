@@ -1757,7 +1757,8 @@
         storageOutput.textContent = JSON.stringify(data, null, 2);
         setStorageSummary([
           `DATA_DIR: ${data.dataDir}`,
-          `WTT records: ${data.wttRecords?.count ?? 0}件`,
+          `WTT raw records: ${data.wttRecords?.count ?? 0}件`,
+          `WTT slim records: ${data.wttSlimRecords?.count ?? 0}件`,
           `全日本 records: ${data.zennihonRecords?.count ?? 0}件`,
           data.lookup
             ? `eventId ${data.lookup.requestedEventId}: ${data.lookup.exists ? "存在します" : "見つかりません"}`

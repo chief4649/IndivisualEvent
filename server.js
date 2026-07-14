@@ -929,11 +929,13 @@ function buildStorageStatus(options = {}) {
     dataDir: DATA_DIR,
     generatedAt: new Date().toISOString(),
     wttRecordsDir: WTT_ARCHIVE_DIR,
+    wttSlimRecordsDir: WTT_SLIM_ARCHIVE_DIR,
     zennihonRecordsDir: ZENNIHON_ARCHIVE_DIR,
     files: Object.fromEntries(
       STORAGE_MANAGED_FILES.map(([name, filePath]) => [name, getFileMeta(filePath)]),
     ),
     wttRecords: listRecordFiles(WTT_ARCHIVE_DIR, limit),
+    wttSlimRecords: listRecordFiles(WTT_SLIM_ARCHIVE_DIR, limit),
     zennihonRecords: listRecordFiles(ZENNIHON_ARCHIVE_DIR, Math.min(limit, 20)),
     lookup: eventId ? getStorageLookup(source, eventId) : null,
   };
