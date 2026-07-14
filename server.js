@@ -872,12 +872,19 @@ function getStorageLookup(source, eventId) {
   const normalizedId = String(eventId || "").trim();
   const dirPath = normalizedSource === "zennihon" ? ZENNIHON_ARCHIVE_DIR : WTT_ARCHIVE_DIR;
   const meta = getFileMeta(path.join(dirPath, `${normalizedId}.json`), { includeSha256: false });
+  const slimMeta = normalizedSource === "wtt"
+    ? getFileMeta(path.join(WTT_SLIM_ARCHIVE_DIR, `${normalizedId}.json`), { includeSha256: false })
+    : null;
+  const primaryMeta = slimMeta?.exists ? slimMeta : meta;
   return {
     requestedEventId: normalizedId,
-    exists: meta.exists,
-    path: meta.path,
-    size: meta.size,
-    mtime: meta.mtime,
+    exists: Boolean(primaryMeta.exists),
+    path: primaryMeta.path,
+    size: primaryMeta.size,
+    mtime: primaryMeta.mtime,
+    storage: slimMeta?.exists ? "slim" : "raw",
+    raw: meta,
+    slim: slimMeta,
   };
 }
 
@@ -1331,6 +1338,9 @@ async function runBackfill5000Job(options = {}) {
     try {
       const payload = await fetchOfficialResultsCached("wtt", item.eventId, 1200, CACHE_DIR, true, {
         wttArchiveDir: WTT_ARCHIVE_DIR,
+        wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
+        bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+        bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
         wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
         wttDateIndexPath: WTT_DATE_INDEX_PATH,
         allowBornanFallback: true,
@@ -2043,6 +2053,9 @@ async function discoverWttSearchEvent(eventId) {
 
   const payload = await fetchOfficialResultsCached("wtt", normalizedId, 50, CACHE_DIR, false, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
+    wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
+    bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+    bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     wttDateIndexPath: WTT_DATE_INDEX_PATH,
   });
@@ -2220,7 +2233,9 @@ function buildOptions(searchParams) {
     cacheDir: CACHE_DIR,
     zennihonArchiveDir: ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: WTT_ARCHIVE_DIR,
+    wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
     bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+    bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache,
     omitSetCounts: parseBoolean(searchParams.get("omitSetCounts")),
@@ -2835,6 +2850,9 @@ function buildBaseProcessedMatchesOptions(options = {}) {
     cacheDir: options.cacheDir || CACHE_DIR,
     zennihonArchiveDir: options.zennihonArchiveDir || ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: options.wttArchiveDir || WTT_ARCHIVE_DIR,
+    wttSlimArchiveDir: options.wttSlimArchiveDir || WTT_SLIM_ARCHIVE_DIR,
+    bundledWttArchiveDir: options.bundledWttArchiveDir || BUNDLED_WTT_ARCHIVE_DIR,
+    bundledWttSlimArchiveDir: options.bundledWttSlimArchiveDir || BUNDLED_WTT_SLIM_ARCHIVE_DIR,
     wttArchiveIndexPath: options.wttArchiveIndexPath || WTT_ARCHIVE_INDEX_PATH,
     wttDateIndexPath: options.wttDateIndexPath || WTT_DATE_INDEX_PATH,
     wttRecordResolutionCachePath: options.wttRecordResolutionCachePath || path.join(CACHE_DIR, "wtt-record-source-resolutions.json"),
@@ -2886,6 +2904,9 @@ function buildFilteredProcessedMatches(base, options = {}) {
     cacheDir: options.cacheDir || CACHE_DIR,
     zennihonArchiveDir: options.zennihonArchiveDir || ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: options.wttArchiveDir || WTT_ARCHIVE_DIR,
+    wttSlimArchiveDir: options.wttSlimArchiveDir || WTT_SLIM_ARCHIVE_DIR,
+    bundledWttArchiveDir: options.bundledWttArchiveDir || BUNDLED_WTT_ARCHIVE_DIR,
+    bundledWttSlimArchiveDir: options.bundledWttSlimArchiveDir || BUNDLED_WTT_SLIM_ARCHIVE_DIR,
     wttArchiveIndexPath: options.wttArchiveIndexPath || WTT_ARCHIVE_INDEX_PATH,
   });
   args.source = normalizeSource(args.source);
@@ -3045,7 +3066,9 @@ async function handleCategoriesApi(requestUrl, response) {
       rules: RULES_PATH,
       cacheDir: CACHE_DIR,
       wttArchiveDir: WTT_ARCHIVE_DIR,
+      wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
       bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+      bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
       wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
       refreshCache: options.refreshCache,
     });
@@ -3082,7 +3105,9 @@ async function handleRoundsApi(requestUrl, response) {
       rules: RULES_PATH,
       cacheDir: CACHE_DIR,
       wttArchiveDir: WTT_ARCHIVE_DIR,
+      wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
       bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+      bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
       wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
       refreshCache: options.refreshCache,
     });
@@ -4475,7 +4500,9 @@ async function getLiveEventSnapshot(file, meta) {
       rules: RULES_PATH,
       cacheDir: CACHE_DIR,
       wttArchiveDir: WTT_ARCHIVE_DIR,
+      wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
       bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
+      bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
       refreshCache: true,
     });
     const normalizedMatches = Array.isArray(result?.normalized) ? result.normalized : [];
