@@ -3574,7 +3574,6 @@ const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CAC
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 12);
-const PLAYER_RECORD_MAX_ARCHIVE_PARSE_BYTES = Number(process.env.PLAYER_RECORD_MAX_ARCHIVE_PARSE_BYTES || 20_000_000);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 
 function getPathStatToken(filePath) {
@@ -5141,22 +5140,12 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options
   let collectedMatches = 0;
   let parsedEvents = 0;
   let scannedMatches = 0;
-  let skippedLargeEvents = 0;
 
   for (const { file, meta } of files) {
     if (events.length >= eventLimit || collectedMatches >= matchLimit) {
       break;
     }
     await yieldToEventLoop();
-    const parseSize = Number(file.parseSize || file.size || 0);
-    if (
-      Number.isFinite(PLAYER_RECORD_MAX_ARCHIVE_PARSE_BYTES) &&
-      PLAYER_RECORD_MAX_ARCHIVE_PARSE_BYTES > 0 &&
-      parseSize > PLAYER_RECORD_MAX_ARCHIVE_PARSE_BYTES
-    ) {
-      skippedLargeEvents += 1;
-      continue;
-    }
     const text = readTextFile(file.parseFilePath || file.filePath);
     if (!text || (Array.isArray(textNeedles) && textNeedles.length > 0 && !textLikelyContainsPlayer(text, textNeedles))) {
       continue;
@@ -5234,7 +5223,6 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options
     events,
     parsedEvents,
     scannedMatches,
-    skippedLargeEvents,
   };
 }
 
