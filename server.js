@@ -3579,7 +3579,7 @@ function getPlayerSearchScore(query, name, translatedName) {
     return 0;
   }
   if (normalizedTranslatedName.startsWith(normalizedQuery)) {
-    return 1;
+    return 1 + Math.min(normalizedTranslatedName.length, 50) / 1000;
   }
   if (normalizedName.startsWith(`${normalizedQuery} `) || normalizedName.startsWith(normalizedQuery)) {
     return 1;
