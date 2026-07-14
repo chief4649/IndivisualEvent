@@ -351,6 +351,8 @@ function normalizeZennihonCompetitorNames(rawHtml) {
 
 function normalizeSearchText(value) {
   return String(value || "")
+    .normalize("NFKD")
+    .replace(/\p{M}+/gu, "")
     .toLowerCase()
     .replace(/['’]/g, "")
     .replace(/[^\p{L}\p{N}]+/gu, " ")

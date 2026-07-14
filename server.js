@@ -1649,6 +1649,8 @@ async function fetchEventMeta(eventId, source = "wtt") {
 
 function normalizeSearchText(value) {
   return String(value || "")
+    .normalize("NFKD")
+    .replace(/\p{M}+/gu, "")
     .toLowerCase()
     .replace(/['’]/g, "")
     .replace(/[^a-z0-9]+/g, " ")
