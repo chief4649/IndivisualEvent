@@ -10,6 +10,7 @@ COPY crawl_wtt_archives.js ./
 COPY fetch_wtt_calendar_dates.js ./
 COPY update_wtt_date_index.js ./
 COPY build_wtt_search_index.js ./
+COPY build_wtt_slim_records.js ./
 COPY build_player_records_index.js ./
 COPY verify_wtt_alignment.js ./
 COPY runtime_legacy_ittf_patch.js ./
@@ -23,6 +24,7 @@ COPY rules.json ./
 COPY public ./public
 COPY zennihon-records ./zennihon-records
 COPY wtt-records ./wtt-records
+COPY wtt-records-slim ./wtt-records-slim
 
 RUN node patch_version_info.js
 
