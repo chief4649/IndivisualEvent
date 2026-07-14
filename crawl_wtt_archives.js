@@ -343,6 +343,8 @@ function buildDerivedArchiveFiles(eventId, args) {
     throw new Error(`player record event index was not created: ${eventIndexPath}`);
   }
 
+  const candidateIndexResult = updatePlayerRecordCandidateIndexForEvents([eventId]);
+
   let rawDeleted = false;
   if (!args.keepRaw) {
     fs.rmSync(rawPath, { force: true });
@@ -354,6 +356,7 @@ function buildDerivedArchiveFiles(eventId, args) {
     rawDeleted,
     slimBytes: fs.statSync(slimPath).size,
     eventIndexBytes: fs.statSync(eventIndexPath).size,
+    candidateIndexResult,
     slimOutput,
     eventIndexOutput,
   };
@@ -449,11 +452,11 @@ async function main() {
       const result = await archiveEvent(candidate, args);
       if (result.status === "archived") {
         summary.archived += 1;
-        const indexResult = updatePlayerRecordCandidateIndexForEvents([result.eventId]);
         console.log(`archived: ${result.eventId} (${result.matches} matches)`);
-        console.log(`player-records-index: ${result.eventId} (${indexResult.indexedMatches} matches, ${indexResult.keyCount} player keys)`);
+        let candidateIndexResult = null;
         try {
           const derivedResult = buildDerivedArchiveFiles(result.eventId, args);
+          candidateIndexResult = derivedResult.candidateIndexResult || null;
           if (derivedResult.skipped) {
             console.log(`derived-indexes: ${result.eventId} skipped`);
           } else {
@@ -463,6 +466,10 @@ async function main() {
           summary.derivedFailed += 1;
           console.error(`derived-indexes failed: ${result.eventId} ${error?.message || error}`);
         }
+        if (!candidateIndexResult) {
+          candidateIndexResult = updatePlayerRecordCandidateIndexForEvents([result.eventId]);
+        }
+        console.log(`player-records-index: ${result.eventId} (${candidateIndexResult.indexedMatches} matches, ${candidateIndexResult.keyCount} player keys)`);
       } else {
         summary.skipped += 1;
         markCrawlSkipped(candidate, result.reason);

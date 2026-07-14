@@ -2,7 +2,6 @@
 
 const fs = require("fs");
 const path = require("path");
-const { execFileSync } = require("child_process");
 
 const {
   buildJaRoundContext,
@@ -15,7 +14,9 @@ const {
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
+const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
 const BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
+const BUNDLED_WTT_SLIM_ARCHIVE_DIR = path.join(__dirname, "wtt-records-slim");
 const TRANSLATIONS_PATH = path.join(DATA_DIR, "translations.ja.json");
 const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
@@ -40,29 +41,47 @@ function readJson(filePath, fallback) {
   }
 }
 
-function listWttRecordFiles() {
-  try {
-    const tracked = execFileSync("git", ["ls-files", "wtt-records/*.json"], {
-      cwd: DATA_DIR,
-      encoding: "utf8",
-    }).split(/\n/).filter(Boolean);
-    if (tracked.length > 0) {
-      return tracked.map((fileName) => {
-        const filePath = path.join(DATA_DIR, fileName);
-        const stat = fs.statSync(filePath);
-        return {
-          eventId: path.basename(fileName, ".json"),
-          filePath,
-          size: stat.size,
-          mtimeMs: Math.trunc(stat.mtimeMs),
-        };
-      });
-    }
-  } catch {
-    // Fall back to filesystem scan outside a git checkout.
+function readCandidateIndex() {
+  const monolithic = readJson(CANDIDATE_INDEX_PATH, null);
+  if (monolithic && typeof monolithic === "object" && !Array.isArray(monolithic) && Object.keys(monolithic).length > 0) {
+    return monolithic;
   }
+  if (!fs.existsSync(CANDIDATE_SHARDS_DIR)) {
+    return {};
+  }
+  const index = {};
+  fs.readdirSync(CANDIDATE_SHARDS_DIR)
+    .filter((fileName) => /^(?:[a-z0-9]|_)\.json$/i.test(fileName))
+    .forEach((fileName) => {
+      const shard = readJson(path.join(CANDIDATE_SHARDS_DIR, fileName), {});
+      Object.assign(index, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+    });
+  return index;
+}
+
+function listWttRecordFiles() {
   const recordsByEventId = new Map();
-  const addDir = (dirPath, priority) => {
+
+  const shouldReplaceRecord = (current, next) => {
+    if (!current) {
+      return true;
+    }
+    const nextIsSlim = String(next.parseSource || "").endsWith("-slim");
+    const currentIsSlim = String(current.parseSource || "").endsWith("-slim");
+    if (nextIsSlim && !currentIsSlim) {
+      return true;
+    }
+    if (currentIsSlim && !nextIsSlim) {
+      return false;
+    }
+    return (
+      next.size > current.size ||
+      (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
+      (next.size === current.size && next.mtimeMs === current.mtimeMs && next.priority > current.priority)
+    );
+  };
+
+  const addDir = (dirPath, priority, parseSource, rawDirPath = dirPath) => {
     if (!fs.existsSync(dirPath)) {
       return;
     }
@@ -70,28 +89,34 @@ function listWttRecordFiles() {
       .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
       .forEach((fileName) => {
         const eventId = fileName.replace(/\.json$/i, "");
-        const filePath = path.join(dirPath, fileName);
-        const stat = fs.statSync(filePath);
+        const filePath = path.join(rawDirPath, fileName);
+        const parseFilePath = path.join(dirPath, fileName);
+        const stat = fs.statSync(parseFilePath);
         const next = {
           eventId,
           filePath,
+          parseFilePath,
+          parseSource,
           size: stat.size,
           mtimeMs: Math.trunc(stat.mtimeMs),
           priority,
         };
         const current = recordsByEventId.get(eventId);
-        if (
-          !current ||
-          next.size > current.size ||
-          (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
-          (next.size === current.size && next.mtimeMs === current.mtimeMs && next.priority > current.priority)
-        ) {
+        if (shouldReplaceRecord(current, next)) {
           recordsByEventId.set(eventId, next);
         }
       });
   };
-  addDir(WTT_ARCHIVE_DIR, 1);
-  addDir(BUNDLED_WTT_ARCHIVE_DIR, 2);
+
+  // Slim archives are the canonical runtime source after raw archives are
+  // converted and removed to stay within Render disk limits.
+  addDir(WTT_ARCHIVE_DIR, 1, "runtime-raw");
+  addDir(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled-raw");
+  if (process.env.WTT_SLIM_RECORDS_DISABLED !== "1") {
+    addDir(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 0, "bundled-slim", BUNDLED_WTT_ARCHIVE_DIR);
+    addDir(WTT_SLIM_ARCHIVE_DIR, 3, "runtime-slim", WTT_ARCHIVE_DIR);
+  }
+
   return [...recordsByEventId.values()]
     .map(({ priority, ...file }) => file)
     .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
@@ -338,8 +363,8 @@ function buildEventIndex(files, deps) {
   const index = {};
   let indexedMatches = 0;
 
-  files.forEach(({ eventId, filePath }) => {
-    const payload = readJson(filePath, []);
+  files.forEach(({ eventId, filePath, parseFilePath }) => {
+    const payload = readJson(parseFilePath || filePath, []);
     if (!Array.isArray(payload)) {
       return;
     }
@@ -454,7 +479,13 @@ function getPathStatToken(filePath) {
 }
 
 function getPlayerRecordCacheSignature(files) {
-  const dataSignature = files.map((file) => `${file.eventId}:${file.size}:${file.mtimeMs}:raw:${file.size}:${file.mtimeMs}`).join("|");
+  const dataSignature = files.map((file) => [
+    file.eventId,
+    file.size,
+    file.mtimeMs,
+    file.parseSource || "raw",
+    file.parseFilePath || file.filePath,
+  ].join(":")).join("|");
   const configSignature = [
     TRANSLATIONS_PATH,
     RULES_PATH,
@@ -496,8 +527,8 @@ function buildCandidateIndex(files, deps) {
   const index = {};
   let indexedMatches = 0;
 
-  files.forEach(({ eventId, filePath }) => {
-    const payload = readJson(filePath, []);
+  files.forEach(({ eventId, filePath, parseFilePath }) => {
+    const payload = readJson(parseFilePath || filePath, []);
     if (!Array.isArray(payload)) {
       return;
     }
@@ -562,7 +593,7 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
   }
 
   const deps = readBuildDeps();
-  const existingIndex = readJson(CANDIDATE_INDEX_PATH, {});
+  const existingIndex = readCandidateIndex();
   if (Object.keys(existingIndex).length === 0) {
     return rebuildPlayerRecordCandidateIndex();
   }
