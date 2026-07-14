@@ -4552,10 +4552,10 @@ function getPlayerRecordCandidateShardName(key) {
 function readPlayerRecordCandidateManifest(signature) {
   try {
     const manifest = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, "utf8"));
-    if (
-      manifest?.version !== PLAYER_RECORD_CANDIDATE_INDEX_VERSION ||
-      manifest?.signature !== signature
-    ) {
+    if (manifest?.version !== PLAYER_RECORD_CANDIDATE_INDEX_VERSION) {
+      return null;
+    }
+    if (!manifest?.sharded && manifest?.signature !== signature) {
       return null;
     }
     return manifest;
