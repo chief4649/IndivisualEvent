@@ -3632,6 +3632,34 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
 function getWttRecordFileSnapshot() {
   const recordsByEventId = new Map();
 
+  const shouldReplaceRecord = (current, next) => {
+    if (!current) {
+      return true;
+    }
+
+    // Runtime slim files are generated from the persistent Render archive and
+    // may be the only copy left after raw files are removed to save disk.
+    if (next.sourceLabel === "runtime-slim" && current.sourceLabel !== "runtime-slim") {
+      return true;
+    }
+    if (current.sourceLabel === "runtime-slim" && next.sourceLabel !== "runtime-slim") {
+      return false;
+    }
+
+    // Runtime DATA_DIR can contain stale persistent raw files on Render.
+    // Bundled repo files can contain newer deployed records.
+    // Prefer larger/newer files; if tied, prefer bundled deployment data.
+    return (
+      next.size > current.size ||
+      (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
+      (
+        next.size === current.size &&
+        next.mtimeMs === current.mtimeMs &&
+        next.sourcePriority > current.sourcePriority
+      )
+    );
+  };
+
   const addDirectory = (dirPath, sourcePriority, sourceLabel) => {
     try {
       if (!dirPath || !fs.existsSync(dirPath)) {
@@ -3662,23 +3690,7 @@ function getWttRecordFileSnapshot() {
           };
 
           const current = recordsByEventId.get(eventId);
-          if (!current) {
-            recordsByEventId.set(eventId, next);
-            return;
-          }
-
-          // Runtime DATA_DIR can contain stale persistent files on Render.
-          // Bundled repo files can contain newer deployed records.
-          // Prefer larger/newer files; if tied, prefer bundled deployment data.
-          if (
-            next.size > current.size ||
-            (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
-            (
-              next.size === current.size &&
-              next.mtimeMs === current.mtimeMs &&
-              next.sourcePriority > current.sourcePriority
-            )
-          ) {
+          if (shouldReplaceRecord(current, next)) {
             recordsByEventId.set(eventId, next);
           }
         });
@@ -3687,8 +3699,49 @@ function getWttRecordFileSnapshot() {
     }
   };
 
+  const addSlimDirectory = (dirPath, sourcePriority, sourceLabel, rawDirPath) => {
+    if (process.env.WTT_SLIM_RECORDS_DISABLED === "1") {
+      return;
+    }
+    try {
+      if (!dirPath || !fs.existsSync(dirPath)) {
+        return;
+      }
+
+      fs.readdirSync(dirPath)
+        .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+        .forEach((fileName) => {
+          const eventId = fileName.replace(/\.json$/, "");
+          const filePath = path.join(rawDirPath || dirPath, fileName);
+          const slimFilePath = path.join(dirPath, fileName);
+          const stat = fs.statSync(slimFilePath);
+          const next = {
+            eventId,
+            filePath,
+            parseFilePath: slimFilePath,
+            parseSize: stat.size,
+            parseMtimeMs: Math.trunc(stat.mtimeMs),
+            parseSource: "slim",
+            size: stat.size,
+            mtimeMs: Math.trunc(stat.mtimeMs),
+            sourcePriority,
+            sourceLabel,
+          };
+
+          const current = recordsByEventId.get(eventId);
+          if (shouldReplaceRecord(current, next)) {
+            recordsByEventId.set(eventId, next);
+          }
+        });
+    } catch {
+      // Ignore unreadable slim archive directories.
+    }
+  };
+
   addDirectory(WTT_ARCHIVE_DIR, 1, "runtime");
   addDirectory(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled");
+  addSlimDirectory(WTT_SLIM_ARCHIVE_DIR, 3, "runtime-slim", WTT_ARCHIVE_DIR);
+  addSlimDirectory(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 0, "bundled-slim", BUNDLED_WTT_ARCHIVE_DIR);
 
   return [...recordsByEventId.values()]
     .map(({ sourcePriority, ...file }) => file)
