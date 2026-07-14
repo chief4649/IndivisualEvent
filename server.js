@@ -7101,6 +7101,8 @@ async function handlePlayerRecordsApi(requestUrl, response) {
         scannedEvents: searchResult.scannedEvents,
         candidateEvents: searchResult.candidateEvents,
         parsedEvents: searchResult.parsedEvents,
+        indexedEvents: searchResult.indexedEvents || 0,
+        missingIndexedEvents: searchResult.missingIndexedEvents || 0,
         scannedMatches: searchResult.scannedMatches,
         returnedEvents: limitedEvents.length,
         returnedMatches,
