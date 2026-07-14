@@ -451,7 +451,7 @@ function buildHealthPayload() {
     playerRecords: {
       source: "wtt-records",
       archiveMode: "runtime+bundled",
-      parseMode: "raw",
+      parseMode: "slim-if-available",
       candidateMode: "candidate-index+grep-fallback",
       displayMode: "player-record-org-v4-category-groups-keep-round-order",
       cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
@@ -3644,13 +3644,17 @@ function getWttRecordFileSnapshot() {
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(dirPath, fileName);
           const stat = fs.statSync(filePath);
+          const slim = getSlimWttRecordFile(
+            filePath,
+            sourceLabel === "runtime" ? WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_SLIM_ARCHIVE_DIR
+          );
           const next = {
             eventId,
             filePath,
-            parseFilePath: filePath,
-            parseSize: stat.size,
-            parseMtimeMs: Math.trunc(stat.mtimeMs),
-            parseSource: "raw",
+            parseFilePath: slim?.filePath || filePath,
+            parseSize: slim?.size || stat.size,
+            parseMtimeMs: slim?.mtimeMs || Math.trunc(stat.mtimeMs),
+            parseSource: slim ? "slim" : "raw",
             size: stat.size,
             mtimeMs: Math.trunc(stat.mtimeMs),
             sourcePriority,

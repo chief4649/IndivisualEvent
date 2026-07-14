@@ -124,7 +124,7 @@ function listSourceFiles(args) {
     return explicit.map((arg) => path.resolve(arg));
   }
   return fs.readdirSync(SOURCE_DIR)
-    .filter((fileName) => /^\d+\.json$/.test(fileName))
+    .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
     .map((fileName) => path.join(SOURCE_DIR, fileName))
     .sort((left, right) => path.basename(left).localeCompare(path.basename(right), "en", { numeric: true }));
 }
