@@ -3,7 +3,10 @@
 const fs = require("fs");
 const path = require("path");
 
-const { normalizeOfficialResultItem } = require("./extract_individual_matches");
+const {
+  normalizeOfficialResultItem,
+  normalizePreNormalizedMatch,
+} = require("./extract_individual_matches");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const SOURCE_DIR = process.env.WTT_RECORDS_DIR
@@ -113,7 +116,7 @@ function slimMatch(match) {
 
 function normalizeArchiveItem(item) {
   if (item && typeof item === "object" && typeof item.matchType === "string" && Array.isArray(item.competitors)) {
-    return item;
+    return normalizePreNormalizedMatch(item);
   }
   return normalizeOfficialResultItem(item);
 }

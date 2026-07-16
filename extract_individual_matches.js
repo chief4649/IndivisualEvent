@@ -50,6 +50,7 @@ const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
   "5524": "3500",
   "5513": "2755",
+  "3440": "TTE3440",
 };
 const WTT_RECORD_SOURCE_OVERRIDES = {
   "3150": {
@@ -1570,6 +1571,123 @@ function normalizeIndividualMatch(entry, index) {
   };
 }
 
+function getFirstTeamSubMatchPlayer(single, competitorIndex) {
+  const competitor = single?.competitors?.[competitorIndex];
+  if (!competitor) {
+    return null;
+  }
+  const players = Array.isArray(competitor.players) ? competitor.players.filter((player) => player?.name) : [];
+  if (players.length > 0) {
+    return players[0];
+  }
+  const name = String(competitor.name || "").trim();
+  if (!name) {
+    return null;
+  }
+  return {
+    id: competitor.id || "",
+    name,
+    org: competitor.org || "",
+    orgCode: competitor.orgCode || "",
+    position: 1,
+  };
+}
+
+function buildTeamSubMatchDoublesCompetitor(existing, players) {
+  const cleanedPlayers = players
+    .filter((player) => player?.name)
+    .map((player, index) => ({
+      id: player.id || "",
+      name: player.name || "",
+      org: player.org || existing?.org || "",
+      orgCode: player.orgCode || existing?.orgCode || "",
+      position: index + 1,
+    }));
+
+  if (cleanedPlayers.length < 2) {
+    return existing;
+  }
+
+  return {
+    ...(existing || {}),
+    type: existing?.type || "doubles",
+    name: cleanedPlayers.map((player) => player.name).join("/"),
+    org: existing?.org || cleanedPlayers[0]?.org || "",
+    orgCode: existing?.orgCode || cleanedPlayers[0]?.orgCode || "",
+    players: cleanedPlayers,
+  };
+}
+
+function isTeamSubMatchPlaceholderCompetitor(competitor, team) {
+  if (!competitor) {
+    return false;
+  }
+  const id = String(competitor.id || "").trim();
+  if (/^T[MW][A-Z]{3}/i.test(id)) {
+    return true;
+  }
+  const name = normalizeTeamSideToken(competitor.name);
+  if (!name) {
+    return true;
+  }
+  return getTeamSideTokens(team).has(name);
+}
+
+function hydrateTeamMatchDoublesFromSingles(match) {
+  if (!match || match.matchType !== "team" || !Array.isArray(match.singles)) {
+    return match;
+  }
+
+  const first = match.singles.find((single) => Number(single?.order) === 1) || match.singles[0];
+  const second = match.singles.find((single) => Number(single?.order) === 2) || match.singles[1];
+  const thirdIndex = match.singles.findIndex((single) => Number(single?.order) === 3);
+  if (!first || !second || thirdIndex < 0) {
+    return match;
+  }
+
+  const third = match.singles[thirdIndex];
+  const competitors = Array.isArray(third?.competitors) ? third.competitors : [];
+  const shouldHydrateThirdMatch = competitors.length >= 2 && competitors.some((competitor, index) => {
+    const namedPlayers = Array.isArray(competitor?.players)
+      ? competitor.players.filter((player) => String(player?.name || "").trim())
+      : [];
+    return namedPlayers.length < 2 && isTeamSubMatchPlaceholderCompetitor(competitor, match.teams?.[index]);
+  });
+  if (!shouldHydrateThirdMatch) {
+    return match;
+  }
+
+  const leftPlayers = [
+    getFirstTeamSubMatchPlayer(first, 0),
+    getFirstTeamSubMatchPlayer(second, 0),
+  ].filter(Boolean);
+  const rightPlayers = [
+    getFirstTeamSubMatchPlayer(first, 1),
+    getFirstTeamSubMatchPlayer(second, 1),
+  ].filter(Boolean);
+  if (leftPlayers.length < 2 || rightPlayers.length < 2) {
+    return match;
+  }
+
+  const nextSingles = match.singles.map((single, index) => {
+    if (index !== thirdIndex) {
+      return single;
+    }
+    return {
+      ...single,
+      competitors: [
+        buildTeamSubMatchDoublesCompetitor(competitors[0], leftPlayers),
+        buildTeamSubMatchDoublesCompetitor(competitors[1], rightPlayers),
+      ],
+    };
+  });
+
+  return {
+    ...match,
+    singles: nextSingles,
+  };
+}
+
 function inferWinnerOrg(result) {
   const score = String(result?.overallScores || "");
   const values = score
@@ -1683,7 +1801,7 @@ function normalizeTeamMatch(item) {
   const nested = card?.teamParentData?.extended_info?.matches;
   const schedule = extractMatchSchedule(card, item);
 
-  return {
+  return hydrateTeamMatchDoublesFromSingles({
     matchType: "team",
     id: item.id ?? null,
     eventId: item.eventId ?? card.eventId ?? null,
@@ -1707,7 +1825,7 @@ function normalizeTeamMatch(item) {
     singles: Array.isArray(nested) ? nested.map(normalizeIndividualMatch) : [],
     competitors: [],
     gameScores: [],
-  };
+  });
 }
 
 function normalizeStandaloneMatch(item) {
@@ -1784,13 +1902,13 @@ function normalizePreNormalizedMatch(item) {
   );
   const isParaClass = Boolean(item.isParaClass || paraCategoryName);
   if (!categoryName || (categoryName === item.categoryName && isParaClass === Boolean(item.isParaClass))) {
-    return item;
+    return hydrateTeamMatchDoublesFromSingles(item);
   }
-  return {
+  return hydrateTeamMatchDoublesFromSingles({
     ...item,
     categoryName,
     isParaClass,
-  };
+  });
 }
 
 function getZennihonResultBaseUrl(eventId) {

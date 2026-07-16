@@ -14159,6 +14159,18 @@
     "verifiedAt": "2026-07-08T06:12:53.066Z",
     "dateLabel": "2026/7/5-7"
   },
+  "TTE3440": {
+    "event": "TTE3440",
+    "eventName": "ITTF World Para Future Nakhon Ratchasima 2026",
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-16",
+    "archived": false,
+    "status": "active",
+    "source": "ittf",
+    "series": "Para",
+    "verifiedAt": "2026-07-16T01:30:00.000Z",
+    "dateLabel": "2026/7/13-16"
+  },
   "TTE3463": {
     "event": "TTE3463",
     "eventName": "ITTF World Para Challenger Giza 2025",

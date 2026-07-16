@@ -76,6 +76,7 @@ const WTT_EVENT_ID_ALIASES = {
   "3487": "34031",
   "5524": "3500",
   "5513": "2755",
+  "3440": "TTE3440",
 };
 const WTT_EVENT_PUBLIC_URLS = {
   "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
@@ -1880,6 +1881,26 @@ function compareSearchEventsForQuery(left, right, query) {
   return compareSearchEventsByRecency(left, right);
 }
 
+function dedupeWttSearchEventsByResolvedId(events) {
+  const byResolvedId = new Map();
+  (Array.isArray(events) ? events : []).forEach((event) => {
+    const resolvedId = resolveEventId("wtt", event?.event);
+    const key = resolvedId || String(event?.event || "");
+    if (!key) {
+      return;
+    }
+    const existing = byResolvedId.get(key);
+    if (
+      !existing ||
+      String(event?.event || "") === key ||
+      (!String(existing?.event || "").startsWith("TTE") && String(event?.event || "").startsWith("TTE"))
+    ) {
+      byResolvedId.set(key, event);
+    }
+  });
+  return [...byResolvedId.values()];
+}
+
 function buildSearchableEvents(source, query) {
   const normalizedSource = normalizeSource(source);
   const eventNames = getEventNamesMap();
@@ -1953,8 +1974,9 @@ function buildSearchableEvents(source, query) {
     }
   });
 
-  return results
-    .sort((left, right) => compareSearchEventsForQuery(left, right, query))
+  return dedupeWttSearchEventsByResolvedId(
+    results.sort((left, right) => compareSearchEventsForQuery(left, right, query)),
+  )
     .slice(0, 50)
     .map(({ searchValues, ...event }) => event);
 }
@@ -4817,27 +4839,68 @@ function getPlayerRecordEventIndexNameValues(competitor, translations) {
   return Array.from(new Set(values.flatMap(buildPlayerNameSearchValues).filter(Boolean)));
 }
 
-function addPlayerRecordEventIndexedMatch(players, key, eventMeta, matchEntry) {
+function getPlayerRecordEventStoredMatchId(matchEntry) {
+  return crypto.createHash("sha1").update(JSON.stringify([
+    matchEntry?.documentCode || "",
+    matchEntry?.categoryName || "",
+    matchEntry?.roundLabel || "",
+    matchEntry?.line || "",
+    matchEntry?.record || null,
+  ])).digest("hex").slice(0, 16);
+}
+
+function addPlayerRecordEventIndexedMatch(players, matches, key, eventMeta, matchEntry) {
   if (!key || !matchEntry) {
     return false;
   }
   if (!players[key]) {
     players[key] = [];
   }
-  const duplicate = players[key].some((existing) => (
-    existing.documentCode === matchEntry.documentCode &&
-    existing.categoryName === matchEntry.categoryName &&
-    existing.roundLabel === matchEntry.roundLabel &&
-    existing.line === matchEntry.line
-  ));
-  if (duplicate) {
+  const matchId = getPlayerRecordEventStoredMatchId(matchEntry);
+  if (!matches[matchId]) {
+    matches[matchId] = matchEntry;
+  }
+  if (players[key].includes(matchId)) {
     return false;
   }
-  players[key].push(matchEntry);
+  players[key].push(matchId);
   return true;
 }
 
-function addPlayerRecordEventIndexMatch(players, eventMeta, match, translations, rules, roundContext, parentMatch = null) {
+function compactPlayerRecordCompetitor(competitor) {
+  if (!competitor || typeof competitor !== "object") {
+    return null;
+  }
+  const players = Array.isArray(competitor.players) ? competitor.players : [];
+  return {
+    type: competitor.type || "",
+    name: competitor.name || "",
+    org: competitor.org || "",
+    orgCode: competitor.orgCode || "",
+    players: players.map((player) => ({
+      name: player?.name || "",
+      org: player?.org || competitor.org || "",
+      orgCode: player?.orgCode || competitor.orgCode || "",
+    })).filter((player) => player.name),
+  };
+}
+
+function buildPlayerRecordMatchRecord(match, playerCompetitorIndex) {
+  const winnerIndex = getWinnerIndexForRecord(match);
+  const leftIndex = winnerIndex === playerCompetitorIndex ? playerCompetitorIndex : winnerIndex === null ? playerCompetitorIndex : winnerIndex;
+  const rightIndex = leftIndex === 0 ? 1 : 0;
+  return {
+    version: 1,
+    leftIndex,
+    left: compactPlayerRecordCompetitor(match.competitors?.[leftIndex]),
+    right: compactPlayerRecordCompetitor(match.competitors?.[rightIndex]),
+    overallScore: match.overallScore || "",
+    resultStatus: match.resultStatus || "",
+    gameScores: Array.isArray(match.gameScores) ? match.gameScores : [],
+  };
+}
+
+function addPlayerRecordEventIndexMatch(players, matches, eventMeta, match, translations, rules, roundContext, parentMatch = null) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
   let indexedEntries = 0;
 
@@ -4848,8 +4911,10 @@ function addPlayerRecordEventIndexMatch(players, eventMeta, match, translations,
     if (!matchEntry) {
       return;
     }
+    matchEntry.record = buildPlayerRecordMatchRecord(match, competitorIndex);
+    delete matchEntry.line;
     getPlayerRecordEventIndexNameValues(competitor, translations).forEach((key) => {
-      if (addPlayerRecordEventIndexedMatch(players, key, eventMeta, matchEntry)) {
+      if (addPlayerRecordEventIndexedMatch(players, matches, key, eventMeta, matchEntry)) {
         indexedEntries += 1;
       }
     });
@@ -4897,19 +4962,20 @@ function buildPlayerRecordEventIndexForFile(file, deps = null) {
   const fallbackRoundContext = buildJaRoundContext(normalizedMatches);
   const eventMeta = getEventRecordMeta(file.eventId, activeDeps.searchIndex, activeDeps.dateIndex, activeDeps.archiveIndex, activeDeps.eventNames);
   const players = {};
+  const matches = {};
   let indexedEntries = 0;
   let indexedMatches = 0;
 
   normalizedMatches.forEach((match) => {
     const roundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext;
     if (match.matchType === "individual") {
-      indexedEntries += addPlayerRecordEventIndexMatch(players, eventMeta, match, activeDeps.translations, activeDeps.rules, roundContext);
+      indexedEntries += addPlayerRecordEventIndexMatch(players, matches, eventMeta, match, activeDeps.translations, activeDeps.rules, roundContext);
       indexedMatches += 1;
       return;
     }
     if (match.matchType === "team") {
       (Array.isArray(match.singles) ? match.singles : []).forEach((single) => {
-        indexedEntries += addPlayerRecordEventIndexMatch(players, eventMeta, single, activeDeps.translations, activeDeps.rules, roundContext, match);
+        indexedEntries += addPlayerRecordEventIndexMatch(players, matches, eventMeta, single, activeDeps.translations, activeDeps.rules, roundContext, match);
         indexedMatches += 1;
       });
     }
@@ -4930,7 +4996,9 @@ function buildPlayerRecordEventIndexForFile(file, deps = null) {
     indexedMatches,
     indexedEntries,
     keyCount: Object.keys(players).length,
+    storedMatchCount: Object.keys(matches).length,
     players,
+    matches,
   };
 }
 
@@ -4949,11 +5017,54 @@ function writePlayerRecordEventIndexForFile(file, deps = null) {
   };
 }
 
+function buildPlayerRecordLineFromRecord(record, translations) {
+  if (!record || typeof record !== "object") {
+    return "";
+  }
+  const matchForScore = {
+    gameScores: Array.isArray(record.gameScores) ? record.gameScores : [],
+    overallScore: record.overallScore || "",
+    resultStatus: record.resultStatus || "",
+  };
+  const left = formatCompetitorForRecord(record.left, translations);
+  const right = formatCompetitorForRecord(record.right, translations);
+  const score = formatGameScoresForRecord(matchForScore, Number(record.leftIndex || 0));
+  return `${left}　${score}　${right}`;
+}
+
+function materializePlayerRecordMatch(match, translations) {
+  if (!match || typeof match !== "object") {
+    return match;
+  }
+  if (!match.record) {
+    return match;
+  }
+  const line = buildPlayerRecordLineFromRecord(match.record, translations);
+  if (!line) {
+    return match;
+  }
+  const { record, ...displayMatch } = match;
+  return { ...displayMatch, line };
+}
+
+function resolvePlayerRecordIndexedMatch(index, entry) {
+  if (!entry) {
+    return null;
+  }
+  if (typeof entry === "string") {
+    return index.matches?.[entry] || null;
+  }
+  if (typeof entry === "object") {
+    return entry;
+  }
+  return null;
+}
+
 function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}) {
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
   const orgFilter = options.orgFilter || null;
-  const translations = orgFilter ? readTranslations(TRANSLATIONS_PATH) : {};
+  const translations = readTranslations(TRANSLATIONS_PATH);
   const needleKeys = Array.from(new Set((Array.isArray(needles) ? needles : []).flatMap(buildPlayerNameSearchValues).filter(Boolean)));
   const eventsById = new Map();
   let indexedEvents = 0;
@@ -4980,13 +5091,17 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
       if (indexedMatches.length > 0) {
         playerKeyCount += 1;
       }
-      indexedMatches.forEach((match) => {
+      indexedMatches.forEach((entry) => {
+        const match = resolvePlayerRecordIndexedMatch(index, entry);
+        if (!match) {
+          return;
+        }
         scannedMatches += 1;
         const matchId = getPlayerRecordIndexMatchId(match);
         if (seen.has(matchId)) {
           return;
         }
-        matches.push(match);
+        matches.push(materializePlayerRecordMatch(match, translations));
         seen.add(matchId);
       });
     });
