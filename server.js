@@ -5577,13 +5577,44 @@ function getPlayerRecordRoundSortValue(match) {
     return 10;
   }
 
-  if (/予選|予備|qualification|qualifying|RND/i.test(value)) {
-    return 200;
+  const qualifyingSortValue = getPlayerRecordQualifyingRoundSortValue(match);
+  if (qualifyingSortValue !== null) {
+    return qualifyingSortValue;
   }
   if (/グループ|group|GP\d+/i.test(value)) {
     return 300;
   }
   return 400;
+}
+
+function getPlayerRecordQualifyingRoundSortValue(match) {
+  const roundKey = String(match?.roundKey || "").trim().toLowerCase();
+  const label = String(match?.roundLabel || "").trim().toLowerCase();
+  const documentCode = String(match?.documentCode || "").trim().toUpperCase();
+  const value = `${roundKey} ${label} ${documentCode}`;
+
+  if (
+    roundKey === "qualification_elimination_round" ||
+    /予選(?:トーナメント)?決定戦|qualification\s+elimination/.test(value)
+  ) {
+    return 200;
+  }
+
+  const roundNumber =
+    roundKey.match(/^qualifying_round_(\d+)$/)?.[1] ||
+    label.match(/qualifying\s+round\s+(\d+)/)?.[1] ||
+    label.match(/予選(?:第)?(\d+)回戦/)?.[1] ||
+    documentCode.match(/RND(\d+)/)?.[1];
+
+  if (roundNumber) {
+    return 250 - Number(roundNumber);
+  }
+
+  if (/予選|予備|qualification|qualifying|RND/i.test(value)) {
+    return 250;
+  }
+
+  return null;
 }
 
 function buildPlayerRecordMatchGroups(matches) {
