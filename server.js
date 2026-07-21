@@ -458,7 +458,6 @@ function buildHealthPayload() {
       bundledPlayerRecordEventManifest: getHealthFileMeta(BUNDLED_PLAYER_RECORD_EVENT_INDEX_MANIFEST_PATH),
     },
     playerOrgOverrides: buildPlayerOrgOverrideHealth(),
-    playerRecordDebug3242: buildPlayerRecord3242Health(),
     playerRecords: {
       source: "wtt-records",
       archiveMode: "runtime+bundled",
@@ -828,123 +827,6 @@ function buildPlayerOrgOverrideHealth() {
       xuYiChn: merged["XU Yi|CHN"] || null,
       xuYiHkg: merged["XU Yi|HKG"] || null,
     },
-  };
-}
-
-function getHealthRecordFileMeta(filePath) {
-  const meta = getHealthFileMeta(filePath);
-  if (!meta.exists) {
-    return meta;
-  }
-  return {
-    ...meta,
-    hasFinal: recordFileHasText(filePath, "TTEMSINGLES-----------FNL-000100----------") && recordFileHasText(filePath, "MATSUSHIMA"),
-    matchCount: getJsonArrayMatchCount(filePath),
-  };
-}
-
-function getJsonArrayMatchCount(filePath) {
-  try {
-    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    return Array.isArray(parsed) ? parsed.length : null;
-  } catch {
-    return null;
-  }
-}
-
-function recordFileHasText(filePath, needle) {
-  try {
-    return fs.readFileSync(filePath, "utf8").includes(needle);
-  } catch {
-    return false;
-  }
-}
-
-function getPlayerRecordEventIndexDebug(filePath) {
-  const meta = getHealthFileMeta(filePath);
-  if (!meta.exists) {
-    return meta;
-  }
-  try {
-    const index = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    return {
-      ...meta,
-      indexedMatches: Number(index?.indexedMatches || index?.storedMatchCount || 0),
-      indexedEntries: Number(index?.indexedEntries || 0),
-      keyCount: Number(index?.keyCount || Object.keys(index?.players || {}).length || 0),
-      sourceSize: Number(index?.sourceSize || 0),
-      sourceMtimeMs: Number(index?.sourceMtimeMs || 0),
-      matsushimaKeys: ["松島輝空", "matsushima sora"].map((key) => ({
-        key,
-        entries: Array.isArray(index?.players?.[key]) ? index.players[key].length : 0,
-        hasFinal: eventIndexPlayerHasDocumentCode(index, key, "TTEMSINGLES-----------FNL-000100----------"),
-      })),
-      rawHasFinal: JSON.stringify(index).includes("TTEMSINGLES-----------FNL-000100----------"),
-    };
-  } catch (error) {
-    return {
-      ...meta,
-      error: String(error?.message || error),
-    };
-  }
-}
-
-function eventIndexPlayerHasDocumentCode(index, key, documentCode) {
-  const entries = index?.players?.[key];
-  if (!Array.isArray(entries)) {
-    return false;
-  }
-  return entries.some((entry) => {
-    const match = index?.matches?.[entry];
-    return String(match?.documentCode || "").trim() === documentCode;
-  });
-}
-
-function buildPlayerRecord3242Health() {
-  const eventId = "3242";
-  const runtimeRaw = path.join(WTT_ARCHIVE_DIR, `${eventId}.json`);
-  const bundledRaw = path.join(BUNDLED_WTT_ARCHIVE_DIR, `${eventId}.json`);
-  const runtimeSlim = path.join(WTT_SLIM_ARCHIVE_DIR, `${eventId}.json`);
-  const bundledSlim = path.join(BUNDLED_WTT_SLIM_ARCHIVE_DIR, `${eventId}.json`);
-  const runtimeEventIndex = getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR);
-  const bundledEventIndex = getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR);
-  const selected = getWttRecordFileSnapshot().find((file) => String(file.eventId) === eventId) || null;
-  const mergedIndex = readPlayerRecordEventIndex(eventId);
-  return {
-    eventId,
-    finalDocumentCode: "TTEMSINGLES-----------FNL-000100----------",
-    files: {
-      runtimeRaw: getHealthRecordFileMeta(runtimeRaw),
-      runtimeSlim: getHealthRecordFileMeta(runtimeSlim),
-      bundledRaw: getHealthRecordFileMeta(bundledRaw),
-      bundledSlim: getHealthRecordFileMeta(bundledSlim),
-      runtimeEventIndex: getPlayerRecordEventIndexDebug(runtimeEventIndex),
-      bundledEventIndex: getPlayerRecordEventIndexDebug(bundledEventIndex),
-    },
-    selectedRecord: selected
-      ? {
-          sourceLabel: selected.sourceLabel,
-          parseSource: selected.parseSource,
-          size: selected.size,
-          mtimeMs: selected.mtimeMs,
-          parseSize: selected.parseSize,
-          parseMtimeMs: selected.parseMtimeMs,
-          hasFinal: recordFileHasText(selected.parseFilePath, "TTEMSINGLES-----------FNL-000100----------") && recordFileHasText(selected.parseFilePath, "MATSUSHIMA"),
-          matchCount: getJsonArrayMatchCount(selected.parseFilePath),
-        }
-      : null,
-    mergedEventIndex: mergedIndex
-      ? {
-          indexedMatches: Number(mergedIndex.indexedMatches || mergedIndex.storedMatchCount || 0),
-          indexedEntries: Number(mergedIndex.indexedEntries || 0),
-          keyCount: Number(mergedIndex.keyCount || Object.keys(mergedIndex.players || {}).length || 0),
-          matsushimaKeys: ["松島輝空", "matsushima sora"].map((key) => ({
-            key,
-            entries: Array.isArray(mergedIndex?.players?.[key]) ? mergedIndex.players[key].length : 0,
-            hasFinal: eventIndexPlayerHasDocumentCode(mergedIndex, key, "TTEMSINGLES-----------FNL-000100----------"),
-          })),
-        }
-      : null,
   };
 }
 
