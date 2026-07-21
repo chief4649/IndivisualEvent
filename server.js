@@ -53,6 +53,8 @@ const PLAYER_RECORD_CANDIDATE_INDEX_VERSION = 1;
 const PLAYER_RECORD_CANDIDATE_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-events.json");
 const PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-manifest.json");
 const PLAYER_RECORD_CANDIDATE_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "candidate-shards");
+const BUNDLED_PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "candidate-manifest.json");
+const BUNDLED_PLAYER_RECORD_CANDIDATE_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "candidate-shards");
 const PLAYER_RECORD_EVENT_INDEX_VERSION = 1;
 const PLAYER_RECORD_EVENT_INDEX_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "event-records");
 const PLAYER_RECORD_EVENT_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "event-records-manifest.json");
@@ -4711,9 +4713,9 @@ function getPlayerRecordCandidateShardName(key) {
   return /^[a-z0-9]$/.test(first) ? `${first}.json` : "_.json";
 }
 
-function readPlayerRecordCandidateManifest(signature) {
+function readPlayerRecordCandidateManifestFromPath(filePath, signature) {
   try {
-    const manifest = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, "utf8"));
+    const manifest = JSON.parse(fs.readFileSync(filePath, "utf8"));
     if (manifest?.version !== PLAYER_RECORD_CANDIDATE_INDEX_VERSION) {
       return null;
     }
@@ -4724,6 +4726,31 @@ function readPlayerRecordCandidateManifest(signature) {
   } catch {
     return null;
   }
+}
+
+function readPlayerRecordCandidateManifest(signature) {
+  const locations = [
+    {
+      manifestPath: PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH,
+      shardsDir: PLAYER_RECORD_CANDIDATE_SHARDS_DIR,
+    },
+    {
+      manifestPath: BUNDLED_PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH,
+      shardsDir: BUNDLED_PLAYER_RECORD_CANDIDATE_SHARDS_DIR,
+    },
+  ];
+
+  for (const location of locations) {
+    const manifest = readPlayerRecordCandidateManifestFromPath(location.manifestPath, signature);
+    if (manifest) {
+      return {
+        ...manifest,
+        shardsDir: location.shardsDir,
+      };
+    }
+  }
+
+  return null;
 }
 
 function getPlayerRecordShardedEventIds(signature, textNeedles) {
@@ -4740,7 +4767,7 @@ function getPlayerRecordShardedEventIds(signature, textNeedles) {
     const shardName = getPlayerRecordCandidateShardName(phrase);
     if (!shards.has(shardName)) {
       try {
-        const shardPath = path.join(PLAYER_RECORD_CANDIDATE_SHARDS_DIR, shardName);
+        const shardPath = path.join(manifest.shardsDir || PLAYER_RECORD_CANDIDATE_SHARDS_DIR, shardName);
         const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
         shards.set(shardName, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
       } catch {
