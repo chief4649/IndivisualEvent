@@ -3735,12 +3735,12 @@ function getWttRecordFileSnapshot() {
       return true;
     }
 
-    // Runtime slim files are generated from the persistent Render archive and
-    // may be the only copy left after raw files are removed to save disk.
-    if (next.sourceLabel === "runtime-slim" && current.sourceLabel !== "runtime-slim") {
+    const currentIsSlim = current.parseSource === "slim";
+    const nextIsSlim = next.parseSource === "slim";
+    if (nextIsSlim && !currentIsSlim) {
       return true;
     }
-    if (current.sourceLabel === "runtime-slim" && next.sourceLabel !== "runtime-slim") {
+    if (currentIsSlim && !nextIsSlim) {
       return false;
     }
 
@@ -3748,11 +3748,11 @@ function getWttRecordFileSnapshot() {
     // Bundled repo files can contain newer deployed records.
     // Prefer larger/newer files; if tied, prefer bundled deployment data.
     return (
-      next.size > current.size ||
-      (next.size === current.size && next.mtimeMs > current.mtimeMs) ||
+      next.parseSize > current.parseSize ||
+      (next.parseSize === current.parseSize && next.parseMtimeMs > current.parseMtimeMs) ||
       (
-        next.size === current.size &&
-        next.mtimeMs === current.mtimeMs &&
+        next.parseSize === current.parseSize &&
+        next.parseMtimeMs === current.parseMtimeMs &&
         next.sourcePriority > current.sourcePriority
       )
     );
