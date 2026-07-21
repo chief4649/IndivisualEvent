@@ -910,14 +910,6 @@ function buildPlayerRecord3242Health() {
   const bundledEventIndex = getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR);
   const selected = getWttRecordFileSnapshot().find((file) => String(file.eventId) === eventId) || null;
   const mergedIndex = readPlayerRecordEventIndex(eventId);
-  let selectedCurrentIndex = null;
-  if (selected) {
-    try {
-      selectedCurrentIndex = getPlayerRecordEventIndexForFile(selected);
-    } catch {
-      selectedCurrentIndex = null;
-    }
-  }
   return {
     eventId,
     finalDocumentCode: "TTEMSINGLES-----------FNL-000100----------",
@@ -950,20 +942,6 @@ function buildPlayerRecord3242Health() {
             key,
             entries: Array.isArray(mergedIndex?.players?.[key]) ? mergedIndex.players[key].length : 0,
             hasFinal: eventIndexPlayerHasDocumentCode(mergedIndex, key, "TTEMSINGLES-----------FNL-000100----------"),
-          })),
-        }
-      : null,
-    selectedCurrentEventIndex: selectedCurrentIndex
-      ? {
-          indexedMatches: Number(selectedCurrentIndex.indexedMatches || selectedCurrentIndex.storedMatchCount || 0),
-          indexedEntries: Number(selectedCurrentIndex.indexedEntries || 0),
-          keyCount: Number(selectedCurrentIndex.keyCount || Object.keys(selectedCurrentIndex.players || {}).length || 0),
-          sourceSize: Number(selectedCurrentIndex.sourceSize || 0),
-          sourceMtimeMs: Number(selectedCurrentIndex.sourceMtimeMs || 0),
-          matsushimaKeys: ["松島輝空", "matsushima sora"].map((key) => ({
-            key,
-            entries: Array.isArray(selectedCurrentIndex?.players?.[key]) ? selectedCurrentIndex.players[key].length : 0,
-            hasFinal: eventIndexPlayerHasDocumentCode(selectedCurrentIndex, key, "TTEMSINGLES-----------FNL-000100----------"),
           })),
         }
       : null,
