@@ -26,6 +26,7 @@ COPY zennihon-records ./zennihon-records
 COPY wtt-records ./wtt-records
 COPY wtt-records-slim ./wtt-records-slim
 COPY player-records-index/event-records ./player-records-index/event-records
+COPY player-records-index/event-records-manifest.json ./player-records-index/event-records-manifest.json
 
 RUN node patch_version_info.js
 
