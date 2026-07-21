@@ -4997,16 +4997,6 @@ function comparePlayerRecordEventIndexQuality(left, right) {
   return getPlayerRecordEventIndexFreshnessValue(left) - getPlayerRecordEventIndexFreshnessValue(right);
 }
 
-function isPlayerRecordEventIndexForFile(index, file) {
-  if (!file) {
-    return true;
-  }
-  return (
-    Number(index?.sourceSize || 0) === Number(file.parseSize || file.size || 0) &&
-    Number(index?.sourceMtimeMs || 0) === Number(file.parseMtimeMs || file.mtimeMs || 0)
-  );
-}
-
 function mergePlayerRecordEventIndexes(indexes) {
   const validIndexes = (Array.isArray(indexes) ? indexes : []).filter((index) =>
     index?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
@@ -5052,7 +5042,7 @@ function mergePlayerRecordEventIndexes(indexes) {
   return merged;
 }
 
-function readPlayerRecordEventIndex(eventId, file = null) {
+function readPlayerRecordEventIndex(eventId) {
   const candidates = [
     getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR),
     getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR),
@@ -5062,12 +5052,7 @@ function readPlayerRecordEventIndex(eventId, file = null) {
   for (const filePath of candidates) {
     try {
       const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
-      if (
-        parsed?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
-        parsed?.players &&
-        typeof parsed.players === "object" &&
-        isPlayerRecordEventIndexForFile(parsed, file)
-      ) {
+      if (parsed?.version === PLAYER_RECORD_EVENT_INDEX_VERSION && parsed?.players && typeof parsed.players === "object") {
         indexes.push(parsed);
       }
     } catch {
@@ -5075,14 +5060,6 @@ function readPlayerRecordEventIndex(eventId, file = null) {
     }
   }
   return mergePlayerRecordEventIndexes(indexes);
-}
-
-function getPlayerRecordEventIndexForFile(file, deps = null) {
-  const index = readPlayerRecordEventIndex(file.eventId, file);
-  if (index) {
-    return index;
-  }
-  return buildPlayerRecordEventIndexForFile(file, deps);
 }
 
 function buildPlayerRecordEventIndexForFile(file, deps = null) {
@@ -5210,31 +5187,12 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
   let missingIndexedEvents = 0;
   let scannedMatches = 0;
   let playerKeyCount = 0;
-  let eventIndexDeps = null;
-  const getEventIndexDeps = () => {
-    if (!eventIndexDeps) {
-      eventIndexDeps = {
-        translations,
-        rules: readRules(RULES_PATH),
-        searchIndex: readWttSearchIndex(),
-        dateIndex: readWttDateIndex(WTT_DATE_INDEX_PATH),
-        archiveIndex: readWttArchiveIndex(),
-        eventNames: getEventNamesMap(),
-      };
-    }
-    return eventIndexDeps;
-  };
 
   for (const file of (Array.isArray(snapshot) ? snapshot : [])) {
     if (eventsById.size >= eventLimit) {
       break;
     }
-    let index = null;
-    try {
-      index = getPlayerRecordEventIndexForFile(file, getEventIndexDeps());
-    } catch {
-      index = null;
-    }
+    const index = readPlayerRecordEventIndex(file.eventId);
     if (!index) {
       missingIndexedEvents += 1;
       continue;
