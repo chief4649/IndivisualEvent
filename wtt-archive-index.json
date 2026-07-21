@@ -289,7 +289,18 @@
     "startDate": "2026-06-26",
     "endDate": "2026-07-05",
     "canAutoArchive": false,
-    "lastFetchedAt": "2026-07-03T06:39:24.145Z"
+    "lastFetchedAt": "2026-07-21T02:36:56.483Z",
+    "archived": true,
+    "archivedAt": "2026-07-21T02:36:56.496Z",
+    "archiveMatchCount": 274,
+    "archiveFetchTake": 1200,
+    "archiveRefreshed": true,
+    "archiveCompletenessVersion": 3,
+    "archiveVerifiedAt": "2026-07-21T02:36:56.496Z",
+    "crawlSkipped": false,
+    "crawlSkipReason": null,
+    "crawlSkippedAt": null,
+    "forced": false
   },
   "3263": {
     "pooled": true,

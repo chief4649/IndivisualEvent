@@ -208,6 +208,28 @@ function isTransientCrawlSkip(entry) {
   return reason.startsWith("error:") || reason.includes("Timed out fetching") || reason.includes("fetch failed");
 }
 
+function isPotentiallyPartialArchive(entry, archiveCount) {
+  if (!archiveCount) {
+    return false;
+  }
+
+  if (!entry?.archived) {
+    return true;
+  }
+
+  if (entry?.forced && isFinished(entry)) {
+    return true;
+  }
+
+  const endDate = String(entry?.endDate || "").slice(0, 10);
+  const fetchedAt = String(entry?.archiveVerifiedAt || entry?.archivedAt || entry?.lastFetchedAt || "").slice(0, 10);
+  if (/^\d{4}-\d{2}-\d{2}$/.test(endDate) && /^\d{4}-\d{2}-\d{2}$/.test(fetchedAt) && fetchedAt < endDate) {
+    return true;
+  }
+
+  return false;
+}
+
 function buildCandidates(args) {
   const dateIndex = readJson(WTT_DATE_INDEX_PATH);
   const searchIndex = readJson(WTT_SEARCH_INDEX_PATH);
@@ -233,6 +255,7 @@ function buildCandidates(args) {
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
       const archiveCount = getArchiveMatchCount(eventId);
+      const partialArchive = isPotentiallyPartialArchive(entry, archiveCount);
       return {
         eventId,
         title: entry.eventName || entry.title || "",
@@ -242,6 +265,7 @@ function buildCandidates(args) {
         archived: archiveCount > 0,
         archiveCount,
         suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry),
+        partialArchive,
         crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
         crawlSkipReason: entry.crawlSkipReason || "",
         finished: isFinished(entry),
@@ -257,7 +281,7 @@ function buildCandidates(args) {
       if (!args.includeActive && !candidate.finished) {
         return false;
       }
-      if (!args.force && candidate.archived && !candidate.suspiciousArchive) {
+      if (!args.force && candidate.archived && !candidate.suspiciousArchive && !candidate.partialArchive) {
         return false;
       }
       if (!args.force && candidate.crawlSkipped) {
