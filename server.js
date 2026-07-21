@@ -5001,10 +5001,19 @@ function isPlayerRecordEventIndexForFile(index, file) {
   if (!file) {
     return true;
   }
-  return (
-    Number(index?.sourceSize || 0) === Number(file.parseSize || file.size || 0) &&
-    Number(index?.sourceMtimeMs || 0) === Number(file.parseMtimeMs || file.mtimeMs || 0)
-  );
+  const indexSourceSize = Number(index?.sourceSize || 0);
+  const fileSourceSize = Number(file.parseSize || file.size || 0);
+  if (indexSourceSize > 0 && fileSourceSize > 0) {
+    return indexSourceSize === fileSourceSize;
+  }
+
+  const indexSourceMtimeMs = Number(index?.sourceMtimeMs || 0);
+  const fileSourceMtimeMs = Number(file.parseMtimeMs || file.mtimeMs || 0);
+  if (indexSourceMtimeMs > 0 && fileSourceMtimeMs > 0) {
+    return indexSourceMtimeMs === fileSourceMtimeMs;
+  }
+
+  return true;
 }
 
 function mergePlayerRecordEventIndexes(indexes) {
