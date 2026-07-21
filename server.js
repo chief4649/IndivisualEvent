@@ -4997,6 +4997,16 @@ function comparePlayerRecordEventIndexQuality(left, right) {
   return getPlayerRecordEventIndexFreshnessValue(left) - getPlayerRecordEventIndexFreshnessValue(right);
 }
 
+function isPlayerRecordEventIndexForFile(index, file) {
+  if (!file) {
+    return true;
+  }
+  return (
+    Number(index?.sourceSize || 0) === Number(file.parseSize || file.size || 0) &&
+    Number(index?.sourceMtimeMs || 0) === Number(file.parseMtimeMs || file.mtimeMs || 0)
+  );
+}
+
 function mergePlayerRecordEventIndexes(indexes) {
   const validIndexes = (Array.isArray(indexes) ? indexes : []).filter((index) =>
     index?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
@@ -5007,42 +5017,10 @@ function mergePlayerRecordEventIndexes(indexes) {
     return null;
   }
 
-  const selectedMeta = [...validIndexes].sort(comparePlayerRecordEventIndexQuality).pop();
-  const merged = {
-    ...selectedMeta,
-    players: {},
-    matches: {},
-    indexedMatches: 0,
-    indexedEntries: 0,
-    keyCount: 0,
-    storedMatchCount: 0,
-  };
-
-  validIndexes.forEach((index) => {
-    Object.assign(merged.matches, index.matches || {});
-    Object.entries(index.players || {}).forEach(([key, entries]) => {
-      if (!Array.isArray(entries)) {
-        return;
-      }
-      if (!merged.players[key]) {
-        merged.players[key] = [];
-      }
-      entries.forEach((entry) => {
-        if (!merged.players[key].includes(entry)) {
-          merged.players[key].push(entry);
-        }
-      });
-    });
-  });
-
-  merged.indexedMatches = Object.keys(merged.matches).length;
-  merged.storedMatchCount = merged.indexedMatches;
-  merged.keyCount = Object.keys(merged.players).length;
-  merged.indexedEntries = Object.values(merged.players).reduce((sum, entries) => sum + (Array.isArray(entries) ? entries.length : 0), 0);
-  return merged;
+  return [...validIndexes].sort(comparePlayerRecordEventIndexQuality).pop();
 }
 
-function readPlayerRecordEventIndex(eventId) {
+function readPlayerRecordEventIndex(eventId, file = null) {
   const candidates = [
     getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR),
     getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR),
@@ -5052,7 +5030,12 @@ function readPlayerRecordEventIndex(eventId) {
   for (const filePath of candidates) {
     try {
       const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
-      if (parsed?.version === PLAYER_RECORD_EVENT_INDEX_VERSION && parsed?.players && typeof parsed.players === "object") {
+      if (
+        parsed?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
+        parsed?.players &&
+        typeof parsed.players === "object" &&
+        isPlayerRecordEventIndexForFile(parsed, file)
+      ) {
         indexes.push(parsed);
       }
     } catch {
@@ -5192,7 +5175,7 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
     if (eventsById.size >= eventLimit) {
       break;
     }
-    const index = readPlayerRecordEventIndex(file.eventId);
+    const index = readPlayerRecordEventIndex(file.eventId, file);
     if (!index) {
       missingIndexedEvents += 1;
       continue;
