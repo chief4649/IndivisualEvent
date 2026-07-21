@@ -4728,7 +4728,7 @@ function readPlayerRecordCandidateManifestFromPath(filePath, signature) {
   }
 }
 
-function readPlayerRecordCandidateManifest(signature) {
+function getPlayerRecordCandidateManifestLocations(signature) {
   const locations = [
     {
       manifestPath: PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH,
@@ -4740,41 +4740,44 @@ function readPlayerRecordCandidateManifest(signature) {
     },
   ];
 
-  for (const location of locations) {
+  return locations.flatMap((location) => {
     const manifest = readPlayerRecordCandidateManifestFromPath(location.manifestPath, signature);
-    if (manifest) {
-      return {
+    return manifest
+      ? [{
         ...manifest,
         shardsDir: location.shardsDir,
-      };
-    }
-  }
+      }]
+      : [];
+  });
+}
 
-  return null;
+function readPlayerRecordCandidateManifest(signature) {
+  return getPlayerRecordCandidateManifestLocations(signature)[0] || null;
 }
 
 function getPlayerRecordShardedEventIds(signature, textNeedles) {
   if (!Array.isArray(textNeedles) || textNeedles.length === 0) {
     return null;
   }
-  const manifest = readPlayerRecordCandidateManifest(signature);
-  if (!manifest?.sharded) {
+  const manifests = getPlayerRecordCandidateManifestLocations(signature).filter((manifest) => manifest?.sharded);
+  if (manifests.length === 0) {
     return null;
   }
 
   const shards = new Map();
-  const getShard = (phrase) => {
+  const getShard = (manifest, phrase) => {
     const shardName = getPlayerRecordCandidateShardName(phrase);
-    if (!shards.has(shardName)) {
+    const shardKey = `${manifest.shardsDir || PLAYER_RECORD_CANDIDATE_SHARDS_DIR}:${shardName}`;
+    if (!shards.has(shardKey)) {
       try {
         const shardPath = path.join(manifest.shardsDir || PLAYER_RECORD_CANDIDATE_SHARDS_DIR, shardName);
         const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
-        shards.set(shardName, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+        shards.set(shardKey, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
       } catch {
-        shards.set(shardName, {});
+        shards.set(shardKey, {});
       }
     }
-    return shards.get(shardName) || {};
+    return shards.get(shardKey) || {};
   };
 
   const eventIds = new Set();
@@ -4784,11 +4787,13 @@ function getPlayerRecordShardedEventIds(signature, textNeedles) {
     if (!phrase) {
       return;
     }
-    const shard = getShard(phrase);
-    if (Array.isArray(shard[phrase])) {
-      playerKeyCount += 1;
-      shard[phrase].forEach((eventId) => eventIds.add(eventId));
-    }
+    manifests.forEach((manifest) => {
+      const shard = getShard(manifest, phrase);
+      if (Array.isArray(shard[phrase])) {
+        playerKeyCount += 1;
+        shard[phrase].forEach((eventId) => eventIds.add(eventId));
+      }
+    });
   });
 
   if (eventIds.size === 0) {
@@ -4797,19 +4802,21 @@ function getPlayerRecordShardedEventIds(signature, textNeedles) {
       if (!phrase) {
         return;
       }
-      const shard = getShard(phrase);
-      Object.keys(shard).forEach((key) => {
-        if (playerRecordNameMatchesNeedle(key, phrase)) {
-          playerKeyCount += 1;
-          shard[key].forEach((eventId) => eventIds.add(eventId));
-        }
+      manifests.forEach((manifest) => {
+        const shard = getShard(manifest, phrase);
+        Object.keys(shard).forEach((key) => {
+          if (playerRecordNameMatchesNeedle(key, phrase)) {
+            playerKeyCount += 1;
+            shard[key].forEach((eventId) => eventIds.add(eventId));
+          }
+        });
       });
     });
   }
 
   return eventIds.size > 0 ? {
     eventIds,
-    generatedAt: manifest.generatedAt || null,
+    generatedAt: manifests.map((manifest) => manifest.generatedAt).filter(Boolean).sort().pop() || null,
     playerKeyCount,
   } : null;
 }
