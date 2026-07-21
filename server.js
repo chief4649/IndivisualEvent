@@ -3727,36 +3727,56 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
   }
 }
 
+function shouldPreferWttRecordFile(current, next) {
+  if (!current) {
+    return true;
+  }
+
+  const currentIsSlim = current.parseSource === "slim";
+  const nextIsSlim = next.parseSource === "slim";
+  if (nextIsSlim && !currentIsSlim) {
+    return true;
+  }
+  if (currentIsSlim && !nextIsSlim) {
+    return false;
+  }
+
+  // Runtime DATA_DIR can contain stale persistent raw files on Render.
+  // Bundled repo files can contain newer deployed records.
+  // Prefer larger/newer files; if tied, prefer bundled deployment data.
+  return (
+    next.parseSize > current.parseSize ||
+    (next.parseSize === current.parseSize && next.parseMtimeMs > current.parseMtimeMs) ||
+    (
+      next.parseSize === current.parseSize &&
+      next.parseMtimeMs === current.parseMtimeMs &&
+      next.sourcePriority > current.sourcePriority
+    )
+  );
+}
+
+function createWttRecordFileEntry(options) {
+  const eventId = String(options.eventId || "");
+  const filePath = options.filePath;
+  const parseFilePath = options.parseFilePath || filePath;
+  const fileStat = options.fileStat || fs.statSync(filePath);
+  const parseStat = options.parseStat || fileStat;
+  return {
+    eventId,
+    filePath,
+    parseFilePath,
+    parseSize: parseStat.size,
+    parseMtimeMs: Math.trunc(parseStat.mtimeMs),
+    parseSource: options.parseSource,
+    size: fileStat.size,
+    mtimeMs: Math.trunc(fileStat.mtimeMs),
+    sourcePriority: options.sourcePriority,
+    sourceLabel: options.sourceLabel,
+  };
+}
+
 function getWttRecordFileSnapshot() {
   const recordsByEventId = new Map();
-
-  const shouldReplaceRecord = (current, next) => {
-    if (!current) {
-      return true;
-    }
-
-    const currentIsSlim = current.parseSource === "slim";
-    const nextIsSlim = next.parseSource === "slim";
-    if (nextIsSlim && !currentIsSlim) {
-      return true;
-    }
-    if (currentIsSlim && !nextIsSlim) {
-      return false;
-    }
-
-    // Runtime DATA_DIR can contain stale persistent raw files on Render.
-    // Bundled repo files can contain newer deployed records.
-    // Prefer larger/newer files; if tied, prefer bundled deployment data.
-    return (
-      next.parseSize > current.parseSize ||
-      (next.parseSize === current.parseSize && next.parseMtimeMs > current.parseMtimeMs) ||
-      (
-        next.parseSize === current.parseSize &&
-        next.parseMtimeMs === current.parseMtimeMs &&
-        next.sourcePriority > current.sourcePriority
-      )
-    );
-  };
 
   const addDirectory = (dirPath, sourcePriority, sourceLabel) => {
     try {
@@ -3774,21 +3794,19 @@ function getWttRecordFileSnapshot() {
             filePath,
             sourceLabel === "runtime" ? WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_SLIM_ARCHIVE_DIR
           );
-          const next = {
+          const next = createWttRecordFileEntry({
             eventId,
             filePath,
             parseFilePath: slim?.filePath || filePath,
-            parseSize: slim?.size || stat.size,
-            parseMtimeMs: slim?.mtimeMs || Math.trunc(stat.mtimeMs),
+            parseStat: slim ? { size: slim.size, mtimeMs: slim.mtimeMs } : stat,
             parseSource: slim ? "slim" : "raw",
-            size: stat.size,
-            mtimeMs: Math.trunc(stat.mtimeMs),
+            fileStat: stat,
             sourcePriority,
             sourceLabel,
-          };
+          });
 
           const current = recordsByEventId.get(eventId);
-          if (shouldReplaceRecord(current, next)) {
+          if (shouldPreferWttRecordFile(current, next)) {
             recordsByEventId.set(eventId, next);
           }
         });
@@ -3813,21 +3831,19 @@ function getWttRecordFileSnapshot() {
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
           const stat = fs.statSync(slimFilePath);
-          const next = {
+          const next = createWttRecordFileEntry({
             eventId,
             filePath,
             parseFilePath: slimFilePath,
-            parseSize: stat.size,
-            parseMtimeMs: Math.trunc(stat.mtimeMs),
+            parseStat: stat,
+            fileStat: stat,
             parseSource: "slim",
-            size: stat.size,
-            mtimeMs: Math.trunc(stat.mtimeMs),
             sourcePriority,
             sourceLabel,
-          };
+          });
 
           const current = recordsByEventId.get(eventId);
-          if (shouldReplaceRecord(current, next)) {
+          if (shouldPreferWttRecordFile(current, next)) {
             recordsByEventId.set(eventId, next);
           }
         });
@@ -7792,8 +7808,7 @@ function isPlayerRecordEventIndexCurrent(file) {
     const index = JSON.parse(fs.readFileSync(getPlayerRecordEventIndexPath(file.eventId), "utf8"));
     return (
       index?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
-      Number(index.sourceSize || 0) === Number(file.parseSize || file.size || 0) &&
-      Number(index.sourceMtimeMs || 0) === Number(file.parseMtimeMs || file.mtimeMs || 0)
+      isPlayerRecordEventIndexForFile(index, file)
     );
   } catch {
     return false;
