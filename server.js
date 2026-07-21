@@ -4975,6 +4975,28 @@ function getPlayerRecordEventIndexFreshnessValue(index) {
   return 0;
 }
 
+function comparePlayerRecordEventIndexQuality(left, right) {
+  const leftMatchCount = Number(left?.indexedMatches || left?.storedMatchCount || 0);
+  const rightMatchCount = Number(right?.indexedMatches || right?.storedMatchCount || 0);
+  if (leftMatchCount !== rightMatchCount) {
+    return leftMatchCount - rightMatchCount;
+  }
+
+  const leftEntries = Number(left?.indexedEntries || 0);
+  const rightEntries = Number(right?.indexedEntries || 0);
+  if (leftEntries !== rightEntries) {
+    return leftEntries - rightEntries;
+  }
+
+  const leftSize = Number(left?.sourceSize || 0);
+  const rightSize = Number(right?.sourceSize || 0);
+  if (leftSize !== rightSize) {
+    return leftSize - rightSize;
+  }
+
+  return getPlayerRecordEventIndexFreshnessValue(left) - getPlayerRecordEventIndexFreshnessValue(right);
+}
+
 function readPlayerRecordEventIndex(eventId) {
   const candidates = [
     getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR),
@@ -4991,12 +5013,7 @@ function readPlayerRecordEventIndex(eventId) {
           continue;
         }
 
-        const selectedFreshness = getPlayerRecordEventIndexFreshnessValue(selected);
-        const parsedFreshness = getPlayerRecordEventIndexFreshnessValue(parsed);
-        if (
-          parsedFreshness > selectedFreshness ||
-          (parsedFreshness === selectedFreshness && Number(parsed?.sourceSize || 0) > Number(selected?.sourceSize || 0))
-        ) {
+        if (comparePlayerRecordEventIndexQuality(parsed, selected) > 0) {
           selected = parsed;
         }
       }
