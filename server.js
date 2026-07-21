@@ -4997,31 +4997,69 @@ function comparePlayerRecordEventIndexQuality(left, right) {
   return getPlayerRecordEventIndexFreshnessValue(left) - getPlayerRecordEventIndexFreshnessValue(right);
 }
 
+function mergePlayerRecordEventIndexes(indexes) {
+  const validIndexes = (Array.isArray(indexes) ? indexes : []).filter((index) =>
+    index?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
+    index?.players &&
+    typeof index.players === "object",
+  );
+  if (validIndexes.length === 0) {
+    return null;
+  }
+
+  const selectedMeta = [...validIndexes].sort(comparePlayerRecordEventIndexQuality).pop();
+  const merged = {
+    ...selectedMeta,
+    players: {},
+    matches: {},
+    indexedMatches: 0,
+    indexedEntries: 0,
+    keyCount: 0,
+    storedMatchCount: 0,
+  };
+
+  validIndexes.forEach((index) => {
+    Object.assign(merged.matches, index.matches || {});
+    Object.entries(index.players || {}).forEach(([key, entries]) => {
+      if (!Array.isArray(entries)) {
+        return;
+      }
+      if (!merged.players[key]) {
+        merged.players[key] = [];
+      }
+      entries.forEach((entry) => {
+        if (!merged.players[key].includes(entry)) {
+          merged.players[key].push(entry);
+        }
+      });
+    });
+  });
+
+  merged.indexedMatches = Object.keys(merged.matches).length;
+  merged.storedMatchCount = merged.indexedMatches;
+  merged.keyCount = Object.keys(merged.players).length;
+  merged.indexedEntries = Object.values(merged.players).reduce((sum, entries) => sum + (Array.isArray(entries) ? entries.length : 0), 0);
+  return merged;
+}
+
 function readPlayerRecordEventIndex(eventId) {
   const candidates = [
     getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR),
     getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR),
   ];
 
-  let selected = null;
+  const indexes = [];
   for (const filePath of candidates) {
     try {
       const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
       if (parsed?.version === PLAYER_RECORD_EVENT_INDEX_VERSION && parsed?.players && typeof parsed.players === "object") {
-        if (!selected) {
-          selected = parsed;
-          continue;
-        }
-
-        if (comparePlayerRecordEventIndexQuality(parsed, selected) > 0) {
-          selected = parsed;
-        }
+        indexes.push(parsed);
       }
     } catch {
       // Try the next event index location.
     }
   }
-  return selected;
+  return mergePlayerRecordEventIndexes(indexes);
 }
 
 function buildPlayerRecordEventIndexForFile(file, deps = null) {
