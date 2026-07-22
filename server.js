@@ -7103,14 +7103,18 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     };
   }
 
-  const candidateSnapshot = snapshot.filter((file) => candidate.eventIds.has(String(file.eventId)));
+  const candidateEventIds = new Set(candidate.eventIds);
+  if (indexState.stale) {
+    (candidate.liveEventIds || []).forEach((eventId) => candidateEventIds.add(String(eventId)));
+  }
+  const candidateSnapshot = snapshot.filter((file) => candidateEventIds.has(String(file.eventId)));
   const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
 
   return {
     ...collected,
     candidateEventCount: candidateSnapshot.length,
-    pairCount: candidate.eventIds.size,
-    candidateEventIds: [...candidate.eventIds],
+    pairCount: candidateEventIds.size,
+    candidateEventIds: [...candidateEventIds],
     liveCandidateEventIds: [...(candidate.liveEventIds || candidate.eventIds)],
     playerAKeyCount: candidate.playerAKeyCount,
     playerBKeyCount: candidate.playerBKeyCount,
