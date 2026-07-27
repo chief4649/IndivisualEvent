@@ -3842,6 +3842,8 @@ const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_A
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
 const AUTO_DERIVED_INDEX_DISABLED = process.env.AUTO_DERIVED_INDEX_DISABLED === "1";
 const autoDerivedIndexBuilds = new Set();
+const autoDerivedIndexLastScheduled = new Map();
+const AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS = Number(process.env.AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS || 10 * 60_000);
 let autoHeadToHeadIndexBuild = null;
 
 function getPathStatToken(filePath) {
@@ -4094,12 +4096,12 @@ async function buildDerivedIndexesForFinishedWttEvent(eventId) {
       String(eventId),
       "--force",
     ], "build-player-record-event-index");
-    await spawnDerivedIndexProcess([
-      "build_player_records_index.js",
-      String(eventId),
-    ], "build_player_records_index");
-    clearPlayerRecordResultCache();
   }
+  await spawnDerivedIndexProcess([
+    "build_player_records_index.js",
+    String(eventId),
+  ], "build_player_records_index");
+  clearPlayerRecordResultCache();
 
   if (!isHeadToHeadPersistentIndexCurrent() && !autoHeadToHeadIndexBuild) {
     autoHeadToHeadIndexBuild = spawnDerivedIndexProcess([
@@ -4128,12 +4130,16 @@ function scheduleDerivedIndexesForFinishedWttEvent(options = {}) {
   }
   const file = getRuntimeWttRecordFile(eventId);
   if (!file || (isPlayerRecordEventIndexCurrent(file) && isHeadToHeadPersistentIndexCurrent())) {
-    return;
+    const lastScheduledAt = autoDerivedIndexLastScheduled.get(eventId) || 0;
+    if (Date.now() - lastScheduledAt < AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS) {
+      return;
+    }
   }
   if (autoDerivedIndexBuilds.has(eventId)) {
     return;
   }
 
+  autoDerivedIndexLastScheduled.set(eventId, Date.now());
   autoDerivedIndexBuilds.add(eventId);
   setImmediate(() => {
     buildDerivedIndexesForFinishedWttEvent(eventId)
