@@ -3495,6 +3495,30 @@ function readPlayerSearchArchiveNameIndexFromDisk(signature) {
   }
 }
 
+function readAnyPlayerSearchArchiveNameIndexFromDisk(signature) {
+  try {
+    const manifest = JSON.parse(fs.readFileSync(PLAYER_SEARCH_ARCHIVE_NAME_INDEX_MANIFEST_PATH, "utf8"));
+    if (manifest?.version !== PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION) {
+      return null;
+    }
+
+    const names = JSON.parse(fs.readFileSync(PLAYER_SEARCH_ARCHIVE_NAME_INDEX_PATH, "utf8"));
+    if (!Array.isArray(names) || names.length === 0) {
+      return null;
+    }
+
+    return {
+      signature,
+      builtAt: Date.parse(manifest.generatedAt || "") || Date.now(),
+      generatedAt: manifest.generatedAt || null,
+      names,
+      stale: manifest.signature !== signature,
+    };
+  } catch {
+    return null;
+  }
+}
+
 function writePlayerSearchArchiveNameIndexToDisk(indexState) {
   const names = Array.isArray(indexState?.names) ? indexState.names : [];
   const generatedAt = indexState?.generatedAt || new Date().toISOString();
@@ -3656,6 +3680,17 @@ function getPlayerSearchArchiveIndexNames(snapshot, signature) {
   const diskIndex = readPlayerSearchArchiveNameIndexFromDisk(signature);
   if (diskIndex) {
     setPlayerSearchArchiveIndexState(diskIndex);
+    return playerSearchArchiveIndexState.names;
+  }
+
+  const staleDiskIndex = readAnyPlayerSearchArchiveNameIndexFromDisk(signature);
+  if (staleDiskIndex) {
+    setPlayerSearchArchiveIndexState(staleDiskIndex);
+    if (!playerSearchArchiveIndexState.building) {
+      playerSearchArchiveIndexState.building = buildPlayerSearchArchiveNameIndex(snapshot, signature).catch(() => {
+        playerSearchArchiveIndexState.building = null;
+      });
+    }
     return playerSearchArchiveIndexState.names;
   }
 
