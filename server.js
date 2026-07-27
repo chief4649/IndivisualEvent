@@ -68,6 +68,7 @@ const HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head
 const HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
 const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
 const HEAD_TO_HEAD_INDEX_STATUS_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-status.json");
+const WTT_CRAWL_STATUS_PATH = path.join(DATA_DIR, "wtt-crawl-status.json");
 const PLAYER_RECORD_MATCH_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "player-record-match-shards");
 const BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
 const BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
@@ -110,6 +111,7 @@ const processedMatchesCache = new Map();
 let heavyApiActiveCount = 0;
 const heavyApiQueue = [];
 let headToHeadIndexBuildProcess = null;
+let wttCrawlProcess = null;
 let backfill5000Promise = null;
 let translationsLastSyncAt = 0;
 let translationsLastSyncMeta = null;
@@ -2368,6 +2370,168 @@ function handleAdminBackfill5000Status(request, response) {
   return true;
 }
 
+function readWttCrawlStatus() {
+  try {
+    return JSON.parse(fs.readFileSync(WTT_CRAWL_STATUS_PATH, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function writeWttCrawlStatus(status) {
+  writeJsonFileAtomic(WTT_CRAWL_STATUS_PATH, {
+    updatedAt: new Date().toISOString(),
+    ...status,
+  });
+}
+
+function getDefaultNightlyCrawlRange() {
+  const now = new Date();
+  const from = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 2, 1));
+  const to = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1, 1));
+  const formatMonth = (date) => `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
+  return {
+    from: formatMonth(from),
+    to: formatMonth(to),
+  };
+}
+
+function buildWttCrawlArgs(searchParams) {
+  const defaults = getDefaultNightlyCrawlRange();
+  const args = [
+    "crawl_wtt_archives.js",
+    "--from",
+    searchParams.get("from") || process.env.WTT_NIGHTLY_CRAWL_FROM || defaults.from,
+    "--to",
+    searchParams.get("to") || process.env.WTT_NIGHTLY_CRAWL_TO || defaults.to,
+    "--limit",
+    searchParams.get("limit") || process.env.WTT_NIGHTLY_CRAWL_LIMIT || "20",
+    "--delay-ms",
+    searchParams.get("delayMs") || process.env.WTT_NIGHTLY_CRAWL_DELAY_MS || "2000",
+    "--take",
+    searchParams.get("take") || process.env.WTT_NIGHTLY_CRAWL_TAKE || "1200",
+  ];
+
+  if (parseBoolean(searchParams.get("force")) || process.env.WTT_NIGHTLY_CRAWL_FORCE === "1") {
+    args.push("--force");
+  }
+  if (parseBoolean(searchParams.get("keepRaw")) || process.env.WTT_NIGHTLY_CRAWL_KEEP_RAW === "1") {
+    args.push("--keep-raw");
+  }
+  if (parseBoolean(searchParams.get("skipH2hIndex")) || process.env.WTT_NIGHTLY_CRAWL_SKIP_H2H_INDEX === "1") {
+    args.push("--skip-h2h-index");
+  }
+  return args;
+}
+
+function handleAdminWttCrawlStatus(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+  sendJson(response, 200, {
+    ok: true,
+    running: Boolean(wttCrawlProcess),
+    pid: wttCrawlProcess?.pid || null,
+    status: readWttCrawlStatus(),
+  });
+  return true;
+}
+
+function handleAdminWttCrawlStart(request, response) {
+  if (!requireAuthorization(request, response)) {
+    return true;
+  }
+
+  if (wttCrawlProcess) {
+    sendJson(response, 202, {
+      ok: true,
+      status: "running",
+      pid: wttCrawlProcess.pid,
+      previous: readWttCrawlStatus(),
+    });
+    return true;
+  }
+
+  const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+  const args = buildWttCrawlArgs(searchParams);
+  const startedAt = new Date().toISOString();
+  writeWttCrawlStatus({
+    ok: true,
+    status: "running",
+    startedAt,
+    finishedAt: null,
+    pid: null,
+    args,
+    outputTail: "",
+    errorTail: "",
+  });
+
+  const child = spawn(process.execPath, args, {
+    cwd: __dirname,
+    env: {
+      ...process.env,
+      DATA_DIR,
+    },
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  wttCrawlProcess = child;
+  let outputTail = "";
+  let errorTail = "";
+  const appendTail = (current, chunk) => {
+    const next = `${current}${String(chunk || "")}`;
+    return next.length > 8000 ? next.slice(-8000) : next;
+  };
+
+  writeWttCrawlStatus({
+    ok: true,
+    status: "running",
+    startedAt,
+    finishedAt: null,
+    pid: child.pid,
+    args,
+    outputTail,
+    errorTail,
+  });
+
+  child.stdout.on("data", (chunk) => {
+    outputTail = appendTail(outputTail, chunk);
+  });
+  child.stderr.on("data", (chunk) => {
+    errorTail = appendTail(errorTail, chunk);
+  });
+  child.on("error", (error) => {
+    errorTail = appendTail(errorTail, error?.stack || error?.message || error);
+  });
+  child.on("close", (code) => {
+    const ok = code === 0;
+    writeWttCrawlStatus({
+      ok,
+      status: ok ? "complete" : "failed",
+      startedAt,
+      finishedAt: new Date().toISOString(),
+      pid: child.pid,
+      exitCode: code,
+      args,
+      outputTail,
+      errorTail,
+    });
+    wttCrawlProcess = null;
+    clearProcessedMatchesCache();
+    clearPlayerRecordResultCache();
+    clearHeadToHeadResultCache();
+    clearPlayerRecordArchiveParseCache();
+  });
+
+  sendJson(response, 202, {
+    ok: true,
+    status: "started",
+    pid: child.pid,
+    args,
+    statusFile: WTT_CRAWL_STATUS_PATH,
+  });
+  return true;
+}
+
 function handleAdminBackfill5000Start(request, response) {
   if (!requireAuthorization(request, response)) {
     return true;
@@ -3063,6 +3227,7 @@ async function handleApi(requestUrl, response) {
       output,
       ...(includeMatches ? { matches: result.filtered } : {}),
     });
+    scheduleDerivedIndexesForFinishedWttEvent(options);
   } catch (error) {
     console.error("[handleApi]", error?.stack || error);
     sendJson(response, 500, {
@@ -3102,6 +3267,7 @@ async function handleCategoriesApi(requestUrl, response) {
       event: options.event,
       categories: summarizeCategories(result.filtered),
     });
+    scheduleDerivedIndexesForFinishedWttEvent(options);
   } catch (error) {
     sendJson(response, 500, {
       error: createFriendlyErrorMessage(error),
@@ -3141,6 +3307,7 @@ async function handleRoundsApi(requestUrl, response) {
       event: options.event,
       rounds: summarizeRoundOptions(result.filtered, result.rules, result.translations),
     });
+    scheduleDerivedIndexesForFinishedWttEvent(options);
   } catch (error) {
     sendJson(response, 500, {
       error: createFriendlyErrorMessage(error),
@@ -3673,6 +3840,9 @@ const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
+const AUTO_DERIVED_INDEX_DISABLED = process.env.AUTO_DERIVED_INDEX_DISABLED === "1";
+const autoDerivedIndexBuilds = new Set();
+let autoHeadToHeadIndexBuild = null;
 
 function getPathStatToken(filePath) {
   try {
@@ -3860,6 +4030,120 @@ function getWttRecordFileSnapshot() {
   return [...recordsByEventId.values()]
     .map(({ sourcePriority, ...file }) => file)
     .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
+}
+
+function isArchivedWttEvent(eventId) {
+  const archiveEntry = readWttArchiveIndex()[String(eventId || "").trim()];
+  return Boolean(archiveEntry?.archived);
+}
+
+function spawnDerivedIndexProcess(args, label) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, args, {
+      cwd: __dirname,
+      env: {
+        ...process.env,
+        DATA_DIR,
+      },
+      stdio: ["ignore", "ignore", "pipe"],
+    });
+    let stderr = "";
+    child.stderr.on("data", (chunk) => {
+      stderr += String(chunk || "");
+      if (stderr.length > 4000) {
+        stderr = stderr.slice(-4000);
+      }
+    });
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolve();
+        return;
+      }
+      reject(new Error(`${label} exited with code ${code}${stderr ? `: ${stderr.trim()}` : ""}`));
+    });
+  });
+}
+
+function getRuntimeWttRecordFile(eventId) {
+  const normalizedEventId = String(eventId || "").trim();
+  if (!normalizedEventId) {
+    return null;
+  }
+  return getWttRecordFileSnapshot().find((file) => String(file.eventId) === normalizedEventId) || null;
+}
+
+async function buildDerivedIndexesForFinishedWttEvent(eventId) {
+  const file = getRuntimeWttRecordFile(eventId);
+  if (!file) {
+    return;
+  }
+
+  if (file.parseSource !== "slim" && fs.existsSync(file.filePath)) {
+    await spawnDerivedIndexProcess(["build_wtt_slim_records.js", file.filePath], "build_wtt_slim_records");
+  }
+
+  const refreshedFile = getRuntimeWttRecordFile(eventId) || file;
+  if (!isPlayerRecordEventIndexCurrent(refreshedFile)) {
+    await spawnDerivedIndexProcess([
+      "-r",
+      "./runtime_legacy_ittf_patch.js",
+      "server.js",
+      "--build-player-record-event-index",
+      "--event",
+      String(eventId),
+      "--force",
+    ], "build-player-record-event-index");
+    await spawnDerivedIndexProcess([
+      "build_player_records_index.js",
+      String(eventId),
+    ], "build_player_records_index");
+    clearPlayerRecordResultCache();
+  }
+
+  if (!isHeadToHeadPersistentIndexCurrent() && !autoHeadToHeadIndexBuild) {
+    autoHeadToHeadIndexBuild = spawnDerivedIndexProcess([
+      "-r",
+      "./runtime_legacy_ittf_patch.js",
+      "server.js",
+      "--build-head-to-head-index",
+    ], "build-head-to-head-index")
+      .catch((error) => {
+        console.error("[auto-derived-index] head-to-head failed:", error?.message || error);
+      })
+      .finally(() => {
+        autoHeadToHeadIndexBuild = null;
+        clearHeadToHeadResultCache();
+      });
+  }
+}
+
+function scheduleDerivedIndexesForFinishedWttEvent(options = {}) {
+  if (AUTO_DERIVED_INDEX_DISABLED || normalizeSource(options.source || "wtt") !== "wtt") {
+    return;
+  }
+  const eventId = String(options.event || "").trim();
+  if (!eventId || !isArchivedWttEvent(eventId)) {
+    return;
+  }
+  const file = getRuntimeWttRecordFile(eventId);
+  if (!file || (isPlayerRecordEventIndexCurrent(file) && isHeadToHeadPersistentIndexCurrent())) {
+    return;
+  }
+  if (autoDerivedIndexBuilds.has(eventId)) {
+    return;
+  }
+
+  autoDerivedIndexBuilds.add(eventId);
+  setImmediate(() => {
+    buildDerivedIndexesForFinishedWttEvent(eventId)
+      .catch((error) => {
+        console.error(`[auto-derived-index] ${eventId} failed:`, error?.message || error);
+      })
+      .finally(() => {
+        autoDerivedIndexBuilds.delete(eventId);
+      });
+  });
 }
 
 function getPlayerRecordCacheSignature(snapshot) {
@@ -6289,6 +6573,21 @@ function getHeadToHeadPersistentIndexSignature(snapshot) {
   return crypto.createHash("sha1").update(`${dataSignature}::${configSignature}`).digest("hex");
 }
 
+function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot()) {
+  const signature = getHeadToHeadPersistentIndexSignature(snapshot);
+  for (const manifestPath of [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH]) {
+    try {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+      if (manifest?.version === HEAD_TO_HEAD_INDEX_VERSION && manifest?.signature === signature) {
+        return true;
+      }
+    } catch {
+      // Try the next manifest location.
+    }
+  }
+  return false;
+}
+
 function readHeadToHeadPersistentIndexFromDisk(signature) {
   const candidates = [
     [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, PLAYER_RECORD_MATCH_SHARDS_DIR],
@@ -7499,6 +7798,10 @@ function handleConfigGet(request, response, pathname) {
     return handleAdminHeadToHeadIndexStatus(request, response);
   }
 
+  if (pathname === "/api/admin/crawl-wtt-status") {
+    return handleAdminWttCrawlStatus(request, response);
+  }
+
   if (pathname === "/api/admin/backfill-5000-status") {
     return handleAdminBackfill5000Status(request, response);
   }
@@ -7615,6 +7918,9 @@ async function handleConfigUpdate(request, response, pathname) {
 }
 
 function handleAdminPost(request, response, pathname) {
+  if (pathname === "/api/admin/crawl-wtt") {
+    return handleAdminWttCrawlStart(request, response);
+  }
   if (pathname === "/api/admin/backfill-5000-records") {
     return handleAdminBackfill5000Start(request, response);
   }
