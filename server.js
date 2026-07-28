@@ -4259,7 +4259,14 @@ function getPlayerTranslationAliasNames(value, translations) {
     return [];
   }
   return Object.entries(translations.players || {})
-    .filter(([, translated]) => normalizePlayerSearchText(translated) === normalized)
+    .filter(([, translated]) => {
+      const normalizedTranslated = normalizePlayerSearchText(translated);
+      return (
+        normalizedTranslated === normalized ||
+        playerRecordNameMatchesNeedle(normalizedTranslated, normalized) ||
+        playerRecordNameMatchesNeedle(normalized, normalizedTranslated)
+      );
+    })
     .map(([rawName]) => rawName);
 }
 
@@ -4269,7 +4276,14 @@ function getPlayerOrgOverrideAliasNames(value, translations) {
     return [];
   }
   return Object.entries(translations.playerOrgOverrides || {})
-    .filter(([, translated]) => normalizePlayerSearchText(translated) === normalized)
+    .filter(([, translated]) => {
+      const normalizedTranslated = normalizePlayerSearchText(translated);
+      return (
+        normalizedTranslated === normalized ||
+        playerRecordNameMatchesNeedle(normalizedTranslated, normalized) ||
+        playerRecordNameMatchesNeedle(normalized, normalizedTranslated)
+      );
+    })
     .map(([key]) => String(key || "").split("|")[0])
     .filter(Boolean);
 }
