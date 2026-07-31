@@ -465,7 +465,7 @@ function buildHealthPayload() {
       archiveMode: "runtime+bundled",
       parseMode: "slim-if-available",
       candidateMode: "candidate-index+grep-fallback",
-      eventIndexMode: "event-records-required",
+      eventIndexMode: "event-records-with-missing-index-fallback",
       displayMode: "player-record-org-v4-category-groups-keep-round-order",
       cacheTtlMs: PLAYER_RECORD_RESULT_CACHE_TTL_MS,
     },
@@ -5530,6 +5530,7 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
   const translations = readTranslations(TRANSLATIONS_PATH);
   const needleKeys = Array.from(new Set((Array.isArray(needles) ? needles : []).flatMap(buildPlayerNameSearchValues).filter(Boolean)));
   const eventsById = new Map();
+  const missingIndexedFiles = [];
   let indexedEvents = 0;
   let missingIndexedEvents = 0;
   let scannedMatches = 0;
@@ -5542,6 +5543,7 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
     const index = readPlayerRecordEventIndex(file.eventId, file);
     if (!index) {
       missingIndexedEvents += 1;
+      missingIndexedFiles.push(file);
       continue;
     }
     indexedEvents += 1;
@@ -5594,6 +5596,7 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
     scannedMatches,
     indexedEvents,
     missingIndexedEvents,
+    missingIndexedFiles,
     candidateEventCount: Array.isArray(snapshot) ? snapshot.length : 0,
     playerKeyCount,
   };
@@ -5603,6 +5606,86 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
   }
 
   return result;
+}
+
+function stripInternalPlayerRecordCollectionFields(result) {
+  if (!result || typeof result !== "object") {
+    return result;
+  }
+  const { missingIndexedFiles, ...publicResult } = result;
+  return publicResult;
+}
+
+function mergePlayerRecordCollectedResults(primary, fallback) {
+  const base = primary || {};
+  const extra = fallback || {};
+  const eventsById = new Map();
+
+  const addEvent = (event) => {
+    if (!event || typeof event !== "object") {
+      return;
+    }
+    const eventId = String(event.event || event.eventId || "");
+    if (!eventId) {
+      return;
+    }
+    if (!eventsById.has(eventId)) {
+      eventsById.set(eventId, {
+        ...event,
+        matches: [],
+      });
+    }
+    const target = eventsById.get(eventId);
+    const seen = new Set((Array.isArray(target.matches) ? target.matches : []).map(getPlayerRecordIndexMatchId));
+    (Array.isArray(event.matches) ? event.matches : []).forEach((match) => {
+      const matchId = getPlayerRecordIndexMatchId(match);
+      if (seen.has(matchId)) {
+        return;
+      }
+      target.matches.push(match);
+      seen.add(matchId);
+    });
+  };
+
+  (Array.isArray(base.events) ? base.events : []).forEach(addEvent);
+  (Array.isArray(extra.events) ? extra.events : []).forEach(addEvent);
+
+  const events = [...eventsById.values()].map((event) => {
+    const matchGroups = buildPlayerRecordMatchGroups(event.matches || []);
+    return {
+      ...event,
+      matches: matchGroups.flatMap((group) => group.matches),
+      matchGroups,
+    };
+  }).sort(comparePlayerRecordEvents);
+
+  return {
+    ...stripInternalPlayerRecordCollectionFields(base),
+    events,
+    parsedEvents: (base.parsedEvents || 0) + (extra.parsedEvents || 0),
+    scannedMatches: (base.scannedMatches || 0) + (extra.scannedMatches || 0),
+    fallbackParsedEvents: extra.parsedEvents || 0,
+    fallbackScannedMatches: extra.scannedMatches || 0,
+  };
+}
+
+async function collectPlayerRecordEventsWithMissingIndexFallback(snapshot, needles, textNeedles, options = {}) {
+  const indexed = collectPlayerRecordEventsFromEventIndex(snapshot, needles, options);
+  const missingFiles = Array.isArray(indexed.missingIndexedFiles) ? indexed.missingIndexedFiles : [];
+  if (missingFiles.length === 0) {
+    return stripInternalPlayerRecordCollectionFields(indexed);
+  }
+
+  const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
+  const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
+  const indexedMatchCount = (Array.isArray(indexed.events) ? indexed.events : [])
+    .reduce((sum, event) => sum + (Array.isArray(event.matches) ? event.matches.length : 0), 0);
+  if ((Array.isArray(indexed.events) ? indexed.events.length : 0) >= eventLimit || indexedMatchCount >= matchLimit) {
+    return stripInternalPlayerRecordCollectionFields(indexed);
+  }
+
+  const fallback = await collectPlayerRecordEvents(missingFiles, needles, textNeedles, options);
+  return mergePlayerRecordCollectedResults(indexed, fallback);
 }
 
 function addPlayerRecordCandidateIndexName(index, eventId, value) {
@@ -6548,7 +6631,12 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   const textNeedles = buildPlayerRecordTextNeedles(...needles);
   const indexedCandidate = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
   if (indexedCandidate) {
-    const collected = collectPlayerRecordEventsFromEventIndex(indexedCandidate.snapshot, needles, { eventLimit, matchLimit, orgFilter });
+    const collected = await collectPlayerRecordEventsWithMissingIndexFallback(
+      indexedCandidate.snapshot,
+      needles,
+      textNeedles,
+      { eventLimit, matchLimit, orgFilter },
+    );
     const result = {
       signature,
       builtAt: Date.now(),
@@ -6571,7 +6659,12 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
 
   const candidateResult = await getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature);
   const candidateSnapshot = candidateResult.snapshot;
-  const collected = collectPlayerRecordEventsFromEventIndex(candidateSnapshot, needles, { eventLimit, matchLimit, orgFilter });
+  const collected = await collectPlayerRecordEventsWithMissingIndexFallback(
+    candidateSnapshot,
+    needles,
+    textNeedles,
+    { eventLimit, matchLimit, orgFilter },
+  );
   const result = {
     signature,
     builtAt: Date.now(),
