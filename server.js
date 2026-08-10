@@ -6947,6 +6947,62 @@ function getPlayerRecordIndexMatchId(matchEntry) {
   ].join("\u0001");
 }
 
+function normalizeHeadToHeadMatchValue(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/\s+/g, "")
+    .toLowerCase();
+}
+
+function getHeadToHeadMatchDedupKey(matchEntry) {
+  return [
+    normalizeHeadToHeadMatchValue(matchEntry?.categoryName),
+    normalizeHeadToHeadMatchValue(matchEntry?.roundLabel),
+    normalizeHeadToHeadMatchValue(matchEntry?.line),
+  ].join("\u0001");
+}
+
+function isSameHeadToHeadMatch(left, right) {
+  if (
+    normalizeHeadToHeadMatchValue(left?.categoryName) !==
+      normalizeHeadToHeadMatchValue(right?.categoryName) ||
+    normalizeHeadToHeadMatchValue(left?.roundLabel) !==
+      normalizeHeadToHeadMatchValue(right?.roundLabel)
+  ) {
+    return false;
+  }
+
+  const leftDocumentCode = normalizeHeadToHeadMatchValue(left?.documentCode);
+  const rightDocumentCode = normalizeHeadToHeadMatchValue(right?.documentCode);
+  if (leftDocumentCode && rightDocumentCode && leftDocumentCode === rightDocumentCode) {
+    return true;
+  }
+  return getHeadToHeadMatchDedupKey(left) === getHeadToHeadMatchDedupKey(right);
+}
+
+function dedupeHeadToHeadMatches(matches) {
+  const uniqueMatches = [];
+  for (const match of Array.isArray(matches) ? matches : []) {
+    if (!uniqueMatches.some((existing) => isSameHeadToHeadMatch(existing, match))) {
+      uniqueMatches.push(match);
+    }
+  }
+  return uniqueMatches;
+}
+
+function countHeadToHeadWins(events) {
+  return (Array.isArray(events) ? events : []).reduce(
+    (counts, event) => {
+      for (const match of event.matches || []) {
+        if (match.winner === "a") counts.aWins += 1;
+        if (match.winner === "b") counts.bWins += 1;
+      }
+      return counts;
+    },
+    { aWins: 0, bWins: 0 },
+  );
+}
+
 function addPlayerRecordIndexedEntry(index, key, file, eventMeta, matchEntry) {
   if (!key || !matchEntry) {
     return false;
@@ -7263,15 +7319,7 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
         const playerAIndex = findPlayerCompetitorIndex(match, playerANeedles, translations);
         const playerBIndex = findPlayerCompetitorIndex(match, playerBNeedles, translations);
         if (playerAIndex >= 0 && playerBIndex >= 0 && playerAIndex !== playerBIndex) {
-          const before = matches.length;
           pushHeadToHeadMatch(matches, match, playerAIndex, playerBIndex, translations, rules, matchRoundContext);
-          if (matches.length > before) {
-            if (matches[matches.length - 1].winner === "a") {
-              aWins += 1;
-            } else {
-              bWins += 1;
-            }
-          }
         }
         continue;
       }
@@ -7288,15 +7336,7 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
         const playerAIndex = findPlayerCompetitorIndex(single, playerANeedles, translations);
         const playerBIndex = findPlayerCompetitorIndex(single, playerBNeedles, translations);
         if (playerAIndex >= 0 && playerBIndex >= 0 && playerAIndex !== playerBIndex) {
-          const before = matches.length;
           pushHeadToHeadMatch(matches, single, playerAIndex, playerBIndex, translations, rules, matchRoundContext, match);
-          if (matches.length > before) {
-            if (matches[matches.length - 1].winner === "a") {
-              aWins += 1;
-            } else {
-              bWins += 1;
-            }
-          }
         }
       });
     }
@@ -7305,7 +7345,12 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
       continue;
     }
 
-    const matchGroups = buildPlayerRecordMatchGroups(matches);
+    const uniqueMatches = dedupeHeadToHeadMatches(matches);
+    const matchGroups = buildPlayerRecordMatchGroups(uniqueMatches);
+    uniqueMatches.forEach((match) => {
+      if (match.winner === "a") aWins += 1;
+      if (match.winner === "b") bWins += 1;
+    });
     events.push({
       ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
       source: file.sourceLabel || "",
@@ -7579,28 +7624,29 @@ function mergeHeadToHeadCollectedResults(primary, extra) {
       matches: [],
     };
     for (const match of event.matches || []) {
-      const matchId = getPlayerRecordIndexMatchId(match);
-      if (!current.matches.some((existing) => getPlayerRecordIndexMatchId(existing) === matchId)) {
+      if (!current.matches.some((existing) => isSameHeadToHeadMatch(existing, match))) {
         current.matches.push(match);
       }
     }
     eventsById.set(event.event, current);
   });
   const events = [...eventsById.values()].map((event) => {
-    const matchGroups = buildPlayerRecordMatchGroups(event.matches);
+    const uniqueMatches = dedupeHeadToHeadMatches(event.matches);
+    const matchGroups = buildPlayerRecordMatchGroups(uniqueMatches);
     return {
       ...event,
       matches: matchGroups.flatMap((group) => group.matches),
       matchGroups,
     };
   }).sort(comparePlayerRecordEvents);
+  const wins = countHeadToHeadWins(events);
   return {
     ...primary,
     events,
     parsedEvents: (primary.parsedEvents || 0) + (extra.parsedEvents || 0),
     scannedMatches: (primary.scannedMatches || 0) + (extra.scannedMatches || 0),
-    aWins: (primary.aWins || 0) + (extra.aWins || 0),
-    bWins: (primary.bWins || 0) + (extra.bWins || 0),
+    aWins: wins.aWins,
+    bWins: wins.bWins,
   };
 }
 
