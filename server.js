@@ -4064,7 +4064,28 @@ function getWttRecordFileSnapshot() {
   addSlimDirectory(WTT_SLIM_ARCHIVE_DIR, 3, "runtime-slim", WTT_ARCHIVE_DIR);
   addSlimDirectory(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 0, "bundled-slim", BUNDLED_WTT_ARCHIVE_DIR);
 
-  return [...recordsByEventId.values()]
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  const archiveIndex = readWttArchiveIndex();
+  const eventNames = getEventNamesMap();
+  const recordsByLogicalEvent = new Map();
+  [...recordsByEventId.values()].forEach((file) => {
+    const meta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
+    const eventName = String(meta.eventName || "").trim();
+    const logicalKey = eventName && eventName !== String(file.eventId) && (meta.startDate || meta.endDate)
+      ? [
+          normalizeHeadToHeadMatchValue(eventName),
+          String(meta.startDate || ""),
+          String(meta.endDate || ""),
+        ].join("\u0001")
+      : `id\u0001${resolveEventId("wtt", file.eventId).toLowerCase()}`;
+    const current = recordsByLogicalEvent.get(logicalKey);
+    if (!current || shouldPreferWttRecordFile(current, file)) {
+      recordsByLogicalEvent.set(logicalKey, file);
+    }
+  });
+
+  return [...recordsByLogicalEvent.values()]
     .map(({ sourcePriority, ...file }) => file)
     .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
 }
@@ -7003,6 +7024,43 @@ function countHeadToHeadWins(events) {
   );
 }
 
+function getHeadToHeadEventDedupKey(event) {
+  const eventName = normalizeHeadToHeadMatchValue(event?.eventName);
+  if (eventName && (event?.startDate || event?.endDate)) {
+    return [eventName, event.startDate || "", event.endDate || ""].join("\u0001");
+  }
+  return `id\u0001${String(event?.event || "")}`;
+}
+
+function dedupeHeadToHeadEvents(events) {
+  const eventsByKey = new Map();
+  for (const event of Array.isArray(events) ? events : []) {
+    const eventKey = getHeadToHeadEventDedupKey(event);
+    const current = eventsByKey.get(eventKey) || {
+      ...event,
+      matches: [],
+    };
+    for (const match of event.matches || []) {
+      if (!current.matches.some((existing) => isSameHeadToHeadMatch(existing, match))) {
+        current.matches.push(match);
+      }
+    }
+    eventsByKey.set(eventKey, current);
+  }
+  return [...eventsByKey.values()]
+    .map((event) => {
+      const uniqueMatches = dedupeHeadToHeadMatches(event.matches);
+      const matchGroups = buildPlayerRecordMatchGroups(uniqueMatches);
+      return {
+        ...event,
+        matches: matchGroups.flatMap((group) => group.matches),
+        matchGroups,
+      };
+    })
+    .filter((event) => event.matches.length > 0)
+    .sort(comparePlayerRecordEvents);
+}
+
 function addPlayerRecordIndexedEntry(index, key, file, eventMeta, matchEntry) {
   if (!key || !matchEntry) {
     return false;
@@ -7288,8 +7346,6 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
   const events = [];
   let parsedEvents = 0;
   let scannedMatches = 0;
-  let aWins = 0;
-  let bWins = 0;
 
   for (const file of snapshot) {
     await yieldToEventLoop();
@@ -7347,10 +7403,6 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
 
     const uniqueMatches = dedupeHeadToHeadMatches(matches);
     const matchGroups = buildPlayerRecordMatchGroups(uniqueMatches);
-    uniqueMatches.forEach((match) => {
-      if (match.winner === "a") aWins += 1;
-      if (match.winner === "b") bWins += 1;
-    });
     events.push({
       ...getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
       source: file.sourceLabel || "",
@@ -7359,13 +7411,14 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
     });
   }
 
-  events.sort(comparePlayerRecordEvents);
+  const uniqueEvents = dedupeHeadToHeadEvents(events);
+  const wins = countHeadToHeadWins(uniqueEvents);
   return {
-    events,
+    events: uniqueEvents,
     parsedEvents,
     scannedMatches,
-    aWins,
-    bWins,
+    aWins: wins.aWins,
+    bWins: wins.bWins,
   };
 }
 
@@ -7617,28 +7670,7 @@ function mergeHeadToHeadCollectedResults(primary, extra) {
   if (!extra || !Array.isArray(extra.events) || extra.events.length === 0) {
     return primary;
   }
-  const eventsById = new Map();
-  [...(primary.events || []), ...extra.events].forEach((event) => {
-    const current = eventsById.get(event.event) || {
-      ...event,
-      matches: [],
-    };
-    for (const match of event.matches || []) {
-      if (!current.matches.some((existing) => isSameHeadToHeadMatch(existing, match))) {
-        current.matches.push(match);
-      }
-    }
-    eventsById.set(event.event, current);
-  });
-  const events = [...eventsById.values()].map((event) => {
-    const uniqueMatches = dedupeHeadToHeadMatches(event.matches);
-    const matchGroups = buildPlayerRecordMatchGroups(uniqueMatches);
-    return {
-      ...event,
-      matches: matchGroups.flatMap((group) => group.matches),
-      matchGroups,
-    };
-  }).sort(comparePlayerRecordEvents);
+  const events = dedupeHeadToHeadEvents([...(primary.events || []), ...extra.events]);
   const wins = countHeadToHeadWins(events);
   return {
     ...primary,
