@@ -5888,23 +5888,6 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
   };
 }
 
-async function getHeadToHeadDeltaCandidateEventIds(snapshot, playerANeedles, playerBNeedles, signature) {
-  const [playerA, playerB] = await Promise.all([
-    getPlayerRecordIndexedCandidateSnapshot(snapshot, playerANeedles, signature),
-    getPlayerRecordIndexedCandidateSnapshot(snapshot, playerBNeedles, signature),
-  ]);
-  if (!playerA?.snapshot || !playerB?.snapshot) {
-    return null;
-  }
-
-  const playerBEventIds = new Set(playerB.snapshot.map((file) => String(file.eventId)));
-  return new Set(
-    playerA.snapshot
-      .map((file) => String(file.eventId))
-      .filter((eventId) => playerBEventIds.has(eventId)),
-  );
-}
-
 async function getPlayerRecordGrepCandidatePaths(snapshot, textNeedles) {
   if (!Array.isArray(snapshot) || snapshot.length === 0 || !Array.isArray(textNeedles) || textNeedles.length === 0) {
     return null;
@@ -7757,16 +7740,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
             Number(file.parseMtimeMs || 0),
           ) > indexGeneratedAtMs;
         });
-        const deltaCandidateEventIds = await getHeadToHeadDeltaCandidateEventIds(
-          snapshot,
-          playerANeedles,
-          playerBNeedles,
-          signature,
-        );
-        const filteredStaleDeltaCandidates = deltaCandidateEventIds
-          ? staleDeltaCandidates.filter((file) => deltaCandidateEventIds.has(String(file.eventId)))
-          : staleDeltaCandidates;
-        const deltaSnapshot = filteredStaleDeltaCandidates
+        const deltaSnapshot = staleDeltaCandidates
           .sort((left, right) => Math.max(
             Number(right.mtimeMs || 0),
             Number(right.parseMtimeMs || 0),
