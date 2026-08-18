@@ -3879,6 +3879,7 @@ const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESUL
 const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
+const headToHeadPlayerKeyTokenIndexes = new WeakMap();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
 const playerRecordArchiveParseCache = new Map();
@@ -7184,7 +7185,7 @@ function addPlayerRecordIndexedMatch(index, file, eventMeta, match, competitorIn
 function getHeadToHeadIndexPlayerKeys(index, needles) {
   const keys = new Set();
   const players = index?.players || {};
-  const playerKeys = Object.keys(players);
+  const tokenIndex = getHeadToHeadPlayerKeyTokenIndex(index);
   needles.forEach((needle) => {
     const normalizedNeedle = normalizePlayerSearchText(needle);
     if (!normalizedNeedle) {
@@ -7194,7 +7195,17 @@ function getHeadToHeadIndexPlayerKeys(index, needles) {
       keys.add(normalizedNeedle);
       return;
     }
-    playerKeys.forEach((key) => {
+    const needleTokens = normalizedNeedle.split(/\s+/).filter(Boolean);
+    const candidateSets = needleTokens
+      .map((token) => tokenIndex.get(token))
+      .filter(Boolean);
+    if (candidateSets.length !== needleTokens.length) {
+      return;
+    }
+    const candidates = candidateSets.reduce((smallest, current) =>
+      !smallest || current.size < smallest.size ? current : smallest,
+    null);
+    candidates.forEach((key) => {
       if (playerRecordNameMatchesNeedle(key, normalizedNeedle)) {
         keys.add(key);
       }
@@ -7209,6 +7220,27 @@ function getHeadToHeadIndexEventIdsForPlayer(index, playerKeys) {
     (index.players?.[playerKey] || []).forEach((eventId) => eventIds.add(String(eventId)));
   });
   return eventIds;
+}
+
+function getHeadToHeadPlayerKeyTokenIndex(index) {
+  const players = index?.players || {};
+  const cached = headToHeadPlayerKeyTokenIndexes.get(players);
+  if (cached) {
+    return cached;
+  }
+
+  const tokenIndex = new Map();
+  Object.keys(players).forEach((key) => {
+    const tokens = normalizePlayerSearchText(key).split(/\s+/).filter(Boolean);
+    tokens.forEach((token) => {
+      if (!tokenIndex.has(token)) {
+        tokenIndex.set(token, new Set());
+      }
+      tokenIndex.get(token).add(key);
+    });
+  });
+  headToHeadPlayerKeyTokenIndexes.set(players, tokenIndex);
+  return tokenIndex;
 }
 
 function getHeadToHeadCandidateEventIds(index, playerANeedles, playerBNeedles) {
@@ -8054,7 +8086,11 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
 
 async function handleHeadToHeadApi(requestUrl, response) {
   try {
-    await syncTranslationsFromSharedSource();
+    // H2H must not wait for the remote dictionary on every request.
+    // Use the local snapshot now and refresh the shared copy in the background.
+    syncTranslationsFromSharedSource().catch((error) => {
+      console.warn("[head-to-head] background translations sync failed:", error?.message || error);
+    });
     const playerAName = String(requestUrl.searchParams.get("playerA") || requestUrl.searchParams.get("nameA") || "").trim();
     const playerATranslatedName = String(requestUrl.searchParams.get("translatedA") || requestUrl.searchParams.get("translatedNameA") || "").trim();
     const playerBName = String(requestUrl.searchParams.get("playerB") || requestUrl.searchParams.get("nameB") || "").trim();
