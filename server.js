@@ -68,6 +68,9 @@ const HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head
 const HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-pairs");
 const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
 const HEAD_TO_HEAD_INDEX_STATUS_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-status.json");
+const HEAD_TO_HEAD_DELTA_INDEX_VERSION = 1;
+const HEAD_TO_HEAD_DELTA_INDEX_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-delta");
+const HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-delta-manifest.json");
 const WTT_CRAWL_STATUS_PATH = path.join(DATA_DIR, "wtt-crawl-status.json");
 const PLAYER_RECORD_MATCH_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "player-record-match-shards");
 const BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
@@ -6808,6 +6811,7 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
           playerRecordMatchShardCache: new Map(),
         },
       };
+      applyHeadToHeadDeltaOverlay(indexState);
       if (manifest.signature === signature) {
         return indexState;
       }
@@ -6818,6 +6822,45 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
   }
 
   return staleIndex;
+}
+
+function mergeHeadToHeadIdMap(target, source) {
+  Object.entries(source || {}).forEach(([key, values]) => {
+    const merged = new Set([...(target[key] || []), ...(Array.isArray(values) ? values : [])].map(String));
+    target[key] = [...merged].sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
+  });
+}
+
+function applyHeadToHeadDeltaOverlay(indexState) {
+  let manifest;
+  try {
+    manifest = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH, "utf8"));
+  } catch {
+    return indexState;
+  }
+  if (manifest?.version !== HEAD_TO_HEAD_DELTA_INDEX_VERSION) {
+    return indexState;
+  }
+
+  const overlayEventIds = Array.isArray(manifest.eventIds) ? manifest.eventIds.map(String) : [];
+  overlayEventIds.forEach((eventId) => {
+    try {
+      const delta = JSON.parse(fs.readFileSync(path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, `${eventId}.json`), "utf8"));
+      mergeHeadToHeadIdMap(indexState.index.players, delta.players);
+      mergeHeadToHeadIdMap(indexState.index.pairs, delta.pairs);
+    } catch {
+      // Ignore a partially written overlay file.
+    }
+  });
+  const eventIds = new Set((indexState.eventIds || []).map(String));
+  overlayEventIds.forEach((eventId) => eventIds.add(eventId));
+  indexState.eventIds = [...eventIds];
+  indexState.eventSignatures = {
+    ...(indexState.eventSignatures || {}),
+    ...(manifest.eventSignatures || {}),
+  };
+  indexState.stale = true;
+  return indexState;
 }
 
 function setHeadToHeadPersistentIndexState(indexState) {
@@ -7499,12 +7542,25 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
       await yieldToEventLoop();
     }
     const file = snapshot[indexPosition];
+    const eventStartedAt = Date.now();
+    const scannedMatchesBeforeEvent = scannedMatches;
+    const parsedEventsBeforeEvent = parsedEvents;
     const {
       normalizedMatches,
       contextsByCategory,
       fallbackRoundContext,
     } = getParsedPlayerRecordArchive(file);
     if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
+      if (typeof options.onEvent === "function") {
+        options.onEvent({
+          eventId: String(file.eventId),
+          position: indexPosition + 1,
+          total: snapshot.length,
+          parsed: 0,
+          matches: 0,
+          durationMs: Date.now() - eventStartedAt,
+        });
+      }
       continue;
     }
 
@@ -7579,6 +7635,17 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
         if (addHeadToHeadIndexedMatch(index, file, eventMeta, single, 0, 1, translations, rules, matchRoundContext, match)) {
           indexedLinks += 1;
         }
+      });
+    }
+
+    if (typeof options.onEvent === "function") {
+      options.onEvent({
+        eventId: String(file.eventId),
+        position: indexPosition + 1,
+        total: snapshot.length,
+        parsed: parsedEvents - parsedEventsBeforeEvent,
+        matches: scannedMatches - scannedMatchesBeforeEvent,
+        durationMs: Date.now() - eventStartedAt,
       });
     }
   }
@@ -7708,44 +7775,67 @@ async function runHeadToHeadIndexIncrementalCli() {
     throw new Error(`Missing event files: ${eventIds.filter((eventId) => !found.has(eventId)).join(",")}`);
   }
   const signature = getHeadToHeadPersistentIndexSignature(allSnapshot);
-  const current = readHeadToHeadPersistentIndexFromDisk(signature);
-  if (!current?.index) {
+  if (!fs.existsSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH) || !fs.existsSync(HEAD_TO_HEAD_PLAYER_INDEX_PATH)) {
     throw new Error("Existing H2H index is unavailable; incremental update refused.");
   }
-  const previousManifest = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH, "utf8"));
-  const previousIndex = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_PLAYER_INDEX_PATH, "utf8"));
+  ensureDir(HEAD_TO_HEAD_DELTA_INDEX_DIR);
+  let deltaManifest = {};
+  try {
+    deltaManifest = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH, "utf8"));
+  } catch {
+    deltaManifest = {};
+  }
+  const deltaEventIds = new Set(
+    Array.isArray(deltaManifest.eventIds) ? deltaManifest.eventIds.map(String) : [],
+  );
+  const deltaEventSignatures = {
+    ...(deltaManifest.eventSignatures || {}),
+  };
   const previousShardSetting = process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED;
   process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED = "1";
-  let delta;
   try {
-    delta = await buildHeadToHeadPersistentIndex(deltaSnapshot, signature, { persist: false });
+    console.log(`[head-to-head-index] start ${eventIds.length} events: ${eventIds.join(",")}`);
+    for (let indexPosition = 0; indexPosition < deltaSnapshot.length; indexPosition += 1) {
+      const file = deltaSnapshot[indexPosition];
+      const eventId = String(file.eventId);
+      const eventStartedAt = Date.now();
+      const delta = await buildHeadToHeadPersistentIndex([file], signature, { persist: false });
+      writeCompactJsonFileAtomic(path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, `${eventId}.json`), {
+        version: HEAD_TO_HEAD_DELTA_INDEX_VERSION,
+        eventId,
+        signature: getHeadToHeadEventFileSignature(file),
+        generatedAt: new Date().toISOString(),
+        players: delta.index.players,
+        pairs: delta.index.pairs,
+      });
+      deltaEventIds.add(eventId);
+      deltaEventSignatures[eventId] = getHeadToHeadEventFileSignature(file);
+      writeCompactJsonFileAtomic(HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH, {
+        version: HEAD_TO_HEAD_DELTA_INDEX_VERSION,
+        generatedAt: new Date().toISOString(),
+        eventIds: [...deltaEventIds],
+        eventSignatures: deltaEventSignatures,
+      },
+      );
+      console.log(
+        `[head-to-head-index] ${indexPosition + 1}/${deltaSnapshot.length} event=${eventId}`
+        + ` parsed=${delta.manifest.parsedEvents} matches=${delta.manifest.scannedMatches}`
+        + ` durationMs=${Date.now() - eventStartedAt} saved=1`,
+      );
+      await yieldToEventLoop();
+    }
   } finally {
     if (previousShardSetting === undefined) delete process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED;
     else process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED = previousShardSetting;
   }
-  const merged = {
-    players: previousIndex.players || {},
-    pairs: previousIndex.pairs || {},
-    records: previousIndex.records || {},
-    recordAliases: { ...(previousIndex.recordAliases || {}), ...(delta.index.recordAliases || {}) },
+  const result = {
+    ok: true,
+    eventIds,
+    deltaManifest: JSON.parse(fs.readFileSync(HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH, "utf8")),
+    storage: HEAD_TO_HEAD_DELTA_INDEX_DIR,
   };
-  mergeHeadToHeadIndexEventMap(merged.players, delta.index.players, eventIds);
-  mergeHeadToHeadIndexEventMap(merged.pairs, delta.index.pairs, eventIds);
-  mergeHeadToHeadRecordMap(merged.records, delta.index.records, eventIds);
-  const manifest = {
-    ...previousManifest,
-    version: HEAD_TO_HEAD_INDEX_VERSION,
-    generatedAt: new Date().toISOString(),
-    signature,
-    eventIds: allSnapshot.map((file) => String(file.eventId)),
-    eventSignatures: Object.fromEntries(allSnapshot.map((file) => [String(file.eventId), getHeadToHeadEventFileSignature(file)])),
-    eventCount: allSnapshot.length,
-    incrementalEventIds: eventIds,
-  };
-  writeJsonFileAtomic(HEAD_TO_HEAD_PLAYER_INDEX_PATH, merged);
-  writeJsonFileAtomic(HEAD_TO_HEAD_INDEX_MANIFEST_PATH, manifest);
-  writeHeadToHeadIndexStatus({ ok: true, status: "complete", signature, manifest });
-  console.log(JSON.stringify({ ok: true, eventIds, manifest }, null, 2));
+  writeHeadToHeadIndexStatus({ ok: true, status: "complete", signature, manifest: result.deltaManifest });
+  console.log(JSON.stringify(result, null, 2));
 }
 
 async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANeedles, playerBNeedles, snapshot) {
