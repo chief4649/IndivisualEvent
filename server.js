@@ -3746,7 +3746,11 @@ async function collectPlayerSearchArchiveCandidates(query, translations, limit) 
 
 async function handlePlayerSearchApi(requestUrl, response) {
   try {
-    await syncTranslationsFromSharedSource();
+    // Candidate search should use the local snapshot immediately. Shared dictionary
+    // synchronization is kept in the background so a slow remote sync cannot delay typing.
+    syncTranslationsFromSharedSource().catch((error) => {
+      console.warn("[player-search] background translations sync failed:", error?.message || error);
+    });
     const query = String(requestUrl.searchParams.get("q") || "").trim();
     const limit = Math.min(Math.max(Number(requestUrl.searchParams.get("limit") || 50) || 50, 1), 100);
     const translations = readTranslations(TRANSLATIONS_PATH);

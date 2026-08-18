@@ -869,6 +869,8 @@
       let playerSearchRequestId = 0;
       let headToHeadPlayerARequestId = 0;
       let headToHeadPlayerBRequestId = 0;
+      const headToHeadPlayerSearchCache = new Map();
+      const headToHeadPlayerSearchControllers = { a: null, b: null };
       let selectedHeadToHeadPlayerA = null;
       let selectedHeadToHeadPlayerB = null;
       let eventRefreshTimer = null;
@@ -1174,6 +1176,9 @@
         const inputEl = target === "a" ? headToHeadPlayerA : headToHeadPlayerB;
         const resultsEl = target === "a" ? headToHeadPlayerAResults : headToHeadPlayerBResults;
         const query = inputEl.value.trim();
+        const requestId = target === "a" ? ++headToHeadPlayerARequestId : ++headToHeadPlayerBRequestId;
+        headToHeadPlayerSearchControllers[target]?.abort();
+        headToHeadPlayerSearchControllers[target] = null;
         if (target === "a") {
           selectedHeadToHeadPlayerA = null;
         } else {
@@ -1184,19 +1189,42 @@
           return;
         }
 
-        const requestId = target === "a" ? ++headToHeadPlayerARequestId : ++headToHeadPlayerBRequestId;
-        const response = await fetchWithTimeout(`/api/players/search?q=${encodeURIComponent(query)}&limit=20`);
-        const data = await readJsonResponse(response, "Head To Head の選手候補の読み込みに失敗しました。");
-        if (!response.ok) {
-          throw new Error(data.error || "Head To Head の選手候補の読み込みに失敗しました。");
-        }
-        if (
-          (target === "a" && requestId !== headToHeadPlayerARequestId) ||
-          (target === "b" && requestId !== headToHeadPlayerBRequestId)
-        ) {
+        const cacheKey = query.toLocaleLowerCase();
+        const cached = headToHeadPlayerSearchCache.get(cacheKey);
+        if (cached) {
+          renderHeadToHeadPlayerCandidates(target, cached);
           return;
         }
-        renderHeadToHeadPlayerCandidates(target, data);
+
+        const controller = new AbortController();
+        headToHeadPlayerSearchControllers[target] = controller;
+        try {
+          const response = await fetchWithTimeout(
+            `/api/players/search?q=${encodeURIComponent(query)}&limit=20`,
+            { signal: controller.signal },
+          );
+          const data = await readJsonResponse(response, "Head To Head の選手候補の読み込みに失敗しました。");
+          if (!response.ok) {
+            throw new Error(data.error || "Head To Head の選手候補の読み込みに失敗しました。");
+          }
+          if (
+            (target === "a" && requestId !== headToHeadPlayerARequestId) ||
+            (target === "b" && requestId !== headToHeadPlayerBRequestId)
+          ) {
+            return;
+          }
+          headToHeadPlayerSearchCache.set(cacheKey, data);
+          renderHeadToHeadPlayerCandidates(target, data);
+        } catch (error) {
+          if (error?.name === "AbortError") {
+            return;
+          }
+          throw error;
+        } finally {
+          if (headToHeadPlayerSearchControllers[target] === controller) {
+            headToHeadPlayerSearchControllers[target] = null;
+          }
+        }
       }
 
       function renderPlayerRecords(data) {
@@ -1610,19 +1638,33 @@
 
       async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
         const controller = new AbortController();
-        const timeout = setTimeout(() => controller.abort(), timeoutMs);
+        let timedOut = false;
+        const timeout = setTimeout(() => {
+          timedOut = true;
+          controller.abort();
+        }, timeoutMs);
+        const externalSignal = options.signal;
+        const abortFromExternalSignal = () => controller.abort();
+        if (externalSignal) {
+          if (externalSignal.aborted) {
+            controller.abort();
+          } else {
+            externalSignal.addEventListener("abort", abortFromExternalSignal, { once: true });
+          }
+        }
         try {
           return await fetch(url, {
             ...options,
             signal: controller.signal,
           });
         } catch (error) {
-          if (error?.name === "AbortError") {
+          if (error?.name === "AbortError" && timedOut && !externalSignal?.aborted) {
             throw new Error(`通信がタイムアウトしました。しばらくしてから再度お試しください。 [${timeoutMs}ms]`);
           }
           throw error;
         } finally {
           clearTimeout(timeout);
+          externalSignal?.removeEventListener("abort", abortFromExternalSignal);
         }
       }
 
