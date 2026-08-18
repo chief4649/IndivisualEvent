@@ -37,6 +37,7 @@ function parseArgs(argv) {
     skipDerivedIndexes: false,
     skipH2hIndex: false,
     keepRaw: false,
+    auditSuspicious: false,
     events: [],
   };
 
@@ -87,6 +88,9 @@ function parseArgs(argv) {
       case "--keep-raw":
         args.keepRaw = true;
         break;
+      case "--audit-suspicious":
+        args.auditSuspicious = true;
+        break;
       case "--help":
       case "-h":
         printHelp(0);
@@ -131,6 +135,7 @@ function printHelp(exitCode = 0) {
     "  --skip-derived-indexes  Do not build slim records or player-record event indexes",
     "  --skip-h2h-index    Do not rebuild the head-to-head index after archiving",
     "  --keep-raw          Keep wtt-records/{event}.json after derived files are built",
+    "  --audit-suspicious  Re-fetch finished archives with low or capped match counts",
   ].join("\n"));
   process.exit(exitCode);
 }
@@ -203,6 +208,10 @@ function isSuspiciousArchiveCount(count, entry) {
   return WTT_SUSPICIOUS_RESULT_COUNTS.has(count) && entry?.archiveCompletenessVersion !== ARCHIVE_COMPLETENESS_VERSION;
 }
 
+function isAuditSuspiciousCount(count) {
+  return count <= 30 || WTT_SUSPICIOUS_RESULT_COUNTS.has(count) || count === DEFAULT_TAKE;
+}
+
 function isTransientCrawlSkip(entry) {
   const reason = String(entry?.crawlSkipReason || "");
   return reason.startsWith("error:") || reason.includes("Timed out fetching") || reason.includes("fetch failed");
@@ -255,6 +264,7 @@ function buildCandidates(args) {
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
       const archiveCount = getArchiveMatchCount(eventId);
+      const hasArchiveFile = [archivePath(eventId), slimArchivePath(eventId)].some((filePath) => fs.existsSync(filePath));
       const partialArchive = isPotentiallyPartialArchive(entry, archiveCount);
       return {
         eventId,
@@ -265,6 +275,7 @@ function buildCandidates(args) {
         archived: archiveCount > 0,
         archiveCount,
         suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry),
+        auditSuspicious: Boolean(args.auditSuspicious && hasArchiveFile && isAuditSuspiciousCount(archiveCount)),
         partialArchive,
         crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
         crawlSkipReason: entry.crawlSkipReason || "",
@@ -277,6 +288,9 @@ function buildCandidates(args) {
       }
       if (to && candidate.startDate && candidate.startDate > to) {
         return false;
+      }
+      if (args.auditSuspicious) {
+        return candidate.finished && candidate.auditSuspicious;
       }
       if (!args.includeActive && !candidate.finished) {
         return false;
@@ -412,7 +426,7 @@ function buildHeadToHeadIndex() {
 }
 
 async function archiveEvent(candidate, args) {
-  const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive);
+  const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive || candidate.auditSuspicious);
   const meta = await getWttEventLifecycleMeta(candidate.eventId, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
@@ -430,6 +444,7 @@ async function archiveEvent(candidate, args) {
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache: shouldRefresh,
     requireWttSubEventSupplementForSuspicious: true,
+    skipWttArchiveWrite: args.auditSuspicious,
   });
 
   if (!Array.isArray(result.normalized) || result.normalized.length === 0) {
@@ -437,6 +452,13 @@ async function archiveEvent(candidate, args) {
   }
 
   const existingArchiveCount = getArchiveMatchCount(candidate.eventId);
+  if (args.auditSuspicious && existingArchiveCount > 0 && result.normalized.length <= existingArchiveCount) {
+    return {
+      eventId: candidate.eventId,
+      status: "skipped",
+      reason: `not_larger_payload:${result.normalized.length}<=${existingArchiveCount}`,
+    };
+  }
   if (!args.force && existingArchiveCount > 0 && result.normalized.length < existingArchiveCount) {
     return {
       eventId: candidate.eventId,

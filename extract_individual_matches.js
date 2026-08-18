@@ -3992,7 +3992,9 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       if (shouldReuseCachedPayload(source, mergedPayload)) {
         writeLiveWttPayloadCache(livePayloadCacheKey, mergedPayload);
         const timestamp = new Date().toISOString();
-        const archiveWrite = isWebgenWttEvent(eventId)
+        const archiveWrite = options.skipWttArchiveWrite
+          ? { written: false, skipped: true }
+          : isWebgenWttEvent(eventId)
           ? { written: false }
           : writeWttArchiveIfNotSmaller(archiveDir, eventId, mergedPayload, { force: refreshCache });
         if (archiveWrite.written) {
@@ -5716,6 +5718,7 @@ async function getProcessedMatches(options = {}) {
       skipWttMinimalHydration: args.skipWttMinimalHydration,
       forceWttSubEventSupplement: args.forceWttSubEventSupplement,
       requireWttSubEventSupplementForSuspicious: args.requireWttSubEventSupplementForSuspicious,
+      skipWttArchiveWrite: args.skipWttArchiveWrite,
     },
   );
   const normalized = args.source === "zennihon"
