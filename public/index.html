@@ -2013,15 +2013,6 @@
         loadHeadToHead().catch(reportBackgroundError);
       });
 
-      [headToHeadPlayerA, headToHeadPlayerB].forEach((input) => {
-        input.addEventListener("keydown", (event) => {
-          if (event.key === "Enter") {
-            event.preventDefault();
-            loadHeadToHead().catch(reportBackgroundError);
-          }
-        });
-      });
-
       categorySelect.addEventListener("change", () => {
         loadRounds().catch(reportBackgroundError);
       });
