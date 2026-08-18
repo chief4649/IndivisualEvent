@@ -3879,7 +3879,7 @@ const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESUL
 const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
-const headToHeadPlayerKeyTokenIndexes = new WeakMap();
+const headToHeadPlayerKeyMatchCaches = new WeakMap();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
 const playerRecordArchiveParseCache = new Map();
@@ -7185,31 +7185,35 @@ function addPlayerRecordIndexedMatch(index, file, eventMeta, match, competitorIn
 function getHeadToHeadIndexPlayerKeys(index, needles) {
   const keys = new Set();
   const players = index?.players || {};
-  const tokenIndex = getHeadToHeadPlayerKeyTokenIndex(index);
+  let matchCache = headToHeadPlayerKeyMatchCaches.get(players);
+  if (!matchCache) {
+    matchCache = new Map();
+    headToHeadPlayerKeyMatchCaches.set(players, matchCache);
+  }
+  const playerKeys = Object.keys(players);
   needles.forEach((needle) => {
     const normalizedNeedle = normalizePlayerSearchText(needle);
     if (!normalizedNeedle) {
       return;
     }
-    if (players[normalizedNeedle]) {
-      keys.add(normalizedNeedle);
-      return;
-    }
-    const needleTokens = normalizedNeedle.split(/\s+/).filter(Boolean);
-    const candidateSets = needleTokens
-      .map((token) => tokenIndex.get(token))
-      .filter(Boolean);
-    if (candidateSets.length !== needleTokens.length) {
-      return;
-    }
-    const candidates = candidateSets.reduce((smallest, current) =>
-      !smallest || current.size < smallest.size ? current : smallest,
-    null);
-    candidates.forEach((key) => {
-      if (playerRecordNameMatchesNeedle(key, normalizedNeedle)) {
-        keys.add(key);
+    let matched = matchCache.get(normalizedNeedle);
+    if (!matched) {
+      matched = new Set();
+      buildPlayerNameSearchValues(normalizedNeedle).forEach((candidate) => {
+        if (players[candidate]) {
+          matched.add(candidate);
+        }
+      });
+      if (matched.size === 0) {
+        playerKeys.forEach((key) => {
+          if (playerRecordNameMatchesNeedle(key, normalizedNeedle)) {
+            matched.add(key);
+          }
+        });
       }
-    });
+      matchCache.set(normalizedNeedle, matched);
+    }
+    matched.forEach((key) => keys.add(key));
   });
   return keys;
 }
@@ -7220,27 +7224,6 @@ function getHeadToHeadIndexEventIdsForPlayer(index, playerKeys) {
     (index.players?.[playerKey] || []).forEach((eventId) => eventIds.add(String(eventId)));
   });
   return eventIds;
-}
-
-function getHeadToHeadPlayerKeyTokenIndex(index) {
-  const players = index?.players || {};
-  const cached = headToHeadPlayerKeyTokenIndexes.get(players);
-  if (cached) {
-    return cached;
-  }
-
-  const tokenIndex = new Map();
-  Object.keys(players).forEach((key) => {
-    const tokens = normalizePlayerSearchText(key).split(/\s+/).filter(Boolean);
-    tokens.forEach((token) => {
-      if (!tokenIndex.has(token)) {
-        tokenIndex.set(token, new Set());
-      }
-      tokenIndex.get(token).add(key);
-    });
-  });
-  headToHeadPlayerKeyTokenIndexes.set(players, tokenIndex);
-  return tokenIndex;
 }
 
 function getHeadToHeadCandidateEventIds(index, playerANeedles, playerBNeedles) {
@@ -7379,16 +7362,9 @@ function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
     };
   }
 
-  const parseFilePath = file.parseFilePath || file.filePath;
-  const text = readTextFile(parseFilePath);
-  const payload = parseJsonArrayFromText(text);
-  if (!Array.isArray(payload) || payload.length === 0) {
-    return getParsedPlayerRecordArchive(file, text);
-  }
-
-  const allNormalizedMatches = payload.map(normalizeArchivedMatch).filter(Boolean);
+  const parsedArchive = getParsedPlayerRecordArchive(file);
   const normalizedMatches = [];
-  for (const match of allNormalizedMatches) {
+  for (const match of parsedArchive.normalizedMatches || []) {
     if (
       !archiveItemMightContainPlayerNeedles(match, playerANeedles) ||
       !archiveItemMightContainPlayerNeedles(match, playerBNeedles)
@@ -7400,8 +7376,8 @@ function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
 
   return {
     normalizedMatches,
-    contextsByCategory: buildRoundContextsByCategory(allNormalizedMatches),
-    fallbackRoundContext: buildJaRoundContext(allNormalizedMatches),
+    contextsByCategory: parsedArchive.contextsByCategory,
+    fallbackRoundContext: parsedArchive.fallbackRoundContext,
   };
 }
 
