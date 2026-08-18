@@ -3873,6 +3873,7 @@ const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
+const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
@@ -3880,7 +3881,6 @@ const AUTO_DERIVED_INDEX_DISABLED = process.env.AUTO_DERIVED_INDEX_DISABLED === 
 const autoDerivedIndexBuilds = new Set();
 const autoDerivedIndexLastScheduled = new Map();
 const AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS = Number(process.env.AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS || 10 * 60_000);
-let autoHeadToHeadIndexBuild = null;
 
 function getPathStatToken(filePath) {
   try {
@@ -4172,21 +4172,7 @@ async function buildDerivedIndexesForFinishedWttEvent(eventId) {
   ], "build_player_records_index");
   clearPlayerRecordResultCache();
 
-  if (!isHeadToHeadPersistentIndexCurrent() && !autoHeadToHeadIndexBuild) {
-    autoHeadToHeadIndexBuild = spawnDerivedIndexProcess([
-      "-r",
-      "./runtime_legacy_ittf_patch.js",
-      "server.js",
-      "--build-head-to-head-index",
-    ], "build-head-to-head-index")
-      .catch((error) => {
-        console.error("[auto-derived-index] head-to-head failed:", error?.message || error);
-      })
-      .finally(() => {
-        autoHeadToHeadIndexBuild = null;
-        clearHeadToHeadResultCache();
-      });
-  }
+  clearHeadToHeadResultCache();
 }
 
 function scheduleDerivedIndexesForFinishedWttEvent(options = {}) {
@@ -5900,6 +5886,23 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
     snapshot: snapshot.filter((file) => eventIds.has(file.eventId)),
     generatedAt: candidateIndex.generatedAt,
   };
+}
+
+async function getHeadToHeadDeltaCandidateEventIds(snapshot, playerANeedles, playerBNeedles, signature) {
+  const [playerA, playerB] = await Promise.all([
+    getPlayerRecordIndexedCandidateSnapshot(snapshot, playerANeedles, signature),
+    getPlayerRecordIndexedCandidateSnapshot(snapshot, playerBNeedles, signature),
+  ]);
+  if (!playerA?.snapshot || !playerB?.snapshot) {
+    return null;
+  }
+
+  const playerBEventIds = new Set(playerB.snapshot.map((file) => String(file.eventId)));
+  return new Set(
+    playerA.snapshot
+      .map((file) => String(file.eventId))
+      .filter((eventId) => playerBEventIds.has(eventId)),
+  );
 }
 
 async function getPlayerRecordGrepCandidatePaths(snapshot, textNeedles) {
@@ -7741,7 +7744,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
         const indexedEventSignatures = persistentIndex.eventSignatures || {};
         const hasIndexedEventSignatures = Object.keys(indexedEventSignatures).length > 0;
         const indexGeneratedAtMs = Date.parse(String(persistentIndex.generatedAt || ""));
-        const deltaSnapshot = snapshot.filter((file) => {
+        const staleDeltaCandidates = snapshot.filter((file) => {
           const eventId = String(file.eventId);
           if (!indexedEventIds.has(eventId)) {
             return true;
@@ -7754,6 +7757,24 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
             Number(file.parseMtimeMs || 0),
           ) > indexGeneratedAtMs;
         });
+        const deltaCandidateEventIds = await getHeadToHeadDeltaCandidateEventIds(
+          snapshot,
+          playerANeedles,
+          playerBNeedles,
+          signature,
+        );
+        const filteredStaleDeltaCandidates = deltaCandidateEventIds
+          ? staleDeltaCandidates.filter((file) => deltaCandidateEventIds.has(String(file.eventId)))
+          : staleDeltaCandidates;
+        const deltaSnapshot = filteredStaleDeltaCandidates
+          .sort((left, right) => Math.max(
+            Number(right.mtimeMs || 0),
+            Number(right.parseMtimeMs || 0),
+          ) - Math.max(
+            Number(left.mtimeMs || 0),
+            Number(left.parseMtimeMs || 0),
+          ))
+          .slice(0, Math.max(1, HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS));
         deltaEventCount = deltaSnapshot.length;
         if (deltaSnapshot.length > 0) {
           const delta = await collectHeadToHeadMatches(deltaSnapshot, playerANeedles, playerBNeedles);
