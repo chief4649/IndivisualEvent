@@ -3872,6 +3872,7 @@ const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESUL
 const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
+const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
@@ -7759,12 +7760,14 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
           indexed = mergeHeadToHeadCollectedResults(indexed, delta);
         }
       }
-      const live = await collectLiveHeadToHeadMatches(
-        snapshot,
-        playerANeedles,
-        playerBNeedles,
-        indexed.liveCandidateEventIds || indexed.candidateEventIds,
-      );
+      const live = HEAD_TO_HEAD_LIVE_REFRESH_ENABLED
+        ? await collectLiveHeadToHeadMatches(
+            snapshot,
+            playerANeedles,
+            playerBNeedles,
+            indexed.liveCandidateEventIds || indexed.candidateEventIds,
+          )
+        : null;
       if (live) {
         liveEventCount = live.candidateEventCount || 0;
         indexed = mergeHeadToHeadCollectedResults(indexed, live);
@@ -7819,7 +7822,9 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
 
   let collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
   let liveEventCount = 0;
-  const live = await collectLiveHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
+  const live = HEAD_TO_HEAD_LIVE_REFRESH_ENABLED
+    ? await collectLiveHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles)
+    : null;
   if (live) {
     liveEventCount = live.candidateEventCount || 0;
     collected = mergeHeadToHeadCollectedResults(collected, live);
