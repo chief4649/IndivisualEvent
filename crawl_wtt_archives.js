@@ -429,7 +429,6 @@ async function archiveEvent(candidate, args) {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache: shouldRefresh,
-    skipWttMinimalHydration: true,
     requireWttSubEventSupplementForSuspicious: true,
   });
 
