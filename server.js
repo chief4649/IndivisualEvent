@@ -3917,8 +3917,12 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
 
   const slimFilePath = path.join(slimDir, path.basename(originalFilePath));
   try {
+    const originalStat = fs.statSync(originalFilePath);
     const stat = fs.statSync(slimFilePath);
     if (!stat.isFile() || stat.size <= 0) {
+      return null;
+    }
+    if (originalStat.isFile() && stat.mtimeMs < originalStat.mtimeMs) {
       return null;
     }
     return {
@@ -4038,6 +4042,14 @@ function getWttRecordFileSnapshot() {
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
           const stat = fs.statSync(slimFilePath);
+          try {
+            const rawStat = fs.statSync(filePath);
+            if (rawStat.isFile() && stat.mtimeMs < rawStat.mtimeMs) {
+              return;
+            }
+          } catch {
+            // The bundled slim file may be the only available copy.
+          }
           const next = createWttRecordFileEntry({
             eventId,
             filePath,
@@ -6721,15 +6733,14 @@ const headToHeadPersistentIndexState = {
   generatedAt: null,
   stale: false,
   eventIds: [],
+  eventSignatures: {},
   index: null,
 };
 
 function getHeadToHeadPersistentIndexSignature(snapshot) {
   const dataSignature = snapshot.map((file) => [
     file.eventId,
-    file.size,
-    file.parseSource || "raw",
-    file.parseSize || file.size,
+    getHeadToHeadEventFileSignature(file),
   ].join(":")).join("|");
   const configSignature = [
     TRANSLATIONS_PATH,
@@ -6740,6 +6751,16 @@ function getHeadToHeadPersistentIndexSignature(snapshot) {
     EVENT_NAMES_PATH,
   ].map((filePath) => `${path.basename(filePath)}:${getFileHashToken(filePath)}`).join("|");
   return crypto.createHash("sha1").update(`${dataSignature}::${configSignature}`).digest("hex");
+}
+
+function getHeadToHeadEventFileSignature(file) {
+  return [
+    file?.size || 0,
+    file?.mtimeMs || 0,
+    file?.parseSource || "raw",
+    file?.parseSize || file?.size || 0,
+    file?.parseMtimeMs || file?.mtimeMs || 0,
+  ].join(":");
 }
 
 function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot()) {
@@ -6780,6 +6801,9 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
         generatedAt: manifest.generatedAt || null,
         stale: manifest.signature !== signature,
         eventIds: Array.isArray(manifest.eventIds) ? manifest.eventIds.map(String) : [],
+        eventSignatures: manifest.eventSignatures && typeof manifest.eventSignatures === "object"
+          ? manifest.eventSignatures
+          : {},
         index: {
           players: playerIndex.players,
           records: playerIndex.records && typeof playerIndex.records === "object" && !Array.isArray(playerIndex.records)
@@ -6815,6 +6839,7 @@ function setHeadToHeadPersistentIndexState(indexState) {
   headToHeadPersistentIndexState.generatedAt = indexState.generatedAt;
   headToHeadPersistentIndexState.stale = Boolean(indexState.stale);
   headToHeadPersistentIndexState.eventIds = Array.isArray(indexState.eventIds) ? indexState.eventIds : [];
+  headToHeadPersistentIndexState.eventSignatures = indexState.eventSignatures || {};
   headToHeadPersistentIndexState.index = indexState.index;
 }
 
@@ -7594,6 +7619,9 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature) {
     generatedAt,
     signature,
     eventIds: snapshot.map((file) => String(file.eventId)),
+    eventSignatures: Object.fromEntries(
+      snapshot.map((file) => [String(file.eventId), getHeadToHeadEventFileSignature(file)]),
+    ),
     eventCount: snapshot.length,
     parsedEvents,
     scannedMatches,
@@ -7709,7 +7737,22 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
       let liveEventCount = 0;
       if (persistentIndex.stale && persistentIndex.eventIds.length > 0) {
         const indexedEventIds = new Set(persistentIndex.eventIds);
-        const deltaSnapshot = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
+        const indexedEventSignatures = persistentIndex.eventSignatures || {};
+        const hasIndexedEventSignatures = Object.keys(indexedEventSignatures).length > 0;
+        const indexGeneratedAtMs = Date.parse(String(persistentIndex.generatedAt || ""));
+        const deltaSnapshot = snapshot.filter((file) => {
+          const eventId = String(file.eventId);
+          if (!indexedEventIds.has(eventId)) {
+            return true;
+          }
+          if (hasIndexedEventSignatures) {
+            return indexedEventSignatures[eventId] !== getHeadToHeadEventFileSignature(file);
+          }
+          return Number.isFinite(indexGeneratedAtMs) && Math.max(
+            Number(file.mtimeMs || 0),
+            Number(file.parseMtimeMs || 0),
+          ) > indexGeneratedAtMs;
+        });
         deltaEventCount = deltaSnapshot.length;
         if (deltaSnapshot.length > 0) {
           const delta = await collectHeadToHeadMatches(deltaSnapshot, playerANeedles, playerBNeedles);
