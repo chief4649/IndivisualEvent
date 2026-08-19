@@ -841,9 +841,8 @@ function buildPlayerOrgOverrideHealth() {
 function buildHeadToHeadHealth() {
   const manifest = readJsonFileSafe(HEAD_TO_HEAD_INDEX_MANIFEST_PATH);
   const snapshot = getWttRecordFileSnapshot();
-  const eventSignatures = manifest?.eventSignatures && typeof manifest.eventSignatures === "object"
-    ? manifest.eventSignatures
-    : {};
+  const effective = getHeadToHeadEffectiveEventIndex(manifest);
+  const eventSignatures = effective.eventSignatures;
   const pairShardDir = manifest?.pairRecordShardDir || HEAD_TO_HEAD_PAIR_SHARDS_DIR;
   let pairShardEventCount = 0;
   try {
@@ -856,7 +855,7 @@ function buildHeadToHeadHealth() {
     ? snapshot.filter((file) => isHeadToHeadPairIndexEventCurrent(
       file,
       eventSignatures[String(file.eventId)],
-      manifest?.generatedAt,
+      effective.generatedAt,
     )).length
     : 0;
   const currentParseSources = {};
@@ -871,7 +870,7 @@ function buildHeadToHeadHealth() {
     manifestExists: Boolean(manifest),
     manifestVersion: manifest?.version || null,
     generatedAt: manifest?.generatedAt || null,
-    indexedEventCount: Array.isArray(manifest?.eventIds) ? manifest.eventIds.length : 0,
+    indexedEventCount: effective.eventIds.size,
     currentWttEventCount: snapshot.length,
     pairRecordIndex: manifest?.pairRecordIndex === true,
     pairRecordCount: manifest?.pairRecordCount || 0,
@@ -6866,11 +6865,22 @@ function isHeadToHeadPairIndexEventCurrent(file, indexedSignature, indexGenerate
 }
 
 function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot()) {
-  const signature = getHeadToHeadPersistentIndexSignature(snapshot);
   for (const manifestPath of [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH]) {
     try {
       const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
-      if (manifest?.version === HEAD_TO_HEAD_INDEX_VERSION && manifest?.signature === signature) {
+      if (manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION) {
+        continue;
+      }
+      const effective = getHeadToHeadEffectiveEventIndex(manifest, manifestPath);
+      if (
+        manifest?.pairRecordIndex === true &&
+        snapshot.every((file) => effective.eventIds.has(String(file.eventId)) &&
+          isHeadToHeadPairIndexEventCurrent(
+            file,
+            effective.eventSignatures[String(file.eventId)],
+            effective.generatedAt,
+          ))
+      ) {
         return true;
       }
     } catch {
@@ -6878,6 +6888,34 @@ function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot(
     }
   }
   return false;
+}
+
+function getHeadToHeadEffectiveEventIndex(manifest, manifestPath = HEAD_TO_HEAD_INDEX_MANIFEST_PATH) {
+  const eventIds = new Set(Array.isArray(manifest?.eventIds) ? manifest.eventIds.map(String) : []);
+  const eventSignatures = {
+    ...(manifest?.eventSignatures || {}),
+  };
+  let generatedAt = manifest?.generatedAt || null;
+
+  // Incremental H2H updates are stored as a delta overlay. Treat its event
+  // signatures as part of the effective index for coverage and freshness
+  // checks; the base manifest is intentionally not rewritten on every event.
+  if (manifestPath === HEAD_TO_HEAD_INDEX_MANIFEST_PATH) {
+    try {
+      const delta = JSON.parse(fs.readFileSync(HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH, "utf8"));
+      if (delta?.version === HEAD_TO_HEAD_DELTA_INDEX_VERSION) {
+        (Array.isArray(delta.eventIds) ? delta.eventIds : []).forEach((eventId) => eventIds.add(String(eventId)));
+        Object.assign(eventSignatures, delta.eventSignatures || {});
+        if (!generatedAt || String(delta.generatedAt || "") > String(generatedAt)) {
+          generatedAt = delta.generatedAt || generatedAt;
+        }
+      }
+    } catch {
+      // The base index remains usable when the delta manifest is unavailable.
+    }
+  }
+
+  return { eventIds, eventSignatures, generatedAt };
 }
 
 function readHeadToHeadPersistentIndexFromDisk(signature) {
