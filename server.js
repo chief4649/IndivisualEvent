@@ -7870,10 +7870,11 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     };
   }
 
+  // Keep the exact pair intersection here. New or changed events are added
+  // separately by the stale-delta path below; broadening this set to every
+  // event shared by both players makes every stale index behave like a full
+  // candidate scan.
   const candidateEventIds = new Set(candidate.eventIds);
-  if (indexState.stale) {
-    (candidate.liveEventIds || []).forEach((eventId) => candidateEventIds.add(String(eventId)));
-  }
   const candidateSnapshot = snapshot.filter((file) => candidateEventIds.has(String(file.eventId)));
   const collected = await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles);
 
@@ -7882,7 +7883,7 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     candidateEventCount: candidateSnapshot.length,
     pairCount: candidateEventIds.size,
     candidateEventIds: [...candidateEventIds],
-    liveCandidateEventIds: [...(candidate.liveEventIds || candidate.eventIds)],
+    liveCandidateEventIds: [...candidate.eventIds],
     playerAKeyCount: candidate.playerAKeyCount,
     playerBKeyCount: candidate.playerBKeyCount,
   };
