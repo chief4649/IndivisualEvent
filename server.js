@@ -848,7 +848,7 @@ function buildHeadToHeadHealth() {
   let pairShardEventCount = 0;
   try {
     pairShardEventCount = fs.readdirSync(pairShardDir, { withFileTypes: true })
-      .filter((entry) => entry.isDirectory()).length;
+      .filter((entry) => entry.isFile()).length;
   } catch {
     pairShardEventCount = 0;
   }
@@ -8096,16 +8096,48 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
 
   const currentEventIds = new Set((snapshot || []).map((file) => String(file.eventId)));
   const pairDeltaEventIds = new Set((index.pairDeltaEventIds || []).map(String));
-  const pairIndexCoversSnapshot = currentEventIds.size > 0 &&
-    (snapshot || []).every((file) => {
-      const eventId = String(file.eventId);
-      return pairDeltaEventIds.has(eventId) ||
-        index.pairShardEventSignatures?.[eventId] === getHeadToHeadEventFileSignature(file);
-    });
-  if (index.pairShardsDir && pairIndexCoversSnapshot) {
-    const pairResult = collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNeedles);
-    if (pairResult) {
+  const pairIndexEventIds = new Set(
+    (snapshot || [])
+      .filter((file) => {
+        const eventId = String(file.eventId);
+        return pairDeltaEventIds.has(eventId) ||
+          index.pairShardEventSignatures?.[eventId] === getHeadToHeadEventFileSignature(file);
+      })
+      .map((file) => String(file.eventId)),
+  );
+  if (index.pairShardsDir && pairIndexEventIds.size > 0) {
+    const pairResult = collectHeadToHeadMatchesFromPairIndex(
+      index,
+      playerANeedles,
+      playerBNeedles,
+      pairIndexEventIds,
+    );
+    if (pairResult && pairIndexEventIds.size === currentEventIds.size) {
       return pairResult;
+    }
+    if (pairResult) {
+      const candidate = getHeadToHeadCandidateEventIds(index, playerANeedles, playerBNeedles);
+      const candidateEventIds = new Set(
+        [...candidate.eventIds].filter((eventId) => !pairIndexEventIds.has(String(eventId))),
+      );
+      const candidateSnapshot = snapshot.filter((file) => candidateEventIds.has(String(file.eventId)));
+      const collected = candidateSnapshot.length > 0
+        ? await collectHeadToHeadMatches(candidateSnapshot, playerANeedles, playerBNeedles)
+        : { events: [], parsedEvents: 0, scannedMatches: 0, aWins: 0, bWins: 0 };
+      const merged = mergeHeadToHeadCollectedResults(pairResult, {
+        ...collected,
+        candidateEventCount: candidateSnapshot.length,
+        pairCount: candidateEventIds.size,
+        candidateEventIds: [...candidateEventIds],
+        liveCandidateEventIds: [...candidate.eventIds],
+        playerAKeyCount: candidate.playerAKeyCount,
+        playerBKeyCount: candidate.playerBKeyCount,
+      });
+      return {
+        ...merged,
+        pairIndexEventCount: pairIndexEventIds.size,
+        pairIndexCoversSnapshot: false,
+      };
     }
   }
 
@@ -8142,7 +8174,7 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
   };
 }
 
-function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNeedles) {
+function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNeedles, allowedEventIds = null) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const rules = readRules(RULES_PATH);
   const playerAKeys = getHeadToHeadIndexPlayerKeys(index, playerANeedles);
@@ -8166,6 +8198,9 @@ function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNee
   let indexedRecords = 0;
   pairKeys.forEach((pairKey) => {
     getHeadToHeadIndexedPair(index, pairKey).forEach((entry) => {
+      if (allowedEventIds && !allowedEventIds.has(String(entry?.event?.event || ""))) {
+        return;
+      }
       scannedMatches += 1;
       const payload = entry?.match;
       const competitors = Array.isArray(payload?.competitors) ? payload.competitors : [];
