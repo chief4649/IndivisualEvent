@@ -69,6 +69,7 @@ const HEAD_TO_HEAD_PAIR_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-t
 const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-manifest.json");
 const HEAD_TO_HEAD_INDEX_STATUS_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-status.json");
 const HEAD_TO_HEAD_DELTA_INDEX_VERSION = 1;
+const HEAD_TO_HEAD_PAIR_INDEX_VERSION = 1;
 const HEAD_TO_HEAD_DELTA_INDEX_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-delta");
 const HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-delta-manifest.json");
 const WTT_CRAWL_STATUS_PATH = path.join(DATA_DIR, "wtt-crawl-status.json");
@@ -3882,6 +3883,9 @@ const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_
 const headToHeadPlayerKeyMatchCaches = new WeakMap();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
+const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
+  process.env.HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES || 256 * 1024 * 1024,
+);
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
@@ -6775,12 +6779,12 @@ function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot(
 
 function readHeadToHeadPersistentIndexFromDisk(signature) {
   const candidates = [
-    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, PLAYER_RECORD_MATCH_SHARDS_DIR],
-    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH, BUNDLED_PLAYER_RECORD_MATCH_SHARDS_DIR],
+    [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, HEAD_TO_HEAD_PLAYER_INDEX_PATH, PLAYER_RECORD_MATCH_SHARDS_DIR, HEAD_TO_HEAD_PAIR_SHARDS_DIR],
+    [BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH, BUNDLED_PLAYER_RECORD_MATCH_SHARDS_DIR, BUNDLED_HEAD_TO_HEAD_PAIR_SHARDS_DIR],
   ];
   let staleIndex = null;
 
-  for (const [manifestPath, playerIndexPath, playerRecordMatchShardsDir] of candidates) {
+  for (const [manifestPath, playerIndexPath, playerRecordMatchShardsDir, pairShardsDir] of candidates) {
     try {
       const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
       if (manifest?.version !== HEAD_TO_HEAD_INDEX_VERSION) {
@@ -6814,6 +6818,13 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
             ? playerRecordMatchShardsDir
             : null,
           playerRecordMatchShardCache: new Map(),
+          pairShardsDir: manifest.pairRecordIndex &&
+            manifest.pairRecordIndexVersion === HEAD_TO_HEAD_PAIR_INDEX_VERSION &&
+            manifest.pairRecordIndexSignature === signature &&
+            fs.existsSync(pairShardsDir)
+            ? pairShardsDir
+            : null,
+          pairShardCache: new Map(),
         },
       };
       applyHeadToHeadDeltaOverlay(indexState);
@@ -6928,24 +6939,97 @@ function createPlayerRecordMatchShardWriter(baseDir) {
       fs.rmSync(baseDir, { recursive: true, force: true });
       fs.renameSync(tempDir, baseDir);
     },
+    abort() {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    },
+  };
+}
+
+function getAvailableBytes(filePath) {
+  try {
+    const stat = fs.statfsSync(filePath);
+    return Number(stat.bavail) * Number(stat.bsize);
+  } catch {
+    return Infinity;
+  }
+}
+
+function createHeadToHeadPairShardWriter(baseDir) {
+  const tempDir = `${baseDir}.tmp-${process.pid}-${Date.now()}`;
+  fs.rmSync(tempDir, { recursive: true, force: true });
+  fs.mkdirSync(tempDir, { recursive: true });
+  const fileHandles = new Map();
+  let recordCount = 0;
+
+  const closeHandles = () => {
+    fileHandles.forEach((handle) => handle.closeSync());
+    fileHandles.clear();
+  };
+
+  return {
+    write(pairKey, payload) {
+      if (!pairKey || !payload) {
+        return;
+      }
+      if (recordCount % 128 === 0 && getAvailableBytes(tempDir) < HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES) {
+        throw new Error(
+          `H2H pair index stopped: available disk space is below ${HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES} bytes`,
+        );
+      }
+      const shardName = getHeadToHeadPairShardName(pairKey);
+      let handle = fileHandles.get(shardName);
+      if (!handle) {
+        const fd = fs.openSync(path.join(tempDir, shardName), "a");
+        handle = {
+          write: (text) => fs.writeSync(fd, text),
+          closeSync: () => fs.closeSync(fd),
+        };
+        fileHandles.set(shardName, handle);
+      }
+      handle.write(`${JSON.stringify({ pairKey, ...payload })}\n`);
+      recordCount += 1;
+    },
+    close() {
+      closeHandles();
+      fs.rmSync(baseDir, { recursive: true, force: true });
+      fs.renameSync(tempDir, baseDir);
+      return recordCount;
+    },
+    abort() {
+      closeHandles();
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    },
   };
 }
 
 function getHeadToHeadIndexedPair(index, pairKey) {
-  if (!index?.pairShardsDir || !index?.pairShardCache) {
-    return null;
+  if (!index?.pairShardsDir || !index?.pairShardCache || !pairKey) {
+    return [];
   }
   const shardName = getHeadToHeadPairShardName(pairKey);
   if (!index.pairShardCache.has(shardName)) {
     try {
       const shardPath = path.join(index.pairShardsDir, shardName);
-      const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
-      index.pairShardCache.set(shardName, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+      const lines = fs.readFileSync(shardPath, "utf8").split(/\n/).filter(Boolean);
+      index.pairShardCache.set(shardName, lines);
     } catch {
-      index.pairShardCache.set(shardName, {});
+      index.pairShardCache.set(shardName, []);
+    }
+    while (index.pairShardCache.size > 2) {
+      const oldestKey = index.pairShardCache.keys().next().value;
+      index.pairShardCache.delete(oldestKey);
     }
   }
-  return index.pairShardCache.get(shardName)?.[pairKey] || null;
+  return index.pairShardCache.get(shardName)
+    .map((line) => {
+      try {
+        const parsed = JSON.parse(line);
+        return parsed?.pairKey === pairKey ? parsed : null;
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
 }
 
 function getPlayerRecordShardLines(index, key) {
@@ -7276,7 +7360,31 @@ function setsIntersect(left, right) {
   return false;
 }
 
-function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null) {
+function compactHeadToHeadCompetitor(competitor) {
+  return compactPlayerRecordCompetitor(competitor);
+}
+
+function buildHeadToHeadPairMatchPayload(match, parentMatch = null) {
+  return {
+    categoryName: match?.categoryName || "",
+    roundKey: match?.roundKey || "",
+    roundLabel: match?.roundLabel || "",
+    documentCode: match?.documentCode || "",
+    competitors: (Array.isArray(match?.competitors) ? match.competitors.slice(0, 2) : [])
+      .map(compactHeadToHeadCompetitor),
+    overallScore: match?.overallScore || "",
+    resultStatus: match?.resultStatus || "",
+    gameScores: Array.isArray(match?.gameScores) ? match.gameScores : [],
+    parent: parentMatch ? {
+      categoryName: parentMatch.categoryName || "",
+      roundKey: parentMatch.roundKey || "",
+      roundLabel: parentMatch.roundLabel || "",
+      documentCode: parentMatch.documentCode || "",
+    } : null,
+  };
+}
+
+function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null, options = {}) {
   const winnerIndex = getWinnerIndexForRecord(match);
   if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
     return false;
@@ -7301,7 +7409,17 @@ function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, 
   }
 
   [...leftKeys, ...rightKeys].forEach((key) => addHeadToHeadPlayerKey(index, key, file.eventId));
+  const pairKey = getHeadToHeadPairKey(leftCanonical, rightCanonical);
   addHeadToHeadPairEventId(index, leftCanonical, rightCanonical, file.eventId);
+  if (pairKey && options.pairShardWriter) {
+    options.pairShardWriter.write(pairKey, {
+      event: {
+        ...eventMeta,
+        source: file.sourceLabel || "",
+      },
+      match: buildHeadToHeadPairMatchPayload(match, parentMatch),
+    });
+  }
   return true;
 }
 
@@ -7535,8 +7653,12 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
   const playerRecordMatchIndexEventLimit = Number(process.env.PLAYER_RECORD_MATCH_INDEX_EVENT_LIMIT || 300);
   const buildPlayerRecordMatchIndex = snapshot.length <= playerRecordMatchIndexEventLimit;
   const buildPlayerRecordMatchShardIndex = process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED !== "1";
+  const buildHeadToHeadPairShardIndex = options.persist !== false && process.env.HEAD_TO_HEAD_PAIR_SHARD_INDEX_DISABLED !== "1";
   const playerRecordMatchShardWriter = buildPlayerRecordMatchShardIndex
     ? createPlayerRecordMatchShardWriter(PLAYER_RECORD_MATCH_SHARDS_DIR)
+    : null;
+  const headToHeadPairShardWriter = buildHeadToHeadPairShardIndex
+    ? createHeadToHeadPairShardWriter(HEAD_TO_HEAD_PAIR_SHARDS_DIR)
     : null;
   const index = {
     players: {},
@@ -7549,7 +7671,8 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
   let indexedLinks = 0;
   let indexedPlayerRecordLinks = 0;
 
-  for (let indexPosition = 0; indexPosition < snapshot.length; indexPosition += 1) {
+  try {
+    for (let indexPosition = 0; indexPosition < snapshot.length; indexPosition += 1) {
     if (indexPosition % 20 === 0) {
       await yieldToEventLoop();
     }
@@ -7610,7 +7733,9 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
         if (!isSinglesHeadToHeadMatch(match)) {
           continue;
         }
-        if (addHeadToHeadIndexedMatch(index, file, eventMeta, match, 0, 1, translations, rules, matchRoundContext)) {
+        if (addHeadToHeadIndexedMatch(index, file, eventMeta, match, 0, 1, translations, rules, matchRoundContext, null, {
+          pairShardWriter: headToHeadPairShardWriter,
+        })) {
           indexedLinks += 1;
         }
         continue;
@@ -7644,7 +7769,9 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
         if (!isSinglesHeadToHeadMatch(single)) {
           return;
         }
-        if (addHeadToHeadIndexedMatch(index, file, eventMeta, single, 0, 1, translations, rules, matchRoundContext, match)) {
+        if (addHeadToHeadIndexedMatch(index, file, eventMeta, single, 0, 1, translations, rules, matchRoundContext, match, {
+          pairShardWriter: headToHeadPairShardWriter,
+        })) {
           indexedLinks += 1;
         }
       });
@@ -7660,6 +7787,11 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
         durationMs: Date.now() - eventStartedAt,
       });
     }
+    }
+  } catch (error) {
+    playerRecordMatchShardWriter?.abort?.();
+    headToHeadPairShardWriter?.abort?.();
+    throw error;
   }
 
   Object.keys(index.players).forEach((key) => {
@@ -7678,6 +7810,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
   if (playerRecordMatchShardWriter) {
     await playerRecordMatchShardWriter.close();
   }
+  const pairRecordCount = headToHeadPairShardWriter ? headToHeadPairShardWriter.close() : 0;
 
   const generatedAt = new Date().toISOString();
   const manifest = {
@@ -7696,6 +7829,11 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
     playerRecordMatchIndexSkipped: !buildPlayerRecordMatchIndex,
     playerRecordMatchShardIndex: buildPlayerRecordMatchShardIndex,
     playerRecordMatchIndexEventLimit,
+    pairRecordIndex: buildHeadToHeadPairShardIndex,
+    pairRecordIndexVersion: buildHeadToHeadPairShardIndex ? HEAD_TO_HEAD_PAIR_INDEX_VERSION : null,
+    pairRecordIndexSignature: buildHeadToHeadPairShardIndex ? signature : null,
+    pairRecordCount,
+    pairRecordShardDir: buildHeadToHeadPairShardIndex ? HEAD_TO_HEAD_PAIR_SHARDS_DIR : null,
     playerKeyCount: Object.keys(index.players).length,
     pairKeyCount: Object.keys(index.pairs).length,
     playerRecordKeyCount: Object.keys(index.records).length,
@@ -7856,6 +7994,13 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     return null;
   }
 
+  if (index.pairShardsDir) {
+    const pairResult = collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNeedles);
+    if (pairResult) {
+      return pairResult;
+    }
+  }
+
   const candidate = getHeadToHeadCandidateEventIds(index, playerANeedles, playerBNeedles);
   if (candidate.playerAKeyCount === 0 || candidate.playerBKeyCount === 0) {
     return {
@@ -7886,6 +8031,100 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     liveCandidateEventIds: [...candidate.eventIds],
     playerAKeyCount: candidate.playerAKeyCount,
     playerBKeyCount: candidate.playerBKeyCount,
+  };
+}
+
+function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNeedles) {
+  const translations = readTranslations(TRANSLATIONS_PATH);
+  const rules = readRules(RULES_PATH);
+  const playerAKeys = getHeadToHeadIndexPlayerKeys(index, playerANeedles);
+  const playerBKeys = getHeadToHeadIndexPlayerKeys(index, playerBNeedles);
+  if (playerAKeys.size === 0 || playerBKeys.size === 0) {
+    return null;
+  }
+
+  const pairKeys = new Set();
+  playerAKeys.forEach((playerAKey) => {
+    playerBKeys.forEach((playerBKey) => {
+      const pairKey = getHeadToHeadPairKey(playerAKey, playerBKey);
+      if (pairKey) {
+        pairKeys.add(pairKey);
+      }
+    });
+  });
+
+  const eventsById = new Map();
+  let scannedMatches = 0;
+  let indexedRecords = 0;
+  pairKeys.forEach((pairKey) => {
+    getHeadToHeadIndexedPair(index, pairKey).forEach((entry) => {
+      scannedMatches += 1;
+      const payload = entry?.match;
+      const competitors = Array.isArray(payload?.competitors) ? payload.competitors : [];
+      if (competitors.length < 2) {
+        return;
+      }
+      const match = {
+        matchType: "individual",
+        discipline: "singles",
+        categoryName: payload.categoryName || "",
+        roundKey: payload.roundKey || "",
+        roundLabel: payload.roundLabel || "",
+        documentCode: payload.documentCode || "",
+        competitors,
+        overallScore: payload.overallScore || "",
+        resultStatus: payload.resultStatus || "",
+        gameScores: Array.isArray(payload.gameScores) ? payload.gameScores : [],
+      };
+      const parent = payload.parent ? {
+        categoryName: payload.parent.categoryName || "",
+        roundKey: payload.parent.roundKey || "",
+        roundLabel: payload.parent.roundLabel || "",
+        documentCode: payload.parent.documentCode || "",
+      } : null;
+      const playerAIndex = findPlayerCompetitorIndex(match, playerANeedles, translations);
+      const playerBIndex = findPlayerCompetitorIndex(match, playerBNeedles, translations);
+      if (playerAIndex < 0 || playerBIndex < 0 || playerAIndex === playerBIndex) {
+        return;
+      }
+      const winnerIndex = getWinnerIndexForRecord(match);
+      if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
+        return;
+      }
+      const event = entry.event || {};
+      const eventId = String(event.event || "");
+      if (!eventId) {
+        return;
+      }
+      if (!eventsById.has(eventId)) {
+        eventsById.set(eventId, {
+          ...event,
+          matches: [],
+        });
+      }
+      const output = [];
+      pushHeadToHeadMatch(output, match, playerAIndex, playerBIndex, translations, rules, null, parent);
+      if (output.length > 0) {
+        eventsById.get(eventId).matches.push(output[0]);
+        indexedRecords += 1;
+      }
+    });
+  });
+
+  const events = dedupeHeadToHeadEvents([...eventsById.values()]);
+  return {
+    events,
+    parsedEvents: events.length,
+    scannedMatches,
+    indexedRecords,
+    candidateEventCount: events.length,
+    pairCount: pairKeys.size,
+    playerAKeyCount: playerAKeys.size,
+    playerBKeyCount: playerBKeys.size,
+    candidateEventIds: events.map((event) => String(event.event || "")),
+    liveCandidateEventIds: events.map((event) => String(event.event || "")),
+    aWins: countHeadToHeadWins(events).aWins,
+    bWins: countHeadToHeadWins(events).bWins,
   };
 }
 
