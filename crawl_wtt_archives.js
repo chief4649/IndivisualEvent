@@ -19,6 +19,7 @@ const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEF
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
 const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
 const PLAYER_RECORD_EVENT_INDEX_DIR = path.join(DATA_DIR, "player-records-index", "event-records");
+const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(DATA_DIR, "player-records-index", "head-to-head-manifest.json");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
@@ -405,13 +406,26 @@ function buildDerivedArchiveFiles(eventId, args) {
   };
 }
 
-function buildHeadToHeadIndex() {
-  const output = runNodeScript([
+function buildHeadToHeadIndex(eventIds = []) {
+  const normalizedEventIds = [...new Set((eventIds || []).map((eventId) => String(eventId || "").trim()).filter(Boolean))];
+  const incremental = normalizedEventIds.length > 0 && fs.existsSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH);
+  const args = [
     "-r",
     "./runtime_legacy_ittf_patch.js",
     "server.js",
-    "--build-head-to-head-index",
-  ]).trim();
+  ];
+  if (incremental) {
+    args.push("--update-head-to-head-index", "--event", normalizedEventIds.join(","));
+  } else {
+    args.push("--build-head-to-head-index");
+  }
+  const output = runNodeScript(args).trim();
+  if (incremental) {
+    if (!output.includes('"ok": true')) {
+      throw new Error(`head-to-head incremental index update failed: ${output}`);
+    }
+    return { mode: "incremental", eventCount: normalizedEventIds.length };
+  }
   const parsed = (() => {
     try {
       return JSON.parse(output);
@@ -515,7 +529,7 @@ async function main() {
   }
 
   const summary = { archived: 0, skipped: 0, failed: 0, derivedFailed: 0 };
-  let shouldBuildHeadToHeadIndex = false;
+  const headToHeadEventIds = new Set();
   for (let index = 0; index < candidates.length; index += 1) {
     const candidate = candidates[index];
     try {
@@ -532,7 +546,7 @@ async function main() {
             console.log(`derived-indexes: ${result.eventId} skipped`);
           } else {
             console.log(`derived-indexes: ${result.eventId} slim=${derivedResult.slimBytes} eventIndex=${derivedResult.eventIndexBytes} rawDeleted=${derivedResult.rawDeleted}`);
-            shouldBuildHeadToHeadIndex = true;
+            headToHeadEventIds.add(String(result.eventId));
           }
         } catch (error) {
           summary.derivedFailed += 1;
@@ -558,11 +572,16 @@ async function main() {
     }
   }
 
-  if (shouldBuildHeadToHeadIndex && !args.skipDerivedIndexes && !args.skipH2hIndex) {
+  if (headToHeadEventIds.size > 0 && !args.skipDerivedIndexes && !args.skipH2hIndex) {
     try {
-      console.log("head-to-head-index: building");
-      const h2hResult = buildHeadToHeadIndex();
-      console.log(`head-to-head-index: events=${h2hResult.eventCount} players=${h2hResult.playerKeyCount} pairs=${h2hResult.pairKeyCount}`);
+      const eventIds = [...headToHeadEventIds];
+      console.log(`head-to-head-index: updating ${eventIds.length} event(s)`);
+      const h2hResult = buildHeadToHeadIndex(eventIds);
+      if (h2hResult.mode === "incremental") {
+        console.log(`head-to-head-index: incremental events=${h2hResult.eventCount}`);
+      } else {
+        console.log(`head-to-head-index: events=${h2hResult.eventCount} players=${h2hResult.playerKeyCount} pairs=${h2hResult.pairKeyCount}`);
+      }
     } catch (error) {
       summary.derivedFailed += 1;
       console.error(`head-to-head-index failed: ${error?.message || error}`);
