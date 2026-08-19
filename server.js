@@ -6820,22 +6820,44 @@ function getHeadToHeadPersistentIndexSignature(snapshot) {
 }
 
 function getHeadToHeadEventFileSignature(file) {
+  const parseSource = file?.parseSource || "raw";
+  // Bundled/runtime SLIM files can receive a new mtime during deployment or
+  // persistence sync without changing their contents.  RAW files remain
+  // mtime-sensitive because they can be updated before their SLIM derivative
+  // is generated.
+  const parseMtimeMs = parseSource === "raw"
+    ? (file?.parseMtimeMs || file?.mtimeMs || 0)
+    : 0;
   return [
     file?.size || 0,
-    file?.mtimeMs || 0,
-    file?.parseSource || "raw",
+    parseMtimeMs,
+    parseSource,
     file?.parseSize || file?.size || 0,
-    file?.parseMtimeMs || file?.mtimeMs || 0,
+    parseMtimeMs,
   ].join(":");
 }
 
 function isHeadToHeadPairIndexEventCurrent(file, indexedSignature, indexGeneratedAt = null) {
-  if (indexedSignature === getHeadToHeadEventFileSignature(file)) {
+  const currentSignature = getHeadToHeadEventFileSignature(file);
+  if (indexedSignature === currentSignature) {
+    return true;
+  }
+  const indexedParts = String(indexedSignature || "").split(":");
+  const currentParts = currentSignature.split(":");
+  // Compatibility for indexes generated before SLIM mtimes were excluded.
+  // Match the stable fields only; a deployment timestamp must not invalidate
+  // an otherwise identical SLIM event.
+  if (
+    currentParts[2] === "slim" &&
+    indexedParts[2] === "slim" &&
+    indexedParts[0] === currentParts[0] &&
+    indexedParts[3] === currentParts[3]
+  ) {
     return true;
   }
   // SLIM preserves the match fields used by H2H. A RAW-built pair shard
   // remains valid when the same event is later read from its SLIM derivative.
-  if (String(indexedSignature || "").split(":")[2] === "raw" && file?.parseSource === "slim") {
+  if (indexedParts[2] === "raw" && file?.parseSource === "slim") {
     return true;
   }
   const generatedAtMs = Date.parse(String(indexGeneratedAt || ""));
@@ -8357,7 +8379,11 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
             return true;
           }
           if (hasIndexedEventSignatures) {
-            return indexedEventSignatures[eventId] !== getHeadToHeadEventFileSignature(file);
+            return !isHeadToHeadPairIndexEventCurrent(
+              file,
+              indexedEventSignatures[eventId],
+              persistentIndex.generatedAt,
+            );
           }
           return Number.isFinite(indexGeneratedAtMs) && Math.max(
             Number(file.mtimeMs || 0),
