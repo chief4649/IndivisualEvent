@@ -4317,16 +4317,54 @@ function clearHeadToHeadResultCache() {
 }
 
 function enqueueAutoHeadToHeadIndexUpdate(eventId) {
+  const eventIds = Array.isArray(eventId)
+    ? eventId.map((value) => String(value || "").trim()).filter(Boolean)
+    : [String(eventId || "").trim()].filter(Boolean);
+  if (eventIds.length === 0) {
+    return Promise.resolve();
+  }
   const run = autoHeadToHeadIndexUpdatePromise.then(() => spawnDerivedIndexProcess([
     "-r",
     "./runtime_legacy_ittf_patch.js",
     "server.js",
     "--update-head-to-head-index",
     "--event",
-    String(eventId),
+    eventIds.join(","),
   ], "update-head-to-head-index"));
   autoHeadToHeadIndexUpdatePromise = run.catch(() => {});
   return run;
+}
+
+function scheduleHeadToHeadIndexReconciliation() {
+  if (AUTO_DERIVED_INDEX_DISABLED || !fs.existsSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH)) {
+    return;
+  }
+
+  const timer = setTimeout(() => {
+    try {
+      const manifest = readJsonFileSafe(HEAD_TO_HEAD_INDEX_MANIFEST_PATH);
+      const snapshot = getWttRecordFileSnapshot();
+      const effective = getHeadToHeadEffectiveEventIndex(manifest);
+      const staleEventIds = snapshot
+        .filter((file) => !effective.eventIds.has(String(file.eventId)) ||
+          !isHeadToHeadPairIndexEventCurrent(
+            file,
+            effective.eventSignatures[String(file.eventId)],
+            effective.generatedAt,
+          ))
+        .map((file) => String(file.eventId));
+      if (staleEventIds.length === 0) {
+        return;
+      }
+      console.log(`[head-to-head-index] background reconcile ${staleEventIds.length} event(s)`);
+      enqueueAutoHeadToHeadIndexUpdate(staleEventIds).catch((error) => {
+        console.error("[head-to-head-index] background reconcile failed:", error?.message || error);
+      });
+    } catch (error) {
+      console.error("[head-to-head-index] background reconcile check failed:", error?.message || error);
+    }
+  }, 15_000);
+  timer.unref?.();
 }
 
 function setPlayerRecordArchiveParseCacheValue(key, value) {
@@ -9015,6 +9053,7 @@ function startServer() {
 
   server.listen(PORT, HOST, () => {
     console.log(`WTT Individual Match Formatter web server: http://${HOST}:${PORT}`);
+    scheduleHeadToHeadIndexReconciliation();
   });
 }
 
