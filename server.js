@@ -853,7 +853,11 @@ function buildHeadToHeadHealth() {
     pairShardEventCount = 0;
   }
   const coveredEventCount = manifest?.pairRecordIndex === true
-    ? snapshot.filter((file) => isHeadToHeadPairIndexEventCurrent(file, eventSignatures[String(file.eventId)])).length
+    ? snapshot.filter((file) => isHeadToHeadPairIndexEventCurrent(
+      file,
+      eventSignatures[String(file.eventId)],
+      manifest?.generatedAt,
+    )).length
     : 0;
   const currentParseSources = {};
   const indexedParseSources = {};
@@ -6825,13 +6829,18 @@ function getHeadToHeadEventFileSignature(file) {
   ].join(":");
 }
 
-function isHeadToHeadPairIndexEventCurrent(file, indexedSignature) {
+function isHeadToHeadPairIndexEventCurrent(file, indexedSignature, indexGeneratedAt = null) {
   if (indexedSignature === getHeadToHeadEventFileSignature(file)) {
     return true;
   }
   // SLIM preserves the match fields used by H2H. A RAW-built pair shard
   // remains valid when the same event is later read from its SLIM derivative.
-  return String(indexedSignature || "").split(":")[2] === "raw" && file?.parseSource === "slim";
+  if (String(indexedSignature || "").split(":")[2] === "raw" && file?.parseSource === "slim") {
+    return true;
+  }
+  const generatedAtMs = Date.parse(String(indexGeneratedAt || ""));
+  const fileMtimeMs = Math.max(Number(file?.mtimeMs || 0), Number(file?.parseMtimeMs || 0));
+  return Number.isFinite(generatedAtMs) && fileMtimeMs > 0 && fileMtimeMs <= generatedAtMs;
 }
 
 function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot()) {
@@ -8120,7 +8129,11 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
       .filter((file) => {
         const eventId = String(file.eventId);
         return pairDeltaEventIds.has(eventId) ||
-          isHeadToHeadPairIndexEventCurrent(file, index.pairShardEventSignatures?.[eventId]);
+          isHeadToHeadPairIndexEventCurrent(
+            file,
+            index.pairShardEventSignatures?.[eventId],
+            indexState.generatedAt,
+          );
       })
       .map((file) => String(file.eventId)),
   );
