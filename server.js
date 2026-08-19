@@ -465,6 +465,7 @@ function buildHealthPayload() {
       bundledPlayerRecordEventManifest: getHealthFileMeta(BUNDLED_PLAYER_RECORD_EVENT_INDEX_MANIFEST_PATH),
     },
     playerOrgOverrides: buildPlayerOrgOverrideHealth(),
+    headToHead: buildHeadToHeadHealth(),
     playerRecords: {
       source: "wtt-records",
       archiveMode: "runtime+bundled",
@@ -834,6 +835,42 @@ function buildPlayerOrgOverrideHealth() {
       xuYiChn: merged["XU Yi|CHN"] || null,
       xuYiHkg: merged["XU Yi|HKG"] || null,
     },
+  };
+}
+
+function buildHeadToHeadHealth() {
+  const manifest = readJsonFileSafe(HEAD_TO_HEAD_INDEX_MANIFEST_PATH);
+  const snapshot = getWttRecordFileSnapshot();
+  const eventSignatures = manifest?.eventSignatures && typeof manifest.eventSignatures === "object"
+    ? manifest.eventSignatures
+    : {};
+  const pairShardDir = manifest?.pairRecordShardDir || HEAD_TO_HEAD_PAIR_SHARDS_DIR;
+  let pairShardEventCount = 0;
+  try {
+    pairShardEventCount = fs.readdirSync(pairShardDir, { withFileTypes: true })
+      .filter((entry) => entry.isDirectory()).length;
+  } catch {
+    pairShardEventCount = 0;
+  }
+  const coveredEventCount = manifest?.pairRecordIndex === true
+    ? snapshot.filter((file) => eventSignatures[String(file.eventId)] === getHeadToHeadEventFileSignature(file)).length
+    : 0;
+  return {
+    manifestExists: Boolean(manifest),
+    manifestVersion: manifest?.version || null,
+    generatedAt: manifest?.generatedAt || null,
+    indexedEventCount: Array.isArray(manifest?.eventIds) ? manifest.eventIds.length : 0,
+    currentWttEventCount: snapshot.length,
+    pairRecordIndex: manifest?.pairRecordIndex === true,
+    pairRecordCount: manifest?.pairRecordCount || 0,
+    pairShardEventCount,
+    pairIndexCoveredEventCount: coveredEventCount,
+    pairIndexCoversCurrentSnapshot: Boolean(
+      manifest?.pairRecordIndex === true &&
+      snapshot.length > 0 &&
+      coveredEventCount === snapshot.length,
+    ),
+    deltaManifest: getHealthFileMeta(HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH),
   };
 }
 
