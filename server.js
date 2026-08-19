@@ -72,6 +72,7 @@ const HEAD_TO_HEAD_DELTA_INDEX_VERSION = 1;
 const HEAD_TO_HEAD_PAIR_INDEX_VERSION = 1;
 const HEAD_TO_HEAD_DELTA_INDEX_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-delta");
 const HEAD_TO_HEAD_DELTA_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "head-to-head-delta-manifest.json");
+const HEAD_TO_HEAD_DELTA_PAIR_SHARDS_DIR = path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, "pairs");
 const WTT_CRAWL_STATUS_PATH = path.join(DATA_DIR, "wtt-crawl-status.json");
 const PLAYER_RECORD_MATCH_SHARDS_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "player-record-match-shards");
 const BUNDLED_HEAD_TO_HEAD_PLAYER_INDEX_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "head-to-head-players.json");
@@ -3892,6 +3893,7 @@ const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRAC
 const AUTO_DERIVED_INDEX_DISABLED = process.env.AUTO_DERIVED_INDEX_DISABLED === "1";
 const autoDerivedIndexBuilds = new Set();
 const autoDerivedIndexLastScheduled = new Map();
+let autoHeadToHeadIndexUpdatePromise = Promise.resolve();
 const AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS = Number(process.env.AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS || 10 * 60_000);
 
 function getPathStatToken(filePath) {
@@ -4182,6 +4184,7 @@ async function buildDerivedIndexesForFinishedWttEvent(eventId) {
     "build_player_records_index.js",
     String(eventId),
   ], "build_player_records_index");
+  await enqueueAutoHeadToHeadIndexUpdate(eventId);
   clearPlayerRecordResultCache();
 
   clearHeadToHeadResultCache();
@@ -4261,6 +4264,19 @@ function setHeadToHeadResultCacheValue(key, value) {
 
 function clearHeadToHeadResultCache() {
   headToHeadResultCache.clear();
+}
+
+function enqueueAutoHeadToHeadIndexUpdate(eventId) {
+  const run = autoHeadToHeadIndexUpdatePromise.then(() => spawnDerivedIndexProcess([
+    "-r",
+    "./runtime_legacy_ittf_patch.js",
+    "server.js",
+    "--update-head-to-head-index",
+    "--event",
+    String(eventId),
+  ], "update-head-to-head-index"));
+  autoHeadToHeadIndexUpdatePromise = run.catch(() => {});
+  return run;
 }
 
 function setPlayerRecordArchiveParseCacheValue(key, value) {
@@ -6820,10 +6836,15 @@ function readHeadToHeadPersistentIndexFromDisk(signature) {
           playerRecordMatchShardCache: new Map(),
           pairShardsDir: manifest.pairRecordIndex &&
             manifest.pairRecordIndexVersion === HEAD_TO_HEAD_PAIR_INDEX_VERSION &&
-            manifest.pairRecordIndexSignature === signature &&
             fs.existsSync(pairShardsDir)
             ? pairShardsDir
             : null,
+          pairShardEventIds: manifest.pairRecordIndex && Array.isArray(manifest.eventIds)
+            ? manifest.eventIds.map(String)
+            : [],
+          pairShardEventSignatures: manifest.pairRecordIndex && manifest.eventSignatures
+            ? manifest.eventSignatures
+            : {},
           pairShardCache: new Map(),
         },
       };
@@ -6875,6 +6896,16 @@ function applyHeadToHeadDeltaOverlay(indexState) {
     ...(indexState.eventSignatures || {}),
     ...(manifest.eventSignatures || {}),
   };
+  if (
+    manifest.pairRecordIndex === true &&
+    manifest.pairRecordIndexVersion === HEAD_TO_HEAD_PAIR_INDEX_VERSION &&
+    fs.existsSync(HEAD_TO_HEAD_DELTA_PAIR_SHARDS_DIR)
+  ) {
+    indexState.index.pairDeltaShardsDir = HEAD_TO_HEAD_DELTA_PAIR_SHARDS_DIR;
+    indexState.index.pairDeltaEventIds = overlayEventIds.filter((eventId) =>
+      fs.existsSync(path.join(HEAD_TO_HEAD_DELTA_PAIR_SHARDS_DIR, eventId)),
+    );
+  }
   indexState.stale = true;
   return indexState;
 }
@@ -7002,25 +7033,26 @@ function createHeadToHeadPairShardWriter(baseDir) {
   };
 }
 
-function getHeadToHeadIndexedPair(index, pairKey) {
-  if (!index?.pairShardsDir || !index?.pairShardCache || !pairKey) {
+function getHeadToHeadIndexedPairFromDir(index, dir, pairKey, cacheKey) {
+  if (!dir || !index?.pairShardCache || !pairKey) {
     return [];
   }
   const shardName = getHeadToHeadPairShardName(pairKey);
-  if (!index.pairShardCache.has(shardName)) {
+  const key = `${cacheKey || "base"}:${shardName}`;
+  if (!index.pairShardCache.has(key)) {
     try {
-      const shardPath = path.join(index.pairShardsDir, shardName);
+      const shardPath = path.join(dir, shardName);
       const lines = fs.readFileSync(shardPath, "utf8").split(/\n/).filter(Boolean);
-      index.pairShardCache.set(shardName, lines);
+      index.pairShardCache.set(key, lines);
     } catch {
-      index.pairShardCache.set(shardName, []);
+      index.pairShardCache.set(key, []);
     }
     while (index.pairShardCache.size > 2) {
       const oldestKey = index.pairShardCache.keys().next().value;
       index.pairShardCache.delete(oldestKey);
     }
   }
-  return index.pairShardCache.get(shardName)
+  return index.pairShardCache.get(key)
     .map((line) => {
       try {
         const parsed = JSON.parse(line);
@@ -7030,6 +7062,23 @@ function getHeadToHeadIndexedPair(index, pairKey) {
       }
     })
     .filter(Boolean);
+}
+
+function getHeadToHeadIndexedPair(index, pairKey) {
+  const base = getHeadToHeadIndexedPairFromDir(index, index?.pairShardsDir, pairKey, "base");
+  const delta = (index?.pairDeltaEventIds || []).flatMap((eventId) =>
+    getHeadToHeadIndexedPairFromDir(
+      index,
+      path.join(index.pairDeltaShardsDir || "", String(eventId)),
+      pairKey,
+      `delta:${eventId}`,
+    ),
+  );
+  const replacedEventIds = new Set((index?.pairDeltaEventIds || []).map(String));
+  return [
+    ...base.filter((entry) => !replacedEventIds.has(String(entry?.event?.event || ""))),
+    ...delta,
+  ];
 }
 
 function getPlayerRecordShardLines(index, key) {
@@ -7653,12 +7702,16 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
   const playerRecordMatchIndexEventLimit = Number(process.env.PLAYER_RECORD_MATCH_INDEX_EVENT_LIMIT || 300);
   const buildPlayerRecordMatchIndex = snapshot.length <= playerRecordMatchIndexEventLimit;
   const buildPlayerRecordMatchShardIndex = process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED !== "1";
-  const buildHeadToHeadPairShardIndex = options.persist !== false && process.env.HEAD_TO_HEAD_PAIR_SHARD_INDEX_DISABLED !== "1";
+  const pairShardDir = options.pairShardDir || HEAD_TO_HEAD_PAIR_SHARDS_DIR;
+  const buildHeadToHeadPairShardIndex =
+    Boolean(pairShardDir) &&
+    process.env.HEAD_TO_HEAD_PAIR_SHARD_INDEX_DISABLED !== "1" &&
+    (options.persist !== false || Boolean(options.pairShardDir));
   const playerRecordMatchShardWriter = buildPlayerRecordMatchShardIndex
     ? createPlayerRecordMatchShardWriter(PLAYER_RECORD_MATCH_SHARDS_DIR)
     : null;
   const headToHeadPairShardWriter = buildHeadToHeadPairShardIndex
-    ? createHeadToHeadPairShardWriter(HEAD_TO_HEAD_PAIR_SHARDS_DIR)
+    ? createHeadToHeadPairShardWriter(pairShardDir)
     : null;
   const index = {
     players: {},
@@ -7833,7 +7886,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
     pairRecordIndexVersion: buildHeadToHeadPairShardIndex ? HEAD_TO_HEAD_PAIR_INDEX_VERSION : null,
     pairRecordIndexSignature: buildHeadToHeadPairShardIndex ? signature : null,
     pairRecordCount,
-    pairRecordShardDir: buildHeadToHeadPairShardIndex ? HEAD_TO_HEAD_PAIR_SHARDS_DIR : null,
+    pairRecordShardDir: buildHeadToHeadPairShardIndex ? pairShardDir : null,
     playerKeyCount: Object.keys(index.players).length,
     pairKeyCount: Object.keys(index.pairs).length,
     playerRecordKeyCount: Object.keys(index.records).length,
@@ -7949,7 +8002,11 @@ async function runHeadToHeadIndexIncrementalCli() {
       const file = deltaSnapshot[indexPosition];
       const eventId = String(file.eventId);
       const eventStartedAt = Date.now();
-      const delta = await buildHeadToHeadPersistentIndex([file], signature, { persist: false });
+      const eventPairShardDir = path.join(HEAD_TO_HEAD_DELTA_PAIR_SHARDS_DIR, eventId);
+      const delta = await buildHeadToHeadPersistentIndex([file], signature, {
+        persist: false,
+        pairShardDir: eventPairShardDir,
+      });
       writeCompactJsonFileAtomic(path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, `${eventId}.json`), {
         version: HEAD_TO_HEAD_DELTA_INDEX_VERSION,
         eventId,
@@ -7957,6 +8014,10 @@ async function runHeadToHeadIndexIncrementalCli() {
         generatedAt: new Date().toISOString(),
         players: delta.index.players,
         pairs: delta.index.pairs,
+        pairRecordIndex: true,
+        pairRecordIndexVersion: HEAD_TO_HEAD_PAIR_INDEX_VERSION,
+        pairRecordShardDir: eventPairShardDir,
+        pairRecordCount: delta.manifest.pairRecordCount || 0,
       });
       deltaEventIds.add(eventId);
       deltaEventSignatures[eventId] = getHeadToHeadEventFileSignature(file);
@@ -7965,6 +8026,8 @@ async function runHeadToHeadIndexIncrementalCli() {
         generatedAt: new Date().toISOString(),
         eventIds: [...deltaEventIds],
         eventSignatures: deltaEventSignatures,
+        pairRecordIndex: true,
+        pairRecordIndexVersion: HEAD_TO_HEAD_PAIR_INDEX_VERSION,
       },
       );
       console.log(
@@ -7994,7 +8057,15 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
     return null;
   }
 
-  if (index.pairShardsDir) {
+  const currentEventIds = new Set((snapshot || []).map((file) => String(file.eventId)));
+  const pairDeltaEventIds = new Set((index.pairDeltaEventIds || []).map(String));
+  const pairIndexCoversSnapshot = currentEventIds.size > 0 &&
+    (snapshot || []).every((file) => {
+      const eventId = String(file.eventId);
+      return pairDeltaEventIds.has(eventId) ||
+        index.pairShardEventSignatures?.[eventId] === getHeadToHeadEventFileSignature(file);
+    });
+  if (index.pairShardsDir && pairIndexCoversSnapshot) {
     const pairResult = collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNeedles);
     if (pairResult) {
       return pairResult;
