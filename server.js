@@ -3880,8 +3880,6 @@ const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
 const headToHeadPlayerKeyMatchCaches = new WeakMap();
-const HEAD_TO_HEAD_EVENT_INDEX_CACHE_MAX_ENTRIES = Number(process.env.HEAD_TO_HEAD_EVENT_INDEX_CACHE_MAX_ENTRIES || 12);
-const headToHeadEventIndexCache = new Map();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
 const playerRecordArchiveParseCache = new Map();
@@ -7350,41 +7348,6 @@ function archiveItemMightContainPlayerNeedles(item, needles) {
   return false;
 }
 
-function readHeadToHeadEventIndex(file) {
-  const eventId = String(file?.eventId || "");
-  if (!eventId) {
-    return null;
-  }
-  const freshness = [
-    Number(file?.parseSize || file?.size || 0),
-    Number(file?.parseMtimeMs || file?.mtimeMs || 0),
-  ].join(":");
-  const cacheKey = `${eventId}:${freshness}`;
-  const cached = headToHeadEventIndexCache.get(cacheKey);
-  if (cached) {
-    headToHeadEventIndexCache.delete(cacheKey);
-    headToHeadEventIndexCache.set(cacheKey, cached);
-    return cached;
-  }
-
-  const index = readPlayerRecordEventIndex(eventId, file);
-  if (!index) {
-    return null;
-  }
-
-  for (const key of headToHeadEventIndexCache.keys()) {
-    if (key.startsWith(`${eventId}:`)) {
-      headToHeadEventIndexCache.delete(key);
-    }
-  }
-  headToHeadEventIndexCache.set(cacheKey, index);
-  while (headToHeadEventIndexCache.size > HEAD_TO_HEAD_EVENT_INDEX_CACHE_MAX_ENTRIES) {
-    const oldestKey = headToHeadEventIndexCache.keys().next().value;
-    headToHeadEventIndexCache.delete(oldestKey);
-  }
-  return index;
-}
-
 function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
   if (Array.isArray(file?.liveNormalizedMatches)) {
     const allNormalizedMatches = file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean);
@@ -7396,42 +7359,6 @@ function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
       normalizedMatches,
       contextsByCategory: buildRoundContextsByCategory(allNormalizedMatches),
       fallbackRoundContext: buildJaRoundContext(allNormalizedMatches),
-    };
-  }
-
-  const eventIndex = readHeadToHeadEventIndex(file);
-  if (eventIndex) {
-    const playerAKeys = getHeadToHeadIndexPlayerKeys(eventIndex, playerANeedles);
-    const playerBKeys = getHeadToHeadIndexPlayerKeys(eventIndex, playerBNeedles);
-    const playerAMatchIds = new Set([...playerAKeys].flatMap((key) => eventIndex.players?.[key] || []));
-    const playerBMatchIds = new Set([...playerBKeys].flatMap((key) => eventIndex.players?.[key] || []));
-    const normalizedMatches = [];
-    for (const matchId of playerAMatchIds) {
-      if (!playerBMatchIds.has(matchId)) {
-        continue;
-      }
-      const matchEntry = resolvePlayerRecordIndexedMatch(eventIndex, matchId);
-      const record = matchEntry?.record;
-      if (!record?.left || !record?.right) {
-        continue;
-      }
-      normalizedMatches.push({
-        matchType: "individual",
-        discipline: "singles",
-        categoryName: matchEntry.categoryName || "",
-        roundLabel: matchEntry.roundLabel || "",
-        documentCode: matchEntry.documentCode || "",
-        competitors: [record.left, record.right],
-        overallScore: record.overallScore || "",
-        resultStatus: record.resultStatus || "",
-        gameScores: Array.isArray(record.gameScores) ? record.gameScores : [],
-      });
-    }
-    return {
-      normalizedMatches,
-      contextsByCategory: new Map(),
-      fallbackRoundContext: null,
-      source: "event-index",
     };
   }
 
