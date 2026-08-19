@@ -853,7 +853,7 @@ function buildHeadToHeadHealth() {
     pairShardEventCount = 0;
   }
   const coveredEventCount = manifest?.pairRecordIndex === true
-    ? snapshot.filter((file) => eventSignatures[String(file.eventId)] === getHeadToHeadEventFileSignature(file)).length
+    ? snapshot.filter((file) => isHeadToHeadPairIndexEventCurrent(file, eventSignatures[String(file.eventId)])).length
     : 0;
   return {
     manifestExists: Boolean(manifest),
@@ -6815,6 +6815,15 @@ function getHeadToHeadEventFileSignature(file) {
   ].join(":");
 }
 
+function isHeadToHeadPairIndexEventCurrent(file, indexedSignature) {
+  if (indexedSignature === getHeadToHeadEventFileSignature(file)) {
+    return true;
+  }
+  // SLIM preserves the match fields used by H2H. A RAW-built pair shard
+  // remains valid when the same event is later read from its SLIM derivative.
+  return String(indexedSignature || "").split(":")[2] === "raw" && file?.parseSource === "slim";
+}
+
 function isHeadToHeadPersistentIndexCurrent(snapshot = getWttRecordFileSnapshot()) {
   const signature = getHeadToHeadPersistentIndexSignature(snapshot);
   for (const manifestPath of [HEAD_TO_HEAD_INDEX_MANIFEST_PATH, BUNDLED_HEAD_TO_HEAD_INDEX_MANIFEST_PATH]) {
@@ -8101,7 +8110,7 @@ async function collectHeadToHeadMatchesFromPersistentIndex(indexState, playerANe
       .filter((file) => {
         const eventId = String(file.eventId);
         return pairDeltaEventIds.has(eventId) ||
-          index.pairShardEventSignatures?.[eventId] === getHeadToHeadEventFileSignature(file);
+          isHeadToHeadPairIndexEventCurrent(file, index.pairShardEventSignatures?.[eventId]);
       })
       .map((file) => String(file.eventId)),
   );
