@@ -855,6 +855,14 @@ function buildHeadToHeadHealth() {
   const coveredEventCount = manifest?.pairRecordIndex === true
     ? snapshot.filter((file) => isHeadToHeadPairIndexEventCurrent(file, eventSignatures[String(file.eventId)])).length
     : 0;
+  const currentParseSources = {};
+  const indexedParseSources = {};
+  snapshot.forEach((file) => {
+    const source = file.parseSource || "raw";
+    currentParseSources[source] = (currentParseSources[source] || 0) + 1;
+    const indexedSource = String(eventSignatures[String(file.eventId)] || "").split(":")[2] || "missing";
+    indexedParseSources[indexedSource] = (indexedParseSources[indexedSource] || 0) + 1;
+  });
   return {
     manifestExists: Boolean(manifest),
     manifestVersion: manifest?.version || null,
@@ -865,6 +873,8 @@ function buildHeadToHeadHealth() {
     pairRecordCount: manifest?.pairRecordCount || 0,
     pairShardEventCount,
     pairIndexCoveredEventCount: coveredEventCount,
+    currentParseSources,
+    indexedParseSources,
     pairIndexCoversCurrentSnapshot: Boolean(
       manifest?.pairRecordIndex === true &&
       snapshot.length > 0 &&
