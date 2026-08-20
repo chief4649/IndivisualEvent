@@ -247,6 +247,7 @@ function buildCandidates(args) {
   const from = normalizeDateBoundary(args.from, false);
   const to = normalizeDateBoundary(args.to, true);
   const requestedEvents = new Set(args.events.map((eventId) => String(eventId).trim()).filter(Boolean));
+  const hasExplicitEvents = requestedEvents.size > 0;
   const eventIds = requestedEvents.size
     ? requestedEvents
     : new Set([
@@ -293,13 +294,13 @@ function buildCandidates(args) {
       if (args.auditSuspicious) {
         return candidate.finished && candidate.auditSuspicious;
       }
-      if (!args.includeActive && !candidate.finished) {
+      if (!hasExplicitEvents && !args.includeActive && !candidate.finished) {
         return false;
       }
       if (!args.force && candidate.archived && !candidate.suspiciousArchive && !candidate.partialArchive) {
         return false;
       }
-      if (!args.force && candidate.crawlSkipped) {
+      if (!hasExplicitEvents && !args.force && candidate.crawlSkipped) {
         return false;
       }
       return true;
