@@ -3915,7 +3915,11 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
         WTT_SUSPICIOUS_RESULT_COUNTS.has(mergedPayload.length);
       if (needsSubEventSupplement) {
         const subEventPayload = await fetchWttOfficialResultsBySubEvents(eventId).catch(() => []);
-        if (subEventPayload.length === 0 && options.requireWttSubEventSupplementForSuspicious) {
+        if (
+          subEventPayload.length === 0 &&
+          options.requireWttSubEventSupplementForSuspicious &&
+          !isWttPayloadDateCompatible(primaryPayload, eventId, options)
+        ) {
           throw new Error(`WTT subevent supplement unavailable for suspicious result count ${mergedPayload.length}`);
         }
         if (subEventPayload.length > 0) {
@@ -3923,7 +3927,8 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
         }
         if (
           options.requireWttSubEventSupplementForSuspicious &&
-          WTT_SUSPICIOUS_RESULT_COUNTS.has(mergedPayload.length)
+          WTT_SUSPICIOUS_RESULT_COUNTS.has(mergedPayload.length) &&
+          !isWttPayloadDateCompatible(mergedPayload, eventId, options)
         ) {
           throw new Error(`WTT suspicious result count remained after supplement: ${mergedPayload.length}`);
         }
