@@ -2905,6 +2905,49 @@ function datesOverlapOrMatch(aStart, aEnd, bStart, bEnd) {
   return leftStart <= rightEnd && rightStart <= leftEnd;
 }
 
+function getMatchDateStamp(match) {
+  const values = [
+    match?.startDateLocal,
+    match?.startDateUtc,
+    match?.matchDateTime?.startDateLocal,
+    match?.matchDateTime?.startDateUTC,
+    match?.match_card?.matchDateTime?.startDateLocal,
+    match?.match_card?.matchDateTime?.startDateUTC,
+  ];
+  for (const value of values) {
+    const text = String(value || "").trim();
+    const iso = text.match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+    if (iso) {
+      return `${iso[1]}-${String(Number(iso[2])).padStart(2, "0")}-${String(Number(iso[3])).padStart(2, "0")}`;
+    }
+    const local = text.match(/^(\d{1,2})[/-](\d{1,2})[/-](\d{4})/);
+    if (local) {
+      return `${local[3]}-${String(Number(local[1])).padStart(2, "0")}-${String(Number(local[2])).padStart(2, "0")}`;
+    }
+  }
+  return "";
+}
+
+function isWttPayloadDateCompatible(payload, eventId, options = {}) {
+  const seed = getWttResolutionSeedMeta(eventId, options);
+  if (!seed.startDate) {
+    return true;
+  }
+  const dates = (Array.isArray(payload) ? payload : [])
+    .map(getMatchDateStamp)
+    .filter(Boolean);
+  if (dates.length === 0) {
+    return true;
+  }
+  const compatible = dates.filter((date) => datesOverlapOrMatch(
+    seed.startDate,
+    seed.endDate,
+    date,
+    date,
+  ));
+  return compatible.length === dates.length;
+}
+
 function getBornanSearchRangesForYear(year) {
   const numericYear = Number(year);
   if (!Number.isFinite(numericYear)) {
@@ -3858,6 +3901,9 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
     if (Array.isArray(primaryPayload)) {
+      if (!isWttPayloadDateCompatible(primaryPayload, eventId, options)) {
+        throw new Error(`WTT result payload dates do not match event ${eventId}`);
+      }
       if (primaryPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE && !options.skipWttMinimalHydration) {
         primaryPayload = await hydrateMissingWttOfficialResults(eventId, primaryPayload).catch(() => primaryPayload);
       }
@@ -3897,7 +3943,11 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
       const recordResolution = await resolveWttRecordSourceByNameDate(eventId, options);
       if (recordResolution?.recordSource === "ittf" && recordResolution.recordEventId) {
         const resolvedPayload = await fetchBornanOfficialResults(recordResolution.recordEventId);
-        if (Array.isArray(resolvedPayload) && resolvedPayload.length > 0) {
+        if (
+          Array.isArray(resolvedPayload) &&
+          resolvedPayload.length > 0 &&
+          isWttPayloadDateCompatible(resolvedPayload, eventId, options)
+        ) {
           return resolvedPayload.map((match) => ({
             ...match,
             eventId: String(eventId),
@@ -3916,7 +3966,11 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   if (options.allowBornanFallback !== false && isLikelyBornanFallbackCandidate(eventId)) {
     try {
       const bornanPayload = await fetchBornanOfficialResults(eventId);
-      if (Array.isArray(bornanPayload) && bornanPayload.length > 0) {
+      if (
+        Array.isArray(bornanPayload) &&
+        bornanPayload.length > 0 &&
+        isWttPayloadDateCompatible(bornanPayload, eventId, options)
+      ) {
         return bornanPayload;
       }
     } catch (error) {
