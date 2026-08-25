@@ -378,6 +378,12 @@ async function syncTranslationsFromSharedSource(force = false) {
   }
 }
 
+function refreshTranslationsInBackground(context = "translations") {
+  syncTranslationsFromSharedSource().catch((error) => {
+    console.warn(`[${context}] background translations sync failed:`, error?.message || error);
+  });
+}
+
 function sendJson(response, statusCode, payload, extraHeaders = {}) {
   response.writeHead(statusCode, {
     "content-type": "application/json; charset=utf-8",
@@ -8836,20 +8842,17 @@ function handleConfigGet(request, response, pathname) {
     if (!requireAuthorization(request, response)) {
       return true;
     }
-    syncTranslationsFromSharedSource()
-      .then((syncMeta) => {
-        sendJson(response, 200, {
-          file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
-          data: readTranslations(TRANSLATIONS_PATH),
-          sharedSource: hasSharedTranslationsSource() ? TEAM_TRANSLATIONS_BASE_URL : null,
-          sync: syncMeta || null,
-        });
-      })
-      .catch((error) => {
-        sendJson(response, 500, {
-          error: createFriendlyErrorMessage(error),
-        });
-      });
+    const data = readTranslations(TRANSLATIONS_PATH);
+    refreshTranslationsInBackground("translations");
+    sendJson(response, 200, {
+      file: hasSharedTranslationsSource() ? `${TEAM_TRANSLATIONS_BASE_URL}/api/config/translations` : TRANSLATIONS_PATH,
+      data,
+      sharedSource: hasSharedTranslationsSource() ? TEAM_TRANSLATIONS_BASE_URL : null,
+      sync: {
+        source: "local",
+        background: true,
+      },
+    });
     return true;
   }
 
