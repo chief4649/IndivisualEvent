@@ -3940,6 +3940,9 @@ const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_
 const headToHeadPlayerKeyMatchCaches = new WeakMap();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
+const HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS = Number(
+  process.env.HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS || 2,
+);
 const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
   process.env.HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES || 256 * 1024 * 1024,
 );
@@ -4360,6 +4363,16 @@ function scheduleHeadToHeadIndexReconciliation() {
           ))
         .map((file) => String(file.eventId));
       if (staleEventIds.length === 0) {
+        return;
+      }
+      if (
+        HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS <= 0 ||
+        staleEventIds.length > HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS
+      ) {
+        console.warn(
+          `[head-to-head-index] background reconcile skipped: ${staleEventIds.length} stale event(s)`
+          + ` (max ${HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS})`,
+        );
         return;
       }
       console.log(`[head-to-head-index] background reconcile ${staleEventIds.length} event(s)`);
