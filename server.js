@@ -3943,6 +3943,7 @@ const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_
 const HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS = Number(
   process.env.HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS || 2,
 );
+const HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED = process.env.HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED === "1";
 const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
   process.env.HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES || 256 * 1024 * 1024,
 );
@@ -4345,7 +4346,11 @@ function enqueueAutoHeadToHeadIndexUpdate(eventId) {
 }
 
 function scheduleHeadToHeadIndexReconciliation() {
-  if (AUTO_DERIVED_INDEX_DISABLED || !fs.existsSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH)) {
+  if (
+    AUTO_DERIVED_INDEX_DISABLED ||
+    !HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED ||
+    !fs.existsSync(HEAD_TO_HEAD_INDEX_MANIFEST_PATH)
+  ) {
     return;
   }
 
