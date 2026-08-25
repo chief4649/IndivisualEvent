@@ -8687,7 +8687,7 @@ async function handleHeadToHeadApi(requestUrl, response) {
 
 async function handlePlayerRecordsApi(requestUrl, response) {
   try {
-    await syncTranslationsFromSharedSource();
+    refreshTranslationsInBackground("player-records");
     const name = String(requestUrl.searchParams.get("name") || "").trim();
     const translatedName = String(requestUrl.searchParams.get("translatedName") || "").trim();
     const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
