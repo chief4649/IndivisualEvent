@@ -6951,7 +6951,10 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
           const eventId = String(file.eventId);
           return !indexedEventIds.has(eventId);
         });
-        const fallback = missingFiles.length > 0
+        // A missing/incomplete index must never turn one request into a
+        // whole-archive parse. Large repairs belong to the background index
+        // job; keep the request path bounded for Render's small instance.
+        const fallback = missingFiles.length > 0 && missingFiles.length <= 20
           ? await collectPlayerRecordEventsWithMissingIndexFallback(
           missingFiles,
           needles,
