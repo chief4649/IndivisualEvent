@@ -3025,14 +3025,14 @@
   },
   "2755": {
     "event": "2755",
-    "eventName": "Argentina Junior Open Buenos Aires",
-    "startDate": "2017-06-18",
-    "endDate": "2017-06-19",
-    "dateLabel": "2017/6/18-19",
+    "eventName": "WTT Feeder Düsseldorf III 2023",
+    "startDate": "2023-11-27",
+    "endDate": "2023-12-01",
+    "dateLabel": "2023/11/27-12/1",
     "archived": false,
     "status": "finished",
     "source": "wtt",
-    "series": "Other",
+    "series": "Feeder",
     "verifiedAt": "2026-04-07T04:06:51.058Z"
   },
   "2756": {

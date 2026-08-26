@@ -194,15 +194,34 @@ function playerRecordEventIndexPath(eventId) {
   return path.join(PLAYER_RECORD_EVENT_INDEX_DIR, `${String(eventId).trim()}.json`);
 }
 
-function getArchiveMatchCount(eventId) {
-  for (const filePath of [archivePath(eventId), slimArchivePath(eventId)]) {
+function getArchiveStats(eventId) {
+  const stats = {
+    rawExists: false,
+    rawCount: 0,
+    slimExists: false,
+    slimCount: 0,
+  };
+
+  for (const [kind, filePath] of [["raw", archivePath(eventId)], ["slim", slimArchivePath(eventId)]]) {
     if (!fs.existsSync(filePath)) {
       continue;
     }
     const payload = JSON.parse(fs.readFileSync(filePath, "utf8"));
-    return Array.isArray(payload) ? payload.length : 0;
+    stats[`${kind}Exists`] = true;
+    stats[`${kind}Count`] = Array.isArray(payload) ? payload.length : 0;
   }
-  return 0;
+
+  // Player records and H2H read the slim archive when it exists. A large RAW
+  // file must not hide a truncated slim archive from crawl completeness checks.
+  return {
+    ...stats,
+    count: stats.slimExists ? stats.slimCount : stats.rawCount,
+    mismatched: stats.rawExists && stats.slimExists && stats.rawCount !== stats.slimCount,
+  };
+}
+
+function getArchiveMatchCount(eventId) {
+  return getArchiveStats(eventId).count;
 }
 
 function isSuspiciousArchiveCount(count, entry) {
@@ -211,6 +230,34 @@ function isSuspiciousArchiveCount(count, entry) {
 
 function isAuditSuspiciousCount(count) {
   return count <= 30 || WTT_SUSPICIOUS_RESULT_COUNTS.has(count) || count === DEFAULT_TAKE;
+}
+
+function getResultDateRange(items) {
+  const dates = [];
+  for (const item of Array.isArray(items) ? items : []) {
+    const value = item?.startDateLocal
+      || item?.match_card?.matchDateTime?.startDateLocal
+      || item?.match_card?.matchDateTime?.startDateUTC;
+    const match = String(value || "").match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+    if (match) {
+      dates.push(`${match[1]}-${String(match[2]).padStart(2, "0")}-${String(match[3]).padStart(2, "0")}`);
+    }
+  }
+  dates.sort();
+  return { min: dates[0] || "", max: dates.at(-1) || "" };
+}
+
+function isResultDateCompatible(items, startDate, endDate) {
+  const range = getResultDateRange(items);
+  if (!range.min || !range.max || !isIsoDate(startDate) || !isIsoDate(endDate)) {
+    return true;
+  }
+  const lower = new Date(`${startDate}T00:00:00Z`);
+  lower.setUTCDate(lower.getUTCDate() - 45);
+  const upper = new Date(`${endDate}T00:00:00Z`);
+  upper.setUTCDate(upper.getUTCDate() + 45);
+  return new Date(`${range.min}T00:00:00Z`) >= lower
+    && new Date(`${range.max}T00:00:00Z`) <= upper;
 }
 
 function isTransientCrawlSkip(entry) {
@@ -265,7 +312,8 @@ function buildCandidates(args) {
       };
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
-      const archiveCount = getArchiveMatchCount(eventId);
+      const archiveStats = getArchiveStats(eventId);
+      const archiveCount = archiveStats.count;
       const hasArchiveFile = [archivePath(eventId), slimArchivePath(eventId)].some((filePath) => fs.existsSync(filePath));
       const partialArchive = isPotentiallyPartialArchive(entry, archiveCount);
       return {
@@ -276,7 +324,9 @@ function buildCandidates(args) {
         endDate,
         archived: archiveCount > 0,
         archiveCount,
-        suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry),
+        archiveStats,
+        suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry)
+          || (archiveStats.mismatched && archiveStats.slimCount <= 30),
         auditSuspicious: Boolean(args.auditSuspicious && hasArchiveFile && isAuditSuspiciousCount(archiveCount)),
         partialArchive,
         crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
@@ -464,6 +514,16 @@ async function archiveEvent(candidate, args) {
 
   if (!Array.isArray(result.normalized) || result.normalized.length === 0) {
     return { eventId: candidate.eventId, status: "skipped", reason: "zero_matches" };
+  }
+
+  const expectedStartDate = meta.startDate || candidate.startDate;
+  const expectedEndDate = meta.endDate || candidate.endDate;
+  if (!isResultDateCompatible(result.normalized, expectedStartDate, expectedEndDate)) {
+    return {
+      eventId: candidate.eventId,
+      status: "skipped",
+      reason: `result_date_outside_event_window:${expectedStartDate}:${expectedEndDate}`,
+    };
   }
 
   const existingArchiveCount = getArchiveMatchCount(candidate.eventId);
