@@ -6742,10 +6742,22 @@ async function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
   const eventMap = new Map();
   let scannedShardLines = 0;
   const recordKeys = new Set([...playerKeys].map((key) => index.recordAliases?.[key] || key));
+  const replacedEventIds = new Set((index.playerRecordMatchShardDeltaEventIds || []).map(String));
   for (const recordKey of recordKeys) {
     const keyToken = `"key":${JSON.stringify(recordKey)}`;
-    const lines = getPlayerRecordShardLines(index, recordKey);
-    for (let linePosition = 0; linePosition < lines.length; linePosition += 1) {
+    const lineSources = [
+      { lines: getPlayerRecordShardLines(index, recordKey), base: true },
+      ...(index.playerRecordMatchShardEventDirs || [])
+        .filter(({ eventId }) => !replacedEventIds.size || replacedEventIds.has(String(eventId)))
+        .map(({ eventId, dir }) => ({
+          eventId: String(eventId),
+          lines: getPlayerRecordShardLinesFromDir(index, dir, recordKey, `delta:${eventId}`),
+          base: false,
+        })),
+    ];
+    for (const source of lineSources) {
+      const lines = source.lines;
+      for (let linePosition = 0; linePosition < lines.length; linePosition += 1) {
       if (linePosition % 200 === 0) {
         await yieldToEventLoop();
       }
@@ -6767,6 +6779,9 @@ async function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
       if (!eventId) {
         continue;
       }
+      if (source.base && replacedEventIds.has(eventId)) {
+        continue;
+      }
       if (!eventMap.has(eventId)) {
         eventMap.set(eventId, {
           ...entry.event,
@@ -6778,6 +6793,7 @@ async function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
       if (!event.matches.some((existing) => getPlayerRecordIndexMatchId(existing) === matchId)) {
         event.matches.push(entry.match);
       }
+    }
     }
   }
 
@@ -7181,6 +7197,7 @@ function applyHeadToHeadDeltaOverlay(indexState) {
       const delta = JSON.parse(fs.readFileSync(path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, `${eventId}.json`), "utf8"));
       mergeHeadToHeadIdMap(indexState.index.players, delta.players);
       mergeHeadToHeadIdMap(indexState.index.pairs, delta.pairs);
+      Object.assign(indexState.index.recordAliases, delta.recordAliases || {});
     } catch {
       // Ignore a partially written overlay file.
     }
@@ -7192,6 +7209,21 @@ function applyHeadToHeadDeltaOverlay(indexState) {
     ...(indexState.eventSignatures || {}),
     ...(manifest.eventSignatures || {}),
   };
+  const playerRecordShardEventDirs = [];
+  overlayEventIds.forEach((eventId) => {
+    try {
+      const delta = JSON.parse(fs.readFileSync(path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, `${eventId}.json`), "utf8"));
+      if (delta.playerRecordMatchShardDir && fs.existsSync(delta.playerRecordMatchShardDir)) {
+        playerRecordShardEventDirs.push({ eventId, dir: delta.playerRecordMatchShardDir });
+      }
+    } catch {
+      // Ignore a partially written overlay file.
+    }
+  });
+  if (playerRecordShardEventDirs.length > 0) {
+    indexState.index.playerRecordMatchShardEventDirs = playerRecordShardEventDirs;
+    indexState.index.playerRecordMatchShardDeltaEventIds = playerRecordShardEventDirs.map(({ eventId }) => eventId);
+  }
   if (
     manifest.pairRecordIndex === true &&
     manifest.pairRecordIndexVersion === HEAD_TO_HEAD_PAIR_INDEX_VERSION &&
@@ -7392,6 +7424,24 @@ function getPlayerRecordShardLines(index, key) {
     }
   }
   return index.playerRecordMatchShardCache.get(shardName) || [];
+}
+
+function getPlayerRecordShardLinesFromDir(index, dir, key, cacheKey) {
+  if (!dir || !index?.playerRecordMatchShardCache || !key) {
+    return [];
+  }
+  const shardName = getPlayerRecordMatchShardName(key);
+  const cacheName = `${cacheKey || dir}:${shardName}`;
+  if (!index.playerRecordMatchShardCache.has(cacheName)) {
+    try {
+      const shardPath = path.join(dir, shardName);
+      const text = fs.readFileSync(shardPath, "utf8");
+      index.playerRecordMatchShardCache.set(cacheName, text.split(/\n/).filter(Boolean));
+    } catch {
+      index.playerRecordMatchShardCache.set(cacheName, []);
+    }
+  }
+  return index.playerRecordMatchShardCache.get(cacheName) || [];
 }
 
 function getHeadToHeadCompetitorKeyValues(competitor, translations) {
@@ -8004,7 +8054,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
     process.env.HEAD_TO_HEAD_PAIR_SHARD_INDEX_DISABLED !== "1" &&
     (options.persist !== false || Boolean(options.pairShardDir));
   const playerRecordMatchShardWriter = buildPlayerRecordMatchShardIndex
-    ? createPlayerRecordMatchShardWriter(PLAYER_RECORD_MATCH_SHARDS_DIR)
+    ? createPlayerRecordMatchShardWriter(options.playerRecordMatchShardDir || PLAYER_RECORD_MATCH_SHARDS_DIR)
     : null;
   const headToHeadPairShardWriter = buildHeadToHeadPairShardIndex
     ? createHeadToHeadPairShardWriter(pairShardDir)
@@ -8290,18 +8340,17 @@ async function runHeadToHeadIndexIncrementalCli() {
   const deltaEventSignatures = {
     ...(deltaManifest.eventSignatures || {}),
   };
-  const previousShardSetting = process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED;
-  process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED = "1";
-  try {
-    console.log(`[head-to-head-index] start ${eventIds.length} events: ${eventIds.join(",")}`);
-    for (let indexPosition = 0; indexPosition < deltaSnapshot.length; indexPosition += 1) {
+  console.log(`[head-to-head-index] start ${eventIds.length} events: ${eventIds.join(",")}`);
+  for (let indexPosition = 0; indexPosition < deltaSnapshot.length; indexPosition += 1) {
       const file = deltaSnapshot[indexPosition];
       const eventId = String(file.eventId);
       const eventStartedAt = Date.now();
       const eventPairShardDir = path.join(HEAD_TO_HEAD_DELTA_PAIR_SHARDS_DIR, eventId);
+      const eventPlayerRecordShardDir = path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, "player-record-shards", eventId);
       const delta = await buildHeadToHeadPersistentIndex([file], signature, {
         persist: false,
         pairShardDir: eventPairShardDir,
+        playerRecordMatchShardDir: eventPlayerRecordShardDir,
       });
       writeCompactJsonFileAtomic(path.join(HEAD_TO_HEAD_DELTA_INDEX_DIR, `${eventId}.json`), {
         version: HEAD_TO_HEAD_DELTA_INDEX_VERSION,
@@ -8310,6 +8359,8 @@ async function runHeadToHeadIndexIncrementalCli() {
         generatedAt: new Date().toISOString(),
         players: delta.index.players,
         pairs: delta.index.pairs,
+        recordAliases: delta.index.recordAliases,
+        playerRecordMatchShardDir: eventPlayerRecordShardDir,
         pairRecordIndex: true,
         pairRecordIndexVersion: HEAD_TO_HEAD_PAIR_INDEX_VERSION,
         pairRecordShardDir: eventPairShardDir,
@@ -8332,10 +8383,6 @@ async function runHeadToHeadIndexIncrementalCli() {
         + ` durationMs=${Date.now() - eventStartedAt} saved=1`,
       );
       await yieldToEventLoop();
-    }
-  } finally {
-    if (previousShardSetting === undefined) delete process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED;
-    else process.env.PLAYER_RECORD_MATCH_SHARD_INDEX_DISABLED = previousShardSetting;
   }
   const result = {
     ok: true,
