@@ -9461,6 +9461,20 @@ async function runPlayerRecordEventIndexBuildCli() {
   }, null, 2));
 }
 
+async function runPlayerRecordCandidateIndexBuildCli() {
+  ensureRuntimeFiles();
+  const snapshot = getWttRecordFileSnapshot();
+  const signature = getHeadToHeadPersistentIndexSignature(snapshot);
+  const result = await buildPlayerRecordCandidateIndex(snapshot, signature);
+  console.log(JSON.stringify({
+    ok: true,
+    path: PLAYER_RECORD_CANDIDATE_INDEX_PATH,
+    manifest: PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH,
+    eventCount: snapshot.length,
+    keyCount: Object.keys(result.index || {}).length,
+  }, null, 2));
+}
+
 if (process.argv.includes("--update-head-to-head-index")) {
   runHeadToHeadIndexIncrementalCli().catch((error) => {
     writeHeadToHeadIndexStatus({
@@ -9484,6 +9498,11 @@ if (process.argv.includes("--update-head-to-head-index")) {
 } else if (process.argv.includes("--build-player-record-event-index")) {
   runPlayerRecordEventIndexBuildCli().catch((error) => {
     console.error(error.stack || error.message || error);
+    process.exitCode = 1;
+  });
+} else if (process.argv.includes("--build-player-record-candidate-index")) {
+  runPlayerRecordCandidateIndexBuildCli().catch((error) => {
+    console.error(error.stack || error.message || String(error));
     process.exitCode = 1;
   });
 } else {
