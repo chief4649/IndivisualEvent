@@ -9295,10 +9295,10 @@ function startServer() {
 
   ensureRuntimeFiles();
 
-  // Load the compact player-record index before Render starts health checks.
-  // The first lazy read parses a large JSON map synchronously; doing that on
-  // the first user request can make the instance appear unavailable.
-  if (!AUTO_DERIVED_INDEX_DISABLED) {
+  // Do not synchronously parse the large persistent index during startup.
+  // On small Render instances this can overlap the server process and cause
+  // an OOM before health checks complete. Reads remain lazy and are cached.
+  if (process.env.HEAD_TO_HEAD_STARTUP_WARMUP === "1" && !AUTO_DERIVED_INDEX_DISABLED) {
     try {
       const warmupStartedAt = Date.now();
       const snapshot = getWttRecordFileSnapshot();
