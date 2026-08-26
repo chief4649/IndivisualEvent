@@ -6940,7 +6940,10 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   // normalized match records as the event indexes, but avoid parsing hundreds
   // of large event JSON files for every search. Only events absent from this
   // index are parsed through the bounded fallback below.
-  const persistentIndex = getHeadToHeadPersistentIndex(getHeadToHeadPersistentIndexSignature(snapshot));
+  // Player records have their own event-record index. Do not load the much
+  // larger H2H index here: doing so makes an otherwise bounded record query
+  // compete with H2H data loading and can stall the small Render instance.
+  const persistentIndex = null;
   if (persistentIndex?.index?.playerRecordMatchShardsDir) {
       const indexed = await collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
       if (indexed) {
