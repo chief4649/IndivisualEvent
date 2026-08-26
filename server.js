@@ -4477,20 +4477,29 @@ function scheduleHeadToHeadIndexReconciliation() {
       if (staleEventIds.length === 0) {
         return;
       }
-      if (
-        HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS <= 0 ||
-        staleEventIds.length > HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS
-      ) {
-        console.warn(
-          `[head-to-head-index] background reconcile skipped: ${staleEventIds.length} stale event(s)`
-          + ` (max ${HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS})`,
+      const batchSize = HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS > 0
+        ? HEAD_TO_HEAD_BACKGROUND_RECONCILE_MAX_EVENTS
+        : staleEventIds.length;
+      const batchEventIds = staleEventIds.slice(0, batchSize);
+      if (staleEventIds.length > batchEventIds.length) {
+        console.log(
+          `[head-to-head-index] background reconcile batching ${batchEventIds.length}`
+          + `/${staleEventIds.length} stale event(s)`,
         );
+      }
+      if (batchEventIds.length === 0) {
         return;
       }
-      console.log(`[head-to-head-index] background reconcile ${staleEventIds.length} event(s)`);
-      enqueueAutoHeadToHeadIndexUpdate(staleEventIds).catch((error) => {
-        console.error("[head-to-head-index] background reconcile failed:", error?.message || error);
-      });
+      console.log(`[head-to-head-index] background reconcile ${batchEventIds.length} event(s)`);
+      enqueueAutoHeadToHeadIndexUpdate(batchEventIds)
+        .then(() => {
+          // Recheck the snapshot after each bounded batch. This guarantees that
+          // a backlog is drained without starting an expensive full rebuild.
+          scheduleHeadToHeadIndexReconciliation();
+        })
+        .catch((error) => {
+          console.error("[head-to-head-index] background reconcile failed:", error?.message || error);
+        });
     } catch (error) {
       console.error("[head-to-head-index] background reconcile check failed:", error?.message || error);
     }
