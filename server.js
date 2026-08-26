@@ -487,6 +487,18 @@ function buildHealthPayload() {
       maxConcurrent: HEAVY_API_MAX_CONCURRENT,
       maxQueue: HEAVY_API_MAX_QUEUE,
     },
+    operations: {
+      wttCrawlRunning: Boolean(wttCrawlProcess),
+      headToHeadBuildRunning: Boolean(headToHeadIndexBuildProcess),
+      derivedIndexBuilds: [...autoDerivedIndexBuilds],
+      startupHeadToHeadReconcile: HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED,
+      snapshotCache: {
+        enabled: WTT_RECORD_SNAPSHOT_CACHE_TTL_MS > 0,
+        ttlMs: WTT_RECORD_SNAPSHOT_CACHE_TTL_MS,
+        cached: Boolean(wttRecordSnapshotCache),
+      },
+      sharedTranslationsConfigured: hasSharedTranslationsSource(),
+    },
   };
 }
 
@@ -2503,6 +2515,13 @@ function handleAdminWttCrawlStart(request, response) {
     return true;
   }
 
+  if (headToHeadIndexBuildProcess || autoDerivedIndexBuilds.size > 0) {
+    sendJson(response, 409, {
+      error: "An index build is running. Start the crawl after it finishes.",
+    });
+    return true;
+  }
+
   if (wttCrawlProcess) {
     sendJson(response, 202, {
       ok: true,
@@ -2679,6 +2698,13 @@ function handleAdminExportData(request, response) {
 
 function handleAdminBuildHeadToHeadIndex(request, response) {
   if (!requireAuthorization(request, response)) {
+    return true;
+  }
+
+  if (wttCrawlProcess || autoDerivedIndexBuilds.size > 0) {
+    sendJson(response, 409, {
+      error: "A crawl or derived index build is running. Start the full H2H build after it finishes.",
+    });
     return true;
   }
 
@@ -3143,6 +3169,7 @@ function pruneProcessedMatchesCache(now = Date.now()) {
 
 function clearProcessedMatchesCache() {
   processedMatchesCache.clear();
+  clearWttRecordSnapshotCache();
 }
 
 function buildFilteredProcessedMatches(base, options = {}) {
@@ -3242,7 +3269,7 @@ async function getProcessedMatchesCached(options = {}) {
 
 async function handleApi(requestUrl, response) {
   try {
-    await syncTranslationsFromSharedSource();
+    refreshTranslationsInBackground("individual-matches");
     const options = buildOptions(requestUrl.searchParams);
     if (!options.event) {
       sendJson(response, 400, {
@@ -3299,7 +3326,7 @@ async function handleApi(requestUrl, response) {
 
 async function handleCategoriesApi(requestUrl, response) {
   try {
-    await syncTranslationsFromSharedSource();
+    refreshTranslationsInBackground("categories");
     const options = buildOptions(requestUrl.searchParams);
     if (!options.event) {
       sendJson(response, 400, { error: "event is required" });
@@ -3338,7 +3365,7 @@ async function handleCategoriesApi(requestUrl, response) {
 
 async function handleRoundsApi(requestUrl, response) {
   try {
-    await syncTranslationsFromSharedSource();
+    refreshTranslationsInBackground("rounds");
     const options = buildOptions(requestUrl.searchParams);
     if (!options.event) {
       sendJson(response, 400, { error: "event is required" });
@@ -3954,8 +3981,11 @@ const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRAC
 const AUTO_DERIVED_INDEX_DISABLED = process.env.AUTO_DERIVED_INDEX_DISABLED === "1";
 const autoDerivedIndexBuilds = new Set();
 const autoDerivedIndexLastScheduled = new Map();
+let autoDerivedIndexBuildPromise = Promise.resolve();
 let autoHeadToHeadIndexUpdatePromise = Promise.resolve();
 const AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS = Number(process.env.AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS || 10 * 60_000);
+const WTT_RECORD_SNAPSHOT_CACHE_TTL_MS = Number(process.env.WTT_RECORD_SNAPSHOT_CACHE_TTL_MS || 5_000);
+let wttRecordSnapshotCache = null;
 
 function getPathStatToken(filePath) {
   try {
@@ -4062,7 +4092,17 @@ function createWttRecordFileEntry(options) {
   };
 }
 
+function clearWttRecordSnapshotCache() {
+  wttRecordSnapshotCache = null;
+}
+
 function getWttRecordFileSnapshot() {
+  if (
+    wttRecordSnapshotCache &&
+    Date.now() < wttRecordSnapshotCache.expiresAt
+  ) {
+    return wttRecordSnapshotCache.snapshot;
+  }
   const recordsByEventId = new Map();
 
   const addDirectory = (dirPath, sourcePriority, sourceLabel) => {
@@ -4173,9 +4213,14 @@ function getWttRecordFileSnapshot() {
     }
   });
 
-  return [...recordsByLogicalEvent.values()]
+  const snapshot = [...recordsByLogicalEvent.values()]
     .map(({ sourcePriority, ...file }) => file)
     .sort((left, right) => String(left.eventId).localeCompare(String(right.eventId), "en", { numeric: true }));
+  wttRecordSnapshotCache = {
+    snapshot,
+    expiresAt: Date.now() + WTT_RECORD_SNAPSHOT_CACHE_TTL_MS,
+  };
+  return snapshot;
 }
 
 function isArchivedWttEvent(eventId) {
@@ -4273,7 +4318,9 @@ function scheduleDerivedIndexesForFinishedWttEvent(options = {}) {
   autoDerivedIndexLastScheduled.set(eventId, Date.now());
   autoDerivedIndexBuilds.add(eventId);
   setImmediate(() => {
-    buildDerivedIndexesForFinishedWttEvent(eventId)
+    const run = autoDerivedIndexBuildPromise.then(() => buildDerivedIndexesForFinishedWttEvent(eventId));
+    autoDerivedIndexBuildPromise = run.catch(() => {});
+    run
       .catch((error) => {
         console.error(`[auto-derived-index] ${eventId} failed:`, error?.message || error);
       })
