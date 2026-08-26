@@ -9176,6 +9176,21 @@ function startServer() {
 
   ensureRuntimeFiles();
 
+  // Load the compact player-record index before Render starts health checks.
+  // The first lazy read parses a large JSON map synchronously; doing that on
+  // the first user request can make the instance appear unavailable.
+  if (!AUTO_DERIVED_INDEX_DISABLED) {
+    try {
+      const warmupStartedAt = Date.now();
+      const snapshot = getWttRecordFileSnapshot();
+      const signature = getHeadToHeadPersistentIndexSignature(snapshot);
+      const warmed = getHeadToHeadPersistentIndex(signature);
+      console.log(`[index-warmup] player record index ${warmed ? "ready" : "unavailable"} in ${Date.now() - warmupStartedAt}ms`);
+    } catch (error) {
+      console.warn(`[index-warmup] skipped: ${error?.message || error}`);
+    }
+  }
+
   server.listen(PORT, HOST, () => {
     console.log(`WTT Individual Match Formatter web server: http://${HOST}:${PORT}`);
     scheduleHeadToHeadIndexReconciliation();
