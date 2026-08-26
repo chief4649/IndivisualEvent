@@ -6133,15 +6133,9 @@ function getPlayerRecordIndexedEventIds(candidateIndex, textNeedles) {
 }
 
 async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature) {
-  const sharded = getPlayerRecordShardedEventIds(signature, textNeedles);
-  if (sharded) {
-    return {
-      snapshot: snapshot.filter((file) => sharded.eventIds.has(file.eventId)),
-      generatedAt: sharded.generatedAt,
-      playerKeyCount: sharded.playerKeyCount,
-    };
-  }
-
+  // candidate-events.json is the authoritative candidate index. The older
+  // candidate-shards may be present with a matching-looking signature while
+  // still missing events added or repaired later.
   const candidateIndex = await getPlayerRecordCandidateIndex(snapshot, signature);
   const eventIds = getPlayerRecordIndexedEventIds(candidateIndex, textNeedles);
   if (!eventIds) {
