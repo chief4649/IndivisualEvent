@@ -4049,8 +4049,24 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
         ...options,
         allowBornanFallback: options.allowBornanFallback,
       });
+      // A refresh request must not replace a usable finished archive with an
+      // empty or truncated upstream response. WTT's result endpoints can
+      // temporarily return an incomplete snapshot for an existing event.
+      const storedArchive = archived || readWttArchiveWithFallback(
+        archiveDir,
+        eventId,
+        fallbackArchiveDir,
+        options,
+      );
+      if (
+        storedArchive &&
+        Array.isArray(payload) &&
+        (!shouldReuseCachedPayload(source, payload) || payload.length < storedArchive.length)
+      ) {
+        return storedArchive;
+      }
       const mergedPayload = options.mergeLiveWttArchive
-        ? mergeWttOfficialResultPayloads(payload, archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir, options))
+        ? mergeWttOfficialResultPayloads(payload, storedArchive)
         : payload;
 
       if (shouldReuseCachedPayload(source, mergedPayload)) {
