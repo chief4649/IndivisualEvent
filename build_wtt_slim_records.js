@@ -7,9 +7,12 @@ const {
   normalizeOfficialResultItem,
   normalizePreNormalizedMatch,
 } = require("./extract_individual_matches");
-const { getEventArchiveDir } = require("./event_storage");
-
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
+function getEventArchiveDir(dataDir, source, kind = "raw") {
+  const normalizedSource = String(source || "").trim().toLowerCase() === "ittf" ? "ittf" : "wtt";
+  return path.join(dataDir, `${normalizedSource}-records${kind === "slim" ? "-slim" : ""}`);
+}
+
 const SOURCE_DIR = process.env.WTT_RECORDS_DIR
   ? path.resolve(process.env.WTT_RECORDS_DIR)
   : path.join(DATA_DIR, "wtt-records");

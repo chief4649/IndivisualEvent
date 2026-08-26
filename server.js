@@ -29,15 +29,36 @@ const {
   renderOutput,
   translateRoundJa,
 } = require("./extract_individual_matches");
-const {
-  getEventArchiveDir,
-  getEventStorageKey,
-} = require("./event_storage");
-
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 3000);
 const PUBLIC_DIR = path.join(__dirname, "public");
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
+function normalizeEventStorageSource(source, eventId = "") {
+  const sourceText = String(source || "").trim().toLowerCase();
+  const idText = String(eventId || "").trim();
+  return sourceText === "ittf" || sourceText === "bornan" || /^TTE\d+$/i.test(idText)
+    ? "ittf"
+    : "wtt";
+}
+
+function normalizeStoredEventId(source, eventId) {
+  const normalizedSource = normalizeEventStorageSource(source, eventId);
+  const idText = String(eventId || "").trim();
+  return normalizedSource === "ittf"
+    ? (/^TTE/i.test(idText) ? `TTE${idText.replace(/^TTE/i, "")}` : `TTE${idText}`)
+    : idText.replace(/^TTE/i, "");
+}
+
+function getEventStorageKey(source, eventId) {
+  const normalizedSource = normalizeEventStorageSource(source, eventId);
+  return `${normalizedSource}:${normalizeStoredEventId(normalizedSource, eventId)}`;
+}
+
+function getEventArchiveDir(dataDir, source, kind = "raw") {
+  const normalizedSource = normalizeEventStorageSource(source);
+  return path.join(dataDir, `${normalizedSource}-records${kind === "slim" ? "-slim" : ""}`);
+}
+
 const TRANSLATIONS_PATH = path.join(DATA_DIR, "translations.ja.json");
 const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const CACHE_DIR = path.join(DATA_DIR, ".cache");
