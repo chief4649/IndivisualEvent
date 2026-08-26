@@ -7,14 +7,21 @@ const {
   normalizeOfficialResultItem,
   normalizePreNormalizedMatch,
 } = require("./extract_individual_matches");
+const { getEventArchiveDir } = require("./event_storage");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const SOURCE_DIR = process.env.WTT_RECORDS_DIR
   ? path.resolve(process.env.WTT_RECORDS_DIR)
   : path.join(DATA_DIR, "wtt-records");
+const ITTF_SOURCE_DIR = process.env.ITTF_RECORDS_DIR
+  ? path.resolve(process.env.ITTF_RECORDS_DIR)
+  : getEventArchiveDir(DATA_DIR, "ittf", "raw");
 const OUTPUT_DIR = process.env.WTT_SLIM_RECORDS_DIR
   ? path.resolve(process.env.WTT_SLIM_RECORDS_DIR)
   : path.join(DATA_DIR, "wtt-records-slim");
+const ITTF_OUTPUT_DIR = process.env.ITTF_SLIM_RECORDS_DIR
+  ? path.resolve(process.env.ITTF_SLIM_RECORDS_DIR)
+  : getEventArchiveDir(DATA_DIR, "ittf", "slim");
 
 function readJsonArray(filePath) {
   const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -126,9 +133,11 @@ function listSourceFiles(args) {
   if (explicit.length > 0) {
     return explicit.map((arg) => path.resolve(arg));
   }
-  return fs.readdirSync(SOURCE_DIR)
-    .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
-    .map((fileName) => path.join(SOURCE_DIR, fileName))
+  return [SOURCE_DIR, ITTF_SOURCE_DIR]
+    .filter((dirPath, index, dirs) => dirPath && dirs.indexOf(dirPath) === index && fs.existsSync(dirPath))
+    .flatMap((dirPath) => fs.readdirSync(dirPath)
+      .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+      .map((fileName) => path.join(dirPath, fileName)))
     .sort((left, right) => path.basename(left).localeCompare(path.basename(right), "en", { numeric: true }));
 }
 
@@ -138,7 +147,8 @@ function buildSlimRecord(sourcePath) {
     .map(normalizeArchiveItem)
     .filter(Boolean)
     .map(slimMatch);
-  const outputPath = path.join(OUTPUT_DIR, path.basename(sourcePath));
+  const outputDir = /^TTE\d+\.json$/i.test(path.basename(sourcePath)) ? ITTF_OUTPUT_DIR : OUTPUT_DIR;
+  const outputPath = path.join(outputDir, path.basename(sourcePath));
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   fs.writeFileSync(outputPath, `${JSON.stringify(matches)}\n`, "utf8");
   return {

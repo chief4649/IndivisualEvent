@@ -1354,8 +1354,12 @@ function readWttArchive(archiveDir, eventId) {
 
 function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = null, options = {}) {
   const archiveDirs = [
+    /^TTE\d+$/i.test(String(eventId || "").trim()) ? options.ittfSlimArchiveDir : null,
+    /^TTE\d+$/i.test(String(eventId || "").trim()) ? options.bundledIttfSlimArchiveDir : null,
     options.wttSlimArchiveDir,
     options.bundledWttSlimArchiveDir,
+    /^TTE\d+$/i.test(String(eventId || "").trim()) ? options.ittfArchiveDir : null,
+    /^TTE\d+$/i.test(String(eventId || "").trim()) ? options.bundledIttfArchiveDir : null,
     archiveDir,
     fallbackArchiveDir,
   ].filter(Boolean);
@@ -4037,8 +4041,13 @@ async function fetchSourceResults(source, eventId, take, options = {}) {
 
 async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refreshCache, options = {}) {
   if (source === "wtt") {
-    const archiveDir = options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR;
-    const fallbackArchiveDir = options.bundledWttArchiveDir || null;
+    const isIttfRecord = /^TTE\d+$/i.test(String(eventId || "").trim());
+    const archiveDir = isIttfRecord
+      ? (options.ittfArchiveDir || options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR)
+      : (options.wttArchiveDir || DEFAULT_WTT_ARCHIVE_DIR);
+    const fallbackArchiveDir = isIttfRecord
+      ? (options.bundledIttfArchiveDir || options.bundledWttArchiveDir || null)
+      : (options.bundledWttArchiveDir || null);
     const archiveIndexPath = options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH;
     let archived = null;
     const localArchiveMeta = getWttLocalArchiveMeta(eventId, options);

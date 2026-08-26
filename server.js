@@ -29,6 +29,10 @@ const {
   renderOutput,
   translateRoundJa,
 } = require("./extract_individual_matches");
+const {
+  getEventArchiveDir,
+  getEventStorageKey,
+} = require("./event_storage");
 
 const HOST = process.env.HOST || "0.0.0.0";
 const PORT = Number(process.env.PORT || 3000);
@@ -40,6 +44,8 @@ const CACHE_DIR = path.join(DATA_DIR, ".cache");
 const ZENNIHON_ARCHIVE_DIR = path.join(DATA_DIR, "zennihon-records");
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
 const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
+const ITTF_ARCHIVE_DIR = getEventArchiveDir(DATA_DIR, "ittf", "raw");
+const ITTF_SLIM_ARCHIVE_DIR = getEventArchiveDir(DATA_DIR, "ittf", "slim");
 const BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
 const BUNDLED_WTT_SLIM_ARCHIVE_DIR = path.join(__dirname, "wtt-records-slim");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
@@ -212,6 +218,7 @@ function ensureRuntimeFiles() {
   if (!SKIP_RUNTIME_ARCHIVE_SYNC) {
     syncDirectoryFilesFromDefaultIfNewer(ZENNIHON_ARCHIVE_DIR, path.join(__dirname, "zennihon-records"));
     syncDirectoryFilesFromDefaultIfNewer(WTT_ARCHIVE_DIR, path.join(__dirname, "wtt-records"));
+    syncDirectoryFilesFromDefaultIfNewer(ITTF_ARCHIVE_DIR, path.join(__dirname, "ittf-records"));
   }
   ensureFileFromDefault(TRANSLATIONS_PATH, DEFAULT_TRANSLATIONS_PATH);
   ensureFileFromDefault(RULES_PATH, DEFAULT_RULES_PATH);
@@ -948,10 +955,14 @@ function listRecordFiles(dirPath, limit = 20, options = {}) {
 function getStorageLookup(source, eventId) {
   const normalizedSource = normalizeSource(source || "wtt");
   const normalizedId = String(eventId || "").trim();
-  const dirPath = normalizedSource === "zennihon" ? ZENNIHON_ARCHIVE_DIR : WTT_ARCHIVE_DIR;
+  const dirPath = normalizedSource === "zennihon"
+    ? ZENNIHON_ARCHIVE_DIR
+    : normalizedSource === "ittf"
+      ? ITTF_ARCHIVE_DIR
+      : WTT_ARCHIVE_DIR;
   const meta = getFileMeta(path.join(dirPath, `${normalizedId}.json`), { includeSha256: false });
-  const slimMeta = normalizedSource === "wtt"
-    ? getFileMeta(path.join(WTT_SLIM_ARCHIVE_DIR, `${normalizedId}.json`), { includeSha256: false })
+  const slimMeta = normalizedSource === "wtt" || normalizedSource === "ittf"
+    ? getFileMeta(path.join(normalizedSource === "ittf" ? ITTF_SLIM_ARCHIVE_DIR : WTT_SLIM_ARCHIVE_DIR, `${normalizedId}.json`), { includeSha256: false })
     : null;
   const primaryMeta = slimMeta?.exists ? slimMeta : meta;
   return {
@@ -1015,6 +1026,8 @@ function buildStorageStatus(options = {}) {
     generatedAt: new Date().toISOString(),
     wttRecordsDir: WTT_ARCHIVE_DIR,
     wttSlimRecordsDir: WTT_SLIM_ARCHIVE_DIR,
+    ittfRecordsDir: ITTF_ARCHIVE_DIR,
+    ittfSlimRecordsDir: ITTF_SLIM_ARCHIVE_DIR,
     zennihonRecordsDir: ZENNIHON_ARCHIVE_DIR,
     files: Object.fromEntries(
       STORAGE_MANAGED_FILES.map(([name, filePath]) => [name, getFileMeta(filePath)]),
@@ -2169,8 +2182,12 @@ async function discoverWttSearchEvent(eventId) {
   const payload = await fetchOfficialResultsCached("wtt", normalizedId, 50, CACHE_DIR, false, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
+    ittfArchiveDir: ITTF_ARCHIVE_DIR,
+    ittfSlimArchiveDir: ITTF_SLIM_ARCHIVE_DIR,
     bundledWttArchiveDir: BUNDLED_WTT_ARCHIVE_DIR,
     bundledWttSlimArchiveDir: BUNDLED_WTT_SLIM_ARCHIVE_DIR,
+    bundledIttfArchiveDir: path.join(__dirname, "ittf-records"),
+    bundledIttfSlimArchiveDir: path.join(__dirname, "ittf-records-slim"),
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     wttDateIndexPath: WTT_DATE_INDEX_PATH,
   });
@@ -4056,6 +4073,10 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
   }
 }
 
+function getRecordSourceFromFilename(fileName) {
+  return /^TTE\d+\.json$/i.test(String(fileName || "")) ? "ittf" : "wtt";
+}
+
 function shouldPreferWttRecordFile(current, next) {
   if (!current) {
     return true;
@@ -4126,12 +4147,15 @@ function getWttRecordFileSnapshot() {
       fs.readdirSync(dirPath)
         .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
         .forEach((fileName) => {
+          const source = getRecordSourceFromFilename(fileName);
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(dirPath, fileName);
           const stat = fs.statSync(filePath);
           const slim = getSlimWttRecordFile(
             filePath,
-            sourceLabel === "runtime" ? WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_SLIM_ARCHIVE_DIR
+            source === "ittf"
+              ? (sourceLabel === "runtime" ? ITTF_SLIM_ARCHIVE_DIR : path.join(__dirname, "ittf-records-slim"))
+              : (sourceLabel === "runtime" ? WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_SLIM_ARCHIVE_DIR),
           );
           const next = createWttRecordFileEntry({
             eventId,
@@ -4142,11 +4166,13 @@ function getWttRecordFileSnapshot() {
             fileStat: stat,
             sourcePriority,
             sourceLabel,
+            source,
+            storageKey: getEventStorageKey(source, eventId),
           });
 
-          const current = recordsByEventId.get(eventId);
+          const current = recordsByEventId.get(getEventStorageKey(source, eventId));
           if (shouldPreferWttRecordFile(current, next)) {
-            recordsByEventId.set(eventId, next);
+            recordsByEventId.set(getEventStorageKey(source, eventId), next);
           }
         });
     } catch {
@@ -4166,6 +4192,7 @@ function getWttRecordFileSnapshot() {
       fs.readdirSync(dirPath)
         .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
         .forEach((fileName) => {
+          const source = getRecordSourceFromFilename(fileName);
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
@@ -4179,11 +4206,13 @@ function getWttRecordFileSnapshot() {
             parseSource: "slim",
             sourcePriority,
             sourceLabel,
+            source,
+            storageKey: getEventStorageKey(source, eventId),
           });
 
-          const current = recordsByEventId.get(eventId);
+          const current = recordsByEventId.get(getEventStorageKey(source, eventId));
           if (shouldPreferWttRecordFile(current, next)) {
-            recordsByEventId.set(eventId, next);
+            recordsByEventId.set(getEventStorageKey(source, eventId), next);
           }
         });
     } catch {
@@ -4193,8 +4222,12 @@ function getWttRecordFileSnapshot() {
 
   addDirectory(WTT_ARCHIVE_DIR, 1, "runtime");
   addDirectory(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled");
+  addDirectory(ITTF_ARCHIVE_DIR, 1, "runtime");
+  addDirectory(path.join(__dirname, "ittf-records"), 2, "bundled");
   addSlimDirectory(WTT_SLIM_ARCHIVE_DIR, 3, "runtime-slim", WTT_ARCHIVE_DIR);
   addSlimDirectory(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 0, "bundled-slim", BUNDLED_WTT_ARCHIVE_DIR);
+  addSlimDirectory(ITTF_SLIM_ARCHIVE_DIR, 3, "runtime-slim", ITTF_ARCHIVE_DIR);
+  addSlimDirectory(path.join(__dirname, "ittf-records-slim"), 0, "bundled-slim", path.join(__dirname, "ittf-records"));
 
   const searchIndex = readWttSearchIndex();
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
@@ -4206,11 +4239,12 @@ function getWttRecordFileSnapshot() {
     const eventName = String(meta.eventName || "").trim();
     const logicalKey = eventName && eventName !== String(file.eventId) && (meta.startDate || meta.endDate)
       ? [
+          file.source || "wtt",
           normalizeHeadToHeadMatchValue(eventName),
           String(meta.startDate || ""),
           String(meta.endDate || ""),
         ].join("\u0001")
-      : `id\u0001${resolveEventId("wtt", file.eventId).toLowerCase()}`;
+      : `id\u0001${file.storageKey || getEventStorageKey(file.source || "wtt", file.eventId).toLowerCase()}`;
     const current = recordsByLogicalEvent.get(logicalKey);
     if (!current || shouldPreferWttRecordFile(current, file)) {
       recordsByLogicalEvent.set(logicalKey, file);
