@@ -5731,7 +5731,7 @@ function resolvePlayerRecordIndexedMatch(index, entry) {
   return null;
 }
 
-function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}) {
+async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}) {
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
   const orgFilter = options.orgFilter || null;
@@ -5744,7 +5744,12 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
   let scannedMatches = 0;
   let playerKeyCount = 0;
 
+  let filePosition = 0;
   for (const file of (Array.isArray(snapshot) ? snapshot : [])) {
+    if (filePosition % 4 === 0) {
+      await yieldToEventLoop();
+    }
+    filePosition += 1;
     if (eventsById.size >= eventLimit) {
       break;
     }
@@ -5759,25 +5764,30 @@ function collectPlayerRecordEventsFromEventIndex(snapshot, needles, options = {}
     const matches = [];
     const seen = new Set();
 
-    needleKeys.forEach((key) => {
+    for (const key of needleKeys) {
       const indexedMatches = Array.isArray(index.players?.[key]) ? index.players[key] : [];
       if (indexedMatches.length > 0) {
         playerKeyCount += 1;
       }
-      indexedMatches.forEach((entry) => {
+      let entryPosition = 0;
+      for (const entry of indexedMatches) {
+        if (entryPosition % 100 === 0) {
+          await yieldToEventLoop();
+        }
+        entryPosition += 1;
         const match = resolvePlayerRecordIndexedMatch(index, entry);
         if (!match) {
-          return;
+          continue;
         }
         scannedMatches += 1;
         const matchId = getPlayerRecordIndexMatchId(match);
         if (seen.has(matchId)) {
-          return;
+          continue;
         }
         matches.push(materializePlayerRecordMatch(match, translations));
         seen.add(matchId);
-      });
-    });
+      }
+    }
 
     if (matches.length === 0) {
       continue;
@@ -5878,7 +5888,7 @@ function mergePlayerRecordCollectedResults(primary, fallback) {
 }
 
 async function collectPlayerRecordEventsWithMissingIndexFallback(snapshot, needles, textNeedles, options = {}) {
-  const indexed = collectPlayerRecordEventsFromEventIndex(snapshot, needles, options);
+  const indexed = await collectPlayerRecordEventsFromEventIndex(snapshot, needles, options);
   const missingFiles = Array.isArray(indexed.missingIndexedFiles) ? indexed.missingIndexedFiles : [];
   if (missingFiles.length === 0) {
     return stripInternalPlayerRecordCollectionFields(indexed);
