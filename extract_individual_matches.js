@@ -4066,8 +4066,11 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       );
       if (
         storedArchive &&
-        Array.isArray(payload) &&
-        (!shouldReuseCachedPayload(source, payload) || payload.length < storedArchive.length)
+        (
+          !Array.isArray(payload) ||
+          !shouldReuseCachedPayload(source, payload) ||
+          payload.length < storedArchive.length
+        )
       ) {
         return storedArchive;
       }
