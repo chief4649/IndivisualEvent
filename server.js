@@ -6722,7 +6722,7 @@ function getLegacyPlayerRecordEventsForNeedles(needles) {
   };
 }
 
-function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
+async function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
   const index = indexState?.index;
   if (!index?.players || !index?.playerRecordMatchShardsDir) {
     return null;
@@ -6742,25 +6742,30 @@ function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
   const eventMap = new Map();
   let scannedShardLines = 0;
   const recordKeys = new Set([...playerKeys].map((key) => index.recordAliases?.[key] || key));
-  recordKeys.forEach((recordKey) => {
+  for (const recordKey of recordKeys) {
     const keyToken = `"key":${JSON.stringify(recordKey)}`;
-    getPlayerRecordShardLines(index, recordKey).forEach((line) => {
+    const lines = getPlayerRecordShardLines(index, recordKey);
+    for (let linePosition = 0; linePosition < lines.length; linePosition += 1) {
+      if (linePosition % 200 === 0) {
+        await yieldToEventLoop();
+      }
+      const line = lines[linePosition];
       scannedShardLines += 1;
       if (!line.includes(keyToken)) {
-        return;
+        continue;
       }
       let entry;
       try {
         entry = JSON.parse(line);
       } catch {
-        return;
+        continue;
       }
       if (entry?.key !== recordKey || !entry?.event || !entry?.match) {
-        return;
+        continue;
       }
       const eventId = String(entry.event.event || "");
       if (!eventId) {
-        return;
+        continue;
       }
       if (!eventMap.has(eventId)) {
         eventMap.set(eventId, {
@@ -6773,8 +6778,8 @@ function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
       if (!event.matches.some((existing) => getPlayerRecordIndexMatchId(existing) === matchId)) {
         event.matches.push(entry.match);
       }
-    });
-  });
+    }
+  }
 
   const events = [...eventMap.values()].map((event) => {
     const matchGroups = buildPlayerRecordMatchGroups(event.matches || []);
@@ -6847,6 +6852,47 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   }
 
   const textNeedles = buildPlayerRecordTextNeedles(...needles);
+
+  // Prefer the compact per-player match shards. They contain the same
+  // normalized match records as the event indexes, but avoid parsing hundreds
+  // of large event JSON files for every search. Only events absent from this
+  // index are parsed through the bounded fallback below.
+  const persistentIndex = getHeadToHeadPersistentIndex(getHeadToHeadPersistentIndexSignature(snapshot));
+  if (persistentIndex?.index?.playerRecordMatchShardsDir) {
+    const indexed = await collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
+    if (indexed) {
+      const indexedEventIds = new Set((indexed.events || []).map((event) => String(event.event || "")));
+      const missingFiles = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
+      const fallback = missingFiles.length > 0
+        ? await collectPlayerRecordEventsWithMissingIndexFallback(
+          missingFiles,
+          needles,
+          textNeedles,
+          { ...options, eventLimit, matchLimit, orgFilter },
+        )
+        : { events: [], parsedEvents: 0, scannedMatches: 0 };
+      const collected = mergePlayerRecordCollectedResults(
+        filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, readTranslations(TRANSLATIONS_PATH)),
+        fallback,
+      );
+      const result = {
+        signature,
+        builtAt: Date.now(),
+        eventIndexSource: "player-record-match-shards",
+        candidateIndexSource: "head-to-head-player-record-shards+missing-event-fallback",
+        candidateIndexGeneratedAt: persistentIndex.generatedAt,
+        eventIndexGeneratedAt: null,
+        scannedEvents: snapshot.length,
+        candidateEvents: indexed.events.length + missingFiles.length,
+        playerKeyCount: indexed.playerKeyCount || 0,
+        deltaEvents: missingFiles.length,
+        ...collected,
+      };
+      setPlayerRecordResultCacheValue(cacheKey, result);
+      return { ...result, cacheHit: false };
+    }
+  }
+
   const indexedCandidate = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
   if (indexedCandidate) {
     const collected = await collectPlayerRecordEventsWithMissingIndexFallback(
