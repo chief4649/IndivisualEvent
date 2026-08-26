@@ -4023,12 +4023,8 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
 
   const slimFilePath = path.join(slimDir, path.basename(originalFilePath));
   try {
-    const originalStat = fs.statSync(originalFilePath);
     const stat = fs.statSync(slimFilePath);
     if (!stat.isFile() || stat.size <= 0) {
-      return null;
-    }
-    if (originalStat.isFile() && stat.mtimeMs < originalStat.mtimeMs) {
       return null;
     }
     return {
@@ -4158,14 +4154,6 @@ function getWttRecordFileSnapshot() {
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
           const stat = fs.statSync(slimFilePath);
-          try {
-            const rawStat = fs.statSync(filePath);
-            if (rawStat.isFile() && stat.mtimeMs < rawStat.mtimeMs) {
-              return;
-            }
-          } catch {
-            // The bundled slim file may be the only available copy.
-          }
           const next = createWttRecordFileEntry({
             eventId,
             filePath,
