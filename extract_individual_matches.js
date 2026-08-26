@@ -4051,7 +4051,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
     const meta = await getWttEventLifecycleMeta(eventId, options);
 
-    if (meta.isFinished && !refreshCache) {
+    if (meta.isFinished) {
       archived = archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir, options);
       if (archived) {
         return archived;
