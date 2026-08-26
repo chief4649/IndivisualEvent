@@ -41,6 +41,9 @@ const DEFAULT_RULES_PATH = path.join(DEFAULT_DATA_DIR, "rules.json");
 const DEFAULT_CACHE_DIR = path.join(DEFAULT_DATA_DIR, ".cache");
 const DEFAULT_ZENNIHON_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "zennihon-records");
 const DEFAULT_WTT_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records");
+const DEFAULT_WTT_SLIM_ARCHIVE_DIR = path.join(DEFAULT_DATA_DIR, "wtt-records-slim");
+const DEFAULT_BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
+const DEFAULT_BUNDLED_WTT_SLIM_ARCHIVE_DIR = path.join(__dirname, "wtt-records-slim");
 const DEFAULT_WTT_ARCHIVE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-archive-index.json");
 const DEFAULT_WTT_DATE_INDEX_PATH = path.join(DEFAULT_DATA_DIR, "wtt-date-index.json");
 const DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH = path.join(DEFAULT_CACHE_DIR, "wtt-record-source-resolutions.json");
@@ -108,6 +111,9 @@ function parseArgs(argv) {
     cacheDir: DEFAULT_CACHE_DIR,
     zennihonArchiveDir: DEFAULT_ZENNIHON_ARCHIVE_DIR,
     wttArchiveDir: DEFAULT_WTT_ARCHIVE_DIR,
+    wttSlimArchiveDir: DEFAULT_WTT_SLIM_ARCHIVE_DIR,
+    bundledWttArchiveDir: DEFAULT_BUNDLED_WTT_ARCHIVE_DIR,
+    bundledWttSlimArchiveDir: DEFAULT_BUNDLED_WTT_SLIM_ARCHIVE_DIR,
     wttArchiveIndexPath: DEFAULT_WTT_ARCHIVE_INDEX_PATH,
     wttDateIndexPath: DEFAULT_WTT_DATE_INDEX_PATH,
     wttRecordResolutionCachePath: DEFAULT_WTT_RECORD_RESOLUTION_CACHE_PATH,
