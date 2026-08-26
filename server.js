@@ -1204,7 +1204,23 @@ function getEventUrl(source, eventId) {
 
 function resolveEventId(source, eventId) {
   const normalizedSource = normalizeSource(source);
-  const normalizedId = String(eventId || "").trim();
+  const rawId = String(eventId || "").trim();
+  let normalizedId = rawId;
+  if (normalizedSource === "wtt" && rawId) {
+    try {
+      const parsedUrl = new URL(rawId, "https://www.worldtabletennis.com");
+      const fromQuery = parsedUrl.searchParams.get("eventId");
+      if (fromQuery) {
+        normalizedId = fromQuery.trim();
+      }
+    } catch {
+      const embeddedId = rawId.match(/(?:^|[?&])eventId=(\d+)/i)?.[1];
+      if (embeddedId) {
+        normalizedId = embeddedId;
+      }
+    }
+    normalizedId = normalizedId.match(/^(?:TTE)?\d+$/i)?.[0] || normalizedId;
+  }
   if (!normalizedId) {
     return "";
   }
