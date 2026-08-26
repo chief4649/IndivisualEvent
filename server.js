@@ -6951,9 +6951,25 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
         const eventId = String(file.eventId);
         return !indexedEventIds.has(eventId);
       });
-      const fallback = missingFiles.length > 0
-        ? await collectPlayerRecordEventsWithMissingIndexFallback(
-          missingFiles,
+      // The player-match shard can be current while still missing individual
+      // rows. Verify files containing the requested player's name as well as
+      // events absent from the shard, then merge with match-level deduplication.
+      const grepCandidatePaths = await getPlayerRecordGrepCandidatePaths(snapshot, textNeedles);
+      const fallbackFilesByPath = new Map(
+        missingFiles.map((file) => [file.parseFilePath || file.filePath, file]),
+      );
+      if (grepCandidatePaths) {
+        snapshot.forEach((file) => {
+          const filePath = file.parseFilePath || file.filePath;
+          if (grepCandidatePaths.has(filePath)) {
+            fallbackFilesByPath.set(filePath, file);
+          }
+        });
+      }
+      const verificationFiles = [...fallbackFilesByPath.values()];
+      const fallback = verificationFiles.length > 0
+        ? await collectPlayerRecordEvents(
+          verificationFiles,
           needles,
           textNeedles,
           { ...options, eventLimit, matchLimit, orgFilter },
@@ -6971,9 +6987,9 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
         candidateIndexGeneratedAt: persistentIndex.generatedAt,
         eventIndexGeneratedAt: null,
         scannedEvents: snapshot.length,
-        candidateEvents: indexed.events.length + missingFiles.length,
+        candidateEvents: indexed.events.length + verificationFiles.length,
         playerKeyCount: indexed.playerKeyCount || 0,
-        deltaEvents: missingFiles.length,
+        deltaEvents: verificationFiles.length,
         ...collected,
       };
       setPlayerRecordResultCacheValue(cacheKey, result);
