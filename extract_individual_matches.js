@@ -3117,7 +3117,7 @@ async function resolveWttRecordSourceByNameDate(eventId, options = {}) {
   return resolution;
 }
 
-async function fetchWttOfficialResultsFromApi(eventId, take) {
+async function fetchWttOfficialResultsFromApi(eventId, take, options = {}) {
   let lastError = null;
   const takeValues = [];
   const requestedTake = Number.isFinite(Number(take)) ? Number(take) : DEFAULT_TAKE;
@@ -3149,10 +3149,15 @@ async function fetchWttOfficialResultsFromApi(eventId, take) {
         url.searchParams.set("EventId", String(eventId));
         url.searchParams.set("include_match_card", "true");
         url.searchParams.set("take", String(takeValue));
+        if (options.refreshWttApi) {
+          url.searchParams.set("_cacheBust", `${Date.now()}-${eventId}-${takeValue}`);
+        }
 
         try {
           return await fetchJson(url.toString(), {
-            headers: WTT_API_HEADERS,
+            headers: options.refreshWttApi
+              ? { ...WTT_API_HEADERS, "cache-control": "no-cache", pragma: "no-cache" }
+              : WTT_API_HEADERS,
             timeoutMs: 6000,
           });
         } catch (error) {
@@ -3899,7 +3904,7 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   let primaryError = null;
 
   try {
-    primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take);
+    primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take, options);
     if (Array.isArray(primaryPayload)) {
       if (!isWttPayloadDateCompatible(primaryPayload, eventId, options)) {
         throw new Error(`WTT result payload dates do not match event ${eventId}`);
@@ -5777,6 +5782,7 @@ async function getProcessedMatches(options = {}) {
       skipWttMinimalHydration: args.skipWttMinimalHydration,
       forceWttSubEventSupplement: args.forceWttSubEventSupplement,
       requireWttSubEventSupplementForSuspicious: args.requireWttSubEventSupplementForSuspicious,
+      refreshWttApi: args.refreshCache,
       skipWttArchiveWrite: args.skipWttArchiveWrite,
     },
   );
