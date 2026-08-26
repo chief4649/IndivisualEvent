@@ -6942,18 +6942,23 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   // index are parsed through the bounded fallback below.
   const persistentIndex = getHeadToHeadPersistentIndex(getHeadToHeadPersistentIndexSignature(snapshot));
   if (persistentIndex?.index?.playerRecordMatchShardsDir) {
-    const indexed = await collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
-    if (indexed) {
-      const indexedEventIds = new Set((indexed.events || []).map((event) => String(event.event || "")));
-      const candidateSnapshot = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
-      const fallbackSnapshot = candidateSnapshot?.snapshot || snapshot;
-      const missingFiles = fallbackSnapshot.filter((file) => {
-        const eventId = String(file.eventId);
-        return !indexedEventIds.has(eventId);
-      });
-      const fallback = missingFiles.length > 0
-        ? await collectPlayerRecordEventsWithMissingIndexFallback(
-          missingFiles,
+      const indexed = await collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
+      if (indexed) {
+        const indexedEventIds = new Set((indexed.events || []).map((event) => String(event.event || "")));
+        const candidateSnapshot = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
+        const missingFiles = snapshot.filter((file) => {
+          const eventId = String(file.eventId);
+          return !indexedEventIds.has(eventId);
+        });
+        // The match shard can contain an event while still missing rows from
+        // that event. When a bounded candidate snapshot is available, reparse
+        // those candidate files so stale or partial shards cannot hide results.
+        const fallbackFiles = candidateSnapshot?.snapshot?.length
+          ? candidateSnapshot.snapshot
+          : missingFiles;
+        const fallback = fallbackFiles.length > 0
+          ? await collectPlayerRecordEventsWithMissingIndexFallback(
+          fallbackFiles,
           needles,
           textNeedles,
           { ...options, eventLimit, matchLimit, orgFilter },
