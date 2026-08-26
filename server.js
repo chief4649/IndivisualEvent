@@ -6862,7 +6862,12 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
     const indexed = await collectPlayerRecordEventsFromShardIndex(persistentIndex, needles);
     if (indexed) {
       const indexedEventIds = new Set((indexed.events || []).map((event) => String(event.event || "")));
-      const missingFiles = snapshot.filter((file) => !indexedEventIds.has(String(file.eventId)));
+      const candidateSnapshot = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
+      const fallbackSnapshot = candidateSnapshot?.snapshot || snapshot;
+      const missingFiles = fallbackSnapshot.filter((file) => {
+        const eventId = String(file.eventId);
+        return !indexedEventIds.has(eventId);
+      });
       const fallback = missingFiles.length > 0
         ? await collectPlayerRecordEventsWithMissingIndexFallback(
           missingFiles,
