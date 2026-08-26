@@ -5790,6 +5790,9 @@ async function getProcessedMatches(options = {}) {
     {
       zennihonArchiveDir: args.zennihonArchiveDir,
       wttArchiveDir: args.wttArchiveDir,
+      wttSlimArchiveDir: args.wttSlimArchiveDir,
+      bundledWttArchiveDir: args.bundledWttArchiveDir,
+      bundledWttSlimArchiveDir: args.bundledWttSlimArchiveDir,
       wttArchiveIndexPath: args.wttArchiveIndexPath,
       wttDateIndexPath: args.wttDateIndexPath,
       wttRecordResolutionCachePath: args.wttRecordResolutionCachePath,
