@@ -6946,19 +6946,14 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       if (indexed) {
         const indexedEventIds = new Set((indexed.events || []).map((event) => String(event.event || "")));
         const candidateSnapshot = await getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature);
-        const missingFiles = snapshot.filter((file) => {
+        const fallbackSnapshot = candidateSnapshot?.snapshot || snapshot;
+        const missingFiles = fallbackSnapshot.filter((file) => {
           const eventId = String(file.eventId);
           return !indexedEventIds.has(eventId);
         });
-        // The match shard can contain an event while still missing rows from
-        // that event. When a bounded candidate snapshot is available, reparse
-        // those candidate files so stale or partial shards cannot hide results.
-        const fallbackFiles = candidateSnapshot?.snapshot?.length
-          ? candidateSnapshot.snapshot
-          : missingFiles;
-        const fallback = fallbackFiles.length > 0
+        const fallback = missingFiles.length > 0
           ? await collectPlayerRecordEventsWithMissingIndexFallback(
-          fallbackFiles,
+          missingFiles,
           needles,
           textNeedles,
           { ...options, eventLimit, matchLimit, orgFilter },
