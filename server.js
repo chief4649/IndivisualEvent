@@ -5772,8 +5772,24 @@ function buildPlayerRecordEventIndexForFile(file, deps = null) {
     archiveIndex: readWttArchiveIndex(),
     eventNames: getEventNamesMap(),
   };
-  const text = readTextFile(file.parseFilePath || file.filePath);
-  const payload = parseJsonArrayFromText(text);
+  let parseFilePath = file.parseFilePath || file.filePath;
+  let parseSource = file.parseSource || file.sourceLabel || "";
+  let parseStat = {
+    size: file.parseSize || file.size || 0,
+    mtimeMs: file.parseMtimeMs || file.mtimeMs || 0,
+  };
+  let payload = parseJsonArrayFromText(readTextFile(parseFilePath));
+  // An empty slim placeholder must never hide a usable raw archive.
+  if (payload.length === 0 && parseFilePath !== file.filePath && fs.existsSync(file.filePath)) {
+    const rawPayload = parseJsonArrayFromText(readTextFile(file.filePath));
+    if (rawPayload.length > 0) {
+      payload = rawPayload;
+      parseFilePath = file.filePath;
+      parseSource = file.sourceLabel || "raw";
+      const rawStat = fs.statSync(file.filePath);
+      parseStat = { size: rawStat.size, mtimeMs: Math.trunc(rawStat.mtimeMs) };
+    }
+  }
   const normalizedMatches = payload.map(normalizeArchivedMatch).filter(Boolean);
   const contextsByCategory = buildRoundContextsByCategory(normalizedMatches);
   const fallbackRoundContext = buildJaRoundContext(normalizedMatches);
@@ -5806,9 +5822,9 @@ function buildPlayerRecordEventIndexForFile(file, deps = null) {
     version: PLAYER_RECORD_EVENT_INDEX_VERSION,
     generatedAt: new Date().toISOString(),
     eventId: String(file.eventId),
-    source: file.parseSource || file.sourceLabel || "",
-    sourceSize: file.parseSize || file.size || 0,
-    sourceMtimeMs: file.parseMtimeMs || file.mtimeMs || 0,
+    source: parseSource,
+    sourceSize: parseStat.size,
+    sourceMtimeMs: parseStat.mtimeMs,
     event: eventMeta,
     indexedMatches,
     indexedEntries,
@@ -5823,6 +5839,18 @@ function writePlayerRecordEventIndexForFile(file, deps = null) {
   const index = buildPlayerRecordEventIndexForFile(file, deps);
   ensureDir(PLAYER_RECORD_EVENT_INDEX_DIR);
   const outputPath = getPlayerRecordEventIndexPath(file.eventId);
+  if (index.indexedMatches === 0 && fs.existsSync(outputPath)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(outputPath, "utf8"));
+      if (Number(existing?.indexedMatches || 0) > 0) {
+        throw new Error(`Refusing to replace non-empty event index with zero matches: ${file.eventId}`);
+      }
+    } catch (error) {
+      if (error.message.includes("Refusing to replace")) {
+        throw error;
+      }
+    }
+  }
   writeCompactJsonFileAtomic(outputPath, index);
   return {
     eventId: String(file.eventId),
