@@ -73,6 +73,7 @@ const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
 const EVENT_NAMES_PATH = path.join(DATA_DIR, "event-names.json");
+const ITTF_EVENT_INDEX_PATH = path.join(DATA_DIR, "ittf-event-index.json");
 const BACKFILL_5000_STATUS_PATH = path.join(DATA_DIR, "backfill-5000-status.json");
 const PLAYER_RECORDS_INDEX_DIR = path.join(DATA_DIR, "player-records-index");
 const BUNDLED_PLAYER_RECORDS_INDEX_DIR = path.join(__dirname, "player-records-index");
@@ -156,6 +157,7 @@ const STORAGE_MANAGED_FILES = [
   ["wtt-search-index.json", WTT_SEARCH_INDEX_PATH],
   ["wtt-date-index.json", WTT_DATE_INDEX_PATH],
   ["wtt-archive-index.json", WTT_ARCHIVE_INDEX_PATH],
+  ["ittf-event-index.json", ITTF_EVENT_INDEX_PATH],
 ];
 let translationsSyncPromise = null;
 
@@ -247,6 +249,7 @@ function ensureRuntimeFiles() {
   syncFileFromDefaultIfNewer(WTT_SEARCH_INDEX_PATH, path.join(__dirname, "wtt-search-index.json"));
   syncFileFromDefaultIfNewer(EVENT_NAMES_PATH, path.join(__dirname, "event-names.json"));
   syncFileFromDefaultIfNewer(WTT_ARCHIVE_INDEX_PATH, path.join(__dirname, "wtt-archive-index.json"));
+  syncFileFromDefaultIfNewer(ITTF_EVENT_INDEX_PATH, path.join(__dirname, "ittf-event-index.json"));
 }
 
 function validateTranslationsPayload(value) {
@@ -1055,6 +1058,8 @@ function buildStorageStatus(options = {}) {
     ),
     wttRecords: listRecordFiles(WTT_ARCHIVE_DIR, limit),
     wttSlimRecords: listRecordFiles(WTT_SLIM_ARCHIVE_DIR, limit),
+    ittfRecords: listRecordFiles(ITTF_ARCHIVE_DIR, limit),
+    ittfSlimRecords: listRecordFiles(ITTF_SLIM_ARCHIVE_DIR, limit),
     zennihonRecords: listRecordFiles(ZENNIHON_ARCHIVE_DIR, Math.min(limit, 20)),
     lookup: eventId ? getStorageLookup(source, eventId) : null,
   };
@@ -1110,6 +1115,9 @@ function getExportRelativePaths(includeZennihon) {
     .map(([, filePath]) => path.relative(DATA_DIR, filePath))
     .filter((relativePath) => relativePath && !relativePath.startsWith(".."));
   paths.push(path.relative(DATA_DIR, WTT_ARCHIVE_DIR));
+  paths.push(path.relative(DATA_DIR, WTT_SLIM_ARCHIVE_DIR));
+  paths.push(path.relative(DATA_DIR, ITTF_ARCHIVE_DIR));
+  paths.push(path.relative(DATA_DIR, ITTF_SLIM_ARCHIVE_DIR));
   if (includeZennihon) {
     paths.push(path.relative(DATA_DIR, ZENNIHON_ARCHIVE_DIR));
   }
@@ -1122,6 +1130,18 @@ function getEventNamesMap() {
       return {};
     }
     return JSON.parse(fs.readFileSync(EVENT_NAMES_PATH, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
+function getIttfEventIndex() {
+  try {
+    if (!fs.existsSync(ITTF_EVENT_INDEX_PATH)) {
+      return {};
+    }
+    const parsed = JSON.parse(fs.readFileSync(ITTF_EVENT_INDEX_PATH, "utf8"));
+    return parsed?.events && typeof parsed.events === "object" ? parsed.events : {};
   } catch {
     return {};
   }
@@ -2053,12 +2073,14 @@ function buildSearchableEvents(source, query) {
   }
 
   const searchIndex = readWttSearchIndex();
+  const ittfEventIndex = getIttfEventIndex();
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
   const archiveIndex = readWttArchiveIndex();
   const indexedEventIds = new Set([
     ...Object.keys(archiveIndex || {}),
     ...Object.keys(searchIndex || {}),
     ...Object.keys(dateIndex || {}),
+    ...Object.keys(ittfEventIndex || {}),
   ]);
 
   indexedEventIds.forEach((eventId) => {
@@ -2068,6 +2090,9 @@ function buildSearchableEvents(source, query) {
       dateIndex,
       archiveIndex,
     );
+    if (ittfEventIndex[eventId]) {
+      Object.assign(mergedEntry, ittfEventIndex[eventId], { source: "ittf" });
+    }
     const name = String(mergedEntry?.eventName || mergedEntry?.title || eventNames[eventId] || "");
     const dateLabel = formatDateRange(mergedEntry?.startDate, mergedEntry?.endDate);
     const searchValues = buildDateSearchValues(mergedEntry?.startDate, mergedEntry?.endDate, dateLabel);
@@ -5100,7 +5125,12 @@ function buildPlayerRecordLine(match, playerCompetitorIndex, translations) {
 }
 
 function getEventRecordMeta(eventId, searchIndex, dateIndex, archiveIndex, eventNames) {
-  const merged = getMergedWttSearchEntry(eventId, searchIndex[eventId], dateIndex, archiveIndex);
+  const isIttf = /^TTE\d+$/i.test(String(eventId || ""));
+  const ittfEntry = isIttf ? getIttfEventIndex()[String(eventId).toUpperCase()] : null;
+  const merged = {
+    ...getMergedWttSearchEntry(eventId, searchIndex[eventId], dateIndex, archiveIndex),
+    ...(ittfEntry || {}),
+  };
   const eventName = String(merged?.eventName || merged?.title || eventNames[eventId] || eventId);
   const startDate = merged?.startDate || null;
   const endDate = merged?.endDate || null;

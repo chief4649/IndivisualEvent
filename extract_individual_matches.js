@@ -5929,6 +5929,8 @@ module.exports = {
   createArgs,
   extractRound,
   fetchOfficialResultsCached,
+  fetchBornanEventMeta,
+  fetchBornanOfficialResults,
   formatEnglish,
   formatJapanese,
   formatList,

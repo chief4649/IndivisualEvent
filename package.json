@@ -17,6 +17,8 @@
     "export:zennihon": "node export_zennihon_archives.js",
     "export:wtt": "node export_wtt_archive.js",
     "crawl:wtt": "node crawl_wtt_archives.js",
+    "crawl:ittf": "node crawl_ittf_archives.js",
+    "audit:ittf": "node crawl_ittf_archives.js --audit",
     "audit:wtt": "node crawl_wtt_archives.js --audit-suspicious --take 1200 --limit 1000 --delay-ms 2000 --skip-h2h-index",
     "index:wtt-event": "node update_wtt_event_indexes.js",
     "index:player-records": "node build_player_records_index.js",
