@@ -215,8 +215,9 @@ function getArchiveStats(eventId) {
   // file must not hide a truncated slim archive from crawl completeness checks.
   return {
     ...stats,
-    count: stats.slimExists ? stats.slimCount : stats.rawCount,
+    count: stats.slimExists && stats.slimCount > 0 ? stats.slimCount : stats.rawCount,
     mismatched: stats.rawExists && stats.slimExists && stats.rawCount !== stats.slimCount,
+    slimMissing: stats.rawExists && !stats.slimExists,
   };
 }
 
@@ -326,6 +327,7 @@ function buildCandidates(args) {
         archiveCount,
         archiveStats,
         suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry)
+          || archiveStats.slimMissing
           || (archiveStats.mismatched && archiveStats.slimCount <= 30),
         auditSuspicious: Boolean(args.auditSuspicious && hasArchiveFile && isAuditSuspiciousCount(archiveCount)),
         partialArchive,
@@ -437,6 +439,18 @@ function buildDerivedArchiveFiles(eventId, args) {
   ]).trim();
   if (!fs.existsSync(eventIndexPath) || fs.statSync(eventIndexPath).size <= 0) {
     throw new Error(`player record event index was not created: ${eventIndexPath}`);
+  }
+
+  const derivedStats = getArchiveStats(eventId);
+  if (
+    !derivedStats.rawExists ||
+    !derivedStats.slimExists ||
+    derivedStats.rawCount !== derivedStats.slimCount ||
+    (derivedStats.rawCount > 0 && derivedStats.slimCount === 0)
+  ) {
+    throw new Error(
+      `derived archive validation failed for ${eventId}: raw=${derivedStats.rawCount} slim=${derivedStats.slimCount}`,
+    );
   }
 
   const candidateIndexResult = updatePlayerRecordCandidateIndexForEvents([eventId]);

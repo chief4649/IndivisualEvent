@@ -153,7 +153,12 @@ function buildSlimRecord(sourcePath) {
   const outputDir = /^TTE\d+\.json$/i.test(path.basename(sourcePath)) ? ITTF_OUTPUT_DIR : OUTPUT_DIR;
   const outputPath = path.join(outputDir, path.basename(sourcePath));
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, `${JSON.stringify(matches)}\n`, "utf8");
+  if (payload.length > 0 && matches.length === 0) {
+    throw new Error(`slim conversion produced no matches for non-empty source: ${sourcePath}`);
+  }
+  const tempPath = `${outputPath}.tmp-${process.pid}`;
+  fs.writeFileSync(tempPath, `${JSON.stringify(matches)}\n`, "utf8");
+  fs.renameSync(tempPath, outputPath);
   return {
     sourcePath,
     outputPath,
