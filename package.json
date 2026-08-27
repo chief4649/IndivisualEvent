@@ -28,6 +28,7 @@
     "index:player-record-matches-incremental": "node -r ./runtime_legacy_ittf_patch.js server.js --update-head-to-head-index",
     "trigger:wtt-crawl": "node scripts/trigger_wtt_crawl.js",
     "verify:wtt": "node verify_wtt_alignment.js",
+    "audit:integrity": "node audit_data_integrity.js",
     "docs:generate": "node scripts/docs/generate.js"
   }
 }
