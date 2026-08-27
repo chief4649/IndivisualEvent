@@ -64,7 +64,7 @@ function auditEvent(eventId, indexes) {
   const rawPath = path.join(RAW_DIR, `${eventId}.json`);
   const slimPath = path.join(SLIM_DIR, `${eventId}.json`);
   const eventIndexPath = path.join(EVENT_INDEX_DIR, `${eventId}.json`);
-  const result = { eventId, raw: {}, slim: {}, eventIndex: {}, issues: [] };
+  const result = { eventId, raw: {}, slim: {}, eventIndex: {}, issues: [], unknowns: [] };
   const raw = readJson(rawPath);
 
   if (!Array.isArray(raw)) {
@@ -93,7 +93,7 @@ function auditEvent(eventId, indexes) {
   if (raw.length === 0) result.issues.push("raw_empty");
   if (wrongEventIds.length) result.issues.push("raw_event_id_mismatch");
   if (duplicateCodes.length) result.issues.push("raw_duplicate_document_code");
-  if (!expected.eventName && !expected.title) result.issues.push("event_name_unknown");
+  if (!expected.eventName && !expected.title) result.unknowns.push("event_name_not_available_locally");
   if (expected.startDate && result.raw.maxMatchDate && result.raw.maxMatchDate < expected.startDate) {
     result.issues.push("raw_dates_before_event");
   }
@@ -116,7 +116,8 @@ function auditEvent(eventId, indexes) {
   const eventIndex = readJson(eventIndexPath);
   if (!eventIndex || typeof eventIndex !== "object" || Array.isArray(eventIndex)) {
     result.eventIndex.status = "missing_or_invalid";
-    result.issues.push("event_index_unreadable");
+    result.eventIndex = { status: "missing_or_invalid" };
+    result.unknowns.push("event_index_not_available");
   } else {
     result.eventIndex = {
       status: "ok",
@@ -163,6 +164,7 @@ function main() {
     rawEventCount: events.length,
     rawMatchCount: events.reduce((sum, event) => sum + (event.raw.matches || 0), 0),
     issueEventCount: events.filter((event) => event.issues.length).length,
+    unknownEventCount: events.filter((event) => event.unknowns.length).length,
     globalIndexes: auditGlobalIndexes(eventIds),
     events,
   };
