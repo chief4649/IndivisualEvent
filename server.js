@@ -4105,6 +4105,12 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
     if (!stat.isFile() || stat.size <= 0) {
       return null;
     }
+    // An interrupted slim-build can leave a valid JSON empty array behind.
+    // Do not let that placeholder hide a usable raw archive.
+    const slimText = fs.readFileSync(slimFilePath, "utf8").trim();
+    if (!slimText || slimText === "[]") {
+      return null;
+    }
     return {
       filePath: slimFilePath,
       size: stat.size,
@@ -4242,6 +4248,10 @@ function getWttRecordFileSnapshot() {
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
           const stat = fs.statSync(slimFilePath);
+          const slimText = fs.readFileSync(slimFilePath, "utf8").trim();
+          if (!slimText || slimText === "[]") {
+            return;
+          }
           const next = createWttRecordFileEntry({
             eventId,
             filePath,
