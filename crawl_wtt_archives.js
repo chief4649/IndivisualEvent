@@ -376,6 +376,7 @@ function markCrawlSkipped(candidate, reason) {
     reasonText === "not_finished" ||
     reasonText.startsWith("smaller_payload:") ||
     reasonText.startsWith("error:") ||
+    reasonText.startsWith("result_date_outside_event_window:") ||
     reasonText.includes("Timed out fetching") ||
     reasonText.includes("fetch failed")
   ) {
@@ -519,11 +520,9 @@ async function archiveEvent(candidate, args) {
   const expectedStartDate = meta.startDate || candidate.startDate;
   const expectedEndDate = meta.endDate || candidate.endDate;
   if (!isResultDateCompatible(result.normalized, expectedStartDate, expectedEndDate)) {
-    return {
-      eventId: candidate.eventId,
-      status: "skipped",
-      reason: `result_date_outside_event_window:${expectedStartDate}:${expectedEndDate}`,
-    };
+    throw new Error(
+      `result_date_outside_event_window:${expectedStartDate}:${expectedEndDate}`,
+    );
   }
 
   const existingArchiveCount = getArchiveMatchCount(candidate.eventId);

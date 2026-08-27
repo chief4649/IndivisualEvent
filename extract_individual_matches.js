@@ -1372,7 +1372,7 @@ function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = nu
     }
     seen.add(resolvedDir);
     const archived = readWttArchive(candidateDir, eventId);
-    if (archived) {
+    if (archived && isWttPayloadDateCompatible(archived, eventId, options)) {
       return archived;
     }
   }
@@ -4070,7 +4070,10 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
     const livePayloadCacheKey = getLiveWttPayloadCacheKey(eventId, take);
     if (!refreshCache) {
       const liveCached = readLiveWttPayloadCache(livePayloadCacheKey);
-      if (shouldReuseCachedPayload(source, liveCached)) {
+      if (
+        shouldReuseCachedPayload(source, liveCached) &&
+        isWttPayloadDateCompatible(liveCached, eventId, options)
+      ) {
         return liveCached;
       }
     }
