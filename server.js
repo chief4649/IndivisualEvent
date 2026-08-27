@@ -5236,6 +5236,48 @@ function parseJsonArrayFromText(text) {
   }
 }
 
+function getPlayerRecordMatchDateStamp(match) {
+  const values = [
+    match?.startDateLocal,
+    match?.startDateUtc,
+    match?.matchDateTime?.startDateLocal,
+    match?.matchDateTime?.startDateUTC,
+    match?.match_card?.matchDateTime?.startDateLocal,
+    match?.match_card?.matchDateTime?.startDateUTC,
+  ];
+  for (const value of values) {
+    const iso = String(value || "").match(/(\d{4})[-/](\d{1,2})[-/](\d{1,2})/);
+    if (iso) {
+      return `${iso[1]}-${String(Number(iso[2])).padStart(2, "0")}-${String(Number(iso[3])).padStart(2, "0")}`;
+    }
+  }
+  return "";
+}
+
+function arePlayerRecordMatchesDateCompatible(matches, eventMeta, source) {
+  if (source === "ittf" || !eventMeta?.startDate || !eventMeta?.endDate) {
+    return true;
+  }
+  const dates = (Array.isArray(matches) ? matches : []).map(getPlayerRecordMatchDateStamp).filter(Boolean);
+  if (dates.length === 0) {
+    return true;
+  }
+  const lower = new Date(`${eventMeta.startDate}T00:00:00Z`);
+  lower.setUTCDate(lower.getUTCDate() - 45);
+  const upper = new Date(`${eventMeta.endDate}T00:00:00Z`);
+  upper.setUTCDate(upper.getUTCDate() + 45);
+  return dates.every((date) => {
+    const parsed = new Date(`${date}T00:00:00Z`);
+    return parsed >= lower && parsed <= upper;
+  });
+}
+
+function filterPlayerRecordMatchesForEvent(matches, file, eventMeta) {
+  return arePlayerRecordMatchesDateCompatible(matches, eventMeta, file?.source)
+    ? matches
+    : [];
+}
+
 function getFileHashToken(filePath) {
   try {
     return crypto.createHash("sha1").update(fs.readFileSync(filePath)).digest("hex");
@@ -6528,14 +6570,15 @@ async function collectPlayerRecordEvents(snapshot, needles, textNeedles, options
       contextsByCategory,
       fallbackRoundContext,
     } = getParsedPlayerRecordArchive(file, text);
-    if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
+    const eventMatches = filterPlayerRecordMatchesForEvent(normalizedMatches, file, meta);
+    if (!Array.isArray(eventMatches) || eventMatches.length === 0) {
       continue;
     }
 
     parsedEvents += 1;
     const matches = [];
 
-    for (const match of normalizedMatches) {
+    for (const match of eventMatches) {
       const matchRoundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext;
 
       scannedMatches += 1;
@@ -7955,13 +7998,14 @@ function archiveItemMightContainPlayerNeedles(item, needles) {
   return false;
 }
 
-function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
+function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles, eventMeta = null) {
   if (Array.isArray(file?.liveNormalizedMatches)) {
     const allNormalizedMatches = file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean);
-    const normalizedMatches = allNormalizedMatches.filter((item) =>
+    const eventMatches = filterPlayerRecordMatchesForEvent(allNormalizedMatches, file, eventMeta);
+    const normalizedMatches = eventMatches.filter((item) =>
         archiveItemMightContainPlayerNeedles(item, playerANeedles) &&
         archiveItemMightContainPlayerNeedles(item, playerBNeedles),
-      );
+    );
     return {
       normalizedMatches,
       contextsByCategory: buildRoundContextsByCategory(allNormalizedMatches),
@@ -7970,8 +8014,9 @@ function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles) {
   }
 
   const parsedArchive = getParsedPlayerRecordArchive(file);
+  const eventMatches = filterPlayerRecordMatchesForEvent(parsedArchive.normalizedMatches, file, eventMeta);
   const normalizedMatches = [];
-  for (const match of parsedArchive.normalizedMatches || []) {
+  for (const match of eventMatches || []) {
     if (
       !archiveItemMightContainPlayerNeedles(match, playerANeedles) ||
       !archiveItemMightContainPlayerNeedles(match, playerBNeedles)
@@ -8023,11 +8068,12 @@ async function collectHeadToHeadMatches(snapshot, playerANeedles, playerBNeedles
 
   for (const file of snapshot) {
     await yieldToEventLoop();
+    const eventMeta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
     const {
       normalizedMatches,
       contextsByCategory,
       fallbackRoundContext,
-    } = getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles);
+    } = getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles, eventMeta);
     if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
       continue;
     }
@@ -8173,12 +8219,14 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
     const eventStartedAt = Date.now();
     const scannedMatchesBeforeEvent = scannedMatches;
     const parsedEventsBeforeEvent = parsedEvents;
+    const eventMeta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
     const {
       normalizedMatches,
       contextsByCategory,
       fallbackRoundContext,
     } = getParsedPlayerRecordArchive(file);
-    if (!Array.isArray(normalizedMatches) || normalizedMatches.length === 0) {
+    const eventMatches = filterPlayerRecordMatchesForEvent(normalizedMatches, file, eventMeta);
+    if (!Array.isArray(eventMatches) || eventMatches.length === 0) {
       if (typeof options.onEvent === "function") {
         options.onEvent({
           eventId: String(file.eventId),
@@ -8193,9 +8241,7 @@ async function buildHeadToHeadPersistentIndex(snapshot, signature, options = {})
     }
 
     parsedEvents += 1;
-    const eventMeta = getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames);
-
-    for (const match of normalizedMatches) {
+    for (const match of eventMatches) {
       const matchRoundContext = contextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext;
       scannedMatches += 1;
 
