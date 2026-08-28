@@ -56,6 +56,14 @@ const WTT_EVENT_ID_ALIASES = {
   "3440": "TTE3440",
 };
 const WTT_RECORD_SOURCE_OVERRIDES = {
+  "2410": {
+    recordSource: "ittf",
+    recordEventId: "5277",
+    recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE5277/results.html#/results`,
+    title: "WTT Contender Doha 2021",
+    confidence: "high",
+    resolvedBy: "known_event_namespace_mapping",
+  },
   "3150": {
     recordSource: "ittf",
     recordEventId: "5676",
