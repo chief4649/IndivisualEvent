@@ -1961,6 +1961,11 @@
         loadCategories().catch(reportBackgroundError);
       }
 
+      function refreshEventNameImmediately() {
+        updateEventName();
+        loadEventName().catch(reportBackgroundError);
+      }
+
       function scheduleEventDependentUiRefresh() {
         clearTimeout(eventRefreshTimer);
         eventRefreshTimer = setTimeout(() => {
@@ -1969,7 +1974,12 @@
       }
 
       form.elements.namedItem("event").addEventListener("input", () => {
+        refreshEventNameImmediately();
         scheduleEventDependentUiRefresh();
+      });
+
+      form.elements.namedItem("event").addEventListener("change", () => {
+        refreshEventNameImmediately();
       });
 
       form.elements.namedItem("source").addEventListener("change", () => {
