@@ -4053,6 +4053,7 @@ const HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED = process.env.HEAD_TO_HEAD_STARTUP_
 const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
   process.env.HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES || 256 * 1024 * 1024,
 );
+const HEAD_TO_HEAD_QUERY_RESULT_PREFIX = "__HEAD_TO_HEAD_QUERY_RESULT__";
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
@@ -4345,6 +4346,70 @@ function spawnDerivedIndexProcess(args, label) {
         return;
       }
       reject(new Error(`${label} exited with code ${code}${stderr ? `: ${stderr.trim()}` : ""}`));
+    });
+  });
+}
+
+function spawnHeadToHeadQueryProcess(query) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, [
+      "-r",
+      "./runtime_legacy_ittf_patch.js",
+      "server.js",
+      "--head-to-head-query",
+      "--player-a",
+      String(query.playerA || ""),
+      "--translated-a",
+      String(query.translatedA || ""),
+      "--player-b",
+      String(query.playerB || ""),
+      "--translated-b",
+      String(query.translatedB || ""),
+    ], {
+      cwd: __dirname,
+      env: {
+        ...process.env,
+        DATA_DIR,
+      },
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (chunk) => {
+      stdout += String(chunk || "");
+      if (stdout.length > 20 * 1024 * 1024) {
+        child.kill();
+        reject(new Error("H2H query result exceeded the response limit"));
+      }
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += String(chunk || "");
+      if (stderr.length > 4000) {
+        stderr = stderr.slice(-4000);
+      }
+    });
+    child.on("error", reject);
+    child.on("close", (code) => {
+      const line = stdout
+        .split(/\r?\n/)
+        .reverse()
+        .find((value) => value.startsWith(HEAD_TO_HEAD_QUERY_RESULT_PREFIX));
+      if (code !== 0 || !line) {
+        reject(new Error(
+          `H2H query process exited with code ${code}${stderr ? `: ${stderr.trim()}` : ""}`,
+        ));
+        return;
+      }
+      try {
+        const payload = JSON.parse(line.slice(HEAD_TO_HEAD_QUERY_RESULT_PREFIX.length));
+        if (!payload?.ok) {
+          reject(new Error(payload?.error || "H2H query process failed"));
+          return;
+        }
+        resolve(payload.searchResult);
+      } catch (error) {
+        reject(new Error(`Invalid H2H query result: ${error.message}`));
+      }
     });
   });
 }
@@ -8977,14 +9042,15 @@ async function handleHeadToHeadApi(requestUrl, response) {
       return;
     }
 
-    const searchResult = await getHeadToHeadSearchResult(
-      playerAName,
-      playerATranslatedName,
-      playerBName,
-      playerBTranslatedName,
-      playerANeedles,
-      playerBNeedles,
-    );
+    // The persistent H2H index is intentionally loaded in a child process.
+    // Parsing the index and a pair shard is synchronous and can otherwise
+    // block Render's health checks on the small production instance.
+    const searchResult = await spawnHeadToHeadQueryProcess({
+      playerA: playerAName,
+      translatedA: playerATranslatedName,
+      playerB: playerBName,
+      translatedB: playerBTranslatedName,
+    });
     let returnedMatches = 0;
     const limitedEvents = [];
     for (const event of searchResult.events) {
@@ -9580,6 +9646,50 @@ async function runPlayerRecordCandidateIndexBuildCli() {
   }, null, 2));
 }
 
+function getHeadToHeadQueryCliValue(argv, name) {
+  const index = argv.indexOf(name);
+  return index >= 0 ? String(argv[index + 1] || "") : "";
+}
+
+async function runHeadToHeadQueryCli() {
+  const argv = process.argv.slice(2);
+  const playerAName = getHeadToHeadQueryCliValue(argv, "--player-a");
+  const playerATranslatedName = getHeadToHeadQueryCliValue(argv, "--translated-a");
+  const playerBName = getHeadToHeadQueryCliValue(argv, "--player-b");
+  const playerBTranslatedName = getHeadToHeadQueryCliValue(argv, "--translated-b");
+  const translations = readTranslations(TRANSLATIONS_PATH);
+  const playerANeedles = buildPlayerRecordNeedles(playerAName, playerATranslatedName, translations);
+  const playerBNeedles = buildPlayerRecordNeedles(playerBName, playerBTranslatedName, translations);
+  const searchResult = playerANeedles.length === 0 || playerBNeedles.length === 0
+    ? {
+      builtAt: Date.now(),
+      eventIndexSource: "wtt-records",
+      eventIndexGeneratedAt: null,
+      candidateIndexSource: null,
+      candidateIndexGeneratedAt: null,
+      cacheHit: false,
+      scannedEvents: 0,
+      candidateEvents: 0,
+      playerAEventCount: 0,
+      playerBEventCount: 0,
+      deltaEvents: 0,
+      parsedEvents: 0,
+      scannedMatches: 0,
+      aWins: 0,
+      bWins: 0,
+      events: [],
+    }
+    : await getHeadToHeadSearchResult(
+      playerAName,
+      playerATranslatedName,
+      playerBName,
+      playerBTranslatedName,
+      playerANeedles,
+      playerBNeedles,
+    );
+  process.stdout.write(`${HEAD_TO_HEAD_QUERY_RESULT_PREFIX}${JSON.stringify({ ok: true, searchResult })}\n`);
+}
+
 if (process.argv.includes("--update-head-to-head-index")) {
   runHeadToHeadIndexIncrementalCli().catch((error) => {
     writeHeadToHeadIndexStatus({
@@ -9608,6 +9718,14 @@ if (process.argv.includes("--update-head-to-head-index")) {
 } else if (process.argv.includes("--build-player-record-candidate-index")) {
   runPlayerRecordCandidateIndexBuildCli().catch((error) => {
     console.error(error.stack || error.message || String(error));
+    process.exitCode = 1;
+  });
+} else if (process.argv.includes("--head-to-head-query")) {
+  runHeadToHeadQueryCli().catch((error) => {
+    process.stdout.write(`${HEAD_TO_HEAD_QUERY_RESULT_PREFIX}${JSON.stringify({
+      ok: false,
+      error: error.message || String(error),
+    })}\n`);
     process.exitCode = 1;
   });
 } else {
