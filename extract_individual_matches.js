@@ -56,6 +56,14 @@ const WTT_EVENT_ID_ALIASES = {
   "3440": "TTE3440",
 };
 const WTT_RECORD_SOURCE_OVERRIDES = {
+  "5525": {
+    recordSource: "ittf",
+    recordEventId: "3454",
+    recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE3454/results.html#/results`,
+    title: "ITTF-Oceania Championships 2026",
+    confidence: "high",
+    resolvedBy: "known_event_namespace_mapping",
+  },
   "2410": {
     recordSource: "ittf",
     recordEventId: "5277",
