@@ -4070,7 +4070,11 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
     if (meta.isFinished) {
       archived = archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir, options);
-      if (archived) {
+      // A finished event can still receive official results after the first
+      // archive write. Explicit refreshes must reach the upstream API so late
+      // semifinal/final results can be added; the response validation below
+      // still protects a usable archive from empty or truncated data.
+      if (archived && !refreshCache) {
         return archived;
       }
     }
