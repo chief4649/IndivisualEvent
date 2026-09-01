@@ -86,7 +86,7 @@ insertOnce(
 );
 
 insertOnce(
-  "        loadConfig(\"translations\").catch(reportBackgroundAdminError);",
+  "        refreshEventDependentUi();\n      })();",
   "        loadVersionInfo();\n",
   "loadVersionInfo();",
 );
