@@ -12,6 +12,10 @@ const WTT_OFFICIAL_RESULT_STATIC_BASE_URLS = [
   "https://wtt-web-frontdoor-withoutcache-cqakg0andqf5hchn.a01.azurefd.net/websitecacheddata",
   "https://wtt-web-frontdoor-cthahjeqhbh6aqe3.a01.azurefd.net/websitecacheddata",
 ];
+const WTT_OFFICIAL_RESULT_ARCHIVE_BASE_URLS = [
+  "https://wtt-web-frontdoor-withoutcache-cqakg0andqf5hchn.a01.azurefd.net/websitearchivedresults",
+  "https://wtt-web-frontdoor-cthahjeqhbh6aqe3.a01.azurefd.net/websitearchivedresults",
+];
 const WTT_API_HEADERS = {
   origin: "https://www.worldtabletennis.com",
   referer: "https://www.worldtabletennis.com/",
@@ -3245,6 +3249,28 @@ async function fetchWttOfficialResultsFromApi(eventId, take, options = {}) {
   throw lastError || new Error("WTT official result request failed");
 }
 
+async function fetchWttOfficialResultsFromArchive(eventId) {
+  const eventIdText = String(eventId || "").trim();
+  if (!eventIdText) {
+    return null;
+  }
+
+  for (const baseUrl of WTT_OFFICIAL_RESULT_ARCHIVE_BASE_URLS) {
+    const url = `${baseUrl}/${eventIdText}/officialresult/officialresult.json`;
+    const payload = await fetchJson(url, {
+      headers: WTT_API_HEADERS,
+      timeoutMs: 12000,
+      allowNotFound: true,
+    }).catch(() => null);
+
+    if (Array.isArray(payload) && payload.length > 0) {
+      return payload;
+    }
+  }
+
+  return null;
+}
+
 async function fetchWttOfficialResultMinimal(eventId) {
   const eventIdText = String(eventId || "").trim();
   if (!eventIdText) {
@@ -3940,6 +3966,15 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   const webgenPayload = await fetchWebgenOfficialResults(eventId);
   if (Array.isArray(webgenPayload)) {
     return webgenPayload;
+  }
+
+  const archivedPayload = await fetchWttOfficialResultsFromArchive(eventId);
+  if (
+    Array.isArray(archivedPayload) &&
+    archivedPayload.length > 0 &&
+    isWttPayloadDateCompatible(archivedPayload, eventId, options)
+  ) {
+    return archivedPayload;
   }
 
   let primaryPayload = null;
