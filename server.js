@@ -4432,7 +4432,7 @@ function getHeadToHeadQueryWorker() {
   try {
     // Keep Render's health endpoint and lightweight API work responsive while
     // the long-running H2H worker scans its persistent index.
-    process.setPriority(child.pid, 10);
+    process.setPriority(child.pid, 19);
   } catch {
     // Priority changes are not available on every local/host environment.
   }
