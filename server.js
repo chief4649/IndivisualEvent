@@ -9549,6 +9549,11 @@ function startServer() {
   const server = http.createServer((request, response) => {
     const requestUrl = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`);
 
+    if (request.method === "GET" && requestUrl.pathname === "/api/health/live") {
+      sendJson(response, 200, { ok: true });
+      return;
+    }
+
     if (request.method === "GET" && requestUrl.pathname === "/api/health") {
       sendJson(response, 200, buildHealthPayload());
       return;
