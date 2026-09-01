@@ -1763,8 +1763,15 @@ async function fetchEventMeta(eventId, source = "wtt") {
       const dateEntry = (!lifecycle?.startDate && !lifecycle?.endDate)
         ? await getWttDateEntryWithFallback(normalizedId)
         : null;
-      const startDate = lifecycle?.startDate || dateEntry?.startDate || null;
-      const endDate = lifecycle?.endDate || dateEntry?.endDate || null;
+      const bundledSearchEntry = readBundledWttSearchEntry(normalizedId);
+      const sameBundledEvent = Boolean(
+        bundledSearchEntry?.eventName &&
+        eventName &&
+        normalizeSearchText(bundledSearchEntry.eventName) === normalizeSearchText(eventName),
+      );
+      const metadataEntry = sameBundledEvent ? bundledSearchEntry : (dateEntry || {});
+      const startDate = metadataEntry.startDate || lifecycle?.startDate || null;
+      const endDate = metadataEntry.endDate || lifecycle?.endDate || null;
       return {
         source: normalizedSource,
         event: normalizedId,
@@ -1807,6 +1814,19 @@ async function fetchEventMeta(eventId, source = "wtt") {
     archived: false,
     status: "finished",
   };
+}
+
+function readBundledWttSearchEntry(eventId) {
+  try {
+    const indexPath = path.join(__dirname, "wtt-search-index.json");
+    if (!fs.existsSync(indexPath)) {
+      return null;
+    }
+    const index = JSON.parse(fs.readFileSync(indexPath, "utf8"));
+    return index[String(eventId || "").trim()] || null;
+  } catch {
+    return null;
+  }
 }
 
 function normalizeSearchText(value) {
