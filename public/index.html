@@ -1482,6 +1482,11 @@
         return Array.from(roundOptions.querySelectorAll('input[name="round"]:checked')).map((input) => input.value);
       }
 
+      function clearRoundSelectionsForEventChange() {
+        roundOptions.innerHTML = "";
+        pendingInitialRoundValues = new Set();
+      }
+
       function setRoundOptions(rounds) {
         const previousValues = getSelectedRounds();
         const restoredValues = previousValues.length ? previousValues : Array.from(pendingInitialRoundValues);
@@ -1974,6 +1979,7 @@
       }
 
       form.elements.namedItem("event").addEventListener("input", () => {
+        clearRoundSelectionsForEventChange();
         refreshEventNameImmediately();
         scheduleEventDependentUiRefresh();
       });
