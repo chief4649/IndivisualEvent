@@ -1726,15 +1726,24 @@
         while (Date.now() < deadline) {
           onProgress("直接対戦を検索しています。完了まで少しお待ちください。");
           await new Promise((resolve) => setTimeout(resolve, 2000));
-          const response = await fetchWithTimeout(`/api/head-to-head?${jobParams.toString()}`, {}, 10000);
-          const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
-          if (response.status === 202) {
-            continue;
+          try {
+            const response = await fetchWithTimeout(`/api/head-to-head?${jobParams.toString()}`, {}, 10000);
+            const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
+            if (response.status === 202) {
+              continue;
+            }
+            if (!response.ok) {
+              throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
+            }
+            return data;
+          } catch (error) {
+            const message = String(error?.message || "");
+            const transient = message.includes("APIではなくHTML") || message.includes("通信がタイムアウト");
+            if (!transient) {
+              throw error;
+            }
+            onProgress("直接対戦の接続を再試行しています。処理は継続中です。");
           }
-          if (!response.ok) {
-            throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
-          }
-          return data;
         }
         throw new Error("Head To Headの検索がタイムアウトしました。しばらくしてから再度お試しください。");
       }
