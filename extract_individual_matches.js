@@ -1384,6 +1384,8 @@ function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = nu
     fallbackArchiveDir,
   ].filter(Boolean);
   const seen = new Set();
+  let bestArchive = null;
+  let bestCount = -1;
 
   for (const candidateDir of archiveDirs) {
     const resolvedDir = path.resolve(candidateDir);
@@ -1393,11 +1395,15 @@ function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = nu
     seen.add(resolvedDir);
     const archived = readWttArchive(candidateDir, eventId);
     if (archived && isWttPayloadDateCompatible(archived, eventId, options)) {
-      return archived;
+      const count = Array.isArray(archived) ? archived.length : 0;
+      if (count > bestCount) {
+        bestArchive = archived;
+        bestCount = count;
+      }
     }
   }
 
-  return null;
+  return bestArchive;
 }
 
 function writeWttArchive(archiveDir, eventId, payload) {
