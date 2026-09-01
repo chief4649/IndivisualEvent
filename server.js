@@ -4066,6 +4066,13 @@ const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESUL
 const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
+const HEAD_TO_HEAD_QUERY_JOB_TTL_MS = Number(
+  process.env.HEAD_TO_HEAD_QUERY_JOB_TTL_MS || 10 * 60_000,
+);
+const HEAD_TO_HEAD_QUERY_JOB_MAX = Number(
+  process.env.HEAD_TO_HEAD_QUERY_JOB_MAX || 64,
+);
+const headToHeadQueryJobs = new Map();
 const headToHeadPlayerKeyMatchCaches = new WeakMap();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
@@ -9085,6 +9092,106 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
   return result;
 }
 
+function pruneHeadToHeadQueryJobs() {
+  const now = Date.now();
+  const ttl = Math.max(1, HEAD_TO_HEAD_QUERY_JOB_TTL_MS);
+  for (const [jobId, job] of headToHeadQueryJobs.entries()) {
+    const terminalAt = job.completedAt || 0;
+    if (terminalAt && now - terminalAt >= ttl) {
+      headToHeadQueryJobs.delete(jobId);
+    }
+  }
+  const maxJobs = Math.max(1, HEAD_TO_HEAD_QUERY_JOB_MAX);
+  if (headToHeadQueryJobs.size <= maxJobs) {
+    return;
+  }
+  for (const [jobId, job] of headToHeadQueryJobs.entries()) {
+    if (job.completedAt) {
+      headToHeadQueryJobs.delete(jobId);
+    }
+    if (headToHeadQueryJobs.size <= maxJobs) {
+      break;
+    }
+  }
+}
+
+function startHeadToHeadQueryJob(query) {
+  pruneHeadToHeadQueryJobs();
+  const jobId = crypto.randomBytes(16).toString("hex");
+  const job = {
+    id: jobId,
+    status: "processing",
+    createdAt: Date.now(),
+    completedAt: null,
+    query,
+    searchResult: null,
+    error: null,
+  };
+  headToHeadQueryJobs.set(jobId, job);
+  spawnHeadToHeadQueryProcess(query)
+    .then((searchResult) => {
+      job.status = "complete";
+      job.searchResult = searchResult;
+      job.completedAt = Date.now();
+      pruneHeadToHeadQueryJobs();
+    })
+    .catch((error) => {
+      job.status = "failed";
+      job.error = createFriendlyErrorMessage(error);
+      job.completedAt = Date.now();
+      pruneHeadToHeadQueryJobs();
+    });
+  return job;
+}
+
+function buildHeadToHeadApiPayload(query, searchResult, eventLimit, matchLimit) {
+  let returnedMatches = 0;
+  const limitedEvents = [];
+  for (const event of searchResult.events) {
+    if (limitedEvents.length >= eventLimit || returnedMatches >= matchLimit) {
+      break;
+    }
+    const remainingMatches = matchLimit - returnedMatches;
+    const matches = event.matches.slice(0, remainingMatches);
+    if (matches.length === 0) {
+      continue;
+    }
+    returnedMatches += matches.length;
+    limitedEvents.push({
+      ...event,
+      matches,
+    });
+  }
+
+  return {
+    playerA: { name: query.playerA, translatedName: query.translatedA },
+    playerB: { name: query.playerB, translatedName: query.translatedB },
+    summary: {
+      playerAWins: searchResult.aWins,
+      playerBWins: searchResult.bWins,
+      totalMatches: searchResult.aWins + searchResult.bWins,
+    },
+    events: limitedEvents,
+    meta: {
+      cacheBuiltAt: searchResult.builtAt,
+      eventIndexSource: searchResult.eventIndexSource,
+      eventIndexGeneratedAt: searchResult.eventIndexGeneratedAt,
+      candidateIndexSource: searchResult.candidateIndexSource,
+      candidateIndexGeneratedAt: searchResult.candidateIndexGeneratedAt,
+      cacheHit: searchResult.cacheHit,
+      scannedEvents: searchResult.scannedEvents,
+      candidateEvents: searchResult.candidateEvents,
+      playerAEventCount: searchResult.playerAEventCount,
+      playerBEventCount: searchResult.playerBEventCount,
+      deltaEvents: searchResult.deltaEvents || 0,
+      parsedEvents: searchResult.parsedEvents,
+      scannedMatches: searchResult.scannedMatches,
+      returnedEvents: limitedEvents.length,
+      returnedMatches,
+    },
+  };
+}
+
 async function handleHeadToHeadApi(requestUrl, response) {
   try {
     // H2H must not wait for the remote dictionary on every request.
@@ -9092,12 +9199,34 @@ async function handleHeadToHeadApi(requestUrl, response) {
     syncTranslationsFromSharedSource().catch((error) => {
       console.warn("[head-to-head] background translations sync failed:", error?.message || error);
     });
+    const jobId = String(requestUrl.searchParams.get("job") || "").trim();
+    const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
+    const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
+    if (jobId) {
+      pruneHeadToHeadQueryJobs();
+      const job = headToHeadQueryJobs.get(jobId);
+      if (!job) {
+        sendJson(response, 404, { error: "Head To Headの検索ジョブが見つかりません。" });
+        return;
+      }
+      if (job.status === "processing") {
+        sendJson(response, 202, { status: job.status, jobId });
+        return;
+      }
+      if (job.status === "failed") {
+        headToHeadQueryJobs.delete(jobId);
+        sendJson(response, 500, { error: job.error || "Head To Headの検索に失敗しました。" });
+        return;
+      }
+      const payload = buildHeadToHeadApiPayload(job.query, job.searchResult, eventLimit, matchLimit);
+      headToHeadQueryJobs.delete(jobId);
+      sendJson(response, 200, payload);
+      return;
+    }
     const playerAName = String(requestUrl.searchParams.get("playerA") || requestUrl.searchParams.get("nameA") || "").trim();
     const playerATranslatedName = String(requestUrl.searchParams.get("translatedA") || requestUrl.searchParams.get("translatedNameA") || "").trim();
     const playerBName = String(requestUrl.searchParams.get("playerB") || requestUrl.searchParams.get("nameB") || "").trim();
     const playerBTranslatedName = String(requestUrl.searchParams.get("translatedB") || requestUrl.searchParams.get("translatedNameB") || "").trim();
-    const eventLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("eventLimit") || 80) || 80, 1), 200);
-    const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
     const translations = readTranslations(TRANSLATIONS_PATH);
     const playerANeedles = buildPlayerRecordNeedles(playerAName, playerATranslatedName, translations);
     const playerBNeedles = buildPlayerRecordNeedles(playerBName, playerBTranslatedName, translations);
@@ -9127,60 +9256,23 @@ async function handleHeadToHeadApi(requestUrl, response) {
       return;
     }
 
-    // The persistent H2H index is intentionally loaded in a child process.
-    // Parsing the index and a pair shard is synchronous and can otherwise
-    // block Render's health checks on the small production instance.
-    const searchResult = await spawnHeadToHeadQueryProcess({
+    const query = {
       playerA: playerAName,
       translatedA: playerATranslatedName,
       playerB: playerBName,
       translatedB: playerBTranslatedName,
-    });
-    let returnedMatches = 0;
-    const limitedEvents = [];
-    for (const event of searchResult.events) {
-      if (limitedEvents.length >= eventLimit || returnedMatches >= matchLimit) {
-        break;
-      }
-      const remainingMatches = matchLimit - returnedMatches;
-      const matches = event.matches.slice(0, remainingMatches);
-      if (matches.length === 0) {
-        continue;
-      }
-      returnedMatches += matches.length;
-      limitedEvents.push({
-        ...event,
-        matches,
-      });
+    };
+    if (requestUrl.searchParams.get("async") === "1") {
+      const job = startHeadToHeadQueryJob(query);
+      sendJson(response, 202, { status: job.status, jobId: job.id });
+      return;
     }
 
-    sendJson(response, 200, {
-      playerA: { name: playerAName, translatedName: playerATranslatedName },
-      playerB: { name: playerBName, translatedName: playerBTranslatedName },
-      summary: {
-        playerAWins: searchResult.aWins,
-        playerBWins: searchResult.bWins,
-        totalMatches: searchResult.aWins + searchResult.bWins,
-      },
-      events: limitedEvents,
-      meta: {
-        cacheBuiltAt: searchResult.builtAt,
-        eventIndexSource: searchResult.eventIndexSource,
-        eventIndexGeneratedAt: searchResult.eventIndexGeneratedAt,
-        candidateIndexSource: searchResult.candidateIndexSource,
-        candidateIndexGeneratedAt: searchResult.candidateIndexGeneratedAt,
-        cacheHit: searchResult.cacheHit,
-        scannedEvents: searchResult.scannedEvents,
-        candidateEvents: searchResult.candidateEvents,
-        playerAEventCount: searchResult.playerAEventCount,
-        playerBEventCount: searchResult.playerBEventCount,
-        deltaEvents: searchResult.deltaEvents || 0,
-        parsedEvents: searchResult.parsedEvents,
-        scannedMatches: searchResult.scannedMatches,
-        returnedEvents: limitedEvents.length,
-        returnedMatches,
-      },
-    });
+    // The persistent H2H index is intentionally loaded in a child process.
+    // Parsing the index and a pair shard is synchronous and can otherwise
+    // block Render's health checks on the small production instance.
+    const searchResult = await spawnHeadToHeadQueryProcess(query);
+    sendJson(response, 200, buildHeadToHeadApiPayload(query, searchResult, eventLimit, matchLimit));
   } catch (error) {
     sendJson(response, 500, {
       error: createFriendlyErrorMessage(error),

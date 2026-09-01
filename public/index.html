@@ -1424,11 +1424,9 @@
         let lastError = null;
         for (let attempt = 0; attempt < 2; attempt += 1) {
           try {
-            const response = await fetchWithTimeout(`/api/head-to-head?${params.toString()}`, {}, 120000);
-            const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
-            if (!response.ok) {
-              throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
-            }
+            const data = await requestHeadToHeadData(params, (message) => {
+              loading.textContent = message;
+            });
             renderHeadToHead(data);
             return;
           } catch (error) {
@@ -1702,6 +1700,43 @@
           }
           await new Promise((resolve) => setTimeout(resolve, 5000));
         }
+      }
+
+      async function requestHeadToHeadData(params, onProgress = () => {}) {
+        const startParams = new URLSearchParams(params);
+        startParams.set("async", "1");
+        const startResponse = await fetchWithTimeout(`/api/head-to-head?${startParams.toString()}`, {}, 10000);
+        const startData = await readJsonResponse(startResponse, "Head To Head の読み込みに失敗しました。");
+        if (startResponse.status !== 202) {
+          if (!startResponse.ok) {
+            throw new Error(startData.error || "Head To Head の読み込みに失敗しました。");
+          }
+          return startData;
+        }
+        if (!startData.jobId) {
+          throw new Error("Head To Headの検索ジョブを開始できませんでした。");
+        }
+
+        const jobParams = new URLSearchParams({
+          job: startData.jobId,
+          eventLimit: "80",
+          matchLimit: "500",
+        });
+        const deadline = Date.now() + 180000;
+        while (Date.now() < deadline) {
+          onProgress("直接対戦を検索しています。完了まで少しお待ちください。");
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+          const response = await fetchWithTimeout(`/api/head-to-head?${jobParams.toString()}`, {}, 10000);
+          const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
+          if (response.status === 202) {
+            continue;
+          }
+          if (!response.ok) {
+            throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
+          }
+          return data;
+        }
+        throw new Error("Head To Headの検索がタイムアウトしました。しばらくしてから再度お試しください。");
       }
 
       async function readJsonResponse(response, fallbackMessage) {
