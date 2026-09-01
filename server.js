@@ -4110,7 +4110,7 @@ const autoDerivedIndexLastScheduled = new Map();
 let autoDerivedIndexBuildPromise = Promise.resolve();
 let autoHeadToHeadIndexUpdatePromise = Promise.resolve();
 const AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS = Number(process.env.AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS || 10 * 60_000);
-const WTT_RECORD_SNAPSHOT_CACHE_TTL_MS = Number(process.env.WTT_RECORD_SNAPSHOT_CACHE_TTL_MS || 5_000);
+const WTT_RECORD_SNAPSHOT_CACHE_TTL_MS = Number(process.env.WTT_RECORD_SNAPSHOT_CACHE_TTL_MS || 60_000);
 let wttRecordSnapshotCache = null;
 
 function getPathStatToken(filePath) {
