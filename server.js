@@ -4057,6 +4057,7 @@ const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
 );
 const HEAD_TO_HEAD_QUERY_RESULT_PREFIX = "__HEAD_TO_HEAD_QUERY_RESULT__";
 const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIMEOUT_MS || 120_000);
+const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1";
 let headToHeadQueryWorker = null;
 let headToHeadQueryRequestId = 0;
 const playerRecordArchiveParseCache = new Map();
@@ -9538,6 +9539,12 @@ function startServer() {
 
   server.listen(PORT, HOST, () => {
     console.log(`WTT Individual Match Formatter web server: http://${HOST}:${PORT}`);
+    if (HEAD_TO_HEAD_QUERY_WORKER_WARMUP) {
+      setImmediate(() => {
+        getHeadToHeadQueryWorker();
+        console.log("[h2h-query-worker] startup warmup scheduled");
+      });
+    }
     scheduleHeadToHeadIndexReconciliation();
   });
 }
@@ -9750,6 +9757,17 @@ async function runHeadToHeadQueryCli() {
 }
 
 async function runHeadToHeadQueryWorkerCli() {
+  if (HEAD_TO_HEAD_QUERY_WORKER_WARMUP) {
+    try {
+      const warmupStartedAt = Date.now();
+      const snapshot = getWttRecordFileSnapshot();
+      const signature = getHeadToHeadPersistentIndexSignature(snapshot);
+      const warmed = getHeadToHeadPersistentIndex(signature);
+      console.error(`[h2h-query-worker] index ${warmed ? "ready" : "unavailable"} in ${Date.now() - warmupStartedAt}ms`);
+    } catch (error) {
+      console.error(`[h2h-query-worker] warmup skipped: ${error?.message || error}`);
+    }
+  }
   const input = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
   for await (const line of input) {
     if (!String(line || "").trim()) {
