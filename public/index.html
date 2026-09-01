@@ -1421,21 +1421,34 @@
         if (selectedHeadToHeadPlayerB?.translatedName && selectedHeadToHeadPlayerB.translatedName !== "未登録") {
           params.set("translatedB", selectedHeadToHeadPlayerB.translatedName);
         }
-        try {
-          const response = await fetchWithTimeout(`/api/head-to-head?${params.toString()}`, {}, 120000);
-          const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
-          if (!response.ok) {
-            throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
+        let lastError = null;
+        for (let attempt = 0; attempt < 2; attempt += 1) {
+          try {
+            const response = await fetchWithTimeout(`/api/head-to-head?${params.toString()}`, {}, 120000);
+            const data = await readJsonResponse(response, "Head To Head の読み込みに失敗しました。");
+            if (!response.ok) {
+              throw new Error(data.error || "Head To Head の読み込みに失敗しました。");
+            }
+            renderHeadToHead(data);
+            return;
+          } catch (error) {
+            lastError = error;
+            const message = String(error?.message || "");
+            const transient = message.includes("APIではなくHTML") || message.includes("通信がタイムアウト");
+            if (attempt === 0 && transient) {
+              loading.textContent = "直接対戦の接続を再試行しています。";
+              await new Promise((resolve) => setTimeout(resolve, 3000));
+              continue;
+            }
+            break;
           }
-          renderHeadToHead(data);
-        } catch (error) {
-          headToHeadResults.innerHTML = "";
-          const empty = document.createElement("div");
-          empty.className = "player-search-empty";
-          empty.textContent = error?.message || "Head To Head の読み込みに失敗しました。";
-          headToHeadResults.appendChild(empty);
-          throw error;
         }
+        headToHeadResults.innerHTML = "";
+        const empty = document.createElement("div");
+        empty.className = "player-search-empty";
+        empty.textContent = lastError?.message || "Head To Head の読み込みに失敗しました。";
+        headToHeadResults.appendChild(empty);
+        throw lastError || new Error("Head To Head の読み込みに失敗しました。");
       }
 
       async function loadPlayerSearchResults() {
