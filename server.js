@@ -4429,6 +4429,13 @@ function getHeadToHeadQueryWorker() {
     },
     stdio: ["pipe", "pipe", "pipe"],
   });
+  try {
+    // Keep Render's health endpoint and lightweight API work responsive while
+    // the long-running H2H worker scans its persistent index.
+    process.setPriority(child.pid, 10);
+  } catch {
+    // Priority changes are not available on every local/host environment.
+  }
   const worker = {
     child,
     stdout: "",
