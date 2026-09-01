@@ -483,7 +483,11 @@ function isRateLimited(request) {
   return entry.count > RATE_LIMIT_MAX_REQUESTS;
 }
 
-function buildHealthPayload() {
+const HEALTH_PAYLOAD_CACHE_TTL_MS = Number(process.env.HEALTH_PAYLOAD_CACHE_TTL_MS || 5_000);
+let healthPayloadCache = null;
+let healthPayloadCacheBuiltAt = 0;
+
+function buildHealthPayloadUncached() {
   return {
     ok: true,
     deploy: {
@@ -539,6 +543,20 @@ function buildHealthPayload() {
       sharedTranslationsConfigured: hasSharedTranslationsSource(),
     },
   };
+}
+
+function buildHealthPayload() {
+  const now = Date.now();
+  if (
+    healthPayloadCache &&
+    HEALTH_PAYLOAD_CACHE_TTL_MS > 0 &&
+    now - healthPayloadCacheBuiltAt < HEALTH_PAYLOAD_CACHE_TTL_MS
+  ) {
+    return healthPayloadCache;
+  }
+  healthPayloadCache = buildHealthPayloadUncached();
+  healthPayloadCacheBuiltAt = now;
+  return healthPayloadCache;
 }
 
 function runHeavyApi(task, response) {
