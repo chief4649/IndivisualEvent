@@ -1722,7 +1722,7 @@
           eventLimit: "80",
           matchLimit: "500",
         });
-        const deadline = Date.now() + 180000;
+        const deadline = Date.now() + 330000;
         while (Date.now() < deadline) {
           onProgress("直接対戦を検索しています。完了まで少しお待ちください。");
           await new Promise((resolve) => setTimeout(resolve, 2000));

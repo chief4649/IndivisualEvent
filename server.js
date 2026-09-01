@@ -526,6 +526,11 @@ function buildHealthPayload() {
       derivedIndexBuilds: [...autoDerivedIndexBuilds],
       startupHeadToHeadReconcile: HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED,
       h2hQueryWorkerReady: !HEAD_TO_HEAD_QUERY_WORKER_WARMUP || headToHeadQueryWorkerReady,
+      h2hQueryJobs: {
+        processing: [...headToHeadQueryJobs.values()].filter((job) => job.status === "processing").length,
+        completed: [...headToHeadQueryJobs.values()].filter((job) => job.status === "complete").length,
+        failed: [...headToHeadQueryJobs.values()].filter((job) => job.status === "failed").length,
+      },
       snapshotCache: {
         enabled: WTT_RECORD_SNAPSHOT_CACHE_TTL_MS > 0,
         ttlMs: WTT_RECORD_SNAPSHOT_CACHE_TTL_MS,
@@ -4086,6 +4091,9 @@ const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
 );
 const HEAD_TO_HEAD_QUERY_RESULT_PREFIX = "__HEAD_TO_HEAD_QUERY_RESULT__";
 const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIMEOUT_MS || 120_000);
+const HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS = Number(
+  process.env.HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS || 300_000,
+);
 const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1";
 const HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX = Number(
   process.env.HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX || 128,
@@ -4480,7 +4488,7 @@ function getHeadToHeadQueryWorker() {
   return worker;
 }
 
-function spawnHeadToHeadQueryProcess(query) {
+function spawnHeadToHeadQueryProcess(query, timeoutMs = HEAD_TO_HEAD_QUERY_TIMEOUT_MS) {
   const worker = getHeadToHeadQueryWorker();
   const requestId = `${Date.now()}-${++headToHeadQueryRequestId}`;
   return new Promise((resolve, reject) => {
@@ -4489,7 +4497,7 @@ function spawnHeadToHeadQueryProcess(query) {
       worker.child.kill();
       resetHeadToHeadQueryWorker(new Error("H2H query timed out. Please retry shortly."));
       reject(new Error("H2H query timed out. Please retry shortly."));
-    }, HEAD_TO_HEAD_QUERY_TIMEOUT_MS);
+    }, timeoutMs);
     worker.pending.set(requestId, { resolve, reject, timer });
     worker.child.stdin.write(JSON.stringify({ requestId, ...query }) + "\n", (error) => {
       if (!error) {
@@ -9115,7 +9123,7 @@ function pruneHeadToHeadQueryJobs() {
   }
 }
 
-function startHeadToHeadQueryJob(query) {
+function startHeadToHeadQueryJob(query, timeoutMs = HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS) {
   pruneHeadToHeadQueryJobs();
   const jobId = crypto.randomBytes(16).toString("hex");
   const job = {
@@ -9128,7 +9136,7 @@ function startHeadToHeadQueryJob(query) {
     error: null,
   };
   headToHeadQueryJobs.set(jobId, job);
-  spawnHeadToHeadQueryProcess(query)
+  spawnHeadToHeadQueryProcess(query, timeoutMs)
     .then((searchResult) => {
       job.status = "complete";
       job.searchResult = searchResult;
@@ -9263,7 +9271,7 @@ async function handleHeadToHeadApi(requestUrl, response) {
       translatedB: playerBTranslatedName,
     };
     if (requestUrl.searchParams.get("async") === "1") {
-      const job = startHeadToHeadQueryJob(query);
+      const job = startHeadToHeadQueryJob(query, HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS);
       sendJson(response, 202, { status: job.status, jobId: job.id });
       return;
     }
