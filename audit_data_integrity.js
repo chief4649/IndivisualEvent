@@ -60,6 +60,19 @@ function compareCodes(left, right) {
   };
 }
 
+function getExpectedEventIndexMatchCount(raw) {
+  if (!raw.some((item) => String(item?.matchType || "").trim())) {
+    return raw.length;
+  }
+
+  return raw.reduce((count, item) => {
+    if (String(item?.matchType || "").trim().toLowerCase() === "team") {
+      return count + (Array.isArray(item?.singles) ? item.singles.length : 0);
+    }
+    return count + 1;
+  }, 0);
+}
+
 function auditEvent(eventId, indexes) {
   const rawPath = path.join(RAW_DIR, `${eventId}.json`);
   const slimPath = path.join(SLIM_DIR, `${eventId}.json`);
@@ -79,6 +92,7 @@ function auditEvent(eventId, indexes) {
   const duplicateCodes = rawCodes.filter((code, index) => code && rawCodes.indexOf(code) !== index);
   const wrongEventIds = rawEventIds.filter((value) => value !== eventId);
   const expected = getExpectedEventEntry(eventId, indexes);
+  const expectedEventIndexMatchCount = getExpectedEventIndexMatchCount(raw);
 
   result.raw = {
     status: "ok",
@@ -122,10 +136,11 @@ function auditEvent(eventId, indexes) {
     result.eventIndex = {
       status: "ok",
       indexedMatches: eventIndex.indexedMatches ?? null,
+      expectedIndexedMatches: expectedEventIndexMatchCount,
       indexedEntries: eventIndex.indexedEntries ?? null,
       keyCount: eventIndex.keyCount ?? null,
     };
-    if (eventIndex.indexedMatches !== raw.length) result.issues.push("event_index_count_mismatch");
+    if (eventIndex.indexedMatches !== expectedEventIndexMatchCount) result.issues.push("event_index_count_mismatch");
   }
 
   return result;
