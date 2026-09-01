@@ -7335,6 +7335,9 @@ function getHeadToHeadEventFileSignature(file) {
 }
 
 function isHeadToHeadPairIndexEventCurrent(file, indexedSignature, indexGeneratedAt = null) {
+  if (!indexedSignature) {
+    return false;
+  }
   const currentSignature = getHeadToHeadEventFileSignature(file);
   if (indexedSignature === currentSignature) {
     return true;
