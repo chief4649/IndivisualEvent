@@ -9222,12 +9222,10 @@ async function handleHeadToHeadApi(requestUrl, response) {
         return;
       }
       if (job.status === "failed") {
-        headToHeadQueryJobs.delete(jobId);
         sendJson(response, 500, { error: job.error || "Head To Headの検索に失敗しました。" });
         return;
       }
       const payload = buildHeadToHeadApiPayload(job.query, job.searchResult, eventLimit, matchLimit);
-      headToHeadQueryJobs.delete(jobId);
       sendJson(response, 200, payload);
       return;
     }
