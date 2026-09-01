@@ -4080,6 +4080,9 @@ const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
 const HEAD_TO_HEAD_QUERY_RESULT_PREFIX = "__HEAD_TO_HEAD_QUERY_RESULT__";
 const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIMEOUT_MS || 120_000);
 const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1";
+const HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX = Number(
+  process.env.HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX || 128,
+);
 let headToHeadQueryWorker = null;
 let headToHeadQueryWorkerReady = false;
 let headToHeadQueryRequestId = 0;
@@ -7691,26 +7694,27 @@ function getHeadToHeadIndexedPairFromDir(index, dir, pairKey, cacheKey) {
   if (!index.pairShardCache.has(key)) {
     try {
       const shardPath = path.join(dir, shardName);
-      const lines = fs.readFileSync(shardPath, "utf8").split(/\n/).filter(Boolean);
-      index.pairShardCache.set(key, lines);
+      const entries = fs.readFileSync(shardPath, "utf8")
+        .split(/\n/)
+        .filter(Boolean)
+        .flatMap((line) => {
+          try {
+            const parsed = JSON.parse(line);
+            return parsed?.pairKey ? [parsed] : [];
+          } catch {
+            return [];
+          }
+        });
+      index.pairShardCache.set(key, entries);
     } catch {
       index.pairShardCache.set(key, []);
     }
-    while (index.pairShardCache.size > 2) {
+    while (index.pairShardCache.size > Math.max(1, HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX)) {
       const oldestKey = index.pairShardCache.keys().next().value;
       index.pairShardCache.delete(oldestKey);
     }
   }
-  return index.pairShardCache.get(key)
-    .map((line) => {
-      try {
-        const parsed = JSON.parse(line);
-        return parsed?.pairKey === pairKey ? parsed : null;
-      } catch {
-        return null;
-      }
-    })
-    .filter(Boolean);
+  return (index.pairShardCache.get(key) || []).filter((entry) => entry.pairKey === pairKey);
 }
 
 function getHeadToHeadIndexedPair(index, pairKey) {
