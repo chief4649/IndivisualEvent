@@ -5,6 +5,7 @@ const { spawn } = require("child_process");
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const readline = require("readline");
 const { URL } = require("url");
 
 const {
@@ -4055,6 +4056,9 @@ const HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES = Number(
   process.env.HEAD_TO_HEAD_PAIR_INDEX_MIN_FREE_BYTES || 256 * 1024 * 1024,
 );
 const HEAD_TO_HEAD_QUERY_RESULT_PREFIX = "__HEAD_TO_HEAD_QUERY_RESULT__";
+const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIMEOUT_MS || 120_000);
+let headToHeadQueryWorker = null;
+let headToHeadQueryRequestId = 0;
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
 const LIVE_EVENT_REFRESH_GRACE_DAYS = Number(process.env.LIVE_EVENT_REFRESH_GRACE_DAYS || 2);
@@ -4351,66 +4355,110 @@ function spawnDerivedIndexProcess(args, label) {
   });
 }
 
-function spawnHeadToHeadQueryProcess(query) {
-  return new Promise((resolve, reject) => {
-    const child = spawn(process.execPath, [
-      "-r",
-      "./runtime_legacy_ittf_patch.js",
-      "server.js",
-      "--head-to-head-query",
-      "--player-a",
-      String(query.playerA || ""),
-      "--translated-a",
-      String(query.translatedA || ""),
-      "--player-b",
-      String(query.playerB || ""),
-      "--translated-b",
-      String(query.translatedB || ""),
-    ], {
-      cwd: __dirname,
-      env: {
-        ...process.env,
-        DATA_DIR,
-      },
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-    let stdout = "";
-    let stderr = "";
-    child.stdout.on("data", (chunk) => {
-      stdout += String(chunk || "");
-      if (stdout.length > 20 * 1024 * 1024) {
-        child.kill();
-        reject(new Error("H2H query result exceeded the response limit"));
-      }
-    });
-    child.stderr.on("data", (chunk) => {
-      stderr += String(chunk || "");
-      if (stderr.length > 4000) {
-        stderr = stderr.slice(-4000);
-      }
-    });
-    child.on("error", reject);
-    child.on("close", (code) => {
-      const line = stdout
-        .split(/\r?\n/)
-        .reverse()
-        .find((value) => value.startsWith(HEAD_TO_HEAD_QUERY_RESULT_PREFIX));
-      if (code !== 0 || !line) {
-        reject(new Error(
-          `H2H query process exited with code ${code}${stderr ? `: ${stderr.trim()}` : ""}`,
-        ));
-        return;
-      }
-      try {
-        const payload = JSON.parse(line.slice(HEAD_TO_HEAD_QUERY_RESULT_PREFIX.length));
-        if (!payload?.ok) {
-          reject(new Error(payload?.error || "H2H query process failed"));
+function resetHeadToHeadQueryWorker(error = new Error("H2H query worker exited")) {
+  const worker = headToHeadQueryWorker;
+  if (!worker) {
+    return;
+  }
+  headToHeadQueryWorker = null;
+  for (const pending of worker.pending.values()) {
+    clearTimeout(pending.timer);
+    pending.reject(error);
+  }
+  worker.pending.clear();
+}
+
+function getHeadToHeadQueryWorker() {
+  if (headToHeadQueryWorker?.child && !headToHeadQueryWorker.child.killed) {
+    return headToHeadQueryWorker;
+  }
+
+  const child = spawn(process.execPath, [
+    "-r",
+    "./runtime_legacy_ittf_patch.js",
+    "server.js",
+    "--head-to-head-query-worker",
+  ], {
+    cwd: __dirname,
+    env: {
+      ...process.env,
+      DATA_DIR,
+    },
+    stdio: ["pipe", "pipe", "pipe"],
+  });
+  const worker = {
+    child,
+    stdout: "",
+    stderr: "",
+    pending: new Map(),
+  };
+  headToHeadQueryWorker = worker;
+  child.stdout.on("data", (chunk) => {
+    worker.stdout += String(chunk || "");
+    if (worker.stdout.length > 20 * 1024 * 1024) {
+      child.kill();
+      resetHeadToHeadQueryWorker(new Error("H2H query result exceeded the response limit"));
+      return;
+    }
+    const lines = worker.stdout.split(/\r?\n/);
+    worker.stdout = lines.pop() || "";
+    lines
+      .filter((line) => line.startsWith(HEAD_TO_HEAD_QUERY_RESULT_PREFIX))
+      .forEach((line) => {
+        let payload;
+        try {
+          payload = JSON.parse(line.slice(HEAD_TO_HEAD_QUERY_RESULT_PREFIX.length));
+        } catch (error) {
+          resetHeadToHeadQueryWorker(new Error(`Invalid H2H query result: ${error.message}`));
           return;
         }
-        resolve(payload.searchResult);
-      } catch (error) {
-        reject(new Error(`Invalid H2H query result: ${error.message}`));
+        const requestId = String(payload?.requestId || "");
+        const pending = worker.pending.get(requestId);
+        if (!pending) {
+          return;
+        }
+        worker.pending.delete(requestId);
+        clearTimeout(pending.timer);
+        if (!payload.ok) {
+          pending.reject(new Error(payload.error || "H2H query process failed"));
+          return;
+        }
+        pending.resolve(payload.searchResult);
+      });
+  });
+  child.stderr.on("data", (chunk) => {
+    worker.stderr += String(chunk || "");
+    if (worker.stderr.length > 4000) {
+      worker.stderr = worker.stderr.slice(-4000);
+    }
+  });
+  child.on("error", (error) => resetHeadToHeadQueryWorker(error));
+  child.on("close", (code) => {
+    resetHeadToHeadQueryWorker(new Error(
+      `H2H query process exited with code ${code}${worker.stderr ? `: ${worker.stderr.trim()}` : ""}`,
+    ));
+  });
+  return worker;
+}
+
+function spawnHeadToHeadQueryProcess(query) {
+  const worker = getHeadToHeadQueryWorker();
+  const requestId = `${Date.now()}-${++headToHeadQueryRequestId}`;
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      worker.pending.delete(requestId);
+      worker.child.kill();
+      resetHeadToHeadQueryWorker(new Error("H2H query timed out. Please retry shortly."));
+      reject(new Error("H2H query timed out. Please retry shortly."));
+    }, HEAD_TO_HEAD_QUERY_TIMEOUT_MS);
+    worker.pending.set(requestId, { resolve, reject, timer });
+    worker.child.stdin.write(JSON.stringify({ requestId, ...query }) + "\n", (error) => {
+      if (!error) {
+        return;
       }
+      clearTimeout(timer);
+      worker.pending.delete(requestId);
+      reject(error);
     });
   });
 }
@@ -9652,16 +9700,16 @@ function getHeadToHeadQueryCliValue(argv, name) {
   return index >= 0 ? String(argv[index + 1] || "") : "";
 }
 
-async function runHeadToHeadQueryCli() {
-  const argv = process.argv.slice(2);
-  const playerAName = getHeadToHeadQueryCliValue(argv, "--player-a");
-  const playerATranslatedName = getHeadToHeadQueryCliValue(argv, "--translated-a");
-  const playerBName = getHeadToHeadQueryCliValue(argv, "--player-b");
-  const playerBTranslatedName = getHeadToHeadQueryCliValue(argv, "--translated-b");
+async function executeHeadToHeadQuery({
+  playerAName,
+  playerATranslatedName,
+  playerBName,
+  playerBTranslatedName,
+}) {
   const translations = readTranslations(TRANSLATIONS_PATH);
   const playerANeedles = buildPlayerRecordNeedles(playerAName, playerATranslatedName, translations);
   const playerBNeedles = buildPlayerRecordNeedles(playerBName, playerBTranslatedName, translations);
-  const searchResult = playerANeedles.length === 0 || playerBNeedles.length === 0
+  return playerANeedles.length === 0 || playerBNeedles.length === 0
     ? {
       builtAt: Date.now(),
       eventIndexSource: "wtt-records",
@@ -9688,7 +9736,56 @@ async function runHeadToHeadQueryCli() {
       playerANeedles,
       playerBNeedles,
     );
+}
+
+async function runHeadToHeadQueryCli() {
+  const argv = process.argv.slice(2);
+  const searchResult = await executeHeadToHeadQuery({
+    playerAName: getHeadToHeadQueryCliValue(argv, "--player-a"),
+    playerATranslatedName: getHeadToHeadQueryCliValue(argv, "--translated-a"),
+    playerBName: getHeadToHeadQueryCliValue(argv, "--player-b"),
+    playerBTranslatedName: getHeadToHeadQueryCliValue(argv, "--translated-b"),
+  });
   process.stdout.write(`${HEAD_TO_HEAD_QUERY_RESULT_PREFIX}${JSON.stringify({ ok: true, searchResult })}\n`);
+}
+
+async function runHeadToHeadQueryWorkerCli() {
+  const input = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
+  for await (const line of input) {
+    if (!String(line || "").trim()) {
+      continue;
+    }
+    let query;
+    try {
+      query = JSON.parse(line);
+    } catch (error) {
+      process.stdout.write(`${HEAD_TO_HEAD_QUERY_RESULT_PREFIX}${JSON.stringify({
+        requestId: "",
+        ok: false,
+        error: `Invalid H2H query request: ${error.message}`,
+      })}\n`);
+      continue;
+    }
+    try {
+      const searchResult = await executeHeadToHeadQuery({
+        playerAName: String(query.playerA || ""),
+        playerATranslatedName: String(query.translatedA || ""),
+        playerBName: String(query.playerB || ""),
+        playerBTranslatedName: String(query.translatedB || ""),
+      });
+      process.stdout.write(`${HEAD_TO_HEAD_QUERY_RESULT_PREFIX}${JSON.stringify({
+        requestId: String(query.requestId || ""),
+        ok: true,
+        searchResult,
+      })}\n`);
+    } catch (error) {
+      process.stdout.write(`${HEAD_TO_HEAD_QUERY_RESULT_PREFIX}${JSON.stringify({
+        requestId: String(query.requestId || ""),
+        ok: false,
+        error: error.message || String(error),
+      })}\n`);
+    }
+  }
 }
 
 if (process.argv.includes("--update-head-to-head-index")) {
@@ -9727,6 +9824,11 @@ if (process.argv.includes("--update-head-to-head-index")) {
       ok: false,
       error: error.message || String(error),
     })}\n`);
+    process.exitCode = 1;
+  });
+} else if (process.argv.includes("--head-to-head-query-worker")) {
+  runHeadToHeadQueryWorkerCli().catch((error) => {
+    console.error(error.stack || error.message || String(error));
     process.exitCode = 1;
   });
 } else {
