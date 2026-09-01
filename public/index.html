@@ -1410,6 +1410,7 @@
         loading.textContent = "直接対戦を読み込んでいます。";
         headToHeadResults.appendChild(loading);
 
+        await waitForHeadToHeadQueryWorkerReady();
         const params = new URLSearchParams({
           playerA,
           playerB,
@@ -1670,6 +1671,23 @@
         } finally {
           clearTimeout(timeout);
           externalSignal?.removeEventListener("abort", abortFromExternalSignal);
+        }
+      }
+
+      async function waitForHeadToHeadQueryWorkerReady() {
+        const deadline = Date.now() + 110000;
+        while (Date.now() < deadline) {
+          try {
+            const response = await fetchWithTimeout("/api/health", {}, 5000);
+            const data = await readJsonResponse(response, "Head To Headの準備状態を確認できませんでした。");
+            const operations = data?.operations;
+            if (!Object.prototype.hasOwnProperty.call(operations || {}, "h2hQueryWorkerReady") || operations.h2hQueryWorkerReady) {
+              return;
+            }
+          } catch {
+            // The API request below remains the final fallback after the wait window.
+          }
+          await new Promise((resolve) => setTimeout(resolve, 5000));
         }
       }
 

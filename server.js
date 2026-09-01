@@ -525,6 +525,7 @@ function buildHealthPayload() {
       headToHeadBuildRunning: Boolean(headToHeadIndexBuildProcess),
       derivedIndexBuilds: [...autoDerivedIndexBuilds],
       startupHeadToHeadReconcile: HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED,
+      h2hQueryWorkerReady: !HEAD_TO_HEAD_QUERY_WORKER_WARMUP || headToHeadQueryWorkerReady,
       snapshotCache: {
         enabled: WTT_RECORD_SNAPSHOT_CACHE_TTL_MS > 0,
         ttlMs: WTT_RECORD_SNAPSHOT_CACHE_TTL_MS,
@@ -4080,6 +4081,7 @@ const HEAD_TO_HEAD_QUERY_RESULT_PREFIX = "__HEAD_TO_HEAD_QUERY_RESULT__";
 const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIMEOUT_MS || 120_000);
 const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1";
 let headToHeadQueryWorker = null;
+let headToHeadQueryWorkerReady = false;
 let headToHeadQueryRequestId = 0;
 const playerRecordArchiveParseCache = new Map();
 const PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX = Number(process.env.PLAYER_RECORD_ARCHIVE_PARSE_CACHE_MAX || 0);
@@ -4379,6 +4381,7 @@ function spawnDerivedIndexProcess(args, label) {
 
 function resetHeadToHeadQueryWorker(error = new Error("H2H query worker exited")) {
   const worker = headToHeadQueryWorker;
+  headToHeadQueryWorkerReady = false;
   if (!worker) {
     return;
   }
@@ -4415,6 +4418,7 @@ function getHeadToHeadQueryWorker() {
     pending: new Map(),
   };
   headToHeadQueryWorker = worker;
+  headToHeadQueryWorkerReady = false;
   child.stdout.on("data", (chunk) => {
     worker.stdout += String(chunk || "");
     if (worker.stdout.length > 20 * 1024 * 1024) {
@@ -4450,6 +4454,9 @@ function getHeadToHeadQueryWorker() {
   });
   child.stderr.on("data", (chunk) => {
     worker.stderr += String(chunk || "");
+    if (worker.stderr.includes("[h2h-query-worker] ready")) {
+      headToHeadQueryWorkerReady = true;
+    }
     if (worker.stderr.length > 4000) {
       worker.stderr = worker.stderr.slice(-4000);
     }
@@ -9792,6 +9799,7 @@ async function runHeadToHeadQueryWorkerCli() {
       console.error(`[h2h-query-worker] warmup skipped: ${error?.message || error}`);
     }
   }
+  console.error("[h2h-query-worker] ready");
   const input = readline.createInterface({ input: process.stdin, crlfDelay: Infinity });
   for await (const line of input) {
     if (!String(line || "").trim()) {
