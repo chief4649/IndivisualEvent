@@ -10,6 +10,8 @@ const {
   WTT_SUSPICIOUS_RESULT_COUNTS,
   getProcessedMatches,
   getWttEventLifecycleMeta,
+  getWttPayloadFormat,
+  isWttPayloadSourceCompatible,
   updateWttArchiveIndexEntry,
   writeWttArchiveIfNotSmaller,
 } = require("./extract_individual_matches");
@@ -200,6 +202,10 @@ function getArchiveStats(eventId) {
     rawCount: 0,
     slimExists: false,
     slimCount: 0,
+    rawFormat: "missing",
+    slimFormat: "missing",
+    rawSourceCompatible: true,
+    slimSourceCompatible: true,
   };
 
   for (const [kind, filePath] of [["raw", archivePath(eventId)], ["slim", slimArchivePath(eventId)]]) {
@@ -209,6 +215,11 @@ function getArchiveStats(eventId) {
     const payload = JSON.parse(fs.readFileSync(filePath, "utf8"));
     stats[`${kind}Exists`] = true;
     stats[`${kind}Count`] = Array.isArray(payload) ? payload.length : 0;
+    stats[`${kind}Format`] = getWttPayloadFormat(payload);
+    stats[`${kind}SourceCompatible`] = isWttPayloadSourceCompatible(payload, eventId, {
+      wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
+      wttDateIndexPath: WTT_DATE_INDEX_PATH,
+    });
   }
 
   // Player records and H2H read the slim archive when it exists. A large RAW
@@ -217,6 +228,8 @@ function getArchiveStats(eventId) {
     ...stats,
     count: stats.slimExists && stats.slimCount > 0 ? stats.slimCount : stats.rawCount,
     mismatched: stats.rawExists && stats.slimExists && stats.rawCount !== stats.slimCount,
+    sourceMismatched: stats.rawExists && stats.slimExists && stats.rawFormat !== stats.slimFormat,
+    sourceIncompatible: !stats.rawSourceCompatible || !stats.slimSourceCompatible,
     slimMissing: stats.rawExists && !stats.slimExists,
   };
 }
@@ -328,6 +341,8 @@ function buildCandidates(args) {
         archiveStats,
         suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry)
           || archiveStats.slimMissing
+          || archiveStats.sourceMismatched
+          || archiveStats.sourceIncompatible
           || (archiveStats.mismatched && archiveStats.slimCount <= 30),
         auditSuspicious: Boolean(args.auditSuspicious && hasArchiveFile && isAuditSuspiciousCount(archiveCount)),
         partialArchive,

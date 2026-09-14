@@ -68,14 +68,6 @@ const WTT_RECORD_SOURCE_OVERRIDES = {
     confidence: "high",
     resolvedBy: "known_event_namespace_mapping",
   },
-  "2410": {
-    recordSource: "ittf",
-    recordEventId: "5277",
-    recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE5277/results.html#/results`,
-    title: "WTT Contender Doha 2021",
-    confidence: "high",
-    resolvedBy: "known_event_namespace_mapping",
-  },
   "3150": {
     recordSource: "ittf",
     recordEventId: "5676",
@@ -1394,7 +1386,11 @@ function readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir = nu
     }
     seen.add(resolvedDir);
     const archived = readWttArchive(candidateDir, eventId);
-    if (archived && isWttPayloadDateCompatible(archived, eventId, options)) {
+    if (
+      archived &&
+      isWttPayloadDateCompatible(archived, eventId, options) &&
+      isWttPayloadSourceCompatible(archived, eventId, options)
+    ) {
       const count = Array.isArray(archived) ? archived.length : 0;
       if (count > bestCount) {
         bestArchive = archived;
@@ -3000,6 +2996,34 @@ function isWttPayloadDateCompatible(payload, eventId, options = {}) {
   return compatible.length === dates.length;
 }
 
+function getWttPayloadFormat(payload) {
+  const documentCodes = (Array.isArray(payload) ? payload : [])
+    .map((item) => String(item?.documentCode ?? item?.match_card?.documentCode ?? "").trim())
+    .filter(Boolean)
+    .slice(0, 20);
+  if (documentCodes.length === 0) {
+    return "unknown";
+  }
+  if (documentCodes.every((code) => /^TTE[A-Z0-9]/i.test(code))) {
+    return "wtt";
+  }
+  if (documentCodes.every((code) => /^[MWX]\./i.test(code))) {
+    return "ittf";
+  }
+  return "mixed";
+}
+
+function isWttPayloadSourceCompatible(payload, eventId, options = {}) {
+  const eventIdText = String(eventId || "").trim();
+  if (/^TTE\d+$/i.test(eventIdText)) {
+    return true;
+  }
+  const seed = getWttResolutionSeedMeta(eventIdText, options);
+  const explicitlyMappedToIttf = WTT_RECORD_SOURCE_OVERRIDES[eventIdText]?.recordSource === "ittf";
+  const isWttHostedEvent = /^WTT\b/i.test(seed.title);
+  return !isWttHostedEvent || explicitlyMappedToIttf || getWttPayloadFormat(payload) !== "ittf";
+}
+
 function getBornanSearchRangesForYear(year) {
   const numericYear = Number(year);
   if (!Number.isFinite(numericYear)) {
@@ -3974,11 +3998,14 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
     return webgenPayload;
   }
 
-  const archivedPayload = await fetchWttOfficialResultsFromArchive(eventId);
+  const archivedPayload = options.refreshWttApi
+    ? null
+    : await fetchWttOfficialResultsFromArchive(eventId);
   if (
     Array.isArray(archivedPayload) &&
     archivedPayload.length > 0 &&
-    isWttPayloadDateCompatible(archivedPayload, eventId, options)
+    isWttPayloadDateCompatible(archivedPayload, eventId, options) &&
+    isWttPayloadSourceCompatible(archivedPayload, eventId, options)
   ) {
     return archivedPayload;
   }
@@ -3989,7 +4016,10 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   try {
     primaryPayload = await fetchWttOfficialResultsFromApi(eventId, take, options);
     if (Array.isArray(primaryPayload)) {
-      if (!isWttPayloadDateCompatible(primaryPayload, eventId, options)) {
+      if (
+        !isWttPayloadDateCompatible(primaryPayload, eventId, options) ||
+        !isWttPayloadSourceCompatible(primaryPayload, eventId, options)
+      ) {
         throw new Error(`WTT result payload dates do not match event ${eventId}`);
       }
       if (primaryPayload.length === WTT_RESULT_FALLBACK_PAGE_SIZE && !options.skipWttMinimalHydration) {
@@ -4062,7 +4092,8 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
       if (
         Array.isArray(bornanPayload) &&
         bornanPayload.length > 0 &&
-        isWttPayloadDateCompatible(bornanPayload, eventId, options)
+        isWttPayloadDateCompatible(bornanPayload, eventId, options) &&
+        isWttPayloadSourceCompatible(bornanPayload, eventId, options)
       ) {
         return bornanPayload;
       }
@@ -4155,6 +4186,7 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       );
       if (
         storedArchive &&
+        isWttPayloadSourceCompatible(storedArchive, eventId, options) &&
         (
           !Array.isArray(payload) ||
           !shouldReuseCachedPayload(source, payload) ||
@@ -4196,7 +4228,12 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
 
       return mergedPayload;
     } catch (error) {
-      archived = archived || readWttArchiveWithFallback(archiveDir, eventId, fallbackArchiveDir);
+      archived = archived || readWttArchiveWithFallback(
+        archiveDir,
+        eventId,
+        fallbackArchiveDir,
+        options,
+      );
       if (archived) {
         if (meta.isFinished || isLikelyTransientExternalFetchError(error)) {
           return archived;
@@ -6004,6 +6041,7 @@ module.exports = {
   formatList,
   formatText,
   getWttEventLifecycleMeta,
+  getWttPayloadFormat,
   getProcessedMatches,
   inferGender,
   matchesRoundFilter,
@@ -6021,6 +6059,7 @@ module.exports = {
   readTranslations,
   readWttArchive,
   readWttDateIndex,
+  isWttPayloadSourceCompatible,
   renderOutput,
   resolveEventId,
   shouldUseZennihonArchive,
