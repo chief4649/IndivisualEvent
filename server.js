@@ -123,6 +123,14 @@ const WTT_EVENT_PUBLIC_URLS = {
   "5525": "https://results.ittf.com/ittf-web-results/html/TTE3454/results.html#/results",
   "wmc2026": "https://wmc2026.ittf.com/",
 };
+const WTT_EVENT_ITTF_RESULT_IDS = {
+  "5410": "TTE2579",
+  "5429": "TTE2580",
+  "5450": "TTE2602",
+  "5505": "TTE2708",
+};
+const WTT_EVENT_LINK_RECORD_READ_BYTES = 16 * 1024;
+const wttEventLinkRecordTypeCache = new Map();
 const ADMIN_TOKEN = process.env.ADMIN_TOKEN || "";
 const VIEWER_PASSWORD = process.env.VIEWER_PASSWORD || "";
 const TRUST_PROXY = process.env.TRUST_PROXY === "1";
@@ -1322,6 +1330,21 @@ function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
   if (WTT_EVENT_PUBLIC_URLS[normalizedId]) {
     return WTT_EVENT_PUBLIC_URLS[normalizedId];
   }
+  const mappedIttfResultId = WTT_EVENT_ITTF_RESULT_IDS[normalizedId];
+  if (mappedIttfResultId) {
+    return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(mappedIttfResultId)}/results.html#/results`;
+  }
+  const storedRecordType = getStoredWttEventRecordType(normalizedId);
+  if (storedRecordType === "ittf") {
+    return `https://results.ittf.com/ittf-web-results/html/TTE${encodeURIComponent(normalizedId)}/results.html#/results`;
+  }
+  if (storedRecordType === "wtt") {
+    const storedName = String(eventName || "").trim() || getStoredWttIndexedName(normalizedId);
+    if (isWttTeamEventName(storedName)) {
+      return `https://www.worldtabletennis.com/teamseventInfo?eventId=${encodeURIComponent(normalizedId)}`;
+    }
+    return getEventUrl("wtt", normalizedId);
+  }
   const resolvedName = String(eventName || "").trim() || getStoredWttIndexedName(normalizedId);
   if (/^\d+$/.test(normalizedId) && Number(normalizedId) < 3000 && !isWttHostedEventName(resolvedName)) {
     return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
@@ -1340,6 +1363,71 @@ function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
     return `https://www.worldtabletennis.com/teamseventInfo?eventId=${encodeURIComponent(normalizedId)}`;
   }
   return getEventUrl("wtt", normalizedId);
+}
+
+function getStoredWttEventRecordType(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  if (!/^\d+$/.test(normalizedId)) {
+    return "";
+  }
+
+  const candidates = [
+    { filePath: path.join(WTT_SLIM_ARCHIVE_DIR, `${normalizedId}.json`), parseSource: "slim", sourcePriority: 3 },
+    { filePath: path.join(BUNDLED_WTT_SLIM_ARCHIVE_DIR, `${normalizedId}.json`), parseSource: "slim", sourcePriority: 0 },
+    { filePath: path.join(WTT_ARCHIVE_DIR, `${normalizedId}.json`), parseSource: "raw", sourcePriority: 1 },
+    { filePath: path.join(BUNDLED_WTT_ARCHIVE_DIR, `${normalizedId}.json`), parseSource: "raw", sourcePriority: 2 },
+  ].flatMap((candidate) => {
+    try {
+      const stat = fs.statSync(candidate.filePath);
+      return stat.isFile() && stat.size > 2 ? [{ ...candidate, stat }] : [];
+    } catch {
+      return [];
+    }
+  });
+  candidates.sort((left, right) => {
+    if (left.parseSource !== right.parseSource) {
+      return left.parseSource === "slim" ? -1 : 1;
+    }
+    return (
+      right.stat.size - left.stat.size ||
+      right.stat.mtimeMs - left.stat.mtimeMs ||
+      right.sourcePriority - left.sourcePriority
+    );
+  });
+
+  for (const { filePath, stat } of candidates) {
+
+    const cacheKey = `${filePath}:${stat.size}:${Math.trunc(stat.mtimeMs)}`;
+    const cached = wttEventLinkRecordTypeCache.get(normalizedId);
+    if (cached?.cacheKey === cacheKey) {
+      return cached.recordType;
+    }
+
+    let fd;
+    try {
+      fd = fs.openSync(filePath, "r");
+      const readLength = Math.min(stat.size, WTT_EVENT_LINK_RECORD_READ_BYTES);
+      const buffer = Buffer.allocUnsafe(readLength);
+      const bytesRead = fs.readSync(fd, buffer, 0, readLength, 0);
+      const prefix = buffer.toString("utf8", 0, bytesRead);
+      const documentCode = prefix.match(/"documentCode"\s*:\s*"([^"]+)"/)?.[1] || "";
+      const recordType = /^TTE/i.test(documentCode)
+        ? "wtt"
+        : (/^[MWX]\./i.test(documentCode) ? "ittf" : "");
+      if (recordType) {
+        wttEventLinkRecordTypeCache.set(normalizedId, { cacheKey, recordType });
+        return recordType;
+      }
+    } catch {
+      // Fall through to the next available archive copy.
+    } finally {
+      if (fd !== undefined) {
+        fs.closeSync(fd);
+      }
+    }
+  }
+
+  return "";
 }
 
 function readWttArchiveIndex() {
