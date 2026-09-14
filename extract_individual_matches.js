@@ -60,6 +60,14 @@ const WTT_EVENT_ID_ALIASES = {
   "3440": "TTE3440",
 };
 const WTT_RECORD_SOURCE_OVERRIDES = {
+  "5309": {
+    recordSource: "ittf",
+    recordEventId: "5309",
+    recordUrl: `${ITTF_RESULTS_BASE_URL}/TTE5309/results.html#/results`,
+    title: "WTT Youth Star Contender",
+    confidence: "high",
+    resolvedBy: "known_event_namespace_mapping",
+  },
   "5525": {
     recordSource: "ittf",
     recordEventId: "3454",
