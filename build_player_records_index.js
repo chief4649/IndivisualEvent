@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const {
   buildJaRoundContext,
@@ -57,6 +58,20 @@ function readCandidateIndex() {
   if (monolithic && typeof monolithic === "object" && !Array.isArray(monolithic) && Object.keys(monolithic).length > 0) {
     return monolithic;
   }
+  if (!fs.existsSync(CANDIDATE_SHARDS_DIR)) {
+    return {};
+  }
+  const index = {};
+  fs.readdirSync(CANDIDATE_SHARDS_DIR)
+    .filter((fileName) => /^(?:[a-z0-9]|_)\.json$/i.test(fileName))
+    .forEach((fileName) => {
+      const shard = readJson(path.join(CANDIDATE_SHARDS_DIR, fileName), {});
+      Object.assign(index, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
+    });
+  return index;
+}
+
+function readCandidateShardedIndex() {
   if (!fs.existsSync(CANDIDATE_SHARDS_DIR)) {
     return {};
   }
@@ -564,10 +579,22 @@ function getCandidateShardName(key) {
   return /^[a-z0-9]$/.test(first) ? `${first}.json` : "_.json";
 }
 
-function writeCandidateIndex(files, index, indexedMatches) {
-  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-  fs.rmSync(CANDIDATE_SHARDS_DIR, { recursive: true, force: true });
-  fs.mkdirSync(CANDIDATE_SHARDS_DIR, { recursive: true });
+function normalizeCandidateIndex(index) {
+  const normalized = {};
+  Object.keys(index || {}).sort().forEach((key) => {
+    normalized[key] = [...new Set((Array.isArray(index[key]) ? index[key] : []).map(String))]
+      .sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
+  });
+  return normalized;
+}
+
+function getCandidateIndexHash(index) {
+  return crypto.createHash("sha256")
+    .update(JSON.stringify(normalizeCandidateIndex(index)))
+    .digest("hex");
+}
+
+function groupCandidateIndexShards(index) {
   const shards = {};
   Object.entries(index).forEach(([key, eventIds]) => {
     const shardName = getCandidateShardName(key);
@@ -576,6 +603,14 @@ function writeCandidateIndex(files, index, indexedMatches) {
     }
     shards[shardName][key] = eventIds;
   });
+  return shards;
+}
+
+function writeCandidateIndex(files, index, indexedMatches) {
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  fs.rmSync(CANDIDATE_SHARDS_DIR, { recursive: true, force: true });
+  fs.mkdirSync(CANDIDATE_SHARDS_DIR, { recursive: true });
+  const shards = groupCandidateIndexShards(index);
   Object.entries(shards).forEach(([shardName, shard]) => {
     writeJsonAtomic(path.join(CANDIDATE_SHARDS_DIR, shardName), shard);
   });
@@ -591,7 +626,47 @@ function writeCandidateIndex(files, index, indexedMatches) {
     eventCount: files.length,
     indexedMatches,
     keyCount: Object.keys(index).length,
+    indexSha256: getCandidateIndexHash(index),
+    shardsSha256: getCandidateIndexHash(index),
   });
+}
+
+function auditPlayerRecordCandidateIndex({ repair = false } = {}) {
+  const files = listWttRecordFiles();
+  const deps = readBuildDeps();
+  const { index: expectedIndex, indexedMatches } = buildCandidateIndex(files, deps);
+  const manifest = readJson(CANDIDATE_MANIFEST_PATH, {});
+  const monolithicIndex = readJson(CANDIDATE_INDEX_PATH, {});
+  const shardedIndex = readCandidateShardedIndex();
+  const expectedHash = getCandidateIndexHash(expectedIndex);
+  const monolithicHash = getCandidateIndexHash(monolithicIndex);
+  const shardedHash = getCandidateIndexHash(shardedIndex);
+  const sourceSignature = getPlayerRecordCacheSignature(files);
+  const reasons = [];
+
+  if (manifest.version !== CANDIDATE_INDEX_VERSION) reasons.push("manifest-version");
+  if (manifest.signature !== sourceSignature) reasons.push("source-signature");
+  if (Number(manifest.eventCount) !== files.length) reasons.push("event-count");
+  if (Number(manifest.indexedMatches) !== indexedMatches) reasons.push("match-count");
+  if (manifest.indexSha256 !== expectedHash) reasons.push("manifest-index-hash");
+  if (manifest.shardsSha256 !== expectedHash) reasons.push("manifest-shards-hash");
+  if (monolithicHash !== expectedHash) reasons.push("monolithic-content");
+  if (shardedHash !== expectedHash) reasons.push("sharded-content");
+
+  const repaired = repair && reasons.length > 0;
+  if (repaired) {
+    writeCandidateIndex(files, expectedIndex, indexedMatches);
+  }
+  return {
+    ok: reasons.length === 0 || repaired,
+    consistent: reasons.length === 0,
+    repaired,
+    reasons,
+    eventCount: files.length,
+    indexedMatches,
+    keyCount: Object.keys(expectedIndex).length,
+    expectedHash,
+  };
 }
 
 function updatePlayerRecordCandidateIndexForEvents(eventIds) {
@@ -730,6 +805,14 @@ function parseEventArgs(argv) {
 
 function main() {
   const argv = process.argv.slice(2);
+  if (argv.includes("--audit-candidates")) {
+    const result = auditPlayerRecordCandidateIndex({ repair: argv.includes("--repair") });
+    console.log(JSON.stringify(result));
+    if (!result.ok) {
+      process.exitCode = 2;
+    }
+    return;
+  }
   if (argv.includes("--all-incremental")) {
     const result = updateAllPlayerRecordsIndexIncrementally(argv);
     console.log(`updated ${result.eventCount} events, ${result.indexedMatches} matches, ${result.keyCount} player keys`);
@@ -778,5 +861,6 @@ if (require.main === module) {
 }
 
 module.exports = {
+  auditPlayerRecordCandidateIndex,
   updatePlayerRecordCandidateIndexForEvents,
 };

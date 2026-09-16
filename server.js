@@ -4225,6 +4225,15 @@ const autoDerivedIndexLastScheduled = new Map();
 let autoDerivedIndexBuildPromise = Promise.resolve();
 let autoHeadToHeadIndexUpdatePromise = Promise.resolve();
 const AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS = Number(process.env.AUTO_DERIVED_INDEX_RESCHEDULE_TTL_MS || 10 * 60_000);
+const PLAYER_RECORD_CANDIDATE_AUDIT_ENABLED = process.env.PLAYER_RECORD_CANDIDATE_AUDIT_ENABLED === "1"
+  || (process.env.PLAYER_RECORD_CANDIDATE_AUDIT_ENABLED !== "0" && Boolean(process.env.RENDER_GIT_COMMIT));
+const PLAYER_RECORD_CANDIDATE_AUDIT_START_DELAY_MS = Number(
+  process.env.PLAYER_RECORD_CANDIDATE_AUDIT_START_DELAY_MS || 15 * 60_000,
+);
+const PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS = Number(
+  process.env.PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS || 24 * 60 * 60_000,
+);
+let playerRecordCandidateAuditRunning = false;
 const WTT_RECORD_SNAPSHOT_CACHE_TTL_MS = Number(process.env.WTT_RECORD_SNAPSHOT_CACHE_TTL_MS || 60_000);
 let wttRecordSnapshotCache = null;
 
@@ -4822,6 +4831,44 @@ function scheduleHeadToHeadIndexReconciliation() {
     }
   }, 15_000);
   timer.unref?.();
+}
+
+function schedulePlayerRecordCandidateIntegrityAudit(delayMs = PLAYER_RECORD_CANDIDATE_AUDIT_START_DELAY_MS) {
+  if (!PLAYER_RECORD_CANDIDATE_AUDIT_ENABLED || AUTO_DERIVED_INDEX_DISABLED) {
+    return;
+  }
+  const timer = setTimeout(() => {
+    if (playerRecordCandidateAuditRunning) {
+      schedulePlayerRecordCandidateIntegrityAudit(PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS);
+      return;
+    }
+    playerRecordCandidateAuditRunning = true;
+    console.log("[player-record-candidate-audit] checking all archived events");
+    Promise.all([
+      autoDerivedIndexBuildPromise.catch(() => {}),
+      autoHeadToHeadIndexUpdatePromise.catch(() => {}),
+    ]).then(() => spawnDerivedIndexProcess([
+      "build_player_records_index.js",
+      "--audit-candidates",
+      "--repair",
+    ], "player-record-candidate-audit"))
+      .then((output) => {
+        console.log(`[player-record-candidate-audit] ${String(output || "complete").trim()}`);
+        playerRecordCandidateIndexState.signature = null;
+        playerRecordCandidateIndexState.generatedAt = null;
+        playerRecordCandidateIndexState.index = null;
+        clearPlayerRecordResultCache();
+        clearHeadToHeadResultCache();
+      })
+      .catch((error) => {
+        console.error("[player-record-candidate-audit] failed:", error?.message || error);
+      })
+      .finally(() => {
+        playerRecordCandidateAuditRunning = false;
+        schedulePlayerRecordCandidateIntegrityAudit(PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS);
+      });
+  }, Math.max(1_000, delayMs));
+  timer.unref();
 }
 
 function setPlayerRecordArchiveParseCacheValue(key, value) {
@@ -9806,6 +9853,7 @@ function startServer() {
       });
     }
     scheduleHeadToHeadIndexReconciliation();
+    schedulePlayerRecordCandidateIntegrityAudit();
   });
 }
 
