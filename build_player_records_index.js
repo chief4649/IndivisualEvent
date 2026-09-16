@@ -41,6 +41,17 @@ function readJson(filePath, fallback) {
   }
 }
 
+function writeJsonAtomic(filePath, value) {
+  const tempPath = `${filePath}.${process.pid}.${Date.now()}.tmp`;
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+  try {
+    fs.writeFileSync(tempPath, JSON.stringify(value));
+    fs.renameSync(tempPath, filePath);
+  } finally {
+    fs.rmSync(tempPath, { force: true });
+  }
+}
+
 function readCandidateIndex() {
   const monolithic = readJson(CANDIDATE_INDEX_PATH, null);
   if (monolithic && typeof monolithic === "object" && !Array.isArray(monolithic) && Object.keys(monolithic).length > 0) {
@@ -566,9 +577,12 @@ function writeCandidateIndex(files, index, indexedMatches) {
     shards[shardName][key] = eventIds;
   });
   Object.entries(shards).forEach(([shardName, shard]) => {
-    fs.writeFileSync(path.join(CANDIDATE_SHARDS_DIR, shardName), JSON.stringify(shard));
+    writeJsonAtomic(path.join(CANDIDATE_SHARDS_DIR, shardName), shard);
   });
-  fs.writeFileSync(CANDIDATE_MANIFEST_PATH, JSON.stringify({
+  // The API reads the monolithic file as the authoritative candidate index.
+  // Keep it in sync with the shards written by incremental crawler updates.
+  writeJsonAtomic(CANDIDATE_INDEX_PATH, index);
+  writeJsonAtomic(CANDIDATE_MANIFEST_PATH, {
     version: CANDIDATE_INDEX_VERSION,
     generatedAt: new Date().toISOString(),
     signature: getPlayerRecordCacheSignature(files),
@@ -577,7 +591,7 @@ function writeCandidateIndex(files, index, indexedMatches) {
     eventCount: files.length,
     indexedMatches,
     keyCount: Object.keys(index).length,
-  }));
+  });
 }
 
 function updatePlayerRecordCandidateIndexForEvents(eventIds) {
