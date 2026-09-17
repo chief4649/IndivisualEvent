@@ -16,8 +16,12 @@ const {
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
 const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
+const ITTF_ARCHIVE_DIR = path.join(DATA_DIR, "ittf-records");
+const ITTF_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "ittf-records-slim");
 const BUNDLED_WTT_ARCHIVE_DIR = path.join(__dirname, "wtt-records");
 const BUNDLED_WTT_SLIM_ARCHIVE_DIR = path.join(__dirname, "wtt-records-slim");
+const BUNDLED_ITTF_ARCHIVE_DIR = path.join(__dirname, "ittf-records");
+const BUNDLED_ITTF_SLIM_ARCHIVE_DIR = path.join(__dirname, "ittf-records-slim");
 const TRANSLATIONS_PATH = path.join(DATA_DIR, "translations.ja.json");
 const RULES_PATH = path.join(DATA_DIR, "rules.json");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
@@ -138,9 +142,13 @@ function listWttRecordFiles() {
   // converted and removed to stay within Render disk limits.
   addDir(WTT_ARCHIVE_DIR, 1, "runtime-raw");
   addDir(BUNDLED_WTT_ARCHIVE_DIR, 2, "bundled-raw");
+  addDir(ITTF_ARCHIVE_DIR, 1, "runtime-raw");
+  addDir(BUNDLED_ITTF_ARCHIVE_DIR, 2, "bundled-raw");
   if (process.env.WTT_SLIM_RECORDS_DISABLED !== "1") {
     addDir(BUNDLED_WTT_SLIM_ARCHIVE_DIR, 0, "bundled-slim", BUNDLED_WTT_ARCHIVE_DIR);
     addDir(WTT_SLIM_ARCHIVE_DIR, 3, "runtime-slim", WTT_ARCHIVE_DIR);
+    addDir(BUNDLED_ITTF_SLIM_ARCHIVE_DIR, 0, "bundled-slim", BUNDLED_ITTF_ARCHIVE_DIR);
+    addDir(ITTF_SLIM_ARCHIVE_DIR, 3, "runtime-slim", ITTF_ARCHIVE_DIR);
   }
 
   return [...recordsByEventId.values()]

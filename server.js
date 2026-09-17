@@ -1012,8 +1012,11 @@ function listRecordFiles(dirPath, limit = 20, options = {}) {
 }
 
 function getStorageLookup(source, eventId) {
-  const normalizedSource = normalizeSource(source || "wtt");
   const normalizedId = String(eventId || "").trim();
+  const requestedSource = normalizeSource(source || "wtt");
+  const normalizedSource = requestedSource === "zennihon"
+    ? requestedSource
+    : normalizeEventStorageSource(requestedSource, normalizedId);
   const dirPath = normalizedSource === "zennihon"
     ? ZENNIHON_ARCHIVE_DIR
     : normalizedSource === "ittf"
@@ -4345,6 +4348,11 @@ function createWttRecordFileEntry(options) {
     mtimeMs: Math.trunc(fileStat.mtimeMs),
     sourcePriority: options.sourcePriority,
     sourceLabel: options.sourceLabel,
+    source: options.source || getRecordSourceFromFilename(path.basename(filePath)),
+    storageKey: options.storageKey || getEventStorageKey(
+      options.source || getRecordSourceFromFilename(path.basename(filePath)),
+      eventId,
+    ),
   };
 }
 
@@ -4489,7 +4497,11 @@ function getWttRecordFileSnapshot() {
 }
 
 function isArchivedWttEvent(eventId) {
-  const archiveEntry = readWttArchiveIndex()[String(eventId || "").trim()];
+  const normalizedEventId = String(eventId || "").trim();
+  const source = normalizeEventStorageSource("", normalizedEventId);
+  const archiveEntry = source === "ittf"
+    ? getIttfEventIndex()[normalizeStoredEventId(source, normalizedEventId)]
+    : readWttArchiveIndex()[normalizedEventId];
   return Boolean(archiveEntry?.archived);
 }
 
@@ -4657,6 +4669,7 @@ async function buildDerivedIndexesForFinishedWttEvent(eventId) {
 
   if (file.parseSource !== "slim" && fs.existsSync(file.filePath)) {
     await spawnDerivedIndexProcess(["build_wtt_slim_records.js", file.filePath], "build_wtt_slim_records");
+    clearWttRecordSnapshotCache();
   }
 
   const refreshedFile = getRuntimeWttRecordFile(eventId) || file;
@@ -4675,10 +4688,17 @@ async function buildDerivedIndexesForFinishedWttEvent(eventId) {
     "build_player_records_index.js",
     String(eventId),
   ], "build_player_records_index");
-  await enqueueAutoHeadToHeadIndexUpdate(eventId);
   clearPlayerRecordResultCache();
 
-  clearHeadToHeadResultCache();
+  try {
+    await enqueueAutoHeadToHeadIndexUpdate(eventId);
+  } catch (error) {
+    // Player records are already current at this point. A missing or stale H2H
+    // base index must not make the entire derived-data update look unsuccessful.
+    console.error(`[auto-derived-index:h2h] ${eventId} failed:`, error?.message || error);
+  } finally {
+    clearHeadToHeadResultCache();
+  }
 }
 
 function scheduleDerivedIndexesForFinishedWttEvent(options = {}) {
@@ -4689,6 +4709,9 @@ function scheduleDerivedIndexesForFinishedWttEvent(options = {}) {
   if (!eventId || !isArchivedWttEvent(eventId)) {
     return;
   }
+  // The API request may have written a new WTT/ITTF archive after the snapshot
+  // was cached. Refresh it before deciding whether derived files are current.
+  clearWttRecordSnapshotCache();
   const file = getRuntimeWttRecordFile(eventId);
   if (!file || (isPlayerRecordEventIndexCurrent(file) && isHeadToHeadPersistentIndexCurrent())) {
     const lastScheduledAt = autoDerivedIndexLastScheduled.get(eventId) || 0;
