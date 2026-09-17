@@ -290,7 +290,10 @@ function isResultDateCompatible(items, startDate, endDate) {
 
 function isTransientCrawlSkip(entry) {
   const reason = String(entry?.crawlSkipReason || "");
-  return reason.startsWith("error:") || reason.includes("Timed out fetching") || reason.includes("fetch failed");
+  return reason === "zero_matches"
+    || reason.startsWith("error:")
+    || reason.includes("Timed out fetching")
+    || reason.includes("fetch failed");
 }
 
 function isPotentiallyPartialArchive(entry, archiveCount) {
@@ -405,6 +408,7 @@ function markCrawlSkipped(candidate, reason) {
   const reasonText = String(reason || "");
   if (
     reasonText === "not_finished" ||
+    reasonText === "zero_matches" ||
     reasonText.startsWith("smaller_payload:") ||
     reasonText.startsWith("error:") ||
     reasonText.startsWith("result_date_outside_event_window:") ||
@@ -695,6 +699,9 @@ async function main() {
   }
 
   console.log(`done: archived=${summary.archived} skipped=${summary.skipped} failed=${summary.failed} derivedFailed=${summary.derivedFailed}`);
+  if (summary.failed > 0 || summary.derivedFailed > 0) {
+    process.exitCode = 1;
+  }
 }
 
 if (require.main === module) {
