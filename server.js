@@ -2942,7 +2942,11 @@ function getLatestNightlyWttCrawlDueAt(now = new Date()) {
 
 function hasCompletedNightlyWttCrawl(dueAt) {
   const status = readWttCrawlStatus();
-  if (status?.status !== "complete") {
+  if (status?.status !== "complete" || Number(status.exitCode || 0) !== 0) {
+    return false;
+  }
+  const completionLine = String(status.outputTail || "").match(/done:[^\n]*derivedFailed=(\d+)/g)?.at(-1) || "";
+  if (completionLine && !completionLine.endsWith("derivedFailed=0")) {
     return false;
   }
   const finishedAt = Date.parse(status.finishedAt || "");

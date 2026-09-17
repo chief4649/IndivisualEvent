@@ -211,6 +211,7 @@ function playerRecordEventIndexPath(eventId) {
 }
 
 function getArchiveStats(eventId) {
+  const eventIndexPath = playerRecordEventIndexPath(eventId);
   const stats = {
     rawExists: false,
     rawCount: 0,
@@ -220,6 +221,7 @@ function getArchiveStats(eventId) {
     slimFormat: "missing",
     rawSourceCompatible: true,
     slimSourceCompatible: true,
+    eventIndexExists: fs.existsSync(eventIndexPath) && fs.statSync(eventIndexPath).size > 0,
   };
 
   for (const [kind, filePath] of [["raw", archivePath(eventId)], ["slim", slimArchivePath(eventId)]]) {
@@ -245,6 +247,7 @@ function getArchiveStats(eventId) {
     sourceMismatched: stats.rawExists && stats.slimExists && stats.rawFormat !== stats.slimFormat,
     sourceIncompatible: !stats.rawSourceCompatible || !stats.slimSourceCompatible,
     slimMissing: stats.rawExists && !stats.slimExists,
+    eventIndexMissing: (stats.rawCount > 0 || stats.slimCount > 0) && !stats.eventIndexExists,
   };
 }
 
@@ -358,6 +361,7 @@ function buildCandidates(args) {
         archiveStats,
         suspiciousArchive: isSuspiciousArchiveCount(archiveCount, entry)
           || archiveStats.slimMissing
+          || archiveStats.eventIndexMissing
           || archiveStats.sourceMismatched
           || archiveStats.sourceIncompatible
           || (archiveStats.mismatched && archiveStats.slimCount <= 30),
@@ -452,11 +456,14 @@ function buildDerivedArchiveFiles(eventId, args) {
   const rawPath = archivePath(eventId);
   const slimPath = slimArchivePath(eventId);
   const eventIndexPath = playerRecordEventIndexPath(eventId);
-  if (!fs.existsSync(rawPath)) {
-    throw new Error(`raw archive missing: ${rawPath}`);
+  const rawExists = fs.existsSync(rawPath);
+  if (!rawExists && !fs.existsSync(slimPath)) {
+    throw new Error(`stored archive missing: ${rawPath} / ${slimPath}`);
   }
 
-  const slimOutput = runNodeScript(["build_wtt_slim_records.js", rawPath]).trim();
+  const slimOutput = rawExists
+    ? runNodeScript(["build_wtt_slim_records.js", rawPath]).trim()
+    : "using existing slim archive";
   if (!fs.existsSync(slimPath) || fs.statSync(slimPath).size <= 0) {
     throw new Error(`slim archive was not created: ${slimPath}`);
   }
@@ -476,10 +483,9 @@ function buildDerivedArchiveFiles(eventId, args) {
 
   const derivedStats = getArchiveStats(eventId);
   if (
-    !derivedStats.rawExists ||
     !derivedStats.slimExists ||
-    derivedStats.rawCount !== derivedStats.slimCount ||
-    (derivedStats.rawCount > 0 && derivedStats.slimCount === 0)
+    derivedStats.slimCount === 0 ||
+    (derivedStats.rawExists && derivedStats.rawCount !== derivedStats.slimCount)
   ) {
     throw new Error(
       `derived archive validation failed for ${eventId}: raw=${derivedStats.rawCount} slim=${derivedStats.slimCount}`,
@@ -489,7 +495,7 @@ function buildDerivedArchiveFiles(eventId, args) {
   const candidateIndexResult = updatePlayerRecordCandidateIndexForEvents([eventId]);
 
   let rawDeleted = false;
-  if (!args.keepRaw) {
+  if (!args.keepRaw && rawExists) {
     fs.rmSync(rawPath, { force: true });
     rawDeleted = !fs.existsSync(rawPath);
   }
@@ -638,11 +644,27 @@ async function main() {
     return;
   }
 
-  const summary = { archived: 0, skipped: 0, failed: 0, derivedFailed: 0 };
+  const summary = { archived: 0, repaired: 0, skipped: 0, failed: 0, derivedFailed: 0 };
   const headToHeadEventIds = new Set();
   for (let index = 0; index < candidates.length; index += 1) {
     const candidate = candidates[index];
     try {
+      if (
+        !args.force
+        && !args.auditSuspicious
+        && candidate.archived
+        && candidate.archiveStats?.slimExists
+        && candidate.archiveStats?.slimCount > 0
+        && candidate.archiveStats?.eventIndexMissing
+        && !candidate.archiveStats?.sourceIncompatible
+      ) {
+        console.log(`repairing derived indexes: ${candidate.eventId}`);
+        const derivedResult = buildDerivedArchiveFiles(candidate.eventId, args);
+        summary.repaired += 1;
+        headToHeadEventIds.add(String(candidate.eventId));
+        console.log(`derived-indexes repaired: ${candidate.eventId} slim=${derivedResult.slimBytes} eventIndex=${derivedResult.eventIndexBytes} rawDeleted=${derivedResult.rawDeleted}`);
+        continue;
+      }
       console.log(`fetching: ${candidate.eventId}${candidate.suspiciousArchive ? ` (refresh suspicious ${candidate.archiveCount})` : ""}`);
       const result = await archiveEvent(candidate, args);
       if (result.status === "archived") {
@@ -698,7 +720,7 @@ async function main() {
     }
   }
 
-  console.log(`done: archived=${summary.archived} skipped=${summary.skipped} failed=${summary.failed} derivedFailed=${summary.derivedFailed}`);
+  console.log(`done: archived=${summary.archived} repaired=${summary.repaired} skipped=${summary.skipped} failed=${summary.failed} derivedFailed=${summary.derivedFailed}`);
   if (summary.failed > 0 || summary.derivedFailed > 0) {
     process.exitCode = 1;
   }
