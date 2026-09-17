@@ -9944,7 +9944,8 @@ function startServer() {
       return;
     }
 
-    const viewerAuthorized = isViewerAuthorized(request);
+    const adminApiAuthorized = requestUrl.pathname.startsWith("/api/admin/") && isAuthorized(request);
+    const viewerAuthorized = isViewerAuthorized(request) || adminApiAuthorized;
 
     if (!viewerAuthorized) {
       if (requestUrl.pathname.startsWith("/api/")) {
