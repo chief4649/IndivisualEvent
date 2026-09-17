@@ -7,6 +7,7 @@ const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
 const { URL } = require("url");
+const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 
 const {
   DEFAULT_CACHE_DIR,
@@ -1739,11 +1740,11 @@ async function runBackfill5000Job(options = {}) {
 function getMergedWttSearchEntry(eventId, entry, dateIndex, archiveIndex) {
   const dateEntry = dateIndex[String(eventId || "").trim()] || {};
   const archiveEntry = archiveIndex[String(eventId || "").trim()] || {};
-  const merged = {
+  const merged = applyWttEventMetadataOverride(eventId, {
     ...(archiveEntry || {}),
     ...(entry || {}),
     ...(dateEntry || {}),
-  };
+  });
   // An archived result is durable. Stale calendar/search metadata must not
   // change it back to false after the result JSON has been stored.
   merged.archived = Boolean(

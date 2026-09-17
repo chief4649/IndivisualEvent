@@ -16,6 +16,7 @@ const {
   writeWttArchiveIfNotSmaller,
 } = require("./extract_individual_matches");
 const { updatePlayerRecordCandidateIndexForEvents } = require("./build_player_records_index");
+const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
@@ -339,11 +340,11 @@ function buildCandidates(args) {
 
   return [...eventIds]
     .map((eventId) => {
-      const entry = {
+      const entry = applyWttEventMetadataOverride(eventId, {
         ...(dateIndex[eventId] || {}),
         ...(searchIndex[eventId] || {}),
         ...(archiveIndex[eventId] || {}),
-      };
+      });
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
       const archiveStats = getArchiveStats(eventId);
@@ -546,12 +547,12 @@ function buildHeadToHeadIndex(eventIds = []) {
 
 async function archiveEvent(candidate, args) {
   const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive || candidate.auditSuspicious);
-  const meta = await getWttEventLifecycleMeta(candidate.eventId, {
+  const meta = applyWttEventMetadataOverride(candidate.eventId, await getWttEventLifecycleMeta(candidate.eventId, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
-  });
+  }));
 
-  if (!args.includeActive && !meta.isFinished) {
+  if (!args.includeActive && !isFinished(meta)) {
     return { eventId: candidate.eventId, status: "skipped", reason: "not_finished" };
   }
 
