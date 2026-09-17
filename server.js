@@ -6305,12 +6305,12 @@ function mergePlayerRecordEventIndexes(indexes) {
 }
 
 function readPlayerRecordEventIndex(eventId, file = null) {
-  const candidates = [
-    getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR),
-    getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR),
-  ];
+  const runtimePath = getPlayerRecordEventIndexPath(eventId, PLAYER_RECORD_EVENT_INDEX_DIR);
+  const bundledPath = getPlayerRecordEventIndexPath(eventId, BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR);
+  const candidates = String(file?.sourceLabel || "").startsWith("bundled")
+    ? [bundledPath, runtimePath]
+    : [runtimePath, bundledPath];
 
-  const indexes = [];
   for (const filePath of candidates) {
     try {
       const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -6320,13 +6320,16 @@ function readPlayerRecordEventIndex(eventId, file = null) {
         typeof parsed.players === "object" &&
         isPlayerRecordEventIndexForFile(parsed, file)
       ) {
-        indexes.push(parsed);
+        // Both locations represent the same source archive. Once the index
+        // beside the selected runtime/bundled source is current, reading the
+        // duplicate copy only doubles persistent-disk I/O on every search.
+        return parsed;
       }
     } catch {
       // Try the next event index location.
     }
   }
-  return mergePlayerRecordEventIndexes(indexes);
+  return null;
 }
 
 function buildPlayerRecordEventIndexForFile(file, deps = null) {
