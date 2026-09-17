@@ -792,13 +792,13 @@ function resolveCanonicalCategoryName(rawCategoryName, description, gender = nul
 
 function normalizeParaCategoryNameText(value) {
   const source = String(value || "").split(/\s+-\s+/)[0].trim();
-  const match = source.match(/\b(Men|Women|Mixed)(?:['’]s)?\s+(Singles|Doubles|Teams)\s+Class(?:es)?\s+([0-9]+(?:\s*[-–]\s*[0-9]+)?)/i);
+  const match = source.match(/\b(Men|Women|Mixed)(?:['’]s)?\s+(Singles|Doubles|Teams)\s+Class(?:es)?\s+((?:[MWX][SDT])?[0-9]+(?:\s*[-–]\s*[0-9]+)?)/i);
   if (!match) {
     return null;
   }
   const gender = match[1].replace(/^men$/i, "Men").replace(/^women$/i, "Women").replace(/^mixed$/i, "Mixed");
   const discipline = match[2].replace(/^singles$/i, "Singles").replace(/^doubles$/i, "Doubles").replace(/^teams$/i, "Teams");
-  const classValue = match[3].replace(/\s*[-–]\s*/g, "-");
+  const classValue = match[3].toUpperCase().replace(/\s*[-–]\s*/g, "-");
   return `${gender} ${discipline} ${classValue.includes("-") ? "Classes" : "Class"} ${classValue}`;
 }
 
@@ -811,7 +811,7 @@ function resolveParaCategoryNameFromDocumentCode(documentCode) {
   const token = match[1];
   const gender = token[0] === "M" ? "Men" : token[0] === "W" ? "Women" : "Mixed";
   const discipline = token[1] === "S" ? "Singles" : token[1] === "D" ? "Doubles" : "Teams";
-  const classValue = token.slice(2);
+  const classValue = discipline === "Singles" ? token.slice(2) : token;
   return `${gender} ${discipline} ${classValue.includes("-") ? "Classes" : "Class"} ${classValue}`;
 }
 
@@ -2685,14 +2685,16 @@ function getBornanRoundLabelFromCode(matchKey) {
   return "";
 }
 
-function buildBornanCategoryInfo(categoryName) {
+function buildBornanCategoryInfo(categoryName, documentCode = null) {
   const rawCategoryName = String(categoryName || "").trim();
   const discipline = normalizeDiscipline(rawCategoryName);
   const gender = inferGender(rawCategoryName);
+  const paraCategoryName = resolveParaCategoryName(rawCategoryName, rawCategoryName, documentCode);
   return {
-    categoryName: toCanonicalCategoryName(rawCategoryName, gender, discipline),
+    categoryName: paraCategoryName || toCanonicalCategoryName(rawCategoryName, gender, discipline),
     discipline,
     gender,
+    isParaClass: Boolean(paraCategoryName),
   };
 }
 
@@ -2779,7 +2781,7 @@ function normalizeBornanSubMatch(subMatch, order) {
 function normalizeBornanMatch(match, eventId, eventDescriptions) {
   const eventKey = getBornanEventKey(match?.Key);
   const categoryName = eventDescriptions.get(eventKey) || String(match?.Desc || "").split(" - ")[0] || eventKey;
-  const categoryInfo = buildBornanCategoryInfo(categoryName);
+  const categoryInfo = buildBornanCategoryInfo(categoryName, match?.Key);
   const roundLabel = String(match?.Desc || "").split(" - ")[1] || getBornanRoundLabelFromCode(match?.Key);
   const matchNumberMatch = String(match?.Desc || "").match(/\bMatch\s+(\d+)\b/i);
   const matchNumber = matchNumberMatch ? Number(matchNumberMatch[1]) : null;
@@ -2809,6 +2811,7 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
       table: match?.LocDesc || match?.Loc || null,
       overallScore: `${match?.Home?.Res ?? "0"}-${match?.Away?.Res ?? "0"}`,
       resultStatus: String(match?.Status || "").trim() || null,
+      isParaClass: categoryInfo.isParaClass,
       teams: [
         { name: homeTeam.name, org: homeTeam.org, orgCode: homeTeam.orgCode },
         { name: awayTeam.name, org: awayTeam.org, orgCode: awayTeam.orgCode },
@@ -2839,7 +2842,7 @@ function normalizeBornanMatch(match, eventId, eventDescriptions) {
     table: match?.LocDesc || match?.Loc || null,
     overallScore: `${match?.Home?.Res ?? "0"}-${match?.Away?.Res ?? "0"}`,
     resultStatus: String(match?.Status || "").trim() || null,
-    isParaClass: false,
+    isParaClass: categoryInfo.isParaClass,
     teams: [],
     singles: [],
     competitors: [
@@ -5251,6 +5254,18 @@ function sortIndividualMatches(matches, context) {
 function formatMatchCategoryJa(match) {
   const categoryName = String(match.categoryName || "").trim();
   if (categoryName) {
+    const paraMatch = categoryName.match(/^(Men|Women|Mixed)\s+(Singles|Doubles|Teams)\s+Class(?:es)?\s+([A-Z]*\d+(?:-\d+)?)$/i);
+    if (paraMatch) {
+      const [, division, eventType, classValue] = paraMatch;
+      const divisionJa = /^men$/i.test(division) ? "男子" : /^women$/i.test(division) ? "女子" : "混合";
+      const eventTypeJa = /^singles$/i.test(eventType)
+        ? "シングルス"
+        : /^doubles$/i.test(eventType)
+          ? "ダブルス"
+          : "団体";
+      return `${divisionJa}${eventTypeJa}クラス${classValue.toUpperCase()}`;
+    }
+
     const youthMatch = categoryName.match(/^U\s*(\d+)\s+(Men|Women|Boys|Girls|Mixed)\s*'?s?\s+(Singles|Doubles|Teams)$/i);
     if (youthMatch) {
       const [, age, division, eventType] = youthMatch;
