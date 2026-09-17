@@ -146,6 +146,20 @@ const TEAM_TRANSLATIONS_ADMIN_TOKEN = process.env.TEAM_TRANSLATIONS_ADMIN_TOKEN 
 const TEAM_TRANSLATIONS_VIEWER_PASSWORD = process.env.TEAM_TRANSLATIONS_VIEWER_PASSWORD || "";
 const SHARED_TRANSLATIONS_TIMEOUT_MS = Number(process.env.SHARED_TRANSLATIONS_TIMEOUT_MS || 8000);
 const SHARED_TRANSLATIONS_SYNC_TTL_MS = Number(process.env.SHARED_TRANSLATIONS_SYNC_TTL_MS || 60_000);
+const WTT_NIGHTLY_CRAWL_ENABLED = process.env.WTT_NIGHTLY_CRAWL_ENABLED === "1"
+  || (process.env.WTT_NIGHTLY_CRAWL_ENABLED !== "0" && Boolean(process.env.RENDER_GIT_COMMIT));
+const WTT_NIGHTLY_CRAWL_HOUR_JST = Math.min(
+  23,
+  Math.max(0, Number(process.env.WTT_NIGHTLY_CRAWL_HOUR_JST || 3) || 0),
+);
+const WTT_NIGHTLY_CRAWL_MINUTE_JST = Math.min(
+  59,
+  Math.max(0, Number(process.env.WTT_NIGHTLY_CRAWL_MINUTE_JST || 30) || 0),
+);
+const WTT_NIGHTLY_CRAWL_CHECK_INTERVAL_MS = Math.max(
+  60_000,
+  Number(process.env.WTT_NIGHTLY_CRAWL_CHECK_INTERVAL_MS || 15 * 60_000) || 15 * 60_000,
+);
 const EVENT_NAME_CACHE_MAX_ENTRIES = Number(process.env.EVENT_NAME_CACHE_MAX_ENTRIES || 500);
 const PROCESSED_MATCHES_CACHE_MAX_ENTRIES = Number(process.env.PROCESSED_MATCHES_CACHE_MAX_ENTRIES || 3);
 const REQUEST_BODY_MAX_BYTES = Number(process.env.REQUEST_BODY_MAX_BYTES || 1_048_576);
@@ -535,6 +549,12 @@ function buildHealthPayloadUncached() {
     },
     operations: {
       wttCrawlRunning: Boolean(wttCrawlProcess),
+      nightlyWttCrawl: {
+        enabled: WTT_NIGHTLY_CRAWL_ENABLED,
+        hourJst: WTT_NIGHTLY_CRAWL_HOUR_JST,
+        minuteJst: WTT_NIGHTLY_CRAWL_MINUTE_JST,
+        status: readWttCrawlStatus(),
+      },
       headToHeadBuildRunning: Boolean(headToHeadIndexBuildProcess),
       derivedIndexBuilds: [...autoDerivedIndexBuilds],
       startupHeadToHeadReconcile: HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED,
@@ -2903,6 +2923,83 @@ function handleAdminWttCrawlStart(request, response) {
     statusFile: WTT_CRAWL_STATUS_PATH,
   });
   return true;
+}
+
+function getLatestNightlyWttCrawlDueAt(now = new Date()) {
+  const jstNow = new Date(now.getTime() + 9 * 60 * 60_000);
+  let dueAt = new Date(Date.UTC(
+    jstNow.getUTCFullYear(),
+    jstNow.getUTCMonth(),
+    jstNow.getUTCDate(),
+    WTT_NIGHTLY_CRAWL_HOUR_JST - 9,
+    WTT_NIGHTLY_CRAWL_MINUTE_JST,
+  ));
+  if (dueAt.getTime() > now.getTime()) {
+    dueAt = new Date(dueAt.getTime() - 24 * 60 * 60_000);
+  }
+  return dueAt;
+}
+
+function hasCompletedNightlyWttCrawl(dueAt) {
+  const status = readWttCrawlStatus();
+  if (status?.status !== "complete") {
+    return false;
+  }
+  const finishedAt = Date.parse(status.finishedAt || "");
+  return Number.isFinite(finishedAt) && finishedAt >= dueAt.getTime();
+}
+
+async function checkAndStartNightlyWttCrawl() {
+  if (!WTT_NIGHTLY_CRAWL_ENABLED || !ADMIN_TOKEN) {
+    return;
+  }
+  const dueAt = getLatestNightlyWttCrawlDueAt();
+  if (hasCompletedNightlyWttCrawl(dueAt) || wttCrawlProcess) {
+    return;
+  }
+  if (headToHeadIndexBuildProcess || autoDerivedIndexBuilds.size > 0) {
+    console.log("[wtt-nightly-crawl] delayed while an index build is running");
+    return;
+  }
+
+  try {
+    const response = await fetch(`http://127.0.0.1:${PORT}/api/admin/crawl-wtt`, {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${ADMIN_TOKEN}`,
+      },
+    });
+    const text = await response.text();
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${text.slice(0, 500)}`);
+    }
+    console.log(`[wtt-nightly-crawl] started for due time ${dueAt.toISOString()}`);
+  } catch (error) {
+    console.error("[wtt-nightly-crawl] start failed:", error?.message || error);
+  }
+}
+
+function scheduleNightlyWttCrawl() {
+  if (!WTT_NIGHTLY_CRAWL_ENABLED) {
+    return;
+  }
+  if (!ADMIN_TOKEN) {
+    console.warn("[wtt-nightly-crawl] disabled because ADMIN_TOKEN is not configured");
+    return;
+  }
+  const runCheck = () => {
+    checkAndStartNightlyWttCrawl().catch((error) => {
+      console.error("[wtt-nightly-crawl] check failed:", error?.message || error);
+    });
+  };
+  const initialTimer = setTimeout(runCheck, 60_000);
+  initialTimer.unref?.();
+  const interval = setInterval(runCheck, WTT_NIGHTLY_CRAWL_CHECK_INTERVAL_MS);
+  interval.unref?.();
+  console.log(
+    `[wtt-nightly-crawl] scheduled at ${String(WTT_NIGHTLY_CRAWL_HOUR_JST).padStart(2, "0")}`
+    + `:${String(WTT_NIGHTLY_CRAWL_MINUTE_JST).padStart(2, "0")} JST`,
+  );
 }
 
 function handleAdminBackfill5000Start(request, response) {
@@ -9953,6 +10050,7 @@ function startServer() {
     }
     scheduleHeadToHeadIndexReconciliation();
     schedulePlayerRecordCandidateIntegrityAudit();
+    scheduleNightlyWttCrawl();
   });
 }
 
