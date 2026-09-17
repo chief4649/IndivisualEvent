@@ -1981,7 +1981,7 @@ async function fetchEventMeta(eventId, source = "wtt") {
       const metadataEntry = sameBundledEvent ? bundledSearchEntry : (dateEntry || {});
       const startDate = metadataEntry.startDate || lifecycle?.startDate || null;
       const endDate = metadataEntry.endDate || lifecycle?.endDate || null;
-      return {
+      const meta = applyWttEventMetadataOverride(normalizedId, {
         source: normalizedSource,
         event: normalizedId,
         eventName: eventName || lifecycle?.title || "",
@@ -1996,9 +1996,19 @@ async function fetchEventMeta(eventId, source = "wtt") {
           lifecycle?.isFinished ? "finished" : "unknown",
           eventName || lifecycle?.title || "",
         ),
+      });
+      return {
+        ...meta,
+        dateLabel: formatDateRange(meta.startDate, meta.endDate),
+        status: resolveLifecycleStatus(
+          meta.startDate,
+          meta.endDate,
+          meta.status,
+          meta.eventName,
+        ),
       };
     } catch {
-      return {
+      const meta = applyWttEventMetadataOverride(normalizedId, {
         source: normalizedSource,
         event: normalizedId,
         eventName,
@@ -2008,6 +2018,16 @@ async function fetchEventMeta(eventId, source = "wtt") {
         dateLabel: "",
         archived: false,
         status: "unknown",
+      });
+      return {
+        ...meta,
+        dateLabel: formatDateRange(meta.startDate, meta.endDate),
+        status: resolveLifecycleStatus(
+          meta.startDate,
+          meta.endDate,
+          meta.status,
+          meta.eventName,
+        ),
       };
     }
   }
