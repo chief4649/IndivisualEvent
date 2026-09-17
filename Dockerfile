@@ -14,6 +14,7 @@ COPY build_wtt_slim_records.js ./
 COPY build_player_records_index.js ./
 COPY verify_wtt_alignment.js ./
 COPY runtime_legacy_ittf_patch.js ./
+COPY wtt_event_metadata_overrides.js ./
 COPY server.js ./
 COPY patch_version_info.js ./
 COPY translations.ja.json ./
@@ -28,6 +29,7 @@ COPY wtt-records-slim ./wtt-records-slim
 COPY player-records-index/event-records ./player-records-index/event-records
 COPY player-records-index/event-records-manifest.json ./player-records-index/event-records-manifest.json
 
+RUN node -e 'for (const file of ["server.js", "crawl_wtt_archives.js"]) { const source = require("fs").readFileSync(file, "utf8"); for (const match of source.matchAll(/require\("(\.\/[^\"]+)"\)/g)) require.resolve(match[1]); }'
 RUN node patch_version_info.js
 
 ENV NODE_ENV=production
