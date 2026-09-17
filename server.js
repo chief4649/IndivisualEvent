@@ -4402,7 +4402,8 @@ const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIME
 const HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS = Number(
   process.env.HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS || 300_000,
 );
-const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1";
+const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1"
+  || (process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP !== "0" && Boolean(process.env.RENDER_GIT_COMMIT));
 const HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX = Number(
   process.env.HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX || 128,
 );
@@ -4427,7 +4428,12 @@ const PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS = Number(
   process.env.PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS || 24 * 60 * 60_000,
 );
 let playerRecordCandidateAuditRunning = false;
-const WTT_RECORD_SNAPSHOT_CACHE_TTL_MS = Number(process.env.WTT_RECORD_SNAPSHOT_CACHE_TTL_MS || 60_000);
+// Runtime archive writes already invalidate this cache explicitly. Keeping the
+// snapshot for longer avoids restating hundreds of persistent-disk files on
+// every production search while still allowing an environment override.
+const WTT_RECORD_SNAPSHOT_CACHE_TTL_MS = Number(
+  process.env.WTT_RECORD_SNAPSHOT_CACHE_TTL_MS || 10 * 60_000,
+);
 let wttRecordSnapshotCache = null;
 
 function getPathStatToken(filePath) {
