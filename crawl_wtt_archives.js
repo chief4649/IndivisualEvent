@@ -20,6 +20,8 @@ const { updatePlayerRecordCandidateIndexForEvents } = require("./build_player_re
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
 const WTT_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records-slim");
+const ITTF_ARCHIVE_DIR = path.join(DATA_DIR, "ittf-records");
+const ITTF_SLIM_ARCHIVE_DIR = path.join(DATA_DIR, "ittf-records-slim");
 const PLAYER_RECORD_EVENT_INDEX_DIR = path.join(DATA_DIR, "player-records-index", "event-records");
 const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(DATA_DIR, "player-records-index", "head-to-head-manifest.json");
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
@@ -185,11 +187,23 @@ function isFinished(entry) {
 }
 
 function archivePath(eventId) {
-  return path.join(WTT_ARCHIVE_DIR, `${String(eventId).trim()}.json`);
+  const normalizedId = String(eventId).trim();
+  if (/^TTE\d+$/i.test(normalizedId)) {
+    const canonicalPath = path.join(ITTF_ARCHIVE_DIR, `${normalizedId}.json`);
+    const legacyPath = path.join(WTT_ARCHIVE_DIR, `${normalizedId}.json`);
+    return fs.existsSync(canonicalPath) ? canonicalPath : legacyPath;
+  }
+  return path.join(WTT_ARCHIVE_DIR, `${normalizedId}.json`);
 }
 
 function slimArchivePath(eventId) {
-  return path.join(WTT_SLIM_ARCHIVE_DIR, `${String(eventId).trim()}.json`);
+  const normalizedId = String(eventId).trim();
+  const archiveDir = /^TTE\d+$/i.test(normalizedId) ? ITTF_SLIM_ARCHIVE_DIR : WTT_SLIM_ARCHIVE_DIR;
+  return path.join(archiveDir, `${normalizedId}.json`);
+}
+
+function archiveOutputDir(eventId) {
+  return /^TTE\d+$/i.test(String(eventId || "").trim()) ? ITTF_ARCHIVE_DIR : WTT_ARCHIVE_DIR;
 }
 
 function playerRecordEventIndexPath(eventId) {
@@ -536,6 +550,9 @@ async function archiveEvent(candidate, args) {
     event: candidate.eventId,
     take: args.take,
     wttArchiveDir: WTT_ARCHIVE_DIR,
+    wttSlimArchiveDir: WTT_SLIM_ARCHIVE_DIR,
+    ittfArchiveDir: ITTF_ARCHIVE_DIR,
+    ittfSlimArchiveDir: ITTF_SLIM_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
     refreshCache: shouldRefresh,
     requireWttSubEventSupplementForSuspicious: true,
@@ -570,7 +587,7 @@ async function archiveEvent(candidate, args) {
     };
   }
 
-  const archiveWrite = writeWttArchiveIfNotSmaller(WTT_ARCHIVE_DIR, candidate.eventId, result.normalized, {
+  const archiveWrite = writeWttArchiveIfNotSmaller(archiveOutputDir(candidate.eventId), candidate.eventId, result.normalized, {
     force: args.force,
   });
   if (!archiveWrite.written) {
