@@ -9134,14 +9134,14 @@
   "3372": {
     "event": "3372",
     "eventName": "WTT Feeder Tunis 2026",
-    "startDate": "2026-07-29",
-    "endDate": "2026-08-02",
-    "dateLabel": "2026/7/29-8/2",
+    "startDate": "2026-12-06",
+    "endDate": "2026-12-10",
+    "dateLabel": "2026/12/6-10",
     "archived": false,
     "status": "upcoming",
     "source": "calendar",
     "series": "Feeder",
-    "verifiedAt": "2026-04-09T06:31:20.472Z"
+    "verifiedAt": "2026-09-17T07:30:00.000Z"
   },
   "3373": {
     "event": "3373",
