@@ -4499,9 +4499,13 @@ function getWttRecordFileSnapshot() {
 function isArchivedWttEvent(eventId) {
   const normalizedEventId = String(eventId || "").trim();
   const source = normalizeEventStorageSource("", normalizedEventId);
+  const legacyArchiveIndex = readWttArchiveIndex();
   const archiveEntry = source === "ittf"
-    ? getIttfEventIndex()[normalizeStoredEventId(source, normalizedEventId)]
-    : readWttArchiveIndex()[normalizedEventId];
+    ? (
+        getIttfEventIndex()[normalizeStoredEventId(source, normalizedEventId)] ||
+        legacyArchiveIndex[normalizedEventId]
+      )
+    : legacyArchiveIndex[normalizedEventId];
   return Boolean(archiveEntry?.archived);
 }
 
