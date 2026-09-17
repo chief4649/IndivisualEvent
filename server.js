@@ -1444,6 +1444,70 @@ function readWttArchiveIndex() {
   }
 }
 
+const STORED_ARCHIVED_EVENT_IDS_CACHE_TTL_MS = 5_000;
+let storedArchivedEventIdsCache = {
+  builtAt: 0,
+  ids: new Set(),
+};
+
+function getStoredArchivedEventIds() {
+  const now = Date.now();
+  if (
+    storedArchivedEventIdsCache.builtAt > 0 &&
+    now - storedArchivedEventIdsCache.builtAt < STORED_ARCHIVED_EVENT_IDS_CACHE_TTL_MS
+  ) {
+    return storedArchivedEventIdsCache.ids;
+  }
+
+  const ids = new Set();
+  const archiveDirs = [
+    WTT_ARCHIVE_DIR,
+    WTT_SLIM_ARCHIVE_DIR,
+    ITTF_ARCHIVE_DIR,
+    ITTF_SLIM_ARCHIVE_DIR,
+    BUNDLED_WTT_ARCHIVE_DIR,
+    BUNDLED_WTT_SLIM_ARCHIVE_DIR,
+    path.join(__dirname, "ittf-records"),
+    path.join(__dirname, "ittf-records-slim"),
+  ];
+
+  [...new Set(archiveDirs)].forEach((archiveDir) => {
+    try {
+      fs.readdirSync(archiveDir, { withFileTypes: true })
+        .filter((entry) => entry.isFile() && /^(?:TTE)?\d+\.json$/i.test(entry.name))
+        .forEach((entry) => {
+          const filePath = path.join(archiveDir, entry.name);
+          try {
+            if (fs.statSync(filePath).size > 2) {
+              ids.add(entry.name.replace(/\.json$/i, ""));
+            }
+          } catch {
+            // A file can disappear while an archive refresh replaces it.
+          }
+        });
+    } catch {
+      // Some archive directories are optional.
+    }
+  });
+
+  storedArchivedEventIdsCache = { builtAt: now, ids };
+  return ids;
+}
+
+function hasStoredArchivedEvent(eventId) {
+  const normalizedId = String(eventId || "").trim();
+  if (!normalizedId) {
+    return false;
+  }
+  const ids = getStoredArchivedEventIds();
+  if (ids.has(normalizedId)) {
+    return true;
+  }
+  return /^TTE\d+$/i.test(normalizedId)
+    ? ids.has(normalizedId.replace(/^TTE/i, ""))
+    : ids.has(`TTE${normalizedId}`);
+}
+
 function readWttSearchIndex() {
   try {
     if (!fs.existsSync(WTT_SEARCH_INDEX_PATH)) {
@@ -1660,6 +1724,14 @@ function getMergedWttSearchEntry(eventId, entry, dateIndex, archiveIndex) {
     ...(entry || {}),
     ...(dateEntry || {}),
   };
+  // An archived result is durable. Stale calendar/search metadata must not
+  // change it back to false after the result JSON has been stored.
+  merged.archived = Boolean(
+    archiveEntry?.archived ||
+    entry?.archived ||
+    dateEntry?.archived ||
+    hasStoredArchivedEvent(eventId)
+  );
   if (archiveEntry?.source && archiveEntry.source !== "calendar") {
     merged.source = archiveEntry.source;
   } else if (entry?.source) {
