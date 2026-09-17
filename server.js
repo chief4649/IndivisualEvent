@@ -4456,6 +4456,24 @@ function getAvailableWttArchiveDir() {
   return WTT_ARCHIVE_DIR;
 }
 
+function isUsableSlimRecordFile(filePath, stat) {
+  if (!stat?.isFile() || stat.size <= 0) {
+    return false;
+  }
+  // A normal slim archive is much larger than an empty JSON array. Avoid
+  // reading every archive body while building the record snapshot; Render's
+  // persistent disk makes that cold-path scan disproportionately expensive.
+  if (stat.size > 64) {
+    return true;
+  }
+  try {
+    const text = fs.readFileSync(filePath, "utf8").trim();
+    return Boolean(text && text !== "[]");
+  } catch {
+    return false;
+  }
+}
+
 function getSlimWttRecordFile(originalFilePath, slimDir) {
   if (process.env.WTT_SLIM_RECORDS_DISABLED === "1") {
     return null;
@@ -4467,13 +4485,9 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
   const slimFilePath = path.join(slimDir, path.basename(originalFilePath));
   try {
     const stat = fs.statSync(slimFilePath);
-    if (!stat.isFile() || stat.size <= 0) {
-      return null;
-    }
     // An interrupted slim-build can leave a valid JSON empty array behind.
     // Do not let that placeholder hide a usable raw archive.
-    const slimText = fs.readFileSync(slimFilePath, "utf8").trim();
-    if (!slimText || slimText === "[]") {
+    if (!isUsableSlimRecordFile(slimFilePath, stat)) {
       return null;
     }
     return {
@@ -4618,8 +4632,7 @@ function getWttRecordFileSnapshot() {
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
           const stat = fs.statSync(slimFilePath);
-          const slimText = fs.readFileSync(slimFilePath, "utf8").trim();
-          if (!slimText || slimText === "[]") {
+          if (!isUsableSlimRecordFile(slimFilePath, stat)) {
             return;
           }
           const next = createWttRecordFileEntry({
