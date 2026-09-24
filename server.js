@@ -6481,7 +6481,17 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
   const orgFilter = options.orgFilter || null;
   const translations = readTranslations(TRANSLATIONS_PATH);
+  const searchIndex = readWttSearchIndex();
+  const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
+  const archiveIndex = readWttArchiveIndex();
+  const eventNames = getEventNamesMap();
   const needleKeys = Array.from(new Set((Array.isArray(needles) ? needles : []).flatMap(buildPlayerNameSearchValues).filter(Boolean)));
+  const files = (Array.isArray(snapshot) ? snapshot : [])
+    .map((file) => ({
+      file,
+      meta: getEventRecordMeta(file.eventId, searchIndex, dateIndex, archiveIndex, eventNames),
+    }))
+    .sort((left, right) => comparePlayerRecordEvents(left.meta, right.meta));
   const eventsById = new Map();
   const missingIndexedFiles = [];
   let indexedEvents = 0;
@@ -6490,7 +6500,7 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
   let playerKeyCount = 0;
 
   let filePosition = 0;
-  for (const file of (Array.isArray(snapshot) ? snapshot : [])) {
+  for (const { file, meta } of files) {
     if (filePosition % 4 === 0) {
       await yieldToEventLoop();
     }
@@ -6505,7 +6515,7 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
       continue;
     }
     indexedEvents += 1;
-    const eventMeta = index.event || getEventRecordMeta(file.eventId, readWttSearchIndex(), readWttDateIndex(WTT_DATE_INDEX_PATH), readWttArchiveIndex(), getEventNamesMap());
+    const eventMeta = index.event || meta;
     const matches = [];
     const seen = new Set();
 
