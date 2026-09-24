@@ -46,6 +46,7 @@ const WTT_RESULT_FALLBACK_PAGE_SIZE = 400;
 const WTT_SUSPICIOUS_RESULT_COUNTS = new Set([30, 200, 300, WTT_RESULT_FALLBACK_PAGE_SIZE, 800]);
 const fs = require("fs");
 const path = require("path");
+const zlib = require("zlib");
 
 const DEFAULT_DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : __dirname;
 const BUNDLED_TRANSLATIONS_PATH = path.join(__dirname, "translations.ja.json");
@@ -2898,6 +2899,147 @@ async function fetchBornanOfficialResults(eventId) {
   return [...deduped.values()];
 }
 
+const ASIAN_GAMES_2026_API_BASE_URL = "https://back.results.asiangames2026.org";
+const ASIAN_GAMES_2026_CHAMP = "AG2026";
+const ASIAN_GAMES_2026_DISCIPLINE = "TTE";
+const ASIAN_GAMES_2026_COMPLETED_STATUSES = new Set([
+  "FINISHED",
+  "UNCONFIRMED",
+  "UNOFFICIAL",
+  "OFFICIAL",
+  "PROTESTED",
+]);
+
+function decodeAsianGames2026Payload(buffer, url) {
+  const encodedText = Buffer.from(buffer).toString("utf8");
+  const compressed = Buffer.from(Array.from(encodedText, (character) => character.charCodeAt(0)));
+  try {
+    return JSON.parse(zlib.inflateSync(compressed).toString("utf8"));
+  } catch (error) {
+    throw new Error(`Failed to decode Asian Games 2026 response ${url}: ${error.message}`);
+  }
+}
+
+async function fetchAsianGames2026Json(pathname) {
+  const url = new URL(pathname, ASIAN_GAMES_2026_API_BASE_URL).toString();
+  const response = await fetch(url, {
+    headers: {
+      accept: "text/plain, */*",
+      origin: "https://results.asiangames2026.org",
+      referer: "https://results.asiangames2026.org/",
+      "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
+    },
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
+  }
+  return decodeAsianGames2026Payload(await response.arrayBuffer(), url);
+}
+
+function toLegacyBornanSide(side) {
+  if (!side) {
+    return null;
+  }
+  return {
+    ...side,
+    Desc: side.Desc || side.Name || "",
+    Res: side.Res ?? side.Result ?? "",
+    Win: side.Win ?? side.Winner ?? String(side.WLT || "").toUpperCase() === "W",
+    OrgDesc: side.OrgDesc || side.Org || "",
+    Members: (Array.isArray(side.Members) ? side.Members : []).map((member) => ({
+      ...member,
+      Desc: member?.Desc || member?.Name || "",
+      OrgDesc: member?.OrgDesc || member?.Org || side.OrgDesc || side.Org || "",
+    })),
+    Splits: (Array.isArray(side.Splits) ? side.Splits : []).map((split) => ({
+      ...split,
+      Res: split?.Res ?? split?.Result ?? "",
+    })),
+  };
+}
+
+function toLegacyAsianGames2026SubMatch(subUnit) {
+  const competitors = Array.isArray(subUnit?.Competitors) ? subUnit.Competitors : [];
+  const completedPeriods = Number(subUnit?.Results?.CurrentPeriod || 0);
+  const normalizeSide = (side) => {
+    const normalized = toLegacyBornanSide(side);
+    if (normalized && completedPeriods > 0) {
+      normalized.Splits = normalized.Splits.slice(0, completedPeriods);
+    }
+    return normalized;
+  };
+  return {
+    Key: subUnit?.Info?.Key || subUnit?.Info?.RSC || null,
+    Status: subUnit?.Info?.Status || null,
+    Home: normalizeSide(competitors[0]),
+    Away: normalizeSide(competitors[1]),
+  };
+}
+
+function toLegacyAsianGames2026Match(unit, detail = null) {
+  const categoryName = String(unit?.EventDesc || detail?.Info?.EventDesc || "").trim();
+  const roundLabel = String(unit?.PhaseDescA || detail?.Info?.PhaseDescA || "").trim();
+  const matchLabel = String(unit?.UnitDescA || detail?.Info?.UnitDescA || "").trim();
+  const description = [categoryName, roundLabel, matchLabel].filter(Boolean).join(" - ");
+  const isTeam = String(unit?.Type || detail?.Info?.Type || "").toUpperCase() === "T";
+  return {
+    ...unit,
+    Key: unit?.Key || detail?.Info?.Key || null,
+    Desc: description,
+    Status: unit?.Status || detail?.Info?.Status || null,
+    IsTeam: isTeam,
+    Home: toLegacyBornanSide(unit?.Home || detail?.Competitors?.[0]),
+    Away: toLegacyBornanSide(unit?.Away || detail?.Competitors?.[1]),
+    SubMatches: isTeam
+      ? (Array.isArray(detail?.SubUnits) ? detail.SubUnits : [])
+        .filter((subUnit) => ASIAN_GAMES_2026_COMPLETED_STATUSES.has(String(subUnit?.Info?.Status || "").toUpperCase()))
+        .map(toLegacyAsianGames2026SubMatch)
+      : [],
+  };
+}
+
+async function fetchAsianGames2026OfficialResults(eventId) {
+  const prefix = `/s/${ASIAN_GAMES_2026_CHAMP}/en/${ASIAN_GAMES_2026_DISCIPLINE}`;
+  const discipline = await fetchAsianGames2026Json(`${prefix}/disc/data`);
+  const days = (Array.isArray(discipline?.Days) ? discipline.Days : [])
+    .map((day) => String(day?.raw || "").trim())
+    .filter(Boolean);
+  if (days.length === 0) {
+    return [];
+  }
+
+  const dailyPages = await mapWithConcurrency(days, 3, (day) => (
+    fetchAsianGames2026Json(`${prefix}/schedule/daily/${encodeURIComponent(day)}`)
+  ));
+  const completedUnits = dailyPages
+    .flatMap((page) => (Array.isArray(page) ? page : []))
+    .filter((unit) => (
+      unit?.Key &&
+      ASIAN_GAMES_2026_COMPLETED_STATUSES.has(String(unit?.Status || "").toUpperCase()) &&
+      unit?.Home &&
+      unit?.Away
+    ));
+  const teamDetails = new Map();
+  const teamUnits = completedUnits.filter((unit) => String(unit?.Type || "").toUpperCase() === "T");
+  await mapWithConcurrency(teamUnits, 4, async (unit) => {
+    const detail = await fetchAsianGames2026Json(`${prefix}/results/${encodeURIComponent(unit.Key)}`);
+    teamDetails.set(unit.Key, detail);
+  });
+
+  const eventDescriptions = new Map(
+    (Array.isArray(discipline?.Events) ? discipline.Events : []).map((event) => [event?.EvKey, event?.Desc]),
+  );
+  const deduped = new Map();
+  for (const unit of completedUnits) {
+    const legacyMatch = toLegacyAsianGames2026Match(unit, teamDetails.get(unit.Key));
+    const normalized = normalizeBornanMatch(legacyMatch, eventId, eventDescriptions);
+    if (normalized?.documentCode) {
+      deduped.set(normalized.documentCode, normalized);
+    }
+  }
+  return [...deduped.values()];
+}
+
 async function fetchBornanEventMeta(eventId) {
   const resolved = await fetchBornanChamp(eventId);
   const champ = resolved?.champ;
@@ -4042,6 +4184,13 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
       return attuPayload;
     }
     throw new Error(`ATTU result payload does not match event ${eventId}`);
+  }
+  if (seed.resultSource === "asian-games-2026") {
+    const asianGamesPayload = await fetchAsianGames2026OfficialResults(eventId);
+    if (asianGamesPayload.length > 0) {
+      return asianGamesPayload;
+    }
+    throw new Error(`Asian Games 2026 result payload is empty for event ${eventId}`);
   }
 
   const webgenPayload = await fetchWebgenOfficialResults(eventId);
@@ -6099,6 +6248,7 @@ module.exports = {
   fetchOfficialResultsCached,
   fetchBornanEventMeta,
   fetchBornanOfficialResults,
+  fetchAsianGames2026OfficialResults,
   formatEnglish,
   formatJapanese,
   formatList,
