@@ -117,6 +117,7 @@ const WTT_EVENT_ID_ALIASES = {
   "3440": "TTE3440",
 };
 const WTT_EVENT_PUBLIC_URLS = {
+  "2628": "https://asia.ittf.com/eventInfo?eventId=2628",
   "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
   "3150": "https://results.ittf.com/ittf-web-results/html/TTE5676/results.html#/results",
   "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",

@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
+const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
+
 const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult",
 ];
+const ATTU_OFFICIAL_RESULT_URL =
+  "https://wttapigateway-new.azure-api.net/prod-subsite/api/cms/GetOfficialResult";
 const WTT_OFFICIAL_RESULT_MINIMAL_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult_Minimal",
   "https://wtt-website-api-prod-3-frontdoor-bddnb2haduafdze9.a01.azurefd.net/api/cms/GetOfficialResult_Minimal",
@@ -21,6 +25,11 @@ const WTT_API_HEADERS = {
   referer: "https://www.worldtabletennis.com/",
   "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
   secapimkey: "S_WTT_882jjh7basdj91834783mds8j2jsd81",
+};
+const ATTU_API_HEADERS = {
+  origin: "https://asia.ittf.com",
+  referer: "https://asia.ittf.com/",
+  "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
 };
 const WTT_POOL_STANDINGS_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetPoolStandings",
@@ -1515,10 +1524,10 @@ function getWttLocalArchiveMeta(eventId, options = {}) {
   const dateIndex = readWttDateIndex(dateIndexPath);
   const indexedEntry = archiveIndex[eventIdText] || null;
   const datedEntry = dateIndex[eventIdText] || null;
-  const mergedEntry = {
+  const mergedEntry = applyWttEventMetadataOverride(eventIdText, {
     ...(datedEntry || {}),
     ...(indexedEntry || {}),
-  };
+  });
   const isDefinitelyFinished = isIsoDateBeforeToday(mergedEntry?.endDate);
 
   return {
@@ -3102,15 +3111,16 @@ function getWttResolutionSeedMeta(eventId, options = {}) {
   const eventIdText = String(eventId || "").trim();
   const archiveIndex = readWttArchiveIndex(options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH);
   const dateIndex = readWttDateIndex(options.wttDateIndexPath || DEFAULT_WTT_DATE_INDEX_PATH);
-  const merged = {
+  const merged = applyWttEventMetadataOverride(eventIdText, {
     ...(dateIndex[eventIdText] || {}),
     ...(archiveIndex[eventIdText] || {}),
-  };
+  });
   return {
     eventId: eventIdText,
     title: String(merged.title || merged.eventName || "").trim(),
     startDate: merged.startDate || null,
     endDate: merged.endDate || null,
+    resultSource: String(merged.resultSource || "").trim().toLowerCase(),
   };
 }
 
@@ -3288,6 +3298,23 @@ async function fetchWttOfficialResultsFromApi(eventId, take, options = {}) {
   }
 
   throw lastError || new Error("WTT official result request failed");
+}
+
+async function fetchAttuOfficialResultsFromApi(eventId, take, options = {}) {
+  const url = new URL(ATTU_OFFICIAL_RESULT_URL);
+  url.searchParams.set("EventId", String(eventId));
+  url.searchParams.set("include_match_card", "true");
+  url.searchParams.set("take", String(Number.isFinite(Number(take)) ? Number(take) : DEFAULT_TAKE));
+  if (options.refreshWttApi) {
+    url.searchParams.set("_cacheBust", `${Date.now()}-${eventId}`);
+  }
+  const payload = await fetchJson(url.toString(), {
+    headers: options.refreshWttApi
+      ? { ...ATTU_API_HEADERS, "cache-control": "no-cache", pragma: "no-cache" }
+      : ATTU_API_HEADERS,
+    timeoutMs: 20000,
+  });
+  return Array.isArray(payload) ? payload : [];
 }
 
 async function fetchWttOfficialResultsFromArchive(eventId) {
@@ -3940,10 +3967,10 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   const indexedEntry = archiveIndex[eventIdText];
   const datedEntry = dateIndex[eventIdText];
 
-  const mergedEntry = {
+  const mergedEntry = applyWttEventMetadataOverride(eventIdText, {
     ...(datedEntry || {}),
     ...(indexedEntry || {}),
-  };
+  });
   const isDefinitelyFinished = isIsoDateBeforeToday(mergedEntry?.endDate);
 
   if (indexedEntry?.archived && !indexedEntry?.forced && isDefinitelyFinished) {
@@ -4002,6 +4029,19 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   if (/^TTE\d+$/i.test(String(eventId || "").trim())) {
     const bornanPayload = await fetchBornanOfficialResults(eventId);
     return Array.isArray(bornanPayload) ? bornanPayload : [];
+  }
+
+  const seed = getWttResolutionSeedMeta(eventId, options);
+  if (seed.resultSource === "attu") {
+    const attuPayload = await fetchAttuOfficialResultsFromApi(eventId, take, options);
+    if (
+      attuPayload.length > 0 &&
+      isWttPayloadDateCompatible(attuPayload, eventId, options) &&
+      isWttPayloadSourceCompatible(attuPayload, eventId, options)
+    ) {
+      return attuPayload;
+    }
+    throw new Error(`ATTU result payload does not match event ${eventId}`);
   }
 
   const webgenPayload = await fetchWebgenOfficialResults(eventId);

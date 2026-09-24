@@ -3,6 +3,15 @@
 // Official calendar corrections that must take precedence over stale runtime
 // copies of the generated WTT date and search indexes.
 const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
+  "2628": Object.freeze({
+    eventName: "33rd ITTF-ATTU Asian Cup 2022",
+    startDate: "2022-11-17",
+    endDate: "2022-11-19",
+    dateLabel: "2022/11/17-19",
+    eventUrl: "https://asia.ittf.com/eventInfo?eventId=2628",
+    resultSource: "attu",
+    source: "wtt",
+  }),
   "3372": Object.freeze({
     eventName: "WTT Feeder Tunis 2026",
     startDate: "2026-12-06",
