@@ -28,6 +28,47 @@ const HEAD_TO_HEAD_INDEX_MANIFEST_PATH = path.join(DATA_DIR, "player-records-ind
 const WTT_ARCHIVE_INDEX_PATH = path.join(DATA_DIR, "wtt-archive-index.json");
 const WTT_DATE_INDEX_PATH = path.join(DATA_DIR, "wtt-date-index.json");
 const WTT_SEARCH_INDEX_PATH = path.join(DATA_DIR, "wtt-search-index.json");
+const TEAM_DETAIL_AUDIT_VERSION = 1;
+const TEAM_DETAIL_AUDIT_TTL_MS = 7 * 24 * 60 * 60 * 1000;
+
+function getTeamMatchDocumentCode(item) {
+  return String(item?.documentCode ?? item?.match_card?.documentCode ?? "").trim();
+}
+
+function getMissingTeamMatchDetails(payload) {
+  return (Array.isArray(payload) ? payload : [])
+    .filter((item) => {
+      const isNormalizedTeam = item?.matchType === "team";
+      const card = item?.match_card;
+      const rawCategory = item?.subEventType ?? card?.subEventName ?? "";
+      const isRawTeam = Boolean(card?.teamParentData) || /\bteams?$/i.test(String(rawCategory).trim());
+      if (!isNormalizedTeam && !isRawTeam) return false;
+
+      // Pool standings contribute aggregate-only team rows; the official match-card API has no rubber detail for them.
+      if (isNormalizedTeam && item?.source === "wtt") return false;
+
+      const submatches = isNormalizedTeam
+        ? item?.singles
+        : card?.teamParentData?.extended_info?.matches;
+      if (Array.isArray(submatches) && submatches.length > 0) return false;
+
+      const score = String(item?.overallScore ?? card?.overallScores ?? item?.overallScores ?? "").trim();
+      if (!/\d+\s*[-–:]\s*\d+/.test(score) || /\b(?:WO|W\/O|WALKOVER)\b/i.test(score)) return false;
+      const status = String(item?.resultStatus ?? item?.fullResults ?? card?.resultStatus ?? "").toUpperCase();
+      return !["SCHEDULED", "LIVE", "IN-PROGRESS", "IN_PROGRESS", "PENDING", "PROVISIONAL"].includes(status);
+    })
+    .map(getTeamMatchDocumentCode)
+    .filter(Boolean)
+    .sort();
+}
+
+function hasRecentTeamDetailAudit(entry, missingCodes, now = Date.now()) {
+  if (entry?.teamDetailAuditVersion !== TEAM_DETAIL_AUDIT_VERSION) return false;
+  if (!Array.isArray(entry?.teamDetailsMissingAfterRefresh)) return false;
+  if (JSON.stringify([...entry.teamDetailsMissingAfterRefresh].sort()) !== JSON.stringify(missingCodes)) return false;
+  const auditedAt = Date.parse(String(entry.teamDetailsAuditedAt || ""));
+  return Number.isFinite(auditedAt) && now - auditedAt < TEAM_DETAIL_AUDIT_TTL_MS;
+}
 const ARCHIVE_COMPLETENESS_VERSION = 3;
 
 function parseArgs(argv) {
@@ -223,8 +264,10 @@ function getArchiveStats(eventId) {
     rawSourceCompatible: true,
     slimSourceCompatible: true,
     eventIndexExists: fs.existsSync(eventIndexPath) && fs.statSync(eventIndexPath).size > 0,
+    teamDetailsMissingDocumentCodes: [],
   };
 
+  let preferredTeamPayload = null;
   for (const [kind, filePath] of [["raw", archivePath(eventId)], ["slim", slimArchivePath(eventId)]]) {
     if (!fs.existsSync(filePath)) {
       continue;
@@ -237,7 +280,11 @@ function getArchiveStats(eventId) {
       wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
       wttDateIndexPath: WTT_DATE_INDEX_PATH,
     });
+    if (kind === "slim" && stats.slimCount > 0) preferredTeamPayload = payload;
+    else if (!preferredTeamPayload && stats.rawCount > 0) preferredTeamPayload = payload;
   }
+  stats.teamDetailsMissingDocumentCodes = getMissingTeamMatchDetails(preferredTeamPayload);
+  stats.teamDetailsIncomplete = stats.teamDetailsMissingDocumentCodes.length > 0;
 
   // Player records and H2H read the slim archive when it exists. A large RAW
   // file must not hide a truncated slim archive from crawl completeness checks.
@@ -348,6 +395,8 @@ function buildCandidates(args) {
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
       const archiveStats = getArchiveStats(eventId);
+      const teamDetailsNeedRefresh = archiveStats.teamDetailsIncomplete
+        && !hasRecentTeamDetailAudit(entry, archiveStats.teamDetailsMissingDocumentCodes);
       const archiveCount = archiveStats.count;
       const hasArchiveFile = [archivePath(eventId), slimArchivePath(eventId)].some((filePath) => fs.existsSync(filePath));
       const partialArchive = isPotentiallyPartialArchive(entry, archiveCount);
@@ -365,7 +414,10 @@ function buildCandidates(args) {
           || archiveStats.eventIndexMissing
           || archiveStats.sourceMismatched
           || archiveStats.sourceIncompatible
+          || teamDetailsNeedRefresh
           || (archiveStats.mismatched && archiveStats.slimCount <= 30),
+        teamDetailsNeedRefresh,
+        teamDetailsMissingCount: archiveStats.teamDetailsMissingDocumentCodes.length,
         auditSuspicious: Boolean(args.auditSuspicious && hasArchiveFile && isAuditSuspiciousCount(archiveCount)),
         partialArchive,
         crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
@@ -621,6 +673,9 @@ async function archiveEvent(candidate, args) {
     archiveRefreshed: shouldRefresh,
     archiveCompletenessVersion: ARCHIVE_COMPLETENESS_VERSION,
     archiveVerifiedAt: new Date().toISOString(),
+    teamDetailAuditVersion: TEAM_DETAIL_AUDIT_VERSION,
+    teamDetailsAuditedAt: new Date().toISOString(),
+    teamDetailsMissingAfterRefresh: getMissingTeamMatchDetails(result.normalized),
     crawlSkipped: false,
     crawlSkipReason: null,
     crawlSkippedAt: null,
@@ -638,7 +693,7 @@ async function main() {
   console.log(`candidates: ${candidates.length}`);
   candidates.forEach((candidate, index) => {
     const dateLabel = [candidate.startDate, candidate.endDate].filter(Boolean).join(" - ");
-    console.log(`${index + 1}. ${candidate.eventId} ${dateLabel} ${candidate.title}`.trim());
+    console.log(`${index + 1}. ${candidate.eventId} ${dateLabel} ${candidate.title}${candidate.teamDetailsNeedRefresh ? ` [team details missing: ${candidate.teamDetailsMissingCount}]` : ""}`.trim());
   });
 
   if (args.dryRun || candidates.length === 0) {

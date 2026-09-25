@@ -3143,18 +3143,23 @@ function isWttPayloadDateCompatible(payload, eventId, options = {}) {
   if (!seed.startDate) {
     return true;
   }
+  const toleranceDays = 1;
+  const start = new Date(`${seed.startDate}T00:00:00Z`);
+  const end = new Date(`${seed.endDate || seed.startDate}T00:00:00Z`);
+  if (!Number.isFinite(start.getTime()) || !Number.isFinite(end.getTime())) {
+    return true;
+  }
+  start.setUTCDate(start.getUTCDate() - toleranceDays);
+  end.setUTCDate(end.getUTCDate() + toleranceDays);
+  const compatibleStart = start.toISOString().slice(0, 10);
+  const compatibleEnd = end.toISOString().slice(0, 10);
   const dates = (Array.isArray(payload) ? payload : [])
     .map(getMatchDateStamp)
     .filter(Boolean);
   if (dates.length === 0) {
     return true;
   }
-  const compatible = dates.filter((date) => datesOverlapOrMatch(
-    seed.startDate,
-    seed.endDate,
-    date,
-    date,
-  ));
+  const compatible = dates.filter((date) => date >= compatibleStart && date <= compatibleEnd);
   return compatible.length === dates.length;
 }
 
