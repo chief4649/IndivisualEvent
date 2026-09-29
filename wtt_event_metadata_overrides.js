@@ -32,7 +32,10 @@ const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
 
 function applyWttEventMetadataOverride(eventId, entry = {}) {
   const override = WTT_EVENT_METADATA_OVERRIDES[String(eventId || "").trim()];
-  return override ? { ...(entry || {}), ...override } : { ...(entry || {}) };
+  const resolved = override ? { ...(entry || {}), ...override } : { ...(entry || {}) };
+  const eventName = String(resolved.eventName || "").trim();
+  if (eventName) resolved.title = eventName;
+  return resolved;
 }
 
 module.exports = {

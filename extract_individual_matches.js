@@ -3269,7 +3269,7 @@ function getWttResolutionSeedMeta(eventId, options = {}) {
   });
   return {
     eventId: eventIdText,
-    title: String(merged.title || merged.eventName || "").trim(),
+    title: String(merged.eventName || merged.title || "").trim(),
     startDate: merged.startDate || null,
     endDate: merged.endDate || null,
     resultSource: String(merged.resultSource || "").trim().toLowerCase(),

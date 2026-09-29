@@ -70,6 +70,27 @@ function hasRecentTeamDetailAudit(entry, missingCodes, now = Date.now()) {
   const auditedAt = Date.parse(String(entry.teamDetailsAuditedAt || ""));
   return Number.isFinite(auditedAt) && now - auditedAt < TEAM_DETAIL_AUDIT_TTL_MS;
 }
+
+function syncArchiveTitlesFromDateIndex() {
+  const archiveIndex = readJson(WTT_ARCHIVE_INDEX_PATH);
+  const dateIndex = readJson(WTT_DATE_INDEX_PATH);
+  let updated = 0;
+
+  for (const [eventId, archiveEntry] of Object.entries(archiveIndex)) {
+    const eventName = String(dateIndex[eventId]?.eventName || "").trim();
+    if (!eventName || !archiveEntry || archiveEntry.title === eventName) continue;
+    archiveEntry.title = eventName;
+    updated += 1;
+  }
+
+  if (updated > 0) {
+    const tempPath = `${WTT_ARCHIVE_INDEX_PATH}.${process.pid}.${Date.now()}.tmp`;
+    fs.writeFileSync(tempPath, `${JSON.stringify(archiveIndex, null, 2)}\n`, "utf8");
+    fs.renameSync(tempPath, WTT_ARCHIVE_INDEX_PATH);
+  }
+  return updated;
+}
+
 const ARCHIVE_COMPLETENESS_VERSION = 3;
 
 function parseArgs(argv) {
@@ -673,7 +694,7 @@ async function archiveEvent(candidate, args) {
   updateWttArchiveIndexEntry(WTT_ARCHIVE_INDEX_PATH, candidate.eventId, {
     archived: true,
     source: meta.source || candidate.source || "wtt",
-    title: meta.title || candidate.title || "",
+    title: candidate.title || meta.title || "",
     startDate: meta.startDate || candidate.startDate || null,
     endDate: meta.endDate || candidate.endDate || null,
     canAutoArchive: Boolean(meta.canAutoArchive),
@@ -702,6 +723,14 @@ async function main() {
     console.log(`calendar: fetched ${calendar.rowCount} rows, refreshed ${calendar.updated} dates`);
   } catch (error) {
     console.warn(`calendar refresh failed; using stored dates: ${error?.message || error}`);
+  }
+  try {
+    const updatedTitles = syncArchiveTitlesFromDateIndex();
+    if (updatedTitles > 0) {
+      console.log(`archive titles synchronized: ${updatedTitles}`);
+    }
+  } catch (error) {
+    console.warn(`archive title synchronization failed: ${error?.message || error}`);
   }
   const candidates = buildCandidates(args);
 
@@ -803,3 +832,5 @@ if (require.main === module) {
     process.exit(1);
   });
 }
+
+module.exports = { syncArchiveTitlesFromDateIndex };
