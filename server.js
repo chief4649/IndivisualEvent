@@ -9803,6 +9803,7 @@ async function handleHeadToHeadApi(requestUrl, response) {
 }
 
 async function handlePlayerRecordsApi(requestUrl, response) {
+  const requestStartedAt = Date.now();
   try {
     refreshTranslationsInBackground("player-records");
     const name = String(requestUrl.searchParams.get("name") || "").trim();
@@ -9876,7 +9877,24 @@ async function handlePlayerRecordsApi(requestUrl, response) {
         returnedMatches,
       },
     });
+    console.info("[player-records] complete", JSON.stringify({
+      elapsedMs: Date.now() - requestStartedAt,
+      cacheHit: Boolean(searchResult.cacheHit),
+      candidateEvents: searchResult.candidateEvents || 0,
+      indexedEvents: searchResult.indexedEvents || 0,
+      missingIndexedEvents: searchResult.missingIndexedEvents || 0,
+      parsedEvents: searchResult.parsedEvents || 0,
+      scannedMatches: searchResult.scannedMatches || 0,
+      returnedEvents: limitedEvents.length,
+      returnedMatches,
+      candidateIndexSource: searchResult.candidateIndexSource || "",
+      eventIndexSource: searchResult.eventIndexSource || "",
+    }));
   } catch (error) {
+    console.error("[player-records] failed", JSON.stringify({
+      elapsedMs: Date.now() - requestStartedAt,
+      error: error?.message || String(error),
+    }));
     sendJson(response, 500, {
       error: createFriendlyErrorMessage(error),
     });
