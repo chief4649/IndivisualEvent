@@ -9,6 +9,11 @@ const readline = require("readline");
 const { URL } = require("url");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 const { isPlayerRecordEventIndexForFile } = require("./player_record_event_index_utils");
+const {
+  finishPlayerRecordEventIndexAuditBatch,
+  getPlayerRecordEventIndexAuditQueue,
+  getPlayerRecordEventIndexAuditSignature,
+} = require("./player_record_event_index_audit");
 
 const {
   DEFAULT_CACHE_DIR,
@@ -89,6 +94,7 @@ const BUNDLED_PLAYER_RECORD_CANDIDATE_SHARDS_DIR = path.join(BUNDLED_PLAYER_RECO
 const PLAYER_RECORD_EVENT_INDEX_VERSION = 1;
 const PLAYER_RECORD_EVENT_INDEX_DIR = path.join(PLAYER_RECORDS_INDEX_DIR, "event-records");
 const PLAYER_RECORD_EVENT_INDEX_MANIFEST_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "event-records-manifest.json");
+const PLAYER_RECORD_EVENT_INDEX_AUDIT_STATUS_PATH = path.join(PLAYER_RECORDS_INDEX_DIR, "event-index-audit-status.json");
 const BUNDLED_PLAYER_RECORD_EVENT_INDEX_DIR = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "event-records");
 const BUNDLED_PLAYER_RECORD_EVENT_INDEX_MANIFEST_PATH = path.join(BUNDLED_PLAYER_RECORDS_INDEX_DIR, "event-records-manifest.json");
 const PLAYER_SEARCH_ARCHIVE_NAME_INDEX_VERSION = 1;
@@ -515,6 +521,7 @@ let healthPayloadCache = null;
 let healthPayloadCacheBuiltAt = 0;
 
 function buildHealthPayloadUncached() {
+  const eventIndexAuditStatus = readJsonFileSafe(PLAYER_RECORD_EVENT_INDEX_AUDIT_STATUS_PATH) || {};
   return {
     ok: true,
     deploy: {
@@ -553,6 +560,20 @@ function buildHealthPayloadUncached() {
     },
     operations: {
       wttCrawlRunning: Boolean(wttCrawlProcess),
+      playerRecordEventIndexAudit: {
+        enabled: PLAYER_RECORD_EVENT_INDEX_AUDIT_ENABLED,
+        running: playerRecordEventIndexAuditRunning,
+        status: eventIndexAuditStatus.status || "not-run",
+        pendingEventCount: Array.isArray(eventIndexAuditStatus.pendingEventIds)
+          ? eventIndexAuditStatus.pendingEventIds.length
+          : null,
+        snapshotEventCount: Number(eventIndexAuditStatus.snapshotEventCount || 0),
+        checkedAt: eventIndexAuditStatus.checkedAt || null,
+        lastBatchBuilt: Number(eventIndexAuditStatus.lastBatchBuilt || 0),
+        lastErrorCount: Array.isArray(eventIndexAuditStatus.lastFailedEventIds)
+          ? eventIndexAuditStatus.lastFailedEventIds.length
+          : 0,
+      },
       nightlyWttCrawl: {
         enabled: WTT_NIGHTLY_CRAWL_ENABLED,
         hourJst: WTT_NIGHTLY_CRAWL_HOUR_JST,
@@ -4443,6 +4464,22 @@ const PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS = Number(
   process.env.PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS || 24 * 60 * 60_000,
 );
 let playerRecordCandidateAuditRunning = false;
+const PLAYER_RECORD_EVENT_INDEX_AUDIT_ENABLED = process.env.PLAYER_RECORD_EVENT_INDEX_AUDIT_ENABLED === "1"
+  || (process.env.PLAYER_RECORD_EVENT_INDEX_AUDIT_ENABLED !== "0" && Boolean(process.env.RENDER_GIT_COMMIT));
+const PLAYER_RECORD_EVENT_INDEX_AUDIT_START_DELAY_MS = Number(
+  process.env.PLAYER_RECORD_EVENT_INDEX_AUDIT_START_DELAY_MS || 20 * 60_000,
+);
+const PLAYER_RECORD_EVENT_INDEX_AUDIT_INTERVAL_MS = Number(
+  process.env.PLAYER_RECORD_EVENT_INDEX_AUDIT_INTERVAL_MS || 24 * 60 * 60_000,
+);
+const PLAYER_RECORD_EVENT_INDEX_AUDIT_BACKLOG_INTERVAL_MS = Number(
+  process.env.PLAYER_RECORD_EVENT_INDEX_AUDIT_BACKLOG_INTERVAL_MS || 5 * 60_000,
+);
+const PLAYER_RECORD_EVENT_INDEX_AUDIT_BATCH_SIZE = Math.max(
+  1,
+  Math.min(10, Number(process.env.PLAYER_RECORD_EVENT_INDEX_AUDIT_BATCH_SIZE || 5) || 5),
+);
+let playerRecordEventIndexAuditRunning = false;
 // Runtime archive writes already invalidate this cache explicitly. Keeping the
 // snapshot for longer avoids restating hundreds of persistent-disk files on
 // every production search while still allowing an environment override.
@@ -5089,7 +5126,7 @@ function schedulePlayerRecordCandidateIntegrityAudit(delayMs = PLAYER_RECORD_CAN
     return;
   }
   const timer = setTimeout(() => {
-    if (playerRecordCandidateAuditRunning) {
+    if (playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning) {
       schedulePlayerRecordCandidateIntegrityAudit(PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS);
       return;
     }
@@ -5120,6 +5157,60 @@ function schedulePlayerRecordCandidateIntegrityAudit(delayMs = PLAYER_RECORD_CAN
       });
   }, Math.max(1_000, delayMs));
   timer.unref();
+}
+
+function schedulePlayerRecordEventIndexAudit(delayMs = PLAYER_RECORD_EVENT_INDEX_AUDIT_START_DELAY_MS) {
+  if (!PLAYER_RECORD_EVENT_INDEX_AUDIT_ENABLED || AUTO_DERIVED_INDEX_DISABLED) {
+    return;
+  }
+  const timer = setTimeout(() => {
+    if (
+      playerRecordEventIndexAuditRunning ||
+      playerRecordCandidateAuditRunning ||
+      heavyApiActiveCount > 0 ||
+      heavyApiQueue.length > 0 ||
+      Boolean(wttCrawlProcess) ||
+      Boolean(headToHeadIndexBuildProcess)
+    ) {
+      schedulePlayerRecordEventIndexAudit(PLAYER_RECORD_EVENT_INDEX_AUDIT_BACKLOG_INTERVAL_MS);
+      return;
+    }
+    playerRecordEventIndexAuditRunning = true;
+    Promise.all([
+      autoDerivedIndexBuildPromise.catch(() => {}),
+      autoHeadToHeadIndexUpdatePromise.catch(() => {}),
+    ]).then(() => {
+      const run = autoDerivedIndexBuildPromise.then(() => spawnDerivedIndexProcess([
+        "-r",
+        "./runtime_legacy_ittf_patch.js",
+        "server.js",
+        "--audit-player-record-event-index",
+        "--limit",
+        String(PLAYER_RECORD_EVENT_INDEX_AUDIT_BATCH_SIZE),
+      ], "player-record-event-index-audit"));
+      autoDerivedIndexBuildPromise = run.catch(() => {});
+      return run;
+    }).then(() => {
+      const status = readJsonFileSafe(PLAYER_RECORD_EVENT_INDEX_AUDIT_STATUS_PATH) || {};
+      const pendingCount = Array.isArray(status.pendingEventIds) ? status.pendingEventIds.length : 0;
+      const failedCount = Array.isArray(status.lastFailedEventIds) ? status.lastFailedEventIds.length : 0;
+      const nextDelay = pendingCount > 0
+        ? (failedCount > 0 ? 60 * 60_000 : PLAYER_RECORD_EVENT_INDEX_AUDIT_BACKLOG_INTERVAL_MS)
+        : PLAYER_RECORD_EVENT_INDEX_AUDIT_INTERVAL_MS;
+      console.log(
+        `[player-record-event-index-audit] status=${status.status || "unknown"}`
+        + ` pending=${pendingCount} built=${Number(status.lastBatchBuilt || 0)}`
+        + ` failed=${failedCount} nextCheckMs=${nextDelay}`,
+      );
+      schedulePlayerRecordEventIndexAudit(nextDelay);
+    }).catch((error) => {
+      console.error("[player-record-event-index-audit] failed:", error?.message || error);
+      schedulePlayerRecordEventIndexAudit(60 * 60_000);
+    }).finally(() => {
+      playerRecordEventIndexAuditRunning = false;
+    });
+  }, Math.max(1_000, delayMs));
+  timer.unref?.();
 }
 
 function setPlayerRecordArchiveParseCacheValue(key, value) {
@@ -10242,6 +10333,7 @@ function startServer() {
     }
     scheduleHeadToHeadIndexReconciliation();
     schedulePlayerRecordCandidateIntegrityAudit();
+    schedulePlayerRecordEventIndexAudit();
     scheduleNightlyWttCrawl();
   });
 }
@@ -10385,6 +10477,128 @@ async function runPlayerRecordEventIndexBuildCli() {
   }, null, 2));
 }
 
+function writePlayerRecordEventIndexAuditStatus(status) {
+  writeCompactJsonFileAtomic(PLAYER_RECORD_EVENT_INDEX_AUDIT_STATUS_PATH, {
+    version: 1,
+    ...status,
+    checkedAt: new Date().toISOString(),
+  });
+}
+
+async function runPlayerRecordEventIndexAuditCli() {
+  ensureRuntimeFiles();
+  const args = parsePlayerRecordEventIndexArgs(process.argv.slice(2));
+  const limit = Math.max(1, Math.min(10, Number.isFinite(args.limit) ? args.limit : PLAYER_RECORD_EVENT_INDEX_AUDIT_BATCH_SIZE));
+  const snapshot = getWttRecordFileSnapshot();
+  const signature = getPlayerRecordEventIndexAuditSignature(snapshot);
+  const existing = readJsonFileSafe(PLAYER_RECORD_EVENT_INDEX_AUDIT_STATUS_PATH) || {};
+  const sameSnapshot = existing.version === 1 && existing.signature === signature;
+  let pendingEventIds;
+  let fullAuditAt = existing.fullAuditAt || null;
+  const fullAuditAtMs = Date.parse(fullAuditAt || "");
+  const fullAuditDue = !sameSnapshot || !Number.isFinite(fullAuditAtMs) ||
+    Date.now() - fullAuditAtMs >= PLAYER_RECORD_EVENT_INDEX_AUDIT_INTERVAL_MS;
+
+  if (sameSnapshot && Array.isArray(existing.pendingEventIds) && existing.pendingEventIds.length > 0) {
+    pendingEventIds = getPlayerRecordEventIndexAuditQueue(existing, signature);
+  } else if (sameSnapshot && !fullAuditDue) {
+    console.error(
+      `[player-record-event-index-audit] snapshot unchanged; next full audit in `
+      + `${Math.max(0, PLAYER_RECORD_EVENT_INDEX_AUDIT_INTERVAL_MS - (Date.now() - fullAuditAtMs))}ms`,
+    );
+    return;
+  } else {
+    writePlayerRecordEventIndexAuditStatus({
+      status: "scanning",
+      signature,
+      snapshotEventCount: snapshot.length,
+      pendingEventIds: [],
+      fullAuditAt,
+      lastBatchBuilt: 0,
+      lastFailedEventIds: [],
+    });
+    const staleEventIds = [];
+    for (let index = 0; index < snapshot.length; index += 1) {
+      if (index % 50 === 0) {
+        console.error(`[player-record-event-index-audit] freshness scan ${index}/${snapshot.length}`);
+        await yieldToEventLoop();
+      }
+      if (!isPlayerRecordEventIndexCurrent(snapshot[index])) {
+        staleEventIds.push(String(snapshot[index].eventId));
+      }
+    }
+    pendingEventIds = getPlayerRecordEventIndexAuditQueue(null, signature, staleEventIds);
+    fullAuditAt = new Date().toISOString();
+    console.error(
+      `[player-record-event-index-audit] freshness scan complete: `
+      + `${snapshot.length - staleEventIds.length}/${snapshot.length} current, `
+      + `${staleEventIds.length} stale or missing`,
+    );
+  }
+
+  const filesById = new Map(snapshot.map((file) => [String(file.eventId), file]));
+  const batchEventIds = pendingEventIds.slice(0, limit);
+  const failedEventIds = [];
+  let builtEventCount = 0;
+  let indexedMatches = 0;
+  let totalBytes = 0;
+  const deps = {
+    translations: readTranslations(TRANSLATIONS_PATH),
+    rules: readRules(RULES_PATH),
+    searchIndex: readWttSearchIndex(),
+    dateIndex: readWttDateIndex(WTT_DATE_INDEX_PATH),
+    archiveIndex: readWttArchiveIndex(),
+    eventNames: getEventNamesMap(),
+  };
+  ensureDir(PLAYER_RECORD_EVENT_INDEX_DIR);
+
+  for (let index = 0; index < batchEventIds.length; index += 1) {
+    const eventId = batchEventIds[index];
+    const file = filesById.get(eventId);
+    if (!file || isPlayerRecordEventIndexCurrent(file)) {
+      continue;
+    }
+    try {
+      const result = writePlayerRecordEventIndexForFile(file, deps);
+      builtEventCount += 1;
+      indexedMatches += result.indexedMatches;
+      totalBytes += result.bytes;
+      console.error(
+        `[player-record-event-index-audit] batch ${index + 1}/${batchEventIds.length}: `
+        + `${eventId} ${result.indexedMatches} matches ${result.bytes} bytes`,
+      );
+    } catch (error) {
+      failedEventIds.push(eventId);
+      console.error(`[player-record-event-index-audit] failed ${eventId}: ${error?.message || error}`);
+    }
+    await yieldToEventLoop();
+  }
+
+  const remainingEventIds = finishPlayerRecordEventIndexAuditBatch(
+    pendingEventIds,
+    batchEventIds,
+    failedEventIds,
+  );
+  const status = {
+    status: remainingEventIds.length > 0 ? "running" : "complete",
+    signature,
+    snapshotEventCount: snapshot.length,
+    fullAuditAt,
+    pendingEventIds: remainingEventIds,
+    lastBatchAt: new Date().toISOString(),
+    lastBatchRequested: batchEventIds.length,
+    lastBatchBuilt: builtEventCount,
+    lastBatchMatches: indexedMatches,
+    lastBatchBytes: totalBytes,
+    lastFailedEventIds: failedEventIds,
+  };
+  writePlayerRecordEventIndexAuditStatus(status);
+  console.error(
+    `[player-record-event-index-audit] ${status.status}: built=${builtEventCount}`
+    + ` pending=${remainingEventIds.length} failures=${failedEventIds.length}`,
+  );
+}
+
 async function runPlayerRecordCandidateIndexBuildCli() {
   ensureRuntimeFiles();
   const snapshot = getWttRecordFileSnapshot();
@@ -10526,6 +10740,11 @@ if (process.argv.includes("--update-head-to-head-index")) {
   });
 } else if (process.argv.includes("--build-player-record-event-index")) {
   runPlayerRecordEventIndexBuildCli().catch((error) => {
+    console.error(error.stack || error.message || error);
+    process.exitCode = 1;
+  });
+} else if (process.argv.includes("--audit-player-record-event-index")) {
+  runPlayerRecordEventIndexAuditCli().catch((error) => {
     console.error(error.stack || error.message || error);
     process.exitCode = 1;
   });

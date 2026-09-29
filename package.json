@@ -25,6 +25,7 @@
     "index:player-records": "node build_player_records_index.js",
     "audit:player-record-candidates": "node build_player_records_index.js --audit-candidates --repair",
     "index:player-record-events": "node -r ./runtime_legacy_ittf_patch.js server.js --build-player-record-event-index",
+    "audit:player-record-events": "node -r ./runtime_legacy_ittf_patch.js server.js --audit-player-record-event-index",
     "index:player-record-candidates": "node -r ./runtime_legacy_ittf_patch.js server.js --build-player-record-candidate-index",
     "index:player-record-matches": "node -r ./runtime_legacy_ittf_patch.js server.js --build-head-to-head-index",
     "index:player-record-matches-incremental": "node -r ./runtime_legacy_ittf_patch.js server.js --update-head-to-head-index",
