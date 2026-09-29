@@ -2830,6 +2830,9 @@ function buildWttCrawlArgs(searchParams) {
   if (parseBoolean(searchParams.get("skipH2hIndex")) || process.env.WTT_NIGHTLY_CRAWL_SKIP_H2H_INDEX === "1") {
     args.push("--skip-h2h-index");
   }
+  if (parseBoolean(searchParams.get("newestFirst"))) {
+    args.push("--newest-first");
+  }
   return args;
 }
 
@@ -2986,7 +2989,7 @@ async function checkAndStartNightlyWttCrawl() {
   }
 
   try {
-    const response = await fetch(`http://127.0.0.1:${PORT}/api/admin/crawl-wtt`, {
+    const response = await fetch(`http://127.0.0.1:${PORT}/api/admin/crawl-wtt?newestFirst=1`, {
       method: "POST",
       headers: {
         authorization: `Bearer ${ADMIN_TOKEN}`,

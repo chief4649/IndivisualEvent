@@ -17,6 +17,7 @@ const {
 } = require("./extract_individual_matches");
 const { updatePlayerRecordCandidateIndexForEvents } = require("./build_player_records_index");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
+const { refreshWttDateIndex } = require("./wtt_calendar");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
@@ -85,6 +86,7 @@ function parseArgs(argv) {
     skipH2hIndex: false,
     keepRaw: false,
     auditSuspicious: false,
+    newestFirst: false,
     events: [],
   };
 
@@ -137,6 +139,9 @@ function parseArgs(argv) {
         break;
       case "--audit-suspicious":
         args.auditSuspicious = true;
+        break;
+      case "--newest-first":
+        args.newestFirst = true;
         break;
       case "--help":
       case "-h":
@@ -388,9 +393,9 @@ function buildCandidates(args) {
   return [...eventIds]
     .map((eventId) => {
       const entry = applyWttEventMetadataOverride(eventId, {
-        ...(dateIndex[eventId] || {}),
-        ...(searchIndex[eventId] || {}),
         ...(archiveIndex[eventId] || {}),
+        ...(searchIndex[eventId] || {}),
+        ...(dateIndex[eventId] || {}),
       });
       const startDate = entry.startDate || "";
       const endDate = entry.endDate || "";
@@ -450,9 +455,13 @@ function buildCandidates(args) {
       const leftDate = left.startDate || left.endDate || "";
       const rightDate = right.startDate || right.endDate || "";
       if (leftDate !== rightDate) {
-        return leftDate.localeCompare(rightDate);
+        return args.newestFirst
+          ? rightDate.localeCompare(leftDate)
+          : leftDate.localeCompare(rightDate);
       }
-      return Number(left.eventId) - Number(right.eventId);
+      return args.newestFirst
+        ? Number(right.eventId) - Number(left.eventId)
+        : Number(left.eventId) - Number(right.eventId);
     })
     .slice(0, args.limit);
 }
@@ -688,6 +697,12 @@ async function archiveEvent(candidate, args) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  try {
+    const calendar = await refreshWttDateIndex(path.join(DATA_DIR, "wtt-date-index.json"));
+    console.log(`calendar: fetched ${calendar.rowCount} rows, refreshed ${calendar.updated} dates`);
+  } catch (error) {
+    console.warn(`calendar refresh failed; using stored dates: ${error?.message || error}`);
+  }
   const candidates = buildCandidates(args);
 
   console.log(`candidates: ${candidates.length}`);
