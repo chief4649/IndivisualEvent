@@ -16,6 +16,7 @@ COPY build_player_records_index.js ./
 COPY verify_wtt_alignment.js ./
 COPY runtime_legacy_ittf_patch.js ./
 COPY wtt_event_metadata_overrides.js ./
+COPY player_record_event_index_utils.js ./
 COPY server.js ./
 COPY patch_version_info.js ./
 COPY translations.ja.json ./
