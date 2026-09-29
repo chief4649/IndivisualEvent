@@ -5200,30 +5200,50 @@ function buildJaRoundContext(matches) {
   const firstKnockoutRoundIndex = knockoutOrder.findIndex((roundKey) =>
     matches.some((match) => match.roundKey === roundKey),
   );
+  const hasPreliminaryStage = matches.some((match) =>
+    match.roundKey === "group" ||
+    match.roundKey === "preliminary_round" ||
+    match.roundKey === "qualification_elimination_round" ||
+    /^qualifying_round_\d+$/.test(String(match.roundKey || "")) ||
+    /\bgroup\b|\bpool\b|stage\s*1[ab].*_group/i.test(String(match.roundLabel || "")),
+  );
 
   return {
     knockoutRoundNumbers: Object.fromEntries(
       presentRounds.map((roundKey, index) => [roundKey, `${index + 1}回戦`]),
     ),
     firstKnockoutRoundIndex,
+    hasPreliminaryStage,
   };
+}
+
+function applyKnockoutPrefix(label, context, rules) {
+  const text = String(label || "");
+  if (context?.hasPreliminaryStage) {
+    return text.startsWith(rules.labels.knockoutPrefix)
+      ? text
+      : `${rules.labels.knockoutPrefix}${text}`;
+  }
+  return text.replace(/^決勝トーナメント/, "");
 }
 
 function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
   const mapped = translate(roundKey, translations.rounds);
   if (mapped && mapped !== roundKey) {
-    return mapped;
+    return ["quarterfinal", "semifinal", "final"].includes(roundKey)
+      ? applyKnockoutPrefix(mapped, context, rules)
+      : mapped;
   }
 
   const dynamicKnockoutLabel = ["round_of_256", "round_of_128", "round_of_64", "round_of_32", "round_of_16"].includes(roundKey)
     ? context?.knockoutRoundNumbers?.[roundKey]
     : null;
   if (dynamicKnockoutLabel) {
-    return `${rules.labels.knockoutPrefix}${dynamicKnockoutLabel}`;
+    return applyKnockoutPrefix(dynamicKnockoutLabel, context, rules);
   }
 
   if (roundKey === "round_of_8") {
-    return "決勝トーナメント準々決勝";
+    return applyKnockoutPrefix("決勝トーナメント準々決勝", context, rules);
   }
 
   const qualifyingRoundMatch = String(roundKey || "").match(/^qualifying_round_(\d+)$/);
@@ -5270,7 +5290,10 @@ function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
     preliminary_round: rules.labels.preliminaryRound,
     ...rules.roundFallbacks,
   };
-  return fallback[roundKey] || roundLabel || roundKey;
+  const fallbackLabel = fallback[roundKey] || roundLabel || roundKey;
+  return ["quarterfinal", "semifinal", "final"].includes(roundKey)
+    ? applyKnockoutPrefix(fallbackLabel, context, rules)
+    : fallbackLabel;
 }
 
 function translateRoundJaForMatch(match, translations, rules, context) {
@@ -5283,6 +5306,7 @@ function translateRoundJaForMatch(match, translations, rules, context) {
   if (
     match?.source !== "zennihon" &&
     match?.discipline === "teams" &&
+    context?.hasPreliminaryStage &&
     numberedRoundMatch &&
     !roundLabel.startsWith("決勝トーナメント")
   ) {
