@@ -1531,8 +1531,8 @@ function getWttLocalArchiveMeta(eventId, options = {}) {
   const indexedEntry = archiveIndex[eventIdText] || null;
   const datedEntry = dateIndex[eventIdText] || null;
   const mergedEntry = applyWttEventMetadataOverride(eventIdText, {
-    ...(datedEntry || {}),
     ...(indexedEntry || {}),
+    ...(datedEntry || {}),
   });
   const isDefinitelyFinished = isIsoDateBeforeToday(mergedEntry?.endDate);
 
@@ -3264,8 +3264,8 @@ function getWttResolutionSeedMeta(eventId, options = {}) {
   const archiveIndex = readWttArchiveIndex(options.wttArchiveIndexPath || DEFAULT_WTT_ARCHIVE_INDEX_PATH);
   const dateIndex = readWttDateIndex(options.wttDateIndexPath || DEFAULT_WTT_DATE_INDEX_PATH);
   const merged = applyWttEventMetadataOverride(eventIdText, {
-    ...(dateIndex[eventIdText] || {}),
     ...(archiveIndex[eventIdText] || {}),
+    ...(dateIndex[eventIdText] || {}),
   });
   return {
     eventId: eventIdText,
@@ -4120,8 +4120,8 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
   const datedEntry = dateIndex[eventIdText];
 
   const mergedEntry = applyWttEventMetadataOverride(eventIdText, {
-    ...(datedEntry || {}),
     ...(indexedEntry || {}),
+    ...(datedEntry || {}),
   });
   const isDefinitelyFinished = isIsoDateBeforeToday(mergedEntry?.endDate);
 
