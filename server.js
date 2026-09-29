@@ -8,6 +8,7 @@ const path = require("path");
 const readline = require("readline");
 const { URL } = require("url");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
+const { isPlayerRecordEventIndexForFile } = require("./player_record_event_index_utils");
 
 const {
   DEFAULT_CACHE_DIR,
@@ -6349,25 +6350,6 @@ function comparePlayerRecordEventIndexQuality(left, right) {
   }
 
   return getPlayerRecordEventIndexFreshnessValue(left) - getPlayerRecordEventIndexFreshnessValue(right);
-}
-
-function isPlayerRecordEventIndexForFile(index, file) {
-  if (!file) {
-    return true;
-  }
-  const indexSourceSize = Number(index?.sourceSize || 0);
-  const fileSourceSize = Number(file.parseSize || file.size || 0);
-  if (indexSourceSize > 0 && fileSourceSize > 0) {
-    return indexSourceSize === fileSourceSize;
-  }
-
-  const indexSourceMtimeMs = Number(index?.sourceMtimeMs || 0);
-  const fileSourceMtimeMs = Number(file.parseMtimeMs || file.mtimeMs || 0);
-  if (indexSourceMtimeMs > 0 && fileSourceMtimeMs > 0) {
-    return indexSourceMtimeMs === fileSourceMtimeMs;
-  }
-
-  return true;
 }
 
 function mergePlayerRecordEventIndexes(indexes) {

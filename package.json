@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node -r ./runtime_legacy_ittf_patch.js server.js",
+    "test": "node --test",
     "start:admin": "ADMIN_TOKEN=secret-token PORT=3001 node -r ./runtime_legacy_ittf_patch.js server.js",
     "cli": "node -r ./runtime_legacy_ittf_patch.js extract_individual_matches.js",
     "index:wtt": "node build_wtt_search_index.js",
