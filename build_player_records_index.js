@@ -6,6 +6,7 @@ const crypto = require("crypto");
 
 const {
   buildJaRoundContext,
+  getNameTranslationCandidates,
   normalizeOfficialResultItem,
   readRules,
   readTranslations,
@@ -34,6 +35,7 @@ const CANDIDATE_INDEX_VERSION = 1;
 const CANDIDATE_INDEX_PATH = path.join(OUTPUT_DIR, "candidate-events.json");
 const CANDIDATE_MANIFEST_PATH = path.join(OUTPUT_DIR, "candidate-manifest.json");
 const CANDIDATE_SHARDS_DIR = path.join(OUTPUT_DIR, "candidate-shards");
+const CANDIDATE_INDEX_FORMAT_VERSION = 2;
 
 function readJson(filePath, fallback) {
   try {
@@ -340,14 +342,170 @@ function mergeRecord(index, key, eventRecord) {
 }
 
 function getCompetitorKeys(competitor, translations) {
-  return Array.from(new Set([
+  const values = [
     competitor?.name,
-    translations.players?.[competitor?.name || ""],
+    competitor?.playerName,
+    competitor?.competitorName,
+    competitor?.competitiorName,
+    competitor?.displayName,
+    competitor?.description,
+    competitor?.desc,
+    competitor?.teamName,
+    competitor?.team,
     ...(Array.isArray(competitor?.players) ? competitor.players.flatMap((player) => [
       player?.name,
-      translations.players?.[player?.name || ""],
+      player?.playerName,
+      player?.competitorName,
+      player?.description,
+      player?.desc,
     ]) : []),
-  ].flatMap(buildPlayerNameSearchValues).filter(Boolean)));
+  ].filter(Boolean);
+  const names = values.flatMap((value) => [
+    value,
+    translateCandidateNameForRecord(value, translations),
+    ...getNameTranslationCandidates(value),
+    ...buildPlayerNameSearchValues(value),
+    ...getCandidateNameTranslationAliases(value, "", translations),
+  ]);
+
+  const orgCandidates = (Array.isArray(competitor?.players) ? competitor.players : []).map((player) => ({
+    name: player?.name || player?.playerName || player?.competitorName || player?.description || player?.desc,
+    org: player?.orgCode || player?.org || competitor?.orgCode || competitor?.org,
+  }));
+  values.forEach((value) => {
+    String(value || "").split(/\s*(?:\/|／|\+|&| and )\s*/i).map((name) => name.trim()).filter(Boolean)
+      .forEach((name) => orgCandidates.push({ name, org: competitor?.orgCode || competitor?.org }));
+  });
+  orgCandidates.forEach(({ name, org }) => {
+    if (!name) {
+      return;
+    }
+    names.push(name, translateCandidateNameForRecord(name, translations), ...getNameTranslationCandidates(name));
+    names.push(...getCandidatePlayerOrgOverrideNames(name, org, translations));
+    names.push(...getCandidateNameTranslationAliases(name, org, translations));
+  });
+
+  return Array.from(new Set(names.flatMap(buildPlayerNameSearchValues).filter(Boolean)));
+}
+
+function getCandidateNameTokenSignature(value) {
+  const tokens = normalizePlayerSearchText(value).split(/\s+/).filter(Boolean).sort();
+  return tokens.length > 0 ? tokens.join(" ") : "";
+}
+
+function buildCandidateNameAliasLookup(translations) {
+  const players = new Map();
+  Object.entries(translations?.players || {}).forEach(([name, translated]) => {
+    const signature = getCandidateNameTokenSignature(name);
+    if (!signature) {
+      return;
+    }
+    if (!players.has(signature)) {
+      players.set(signature, []);
+    }
+    players.get(signature).push(name, translated);
+  });
+  const orgOverrides = new Map();
+  Object.entries(translations?.playerOrgOverrides || {}).forEach(([key, translated]) => {
+    const separator = String(key).lastIndexOf("|");
+    if (separator <= 0 || !translated) {
+      return;
+    }
+    const org = String(key.slice(separator + 1)).trim().toUpperCase();
+    const signature = getCandidateNameTokenSignature(key.slice(0, separator));
+    if (!org || !signature) {
+      return;
+    }
+    const mapKey = `${org}|${signature}`;
+    if (!orgOverrides.has(mapKey)) {
+      orgOverrides.set(mapKey, []);
+    }
+    orgOverrides.get(mapKey).push(key.slice(0, separator), translated);
+  });
+  return { players, orgOverrides };
+}
+
+function getCandidateNameTranslationAliases(value, orgCode, translations) {
+  const lookup = translations?.candidateNameAliases;
+  const signature = getCandidateNameTokenSignature(value);
+  if (!lookup || !signature) {
+    return [];
+  }
+  const aliases = [...(lookup.players.get(signature) || [])];
+  const org = String(orgCode || "").trim().toUpperCase();
+  if (org) {
+    aliases.push(...(lookup.orgOverrides.get(`${org}|${signature}`) || []));
+  }
+  return aliases;
+}
+
+function translateCandidateNameForRecord(value, translations) {
+  return String(value || "").split(/\s*(?:\/|／|\+|&| and )\s*/i)
+    .map((part) => {
+      for (const candidate of getNameTranslationCandidates(part)) {
+        if (translations.players?.[candidate]) {
+          return translations.players[candidate];
+        }
+      }
+      return translatePlayerNameForRecord(part, translations);
+    })
+    .filter(Boolean)
+    .join("／");
+}
+
+function getCandidatePlayerOrgOverrideNames(name, orgCode, translations) {
+  const overrides = translations?.playerOrgOverrides;
+  const lookup = translations?.candidateOrgOverrides;
+  if (!overrides || typeof overrides !== "object" || !lookup) {
+    return [];
+  }
+  const rawOrg = normalizePlayerSearchText(orgCode);
+  if (!rawOrg) {
+    return [];
+  }
+  const orgCodes = new Set([rawOrg.toUpperCase()]);
+  const mappedOrg = lookup.orgs.get(rawOrg);
+  if (mappedOrg) {
+    orgCodes.add(mappedOrg);
+  }
+  const translatedNames = new Set();
+  getNameTranslationCandidates(name).forEach((candidate) => {
+    const normalizedName = normalizePlayerSearchText(candidate);
+    orgCodes.forEach((org) => {
+      const translated = lookup.names.get(`${org}|${normalizedName}`);
+      if (translated) {
+        translatedNames.add(translated);
+      }
+    });
+  });
+  return [...translatedNames];
+}
+
+function buildCandidateOrgOverrideLookup(translations) {
+  const names = new Map();
+  Object.entries(translations?.playerOrgOverrides || {}).forEach(([key, value]) => {
+    const separator = String(key).lastIndexOf("|");
+    if (separator <= 0 || !value) {
+      return;
+    }
+    const name = normalizePlayerSearchText(key.slice(0, separator));
+    const org = String(key.slice(separator + 1)).trim().toUpperCase();
+    if (name && org) {
+      names.set(`${org}|${name}`, value);
+    }
+  });
+  const orgs = new Map();
+  Object.entries(translations?.teams || {}).forEach(([code, translated]) => {
+    const normalizedCode = normalizePlayerSearchText(code);
+    const normalizedTranslated = normalizePlayerSearchText(translated);
+    if (normalizedCode) {
+      orgs.set(normalizedCode, code.toUpperCase());
+    }
+    if (normalizedTranslated) {
+      orgs.set(normalizedTranslated, code.toUpperCase());
+    }
+  });
+  return { names, orgs };
 }
 
 function compareEvents(left, right) {
@@ -560,8 +718,15 @@ function addCandidateMatch(index, eventId, match, translations) {
 function buildCandidateIndex(files, deps) {
   const index = {};
   let indexedMatches = 0;
+  const eventMatchCounts = {};
+  const translations = {
+    ...deps.translations,
+    candidateOrgOverrides: buildCandidateOrgOverrideLookup(deps.translations),
+    candidateNameAliases: buildCandidateNameAliasLookup(deps.translations),
+  };
 
   files.forEach(({ eventId, filePath, parseFilePath }) => {
+    eventMatchCounts[eventId] = 0;
     const payload = readJson(parseFilePath || filePath, []);
     if (!Array.isArray(payload)) {
       return;
@@ -571,15 +736,16 @@ function buildCandidateIndex(files, deps) {
       if (!match) {
         return;
       }
-      addCandidateMatch(index, eventId, match, deps.translations);
+      addCandidateMatch(index, eventId, match, translations);
       indexedMatches += 1;
+      eventMatchCounts[eventId] = (eventMatchCounts[eventId] || 0) + 1;
     });
   });
 
   Object.keys(index).forEach((key) => {
     index[key].sort((left, right) => String(left).localeCompare(String(right), "en", { numeric: true }));
   });
-  return { index, indexedMatches };
+  return { index, indexedMatches, eventMatchCounts };
 }
 
 function getCandidateShardName(key) {
@@ -614,7 +780,60 @@ function groupCandidateIndexShards(index) {
   return shards;
 }
 
-function writeCandidateIndex(files, index, indexedMatches) {
+function getCandidateEventSourceSignatures(files) {
+  return Object.fromEntries(files.map((file) => [String(file.eventId), [
+    file.size,
+    file.mtimeMs,
+    file.parseSource || "raw",
+    file.parseFilePath || file.filePath,
+  ].join(":")]));
+}
+
+function getCandidateConfigSignature() {
+  return [
+    TRANSLATIONS_PATH,
+    RULES_PATH,
+    WTT_ARCHIVE_INDEX_PATH,
+    WTT_DATE_INDEX_PATH,
+    WTT_SEARCH_INDEX_PATH,
+    EVENT_NAMES_PATH,
+  ].map((filePath) => `${path.basename(filePath)}:${getPathStatToken(filePath)}`).join("|");
+}
+
+function haveSameCandidateMapEntries(left, right) {
+  const leftKeys = Object.keys(left || {}).sort();
+  const rightKeys = Object.keys(right || {}).sort();
+  return leftKeys.length === rightKeys.length && leftKeys.every((key, index) =>
+    key === rightKeys[index] && left[key] === right[key],
+  );
+}
+
+function isCandidateIndexCompleteForIncrementalUpdate(manifest, files, requestedEventIds) {
+  if (
+    manifest?.formatVersion !== CANDIDATE_INDEX_FORMAT_VERSION ||
+    manifest?.complete !== true ||
+    !manifest?.sourceFiles ||
+    !manifest?.eventMatchCounts ||
+    manifest.configSignature !== getCandidateConfigSignature()
+  ) {
+    return false;
+  }
+
+  const previousSources = manifest.sourceFiles;
+  const previousMatchCounts = manifest.eventMatchCounts;
+  if (Object.keys(previousSources).length !== files.length || Object.keys(previousMatchCounts).length !== files.length) {
+    return false;
+  }
+  return files.every((file) => {
+    const eventId = String(file.eventId);
+    if (requestedEventIds.has(eventId)) {
+      return true;
+    }
+    return previousSources[eventId] === getCandidateEventSourceSignatures([file])[eventId];
+  });
+}
+
+function writeCandidateIndex(files, index, indexedMatches, eventMatchCounts = {}) {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true });
   fs.rmSync(CANDIDATE_SHARDS_DIR, { recursive: true, force: true });
   fs.mkdirSync(CANDIDATE_SHARDS_DIR, { recursive: true });
@@ -627,8 +846,13 @@ function writeCandidateIndex(files, index, indexedMatches) {
   writeJsonAtomic(CANDIDATE_INDEX_PATH, index);
   writeJsonAtomic(CANDIDATE_MANIFEST_PATH, {
     version: CANDIDATE_INDEX_VERSION,
+    formatVersion: CANDIDATE_INDEX_FORMAT_VERSION,
+    complete: true,
     generatedAt: new Date().toISOString(),
     signature: getPlayerRecordCacheSignature(files),
+    configSignature: getCandidateConfigSignature(),
+    sourceFiles: getCandidateEventSourceSignatures(files),
+    eventMatchCounts,
     sharded: true,
     shardCount: Object.keys(shards).length,
     eventCount: files.length,
@@ -642,7 +866,7 @@ function writeCandidateIndex(files, index, indexedMatches) {
 function auditPlayerRecordCandidateIndex({ repair = false } = {}) {
   const files = listWttRecordFiles();
   const deps = readBuildDeps();
-  const { index: expectedIndex, indexedMatches } = buildCandidateIndex(files, deps);
+  const { index: expectedIndex, indexedMatches, eventMatchCounts } = buildCandidateIndex(files, deps);
   const manifest = readJson(CANDIDATE_MANIFEST_PATH, {});
   const monolithicIndex = readJson(CANDIDATE_INDEX_PATH, {});
   const shardedIndex = readCandidateShardedIndex();
@@ -653,9 +877,15 @@ function auditPlayerRecordCandidateIndex({ repair = false } = {}) {
   const reasons = [];
 
   if (manifest.version !== CANDIDATE_INDEX_VERSION) reasons.push("manifest-version");
+  if (manifest.formatVersion !== CANDIDATE_INDEX_FORMAT_VERSION || manifest.complete !== true) reasons.push("incomplete-coverage-metadata");
   if (manifest.signature !== sourceSignature) reasons.push("source-signature");
+  if (manifest.configSignature !== getCandidateConfigSignature()) reasons.push("config-signature");
   if (Number(manifest.eventCount) !== files.length) reasons.push("event-count");
   if (Number(manifest.indexedMatches) !== indexedMatches) reasons.push("match-count");
+  if (
+    !haveSameCandidateMapEntries(manifest.sourceFiles, getCandidateEventSourceSignatures(files)) ||
+    !haveSameCandidateMapEntries(manifest.eventMatchCounts, eventMatchCounts)
+  ) reasons.push("source-coverage");
   if (manifest.indexSha256 !== expectedHash) reasons.push("manifest-index-hash");
   if (manifest.shardsSha256 !== expectedHash) reasons.push("manifest-shards-hash");
   if (monolithicHash !== expectedHash) reasons.push("monolithic-content");
@@ -663,7 +893,7 @@ function auditPlayerRecordCandidateIndex({ repair = false } = {}) {
 
   const repaired = repair && reasons.length > 0;
   if (repaired) {
-    writeCandidateIndex(files, expectedIndex, indexedMatches);
+    writeCandidateIndex(files, expectedIndex, indexedMatches, eventMatchCounts);
   }
   return {
     ok: reasons.length === 0 || repaired,
@@ -690,8 +920,17 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
   }
 
   const deps = readBuildDeps();
+  const existingManifest = readJson(CANDIDATE_MANIFEST_PATH, {});
+  if (!isCandidateIndexCompleteForIncrementalUpdate(existingManifest, allFiles, requested)) {
+    return rebuildPlayerRecordCandidateIndex();
+  }
+
   const existingIndex = readCandidateIndex();
-  if (Object.keys(existingIndex).length === 0) {
+  if (
+    Object.keys(existingIndex).length === 0 ||
+    getCandidateIndexHash(existingIndex) !== existingManifest.indexSha256 ||
+    getCandidateIndexHash(readCandidateShardedIndex()) !== existingManifest.shardsSha256
+  ) {
     return rebuildPlayerRecordCandidateIndex();
   }
   Object.keys(existingIndex).forEach((key) => {
@@ -704,7 +943,7 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
     }
   });
 
-  const { index, indexedMatches } = buildCandidateIndex(files, deps);
+  const { index, indexedMatches, eventMatchCounts } = buildCandidateIndex(files, deps);
   Object.entries(index).forEach(([key, eventIdsForKey]) => {
     if (!existingIndex[key]) {
       existingIndex[key] = [];
@@ -717,7 +956,13 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
     existingIndex[key].sort((left, right) => String(left).localeCompare(String(right), "en", { numeric: true }));
   });
 
-  writeCandidateIndex(allFiles, existingIndex, Number(readJson(CANDIDATE_MANIFEST_PATH, {}).indexedMatches || 0) + indexedMatches);
+  const nextEventMatchCounts = { ...existingManifest.eventMatchCounts };
+  requested.forEach((eventId) => {
+    delete nextEventMatchCounts[eventId];
+  });
+  Object.assign(nextEventMatchCounts, eventMatchCounts);
+  const totalIndexedMatches = Object.values(nextEventMatchCounts).reduce((sum, count) => sum + Number(count || 0), 0);
+  writeCandidateIndex(allFiles, existingIndex, totalIndexedMatches, nextEventMatchCounts);
   return {
     eventCount: files.length,
     indexedMatches,
@@ -728,8 +973,8 @@ function updatePlayerRecordCandidateIndexForEvents(eventIds) {
 function rebuildPlayerRecordCandidateIndex() {
   const files = listWttRecordFiles();
   const deps = readBuildDeps();
-  const { index, indexedMatches } = buildCandidateIndex(files, deps);
-  writeCandidateIndex(files, index, indexedMatches);
+  const { index, indexedMatches, eventMatchCounts } = buildCandidateIndex(files, deps);
+  writeCandidateIndex(files, index, indexedMatches, eventMatchCounts);
   return {
     eventCount: files.length,
     indexedMatches,

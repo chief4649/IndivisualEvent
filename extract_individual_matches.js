@@ -6319,6 +6319,7 @@ module.exports = {
   formatText,
   getWttEventLifecycleMeta,
   getWttPayloadFormat,
+  getNameTranslationCandidates,
   getProcessedMatches,
   inferGender,
   matchesRoundFilter,

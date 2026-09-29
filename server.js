@@ -4381,9 +4381,15 @@ function comparePlayerSearchResult(left, right) {
 }
 
 const playerRecordResultCache = new Map();
+const playerRecordCandidateShardCache = new Map();
+const playerRecordCandidateShardValidationCache = new Map();
+const playerRecordEventIndexCache = new Map();
+let playerRecordEventIndexCacheBytes = 0;
 const legacyPlayerRecordShardCache = new Map();
 const PLAYER_RECORD_RESULT_CACHE_MAX = 10;
 const PLAYER_RECORD_RESULT_CACHE_TTL_MS = Number(process.env.PLAYER_RECORD_RESULT_CACHE_TTL_MS || 60_000);
+const PLAYER_RECORD_EVENT_INDEX_CACHE_MAX_BYTES = 8 * 1024 * 1024;
+const PLAYER_RECORD_EVENT_INDEX_CACHE_MAX_FILE_BYTES = 2 * 1024 * 1024;
 const headToHeadResultCache = new Map();
 const HEAD_TO_HEAD_RESULT_CACHE_MAX = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_MAX || 20);
 const HEAD_TO_HEAD_RESULT_CACHE_TTL_MS = Number(process.env.HEAD_TO_HEAD_RESULT_CACHE_TTL_MS || 60_000);
@@ -5996,6 +6002,30 @@ function getPlayerRecordCandidateShardName(key) {
   return /^[a-z0-9]$/.test(first) ? `${first}.json` : "_.json";
 }
 
+function readPlayerRecordCandidateShard(shardsDir, shardName) {
+  const filePath = path.join(shardsDir, shardName);
+  const cacheKey = filePath;
+  try {
+    const stat = fs.statSync(filePath);
+    const signature = `${stat.size}:${Math.trunc(stat.mtimeMs)}:${stat.ino}`;
+    const cached = playerRecordCandidateShardCache.get(cacheKey);
+    if (cached?.signature === signature) {
+      return cached.shard;
+    }
+
+    const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
+    const shard = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    playerRecordCandidateShardCache.delete(cacheKey);
+    playerRecordCandidateShardCache.set(cacheKey, { signature, shard });
+    while (playerRecordCandidateShardCache.size > 12) {
+      playerRecordCandidateShardCache.delete(playerRecordCandidateShardCache.keys().next().value);
+    }
+    return shard;
+  } catch {
+    return {};
+  }
+}
+
 function readPlayerRecordCandidateManifestFromPath(filePath, signature) {
   try {
     const manifest = JSON.parse(fs.readFileSync(filePath, "utf8"));
@@ -6028,10 +6058,56 @@ function getPlayerRecordCandidateManifestLocations(signature) {
     return manifest
       ? [{
         ...manifest,
+        manifestPath: location.manifestPath,
         shardsDir: location.shardsDir,
       }]
       : [];
   });
+}
+
+function isPlayerRecordCandidateShardSetValid(manifest) {
+  if (!manifest?.sharded || !manifest.shardsSha256 || !manifest.shardsDir) {
+    return false;
+  }
+
+  try {
+    const stat = fs.statSync(manifest.manifestPath);
+    const cacheKey = manifest.manifestPath;
+    const signature = `${stat.size}:${Math.trunc(stat.mtimeMs)}:${stat.ino}`;
+    const cached = playerRecordCandidateShardValidationCache.get(cacheKey);
+    if (cached?.signature === signature) {
+      return cached.valid;
+    }
+
+    const merged = {};
+    const shardNames = fs.readdirSync(manifest.shardsDir)
+      .filter((fileName) => /^(?:[a-z0-9]|_)\.json$/i.test(fileName));
+    if (shardNames.length !== Number(manifest.shardCount)) {
+      return false;
+    }
+    shardNames.forEach((shardName) => {
+      const shard = JSON.parse(fs.readFileSync(path.join(manifest.shardsDir, shardName), "utf8"));
+      if (shard && typeof shard === "object" && !Array.isArray(shard)) {
+        Object.assign(merged, shard);
+      }
+    });
+    const normalized = {};
+    Object.keys(merged).sort().forEach((key) => {
+      normalized[key] = [...new Set((Array.isArray(merged[key]) ? merged[key] : []).map(String))]
+        .sort((left, right) => left.localeCompare(right, "en", { numeric: true }));
+    });
+    const hash = crypto.createHash("sha256").update(JSON.stringify(normalized)).digest("hex");
+    const valid = hash === manifest.shardsSha256
+      && (!manifest.indexSha256 || hash === manifest.indexSha256);
+    playerRecordCandidateShardValidationCache.delete(cacheKey);
+    playerRecordCandidateShardValidationCache.set(cacheKey, { signature, valid });
+    while (playerRecordCandidateShardValidationCache.size > 4) {
+      playerRecordCandidateShardValidationCache.delete(playerRecordCandidateShardValidationCache.keys().next().value);
+    }
+    return valid;
+  } catch {
+    return false;
+  }
 }
 
 function readPlayerRecordCandidateManifest(signature) {
@@ -6042,7 +6118,8 @@ function getPlayerRecordShardedEventIds(signature, textNeedles) {
   if (!Array.isArray(textNeedles) || textNeedles.length === 0) {
     return null;
   }
-  const manifests = getPlayerRecordCandidateManifestLocations(signature).filter((manifest) => manifest?.sharded);
+  const manifests = getPlayerRecordCandidateManifestLocations(signature)
+    .filter(isPlayerRecordCandidateShardSetValid);
   if (manifests.length === 0) {
     return null;
   }
@@ -6052,13 +6129,7 @@ function getPlayerRecordShardedEventIds(signature, textNeedles) {
     const shardName = getPlayerRecordCandidateShardName(phrase);
     const shardKey = `${manifest.shardsDir || PLAYER_RECORD_CANDIDATE_SHARDS_DIR}:${shardName}`;
     if (!shards.has(shardKey)) {
-      try {
-        const shardPath = path.join(manifest.shardsDir || PLAYER_RECORD_CANDIDATE_SHARDS_DIR, shardName);
-        const shard = JSON.parse(fs.readFileSync(shardPath, "utf8"));
-        shards.set(shardKey, shard && typeof shard === "object" && !Array.isArray(shard) ? shard : {});
-      } catch {
-        shards.set(shardKey, {});
-      }
+      shards.set(shardKey, readPlayerRecordCandidateShard(manifest.shardsDir || PLAYER_RECORD_CANDIDATE_SHARDS_DIR, shardName));
     }
     return shards.get(shardKey) || {};
   };
@@ -6321,6 +6392,15 @@ function readPlayerRecordEventIndex(eventId, file = null) {
 
   for (const filePath of candidates) {
     try {
+      const stat = fs.statSync(filePath);
+      const signature = `${stat.size}:${Math.trunc(stat.mtimeMs)}:${stat.ino}`;
+      const cached = playerRecordEventIndexCache.get(filePath);
+      if (cached?.signature === signature && isPlayerRecordEventIndexForFile(cached.index, file)) {
+        playerRecordEventIndexCache.delete(filePath);
+        playerRecordEventIndexCache.set(filePath, cached);
+        return cached.index;
+      }
+
       const parsed = JSON.parse(fs.readFileSync(filePath, "utf8"));
       if (
         parsed?.version === PLAYER_RECORD_EVENT_INDEX_VERSION &&
@@ -6328,6 +6408,23 @@ function readPlayerRecordEventIndex(eventId, file = null) {
         typeof parsed.players === "object" &&
         isPlayerRecordEventIndexForFile(parsed, file)
       ) {
+        if (stat.size <= PLAYER_RECORD_EVENT_INDEX_CACHE_MAX_FILE_BYTES) {
+          const previous = playerRecordEventIndexCache.get(filePath);
+          if (previous) {
+            playerRecordEventIndexCacheBytes -= previous.size;
+            playerRecordEventIndexCache.delete(filePath);
+          }
+          playerRecordEventIndexCache.set(filePath, { signature, size: stat.size, index: parsed });
+          playerRecordEventIndexCacheBytes += stat.size;
+          while (
+            playerRecordEventIndexCache.size > 1 &&
+            playerRecordEventIndexCacheBytes > PLAYER_RECORD_EVENT_INDEX_CACHE_MAX_BYTES
+          ) {
+            const [oldestPath, oldest] = playerRecordEventIndexCache.entries().next().value;
+            playerRecordEventIndexCache.delete(oldestPath);
+            playerRecordEventIndexCacheBytes -= oldest.size;
+          }
+        }
         // Both locations represent the same source archive. Once the index
         // beside the selected runtime/bundled source is current, reading the
         // duplicate copy only doubles persistent-disk I/O on every search.
@@ -6541,11 +6638,12 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
           continue;
         }
         scannedMatches += 1;
-        const matchId = getPlayerRecordIndexMatchId(match);
+        const displayMatch = materializePlayerRecordMatch(match, translations);
+        const matchId = getPlayerRecordIndexMatchId(displayMatch);
         if (seen.has(matchId)) {
           continue;
         }
-        matches.push(materializePlayerRecordMatch(match, translations));
+        matches.push(displayMatch);
         seen.add(matchId);
       }
     }
@@ -6827,9 +6925,18 @@ function getPlayerRecordIndexedEventIds(candidateIndex, textNeedles) {
 }
 
 async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, signature) {
-  // candidate-events.json is the authoritative candidate index. The older
-  // candidate-shards may be present with a matching-looking signature while
-  // still missing events added or repaired later.
+  const shardedCandidate = getPlayerRecordShardedEventIds(signature, textNeedles);
+  if (shardedCandidate?.eventIds?.size > 0) {
+    return {
+      snapshot: snapshot.filter((file) => shardedCandidate.eventIds.has(String(file.eventId))),
+      generatedAt: shardedCandidate.generatedAt,
+      playerKeyCount: shardedCandidate.playerKeyCount,
+      source: "candidate-shards",
+    };
+  }
+
+  // Keep the monolithic index as a compatibility fallback for absent keys or
+  // deployments that have not yet shipped candidate shards.
   const candidateIndex = await getPlayerRecordCandidateIndex(snapshot, signature);
   const eventIds = getPlayerRecordIndexedEventIds(candidateIndex, textNeedles);
   if (!eventIds) {
@@ -6838,6 +6945,7 @@ async function getPlayerRecordIndexedCandidateSnapshot(snapshot, textNeedles, si
   return {
     snapshot: snapshot.filter((file) => eventIds.has(file.eventId)),
     generatedAt: candidateIndex.generatedAt,
+    source: "candidate-events",
   };
 }
 
@@ -7011,7 +7119,7 @@ async function getPlayerRecordCandidateSnapshot(snapshot, textNeedles, signature
   if (indexedCandidate) {
     return {
       snapshot: indexedCandidate.snapshot,
-      source: "candidate-index",
+      source: indexedCandidate.source || "candidate-index",
       generatedAt: indexedCandidate.generatedAt,
     };
   }
@@ -7688,7 +7796,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       signature,
       builtAt: Date.now(),
       eventIndexSource: "player-record-event-index",
-      candidateIndexSource: "candidate-index",
+      candidateIndexSource: indexedCandidate.source || "candidate-index",
       candidateIndexGeneratedAt: indexedCandidate.generatedAt,
       eventIndexGeneratedAt: null,
       scannedEvents: snapshot.length,
