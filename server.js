@@ -6583,6 +6583,7 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
   let missingIndexedEvents = 0;
   let scannedMatches = 0;
   let playerKeyCount = 0;
+  const startedAt = Date.now();
 
   let filePosition = 0;
   for (const { file, meta } of files) {
@@ -6597,6 +6598,16 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
     if (!index) {
       missingIndexedEvents += 1;
       missingIndexedFiles.push(file);
+      if (filePosition % 10 === 0 || filePosition === files.length) {
+        console.info("[player-records] index-scan-progress", JSON.stringify({
+          processedEvents: filePosition,
+          candidateEvents: files.length,
+          indexedEvents,
+          missingIndexedEvents,
+          scannedMatches,
+          elapsedMs: Date.now() - startedAt,
+        }));
+      }
       continue;
     }
     indexedEvents += 1;
@@ -6645,6 +6656,17 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
     const collectedMatchCount = [...eventsById.values()].reduce((sum, event) => sum + (event.matches?.length || 0), 0);
     if (collectedMatchCount >= matchLimit) {
       break;
+    }
+    if (filePosition % 10 === 0 || filePosition === files.length) {
+      console.info("[player-records] index-scan-progress", JSON.stringify({
+        processedEvents: filePosition,
+        candidateEvents: files.length,
+        indexedEvents,
+        missingIndexedEvents,
+        scannedMatches,
+        returnedEvents: eventsById.size,
+        elapsedMs: Date.now() - startedAt,
+      }));
     }
   }
 
