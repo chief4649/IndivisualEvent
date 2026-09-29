@@ -521,6 +521,11 @@ function normalizeRound(value) {
     return `qualifying_round_${qualifyingRoundMatch[1]}`;
   }
 
+  const numberedRoundMatch = text.match(/^round\s*(\d+)$/);
+  if (numberedRoundMatch) {
+    return `round_${Number(numberedRoundMatch[1])}`;
+  }
+
   const japaneseRoundNumberMatch = compactRaw.match(/^第?([0-9０-９]+)回戦$/);
   if (japaneseRoundNumberMatch) {
     const roundNumber = Number(japaneseRoundNumberMatch[1].replace(/[０-９]/g, (digit) =>
@@ -5279,6 +5284,13 @@ function translateRoundJaForMatch(match, translations, rules, context) {
 }
 
 function getRoundSortValue(match, context) {
+  const numberedRoundMatch = [match.roundKey, match.roundLabel]
+    .map((value) => String(value || "").trim().match(/^round[\s_]*(\d+)$/i))
+    .find(Boolean);
+  if (numberedRoundMatch) {
+    return 100 + Number(numberedRoundMatch[1]) / 100;
+  }
+
   const knockoutRoundMatch = String(match.roundKey || "").match(/^knockout_round_(\d+)$/);
   if (knockoutRoundMatch) {
     return Number(knockoutRoundMatch[1]);

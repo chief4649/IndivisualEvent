@@ -3210,6 +3210,13 @@ function summarizeRounds(matches) {
 }
 
 function getRoundOptionSortValue(match, context) {
+  const numberedRoundMatch = [match.roundKey, match.roundLabel]
+    .map((value) => String(value || "").trim().match(/^round[\s_]*(\d+)$/i))
+    .find(Boolean);
+  if (numberedRoundMatch) {
+    return 100 + Number(numberedRoundMatch[1]) / 100;
+  }
+
   const knockoutRoundMatch = String(match.roundKey || "").match(/^knockout_round_(\d+)$/);
   if (knockoutRoundMatch) {
     return Number(knockoutRoundMatch[1]);
@@ -3231,10 +3238,6 @@ function getRoundOptionSortValue(match, context) {
 
   if (match.roundKey === "qualification_elimination_round") {
     return 99;
-  }
-
-  if (match.roundKey === "round_2" || /^Round\s+2$/i.test(String(match.roundLabel || ""))) {
-    return 100;
   }
 
   const knockoutLabel = context?.knockoutRoundNumbers?.[match.roundKey] || "";
