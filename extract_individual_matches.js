@@ -5240,7 +5240,7 @@ function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
     return `${knockoutRoundMatch[1]}回戦`;
   }
 
-  const groupMatch = String(roundLabel || "").match(/^Group\s+(\d+)$/i);
+  const groupMatch = String(roundLabel || "").match(/^Group\s+([A-Z0-9]+)$/i);
   if (groupMatch) {
     return `${rules.labels.groupPrefix}${groupMatch[1]}`;
   }
@@ -5274,9 +5274,20 @@ function translateRoundJa(roundKey, roundLabel, translations, rules, context) {
 }
 
 function translateRoundJaForMatch(match, translations, rules, context) {
-  const roundLabel = String(
+  let roundLabel = String(
     translateRoundJa(match?.roundKey, match?.roundLabel, translations, rules, context) || match?.roundLabel || "",
   );
+  const numberedRoundMatch = [match?.roundKey, match?.roundLabel]
+    .map((value) => String(value || "").trim().match(/^round[\s_]*(\d+)$/i))
+    .find(Boolean);
+  if (
+    match?.source !== "zennihon" &&
+    match?.discipline === "teams" &&
+    numberedRoundMatch &&
+    !roundLabel.startsWith("決勝トーナメント")
+  ) {
+    roundLabel = `決勝トーナメント${roundLabel}`;
+  }
   if (match?.source === "zennihon") {
     return roundLabel.replace(/^決勝トーナメント/, "");
   }
@@ -5296,9 +5307,12 @@ function getRoundSortValue(match, context) {
     return Number(knockoutRoundMatch[1]);
   }
 
-  const groupMatch = String(match.roundLabel || "").match(/^Group\s+(\d+)$/i);
+  const groupMatch = String(match.roundLabel || "").match(/^Group\s+([A-Z0-9]+)$/i);
   if (groupMatch) {
-    return Number(groupMatch[1]);
+    const groupValue = groupMatch[1].toUpperCase();
+    return /^\d+$/.test(groupValue)
+      ? Number(groupValue)
+      : groupValue.charCodeAt(0) - 64;
   }
 
   const splitStageGroupMatch = String(match.roundLabel || "").match(/^Stage\s*1([AB])\s*-\s*Group\s+(\d+)$/i);
@@ -5652,6 +5666,10 @@ function normalizeRoundLabelEn(roundLabel) {
 
 function translateRoundEn(roundKey, roundLabel) {
   const normalizedRoundKey = String(roundKey || "").trim().toLowerCase();
+  if (normalizedRoundKey === "group") {
+    const groupMatch = String(roundLabel || "").trim().match(/^Group\s+([A-Z0-9]+)$/i);
+    return groupMatch ? `Group ${groupMatch[1].toUpperCase()}` : "Group";
+  }
   const roundLabels = {
     final: "Final",
     semifinal: "Semifinals",
@@ -5664,7 +5682,6 @@ function translateRoundEn(roundKey, roundLabel) {
     round_of_32: "Round of 32",
     round_of_16: "Round of 16",
     round_of_8: "Quarterfinals",
-    group: "Group",
   };
   if (roundLabels[normalizedRoundKey]) {
     return roundLabels[normalizedRoundKey];
@@ -5685,7 +5702,13 @@ function translateRoundEn(roundKey, roundLabel) {
 
 function formatEnHeader(match) {
   const categoryLabel = String(formatMatchCategoryEn(match) || "").trim();
-  const roundLabel = String(translateRoundEn(match?.roundKey, match?.roundLabel) || "").trim();
+  let roundLabel = String(translateRoundEn(match?.roundKey, match?.roundLabel) || "").trim();
+  const numberedRoundMatch = [match?.roundKey, match?.roundLabel]
+    .map((value) => String(value || "").trim().match(/^round[\s_]*(\d+)$/i))
+    .find(Boolean);
+  if (match?.discipline === "teams" && numberedRoundMatch && !/^Knockout\s+/i.test(roundLabel)) {
+    roundLabel = `Knockout ${roundLabel}`;
+  }
   return `▼${[categoryLabel, roundLabel].filter(Boolean).join(" ")}`.trim();
 }
 
