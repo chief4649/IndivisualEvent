@@ -1,0 +1,83 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+
+const {
+  getCandidateIndexCoverageFallbackEventIds,
+  getPlayerRecordTruncation,
+  isDuplicatePlayerRecordIndexEntryId,
+} = require("../player_record_candidate_index_utils");
+
+const files = [
+  { eventId: "100", parseSize: 120, parseMtimeMs: 1000, parseSource: "slim" },
+  { eventId: "101", parseSize: 240, parseMtimeMs: 2000, parseSource: "raw" },
+];
+
+function manifest(overrides = {}) {
+  return {
+    formatVersion: 2,
+    complete: true,
+    configSignature: "config",
+    eventCount: 2,
+    sourceFiles: {
+      100: "120:1000:runtime-slim:/data/100.json",
+      101: "240:2000:bundled-raw:/app/101.json",
+    },
+    eventMatchCounts: { 100: 5, 101: 6 },
+    ...overrides,
+  };
+}
+
+test("accepts complete candidate coverage across raw and slim source labels", () => {
+  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), files, "config"), []);
+});
+
+test("returns only added or changed source events for fallback", () => {
+  const changed = [
+    files[0],
+    { ...files[1], parseMtimeMs: 3000 },
+    { eventId: "102", parseSize: 80, parseMtimeMs: 500, parseSource: "slim" },
+  ];
+  assert.deepEqual(
+    getCandidateIndexCoverageFallbackEventIds(manifest(), changed, "config"),
+    ["101", "102"],
+  );
+});
+
+test("falls back across the snapshot when coverage metadata or config is stale", () => {
+  assert.deepEqual(
+    getCandidateIndexCoverageFallbackEventIds(manifest({ complete: false }), files, "config"),
+    ["100", "101"],
+  );
+  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), files, "changed-config"), ["100", "101"]);
+});
+
+test("includes a current event missing from candidate coverage", () => {
+  const current = [...files, { eventId: "102", parseSize: 90, parseMtimeMs: 3000, parseSource: "slim" }];
+  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), current, "config"), ["102"]);
+});
+
+test("detects event and match result truncation independently", () => {
+  const events = [
+    { matches: [{}, {}] },
+    { matches: [{}, {}] },
+  ];
+  assert.deepEqual(getPlayerRecordTruncation(events, 1, 10), {
+    truncatedByEventLimit: true,
+    truncatedByMatchLimit: false,
+  });
+  assert.deepEqual(getPlayerRecordTruncation(events, 10, 3), {
+    truncatedByEventLimit: false,
+    truncatedByMatchLimit: true,
+  });
+  assert.deepEqual(getPlayerRecordTruncation(events, 2, 4), {
+    truncatedByEventLimit: false,
+    truncatedByMatchLimit: false,
+  });
+});
+
+test("skips repeated string IDs shared by alternate player-name keys", () => {
+  const seen = new Set();
+  assert.equal(isDuplicatePlayerRecordIndexEntryId("match-a", seen), false);
+  assert.equal(isDuplicatePlayerRecordIndexEntryId("match-a", seen), true);
+  assert.equal(isDuplicatePlayerRecordIndexEntryId({ match: "match-a" }, seen), false);
+});

@@ -1229,6 +1229,12 @@
 
       function renderPlayerRecords(data) {
         playerRecords.innerHTML = "";
+        if (data?.meta?.truncated) {
+          const warning = document.createElement("div");
+          warning.className = "player-search-empty";
+          warning.textContent = "表示上限に達したため、戦績の一部は表示されていません。";
+          playerRecords.appendChild(warning);
+        }
         const events = Array.isArray(data?.events) ? data.events : [];
         if (events.length === 0) {
           const empty = document.createElement("div");
