@@ -1306,12 +1306,22 @@
           translatedName: item?.translatedName || "",
         });
         try {
-          const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 120000);
-          const data = await readJsonResponse(response, "戦績の読み込みに失敗しました。");
-          if (!response.ok) {
-            throw new Error(data.error || "戦績の読み込みに失敗しました。");
+          const deadline = Date.now() + 15 * 60 * 1000;
+          while (Date.now() < deadline) {
+            const response = await fetchWithTimeout(`/api/players/records?${params.toString()}`, {}, 120000);
+            const data = await readJsonResponse(response, "戦績の読み込みに失敗しました。");
+            if (response.status === 202 && data.code === "PLAYER_RECORD_INDEX_PENDING") {
+              loading.textContent = `戦績インデックスを準備しています（残り候補 ${data.pendingEventCount} 大会）。`;
+              await new Promise((resolve) => setTimeout(resolve, 15000));
+              continue;
+            }
+            if (!response.ok) {
+              throw new Error(data.error || "戦績の読み込みに失敗しました。");
+            }
+            renderPlayerRecords(data);
+            return;
           }
-          renderPlayerRecords(data);
+          throw new Error("戦績インデックスの準備に時間がかかっています。時間をおいて再検索してください。");
         } catch (error) {
           playerRecords.innerHTML = "";
           const empty = document.createElement("div");

@@ -6879,22 +6879,45 @@ function mergePlayerRecordCollectedResults(primary, fallback) {
 }
 
 async function collectPlayerRecordEventsWithMissingIndexFallback(snapshot, needles, textNeedles, options = {}) {
-  const indexed = await collectPlayerRecordEventsFromEventIndex(snapshot, needles, options);
-  const missingFiles = Array.isArray(indexed.missingIndexedFiles) ? indexed.missingIndexedFiles : [];
-  if (missingFiles.length === 0) {
-    return stripInternalPlayerRecordCollectionFields(indexed);
+  // Searches must consume the derived event indexes only. Parsing source
+  // archives here caused long requests and could take down the web process.
+  return collectPlayerRecordEventsFromEventIndex(snapshot, needles, options);
+}
+
+const playerRecordEventIndexBuilds = new Set();
+const PLAYER_RECORD_SEARCH_INDEX_BUILD_BATCH_SIZE = 5;
+
+function schedulePlayerRecordEventIndexBuilds(files) {
+  const eventIds = (Array.isArray(files) ? files : [])
+    .map((file) => String(file?.eventId || ""))
+    .filter((eventId) => eventId && !playerRecordEventIndexBuilds.has(eventId))
+    .slice(0, PLAYER_RECORD_SEARCH_INDEX_BUILD_BATCH_SIZE);
+  if (eventIds.length === 0) {
+    return 0;
   }
 
-  const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
-  const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
-  const indexedMatchCount = (Array.isArray(indexed.events) ? indexed.events : [])
-    .reduce((sum, event) => sum + (Array.isArray(event.matches) ? event.matches.length : 0), 0);
-  if ((Array.isArray(indexed.events) ? indexed.events.length : 0) >= eventLimit || indexedMatchCount >= matchLimit) {
-    return stripInternalPlayerRecordCollectionFields(indexed);
-  }
-
-  const fallback = await collectPlayerRecordEvents(missingFiles, needles, textNeedles, options);
-  return mergePlayerRecordCollectedResults(indexed, fallback);
+  eventIds.forEach((eventId) => playerRecordEventIndexBuilds.add(eventId));
+  const run = autoDerivedIndexBuildPromise.then(() => spawnDerivedIndexProcess([
+    "-r",
+    "./runtime_legacy_ittf_patch.js",
+    "server.js",
+    "--build-player-record-event-index",
+    "--event",
+    eventIds.join(","),
+  ], "build-player-record-event-index-for-search"));
+  autoDerivedIndexBuildPromise = run.catch(() => {});
+  run.then(() => {
+    clearPlayerRecordResultCache();
+    console.info("[player-records] candidate event indexes built", eventIds.join(","));
+  }).catch((error) => {
+    console.error("[player-records] candidate event index build failed", JSON.stringify({
+      eventIds,
+      error: error?.message || String(error),
+    }));
+  }).finally(() => {
+    eventIds.forEach((eventId) => playerRecordEventIndexBuilds.delete(eventId));
+  });
+  return eventIds.length;
 }
 
 function addPlayerRecordCandidateIndexName(index, eventId, value) {
@@ -7904,6 +7927,15 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
         filterIndexedPlayerRecordEventsByOrgFilter(indexed, orgFilter, readTranslations(TRANSLATIONS_PATH)),
         fallback,
       );
+      const missingIndexFiles = Array.isArray(collected.missingIndexedFiles) ? collected.missingIndexedFiles : [];
+      if (missingIndexFiles.length > 0) {
+        const queuedIndexBuilds = schedulePlayerRecordEventIndexBuilds(missingIndexFiles);
+        return {
+          indexPending: true,
+          missingIndexEventCount: missingIndexFiles.length,
+          queuedIndexBuilds,
+        };
+      }
       const result = {
         signature,
         builtAt: Date.now(),
@@ -7930,6 +7962,15 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       textNeedles,
       { eventLimit, matchLimit, orgFilter },
     );
+    const missingIndexFiles = Array.isArray(collected.missingIndexedFiles) ? collected.missingIndexedFiles : [];
+    if (missingIndexFiles.length > 0) {
+      const queuedIndexBuilds = schedulePlayerRecordEventIndexBuilds(missingIndexFiles);
+      return {
+        indexPending: true,
+        missingIndexEventCount: missingIndexFiles.length,
+        queuedIndexBuilds,
+      };
+    }
     const result = {
       signature,
       builtAt: Date.now(),
@@ -7958,6 +7999,15 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
     textNeedles,
     { eventLimit, matchLimit, orgFilter },
   );
+  const missingIndexFiles = Array.isArray(collected.missingIndexedFiles) ? collected.missingIndexedFiles : [];
+  if (missingIndexFiles.length > 0) {
+    const queuedIndexBuilds = schedulePlayerRecordEventIndexBuilds(missingIndexFiles);
+    return {
+      indexPending: true,
+      missingIndexEventCount: missingIndexFiles.length,
+      queuedIndexBuilds,
+    };
+  }
   const result = {
     signature,
     builtAt: Date.now(),
@@ -9998,6 +10048,15 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       matchLimit: matchLimit + 1,
       orgFilter,
     });
+    if (searchResult.indexPending) {
+      sendJson(response, 202, {
+        error: "戦績インデックスを準備しています。",
+        code: "PLAYER_RECORD_INDEX_PENDING",
+        pendingEventCount: searchResult.missingIndexEventCount,
+        queuedEventCount: searchResult.queuedIndexBuilds,
+      });
+      return;
+    }
     const events = searchResult.events;
     let returnedMatches = 0;
     const limitedEvents = [];
