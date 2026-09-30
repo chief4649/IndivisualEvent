@@ -6888,10 +6888,13 @@ const playerRecordEventIndexBuilds = new Set();
 const PLAYER_RECORD_SEARCH_INDEX_BUILD_BATCH_SIZE = 5;
 
 function schedulePlayerRecordEventIndexBuilds(files) {
+  if (playerRecordEventIndexBuilds.size >= PLAYER_RECORD_SEARCH_INDEX_BUILD_BATCH_SIZE) {
+    return 0;
+  }
   const eventIds = (Array.isArray(files) ? files : [])
     .map((file) => String(file?.eventId || ""))
     .filter((eventId) => eventId && !playerRecordEventIndexBuilds.has(eventId))
-    .slice(0, PLAYER_RECORD_SEARCH_INDEX_BUILD_BATCH_SIZE);
+    .slice(0, PLAYER_RECORD_SEARCH_INDEX_BUILD_BATCH_SIZE - playerRecordEventIndexBuilds.size);
   if (eventIds.length === 0) {
     return 0;
   }
