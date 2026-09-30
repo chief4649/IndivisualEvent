@@ -1,4 +1,4 @@
-function getCandidateIndexCoverageFallbackEventIds(manifest, files, configSignature) {
+function getCandidateIndexCoverageFallbackEventIds(manifest, files) {
   const snapshot = Array.isArray(files) ? files : [];
   if (snapshot.length === 0) {
     return [];
@@ -11,8 +11,7 @@ function getCandidateIndexCoverageFallbackEventIds(manifest, files, configSignat
     !manifest?.sourceFiles ||
     typeof manifest.sourceFiles !== "object" ||
     !manifest?.eventMatchCounts ||
-    typeof manifest.eventMatchCounts !== "object" ||
-    manifest.configSignature !== configSignature
+    typeof manifest.eventMatchCounts !== "object"
   ) {
     return allEventIds;
   }

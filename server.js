@@ -6075,17 +6075,6 @@ function writeHeadToHeadIndexStatus(status) {
   }
 }
 
-function getPlayerRecordCandidateConfigSignature() {
-  return [
-    TRANSLATIONS_PATH,
-    RULES_PATH,
-    WTT_ARCHIVE_INDEX_PATH,
-    WTT_DATE_INDEX_PATH,
-    WTT_SEARCH_INDEX_PATH,
-    EVENT_NAMES_PATH,
-  ].map((filePath) => `${path.basename(filePath)}:${getPathStatToken(filePath)}`).join("|");
-}
-
 function readPlayerRecordCandidateIndexFromDisk(signature, snapshot = getWttRecordFileSnapshot()) {
   try {
     const manifest = JSON.parse(fs.readFileSync(PLAYER_RECORD_CANDIDATE_INDEX_MANIFEST_PATH, "utf8"));
@@ -6102,7 +6091,6 @@ function readPlayerRecordCandidateIndexFromDisk(signature, snapshot = getWttReco
       coverageFallbackEventIds: getCandidateIndexCoverageFallbackEventIds(
         manifest,
         snapshot,
-        getPlayerRecordCandidateConfigSignature(),
       ),
       index,
     };
@@ -6177,7 +6165,6 @@ function getPlayerRecordCandidateManifestLocations(signature, snapshot = getWttR
         coverageFallbackEventIds: getCandidateIndexCoverageFallbackEventIds(
           manifest,
           snapshot,
-          getPlayerRecordCandidateConfigSignature(),
         ),
       }]
       : [];

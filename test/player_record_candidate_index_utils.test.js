@@ -16,7 +16,6 @@ function manifest(overrides = {}) {
   return {
     formatVersion: 2,
     complete: true,
-    configSignature: "config",
     eventCount: 2,
     sourceFiles: {
       100: "120:1000:runtime-slim:/data/100.json",
@@ -28,7 +27,7 @@ function manifest(overrides = {}) {
 }
 
 test("accepts complete candidate coverage across raw and slim source labels", () => {
-  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), files, "config"), []);
+  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), files), []);
 });
 
 test("returns only added or changed source events for fallback", () => {
@@ -38,22 +37,25 @@ test("returns only added or changed source events for fallback", () => {
     { eventId: "102", parseSize: 80, parseMtimeMs: 500, parseSource: "slim" },
   ];
   assert.deepEqual(
-    getCandidateIndexCoverageFallbackEventIds(manifest(), changed, "config"),
+    getCandidateIndexCoverageFallbackEventIds(manifest(), changed),
     ["101", "102"],
   );
 });
 
-test("falls back across the snapshot when coverage metadata or config is stale", () => {
+test("falls back across the snapshot when coverage metadata is incomplete", () => {
   assert.deepEqual(
-    getCandidateIndexCoverageFallbackEventIds(manifest({ complete: false }), files, "config"),
+    getCandidateIndexCoverageFallbackEventIds(manifest({ complete: false }), files),
     ["100", "101"],
   );
-  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), files, "changed-config"), ["100", "101"]);
 });
 
 test("includes a current event missing from candidate coverage", () => {
   const current = [...files, { eventId: "102", parseSize: 90, parseMtimeMs: 3000, parseSource: "slim" }];
-  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), current, "config"), ["102"]);
+  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), current), ["102"]);
+});
+
+test("does not invalidate event coverage solely because the translation config changed", () => {
+  assert.deepEqual(getCandidateIndexCoverageFallbackEventIds(manifest(), files), []);
 });
 
 test("detects event and match result truncation independently", () => {
