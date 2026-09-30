@@ -8,7 +8,7 @@ const {
 } = require("../player_record_candidate_index_utils");
 
 const files = [
-  { eventId: "100", size: 500, mtimeMs: 1000, parseSize: 120, parseMtimeMs: 9000, parseSource: "slim" },
+  { eventId: "100", size: 500, mtimeMs: 9000, parseSize: 120, parseMtimeMs: 1000, parseSource: "slim" },
   { eventId: "101", size: 240, mtimeMs: 2000, parseSize: 240, parseMtimeMs: 2000, parseSource: "raw" },
 ];
 
@@ -18,7 +18,7 @@ function manifest(overrides = {}) {
     complete: true,
     eventCount: 2,
     sourceFiles: {
-      100: "500:1000:runtime-slim:/data/100.json",
+      100: "120:1000:runtime-slim:/data/100.json",
       101: "240:2000:bundled-raw:/app/101.json",
     },
     eventMatchCounts: { 100: 5, 101: 6 },
@@ -33,7 +33,7 @@ test("accepts complete candidate coverage across raw and slim source labels", ()
 test("returns only added or changed source events for fallback", () => {
   const changed = [
     files[0],
-    { ...files[1], mtimeMs: 3000 },
+    { ...files[1], parseMtimeMs: 3000 },
     { eventId: "102", size: 80, mtimeMs: 500, parseSize: 60, parseMtimeMs: 700, parseSource: "slim" },
   ];
   assert.deepEqual(

@@ -25,11 +25,10 @@ function getCandidateIndexCoverageFallbackEventIds(manifest, files) {
     const match = signature.match(/^(\d+):(\d+):([^:]+):/);
     const sourceIsSlim = /(?:^|-)slim$/.test(match?.[3] || "");
     const fileIsSlim = file?.parseSource === "slim";
-    // Candidate manifests fingerprint the selected archive file itself. The
-    // parser may read a SLIM derivative, but its size/mtime are not the
-    // source fingerprint and can differ for every event.
-    const expectedSize = Number(file?.size || 0);
-    const expectedMtime = Number(file?.mtimeMs || 0);
+    // Candidate manifests fingerprint the file used to build the candidate
+    // entries, which is the parsed SLIM file when one is available.
+    const expectedSize = Number(file?.parseSize || file?.size || 0);
+    const expectedMtime = Number(file?.parseMtimeMs || file?.mtimeMs || 0);
     if (
       !eventId ||
       !match ||
