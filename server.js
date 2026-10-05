@@ -7750,6 +7750,24 @@ function getLegacyPlayerRecordEventsForNeedles(needles) {
   };
 }
 
+function getPlayerRecordEventMergeIdentity(event) {
+  const eventId = String(event?.event || "").trim();
+  const numericId = eventId.match(/^(?:TTE)?(\d+)$/i)?.[1];
+  if (!numericId) {
+    return eventId;
+  }
+  return [
+    numericId,
+    normalizeHeadToHeadMatchValue(event?.eventName),
+    String(event?.startDate || ""),
+    String(event?.endDate || ""),
+  ].join("\u0001");
+}
+
+function getPlayerRecordEventMatchIdentity(matchEntry, numericEventId) {
+  return getPlayerRecordIndexMatchId({ ...matchEntry, event: numericEventId });
+}
+
 async function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
   const index = indexState?.index;
   if (!index?.players || !index?.playerRecordMatchShardsDir) {
@@ -7810,15 +7828,21 @@ async function collectPlayerRecordEventsFromShardIndex(indexState, needles) {
       if (source.base && replacedEventIds.has(eventId)) {
         continue;
       }
-      if (!eventMap.has(eventId)) {
-        eventMap.set(eventId, {
+      const numericEventId = eventId.match(/^(?:TTE)?(\d+)$/i)?.[1];
+      const eventIdentity = getPlayerRecordEventMergeIdentity(entry.event);
+      if (!eventMap.has(eventIdentity)) {
+        eventMap.set(eventIdentity, {
           ...entry.event,
           matches: [],
         });
       }
-      const event = eventMap.get(eventId);
-      const matchId = getPlayerRecordIndexMatchId(entry.match);
-      if (!event.matches.some((existing) => getPlayerRecordIndexMatchId(existing) === matchId)) {
+      const event = eventMap.get(eventIdentity);
+      const matchId = numericEventId
+        ? getPlayerRecordEventMatchIdentity(entry.match, numericEventId)
+        : getPlayerRecordIndexMatchId(entry.match);
+      if (!event.matches.some((existing) => (numericEventId
+        ? getPlayerRecordEventMatchIdentity(existing, numericEventId)
+        : getPlayerRecordIndexMatchId(existing)) === matchId)) {
         event.matches.push(entry.match);
       }
     }

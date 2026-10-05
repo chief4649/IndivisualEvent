@@ -1304,6 +1304,8 @@
         const params = new URLSearchParams({
           name: item?.name || "",
           translatedName: item?.translatedName || "",
+          eventLimit: "200",
+          matchLimit: "2000",
         });
         try {
           const deadline = Date.now() + 15 * 60 * 1000;
