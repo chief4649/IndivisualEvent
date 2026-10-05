@@ -13,6 +13,8 @@ const {
   getCandidateIndexCoverageFallbackEventIds,
   getPlayerRecordTruncation,
   isDuplicatePlayerRecordIndexEntryId,
+  getPlayerRecordEventIdentity,
+  mergePlayerRecordEventMatches,
 } = require("./player_record_candidate_index_utils");
 const {
   finishPlayerRecordEventIndexAuditBatch,
@@ -6772,12 +6774,25 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
     }
 
     const matchGroups = buildPlayerRecordMatchGroups(matches);
-    eventsById.set(String(eventMeta.event || file.eventId), {
-      ...eventMeta,
-      source: file.sourceLabel || "",
-      matches: matchGroups.flatMap((group) => group.matches),
-      matchGroups,
-    });
+    const eventIdentity = getPlayerRecordEventIdentity(eventMeta);
+    const existingEvent = eventsById.get(eventIdentity);
+    if (existingEvent) {
+      existingEvent.matches = mergePlayerRecordEventMatches(
+        existingEvent.matches,
+        matchGroups.flatMap((group) => group.matches),
+        eventIdentity,
+      );
+      const mergedGroups = buildPlayerRecordMatchGroups(existingEvent.matches);
+      existingEvent.matches = mergedGroups.flatMap((group) => group.matches);
+      existingEvent.matchGroups = mergedGroups;
+    } else {
+      eventsById.set(eventIdentity, {
+        ...eventMeta,
+        source: file.sourceLabel || "",
+        matches: matchGroups.flatMap((group) => group.matches),
+        matchGroups,
+      });
+    }
 
     const collectedMatchCount = [...eventsById.values()].reduce((sum, event) => sum + (event.matches?.length || 0), 0);
     if (collectedMatchCount >= matchLimit) {

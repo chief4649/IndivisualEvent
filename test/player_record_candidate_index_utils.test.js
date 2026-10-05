@@ -5,6 +5,9 @@ const {
   getCandidateIndexCoverageFallbackEventIds,
   getPlayerRecordTruncation,
   isDuplicatePlayerRecordIndexEntryId,
+  getPlayerRecordEventIdentity,
+  getPlayerRecordEventMatchIdentity,
+  mergePlayerRecordEventMatches,
 } = require("../player_record_candidate_index_utils");
 
 const files = [
@@ -82,4 +85,59 @@ test("skips repeated string IDs shared by alternate player-name keys", () => {
   assert.equal(isDuplicatePlayerRecordIndexEntryId("match-a", seen), false);
   assert.equal(isDuplicatePlayerRecordIndexEntryId("match-a", seen), true);
   assert.equal(isDuplicatePlayerRecordIndexEntryId({ match: "match-a" }, seen), false);
+});
+
+test("treats alternate event IDs as one event only when title and dates agree", () => {
+  const wttEvent = {
+    event: "5014",
+    eventName: "Seamaster 2019 ITTF Challenge Plus Portugal Open",
+    startDate: "2019-02-13",
+    endDate: "2019-02-17",
+  };
+  const ittfAlias = { ...wttEvent, event: "TTE5014" };
+  const alternateId = { ...wttEvent, event: "9999" };
+
+  assert.equal(getPlayerRecordEventIdentity(wttEvent), getPlayerRecordEventIdentity(ittfAlias));
+  assert.equal(getPlayerRecordEventIdentity(wttEvent), getPlayerRecordEventIdentity(alternateId));
+  assert.notEqual(
+    getPlayerRecordEventIdentity(wttEvent),
+    getPlayerRecordEventIdentity({ ...ittfAlias, eventName: "Different event" }),
+  );
+  assert.notEqual(
+    getPlayerRecordEventIdentity(wttEvent),
+    getPlayerRecordEventIdentity({ ...ittfAlias, startDate: "2019-02-14" }),
+  );
+});
+
+test("deduplicates the same match across alternate event IDs", () => {
+  const match = {
+    categoryName: "Men Singles",
+    roundLabel: "Round 1",
+    documentCode: "M.SINGLES-R32",
+    line: "Player A - Player B",
+  };
+  const aliasMatch = { ...match, line: "Player A  -  Player B" };
+
+  assert.equal(
+    getPlayerRecordEventMatchIdentity(match, getPlayerRecordEventIdentity({
+      event: "5014",
+      eventName: "Portugal Open",
+      startDate: "2019-02-13",
+      endDate: "2019-02-17",
+    })),
+    getPlayerRecordEventMatchIdentity(aliasMatch, getPlayerRecordEventIdentity({
+      event: "TTE5014",
+      eventName: "Portugal Open",
+      startDate: "2019-02-13",
+      endDate: "2019-02-17",
+    })),
+  );
+  const identity = getPlayerRecordEventIdentity({
+    event: "5014",
+    eventName: "Portugal Open",
+    startDate: "2019-02-13",
+    endDate: "2019-02-17",
+  });
+  assert.equal(mergePlayerRecordEventMatches([match], [aliasMatch], identity).length, 1);
+  assert.equal(mergePlayerRecordEventMatches([match], [{ ...match, roundLabel: "Round 2" }], identity).length, 2);
 });

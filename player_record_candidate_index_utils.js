@@ -62,8 +62,61 @@ function isDuplicatePlayerRecordIndexEntryId(entry, seenEntryIds) {
   return false;
 }
 
+function normalizePlayerRecordEventValue(value) {
+  return String(value || "").normalize("NFKC").replace(/\s+/g, "").toLowerCase();
+}
+
+function getPlayerRecordEventIdentity(event) {
+  const eventId = String(event?.event || event?.eventId || "").trim();
+  const numericId = eventId.match(/^(?:TTE)?(\d+)$/i)?.[1];
+  const eventName = normalizePlayerRecordEventValue(event?.eventName);
+  const startDate = String(event?.startDate || "");
+  const endDate = String(event?.endDate || "");
+  if (eventName && startDate && endDate) {
+    return ["event", eventName, startDate, endDate].join("\u0001");
+  }
+  if (!numericId) return eventId;
+  return [
+    "id",
+    numericId,
+    eventName,
+    startDate,
+    endDate,
+  ].join("\u0001");
+}
+
+function getPlayerRecordEventMatchIdentity(match, eventIdentity) {
+  return [
+    eventIdentity,
+    normalizePlayerRecordEventValue(match?.categoryName),
+    normalizePlayerRecordEventValue(match?.roundLabel),
+    normalizePlayerRecordEventValue(match?.documentCode),
+    normalizePlayerRecordEventValue(match?.line),
+  ].join("\u0001");
+}
+
+function mergePlayerRecordEventMatches(existingMatches, incomingMatches, eventIdentity) {
+  const merged = Array.isArray(existingMatches) ? [...existingMatches] : [];
+  const seen = new Set(merged.map((match) => eventIdentity
+    ? getPlayerRecordEventMatchIdentity(match, eventIdentity)
+    : JSON.stringify(match)));
+  for (const match of Array.isArray(incomingMatches) ? incomingMatches : []) {
+    const identity = eventIdentity
+      ? getPlayerRecordEventMatchIdentity(match, eventIdentity)
+      : JSON.stringify(match);
+    if (!seen.has(identity)) {
+      merged.push(match);
+      seen.add(identity);
+    }
+  }
+  return merged;
+}
+
 module.exports = {
   getCandidateIndexCoverageFallbackEventIds,
   getPlayerRecordTruncation,
   isDuplicatePlayerRecordIndexEntryId,
+  getPlayerRecordEventIdentity,
+  getPlayerRecordEventMatchIdentity,
+  mergePlayerRecordEventMatches,
 };
