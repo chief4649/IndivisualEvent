@@ -22,6 +22,7 @@ const {
   getPlayerRecordEventIndexAuditSignature,
 } = require("./player_record_event_index_audit");
 const { isPlayerRecordDoublesMatch } = require("./player_record_display_filters");
+const { createHeadToHeadQueryJobStore } = require("./head_to_head_query_job_store");
 
 const {
   DEFAULT_CACHE_DIR,
@@ -4430,6 +4431,11 @@ const HEAD_TO_HEAD_QUERY_JOB_MAX = Number(
   process.env.HEAD_TO_HEAD_QUERY_JOB_MAX || 64,
 );
 const headToHeadQueryJobs = new Map();
+const headToHeadQueryJobStore = createHeadToHeadQueryJobStore({
+  directory: path.join(CACHE_DIR, "head-to-head-query-jobs"),
+  ttlMs: HEAD_TO_HEAD_QUERY_JOB_TTL_MS,
+  maxJobs: HEAD_TO_HEAD_QUERY_JOB_MAX,
+});
 const headToHeadPlayerKeyMatchCaches = new WeakMap();
 const HEAD_TO_HEAD_LIVE_REFRESH_ENABLED = process.env.HEAD_TO_HEAD_LIVE_REFRESH_ENABLED === "1";
 const HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS = Number(process.env.HEAD_TO_HEAD_MAX_STALE_DELTA_EVENTS || 24);
@@ -9873,6 +9879,7 @@ async function getHeadToHeadSearchResult(playerAName, playerATranslatedName, pla
 function pruneHeadToHeadQueryJobs() {
   const now = Date.now();
   const ttl = Math.max(1, HEAD_TO_HEAD_QUERY_JOB_TTL_MS);
+  headToHeadQueryJobStore.prune();
   for (const [jobId, job] of headToHeadQueryJobs.entries()) {
     const terminalAt = job.completedAt || 0;
     if (terminalAt && now - terminalAt >= ttl) {
@@ -9893,9 +9900,12 @@ function pruneHeadToHeadQueryJobs() {
   }
 }
 
-function startHeadToHeadQueryJob(query, timeoutMs = HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS) {
+function startHeadToHeadQueryJob(
+  query,
+  timeoutMs = HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS,
+  jobId = crypto.randomBytes(16).toString("hex"),
+) {
   pruneHeadToHeadQueryJobs();
-  const jobId = crypto.randomBytes(16).toString("hex");
   const job = {
     id: jobId,
     status: "processing",
@@ -9906,20 +9916,64 @@ function startHeadToHeadQueryJob(query, timeoutMs = HEAD_TO_HEAD_ASYNC_QUERY_TIM
     error: null,
   };
   headToHeadQueryJobs.set(jobId, job);
+  headToHeadQueryJobStore.write({
+    id: jobId,
+    status: job.status,
+    createdAt: new Date(job.createdAt).toISOString(),
+    query,
+  });
   spawnHeadToHeadQueryProcess(query, timeoutMs)
     .then((searchResult) => {
       job.status = "complete";
-      job.searchResult = searchResult;
+      job.searchResult = limitHeadToHeadSearchResult(searchResult, 200, 2000);
       job.completedAt = Date.now();
+      try {
+        headToHeadQueryJobStore.write({
+          id: job.id,
+          status: job.status,
+          createdAt: new Date(job.createdAt).toISOString(),
+          completedAt: new Date(job.completedAt).toISOString(),
+          query: job.query,
+          searchResult: job.searchResult,
+        });
+      } catch (error) {
+        console.error("[head-to-head] failed to persist completed query job", error?.message || error);
+      }
       pruneHeadToHeadQueryJobs();
     })
     .catch((error) => {
       job.status = "failed";
       job.error = createFriendlyErrorMessage(error);
       job.completedAt = Date.now();
+      try {
+        headToHeadQueryJobStore.write({
+          id: job.id,
+          status: job.status,
+          createdAt: new Date(job.createdAt).toISOString(),
+          completedAt: new Date(job.completedAt).toISOString(),
+          query: job.query,
+          error: job.error,
+        });
+      } catch (persistError) {
+        console.error("[head-to-head] failed to persist failed query job", persistError?.message || persistError);
+      }
       pruneHeadToHeadQueryJobs();
     });
   return job;
+}
+
+function limitHeadToHeadSearchResult(searchResult, eventLimit, matchLimit) {
+  let returnedMatches = 0;
+  const events = [];
+  for (const event of Array.isArray(searchResult?.events) ? searchResult.events : []) {
+    if (events.length >= eventLimit || returnedMatches >= matchLimit) break;
+    const matches = (Array.isArray(event?.matches) ? event.matches : [])
+      .slice(0, matchLimit - returnedMatches);
+    if (matches.length === 0) continue;
+    returnedMatches += matches.length;
+    events.push({ ...event, matches });
+  }
+  return { ...searchResult, events };
 }
 
 function buildHeadToHeadApiPayload(query, searchResult, eventLimit, matchLimit) {
@@ -9982,7 +10036,19 @@ async function handleHeadToHeadApi(requestUrl, response) {
     const matchLimit = Math.min(Math.max(Number(requestUrl.searchParams.get("matchLimit") || 500) || 500, 1), 2000);
     if (jobId) {
       pruneHeadToHeadQueryJobs();
-      const job = headToHeadQueryJobs.get(jobId);
+      let job = headToHeadQueryJobs.get(jobId);
+      if (!job) {
+        const persisted = headToHeadQueryJobStore.read(jobId);
+        if (persisted?.status === "processing" && persisted.query) {
+          job = startHeadToHeadQueryJob(
+            persisted.query,
+            HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS,
+            jobId,
+          );
+        } else {
+          job = persisted;
+        }
+      }
       if (!job) {
         sendJson(response, 404, { error: "Head To Headの検索ジョブが見つかりません。" });
         return;
