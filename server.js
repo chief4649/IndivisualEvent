@@ -21,6 +21,7 @@ const {
   getPlayerRecordEventIndexAuditQueue,
   getPlayerRecordEventIndexAuditSignature,
 } = require("./player_record_event_index_audit");
+const { isPlayerRecordDoublesMatch } = require("./player_record_display_filters");
 
 const {
   DEFAULT_CACHE_DIR,
@@ -6687,6 +6688,7 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : Infinity;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : Infinity;
   const orgFilter = options.orgFilter || null;
+  const excludeDoubles = options.excludeDoubles === true;
   const translations = readTranslations(TRANSLATIONS_PATH);
   const searchIndex = readWttSearchIndex();
   const dateIndex = readWttDateIndex(WTT_DATE_INDEX_PATH);
@@ -6760,6 +6762,9 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
         }
         scannedMatches += 1;
         const displayMatch = materializePlayerRecordMatch(match, translations);
+        if (excludeDoubles && isPlayerRecordDoublesMatch(displayMatch)) {
+          continue;
+        }
         const matchId = getPlayerRecordIndexMatchId(displayMatch);
         if (seen.has(matchId)) {
           continue;
@@ -7921,11 +7926,12 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
   const signature = getPlayerRecordCacheSignature(snapshot);
   const eventLimit = Number.isFinite(options.eventLimit) && options.eventLimit > 0 ? options.eventLimit : null;
   const matchLimit = Number.isFinite(options.matchLimit) && options.matchLimit > 0 ? options.matchLimit : null;
+  const excludeDoubles = options.excludeDoubles === true;
   const orgFilter = options.orgFilter || null;
   const orgFilterKey = orgFilter
     ? `${orgFilter.normalizedTranslatedName}:${[...orgFilter.orgs].sort().join(",")}`
     : "none";
-  const cacheKey = `${signature}::${needles.join("|")}::org=${orgFilterKey}::events=${eventLimit || "all"}::matches=${matchLimit || "all"}`;
+  const cacheKey = `${signature}::${needles.join("|")}::org=${orgFilterKey}::events=${eventLimit || "all"}::matches=${matchLimit || "all"}::excludeDoubles=${excludeDoubles}`;
   const cached = playerRecordResultCache.get(cacheKey);
   if (cached && Date.now() - cached.builtAt < PLAYER_RECORD_RESULT_CACHE_TTL_MS) {
     return {
@@ -7962,7 +7968,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
           missingFiles,
           needles,
           textNeedles,
-          { ...options, eventLimit, matchLimit, orgFilter },
+          { ...options, eventLimit, matchLimit, orgFilter, excludeDoubles },
         )
         : { events: [], parsedEvents: 0, scannedMatches: 0 };
       const collected = mergePlayerRecordCollectedResults(
@@ -8002,7 +8008,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
       indexedCandidate.snapshot,
       needles,
       textNeedles,
-      { eventLimit, matchLimit, orgFilter },
+      { eventLimit, matchLimit, orgFilter, excludeDoubles },
     );
     const missingIndexFiles = Array.isArray(collected.missingIndexedFiles) ? collected.missingIndexedFiles : [];
     if (missingIndexFiles.length > 0) {
@@ -8039,7 +8045,7 @@ async function getPlayerRecordSearchResult(name, translatedName, needles, option
     candidateSnapshot,
     needles,
     textNeedles,
-    { eventLimit, matchLimit, orgFilter },
+    { eventLimit, matchLimit, orgFilter, excludeDoubles },
   );
   const missingIndexFiles = Array.isArray(collected.missingIndexedFiles) ? collected.missingIndexedFiles : [];
   if (missingIndexFiles.length > 0) {
@@ -10089,6 +10095,7 @@ async function handlePlayerRecordsApi(requestUrl, response) {
       eventLimit: eventLimit + 1,
       matchLimit: matchLimit + 1,
       orgFilter,
+      excludeDoubles: true,
     });
     if (searchResult.indexPending) {
       sendJson(response, 202, {
