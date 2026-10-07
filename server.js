@@ -8785,7 +8785,7 @@ function getHeadToHeadIndexPlayerKeys(index, needles) {
     matchCache = new Map();
     headToHeadPlayerKeyMatchCaches.set(players, matchCache);
   }
-  const playerKeys = Object.keys(players);
+  let playerKeys = null;
   needles.forEach((needle) => {
     const normalizedNeedle = normalizePlayerSearchText(needle);
     if (!normalizedNeedle) {
@@ -8800,6 +8800,7 @@ function getHeadToHeadIndexPlayerKeys(index, needles) {
         }
       });
       if (matched.size === 0) {
+        playerKeys ||= Object.keys(players);
         playerKeys.forEach((key) => {
           if (playerRecordNameMatchesNeedle(key, normalizedNeedle)) {
             matched.add(key);
