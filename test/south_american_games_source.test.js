@@ -6,7 +6,18 @@ const os = require("node:os");
 const path = require("node:path");
 const zlib = require("node:zlib");
 const { test } = require("node:test");
-const { fetchOfficialResultsCached, isWttPayloadSourceCompatible } = require("../extract_individual_matches");
+const { fetchOfficialResultsCached, isWttPayloadSourceCompatible, formatJapanese, formatEnglish } = require("../extract_individual_matches");
+
+test("2026 game-total team ties never invent unplayed traditional team cards", () => {
+  const final = require("../wtt-records/5449.json").find((match) =>
+    match.categoryName === "Men Teams" && match.roundLabel === "Finals");
+  assert.ok(final);
+  for (const formatter of [formatJapanese, formatEnglish]) {
+    const output = formatter([final], require("../translations.ja.json"), require("../rules.json"), {});
+    assert.equal(output.split("\n").length, 2 + final.singles.length);
+    assert.match(output, /8-2/);
+  }
+});
 
 test("5449 rejects undated historical archives while TTE5449 remains independent", () => {
   const historical = [{ eventId: "5449", documentCode: "M.SINGLES.R64", source: "wtt" }];

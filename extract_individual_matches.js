@@ -5019,6 +5019,9 @@ function getPendingTeamPairKey(leftPlayer, rightPlayer) {
 }
 
 function inferOlympicPendingTeamSchedule(match, displayedTeams) {
+  if (match?.recordSource === "south-american-games-2026") {
+    return null;
+  }
   if (!match || match.discipline !== "teams" || match.singles.length < 3) {
     return null;
   }
@@ -5066,6 +5069,9 @@ function inferOlympicPendingTeamSchedule(match, displayedTeams) {
 }
 
 function inferStandardPendingTeamSchedule(match, displayedTeams) {
+  if (match?.recordSource === "south-american-games-2026") {
+    return null;
+  }
   if (!match || match.discipline !== "teams" || match.singles.length < 3) {
     return null;
   }
