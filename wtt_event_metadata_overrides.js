@@ -3,6 +3,14 @@
 // Official calendar corrections that must take precedence over stale runtime
 // copies of the generated WTT date and search indexes.
 const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
+  "TTE5449": Object.freeze({
+    eventName: "2022 SOUTH AMERICAN GAMES - ODESUR",
+    startDate: "2022-10-09",
+    endDate: "2022-10-14",
+    dateLabel: "2022/10/9-14",
+    eventUrl: "https://results.ittf.com/ittf-web-results/html/TTE5449/results.html#/results",
+    source: "ittf",
+  }),
   "5449": Object.freeze({
     eventName: "XIII South American Games Santa Fe 2026",
     startDate: "2026-09-21",

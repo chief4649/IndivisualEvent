@@ -1994,7 +1994,9 @@ async function fetchEventMeta(eventId, source = "wtt") {
   const normalizedSource = normalizeSource(source);
   const normalizedId = resolveEventId(normalizedSource, eventId);
   const eventName = await fetchEventName(normalizedId, normalizedSource);
-  let eventUrl = getEventUrl(normalizedSource, normalizedId);
+  let eventUrl = normalizedSource === "wtt"
+    ? getWttEventUrl(normalizedId, "", eventName)
+    : getEventUrl(normalizedSource, normalizedId);
 
   if (normalizedSource === "wtt") {
     try {
