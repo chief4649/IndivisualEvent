@@ -2895,6 +2895,14 @@ async function fetchBornanOfficialResults(eventId) {
     }
     for (const item of page) {
       const normalized = normalizeBornanMatch(item, eventId, eventDescriptions);
+      if (normalized) {
+        normalized.startDateLocal = item.DateTimeRaw || item.DateTime || null;
+        normalized.recordSource = "ittf";
+        normalized.recordEventId = String(eventId).replace(/^TTE/i, "");
+        normalized.recordUrl = new URL("results.html#/results", baseUrl).toString();
+        normalized.recordStartDate = champ.dates[0]?.raw || null;
+        normalized.recordEndDate = champ.dates[champ.dates.length - 1]?.raw || null;
+      }
       if (normalized?.documentCode) {
         deduped.set(normalized.documentCode, normalized);
       }
@@ -2925,13 +2933,13 @@ function decodeAsianGames2026Payload(buffer, url) {
   }
 }
 
-async function fetchAsianGames2026Json(pathname) {
-  const url = new URL(pathname, ASIAN_GAMES_2026_API_BASE_URL).toString();
+async function fetchAsianGames2026Json(pathname, config = {}) {
+  const url = new URL(pathname, config.apiBaseUrl || ASIAN_GAMES_2026_API_BASE_URL).toString();
   const response = await fetch(url, {
     headers: {
       accept: "text/plain, */*",
-      origin: "https://results.asiangames2026.org",
-      referer: "https://results.asiangames2026.org/",
+      origin: config.publicBaseUrl || "https://results.asiangames2026.org",
+      referer: `${config.publicBaseUrl || "https://results.asiangames2026.org"}/`,
       "user-agent": "Mozilla/5.0 (compatible; TeamMatchExtractor/1.0)",
     },
   });
@@ -2982,11 +2990,11 @@ function toLegacyAsianGames2026SubMatch(subUnit) {
 }
 
 function toLegacyAsianGames2026Match(unit, detail = null) {
-  const categoryName = String(unit?.EventDesc || detail?.Info?.EventDesc || "").trim();
+  const categoryName = String(unit?.EventDesc || detail?.Info?.EventDesc || "").trim().replace(/\bDouble\b/g, "Doubles");
   const roundLabel = String(unit?.PhaseDescA || detail?.Info?.PhaseDescA || "").trim();
   const matchLabel = String(unit?.UnitDescA || detail?.Info?.UnitDescA || "").trim();
   const description = [categoryName, roundLabel, matchLabel].filter(Boolean).join(" - ");
-  const isTeam = String(unit?.Type || detail?.Info?.Type || "").toUpperCase() === "T";
+  const isTeam = /\.TEAM/.test(String(unit?.Event || unit?.Key || detail?.Info?.Key || ""));
   return {
     ...unit,
     Key: unit?.Key || detail?.Info?.Key || null,
@@ -3003,9 +3011,10 @@ function toLegacyAsianGames2026Match(unit, detail = null) {
   };
 }
 
-async function fetchAsianGames2026OfficialResults(eventId) {
-  const prefix = `/s/${ASIAN_GAMES_2026_CHAMP}/en/${ASIAN_GAMES_2026_DISCIPLINE}`;
-  const discipline = await fetchAsianGames2026Json(`${prefix}/disc/data`);
+async function fetchAsianGames2026OfficialResults(eventId, config = {}) {
+  const prefix = `/s/${config.champ || ASIAN_GAMES_2026_CHAMP}/en/${ASIAN_GAMES_2026_DISCIPLINE}`;
+  const fetchResultsJson = (pathname) => fetchAsianGames2026Json(pathname, config);
+  const discipline = await fetchResultsJson(`${prefix}/disc/data`);
   const days = (Array.isArray(discipline?.Days) ? discipline.Days : [])
     .map((day) => String(day?.raw || "").trim())
     .filter(Boolean);
@@ -3014,7 +3023,7 @@ async function fetchAsianGames2026OfficialResults(eventId) {
   }
 
   const dailyPages = await mapWithConcurrency(days, 3, (day) => (
-    fetchAsianGames2026Json(`${prefix}/schedule/daily/${encodeURIComponent(day)}`)
+    fetchResultsJson(`${prefix}/schedule/daily/${encodeURIComponent(day)}`)
   ));
   const completedUnits = dailyPages
     .flatMap((page) => (Array.isArray(page) ? page : []))
@@ -3025,20 +3034,24 @@ async function fetchAsianGames2026OfficialResults(eventId) {
       unit?.Away
     ));
   const teamDetails = new Map();
-  const teamUnits = completedUnits.filter((unit) => String(unit?.Type || "").toUpperCase() === "T");
+  const teamUnits = completedUnits.filter((unit) => /\.TEAM/.test(String(unit.Event || unit.Key || "")));
   await mapWithConcurrency(teamUnits, 4, async (unit) => {
-    const detail = await fetchAsianGames2026Json(`${prefix}/results/${encodeURIComponent(unit.Key)}`);
+    const detail = await fetchResultsJson(`${prefix}/results/${encodeURIComponent(unit.Key)}`);
     teamDetails.set(unit.Key, detail);
   });
 
   const eventDescriptions = new Map(
-    (Array.isArray(discipline?.Events) ? discipline.Events : []).map((event) => [event?.EvKey, event?.Desc]),
+    (Array.isArray(discipline?.Events) ? discipline.Events : []).map((event) => [event?.EvKey, String(event?.Desc || "").replace(/\bDouble\b/g, "Doubles")]),
   );
   const deduped = new Map();
   for (const unit of completedUnits) {
     const legacyMatch = toLegacyAsianGames2026Match(unit, teamDetails.get(unit.Key));
     const normalized = normalizeBornanMatch(legacyMatch, eventId, eventDescriptions);
     if (normalized?.documentCode) {
+      normalized.startDateLocal = unit.DateTimeRaw || null;
+      normalized.recordSource = config.recordSource || "asian-games-2026";
+      normalized.recordEventId = config.champ || ASIAN_GAMES_2026_CHAMP;
+      normalized.recordUrl = `${config.publicBaseUrl || "https://results.asiangames2026.org"}/#/discipline/TTE/results`;
       deduped.set(normalized.documentCode, normalized);
     }
   }
@@ -3122,6 +3135,7 @@ function datesOverlapOrMatch(aStart, aEnd, bStart, bEnd) {
 
 function getMatchDateStamp(match) {
   const values = [
+    match?.recordStartDate,
     match?.startDateLocal,
     match?.startDateUtc,
     match?.matchDateTime?.startDateLocal,
@@ -3191,6 +3205,13 @@ function isWttPayloadSourceCompatible(payload, eventId, options = {}) {
     return true;
   }
   const seed = getWttResolutionSeedMeta(eventIdText, options);
+  if (seed.resultSource === "south-american-games-2026") {
+    return Array.isArray(payload) && payload.length > 0 && payload.every((match) => (
+      match?.recordSource === seed.resultSource &&
+      match?.recordEventId === "JSUD2026" &&
+      Boolean(getMatchDateStamp(match))
+    ));
+  }
   const explicitlyMappedToIttf = WTT_RECORD_SOURCE_OVERRIDES[eventIdText]?.recordSource === "ittf";
   const isWttHostedEvent = /^WTT\b/i.test(seed.title);
   return !isWttHostedEvent || explicitlyMappedToIttf || getWttPayloadFormat(payload) !== "ittf";
@@ -4184,6 +4205,18 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   }
 
   const seed = getWttResolutionSeedMeta(eventId, options);
+  if (seed.resultSource === "south-american-games-2026") {
+    const payload = await fetchAsianGames2026OfficialResults(eventId, {
+      champ: "JSUD2026",
+      apiBaseUrl: "https://back.results.santafe2026.org",
+      publicBaseUrl: "https://results.santafe2026.org",
+      recordSource: seed.resultSource,
+    });
+    if (!isWttPayloadDateCompatible(payload, eventId, options) || !isWttPayloadSourceCompatible(payload, eventId, options)) {
+      throw new Error(`South American Games result payload does not match event ${eventId}`);
+    }
+    return payload;
+  }
   if (seed.resultSource === "attu") {
     const attuPayload = await fetchAttuOfficialResultsFromApi(eventId, take, options);
     if (
@@ -4374,7 +4407,8 @@ async function fetchOfficialResultsCached(source, eventId, take, cacheDir, refre
       const liveCached = readLiveWttPayloadCache(livePayloadCacheKey);
       if (
         shouldReuseCachedPayload(source, liveCached) &&
-        isWttPayloadDateCompatible(liveCached, eventId, options)
+        isWttPayloadDateCompatible(liveCached, eventId, options) &&
+        isWttPayloadSourceCompatible(liveCached, eventId, options)
       ) {
         return liveCached;
       }

@@ -40,6 +40,7 @@ const {
   normalizeCategory,
   normalizeDiscipline,
   normalizeSource,
+  isWttPayloadSourceCompatible,
   readRules,
   readTranslations,
   readWttDateIndex,
@@ -138,7 +139,7 @@ const WTT_EVENT_PUBLIC_URLS = {
   "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
   "3150": "https://results.ittf.com/ittf-web-results/html/TTE5676/results.html#/results",
   "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",
-  "5449": "https://results.ittf.com/ittf-web-results/html/TTE5449/results.html#/results",
+  "5449": "https://results.santafe2026.org/#/discipline/TTE/results",
   "5525": "https://results.ittf.com/ittf-web-results/html/TTE3454/results.html#/results",
   "wmc2026": "https://wmc2026.ittf.com/",
 };
@@ -4562,6 +4563,12 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
     if (!isUsableSlimRecordFile(slimFilePath, stat)) {
       return null;
     }
+    if (!isVerifiedSpecialEventArchive(slimFilePath)) {
+      if (slimDir !== BUNDLED_WTT_SLIM_ARCHIVE_DIR) {
+        return getSlimWttRecordFile(originalFilePath, BUNDLED_WTT_SLIM_ARCHIVE_DIR);
+      }
+      return null;
+    }
     return {
       filePath: slimFilePath,
       size: stat.size,
@@ -4577,6 +4584,16 @@ function getSlimWttRecordFile(originalFilePath, slimDir) {
 
 function getRecordSourceFromFilename(fileName) {
   return /^TTE\d+\.json$/i.test(String(fileName || "")) ? "ittf" : "wtt";
+}
+
+function isVerifiedSpecialEventArchive(filePath) {
+  const eventId = path.basename(filePath, ".json");
+  if (eventId !== "5449") return true;
+  try {
+    return isWttPayloadSourceCompatible(JSON.parse(fs.readFileSync(filePath, "utf8")), eventId);
+  } catch {
+    return false;
+  }
 }
 
 function shouldPreferWttRecordFile(current, next) {
@@ -4664,6 +4681,7 @@ function getWttRecordFileSnapshot() {
               ? (sourceLabel === "runtime" ? ITTF_SLIM_ARCHIVE_DIR : path.join(__dirname, "ittf-records-slim"))
               : (sourceLabel === "runtime" ? WTT_SLIM_ARCHIVE_DIR : BUNDLED_WTT_SLIM_ARCHIVE_DIR),
           );
+          if (!isVerifiedSpecialEventArchive(slim?.filePath || filePath)) return;
           const next = createWttRecordFileEntry({
             eventId,
             filePath,
@@ -4703,6 +4721,7 @@ function getWttRecordFileSnapshot() {
           const eventId = fileName.replace(/\.json$/, "");
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
+          if (!isVerifiedSpecialEventArchive(slimFilePath)) return;
           const stat = fs.statSync(slimFilePath);
           if (!isUsableSlimRecordFile(slimFilePath, stat)) {
             return;

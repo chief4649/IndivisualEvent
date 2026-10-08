@@ -3,6 +3,15 @@
 // Official calendar corrections that must take precedence over stale runtime
 // copies of the generated WTT date and search indexes.
 const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
+  "5449": Object.freeze({
+    eventName: "XIII South American Games Santa Fe 2026",
+    startDate: "2026-09-21",
+    endDate: "2026-09-26",
+    dateLabel: "2026/9/21-26",
+    eventUrl: "https://results.santafe2026.org/#/discipline/TTE/results",
+    resultSource: "south-american-games-2026",
+    source: "wtt",
+  }),
   "3473": Object.freeze({
     eventName: "Asian Games Aichi-Nagoya 2026",
     startDate: "2026-09-20",

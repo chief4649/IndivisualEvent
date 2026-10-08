@@ -116,6 +116,12 @@ function slimMatch(match) {
     resultStatus: match?.resultStatus,
     isParaClass: match?.isParaClass,
     source: match?.source,
+    startDateLocal: match?.startDateLocal,
+    recordSource: match?.recordSource,
+    recordEventId: match?.recordEventId,
+    recordUrl: match?.recordUrl,
+    recordStartDate: match?.recordStartDate,
+    recordEndDate: match?.recordEndDate,
   });
   result.teams = Array.isArray(match?.teams) ? match.teams.map(slimTeam) : [];
   result.singles = Array.isArray(match?.singles) ? match.singles.map(slimSingle) : [];
