@@ -22,6 +22,8 @@ test("persistent para backlog reserves regular nightly slots but fills unused ca
   assert.equal(selected.filter((entry) => entry.paraBacklog).length, 5);
   assert.equal(selected.filter((entry) => !entry.paraBacklog).length, 15);
   assert.equal(selectCrawlCandidates(para, { limit: 20 }).length, 20);
+  assert.deepEqual(selectCrawlCandidates(regular.slice(0, 4), { limit: 10, paraOnly: true }), regular.slice(0, 4));
+  assert.equal(selectCrawlCandidates([...para.slice(0, 1), ...regular], { limit: 20 }).length, 20);
   assert.equal(selectCrawlCandidates([...para, ...regular], { limit: 2 }).filter((entry) => entry.paraBacklog).length, 1);
   assert.deepEqual(selectCrawlCandidates([...para, ...regular], { limit: 1 }), [regular[0]]);
 });

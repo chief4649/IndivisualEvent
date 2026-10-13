@@ -409,8 +409,8 @@ function isPotentiallyPartialArchive(entry, archiveCount) {
 function selectCrawlCandidates(candidates, args) {
   const backlog = candidates.filter((entry) => entry.paraBacklog);
   const regular = candidates.filter((entry) => !entry.paraBacklog);
-  const quota = args.paraOnly || regular.length === 0 ? args.limit
-    : Math.min(5, Math.max(args.limit > 1 ? 1 : 0, Math.floor(args.limit / 4)));
+  const quota = Math.min(backlog.length, args.paraOnly || regular.length === 0 ? args.limit
+    : Math.min(5, Math.max(args.limit > 1 ? 1 : 0, Math.floor(args.limit / 4))));
   return [...backlog.slice(0, quota), ...regular.slice(0, args.limit - quota), ...backlog.slice(quota)].slice(0, args.limit);
 }
 
