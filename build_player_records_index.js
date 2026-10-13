@@ -790,14 +790,17 @@ function getCandidateEventSourceSignatures(files) {
 }
 
 function getCandidateConfigSignature() {
-  return [
-    TRANSLATIONS_PATH,
-    RULES_PATH,
-    WTT_ARCHIVE_INDEX_PATH,
-    WTT_DATE_INDEX_PATH,
-    WTT_SEARCH_INDEX_PATH,
-    EVENT_NAMES_PATH,
-  ].map((filePath) => `${path.basename(filePath)}:${getPathStatToken(filePath)}`).join("|");
+  // Candidate keys use player translations and match normalization, not event metadata.
+  const parserHash = crypto.createHash("sha256")
+    .update(fs.readFileSync(require.resolve("./extract_individual_matches")))
+    .update("\0")
+    .update(fs.readFileSync(__filename))
+    .update("\0")
+    .update(fs.readFileSync(require.resolve("./runtime_legacy_ittf_patch")))
+    .digest("hex");
+  const translationsHash = fs.existsSync(TRANSLATIONS_PATH)
+    ? crypto.createHash("sha256").update(fs.readFileSync(TRANSLATIONS_PATH)).digest("hex") : "missing";
+  return `translations:${translationsHash}|parser:${parserHash}`;
 }
 
 function haveSameCandidateMapEntries(left, right) {
@@ -821,7 +824,10 @@ function isCandidateIndexCompleteForIncrementalUpdate(manifest, files, requested
 
   const previousSources = manifest.sourceFiles;
   const previousMatchCounts = manifest.eventMatchCounts;
-  if (Object.keys(previousSources).length !== files.length || Object.keys(previousMatchCounts).length !== files.length) {
+  const previousIds = Object.keys(previousSources);
+  const currentIds = new Set(files.map((file) => String(file.eventId)));
+  if (previousIds.length !== Object.keys(previousMatchCounts).length
+    || previousIds.some((id) => !currentIds.has(id) || !Number.isInteger(previousMatchCounts[id]) || previousMatchCounts[id] < 0)) {
     return false;
   }
   return files.every((file) => {
@@ -1116,4 +1122,7 @@ if (require.main === module) {
 module.exports = {
   auditPlayerRecordCandidateIndex,
   updatePlayerRecordCandidateIndexForEvents,
+  getCandidateConfigSignature,
+  getCandidateEventSourceSignatures,
+  isCandidateIndexCompleteForIncrementalUpdate,
 };

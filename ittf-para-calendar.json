@@ -157,6 +157,22 @@
       "event": "TTE3438",
       "eventUrl": "https://www.ittf.com/tournament/3438/ITTF-World-Para-Elite-Beijing-2026/"
     },
+    "TTE3439": {
+      "eventName": "Parasouth American Games Valledupar 2026",
+      "startDate": "2026-07-05",
+      "endDate": "2026-07-09",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3439",
+      "resultStartDate": "2026-07-05",
+      "resultEndDate": "2026-07-07",
+      "calendarEventName": "Parasuramerican Games 2026, Valledupar",
+      "calendarStartDate": "2026-07-05",
+      "calendarEndDate": "2026-07-09",
+      "eventUrl": "https://results.ittf.com/ittf-web-results/html/TTE3439/results.html#/results"
+    },
     "TTE3440": {
       "eventName": "ITTF World Para Future Nakhon Ratchasima 2026",
       "startDate": "2026-07-13",
@@ -269,16 +285,6 @@
       "reason": "cancelled"
     },
     {
-      "eventName": "Parasuramerican Games 2026, Valledupar",
-      "startDate": "2026-07-05",
-      "endDate": "2026-07-09",
-      "cancelled": false,
-      "source": "ittf",
-      "series": "Para",
-      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
-      "reason": "no-official-result-id"
-    },
-    {
       "eventName": "ITTF World Para Challenger Astana 2026",
       "startDate": "2026-07-30",
       "endDate": "2026-08-03",
@@ -319,5 +325,5 @@
       "reason": "no-official-result-id"
     }
   ],
-  "verifiedAt": "2026-10-13T02:13:38.740Z"
+  "verifiedAt": "2026-10-13T04:04:45.067Z"
 }

@@ -1248,7 +1248,9 @@ function getIttfEventIndex() {
   } catch {
     events = {};
   }
-  for (const [id, entry] of Object.entries(getParaCalendar().events || {})) events[id] = { ...events[id], ...entry };
+  for (const [id, entry] of Object.entries(getParaCalendar().events || {})) {
+    events[id] = { ...events[id], ...entry, archived: getStoredArchivedEventIds().has(id) };
+  }
   return events;
 }
 
@@ -1393,6 +1395,10 @@ function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
   const normalizedId = String(eventId || "").trim();
   if (!normalizedId) {
     return "";
+  }
+  const para = getParaCalendar().events?.[normalizedId];
+  if (para && para.endDate > new Date().toISOString().slice(0, 10) && !getStoredArchivedEventIds().has(normalizedId)) {
+    return para.eventUrl;
   }
   if (/^TTE\d+$/i.test(normalizedId)) {
     return `https://results.ittf.com/ittf-web-results/html/${encodeURIComponent(normalizedId)}/results.html#/results`;
@@ -1545,7 +1551,7 @@ function getStoredArchivedEventIds() {
         .forEach((entry) => {
           const filePath = path.join(archiveDir, entry.name);
           try {
-            if (fs.statSync(filePath).size > 2) {
+            if (fs.statSync(filePath).size > 4) {
               ids.add(entry.name.replace(/\.json$/i, ""));
             }
           } catch {
@@ -2008,7 +2014,7 @@ async function fetchEventMeta(eventId, source = "wtt") {
   const para = normalizedSource === "wtt" ? getParaCalendar().events?.[normalizedId] : null;
   if (para) {
     return { ...para, source: normalizedSource, eventUrl: getWttEventUrl(normalizedId, "ittf", para.eventName),
-      dateLabel: formatDateRange(para.startDate, para.endDate), archived: hasStoredArchivedEvent(normalizedId),
+      dateLabel: formatDateRange(para.startDate, para.endDate), archived: getStoredArchivedEventIds().has(normalizedId),
       status: para.cancelled ? "cancelled" : resolveLifecycleStatus(para.startDate, para.endDate) };
   }
   const eventName = await fetchEventName(normalizedId, normalizedSource);
@@ -2908,7 +2914,8 @@ function handleAdminWttCrawlStart(request, response) {
     return true;
   }
 
-  if (headToHeadIndexBuildProcess || autoDerivedIndexBuilds.size > 0) {
+  if (headToHeadIndexBuildProcess || autoDerivedIndexBuilds.size > 0
+    || playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning) {
     sendJson(response, 409, {
       error: "An index build is running. Start the crawl after it finishes.",
     });
@@ -3037,7 +3044,8 @@ async function checkAndStartNightlyWttCrawl() {
   if (hasCompletedNightlyWttCrawl(dueAt) || wttCrawlProcess) {
     return;
   }
-  if (headToHeadIndexBuildProcess || autoDerivedIndexBuilds.size > 0) {
+  if (headToHeadIndexBuildProcess || autoDerivedIndexBuilds.size > 0
+    || playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning) {
     console.log("[wtt-nightly-crawl] delayed while an index build is running");
     return;
   }
@@ -5181,8 +5189,8 @@ function schedulePlayerRecordCandidateIntegrityAudit(delayMs = PLAYER_RECORD_CAN
     return;
   }
   const timer = setTimeout(() => {
-    if (playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning) {
-      schedulePlayerRecordCandidateIntegrityAudit(PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS);
+    if (playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning || wttCrawlProcess || headToHeadIndexBuildProcess) {
+      schedulePlayerRecordCandidateIntegrityAudit(Math.min(60000, PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS));
       return;
     }
     playerRecordCandidateAuditRunning = true;

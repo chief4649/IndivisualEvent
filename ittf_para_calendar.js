@@ -6,6 +6,11 @@ const path = require("node:path");
 const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
 const BUNDLED_PATH = path.join(__dirname, "ittf-para-calendar.json");
 const calendarUrl = (year) => `https://www.ittf.com/${year}-para-table-tennis-calendar/`;
+// Verified against the official Bornan title, dates and 206 result records.
+const LINKLESS_RESULTS = { 2026: { "Parasuramerican Games 2026, Valledupar": {
+  event: "TTE3439", eventName: "Parasouth American Games Valledupar 2026",
+  resultStartDate: "2026-07-05", resultEndDate: "2026-07-07",
+} } };
 
 function textFromHtml(value) {
   return String(value).replace(/<[^>]*>/g, " ")
@@ -25,7 +30,12 @@ function normalizeRows(rows, year) {
   const unresolved = [];
   for (const row of rows) {
     const text = textFromHtml(row.text).replace(/[\u2013\u2014]/g, "-");
-    if (!/^\d.*:\s*.*para/i.test(text)) continue;
+    if (!/^\d.*:\s*.*para/i.test(text)) {
+      if (/para/i.test(text) && (row.href || /^\d{1,2}\s*-/.test(text))) {
+        throw new Error(`Unrecognized para calendar row: ${text}`);
+      }
+      continue;
+    }
     const match = text.match(/^(\d{1,2})\s*(?:([A-Za-z]{3,9})\s*)?-\s*(\d{1,2})\s*([A-Za-z]{3,9})\s*:\s*(.+)$/);
     if (!match) throw new Error(`Unrecognized para calendar row: ${text}`);
     const [, firstDay, firstMonth, lastDay, lastMonth, title] = match;
@@ -37,6 +47,8 @@ function normalizeRows(rows, year) {
     if (startDate > endDate) throw new Error(`Reversed calendar range: ${text}`);
     const cancelled = /\bcancelled\b/i.test(title);
     const eventName = title.replace(/\s*-?\s*Cancelled\s*$/i, "").replace(/\s*\([A-Z ]{3,5}\)\s*$/, "").trim();
+    const declaredYear = eventName.match(/\b20\d{2}\b/)?.[0];
+    if (declaredYear && Number(declaredYear) !== year) throw new Error(`Wrong calendar year: ${text}`);
     let tournamentId = null;
     if (row.href) {
       const url = new URL(row.href, calendarUrl(year));
@@ -44,15 +56,20 @@ function normalizeRows(rows, year) {
       tournamentId = url.pathname.match(/^\/tournament\/(\d+)\//)?.[1] || null;
     }
     const entry = { eventName, startDate, endDate, cancelled, source: "ittf", series: "Para", calendarSource: calendarUrl(year) };
-    if (!tournamentId) {
+    const resolved = !tournamentId ? LINKLESS_RESULTS[year]?.[eventName] : null;
+    const resolvedId = resolved?.event;
+    if (!tournamentId && !resolvedId) {
       unresolved.push({ ...entry, reason: cancelled ? "cancelled" : "no-official-result-id" });
       continue;
     }
-    const id = `TTE${tournamentId}`;
-    if (events[id] && JSON.stringify(events[id]) !== JSON.stringify({ ...entry, event: id, eventUrl: row.href })) {
+    const id = resolvedId || `TTE${tournamentId}`;
+    const eventUrl = row.href || `https://results.ittf.com/ittf-web-results/html/${id}/results.html#/results`;
+    const resolvedEntry = resolved ? { ...entry, ...resolved, calendarEventName: eventName,
+      calendarStartDate: startDate, calendarEndDate: endDate } : entry;
+    if (events[id] && JSON.stringify(events[id]) !== JSON.stringify({ ...resolvedEntry, event: id, eventUrl })) {
       throw new Error(`Conflicting para calendar id: ${id}`);
     }
-    events[id] = { ...entry, event: id, eventUrl: row.href };
+    events[id] = { ...resolvedEntry, event: id, eventUrl };
   }
   if (!Object.keys(events).length) throw new Error("Para calendar contains no linked events");
   return { version: 1, year, url: calendarUrl(year), events, unresolved };

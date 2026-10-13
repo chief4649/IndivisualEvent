@@ -10,6 +10,7 @@ const {
   WTT_SUSPICIOUS_RESULT_COUNTS,
   getProcessedMatches,
   getWttEventLifecycleMeta,
+  fetchBornanEventMeta,
   getWttPayloadFormat,
   isWttPayloadSourceCompatible,
   updateWttArchiveIndexEntry,
@@ -405,6 +406,14 @@ function isPotentiallyPartialArchive(entry, archiveCount) {
   return false;
 }
 
+function selectCrawlCandidates(candidates, args) {
+  const backlog = candidates.filter((entry) => entry.paraBacklog);
+  const regular = candidates.filter((entry) => !entry.paraBacklog);
+  const quota = args.paraOnly || regular.length === 0 ? args.limit
+    : Math.min(5, Math.max(args.limit > 1 ? 1 : 0, Math.floor(args.limit / 4)));
+  return [...backlog.slice(0, quota), ...regular.slice(0, args.limit - quota), ...backlog.slice(quota)].slice(0, args.limit);
+}
+
 function buildCandidates(args) {
   const dateIndex = readJson(WTT_DATE_INDEX_PATH);
   const searchIndex = readJson(WTT_SEARCH_INDEX_PATH);
@@ -421,7 +430,7 @@ function buildCandidates(args) {
       ...Object.keys(archiveIndex),
     ]);
 
-  return [...eventIds]
+  const candidates = [...eventIds]
     .filter((id) => !args.paraOnly || dateIndex[id]?.calendarSource || searchIndex[id]?.calendarSource)
     .map((eventId) => {
       const entry = applyWttEventMetadataOverride(eventId, {
@@ -460,6 +469,9 @@ function buildCandidates(args) {
         crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
         crawlSkipReason: entry.crawlSkipReason || "",
         finished: isFinished(entry),
+        calendarSource: entry.calendarSource || null,
+        resultStartDate: entry.resultStartDate || null,
+        resultEndDate: entry.resultEndDate || null,
         paraBacklog: Boolean(args.includeParaBacklog && entry.calendarSource && !archiveCount),
       };
     })
@@ -486,7 +498,6 @@ function buildCandidates(args) {
       return true;
     })
     .sort((left, right) => {
-      if (left.paraBacklog !== right.paraBacklog) return left.paraBacklog ? -1 : 1;
       const leftDate = left.startDate || left.endDate || "";
       const rightDate = right.startDate || right.endDate || "";
       if (leftDate !== rightDate) {
@@ -497,8 +508,8 @@ function buildCandidates(args) {
       return args.newestFirst
         ? Number(right.eventId) - Number(left.eventId)
         : Number(left.eventId) - Number(right.eventId);
-    })
-    .slice(0, args.limit);
+    });
+  return selectCrawlCandidates(candidates, args);
 }
 
 function sleep(ms) {
@@ -642,6 +653,15 @@ function buildHeadToHeadIndex(eventIds = []) {
   return parsed;
 }
 
+function assertParaEventIdentity(candidate, meta) {
+  if (!candidate.calendarSource) return;
+  const startDate = candidate.resultStartDate || candidate.startDate;
+  const endDate = candidate.resultEndDate || candidate.endDate;
+  if (meta.startDate !== startDate || meta.endDate !== endDate) {
+    throw new Error(`para_source_date_mismatch:${candidate.eventId}:${meta.startDate}:${meta.endDate}:expected:${startDate}:${endDate}`);
+  }
+}
+
 async function archiveEvent(candidate, args) {
   const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive || candidate.auditSuspicious);
   const meta = applyWttEventMetadataOverride(candidate.eventId, await getWttEventLifecycleMeta(candidate.eventId, {
@@ -651,6 +671,10 @@ async function archiveEvent(candidate, args) {
 
   if (!args.includeActive && !isFinished(meta)) {
     return { eventId: candidate.eventId, status: "skipped", reason: "not_finished" };
+  }
+  if (candidate.calendarSource) {
+    const officialMeta = await fetchBornanEventMeta(candidate.eventId);
+    assertParaEventIdentity(candidate, officialMeta || {});
   }
 
   const result = await getProcessedMatches({
@@ -855,4 +879,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { syncArchiveTitlesFromDateIndex, buildCandidates, parseArgs };
+module.exports = { syncArchiveTitlesFromDateIndex, buildCandidates, parseArgs, selectCrawlCandidates, assertParaEventIdentity };
