@@ -586,7 +586,8 @@ function buildDerivedArchiveFiles(eventId, args) {
   const candidateIndexResult = updatePlayerRecordCandidateIndexForEvents([eventId]);
 
   let rawDeleted = false;
-  if (!args.keepRaw && rawExists) {
+  const isParaCalendarEvent = Boolean(readJson(WTT_DATE_INDEX_PATH)[eventId]?.calendarSource);
+  if (!args.keepRaw && !isParaCalendarEvent && rawExists) {
     fs.rmSync(rawPath, { force: true });
     rawDeleted = !fs.existsSync(rawPath);
   }
