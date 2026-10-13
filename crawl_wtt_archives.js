@@ -18,6 +18,7 @@ const {
 const { updatePlayerRecordCandidateIndexForEvents } = require("./build_player_records_index");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 const { refreshWttDateIndex } = require("./wtt_calendar");
+const { refreshParaCalendar } = require("./ittf_para_calendar");
 
 const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : DEFAULT_DATA_DIR;
 const WTT_ARCHIVE_DIR = path.join(DATA_DIR, "wtt-records");
@@ -108,6 +109,7 @@ function parseArgs(argv) {
     keepRaw: false,
     auditSuspicious: false,
     newestFirst: false,
+    includeParaBacklog: false,
     events: [],
   };
 
@@ -163,6 +165,9 @@ function parseArgs(argv) {
         break;
       case "--newest-first":
         args.newestFirst = true;
+        break;
+      case "--include-para-backlog":
+        args.includeParaBacklog = true;
         break;
       case "--help":
       case "-h":
@@ -449,13 +454,15 @@ function buildCandidates(args) {
         crawlSkipped: Boolean(entry.crawlSkipped) && !isTransientCrawlSkip(entry),
         crawlSkipReason: entry.crawlSkipReason || "",
         finished: isFinished(entry),
+        paraBacklog: Boolean(args.includeParaBacklog && entry.calendarSource && !archiveCount),
       };
     })
     .filter((candidate) => {
-      if (from && candidate.endDate && candidate.endDate < from) {
+      if (dateIndex[candidate.eventId]?.cancelled || searchIndex[candidate.eventId]?.cancelled) return false;
+      if (!candidate.paraBacklog && from && candidate.endDate && candidate.endDate < from) {
         return false;
       }
-      if (to && candidate.startDate && candidate.startDate > to) {
+      if (!candidate.paraBacklog && to && candidate.startDate && candidate.startDate > to) {
         return false;
       }
       if (args.auditSuspicious) {
@@ -473,6 +480,7 @@ function buildCandidates(args) {
       return true;
     })
     .sort((left, right) => {
+      if (left.paraBacklog !== right.paraBacklog) return left.paraBacklog ? -1 : 1;
       const leftDate = left.startDate || left.endDate || "";
       const rightDate = right.startDate || right.endDate || "";
       if (leftDate !== rightDate) {
@@ -725,6 +733,13 @@ async function main() {
     console.warn(`calendar refresh failed; using stored dates: ${error?.message || error}`);
   }
   try {
+    const para = await refreshParaCalendar(DATA_DIR);
+    console.log(`para calendar: ${Object.keys(para.events).length} linked events; unresolved=${para.unresolved.length}; verifiedAt=${para.verifiedAt}`);
+    if (para.refreshError) console.warn(`para calendar refresh failed; using verified snapshot: ${para.refreshError}`);
+  } catch (error) {
+    console.error(`para calendar unavailable: ${error.message}`);
+  }
+  try {
     const updatedTitles = syncArchiveTitlesFromDateIndex();
     if (updatedTitles > 0) {
       console.log(`archive titles synchronized: ${updatedTitles}`);
@@ -833,4 +848,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { syncArchiveTitlesFromDateIndex };
+module.exports = { syncArchiveTitlesFromDateIndex, buildCandidates, parseArgs };

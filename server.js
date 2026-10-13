@@ -569,6 +569,12 @@ function buildHealthPayloadUncached() {
       maxQueue: HEAVY_API_MAX_QUEUE,
     },
     operations: {
+      paraCalendar: (() => {
+        const catalog = getParaCalendar();
+        return { verifiedAt: catalog.verifiedAt || null, checkedAt: catalog.checkedAt || null,
+          refreshError: catalog.refreshError || null, eventCount: Object.keys(catalog.events || {}).length,
+          unresolved: catalog.unresolved || [] };
+      })(),
       wttCrawlRunning: Boolean(wttCrawlProcess),
       playerRecordEventIndexAudit: {
         enabled: PLAYER_RECORD_EVENT_INDEX_AUDIT_ENABLED,
@@ -1228,16 +1234,22 @@ function getEventNamesMap() {
   }
 }
 
+function getParaCalendar() {
+  const bundled = readJsonFileSafe(path.join(__dirname, "ittf-para-calendar.json")) || {};
+  const runtime = readJsonFileSafe(path.join(DATA_DIR, "ittf-para-calendar.json")) || {};
+  return runtime.verifiedAt >= (bundled.verifiedAt || "") ? runtime : bundled;
+}
+
 function getIttfEventIndex() {
+  let events = {};
   try {
-    if (!fs.existsSync(ITTF_EVENT_INDEX_PATH)) {
-      return {};
-    }
-    const parsed = JSON.parse(fs.readFileSync(ITTF_EVENT_INDEX_PATH, "utf8"));
-    return parsed?.events && typeof parsed.events === "object" ? parsed.events : {};
+    const parsed = readJsonFileSafe(ITTF_EVENT_INDEX_PATH);
+    events = parsed?.events && typeof parsed.events === "object" ? { ...parsed.events } : {};
   } catch {
-    return {};
+    events = {};
   }
+  for (const [id, entry] of Object.entries(getParaCalendar().events || {})) events[id] = { ...events[id], ...entry };
+  return events;
 }
 
 function getStoredEventName(source, eventId) {
@@ -1993,6 +2005,12 @@ function resolveLifecycleStatus(startDate, endDate, fallbackStatus = "unknown", 
 async function fetchEventMeta(eventId, source = "wtt") {
   const normalizedSource = normalizeSource(source);
   const normalizedId = resolveEventId(normalizedSource, eventId);
+  const para = normalizedSource === "wtt" ? getParaCalendar().events?.[normalizedId] : null;
+  if (para) {
+    return { ...para, source: normalizedSource, eventUrl: getWttEventUrl(normalizedId, "ittf", para.eventName),
+      dateLabel: formatDateRange(para.startDate, para.endDate), archived: hasStoredArchivedEvent(normalizedId),
+      status: para.cancelled ? "cancelled" : resolveLifecycleStatus(para.startDate, para.endDate) };
+  }
   const eventName = await fetchEventName(normalizedId, normalizedSource);
   let eventUrl = normalizedSource === "wtt"
     ? getWttEventUrl(normalizedId, "", eventName)
@@ -2843,6 +2861,7 @@ function buildWttCrawlArgs(searchParams) {
   const defaults = getDefaultNightlyCrawlRange();
   const args = [
     "crawl_wtt_archives.js",
+    "--include-para-backlog",
     "--from",
     searchParams.get("from") || process.env.WTT_NIGHTLY_CRAWL_FROM || defaults.from,
     "--to",

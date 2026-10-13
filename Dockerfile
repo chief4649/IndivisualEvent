@@ -9,6 +9,8 @@ COPY export_wtt_archive.js ./
 COPY crawl_wtt_archives.js ./
 COPY fetch_wtt_calendar_dates.js ./
 COPY wtt_calendar.js ./
+COPY ittf_para_calendar.js ./
+COPY ittf-para-calendar.json ./
 COPY update_wtt_date_index.js ./
 COPY build_wtt_search_index.js ./
 COPY build_wtt_slim_records.js ./

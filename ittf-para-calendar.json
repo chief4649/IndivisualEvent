@@ -1,0 +1,323 @@
+{
+  "version": 1,
+  "year": 2026,
+  "url": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+  "events": {
+    "TTE3418": {
+      "eventName": "ITTF World Para Future Gold Coast 2026",
+      "startDate": "2026-02-16",
+      "endDate": "2026-02-18",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3418",
+      "eventUrl": "https://www.ittf.com/tournament/3418/ITTF-World-Para-Future-Gold-Coast-2026/"
+    },
+    "TTE3419": {
+      "eventName": "ITTF World Para Challenger Wladyslawowo 2026",
+      "startDate": "2026-03-11",
+      "endDate": "2026-03-14",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3419",
+      "eventUrl": "https://www.ittf.com/tournament/3419/ITTF-World-Para-Challenger-Wladyslawowo-2026/"
+    },
+    "TTE3420": {
+      "eventName": "ITTF World Para Challenger Lignano 2026",
+      "startDate": "2026-03-18",
+      "endDate": "2026-03-21",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3420",
+      "eventUrl": "https://www.ittf.com/tournament/3420/ITTF-World-Para-Challenger-Lignano-2026/"
+    },
+    "TTE3421": {
+      "eventName": "ITTF World Para Future Costa Brava 2026",
+      "startDate": "2026-03-26",
+      "endDate": "2026-03-29",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3421",
+      "eventUrl": "https://www.ittf.com/tournament/3421/ITTF-World-Para-Future-Costa-Brava-2026/"
+    },
+    "TTE3422": {
+      "eventName": "ITTF World Para Future Yalova 2026",
+      "startDate": "2026-04-02",
+      "endDate": "2026-04-05",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3422",
+      "eventUrl": "https://www.ittf.com/tournament/3422/ITTF-World-Para-Future-Yalova-2026/"
+    },
+    "TTE3423": {
+      "eventName": "ITTF World Para Future Santiago 2026",
+      "startDate": "2026-04-18",
+      "endDate": "2026-04-20",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3423",
+      "eventUrl": "https://www.ittf.com/tournament/3423/ITTF-World-Para-Future-Santiago-2026/"
+    },
+    "TTE3430": {
+      "eventName": "ITTF World Para Challenger Sao Paulo 2026",
+      "startDate": "2026-04-23",
+      "endDate": "2026-04-26",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3430",
+      "eventUrl": "https://www.ittf.com/tournament/3430/ITTF-World-Para-Challenger-Sao-Paulo-2026/"
+    },
+    "TTE3431": {
+      "eventName": "ITTF World Para Challenger Podgorica 2026",
+      "startDate": "2026-04-29",
+      "endDate": "2026-05-02",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3431",
+      "eventUrl": "https://www.ittf.com/tournament/3431/ITTF-World-Para-Challenger-Podgorica-2026/"
+    },
+    "TTE3432": {
+      "eventName": "ITTF World Para Challenger Lasko 2026 presented by I FEEL SLOVENIA",
+      "startDate": "2026-05-05",
+      "endDate": "2026-05-09",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3432",
+      "eventUrl": "https://www.ittf.com/tournament/3432/ITTF-World-Para-Challenger-Lasko-2026/"
+    },
+    "TTE3433": {
+      "eventName": "ITTF World Para Elite Lasko 2026 presented by I FEEL SLOVENIA",
+      "startDate": "2026-05-11",
+      "endDate": "2026-05-15",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3433",
+      "eventUrl": "https://www.ittf.com/tournament/3433/ITTF-World-Para-Elite-Lasko-2026/"
+    },
+    "TTE3434": {
+      "eventName": "ITTF World Para Elite Taipei City 2026",
+      "startDate": "2026-05-17",
+      "endDate": "2026-05-21",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3434",
+      "eventUrl": "https://www.ittf.com/tournament/3434/ITTF-World-Para-Elite-Taipei-City-2026/"
+    },
+    "TTE3424": {
+      "eventName": "ITTF World Para Future Buenos Aires 2026",
+      "startDate": "2026-06-12",
+      "endDate": "2026-06-14",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3424",
+      "eventUrl": "https://www.ittf.com/tournament/3424/ITTF-World-Para-Future-Buenos-Aires-2026/"
+    },
+    "TTE3437": {
+      "eventName": "ITTF World Para Future Ostrava 2026",
+      "startDate": "2026-06-18",
+      "endDate": "2026-06-20",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3437",
+      "eventUrl": "https://www.ittf.com/tournament/3437/ITTF-World-Para-Future-Ostrava-2026/"
+    },
+    "TTE3438": {
+      "eventName": "ITTF World Para Elite Beijing 2026",
+      "startDate": "2026-06-24",
+      "endDate": "2026-06-28",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3438",
+      "eventUrl": "https://www.ittf.com/tournament/3438/ITTF-World-Para-Elite-Beijing-2026/"
+    },
+    "TTE3440": {
+      "eventName": "ITTF World Para Future Nakhon Ratchasima 2026",
+      "startDate": "2026-07-13",
+      "endDate": "2026-07-16",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3440",
+      "eventUrl": "https://www.ittf.com/tournament/3440/ITTF-World-Para-Future-Nakhon-Ratchasima-2026/"
+    },
+    "TTE3441": {
+      "eventName": "ITTF World Para Elite Nakhon Ratchasima 2026",
+      "startDate": "2026-07-18",
+      "endDate": "2026-07-22",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3441",
+      "eventUrl": "https://www.ittf.com/tournament/3441/ITTF-World-Para-Elite-Nakhon-Ratchasima-2026/"
+    },
+    "TTE3442": {
+      "eventName": "ITTF World Para Future Aktobe 2026",
+      "startDate": "2026-07-25",
+      "endDate": "2026-07-28",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3442",
+      "eventUrl": "https://www.ittf.com/tournament/3442/ITTF-World-Para-Future-Aktobe-2026/"
+    },
+    "TTE3476": {
+      "eventName": "ITTF World Para Challenger Spokane 2026",
+      "startDate": "2026-08-06",
+      "endDate": "2026-08-09",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3476",
+      "eventUrl": "https://www.ittf.com/tournament/3476/ITTF-World-Para-Challenger-Spokane-2026/"
+    },
+    "TTE3477": {
+      "eventName": "ITTF World Para Elite Spokane 2026",
+      "startDate": "2026-08-11",
+      "endDate": "2026-08-15",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3477",
+      "eventUrl": "https://www.ittf.com/tournament/3477/ITTF-World-Para-Elite-Spokane-2026/"
+    },
+    "TTE3444": {
+      "eventName": "ITTF World Para Future Lahti 2026",
+      "startDate": "2026-08-28",
+      "endDate": "2026-08-30",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3444",
+      "eventUrl": "https://www.ittf.com/tournament/3444/ITTF-World-Para-Future-Lahti-2026/"
+    },
+    "TTE3447": {
+      "eventName": "ITTF World Para Elite Yvelines 2026",
+      "startDate": "2026-09-12",
+      "endDate": "2026-09-16",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3447",
+      "eventUrl": "https://www.ittf.com/tournament/3447/ITTF-World-Para-Elite-Yvelines-2026/"
+    },
+    "TTE3445": {
+      "eventName": "ITTF World Para Future Region De Murcia 2026",
+      "startDate": "2026-10-06",
+      "endDate": "2026-10-09",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3445",
+      "eventUrl": "https://www.ittf.com/tournament/3445/ITTF-World-Para-Future-Region-de-Murcia-2026/"
+    },
+    "TTE3258": {
+      "eventName": "ITTF World Para Championships Pattaya 2026",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-19",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "event": "TTE3258",
+      "eventUrl": "https://www.ittf.com/tournament/3258/World-Para-Table-Tennis-Championships-2026/"
+    }
+  },
+  "unresolved": [
+    {
+      "eventName": "ITTF World Para Future Lagos",
+      "startDate": "2026-05-29",
+      "endDate": "2026-05-31",
+      "cancelled": true,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "reason": "cancelled"
+    },
+    {
+      "eventName": "Parasuramerican Games 2026, Valledupar",
+      "startDate": "2026-07-05",
+      "endDate": "2026-07-09",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "reason": "no-official-result-id"
+    },
+    {
+      "eventName": "ITTF World Para Challenger Astana 2026",
+      "startDate": "2026-07-30",
+      "endDate": "2026-08-03",
+      "cancelled": true,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "reason": "cancelled"
+    },
+    {
+      "eventName": "ITTF World Para Future Amman 2026",
+      "startDate": "2026-09-03",
+      "endDate": "2026-09-05",
+      "cancelled": true,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "reason": "cancelled"
+    },
+    {
+      "eventName": "ITTF World Para Challenger Kefalonia 2026",
+      "startDate": "2026-10-12",
+      "endDate": "2026-10-15",
+      "cancelled": true,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "reason": "cancelled"
+    },
+    {
+      "eventName": "Asian Para Games Aichi-Nagoya 2026",
+      "startDate": "2026-10-16",
+      "endDate": "2026-10-23",
+      "cancelled": false,
+      "source": "ittf",
+      "series": "Para",
+      "calendarSource": "https://www.ittf.com/2026-para-table-tennis-calendar/",
+      "reason": "no-official-result-id"
+    }
+  ],
+  "verifiedAt": "2026-10-13T02:13:38.740Z"
+}
