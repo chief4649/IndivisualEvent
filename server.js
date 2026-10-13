@@ -2886,6 +2886,7 @@ function buildWttCrawlArgs(searchParams) {
   if (parseBoolean(searchParams.get("newestFirst"))) {
     args.push("--newest-first");
   }
+  if (parseBoolean(searchParams.get("paraOnly"))) args.push("--para-only");
   return args;
 }
 

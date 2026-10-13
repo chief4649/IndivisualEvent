@@ -110,6 +110,7 @@ function parseArgs(argv) {
     auditSuspicious: false,
     newestFirst: false,
     includeParaBacklog: false,
+    paraOnly: false,
     events: [],
   };
 
@@ -167,6 +168,10 @@ function parseArgs(argv) {
         args.newestFirst = true;
         break;
       case "--include-para-backlog":
+        args.includeParaBacklog = true;
+        break;
+      case "--para-only":
+        args.paraOnly = true;
         args.includeParaBacklog = true;
         break;
       case "--help":
@@ -417,6 +422,7 @@ function buildCandidates(args) {
     ]);
 
   return [...eventIds]
+    .filter((id) => !args.paraOnly || dateIndex[id]?.calendarSource || searchIndex[id]?.calendarSource)
     .map((eventId) => {
       const entry = applyWttEventMetadataOverride(eventId, {
         ...(archiveIndex[eventId] || {}),
