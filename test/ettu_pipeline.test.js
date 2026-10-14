@@ -98,3 +98,24 @@ test("the round option Group 1 filters canonical group records without selecting
   assert.deepEqual(applyFilters(records, { round: "Group 1" }, {}).map((m) => m.documentCode), ["ETTU167-1"]);
   assert.equal(applyFilters(records, { round: "Group" }, {}).length, 2);
 });
+
+test("ongoing ETTU display serves its verified archive without external requests", async () => {
+  const { fetchOfficialResultsCached } = require("../extract_individual_matches");
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "ettu-archive-"));
+  const originalFetch = global.fetch;
+  try {
+    const record = { eventId: "5440", recordSource: "ettu", recordEventId: "167", recordStartDate: "2026-10-11", startDateLocal: "2026-10-12T09:00:00", documentCode: "ETTU167-2492-73168" };
+    fs.writeFileSync(path.join(dir, "5440.json"), JSON.stringify([record]));
+    const indexPath = path.join(dir, "archive-index.json");
+    fs.writeFileSync(indexPath, JSON.stringify({ 5440: { archived: true, forced: true } }));
+    global.fetch = async () => { throw new Error("Display must not request upstream"); };
+    const result = await fetchOfficialResultsCached("wtt", "5440", 1200, dir, false, {
+      wttArchiveDir: dir, wttSlimArchiveDir: dir,
+      wttArchiveIndexPath: indexPath, wttDateIndexPath: path.join(dir, "missing-date-index.json"),
+    });
+    assert.deepEqual(result, [record]);
+  } finally {
+    global.fetch = originalFetch;
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});

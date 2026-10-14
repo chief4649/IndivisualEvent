@@ -1542,7 +1542,8 @@ function getWttLocalArchiveMeta(eventId, options = {}) {
     datedEntry,
     mergedEntry,
     canServeArchiveImmediately:
-      (Boolean(indexedEntry?.archived && !indexedEntry?.forced) && isDefinitelyFinished)
+      (mergedEntry.resultSource === "ettu" && Boolean(indexedEntry?.archived))
+      || (Boolean(indexedEntry?.archived && !indexedEntry?.forced) && isDefinitelyFinished)
       || isDefinitelyFinished,
   };
 }
