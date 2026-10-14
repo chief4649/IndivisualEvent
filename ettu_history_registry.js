@@ -39,7 +39,7 @@ const ETTU_HISTORY_EVENTS = Object.freeze({
   }),
   ETTU2023TQ1: Object.freeze({
     eventId: "ETTU2023TQ1", eventName: "2023 European Team Championships Qualification Stage 1 A and B Groups",
-    startDate: "2022-10-01", endDate: "2023-02-15", matchStartDate: "2022-10-01", matchEndDate: "2023-03-29",
+    startDate: "2022-10-01", endDate: "2023-03-29", matchStartDate: "2022-10-01", matchEndDate: "2023-03-29",
     provider: "webgen", baseUrl: "https://www.ttm.co.at/results/ec2023s1/",
   }),
 });

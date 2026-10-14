@@ -63,6 +63,7 @@ function slimPlayer(player) {
     org: player?.org,
     orgCode: player?.orgCode,
     position: player?.position,
+    ...(player?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
   });
 }
 
@@ -74,6 +75,7 @@ function slimCompetitor(competitor) {
     org: competitor?.org,
     orgCode: competitor?.orgCode,
     irm: competitor?.irm,
+    ...(competitor?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     players: Array.isArray(competitor?.players) ? competitor.players.map(slimPlayer) : [],
   });
 }
@@ -85,6 +87,9 @@ function slimSingle(single) {
     description: single?.description,
     overallScore: single?.overallScore,
     resultStatus: single?.resultStatus,
+    ...(single?.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
+    ...(single?.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
+    ...(single?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     gameScores: single?.gameScores,
     competitors: Array.isArray(single?.competitors) ? single.competitors.map(slimCompetitor) : [],
     winnerOrg: single?.winnerOrg,
@@ -115,6 +120,9 @@ function slimMatch(match) {
     description: match?.description,
     overallScore: match?.overallScore,
     resultStatus: match?.resultStatus,
+    ...(match?.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
+    ...(match?.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
+    ...(match?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     isParaClass: match?.isParaClass,
     source: match?.source,
     startDateLocal: match?.startDateLocal,

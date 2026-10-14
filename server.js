@@ -10,6 +10,7 @@ const { URL } = require("url");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 const { isRecordArchiveFilename, isRecordEventId, normalizeRecordEventId } = require("./record_archive_identity");
 const { getEttuHistoryImportPid } = require("./archive_maintenance");
+const { getEttuHistoryMetadata } = require("./ettu_history_registry");
 const { isPlayerRecordEventIndexForFile } = require("./player_record_event_index_utils");
 const {
   getCandidateIndexCoverageFallbackEventIds,
@@ -1911,6 +1912,9 @@ function formatDateRange(startDate, endDate) {
   if (startMatch && endMatch) {
     const [, startYear, startMonth, startDay] = startMatch;
     const [, endYear, endMonth, endDay] = endMatch;
+    if (startYear !== endYear) {
+      return `${startYear}/${Number(startMonth)}/${Number(startDay)}-${endYear}/${Number(endMonth)}/${Number(endDay)}`;
+    }
     if (startYear === endYear && startMonth === endMonth) {
       return `${startYear}/${Number(startMonth)}/${Number(startDay)}-${Number(endDay)}`;
     }
@@ -2017,6 +2021,13 @@ function resolveLifecycleStatus(startDate, endDate, fallbackStatus = "unknown", 
 async function fetchEventMeta(eventId, source = "wtt") {
   const normalizedSource = normalizeSource(source);
   const normalizedId = resolveEventId(normalizedSource, eventId);
+  const ettu = normalizedSource === "wtt" ? getEttuHistoryMetadata(normalizedId) : null;
+  if (ettu) {
+    return { ...ettu, source: normalizedSource, event: normalizedId,
+      dateLabel: formatDateRange(ettu.startDate, ettu.endDate),
+      archived: getStoredArchivedEventIds().has(normalizedId),
+      status: resolveLifecycleStatus(ettu.startDate, ettu.endDate, "finished") };
+  }
   const para = normalizedSource === "wtt" ? getParaCalendar().events?.[normalizedId] : null;
   if (para) {
     return { ...para, source: normalizedSource, eventUrl: getWttEventUrl(normalizedId, "ittf", para.eventName),
@@ -5758,22 +5769,27 @@ function getCompetitorNameCandidates(competitor) {
 }
 
 function getCompetitorDisplayNameForRecord(competitor, translations) {
-  if (!competitor) {
+  if (!competitor || competitor.participantDetailMissing === true) {
     return "";
   }
 
-  const players = (competitor.players || [])
+  const sourcePlayers = Array.isArray(competitor.players) ? competitor.players : [];
+  const players = sourcePlayers
     .map((player) => ({
       name: translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor.orgCode || competitor.org, translations),
       org: translateOrg(player?.org || competitor.org || "", translations, {
         orgCode: player?.orgCode || competitor.orgCode,
       }),
-    }))
-    .filter((player) => player.name);
+    }));
 
-  if (players.length >= 2) {
-    const names = players.map((player) => player.name).join("／");
-    const orgs = [...new Set(players.map((player) => player.org).filter(Boolean))];
+  if (sourcePlayers.length > 1 && players.some((player) => !player.name)) {
+    return players.map((player) => player.name ? (player.org ? `${player.name}（${player.org}）` : player.name) : "").join("／");
+  }
+  const namedPlayers = players.filter((player) => player.name);
+
+  if (namedPlayers.length >= 2) {
+    const names = namedPlayers.map((player) => player.name).join("／");
+    const orgs = [...new Set(namedPlayers.map((player) => player.org).filter(Boolean))];
     if (orgs.length === 0) {
       return names;
     }
@@ -5783,8 +5799,8 @@ function getCompetitorDisplayNameForRecord(competitor, translations) {
     return `${names}（${orgs.join("／")}）`;
   }
 
-  if (players.length === 1) {
-    return players[0].org ? `${players[0].name}（${players[0].org}）` : players[0].name;
+  if (namedPlayers.length === 1) {
+    return namedPlayers[0].org ? `${namedPlayers[0].name}（${namedPlayers[0].org}）` : namedPlayers[0].name;
   }
 
   for (const candidate of getCompetitorNameCandidates(competitor)) {
@@ -5801,8 +5817,10 @@ function getCompetitorDisplayNameForRecord(competitor, translations) {
   return "";
 }
 
-function formatCompetitorForRecord(competitor, translations) {
-  return getCompetitorDisplayNameForRecord(competitor, translations) || "TBD";
+function formatCompetitorForRecord(competitor, translations, match = null) {
+  const displayName = getCompetitorDisplayNameForRecord(competitor, translations);
+  if (displayName) return displayName;
+  return competitor?.participantDetailMissing === true || match?.participantDetailMissing === true ? "" : "TBD";
 }
 
 function getWinnerIndexFromOverallScore(score) {
@@ -5853,6 +5871,9 @@ function getWinnerIndexFromGameScores(gameScores) {
 }
 
 function getWinnerIndexForRecord(match) {
+  if (match?.resultOutcomeMissing === true) {
+    return null;
+  }
   const overallWinnerIndex = getWinnerIndexFromOverallScore(match?.overallScore);
   if (overallWinnerIndex !== null) {
     return overallWinnerIndex;
@@ -5861,6 +5882,9 @@ function getWinnerIndexForRecord(match) {
 }
 
 function formatGameScoresForRecord(match, leftCompetitorIndex) {
+  if (match?.scoreDetailMissing === true || match?.resultOutcomeMissing === true) {
+    return "";
+  }
   const games = Array.isArray(match?.gameScores) ? match.gameScores : [];
   const statusText = `${match?.overallScore || ""} ${match?.resultStatus || ""}`.toLowerCase();
   if (statusText.includes("wo")) {
@@ -5886,8 +5910,8 @@ function buildPlayerRecordLine(match, playerCompetitorIndex, translations) {
   const winnerIndex = getWinnerIndexForRecord(match);
   const leftIndex = winnerIndex === playerCompetitorIndex ? playerCompetitorIndex : winnerIndex === null ? playerCompetitorIndex : winnerIndex;
   const rightIndex = leftIndex === 0 ? 1 : 0;
-  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations);
-  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations);
+  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations, match);
+  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations, match);
   const score = formatGameScoresForRecord(match, leftIndex);
   return `${left}　${score}　${right}`;
 }
@@ -6384,7 +6408,7 @@ function setPlayerRecordCandidateIndexState(indexState) {
 }
 
 function getPlayerRecordCandidateIndexNameValues(competitor, translations) {
-  if (!competitor || typeof competitor !== "object") {
+  if (!competitor || typeof competitor !== "object" || competitor.participantDetailMissing === true) {
     return [];
   }
   const values = [
@@ -6406,7 +6430,7 @@ function getPlayerRecordCandidateIndexNameValues(competitor, translations) {
 }
 
 function getPlayerRecordEventIndexNameValues(competitor, translations) {
-  if (!competitor || typeof competitor !== "object") {
+  if (!competitor || typeof competitor !== "object" || competitor.participantDetailMissing === true) {
     return [];
   }
   const values = [
@@ -6464,6 +6488,7 @@ function compactPlayerRecordCompetitor(competitor) {
   const players = Array.isArray(competitor.players) ? competitor.players : [];
   return {
     type: competitor.type || "",
+    ...(competitor.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     name: competitor.name || "",
     org: competitor.org || "",
     orgCode: competitor.orgCode || "",
@@ -6471,7 +6496,8 @@ function compactPlayerRecordCompetitor(competitor) {
       name: player?.name || "",
       org: player?.org || competitor.org || "",
       orgCode: player?.orgCode || competitor.orgCode || "",
-    })).filter((player) => player.name),
+      ...(player?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+    })),
   };
 }
 
@@ -6486,6 +6512,9 @@ function buildPlayerRecordMatchRecord(match, playerCompetitorIndex) {
     right: compactPlayerRecordCompetitor(match.competitors?.[rightIndex]),
     overallScore: match.overallScore || "",
     resultStatus: match.resultStatus || "",
+    ...(match.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
+    ...(match.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
+    ...(match.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     gameScores: Array.isArray(match.gameScores) ? match.gameScores : [],
   };
 }
@@ -6727,9 +6756,12 @@ function buildPlayerRecordLineFromRecord(record, translations) {
     gameScores: Array.isArray(record.gameScores) ? record.gameScores : [],
     overallScore: record.overallScore || "",
     resultStatus: record.resultStatus || "",
+    ...(record.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
+    ...(record.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
+    ...(record.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
   };
-  const left = formatCompetitorForRecord(record.left, translations);
-  const right = formatCompetitorForRecord(record.right, translations);
+  const left = formatCompetitorForRecord(record.left, translations, matchForScore);
+  const right = formatCompetitorForRecord(record.right, translations, matchForScore);
   const score = formatGameScoresForRecord(matchForScore, Number(record.leftIndex || 0));
   return `${left}　${score}　${right}`;
 }
@@ -8157,8 +8189,8 @@ function buildHeadToHeadMatchLine(match, translations) {
   const winnerIndex = getWinnerIndexForRecord(match);
   const leftIndex = winnerIndex === 0 || winnerIndex === 1 ? winnerIndex : 0;
   const rightIndex = leftIndex === 0 ? 1 : 0;
-  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations);
-  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations);
+  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations, match);
+  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations, match);
   const score = formatGameScoresForRecord(match, leftIndex);
   return `${left}　${score}　${right}`;
 }
@@ -8958,6 +8990,9 @@ function buildHeadToHeadPairMatchPayload(match, parentMatch = null) {
       .map(compactHeadToHeadCompetitor),
     overallScore: match?.overallScore || "",
     resultStatus: match?.resultStatus || "",
+    ...(match?.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
+    ...(match?.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
+    ...(match?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     gameScores: Array.isArray(match?.gameScores) ? match.gameScores : [],
     parent: parentMatch ? {
       categoryName: parentMatch.categoryName || "",
@@ -8969,8 +9004,11 @@ function buildHeadToHeadPairMatchPayload(match, parentMatch = null) {
 }
 
 function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null, options = {}) {
+  if (!hasCompleteHeadToHeadParticipants(match)) {
+    return false;
+  }
   const winnerIndex = getWinnerIndexForRecord(match);
-  if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
+  if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex && match.resultOutcomeMissing !== true) {
     return false;
   }
 
@@ -9007,12 +9045,24 @@ function addHeadToHeadIndexedMatch(index, file, eventMeta, match, playerAIndex, 
   return true;
 }
 
+function hasCompleteHeadToHeadParticipants(match) {
+  if (match?.participantDetailMissing === true) return false;
+  const competitors = Array.isArray(match?.competitors) ? match.competitors.slice(0, 2) : [];
+  return competitors.length === 2 && competitors.every((competitor) => {
+    if (!competitor || competitor.participantDetailMissing === true) return false;
+    const names = [competitor.name, competitor.playerName, competitor.competitorName,
+      competitor.competitiorName, competitor.displayName, competitor.description, competitor.desc];
+    return names.some((name) => String(name || "").trim())
+      || (Array.isArray(competitor.players) && competitor.players.some((player) => String(player?.name || player?.playerName || "").trim()));
+  });
+}
+
 function isSinglesHeadToHeadMatch(match) {
   const competitors = Array.isArray(match?.competitors) ? match.competitors : [];
   if (competitors.length < 2) {
     return false;
   }
-  return competitors.slice(0, 2).every((competitor) => {
+  return hasCompleteHeadToHeadParticipants(match) && competitors.slice(0, 2).every((competitor) => {
     const players = Array.isArray(competitor?.players) ? competitor.players.filter((player) => player?.name) : [];
     if (players.length > 1) {
       return false;
@@ -9087,7 +9137,7 @@ function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles, eventM
 
 function pushHeadToHeadMatch(matches, match, playerAIndex, playerBIndex, translations, rules, roundContext, parentMatch = null) {
   const winnerIndex = getWinnerIndexForRecord(match);
-  if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
+  if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex && match.resultOutcomeMissing !== true) {
     return;
   }
 
@@ -9103,7 +9153,7 @@ function pushHeadToHeadMatch(matches, match, playerAIndex, playerBIndex, transla
     ),
     line: buildHeadToHeadMatchLine(match, translations),
     documentCode: match.documentCode || sourceMatch.documentCode || "",
-    winner: winnerIndex === playerAIndex ? "a" : "b",
+    winner: winnerIndex === playerAIndex ? "a" : winnerIndex === playerBIndex ? "b" : null,
   });
 }
 
@@ -9719,6 +9769,9 @@ function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNee
         competitors,
         overallScore: payload.overallScore || "",
         resultStatus: payload.resultStatus || "",
+        ...(payload.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
+        ...(payload.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
+        ...(payload.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
         gameScores: Array.isArray(payload.gameScores) ? payload.gameScores : [],
       };
       const parent = payload.parent ? {
@@ -9733,7 +9786,7 @@ function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNee
         return;
       }
       const winnerIndex = getWinnerIndexForRecord(match);
-      if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex) {
+      if (winnerIndex !== playerAIndex && winnerIndex !== playerBIndex && match.resultOutcomeMissing !== true) {
         return;
       }
       const event = entry.event || {};

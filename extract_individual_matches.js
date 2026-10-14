@@ -953,6 +953,7 @@ function normalizePlayer(player) {
     org: player.playerOrgCode ?? null,
     orgCode: player.playerOrgCode ?? null,
     position: player.playerPosition ?? null,
+    ...(player.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
   };
 }
 
@@ -968,6 +969,7 @@ function normalizeCompetitor(competitor) {
     org: competitor.competitiorOrg ?? competitor.competitior_org ?? null,
     orgCode: competitor.competitiorOrg ?? competitor.competitior_org ?? null,
     irm: competitor.irm ?? null,
+    ...(competitor.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
     players: Array.isArray(competitor.players) ? competitor.players.map(normalizePlayer) : [],
   };
 }
@@ -1640,6 +1642,9 @@ function normalizeIndividualMatch(entry, index) {
     description: result?.subEventDescription ?? null,
     overallScore: result?.overallScores ?? null,
     resultStatus: result?.resultStatus ?? null,
+    ...((result?.resultOutcomeMissing === true || entry?.resultOutcomeMissing === true) ? { resultOutcomeMissing: true } : {}),
+    ...((result?.participantDetailMissing === true || entry?.participantDetailMissing === true) ? { participantDetailMissing: true } : {}),
+    ...((result?.scoreDetailMissing === true || entry?.scoreDetailMissing === true) ? { scoreDetailMissing: true } : {}),
     gameScores: chooseGameScores(result?.resultsGameScores, result?.gameScores),
     competitors,
     winnerOrg: inferWinnerOrg(result),
@@ -1896,6 +1901,9 @@ function normalizeTeamMatch(item) {
     searchDateTokens: schedule.searchDateTokens,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
+    ...((card.resultOutcomeMissing === true || item.resultOutcomeMissing === true) ? { resultOutcomeMissing: true } : {}),
+    ...((card.participantDetailMissing === true || item.participantDetailMissing === true) ? { participantDetailMissing: true } : {}),
+    ...((card.scoreDetailMissing === true || item.scoreDetailMissing === true) ? { scoreDetailMissing: true } : {}),
     teams,
     singles: Array.isArray(nested) ? nested.map(normalizeIndividualMatch) : [],
     competitors: [],
@@ -1938,6 +1946,9 @@ function normalizeStandaloneMatch(item) {
     searchDateTokens: schedule.searchDateTokens,
     overallScore: card.overallScores ?? null,
     resultStatus: card.resultStatus ?? item.fullResults ?? null,
+    ...((card.resultOutcomeMissing === true || item.resultOutcomeMissing === true) ? { resultOutcomeMissing: true } : {}),
+    ...((card.participantDetailMissing === true || item.participantDetailMissing === true) ? { participantDetailMissing: true } : {}),
+    ...((card.scoreDetailMissing === true || item.scoreDetailMissing === true) ? { scoreDetailMissing: true } : {}),
     isParaClass: Boolean(paraCategoryName),
     teams: [],
     singles: [],
@@ -4751,6 +4762,9 @@ function getInferredOverallScore(match) {
 }
 
 function getWinnerIndexForMatch(match) {
+  if (match?.resultOutcomeMissing === true) {
+    return null;
+  }
   const winnerIndex = getWinnerIndexFromScore(match?.overallScore);
   if (winnerIndex !== null) {
     return winnerIndex;
@@ -4939,22 +4953,26 @@ function getMixedTeamGameTotals(match, displayedTeams) {
 }
 
 function getCompetitorDisplayName(competitor, translations) {
-  if (!competitor) {
+  if (!competitor || competitor.participantDetailMissing === true) {
     return "";
   }
 
-  const players = (competitor.players || [])
+  const sourcePlayers = Array.isArray(competitor.players) ? competitor.players : [];
+  const players = sourcePlayers
     .map((player) => ({
       name: translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor.orgCode || competitor.org, translations),
       org: translateOrg(player?.org || competitor.org || "", translations, {
         orgCode: player?.orgCode || competitor.orgCode,
       }),
-    }))
-    .filter((player) => player.name);
+    }));
+  if (sourcePlayers.length > 1 && players.some((player) => !player.name)) {
+    return players.map((player) => player.name ? (player.org ? `${player.name}（${player.org}）` : player.name) : "").join("／");
+  }
+  const namedPlayers = players.filter((player) => player.name);
 
-  if (players.length >= 2) {
-    const names = players.map((player) => player.name).join("／");
-    const orgs = [...new Set(players.map((player) => player.org).filter(Boolean))];
+  if (namedPlayers.length >= 2) {
+    const names = namedPlayers.map((player) => player.name).join("／");
+    const orgs = [...new Set(namedPlayers.map((player) => player.org).filter(Boolean))];
     if (orgs.length === 0) {
       return names;
     }
@@ -4964,8 +4982,8 @@ function getCompetitorDisplayName(competitor, translations) {
     return `${names}（${orgs.join("／")}）`;
   }
 
-  if (players.length === 1) {
-    return players[0].org ? `${players[0].name}（${players[0].org}）` : players[0].name;
+  if (namedPlayers.length === 1) {
+    return namedPlayers[0].org ? `${namedPlayers[0].name}（${namedPlayers[0].org}）` : namedPlayers[0].name;
   }
 
   const name = translatePlayerWithOrg(competitor.name || "", competitor.orgCode || competitor.org, translations);
@@ -4976,19 +4994,24 @@ function getCompetitorDisplayName(competitor, translations) {
 }
 
 function getTeamSubMatchCompetitorName(competitor, translations) {
-  if (!competitor) {
+  if (!competitor || competitor.participantDetailMissing === true) {
     return "";
   }
 
-  const players = (competitor.players || [])
-    .map((player) => translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor.orgCode || competitor.org, translations))
-    .filter(Boolean);
+  const sourcePlayers = Array.isArray(competitor.players) ? competitor.players : [];
+  const players = sourcePlayers
+    .map((player) => translatePlayerWithOrg(player?.name || "", player?.orgCode || player?.org || competitor.orgCode || competitor.org, translations));
 
-  if (players.length >= 2) {
+  if (sourcePlayers.length > 1 && players.some((name) => !name)) {
     return players.join("／");
   }
-  if (players.length === 1) {
-    return players[0];
+  const namedPlayers = players.filter(Boolean);
+
+  if (namedPlayers.length >= 2) {
+    return namedPlayers.join("／");
+  }
+  if (namedPlayers.length === 1) {
+    return namedPlayers[0];
   }
 
   return translatePlayerWithOrg(competitor.name || "", competitor.orgCode || competitor.org, translations);
@@ -5193,6 +5216,9 @@ function inferStandardPendingTeamSchedule(match, displayedTeams) {
 }
 
 function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
+  if (match?.resultOutcomeMissing === true || match?.scoreDetailMissing === true) {
+    return "";
+  }
   const specialResult = getSpecialResultJa(match);
   if (specialResult) {
     return specialResult;
@@ -5205,7 +5231,6 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
   }
   const leftSets = leftCompetitorIndex === 0 ? rawLeftSets : rawRightSets;
   const rightSets = leftCompetitorIndex === 0 ? rawRightSets : rawLeftSets;
-
   const normalizedGames = match.gameScores.map((game) => {
     const [rawLeft, rawRight] = String(game).split("-");
     const homePoints = Number(rawLeft);
@@ -5227,6 +5252,9 @@ function formatIndividualScoreJa(match, leftCompetitorIndex, options = {}) {
 }
 
 function formatIndividualScoreEn(match, leftCompetitorIndex, options = {}) {
+  if (match?.resultOutcomeMissing === true || match?.scoreDetailMissing === true) {
+    return "";
+  }
   const specialResult = getSpecialResultEn(match);
   if (specialResult) {
     return specialResult;
@@ -5239,7 +5267,6 @@ function formatIndividualScoreEn(match, leftCompetitorIndex, options = {}) {
   }
   const leftSets = leftCompetitorIndex === 0 ? rawLeftSets : rawRightSets;
   const rightSets = leftCompetitorIndex === 0 ? rawRightSets : rawLeftSets;
-
   const normalizedGames = match.gameScores.map((game) => {
     const [rawLeft, rawRight] = String(game).split("-");
     const homePoints = Number(rawLeft);
@@ -5827,31 +5854,35 @@ function formatNameWithOrgEn(name, org) {
 }
 
 function getCompetitorDisplayNameEn(competitor) {
-  if (!competitor) {
+  if (!competitor || competitor.participantDetailMissing === true) {
     return "";
   }
 
-  const players = (competitor.players || [])
+  const sourcePlayers = Array.isArray(competitor.players) ? competitor.players : [];
+  const players = sourcePlayers
     .map((player) => ({
       name: String(player?.name || "").trim(),
       org: getEnglishOrg(player?.org || competitor.org, player?.orgCode || competitor.orgCode),
-    }))
-    .filter((player) => player.name);
+    }));
+  if (sourcePlayers.length > 1 && players.some((player) => !player.name)) {
+    return players.map((player) => player.name ? formatNameWithOrgEn(player.name, player.org) : "").join(" / ");
+  }
+  const namedPlayers = players.filter((player) => player.name);
 
-  if (players.length >= 2) {
-    const names = players.map((player) => player.name).join(" / ");
-    const orgs = [...new Set(players.map((player) => player.org).filter(Boolean))];
+  if (namedPlayers.length >= 2) {
+    const names = namedPlayers.map((player) => player.name).join(" / ");
+    const orgs = [...new Set(namedPlayers.map((player) => player.org).filter(Boolean))];
     if (orgs.length === 0) {
       return names;
     }
     if (orgs.length === 1) {
       return `${names} (${orgs[0]})`;
     }
-    return players.map((player) => formatNameWithOrgEn(player.name, player.org)).join(" / ");
+    return namedPlayers.map((player) => formatNameWithOrgEn(player.name, player.org)).join(" / ");
   }
 
-  if (players.length === 1) {
-    return formatNameWithOrgEn(players[0].name, players[0].org);
+  if (namedPlayers.length === 1) {
+    return formatNameWithOrgEn(namedPlayers[0].name, namedPlayers[0].org);
   }
 
   return formatNameWithOrgEn(competitor.name, getEnglishOrg(competitor.org, competitor.orgCode));
@@ -5894,6 +5925,9 @@ function formatJaTeamLine(match, translations) {
   const { leftIndex, rightIndex } = displayedTeams;
   const left = translateTeam(match.teams[leftIndex], translations);
   const right = translateTeam(match.teams[rightIndex], translations);
+  if (match.resultOutcomeMissing === true || match.scoreDetailMissing === true) {
+    return `　${left}　　　${right}`;
+  }
   if (isMixedTeamMatch(match)) {
     const totals = getMixedTeamGameTotals(match, displayedTeams);
     return `　${left}　【${totals.left}-${totals.right}】　${right}`;
@@ -6039,6 +6073,9 @@ function formatEnTeamLine(match) {
   const { leftIndex, rightIndex } = displayedTeams;
   const left = getTeamNameEn(match.teams[leftIndex]);
   const right = getTeamNameEn(match.teams[rightIndex]);
+  if (match.resultOutcomeMissing === true || match.scoreDetailMissing === true) {
+    return `  ${left}    ${right}`;
+  }
   if (isMixedTeamMatch(match)) {
     const totals = getMixedTeamGameTotals(match, displayedTeams);
     return `  ${left} ${totals.left}-${totals.right} ${right}`;
@@ -6163,9 +6200,12 @@ function formatList(matches) {
   return matches
     .map((match, index) => {
       if (match.matchType === "individual") {
-        const left = getCompetitorDisplayName(match.competitors[0], { players: {}, teams: {} }) || "TBD";
-        const right = getCompetitorDisplayName(match.competitors[1], { players: {}, teams: {} }) || "TBD";
-        return `${index + 1}. ${match.description} | ${left} ${match.overallScore || ""} ${right}`.trim();
+        const leftCompetitor = match.competitors[0];
+        const rightCompetitor = match.competitors[1];
+        const left = leftCompetitor?.participantDetailMissing === true ? "" : getCompetitorDisplayName(leftCompetitor, { players: {}, teams: {} }) || "TBD";
+        const right = rightCompetitor?.participantDetailMissing === true ? "" : getCompetitorDisplayName(rightCompetitor, { players: {}, teams: {} }) || "TBD";
+        const score = match.resultOutcomeMissing === true || match.scoreDetailMissing === true ? "" : match.overallScore || "";
+        return `${index + 1}. ${match.description} | ${left} ${score} ${right}`.trim();
       }
 
       const left = match.teams[0] ? `${match.teams[0].name} (${match.teams[0].org})` : "TBD";
@@ -6183,12 +6223,15 @@ function formatText(matches) {
       if (match.matchType === "individual") {
         const home = match.competitors[0];
         const away = match.competitors[1];
-        const gameScores = match.gameScores.length ? match.gameScores.join(", ") : "-";
+        const missingScore = match.resultOutcomeMissing === true || match.scoreDetailMissing === true;
+        const gameScores = missingScore ? "" : match.gameScores.length ? match.gameScores.join(", ") : "-";
+        const overallScore = missingScore ? "" : match.overallScore || "-";
+        const formatCompetitor = (competitor) => competitor?.participantDetailMissing === true
+          ? ""
+          : `${competitor?.name || "TBD"} (${competitor?.org || "-"})`;
         lines.push(`[${index + 1}] ${match.description}`);
-        lines.push(
-          `${home?.name || "TBD"} (${home?.org || "-"}) ${match.overallScore || "-"} ${away?.name || "TBD"} (${away?.org || "-"})`,
-        );
-        lines.push(`games: ${gameScores}`);
+        lines.push(`${formatCompetitor(home)} ${overallScore} ${formatCompetitor(away)}`);
+        if (gameScores) lines.push(`games: ${gameScores}`);
         return lines.join("\n");
       }
 
@@ -6201,9 +6244,14 @@ function formatText(matches) {
       for (const singles of match.singles) {
         const home = singles.competitors[0];
         const away = singles.competitors[1];
-        const gameScores = singles.gameScores.length ? singles.gameScores.join(", ") : "-";
+        const missingScore = singles.resultOutcomeMissing === true || singles.scoreDetailMissing === true;
+        const gameScores = missingScore ? "" : singles.gameScores.length ? singles.gameScores.join(", ") : "-";
+        const overallScore = missingScore ? "" : singles.overallScore || "-";
+        const formatCompetitor = (competitor) => competitor?.participantDetailMissing === true
+          ? ""
+          : `${competitor?.name || "TBD"} (${competitor?.org || "-"})`;
         lines.push(
-          `${singles.order}. ${home?.name || "TBD"} (${home?.org || "-"}) vs ${away?.name || "TBD"} (${away?.org || "-"}) | ${singles.overallScore || "-"} | ${gameScores}`,
+          `${singles.order}. ${formatCompetitor(home)} vs ${formatCompetitor(away)} | ${overallScore} | ${gameScores}`,
         );
       }
 

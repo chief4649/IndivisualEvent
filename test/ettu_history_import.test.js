@@ -1,6 +1,9 @@
 "use strict";
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const vm = require("node:vm");
 const { validatePayload, fetchEttuHistoryResults } = require("../import_ettu_history");
 const { getEttuHistoryEvent, getEttuHistoryMetadata } = require("../ettu_history_registry");
 
@@ -10,10 +13,43 @@ test("European history uses explicit identities, never numeric/TTE coincidence",
   assert.equal(getEttuHistoryEvent("ETTU2007I"), null);
   assert.equal(getEttuHistoryMetadata("ETTU2024I").eventUrl, "https://www.ttm.co.at/results/ec2024/");
   assert.equal(getEttuHistoryEvent("ETTU2008I").startDate, null);
+  assert.equal(getEttuHistoryEvent("ETTU2023TQ1").endDate, "2023-03-29");
+});
+
+test("qualification periods spanning two years display both years", () => {
+  for (const file of ["server.js", "build_player_records_index.js"]) {
+    const source = fs.readFileSync(path.join(__dirname, "..", file), "utf8");
+    const start = source.indexOf("function formatDateRange(");
+    const end = source.indexOf("\nfunction ", start + 1);
+    const context = vm.createContext({});
+    vm.runInContext(source.slice(start, end), context);
+    assert.equal(context.formatDateRange("2022-10-01", "2023-03-29"), "2022/10/1-2023/3/29");
+    assert.equal(context.formatDateRange("2023-09-10", "2023-09-17"), "2023/9/10-17");
+  }
+});
+
+test("ETTU metadata is served from the verified registry without a WTT request", async () => {
+  const source = fs.readFileSync(path.join(__dirname, "../server.js"), "utf8");
+  const start = source.indexOf("async function fetchEventMeta(");
+  const endMatch = /\n(?:async )?function /.exec(source.slice(start + 1));
+  assert.ok(endMatch);
+  const context = vm.createContext({
+    normalizeSource: (value) => value, resolveEventId: (_source, id) => id,
+    getEttuHistoryMetadata, getStoredArchivedEventIds: () => new Set(["ETTU2023TQ1"]),
+    formatDateRange: (startDate, endDate) => `${startDate}/${endDate}`,
+    resolveLifecycleStatus: () => "finished",
+    fetchEventName: () => { throw new Error("Unexpected WTT lookup"); },
+    getParaCalendar: () => { throw new Error("Unexpected calendar lookup"); },
+  });
+  vm.runInContext(source.slice(start, start + 1 + endMatch.index), context);
+  const meta = await context.fetchEventMeta("ETTU2023TQ1", "wtt");
+  assert.equal(meta.endDate, "2023-03-29");
+  assert.equal(meta.archived, true);
+  assert.equal(meta.eventUrl, "https://www.ttm.co.at/results/ec2023s1/");
 });
 
 test("archive row errors cannot disappear when the import combines categories", async () => {
-  const cells = { event: "Men's Singles", rnd: "F", player_id_a: "A Player (GER)", player_id_x: "B Player (FRA)", res_a: "4", res_x: "0", games: "", wo: "-", yr: "2008" };
+  const cells = { event: "Men's Singles", rnd: "F", player_id_a: "A Player (GER)", player_id_x: "B Player (FRA)", res_a: "4", res_x: "0", games: "11:5 11:5 11:5 5:11", wo: "-", yr: "2008" };
   const html = `Total: 1<table><tr id="list_14_com_fabrik_14_row_1" class="fabrik_row">${Object.entries(cells).map(([key, value]) => `<td class="vw_ec_indv___${key}">${value}</td>`).join("")}</tr></table>`;
   await assert.rejects(fetchEttuHistoryResults(getEttuHistoryEvent("ETTU2008I"), {
     fetchImpl: async (url) => new Response(`<html>${new URL(url).searchParams.get("listid") === "14" ? html : "Total: 0"}</html>`, { status: 200, headers: { "content-type": "text/html" } }),
@@ -28,4 +64,16 @@ test("empty, duplicate, mismatched and detail-free records cannot be promoted", 
     assert.throws(() => validatePayload(config, payload));
   }
   assert.equal(validatePayload(config, [{ ...match, matchType: "team", singles: [], resultStatus: "WO" }]).length, 1);
+});
+
+test("archive category counts remain available for source reconciliation", async () => {
+  const cells = { event: "Men's Singles", rnd: "F", player_id_a: "A Player (GER)", player_id_x: "B Player (FRA)", res_a: "4", res_x: "0", games: "", wo: "-", yr: "2008" };
+  const html = `Total: 1<table><tr id="list_14_com_fabrik_14_row_1" class="fabrik_row">${Object.entries(cells).map(([key, value]) => `<td class="vw_ec_indv___${key}">${value}</td>`).join("")}</tr></table>`;
+  const result = await fetchEttuHistoryResults(getEttuHistoryEvent("ETTU2008I"), {
+    fetchImpl: async (url) => new Response(`<html>${new URL(url).searchParams.get("listid") === "14" ? html : "Total: 0"}</html>`, { status: 200, headers: { "content-type": "text/html" } }),
+  });
+  assert.deepEqual(result.counts.categories.singles, { advertised: 1, parsed: 1, unplayed: 0, rejected: 0, detailRowsObserved: 0, warnings: 1 });
+  assert.equal(result.sourceWarnings.length, 1);
+  assert.equal(result.counts.categories.doubles.advertised, 0);
+  assert.equal(result.matches[0].scoreDetailMissing, true);
 });

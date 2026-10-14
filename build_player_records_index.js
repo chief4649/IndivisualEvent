@@ -200,15 +200,24 @@ function translatePlayerNameForRecord(name, translations) {
   return translations.players?.[raw] || translations.players?.[reversed] || raw;
 }
 
-function formatCompetitorForRecord(competitor, translations) {
+function formatCompetitorForRecord(competitor, translations, match = null) {
   if (!competitor) {
-    return "TBD";
+    return match?.participantDetailMissing === true ? "" : "TBD";
   }
-  const players = Array.isArray(competitor.players) ? competitor.players.filter(Boolean) : [];
-  if (players.length > 0) {
-    return players.map((player) => translatePlayerNameForRecord(player?.name, translations)).filter(Boolean).join("／");
+  if (competitor.participantDetailMissing === true) {
+    return "";
   }
-  return translatePlayerNameForRecord(competitor.name, translations) || "TBD";
+  const sourcePlayers = Array.isArray(competitor.players) ? competitor.players.filter(Boolean) : [];
+  const players = sourcePlayers.map((player) => translatePlayerNameForRecord(player?.name, translations));
+  if (sourcePlayers.length > 1 && players.some((name) => !name)) {
+    return players.join("／");
+  }
+  const namedPlayers = players.filter(Boolean);
+  if (namedPlayers.length > 0) {
+    return namedPlayers.join("／");
+  }
+  return translatePlayerNameForRecord(competitor.name, translations)
+    || (match?.participantDetailMissing === true ? "" : "TBD");
 }
 
 function getWinnerIndexFromOverallScore(score) {
@@ -228,13 +237,15 @@ function getWinnerIndexFromOverallScore(score) {
 }
 
 function formatGameScoresForRecord(match, leftCompetitorIndex) {
+  if (match?.scoreDetailMissing === true || match?.resultOutcomeMissing === true) return "";
   const games = Array.isArray(match?.gameScores) ? match.gameScores : [];
   const statusText = `${match?.overallScore || ""} ${match?.resultStatus || ""}`.toLowerCase();
   if (statusText.includes("wo")) {
     return "不戦勝";
   }
   if (games.length === 0) {
-    return String(match?.overallScore || "").trim() || "-";
+    const overallScore = String(match?.overallScore || "").trim() || "-";
+    return overallScore;
   }
   return games.map((game) => {
     const [rawLeft, rawRight] = String(game).split("-");
@@ -250,11 +261,11 @@ function formatGameScoresForRecord(match, leftCompetitorIndex) {
 }
 
 function buildPlayerRecordLine(match, playerCompetitorIndex, translations) {
-  const winnerIndex = getWinnerIndexFromOverallScore(match.overallScore);
+  const winnerIndex = match.resultOutcomeMissing === true ? null : getWinnerIndexFromOverallScore(match.overallScore);
   const leftIndex = winnerIndex === playerCompetitorIndex ? playerCompetitorIndex : winnerIndex === null ? playerCompetitorIndex : winnerIndex;
   const rightIndex = leftIndex === 0 ? 1 : 0;
-  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations);
-  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations);
+  const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations, match);
+  const right = formatCompetitorForRecord(match.competitors?.[rightIndex], translations, match);
   const score = formatGameScoresForRecord(match, leftIndex);
   return `${left}　${score}　${right}`;
 }
@@ -267,6 +278,9 @@ function formatDateRange(startDate, endDate) {
   if (startMatch && endMatch) {
     const [, startYear, startMonth, startDay] = startMatch;
     const [, endYear, endMonth, endDay] = endMatch;
+    if (startYear !== endYear) {
+      return `${startYear}/${Number(startMonth)}/${Number(startDay)}-${endYear}/${Number(endMonth)}/${Number(endDay)}`;
+    }
     if (startYear === endYear && startMonth === endMonth) {
       return `${startYear}/${Number(startMonth)}/${Number(startDay)}-${Number(endDay)}`;
     }
@@ -343,6 +357,7 @@ function mergeRecord(index, key, eventRecord) {
 }
 
 function getCompetitorKeys(competitor, translations) {
+  if (competitor?.participantDetailMissing === true) return [];
   const values = [
     competitor?.name,
     competitor?.playerName,

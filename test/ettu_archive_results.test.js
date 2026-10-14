@@ -61,7 +61,7 @@ test("fetches every advertised page sequentially and normalizes verified singles
   assert.equal(records[0].competitors[0].players[0].orgCode, "SMR");
   assert.equal(records[0].documentCode, "ETTU-ARCHIVE-2008-singles-8964");
   assert.equal(records.length, 101);
-  assert.deepEqual(records.counts, { advertised: 101, parsed: 101, unplayed: 0, rejected: 0, detailRowsObserved: 0 });
+  assert.deepEqual(records.counts, { advertised: 101, parsed: 101, unplayed: 0, rejected: 0, warnings: 0, detailRowsObserved: 0 });
   assert.equal(records.errors.length, 0);
   assert.equal(({ ...records }).errors.length, 0);
   assert.equal(raw.length, 2);
@@ -143,6 +143,105 @@ test("validates declared game wins and continues processing later configured eve
   assert.equal(events.errors[0].year, "2009");
 });
 
+test("keeps only named, terminal set results when game-point details are missing or malformed", () => {
+  const { normalizeIndividualRow } = require("../ettu_archive_results");
+  for (const rawGames of [": : : : : :", ": : 0: : :"]) {
+    const row = individualRow({ games: rawGames })
+      .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">3</td>')
+      .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">0</td>');
+    const record = normalizeIndividualRow({ id: "set-only", cells: parseRows(row, 14, [])[0].cells }, config);
+    assert.equal(record.overallScore, "3-0");
+    assert.equal(record.scoreDetailMissing, true);
+    assert.deepEqual(record.gameScores, []);
+    assert.equal(record.rawGameScores, rawGames);
+  }
+
+  const bestOfSeven = individualRow({ games: ": : : : : : :" })
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">4</td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">0</td>');
+  const record = normalizeIndividualRow({ id: "best-of-seven", cells: parseRows(bestOfSeven, 14, [])[0].cells }, config);
+  assert.equal(record.overallScore, "4-0");
+  assert.equal(record.scoreDetailMissing, true);
+  assert.deepEqual(record.gameScores, []);
+});
+
+test("limits team submatches with missing points to terminal best-of-five results", () => {
+  const { normalizeIndividualRow } = require("../ettu_archive_results");
+  const teamContext = {
+    info: { categoryName: "Men Teams", discipline: "singles", gender: "men" },
+    roundLabel: "Group A - Round 1",
+    roundKey: "group_a_round_1",
+    context: {
+      event: "Men's Teams",
+      stage: "Group",
+      teams: [{ orgCode: "GER" }, { orgCode: "FRA" }],
+    },
+  };
+  const rowFor = (leftScore, rightScore) => ({ id: "team-score", cells: {
+    vw_teams_indv_res___name_a: "A Player (GER)",
+    vw_teams_indv_res___name_x: "B Player (FRA)",
+    vw_teams_indv_res___res_a: String(leftScore),
+    vw_teams_indv_res___res_x: String(rightScore),
+    vw_teams_indv_res___games: ": : : : :",
+    vw_teams_indv_res___wo_a: "-",
+    vw_teams_indv_res___wo_x: "-",
+  } });
+  const configTeam = { ...config, eventId: "team-2008", type: "team" };
+  const options = { prefix: "vw_teams_indv_res", type: "singles", teamContext };
+  assert.throws(() => normalizeIndividualRow(rowFor(4, 0), configTeam, options), /no plausible terminal set result 4-0/);
+  const record = normalizeIndividualRow(rowFor(3, 2), configTeam, options);
+  assert.equal(record.overallScore, "3-2");
+  assert.equal(record.scoreDetailMissing, true);
+});
+
+test("retains 0-0 and empty set results without inferring an outcome", () => {
+  const { normalizeIndividualRow } = require("../ettu_archive_results");
+  const emptyPoints = individualRow({ games: ": : : : : :" });
+  const zeroZero = emptyPoints
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">0</td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">0</td>');
+  const noOutcome = normalizeIndividualRow({ id: "zero-zero", cells: parseRows(zeroZero, 14, [])[0].cells }, config);
+  assert.equal(noOutcome.overallScore, "0-0");
+  assert.equal(noOutcome.resultOutcomeMissing, true);
+  assert.equal(noOutcome.scoreDetailMissing, true);
+  assert.deepEqual(noOutcome.gameScores, []);
+  assert.equal(noOutcome.competitors[0].irm, null);
+  assert.equal(noOutcome.competitors[1].irm, null);
+
+  const emptySets = emptyPoints
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a"></td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x"></td>');
+  const empty = normalizeIndividualRow({ id: "empty-sets", cells: parseRows(emptySets, 14, [])[0].cells }, config);
+  assert.equal(empty.overallScore, null);
+  assert.equal(empty.resultOutcomeMissing, true);
+  assert.deepEqual(empty.rawSetScores, { left: "", right: "" });
+
+  const oneSet = emptySets.replace('<td class="vw_ec_indv___res_a"></td>', '<td class="vw_ec_indv___res_a">3</td>');
+  const oneSided = normalizeIndividualRow({ id: "one-set", cells: parseRows(oneSet, 14, [])[0].cells }, config);
+  assert.equal(oneSided.overallScore, null);
+  assert.deepEqual(oneSided.rawSetScores, { left: "3", right: "" });
+
+  const missingName = emptyPoints.replace("DUBROVIN Veniamin (MDA)", "");
+  const unnamed = normalizeIndividualRow({ id: "missing-name", cells: parseRows(missingName, 14, [])[0].cells }, config);
+  assert.equal(unnamed.participantDetailMissing, true);
+  assert.equal(unnamed.competitors[0].participantDetailMissing, undefined);
+  assert.equal(unnamed.competitors[1].participantDetailMissing, true);
+  assert.equal(unnamed.competitors[1].name, "");
+  assert.equal(unnamed.competitors[1].players[0].name, "");
+
+  const retirement = emptyPoints
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">0</td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">3</td>')
+    .replace('<td class="vw_ec_indv___wo">-</td>', '<td class="vw_ec_indv___wo">RET</td>');
+  const retired = normalizeIndividualRow({ id: "explicit-retirement", cells: parseRows(retirement, 14, [])[0].cells }, config);
+  assert.equal(retired.resultStatus, "RET");
+  assert.equal(retired.scoreDetailMissing, undefined);
+  assert.deepEqual(retired.gameScores, []);
+
+  const malformedSets = emptySets.replace('<td class="vw_ec_indv___res_a"></td>', '<td class="vw_ec_indv___res_a">3-x</td>');
+  assert.throws(() => normalizeIndividualRow({ id: "bad-set", cells: parseRows(malformedSets, 14, [])[0].cells }, config), /invalid set result/);
+});
+
 test("keeps an official retirement and its partial final score without treating it as a completed game", () => {
   const retirement = individualRow({ games: "11:7 9:11 2:3" }).replace('<td class="vw_ec_indv___wo">-</td>', '<td class="vw_ec_indv___wo">RET</td>');
   const records = require("../ettu_archive_results").normalizeIndividualRow(
@@ -154,7 +253,7 @@ test("keeps an official retirement and its partial final score without treating 
   assert.deepEqual(records.partialGameScores, ["2-3"]);
 });
 
-test("removes placeholder scores for explicit walkovers and preserves the declared winner orientation", () => {
+test("removes walkover scores and does not infer a winner for 0-0", () => {
   const woRow = individualRow({ games: "0:11 0:11 0:11 : :" }).replace('<td class="vw_ec_indv___wo">-</td>', '<td class="vw_ec_indv___wo">W/O</td>');
   const record = require("../ettu_archive_results").normalizeIndividualRow(
     { id: "wo-1", cells: parseRows(woRow, 14, [])[0].cells },
@@ -163,8 +262,41 @@ test("removes placeholder scores for explicit walkovers and preserves the declar
   assert.equal(record.resultStatus, "WO");
   assert.equal(record.overallScore, "L-W");
   assert.deepEqual(record.gameScores, []);
+  assert.equal(record.scoreDetailMissing, undefined);
   assert.equal(record.competitors[0].irm, "WO");
   assert.equal(record.competitors[1].irm, null);
+
+  const tiedWo = individualRow({ games: "0:0 0:0 :" })
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">0</td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">0</td>')
+    .replace('<td class="vw_ec_indv___wo">-</td>', '<td class="vw_ec_indv___wo">WO</td>');
+  const unknownWo = require("../ettu_archive_results").normalizeIndividualRow(
+    { id: "wo-unknown", cells: parseRows(tiedWo, 14, [])[0].cells }, config,
+  );
+  assert.equal(unknownWo.overallScore, "0-0");
+  assert.equal(unknownWo.resultStatus, "WO");
+  assert.equal(unknownWo.resultOutcomeMissing, true);
+  assert.equal(unknownWo.competitors[0].irm, null);
+  assert.equal(unknownWo.competitors[1].irm, null);
+});
+
+test("keeps all-0:0 points as missing detail for a known terminal result and warns with source row URL", async () => {
+  const row = individualRow({ id: "98765", games: "0:0 0:0 0:0 : :" })
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">3</td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">0</td>')
+    .replace("DUBROVIN Veniamin (MDA)", "");
+  const records = await fetchEttuArchiveResults(config, { fetchImpl: async () => response(page(row, 1)) });
+  assert.equal(records.length, 1);
+  assert.equal(records[0].overallScore, "3-0");
+  assert.equal(records[0].scoreDetailMissing, true);
+  assert.equal(records[0].participantDetailMissing, true);
+  assert.equal(records[0].competitors[1].participantDetailMissing, true);
+  assert.deepEqual(records[0].gameScores, []);
+  assert.equal(records.warnings.length, 1);
+  assert.deepEqual(records.warnings[0].missingFields, ["vw_ec_indv___player_id_x", "gameScores"]);
+  assert.equal(records.warnings[0].sourceRowId, "98765");
+  assert.match(records.warnings[0].rowUrl, /listid=14/);
+  assert.equal(records.counts.warnings, 1);
 });
 
 test("canonicalizes ETTU knockout round abbreviations", () => {

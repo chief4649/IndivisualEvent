@@ -23,17 +23,22 @@ async function fetchEttuHistoryResults(config, options = {}) {
   const types = config.type === "I" ? ["singles", "doubles"] : ["team"];
   const matches = [];
   const sourceErrors = [];
+  const sourceWarnings = [];
+  const categories = {};
   for (const type of types) {
     const records = await fetchEttuArchiveResults({ ...config, type }, sourceOptions);
     sourceErrors.push(...(records.errors || []));
+    sourceWarnings.push(...(records.warnings || []));
+    categories[type] = { ...records.counts, unplayed: (records.unplayed || []).length };
     matches.push(...records);
   }
   if (sourceErrors.length) {
     const error = new Error(`Official archive validation failed for ${config.eventId}: ${sourceErrors.length} row(s): ${JSON.stringify(sourceErrors.slice(0, 5))}`);
     error.sourceErrors = sourceErrors;
+    error.sourceCounts = categories;
     throw error;
   }
-  return { matches, rawPages, counts: { matches: matches.length, pages: rawPages.length } };
+  return { matches, rawPages, sourceWarnings, counts: { matches: matches.length, pages: rawPages.length, categories, warnings: sourceWarnings.length } };
 }
 
 function atomicJson(filePath, data) {
@@ -114,8 +119,12 @@ function sportingRecord(match) {
   return {
     documentCode: match.documentCode, overallScore: match.overallScore || "",
     gameScores: match.gameScores || [], resultStatus: match.resultStatus || "",
+    scoreDetailMissing: match.scoreDetailMissing === true,
+    resultOutcomeMissing: match.resultOutcomeMissing === true,
+    participantDetailMissing: match.participantDetailMissing === true,
     competitors: (match.competitors || []).map((side) => ({
       name: side.name || "", orgCode: side.orgCode || "",
+      participantDetailMissing: side.participantDetailMissing === true,
       players: (side.players || []).map((player) => ({ name: player.name || "", orgCode: player.orgCode || "" })),
     })),
     teams: (match.teams || []).map((side) => ({ name: side.name || "", orgCode: side.orgCode || "" })),
@@ -134,12 +143,19 @@ function verifyDerivedRecords(dataDir, eventId, matches) {
   for (const match of expected) {
     const record = stored.get(match.documentCode);
     if (!record) throw new Error(`Event index omitted ${match.documentCode}`);
-    if (record.overallScore !== match.overallScore || JSON.stringify(record.gameScores || []) !== JSON.stringify(match.gameScores || [])) {
+    if (record.overallScore !== (match.overallScore || "") || JSON.stringify(record.gameScores || []) !== JSON.stringify(match.gameScores || []) ||
+      (record.scoreDetailMissing === true) !== (match.scoreDetailMissing === true) ||
+      (record.resultOutcomeMissing === true) !== (match.resultOutcomeMissing === true) ||
+      (record.participantDetailMissing === true) !== (match.participantDetailMissing === true)) {
       throw new Error(`Event index scores differ for ${match.documentCode}`);
     }
     const left = record.leftIndex === 1 ? 1 : 0;
     if (record.left?.name !== match.competitors[left]?.name || record.right?.name !== match.competitors[1 - left]?.name) {
       throw new Error(`Event index orientation differs for ${match.documentCode}`);
+    }
+    if ((record.left?.participantDetailMissing === true) !== (match.competitors[left]?.participantDetailMissing === true) ||
+      (record.right?.participantDetailMissing === true) !== (match.competitors[1 - left]?.participantDetailMissing === true)) {
+      throw new Error(`Event index missing-participant metadata differs for ${match.documentCode}`);
     }
   }
   return { slimMatches: slim.length, indexedMatchCount: stored.size, verifiedMatchCount: expected.length };
@@ -194,11 +210,11 @@ async function main(argv = process.argv.slice(2)) {
         continue;
       }
       console.log(`[ETTU ${index + 1}/${selected.length}] fetching ${config.eventId} ${config.eventName}`);
+      const rawPageRefs = new Map();
       try {
-        const rawPageRefs = new Map();
         const result = !argv.includes("--refresh") && !argv.includes("--reparse") && report.events[config.eventId]?.rawOnly &&
           !(report.events[config.eventId]?.sourceErrors?.length) && fs.existsSync(rawPath)
-          ? { matches: JSON.parse(fs.readFileSync(rawPath, "utf8")), counts: report.events[config.eventId].counts }
+          ? { matches: JSON.parse(fs.readFileSync(rawPath, "utf8")), counts: report.events[config.eventId].counts, sourceWarnings: report.events[config.eventId].sourceWarnings || [] }
           : await fetchEttuHistoryResults(config, {
             retainRawPages: false,
             ...(argv.includes("--reparse") && config.provider !== "stupa-team" ? { fetchImpl: replayPublishedPages(dataDir, config) } : {}),
@@ -226,9 +242,10 @@ async function main(argv = process.argv.slice(2)) {
           archived: true, source: "wtt", title: config.eventName,
           startDate: config.startDate, endDate: config.endDate,
           eventUrl: config.recordUrl || config.baseUrl, archiveMatchCount: result.matches.length,
+          sourceWarningCount: (result.sourceWarnings || []).length,
           archivedAt: new Date().toISOString(),
         });
-        report.events[config.eventId] = { status: "raw-saved", matches: result.matches.length, counts: result.counts, checkedAt: new Date().toISOString(), rawOnly: true };
+        report.events[config.eventId] = { status: "raw-saved", matches: result.matches.length, counts: result.counts, sourceWarnings: result.sourceWarnings || [], sourceFieldsComplete: !(result.sourceWarnings || []).length, checkedAt: new Date().toISOString(), rawOnly: true };
         atomicJson(reportPath, report);
         if (!argv.includes("--raw-only")) {
           console.log(`[ETTU ${index + 1}/${selected.length}] deriving ${config.eventId}`);
@@ -236,10 +253,15 @@ async function main(argv = process.argv.slice(2)) {
           verifyDerivedRecords(dataDir, config.eventId, result.matches);
           runNode(["-r", "./runtime_legacy_ittf_patch.js", "server.js", "--update-head-to-head-index", "--event", config.eventId], dataDir);
         }
-        report.events[config.eventId] = { status: argv.includes("--raw-only") ? "raw-saved" : "complete", matches: result.matches.length, counts: result.counts, checkedAt: new Date().toISOString(), rawOnly: argv.includes("--raw-only") };
+        report.events[config.eventId] = { status: argv.includes("--raw-only") ? "raw-saved" : "complete", matches: result.matches.length, counts: result.counts, sourceWarnings: result.sourceWarnings || [], sourceFieldsComplete: !(result.sourceWarnings || []).length, checkedAt: new Date().toISOString(), rawOnly: argv.includes("--raw-only") };
         console.log(`[ETTU ${index + 1}/${selected.length}] saved ${config.eventId}: ${result.matches.length} matches`);
       } catch (error) {
-        report.events[config.eventId] = { ...report.events[config.eventId], status: "failed", error: error.message, sourceErrors: error.sourceErrors || [], checkedAt: new Date().toISOString() };
+        const sourcePath = path.join(dataDir, "ettu-source-records", `${config.eventId}.json`);
+        if (rawPageRefs.size && !fs.existsSync(sourcePath)) atomicJson(sourcePath, {
+          config, normalizedAt: new Date().toISOString(), rawPageRefs: [...rawPageRefs.values()],
+          sourceErrors: error.sourceErrors || [], sourceCounts: error.sourceCounts || null,
+        });
+        report.events[config.eventId] = { ...report.events[config.eventId], status: "failed", error: error.message, sourceErrors: error.sourceErrors || [], sourceCounts: error.sourceCounts || null, checkedAt: new Date().toISOString() };
         console.error(`[ETTU ${index + 1}/${selected.length}] failed ${config.eventId}: ${error.message}`);
       }
       atomicJson(reportPath, report);

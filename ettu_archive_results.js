@@ -93,6 +93,7 @@ function parseRows(html, listId, fields) {
 
 function parseName(value, fallbackOrg) {
   const name = String(value || "").trim();
+  if (!name) return { id: null, name: "", org: "", orgCode: "", position: null };
   const match = name.match(/^(.*?)\s*\(([A-Z]{3})\)\s*$/);
   return { id: null, name: (match?.[1] || name).trim(), org: match?.[2] || fallbackOrg || "", orgCode: match?.[2] || fallbackOrg || "", position: null };
 }
@@ -125,8 +126,18 @@ function parseGames(value, { allowPartialFinalGame = false } = {}) {
 }
 
 function parseResult(value, other) {
-  assert(/^\d+$/.test(String(value ?? "")) && /^\d+$/.test(String(other ?? "")), "missing or invalid set result");
-  return `${Number(value)}-${Number(other)}`;
+  const left = String(value ?? "").trim();
+  const right = String(other ?? "").trim();
+  for (const side of [left, right]) assert(!side || /^\d+$/.test(side), `invalid set result ${side}`);
+  if (!left || !right) return { score: null, missing: true, sets: [left ? Number(left) : null, right ? Number(right) : null] };
+  return { score: `${Number(left)}-${Number(right)}`, missing: false, sets: [Number(left), Number(right)] };
+}
+
+function hasPlausibleTerminalSetScore(score, { bestOfFiveOnly = false } = {}) {
+  const [left, right] = score.split("-").map(Number);
+  const winner = Math.max(left, right);
+  const loser = Math.min(left, right);
+  return (winner === 3 && loser < 3) || (!bestOfFiveOnly && winner === 4 && loser < 4);
 }
 
 function isWalkover(...values) {
@@ -150,7 +161,34 @@ function isUnplayedPlaceholder(row, prefix) {
   const cells = row.cells || {};
   if (officialStatus(cells[`${prefix}___wo`], cells[`${prefix}___wo_a`], cells[`${prefix}___wo_x`])) return false;
   const scores = String(cells[`${prefix}___games`] || "").match(/\d+:\d+/g) || [];
-  return scores.length > 0 && scores.every((score) => score === "0:0");
+  const result = parseResult(cells[`${prefix}___res_a`], cells[`${prefix}___res_x`]);
+  return scores.length > 0 && scores.every((score) => score === "0:0")
+    && (result.missing || result.score === "0-0");
+}
+
+function missingRecordFields(record, row, prefix, type) {
+  const missingFields = [];
+  const nameKeys = prefix === "vw_teams_indv_res"
+    ? ["name_a", "name_x"]
+    : type === "doubles" ? ["player_id_a", "player_id_b", "player_id_x", "player_id_y"] : ["player_id_a", "player_id_x"];
+  for (const key of nameKeys) if (!String(row.cells[`${prefix}___${key}`] || "").trim()) missingFields.push(`${prefix}___${key}`);
+  if (record.resultOutcomeMissing) missingFields.push("resultOutcome");
+  if (record.scoreDetailMissing) missingFields.push("gameScores");
+  return missingFields;
+}
+
+function recordWarning(record, row, config, prefix, type, teamRowId = null) {
+  const missingFields = missingRecordFields(record, row, prefix, type);
+  if (!missingFields.length) return null;
+  return {
+    eventId: config.eventId,
+    year: config.year,
+    type: config.type,
+    sourceRowId: String(row.id),
+    rowUrl: row.sourceUrl || null,
+    ...(teamRowId ? { teamRowId: String(teamRowId) } : {}),
+    missingFields,
+  };
 }
 
 function sourceRowDetails(row, prefix, type = "singles") {
@@ -223,34 +261,62 @@ function normalizeIndividualRow(row, config, { prefix = "vw_ec_indv", type = con
   const left = [];
   const right = [];
   if (teamContext) {
-    for (const key of ["name_a", "name_b"]) if (cells[`${prefix}___${key}`]) left.push(parseName(cells[`${prefix}___${key}`], teamContext.context.teams[0].orgCode));
-    for (const key of ["name_x", "name_y"]) if (cells[`${prefix}___${key}`]) right.push(parseName(cells[`${prefix}___${key}`], teamContext.context.teams[1].orgCode));
+    left.push(parseName(cells[`${prefix}___name_a`], teamContext.context.teams[0].orgCode));
+    right.push(parseName(cells[`${prefix}___name_x`], teamContext.context.teams[1].orgCode));
   } else if (type === "doubles") {
-    for (const key of ["player_id_a", "player_id_b"]) if (cells[`${prefix}___${key}`]) left.push(parseName(cells[`${prefix}___${key}`]));
-    for (const key of ["player_id_x", "player_id_y"]) if (cells[`${prefix}___${key}`]) right.push(parseName(cells[`${prefix}___${key}`]));
+    for (const key of ["player_id_a", "player_id_b"]) left.push(parseName(cells[`${prefix}___${key}`]));
+    for (const key of ["player_id_x", "player_id_y"]) right.push(parseName(cells[`${prefix}___${key}`]));
   } else {
-    left.push(parseName(cells[`${prefix}___player_id_a`], teamContext?.teams?.[0]?.orgCode));
-    right.push(parseName(cells[`${prefix}___player_id_x`], teamContext?.teams?.[1]?.orgCode));
+    left.push(parseName(cells[`${prefix}___player_id_a`]));
+    right.push(parseName(cells[`${prefix}___player_id_x`]));
   }
   const playersPerSide = info.discipline === "doubles" ? 2 : 1;
-  assert(left.length === playersPerSide && right.length === playersPerSide && left.every((player) => player.name) && right.every((player) => player.name), `row ${row.id} has incomplete player names`);
+  assert(left.length === playersPerSide && right.length === playersPerSide, `row ${row.id} has invalid participant slots`);
   const resultStatus = officialStatus(cells[`${prefix}___wo`], cells[`${prefix}___wo_a`], cells[`${prefix}___wo_x`]);
-  const setScore = parseResult(cells[`${prefix}___res_a`], cells[`${prefix}___res_x`]);
-  const parsedGames = parseGames(cells[`${prefix}___games`], { allowPartialFinalGame: Boolean(resultStatus) });
+  const parsedResult = parseResult(cells[`${prefix}___res_a`], cells[`${prefix}___res_x`]);
+  const setScore = parsedResult.score;
+  const rawGameScores = String(cells[`${prefix}___games`] ?? "");
+  let parsedGames;
+  let gameScoreParseError = null;
+  try {
+    parsedGames = resultStatus === "WO" ? [] : parseGames(rawGameScores, { allowPartialFinalGame: Boolean(resultStatus) });
+  } catch (error) {
+    if (resultStatus) throw error;
+    parsedGames = [];
+    gameScoreParseError = error;
+  }
   const isWo = resultStatus === "WO";
-  const gameScores = isWo ? [] : parsedGames;
-  if (!resultStatus) {
-    assert(gameScores.length > 0, `row ${row.id} has no game scores and no official exceptional status`);
-    const gameWins = gameScores.reduce((wins, score) => {
+  let gameScores = isWo ? [] : parsedGames;
+  let scoreDetailMissing = false;
+  if (gameScoreParseError && (!setScore || setScore === "0-0")) throw gameScoreParseError;
+  if (!resultStatus && setScore && setScore !== "0-0") {
+    const declared = setScore.split("-").map(Number);
+    const expectedGameCount = declared[0] + declared[1];
+    const observedGameWins = gameScores.reduce((wins, score) => {
       const [a, x] = score.split("-").map(Number);
       wins[a > x ? 0 : 1] += 1;
       return wins;
     }, [0, 0]);
-    const declared = setScore.split("-").map(Number);
-    assert(gameWins[0] === declared[0] && gameWins[1] === declared[1], `row ${row.id} game wins ${gameWins.join("-")} disagree with declared result ${setScore}`);
+    const pointDetailsIncomplete = gameScoreParseError || gameScores.length === 0 || (
+      gameScores.length < expectedGameCount
+      && observedGameWins[0] <= declared[0]
+      && observedGameWins[1] <= declared[1]
+    );
+    if (pointDetailsIncomplete) {
+      assert(hasPlausibleTerminalSetScore(setScore, { bestOfFiveOnly: Boolean(teamContext) }), `row ${row.id} has incomplete game scores and no plausible terminal set result ${setScore}`);
+      scoreDetailMissing = true;
+      gameScores = [];
+    } else {
+      assert(observedGameWins[0] === declared[0] && observedGameWins[1] === declared[1], `row ${row.id} game wins ${observedGameWins.join("-")} disagree with declared result ${setScore}`);
+    }
   }
-  const declaredSets = setScore.split("-").map(Number);
-  assert(!isWo || (declaredSets[0] !== declaredSets[1] && Math.max(...declaredSets) > 0), `row ${row.id} WO lacks a declared winner`);
+  const declaredSets = parsedResult.sets;
+  const outcomeMissing = parsedResult.missing || setScore === "0-0";
+  if (setScore === "0-0" && gameScores.length) {
+    assert(false, `row ${row.id} point games contradict declared result 0-0`);
+  }
+  if (setScore === "0-0" && !gameScores.length && !resultStatus) scoreDetailMissing = true;
+  const woWinnerKnown = isWo && !outcomeMissing && declaredSets[0] !== declaredSets[1] && Math.max(...declaredSets) > 0;
   const result = {
     matchType: "individual",
     id: String(row.id),
@@ -264,7 +330,7 @@ function normalizeIndividualRow(row, config, { prefix = "vw_ec_indv", type = con
     description: `${info.categoryName} - ${teamContext ? teamContext.roundLabel : round.roundLabel}`,
     venue: null,
     table: null,
-    overallScore: isWo ? (declaredSets[0] > declaredSets[1] ? "W-L" : "L-W") : setScore,
+    overallScore: isWo && woWinnerKnown ? (declaredSets[0] > declaredSets[1] ? "W-L" : "L-W") : setScore,
     resultStatus: resultStatus || "1",
     isParaClass: false,
     teams: [],
@@ -276,10 +342,11 @@ function normalizeIndividualRow(row, config, { prefix = "vw_ec_indv", type = con
         type: info.discipline === "singles" ? "player" : "pair",
         id: null,
         name: players.map((player) => player.name).join(" / "),
-        org: orgs.length === 1 ? orgs[0] : "",
-        orgCode: orgs.length ? orgs.join("/") : null,
-        irm: isWo && declaredSets[side] < declaredSets[1 - side] ? "WO" : null,
+        org: players.every((player) => !player.name) ? "" : orgs.length === 1 ? orgs[0] : "",
+        orgCode: players.every((player) => !player.name) || !orgs.length ? null : orgs.join("/"),
+        irm: woWinnerKnown && declaredSets[side] < declaredSets[1 - side] ? "WO" : null,
         players: players.map((player, index) => ({ ...player, position: index + 1 })),
+        ...(players.every((player) => !player.name) ? { participantDetailMissing: true } : {}),
       };
     }),
     gameScores,
@@ -288,6 +355,14 @@ function normalizeIndividualRow(row, config, { prefix = "vw_ec_indv", type = con
     startDateUtc: null,
   };
   if (teamContext) result.recordTeamContext = teamContext.context;
+  if (left.some((player) => !player.name) || right.some((player) => !player.name)) result.participantDetailMissing = true;
+  if (outcomeMissing) result.resultOutcomeMissing = true;
+  if (parsedResult.missing) result.rawSetScores = {
+    left: cells[`${prefix}___res_a`] ?? null,
+    right: cells[`${prefix}___res_x`] ?? null,
+  };
+  if (scoreDetailMissing) result.scoreDetailMissing = true;
+  if (scoreDetailMissing || outcomeMissing) result.rawGameScores = rawGameScores;
   if (!isWo && parsedGames.partialScores?.length) result.partialGameScores = parsedGames.partialScores;
   return result;
 }
@@ -356,7 +431,8 @@ async function fetchListRows(type, year, options = {}) {
   const ids = new Set();
   let advertisedTotal = null;
   for (let start = 0; ; start += PAGE_SIZE) {
-    const html = await fetchHtml(listUrl(type, year, start), options);
+    const pageUrl = listUrl(type, year, start);
+    const html = await fetchHtml(pageUrl, options);
     const total = parseTotal(html);
     if (advertisedTotal == null) advertisedTotal = total;
     assert(total === advertisedTotal, `${type} ${year} advertised Total changed between pages`);
@@ -367,6 +443,7 @@ async function fetchListRows(type, year, options = {}) {
       ids.add(row.id);
       const rowYearField = type === "team" ? "vw_ec_teams___yr" : "vw_ec_indv___yr";
       assert(row.cells[rowYearField] === String(year), `${type} row ${row.id} has year ${row.cells[rowYearField] || "(missing)"}, expected ${year}`);
+      row.sourceUrl = pageUrl;
       all.push(row);
     }
     assert(all.length <= advertisedTotal, `${type} ${year} returned more rows than advertised Total`);
@@ -397,7 +474,9 @@ async function fetchTeamSubmatches(parent, config, options) {
   const results = [];
   const errors = [];
   const unplayed = [];
+  const warnings = [];
   for (const row of rows) {
+    row.sourceUrl = url;
     try {
       if (isUnplayedPlaceholder(row, "vw_teams_indv_res")) {
         unplayed.push({ teamRowId: String(parent.id), sourceRowId: String(row.id), ...sourceRowDetails(row, "vw_teams_indv_res"), reason: "all listed game scores are 0:0 placeholders; no exceptional status is published" });
@@ -424,13 +503,15 @@ async function fetchTeamSubmatches(parent, config, options) {
         teamSideScore: record.overallScore,
       };
       results.push(record);
+      const warning = recordWarning(record, row, config, "vw_teams_indv_res", "singles", parent.id);
+      if (warning) warnings.push(warning);
     } catch (error) {
       const entry = { eventId: config.eventId, year: config.year, type: config.type, teamRowId: String(parent.id), sourceRowId: String(row.id), ...sourceRowDetails(row, "vw_teams_indv_res"), error: error.message };
       errors.push(entry);
       if (typeof options.onError === "function") await options.onError(entry);
     }
   }
-  return { matches: results, errors, unplayed, sourceRows: rows.length };
+  return { matches: results, errors, unplayed, warnings, sourceRows: rows.length };
 }
 
 async function fetchEttuArchiveResults(inputConfig, options = {}) {
@@ -439,6 +520,7 @@ async function fetchEttuArchiveResults(inputConfig, options = {}) {
   const records = [];
   const errors = [];
   const unplayed = [];
+  const warnings = [];
   let detailRowsObserved = 0;
   if (config.type !== "team") {
     for (const row of rows) {
@@ -447,7 +529,10 @@ async function fetchEttuArchiveResults(inputConfig, options = {}) {
           unplayed.push({ sourceRowId: String(row.id), ...sourceRowDetails(row, "vw_ec_indv", config.type), reason: "all listed game scores are 0:0 placeholders; no exceptional status is published" });
           continue;
         }
-        records.push(normalizeIndividualRow(row, config));
+        const record = normalizeIndividualRow(row, config);
+        records.push(record);
+        const warning = recordWarning(record, row, config, "vw_ec_indv", config.type);
+        if (warning) warnings.push(warning);
       } catch (error) {
         const entry = { eventId: config.eventId, year: config.year, type: config.type, sourceRowId: String(row.id), ...sourceRowDetails(row, "vw_ec_indv", config.type), error: error.message };
         errors.push(entry);
@@ -462,6 +547,7 @@ async function fetchEttuArchiveResults(inputConfig, options = {}) {
         records.push(...detail.matches);
         errors.push(...detail.errors);
         unplayed.push(...detail.unplayed);
+        warnings.push(...detail.warnings);
         detailRowsObserved += detail.sourceRows;
       } catch (error) {
         const entry = { eventId: config.eventId, year: config.year, type: config.type, teamRowId: String(row.id), error: error.message };
@@ -476,7 +562,8 @@ async function fetchEttuArchiveResults(inputConfig, options = {}) {
   Object.defineProperties(records, {
     errors: { value: errors, enumerable: true },
     unplayed: { value: unplayed, enumerable: true },
-    counts: { value: { advertised: rows.advertisedTotal, parsed: records.length, unplayed: unplayed.length, rejected: errors.length, detailRowsObserved }, enumerable: true },
+    warnings: { value: warnings, enumerable: true },
+    counts: { value: { advertised: rows.advertisedTotal, parsed: records.length, unplayed: unplayed.length, rejected: errors.length, warnings: warnings.length, detailRowsObserved }, enumerable: true },
   });
   return records;
 }
@@ -485,20 +572,22 @@ async function fetchEttuArchiveEvents(configs, options = {}) {
   assert(Array.isArray(configs), "event configs must be an array");
   const results = [];
   const errors = [];
+  const warnings = [];
   for (const input of configs) {
     let config;
     try {
       config = archiveConfig(input);
       const matches = await fetchEttuArchiveResults(config, options);
-      results.push({ eventId: config.eventId, eventName: config.eventName, year: config.year, type: config.type, matches, errors: matches.errors || [], counts: matches.counts, unplayed: matches.unplayed || [] });
+      results.push({ eventId: config.eventId, eventName: config.eventName, year: config.year, type: config.type, matches, errors: matches.errors || [], counts: matches.counts, unplayed: matches.unplayed || [], warnings: matches.warnings || [] });
       errors.push(...(matches.errors || []));
+      warnings.push(...(matches.warnings || []));
     } catch (error) {
       const entry = { eventId: input?.eventId ?? null, eventName: input?.eventName ?? null, year: input?.year == null ? null : String(input.year), type: input?.type ?? null, error: error.message };
       errors.push(entry);
       results.push({ ...entry, matches: [] });
     }
   }
-  return { results, errors };
+  return { results, errors, warnings };
 }
 
 module.exports = {
