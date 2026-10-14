@@ -9,4 +9,9 @@ function isRecordEventId(eventId) {
   return typeof eventId === "string" && RECORD_EVENT_ID_PATTERN.test(eventId);
 }
 
-module.exports = { isRecordArchiveFilename, isRecordEventId };
+function normalizeRecordEventId(eventId) {
+  const id = String(eventId || "").trim();
+  return /^ETTU/i.test(id) ? id.toUpperCase() : id;
+}
+
+module.exports = { isRecordArchiveFilename, isRecordEventId, normalizeRecordEventId };

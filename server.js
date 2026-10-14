@@ -8,7 +8,8 @@ const path = require("path");
 const readline = require("readline");
 const { URL } = require("url");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
-const { isRecordArchiveFilename, isRecordEventId } = require("./record_archive_identity");
+const { isRecordArchiveFilename, isRecordEventId, normalizeRecordEventId } = require("./record_archive_identity");
+const { getEttuHistoryImportPid } = require("./archive_maintenance");
 const { isPlayerRecordEventIndexForFile } = require("./player_record_event_index_utils");
 const {
   getCandidateIndexCoverageFallbackEventIds,
@@ -1390,7 +1391,7 @@ function resolveEventId(source, eventId) {
   if (normalizedSource === "wtt" && WTT_EVENT_ID_ALIASES[normalizedId]) {
     return WTT_EVENT_ID_ALIASES[normalizedId];
   }
-  return normalizedId;
+  return normalizeRecordEventId(normalizedId);
 }
 
 function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
@@ -4716,7 +4717,7 @@ function getWttRecordFileSnapshot() {
         .filter(isRecordArchiveFilename)
         .forEach((fileName) => {
           const source = getRecordSourceFromFilename(fileName);
-          const eventId = fileName.replace(/\.json$/, "");
+          const eventId = normalizeRecordEventId(fileName.replace(/\.json$/i, ""));
           const filePath = path.join(dirPath, fileName);
           const stat = fs.statSync(filePath);
           const slim = getSlimWttRecordFile(
@@ -4762,7 +4763,7 @@ function getWttRecordFileSnapshot() {
         .filter(isRecordArchiveFilename)
         .forEach((fileName) => {
           const source = getRecordSourceFromFilename(fileName);
-          const eventId = fileName.replace(/\.json$/, "");
+          const eventId = normalizeRecordEventId(fileName.replace(/\.json$/i, ""));
           const filePath = path.join(rawDirPath || dirPath, fileName);
           const slimFilePath = path.join(dirPath, fileName);
           if (!isVerifiedSpecialEventArchive(slimFilePath)) return;
@@ -5153,6 +5154,10 @@ function scheduleHeadToHeadIndexReconciliation() {
   }
 
   const timer = setTimeout(() => {
+    if (getEttuHistoryImportPid(DATA_DIR)) {
+      scheduleHeadToHeadIndexReconciliation();
+      return;
+    }
     try {
       const manifest = readJsonFileSafe(HEAD_TO_HEAD_INDEX_MANIFEST_PATH);
       const snapshot = getWttRecordFileSnapshot();
@@ -5203,7 +5208,7 @@ function schedulePlayerRecordCandidateIntegrityAudit(delayMs = PLAYER_RECORD_CAN
     return;
   }
   const timer = setTimeout(() => {
-    if (playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning || wttCrawlProcess || headToHeadIndexBuildProcess) {
+    if (getEttuHistoryImportPid(DATA_DIR) || playerRecordCandidateAuditRunning || playerRecordEventIndexAuditRunning || wttCrawlProcess || headToHeadIndexBuildProcess) {
       schedulePlayerRecordCandidateIntegrityAudit(Math.min(60000, PLAYER_RECORD_CANDIDATE_AUDIT_INTERVAL_MS));
       return;
     }
@@ -5242,6 +5247,7 @@ function schedulePlayerRecordEventIndexAudit(delayMs = PLAYER_RECORD_EVENT_INDEX
   }
   const timer = setTimeout(() => {
     if (
+      getEttuHistoryImportPid(DATA_DIR) ||
       playerRecordEventIndexAuditRunning ||
       playerRecordCandidateAuditRunning ||
       heavyApiActiveCount > 0 ||

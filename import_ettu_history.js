@@ -7,6 +7,7 @@ const { spawnSync } = require("child_process");
 const crypto = require("crypto");
 const zlib = require("zlib");
 const { ETTU_HISTORY_EVENTS, getEttuHistoryEvent } = require("./ettu_history_registry");
+const { getEttuHistoryImportPid } = require("./archive_maintenance");
 
 async function fetchEttuHistoryResults(config, options = {}) {
   if (config.provider === "webgen") {
@@ -53,6 +54,24 @@ function runNode(args, dataDir) {
   });
   if (result.error) throw result.error;
   if (result.status !== 0) throw new Error(`Derived-index process failed (${result.status})`);
+}
+
+async function waitForExistingIndexWorkers() {
+  if (process.env.RENDER !== "true") return;
+  const startedAt = Date.now();
+  while (Date.now() - startedAt < 15 * 60_000) {
+    try {
+      const response = await fetch(`http://127.0.0.1:${process.env.PORT || 3000}/api/health`, { signal: AbortSignal.timeout(10_000) });
+      const health = await response.json();
+      const operations = health.operations;
+      if (health.ok && operations && !operations.playerRecordEventIndexAudit?.running &&
+        !operations.wttCrawlRunning && !operations.headToHeadBuildRunning &&
+        !(operations.derivedIndexBuilds?.length) && !health.heavyApi?.active && !health.heavyApi?.queued) return;
+    } catch {}
+    console.log("[ETTU] waiting for the existing index operation to finish");
+    await new Promise((resolve) => setTimeout(resolve, 10_000));
+  }
+  throw new Error("Existing index work did not finish within 15 minutes; no overlapping rebuild started");
 }
 
 function replayPublishedPages(dataDir, config) {
@@ -150,9 +169,11 @@ async function main(argv = process.argv.slice(2)) {
   if (fs.existsSync(reportPath)) report = { ...JSON.parse(fs.readFileSync(reportPath, "utf8")), discovered };
   const lockPath = path.join(dataDir, "ettu-history-import.lock");
   fs.mkdirSync(dataDir, { recursive: true });
+  if (fs.existsSync(lockPath) && !getEttuHistoryImportPid(dataDir)) fs.unlinkSync(lockPath);
   const lock = fs.openSync(lockPath, "wx");
   fs.writeFileSync(lock, String(process.pid));
   try {
+    if (!argv.includes("--raw-only")) await waitForExistingIndexWorkers();
     for (let index = 0; index < selected.length; index++) {
       const config = selected[index];
       const rawPath = path.join(dataDir, "wtt-records", `${config.eventId}.json`);

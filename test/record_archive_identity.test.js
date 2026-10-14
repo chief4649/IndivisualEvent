@@ -1,6 +1,13 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const { isRecordArchiveFilename, isRecordEventId } = require("../record_archive_identity");
+const { normalizeRecordEventId } = require("../record_archive_identity");
+
+test("ETTU identifiers have one canonical spelling without changing existing TTE IDs", () => {
+  assert.equal(normalizeRecordEventId(" ettu2024i "), "ETTU2024I");
+  assert.equal(normalizeRecordEventId("TTE2885"), "TTE2885");
+  assert.equal(require("../extract_individual_matches").resolveEventId("wtt", "ettu2024i"), "ETTU2024I");
+});
 
 test("accepts existing numeric and TTE record archive identities", () => {
   for (const value of ["2410", "TTE5277", "tte3410"]) {

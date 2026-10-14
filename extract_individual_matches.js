@@ -3,6 +3,7 @@
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 const { fetchEttuOfficialResults } = require("./ettu_results");
 const { getEttuHistoryEvent } = require("./ettu_history_registry");
+const { normalizeRecordEventId } = require("./record_archive_identity");
 
 const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
@@ -368,7 +369,7 @@ function resolveEventId(source, eventId) {
   if (normalizedSource === "wtt" && WTT_EVENT_ID_ALIASES[normalizedId]) {
     return WTT_EVENT_ID_ALIASES[normalizedId];
   }
-  return normalizedId;
+  return normalizeRecordEventId(normalizedId);
 }
 
 function decodeHtmlEntities(value) {

@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
-const { isRecordArchiveFilename } = require("./record_archive_identity");
+const { isRecordArchiveFilename, normalizeRecordEventId } = require("./record_archive_identity");
 
 const {
   buildJaRoundContext,
@@ -121,7 +121,7 @@ function listWttRecordFiles() {
     fs.readdirSync(dirPath)
       .filter(isRecordArchiveFilename)
       .forEach((fileName) => {
-        const eventId = fileName.replace(/\.json$/i, "");
+        const eventId = normalizeRecordEventId(fileName.replace(/\.json$/i, ""));
         const filePath = path.join(rawDirPath, fileName);
         const parseFilePath = path.join(dirPath, fileName);
         const stat = fs.statSync(parseFilePath);
