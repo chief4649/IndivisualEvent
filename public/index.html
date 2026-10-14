@@ -1281,7 +1281,7 @@
 
               const line = document.createElement("div");
               line.className = "player-record-line";
-              line.textContent = match.line || "";
+              line.textContent = String(match.line || "").replace(/(^|\s)(?:\(\)|（）)(?=$|\s)/g, "$1").trim();
               matchBox.appendChild(line);
 
               groupBox.appendChild(matchBox);
@@ -1321,6 +1321,7 @@
               throw new Error(data.error || "戦績の読み込みに失敗しました。");
             }
             renderPlayerRecords(data);
+            setStatus("");
             return;
           }
           throw new Error("戦績インデックスの準備に時間がかかっています。時間をおいて再検索してください。");

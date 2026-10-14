@@ -33,6 +33,7 @@ COPY player_record_event_index_utils.js ./
 COPY player_record_candidate_index_utils.js ./
 COPY player_record_event_index_audit.js ./
 COPY player_record_display_filters.js ./
+COPY player_record_verified_sources.js ./
 COPY head_to_head_query_job_store.js ./
 COPY server.js ./
 COPY patch_version_info.js ./

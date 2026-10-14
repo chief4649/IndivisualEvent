@@ -26,6 +26,7 @@ const {
   getPlayerRecordEventIndexAuditSignature,
 } = require("./player_record_event_index_audit");
 const { isPlayerRecordDoublesMatch } = require("./player_record_display_filters");
+const { reconcileVerifiedCareerSources, getVerifiedUnplayedTeamSlots, isVerifiedUnplayedTeamSlot } = require("./player_record_verified_sources");
 const { createHeadToHeadQueryJobStore } = require("./head_to_head_query_job_store");
 
 const {
@@ -5820,6 +5821,7 @@ function getCompetitorDisplayNameForRecord(competitor, translations) {
 
 function formatCompetitorForRecord(competitor, translations, match = null) {
   const displayName = getCompetitorDisplayNameForRecord(competitor, translations);
+  if (/^[\s\u3000]*(?:\(\)|（）)[\s\u3000]*$/.test(displayName)) return "";
   if (displayName) return displayName;
   return competitor?.participantDetailMissing === true || match?.participantDetailMissing === true ? "" : "TBD";
 }
@@ -6859,6 +6861,7 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
     }
     indexedEvents += 1;
     const eventMeta = index.event || meta;
+    let unplayedSlots = null;
     const matches = [];
     const seen = new Set();
     const seenIndexEntryIds = new Set();
@@ -6882,8 +6885,14 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
         if (!match) {
           continue;
         }
+        if (String(file.eventId) === "5067" && match.record?.overallScore === "0-0") {
+          if (!unplayedSlots) {
+            unplayedSlots = getVerifiedUnplayedTeamSlots(parseJsonArrayFromText(readTextFile(file.parseFilePath || file.filePath)));
+          }
+          if (isVerifiedUnplayedTeamSlot(match, unplayedSlots)) continue;
+        }
         scannedMatches += 1;
-        const displayMatch = materializePlayerRecordMatch(match, translations);
+        const displayMatch = { ...materializePlayerRecordMatch(match, translations), _sourceRecord: match.record };
         if (excludeDoubles && isPlayerRecordDoublesMatch(displayMatch)) {
           continue;
         }
@@ -6938,7 +6947,11 @@ async function collectPlayerRecordEventsFromEventIndex(snapshot, needles, option
     }
   }
 
-  let events = [...eventsById.values()].sort(comparePlayerRecordEvents);
+  let events = reconcileVerifiedCareerSources([...eventsById.values()]).map(event => {
+    const matches = event.matches.map(({ _sourceRecord, ...match }) => match);
+    const matchGroups = buildPlayerRecordMatchGroups(matches);
+    return { ...event, matches: matchGroups.flatMap(group => group.matches), matchGroups };
+  }).sort(comparePlayerRecordEvents);
   let result = {
     events,
     parsedEvents: 0,
