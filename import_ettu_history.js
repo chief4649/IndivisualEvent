@@ -54,11 +54,32 @@ function atomicJson(filePath, data) {
 }
 
 function runNode(args, dataDir) {
-  const result = spawnSync(process.execPath, args, {
-    cwd: __dirname, env: { ...process.env, DATA_DIR: dataDir }, stdio: "inherit",
-  });
-  if (result.error) throw result.error;
-  if (result.status !== 0) throw new Error(`Derived-index process failed (${result.status})`);
+  fs.mkdirSync(dataDir, { recursive: true });
+  const logPath = path.join(dataDir, `ettu-derived-${process.pid}-${crypto.randomBytes(8).toString("hex")}.log`);
+  const logFd = fs.openSync(logPath, "a");
+  let result;
+  try {
+    result = spawnSync(process.execPath, args, {
+      cwd: __dirname, env: { ...process.env, DATA_DIR: dataDir }, stdio: ["ignore", logFd, logFd],
+    });
+  } finally {
+    fs.closeSync(logFd);
+  }
+  if (result.error || result.status !== 0) {
+    const tailFd = fs.openSync(logPath, "r");
+    let tail;
+    try {
+      const size = fs.fstatSync(tailFd).size;
+      const buffer = Buffer.alloc(Math.min(size, 8192));
+      const bytes = fs.readSync(tailFd, buffer, 0, buffer.length, Math.max(0, size - buffer.length));
+      tail = buffer.subarray(0, bytes).toString("utf8");
+    } finally {
+      fs.closeSync(tailFd);
+    }
+    const detail = tail ? `\nChild output (tail):\n${tail}` : "";
+    if (result.error) throw new Error(`Derived-index process failed: ${result.error.message}${detail}`, { cause: result.error });
+    throw new Error(`Derived-index process failed (${result.status})${detail}`);
+  }
 }
 
 async function waitForExistingIndexWorkers() {
@@ -282,4 +303,4 @@ async function main(argv = process.argv.slice(2)) {
 }
 
 if (require.main === module) main().catch((error) => { console.error(error.message); process.exitCode = 1; });
-module.exports = { fetchEttuHistoryResults, validatePayload, verifyDerivedRecords, main };
+module.exports = { fetchEttuHistoryResults, validatePayload, verifyDerivedRecords, runNode, main };

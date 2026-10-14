@@ -2,9 +2,10 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
+const os = require("node:os");
 const path = require("node:path");
 const vm = require("node:vm");
-const { validatePayload, fetchEttuHistoryResults } = require("../import_ettu_history");
+const { runNode, validatePayload, fetchEttuHistoryResults } = require("../import_ettu_history");
 const { getEttuHistoryEvent, getEttuHistoryMetadata } = require("../ettu_history_registry");
 
 test("European history uses explicit identities, never numeric/TTE coincidence", () => {
@@ -76,4 +77,45 @@ test("archive category counts remain available for source reconciliation", async
   assert.equal(result.sourceWarnings.length, 1);
   assert.equal(result.counts.categories.doubles.advertised, 0);
   assert.equal(result.matches[0].scoreDetailMissing, true);
+});
+
+test("derived child output is logged without replaying large success output, and the log fd closes", (t) => {
+  const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "ettu-run-node-"));
+  t.after(() => fs.rmSync(dataDir, { recursive: true, force: true }));
+  const opened = fs.openSync;
+  let logFd;
+  fs.openSync = function (...args) {
+    logFd = opened.apply(this, args);
+    return logFd;
+  };
+  t.after(() => { fs.openSync = opened; });
+  const originalWrite = process.stdout.write;
+  let terminalOutput = "";
+  process.stdout.write = function (chunk, ...args) {
+    terminalOutput += chunk.toString();
+    return true;
+  };
+  try {
+    runNode(["-e", "process.stdout.write('x'.repeat(1024 * 1024))"], dataDir);
+  } finally {
+    process.stdout.write = originalWrite;
+  }
+  assert.equal(terminalOutput, "");
+  assert.throws(() => fs.fstatSync(logFd), { code: "EBADF" });
+  const [logName] = fs.readdirSync(dataDir);
+  assert.match(logName, /^ettu-derived-.*\.log$/);
+  assert.equal(fs.statSync(path.join(dataDir, logName)).size, 1024 * 1024);
+});
+
+test("derived child failure includes its exit code and only a bounded output tail", (t) => {
+  const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "ettu-run-node-"));
+  t.after(() => fs.rmSync(dataDir, { recursive: true, force: true }));
+  assert.throws(() => runNode(["-e", "process.stderr.write('a'.repeat(20000) + 'FINAL-DETAIL'); process.exit(7)"], dataDir), (error) => {
+    assert.match(error.message, /failed \(7\)/);
+    assert.match(error.message, /FINAL-DETAIL/);
+    assert.ok(Buffer.byteLength(error.message) < 9000);
+    return true;
+  });
+  const [logName] = fs.readdirSync(dataDir);
+  assert.equal(fs.statSync(path.join(dataDir, logName)).size, 20012);
 });
