@@ -5,6 +5,13 @@ WORKDIR /app
 COPY package.json ./
 COPY extract_individual_matches.js ./
 COPY ettu_results.js ./
+COPY ettu_history_registry.js ./
+COPY ettu_webgen_results.js ./
+COPY ettu_archive_results.js ./
+COPY ettu_team_results.js ./
+COPY record_archive_identity.js ./
+COPY import_ettu_history.js ./
+COPY update_wtt_event_indexes.js ./
 COPY export_zennihon_archives.js ./
 COPY export_wtt_archive.js ./
 COPY crawl_wtt_archives.js ./

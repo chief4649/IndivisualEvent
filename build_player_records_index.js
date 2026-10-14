@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const { isRecordArchiveFilename } = require("./record_archive_identity");
 
 const {
   buildJaRoundContext,
@@ -118,7 +119,7 @@ function listWttRecordFiles() {
       return;
     }
     fs.readdirSync(dirPath)
-      .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+      .filter(isRecordArchiveFilename)
       .forEach((fileName) => {
         const eventId = fileName.replace(/\.json$/i, "");
         const filePath = path.join(rawDirPath, fileName);

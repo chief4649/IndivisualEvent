@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { isRecordArchiveFilename } = require("./record_archive_identity");
 
 const {
   normalizeOfficialResultItem,
@@ -122,6 +123,8 @@ function slimMatch(match) {
     recordUrl: match?.recordUrl,
     recordStartDate: match?.recordStartDate,
     recordEndDate: match?.recordEndDate,
+    recordYear: match?.recordYear,
+    recordTeamContext: match?.recordTeamContext,
   });
   result.teams = Array.isArray(match?.teams) ? match.teams.map(slimTeam) : [];
   result.singles = Array.isArray(match?.singles) ? match.singles.map(slimSingle) : [];
@@ -145,7 +148,7 @@ function listSourceFiles(args) {
   return [SOURCE_DIR, ITTF_SOURCE_DIR]
     .filter((dirPath, index, dirs) => dirPath && dirs.indexOf(dirPath) === index && fs.existsSync(dirPath))
     .flatMap((dirPath) => fs.readdirSync(dirPath)
-      .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+      .filter(isRecordArchiveFilename)
       .map((fileName) => path.join(dirPath, fileName)))
     .sort((left, right) => path.basename(left).localeCompare(path.basename(right), "en", { numeric: true }));
 }

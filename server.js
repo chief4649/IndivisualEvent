@@ -8,6 +8,7 @@ const path = require("path");
 const readline = require("readline");
 const { URL } = require("url");
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
+const { isRecordArchiveFilename, isRecordEventId } = require("./record_archive_identity");
 const { isPlayerRecordEventIndexForFile } = require("./player_record_event_index_utils");
 const {
   getCandidateIndexCoverageFallbackEventIds,
@@ -1397,6 +1398,9 @@ function getWttEventUrl(eventId, sourceHint = "", eventName = "") {
   if (!normalizedId) {
     return "";
   }
+  if (/^ETTU\d{4}[ITC](?:Q[12]C?)?$/i.test(normalizedId)) {
+    return applyWttEventMetadataOverride(normalizedId, {}).eventUrl || "";
+  }
   const para = getParaCalendar().events?.[normalizedId];
   if (para && para.endDate > new Date().toISOString().slice(0, 10) && !getStoredArchivedEventIds().has(normalizedId)) {
     return para.eventUrl;
@@ -1548,7 +1552,7 @@ function getStoredArchivedEventIds() {
   [...new Set(archiveDirs)].forEach((archiveDir) => {
     try {
       fs.readdirSync(archiveDir, { withFileTypes: true })
-        .filter((entry) => entry.isFile() && /^(?:TTE)?\d+\.json$/i.test(entry.name))
+        .filter((entry) => entry.isFile() && isRecordArchiveFilename(entry.name))
         .forEach((entry) => {
           const filePath = path.join(archiveDir, entry.name);
           try {
@@ -1619,7 +1623,7 @@ function getBackfill5000StoredEventIds() {
     return ids;
   }
   fs.readdirSync(WTT_ARCHIVE_DIR, { withFileTypes: true })
-    .filter((entry) => entry.isFile() && /^\d+\.json$/i.test(entry.name))
+    .filter((entry) => entry.isFile() && isRecordArchiveFilename(entry.name) && !/^TTE/i.test(entry.name))
     .forEach((entry) => ids.add(entry.name.replace(/\.json$/i, "")));
   return ids;
 }
@@ -2895,7 +2899,7 @@ function buildWttCrawlArgs(searchParams) {
   }
   if (parseBoolean(searchParams.get("paraOnly"))) args.push("--para-only");
   const eventIds = searchParams.get("event");
-  if (eventIds && /^(?:\d+|TTE\d+)(?:,(?:\d+|TTE\d+))*$/i.test(eventIds)) {
+  if (eventIds && eventIds.split(",").every(isRecordEventId)) {
     args.push("--event", eventIds);
   }
   if (parseBoolean(searchParams.get("includeActive"))) args.push("--include-active");
@@ -2939,7 +2943,7 @@ function handleAdminWttCrawlStart(request, response) {
   }
 
   const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
-  if (searchParams.has("event") && !/^(?:\d+|TTE\d+)(?:,(?:\d+|TTE\d+))*$/i.test(searchParams.get("event") || "")) {
+  if (searchParams.has("event") && !(searchParams.get("event") || "").split(",").every(isRecordEventId)) {
     sendJson(response, 400, { error: "Invalid event ID list" });
     return true;
   }
@@ -4555,7 +4559,7 @@ function getPathStatToken(filePath) {
 function getAvailableWttArchiveDir() {
   const hasJsonRecords = (dirPath) => {
     try {
-      return fs.existsSync(dirPath) && fs.readdirSync(dirPath).some((fileName) => /^\d+\.json$/.test(fileName));
+      return fs.existsSync(dirPath) && fs.readdirSync(dirPath).some(isRecordArchiveFilename);
     } catch {
       return false;
     }
@@ -4709,7 +4713,7 @@ function getWttRecordFileSnapshot() {
       }
 
       fs.readdirSync(dirPath)
-        .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+        .filter(isRecordArchiveFilename)
         .forEach((fileName) => {
           const source = getRecordSourceFromFilename(fileName);
           const eventId = fileName.replace(/\.json$/, "");
@@ -4755,7 +4759,7 @@ function getWttRecordFileSnapshot() {
       }
 
       fs.readdirSync(dirPath)
-        .filter((fileName) => /^(?:TTE)?\d+\.json$/i.test(fileName))
+        .filter(isRecordArchiveFilename)
         .forEach((fileName) => {
           const source = getRecordSourceFromFilename(fileName);
           const eventId = fileName.replace(/\.json$/, "");

@@ -2,6 +2,7 @@
 
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
 const { fetchEttuOfficialResults } = require("./ettu_results");
+const { getEttuHistoryEvent } = require("./ettu_history_registry");
 
 const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
@@ -3203,6 +3204,16 @@ function getWttPayloadFormat(payload) {
 
 function isWttPayloadSourceCompatible(payload, eventId, options = {}) {
   const eventIdText = String(eventId || "").trim();
+  if (/^ETTU/i.test(eventIdText)) {
+    const config = getEttuHistoryEvent(eventIdText);
+    return Boolean(config) && Array.isArray(payload) && payload.length > 0 && payload.every((match) => (
+      match?.eventId === config.eventId &&
+      ["webgen", "ettu-archive", "ettu"].includes(match?.recordSource) &&
+      (!config.startDate || (
+        match.recordStartDate === config.startDate && match.recordEndDate === config.endDate
+      ))
+    ));
+  }
   if (/^TTE\d+$/i.test(eventIdText)) {
     return true;
   }
@@ -4207,6 +4218,16 @@ async function getWttEventLifecycleMeta(eventId, options = {}) {
 }
 
 async function fetchWttOfficialResults(eventId, take, options = {}) {
+  if (/^ETTU/i.test(String(eventId))) {
+    const config = getEttuHistoryEvent(eventId);
+    if (!config) throw new Error(`Unverified ETTU event identity: ${eventId}`);
+    const { fetchEttuHistoryResults } = require("./import_ettu_history");
+    const result = await fetchEttuHistoryResults(config, options);
+    if (!isWttPayloadSourceCompatible(result.matches, eventId, options)) {
+      throw new Error(`ETTU history payload does not match event ${eventId}`);
+    }
+    return result.matches;
+  }
   if (/^TTE\d+$/i.test(String(eventId || "").trim())) {
     const bornanPayload = await fetchBornanOfficialResults(eventId);
     return Array.isArray(bornanPayload) ? bornanPayload : [];

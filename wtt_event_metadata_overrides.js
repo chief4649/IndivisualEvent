@@ -1,5 +1,7 @@
 "use strict";
 
+const { getEttuHistoryMetadata } = require("./ettu_history_registry");
+
 // Official calendar corrections that must take precedence over stale runtime
 // copies of the generated WTT date and search indexes.
 const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
@@ -57,7 +59,7 @@ const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
 });
 
 function applyWttEventMetadataOverride(eventId, entry = {}) {
-  const override = WTT_EVENT_METADATA_OVERRIDES[String(eventId || "").trim()];
+  const override = WTT_EVENT_METADATA_OVERRIDES[String(eventId || "").trim()] || getEttuHistoryMetadata(eventId);
   const resolved = override ? { ...(entry || {}), ...override } : { ...(entry || {}) };
   const eventName = String(resolved.eventName || "").trim();
   if (eventName) resolved.title = eventName;

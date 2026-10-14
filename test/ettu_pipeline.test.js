@@ -32,7 +32,7 @@ test("managed crawl forwards explicit events and active-event option", () => {
   const start = source.indexOf("function buildWttCrawlArgs(");
   const end = source.indexOf("\nfunction handleAdminWttCrawlStatus", start);
   assert.ok(start > 0 && end > start);
-  const context = { process: { env: {} }, getDefaultNightlyCrawlRange: () => ({ from: "2026-08", to: "2026-11" }), parseBoolean: (s) => s === "1" };
+  const context = { process: { env: {} }, isRecordEventId: require("../record_archive_identity").isRecordEventId, getDefaultNightlyCrawlRange: () => ({ from: "2026-08", to: "2026-11" }), parseBoolean: (s) => s === "1" };
   vm.createContext(context);
   vm.runInContext(source.slice(start, end), context);
   const args = Array.from(context.buildWttCrawlArgs(new URLSearchParams("event=5440&includeActive=1&keepRaw=1&force=1")));
