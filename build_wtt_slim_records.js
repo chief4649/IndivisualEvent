@@ -85,6 +85,10 @@ function slimSingle(single) {
   return cleanObject({
     order: single?.order,
     documentCode: single?.documentCode,
+    subEventType: single?.subEventType,
+    categoryName: single?.categoryName,
+    discipline: single?.discipline,
+    gender: single?.gender,
     description: single?.description,
     overallScore: single?.overallScore,
     resultStatus: single?.resultStatus,

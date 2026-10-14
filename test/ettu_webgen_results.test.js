@@ -2,6 +2,10 @@
 
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
+const { execFileSync } = require("node:child_process");
 const { fetchEttuWebgenResults } = require("../ettu_webgen_results");
 
 const config = {
@@ -122,7 +126,7 @@ test("preserves injury retirements and source-verified missing-player walkovers 
   const missingLeft = `<tr class="individual collapse" data-webgen-match="42"><td class="name"><div class="left"><br></div><div class="right winner"><div class="player"><span class="plnr">15</span><span class="name">Winner</span><span class="assoc">GER</span></div></div><td class="result"><div class="left">0</div><div class="right">3</div></td><td class="game"><div class="left">0</div><div class="right winner">11</div></td><td class="game"><div class="left">0</div><div class="right winner">11</div></td><td class="game"><div class="left">0</div><div class="right winner">11</div></td></tr>`;
   const unplayedZero = '<tr class="individual collapse" data-webgen-match="42"><td class="name"><div class="left"><br></div><div class="right"><br></div><td class="result"><div class="left">0</div><div class="right">0</div></td><td class="game empty"><br></td></tr>';
   const teamHtml = teamPage({ parentScore: "0-3", children: [rightWinner("1", "4"), rightWinner("2", "5"), missingLeft, unplayedZero] });
-  const result = await fetchEttuWebgenResults(config, { fetchImpl: htmlFetch(pages('<a href="2023-09-10.html">Date</a>', teamHtml)) });
+  const result = await fetchEttuWebgenResults({ ...config, eventId: "ETTU2023T" }, { fetchImpl: htmlFetch(pages('<a href="2023-09-10.html">Date</a>', teamHtml)) });
   const team = result.matches[0];
   assert.equal(team.singles.length, 3);
   assert.deepEqual(team.singles[2].competitors.map((competitor) => competitor?.name || null), [null, "Winner"]);
@@ -140,6 +144,36 @@ test("preserves injury retirements and source-verified missing-player walkovers 
     assert.equal(normalized.singles[2].categoryName, "Men Singles");
     assert.equal(normalized.singles[2].participantDetailMissing, true);
     assert.equal(normalized.singles[2].overallScore, "0-3");
+  }
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "webgen-slim-singles-"));
+  try {
+    const rawDir = path.join(dir, "wtt-records");
+    const slimDir = path.join(dir, "wtt-records-slim");
+    fs.mkdirSync(rawDir);
+    fs.writeFileSync(path.join(rawDir, "ETTU2023T.json"), JSON.stringify([team]));
+    execFileSync(process.execPath, [path.join(__dirname, "../build_wtt_slim_records.js")], {
+      env: { ...process.env, WTT_RECORDS_DIR: rawDir, ITTF_RECORDS_DIR: path.join(dir, "ittf"),
+        WTT_SLIM_RECORDS_DIR: slimDir, ITTF_SLIM_RECORDS_DIR: path.join(dir, "ittf-slim") },
+      stdio: "pipe",
+    });
+    const [slim] = JSON.parse(fs.readFileSync(path.join(slimDir, "ETTU2023T.json")));
+    const normalized = normalizePreNormalizedMatch(slim);
+    const child = normalized.singles[2];
+    assert.equal(child.discipline, "singles");
+    assert.equal(child.categoryName, "Men Singles");
+    assert.equal(child.participantDetailMissing, true);
+    assert.deepEqual(child.competitors.map((side) => side?.name || ""), ["", "Winner"]);
+    assert.equal(child.overallScore, "0-3");
+    assert.deepEqual(child.gameScores, ["0-11", "0-11", "0-11"]);
+    execFileSync(process.execPath, ["-r", "./runtime_legacy_ittf_patch.js", "server.js",
+      "--build-player-record-event-index", "--event", "ETTU2023T", "--force"], {
+      cwd: path.join(__dirname, ".."), env: { ...process.env, DATA_DIR: dir, SKIP_RUNTIME_ARCHIVE_SYNC: "1" },
+      stdio: "pipe",
+    });
+    const { verifyDerivedRecords } = require("../import_ettu_history");
+    assert.equal(verifyDerivedRecords(dir, "ETTU2023T", [team]).verifiedMatchCount, 3);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
   }
   assert.equal(result.counts.skippedUnplayedChildren, 1);
 });
