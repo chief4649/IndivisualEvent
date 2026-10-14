@@ -4,6 +4,7 @@ WORKDIR /app
 
 COPY package.json ./
 COPY extract_individual_matches.js ./
+COPY ettu_results.js ./
 COPY export_zennihon_archives.js ./
 COPY export_wtt_archive.js ./
 COPY crawl_wtt_archives.js ./

@@ -2894,6 +2894,11 @@ function buildWttCrawlArgs(searchParams) {
     args.push("--newest-first");
   }
   if (parseBoolean(searchParams.get("paraOnly"))) args.push("--para-only");
+  const eventIds = searchParams.get("event");
+  if (eventIds && /^(?:\d+|TTE\d+)(?:,(?:\d+|TTE\d+))*$/i.test(eventIds)) {
+    args.push("--event", eventIds);
+  }
+  if (parseBoolean(searchParams.get("includeActive"))) args.push("--include-active");
   return args;
 }
 
@@ -2934,6 +2939,10 @@ function handleAdminWttCrawlStart(request, response) {
   }
 
   const searchParams = new URL(request.url || "/", `http://${request.headers.host || `${HOST}:${PORT}`}`).searchParams;
+  if (searchParams.has("event") && !/^(?:\d+|TTE\d+)(?:,(?:\d+|TTE\d+))*$/i.test(searchParams.get("event") || "")) {
+    sendJson(response, 400, { error: "Invalid event ID list" });
+    return true;
+  }
   const args = buildWttCrawlArgs(searchParams);
   const startedAt = new Date().toISOString();
   writeWttCrawlStatus({
@@ -5787,6 +5796,9 @@ function formatCompetitorForRecord(competitor, translations) {
 }
 
 function getWinnerIndexFromOverallScore(score) {
+  const walkover = String(score || "").trim().toUpperCase();
+  if (walkover === "W-L") return 0;
+  if (walkover === "L-W") return 1;
   const [leftRaw, rightRaw] = String(score || "").split("-");
   const left = Number(leftRaw);
   const right = Number(String(rightRaw || "").match(/\d+/)?.[0]);

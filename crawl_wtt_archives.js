@@ -452,6 +452,8 @@ function buildCandidates(args) {
         source: entry.source || "wtt",
         startDate,
         endDate,
+        activeOfficialResults: entry.resultSource === "ettu" &&
+          startDate <= new Date().toISOString().slice(0, 10) && !isFinished(entry),
         archived: archiveCount > 0,
         archiveCount,
         archiveStats,
@@ -486,10 +488,10 @@ function buildCandidates(args) {
       if (args.auditSuspicious) {
         return candidate.finished && candidate.auditSuspicious;
       }
-      if (!hasExplicitEvents && !args.includeActive && !candidate.finished) {
+      if (!hasExplicitEvents && !args.includeActive && !candidate.finished && !candidate.activeOfficialResults) {
         return false;
       }
-      if (!args.force && candidate.archived && !candidate.suspiciousArchive && !candidate.partialArchive) {
+      if (!args.force && candidate.archived && !candidate.suspiciousArchive && !candidate.partialArchive && !candidate.activeOfficialResults) {
         return false;
       }
       if (!hasExplicitEvents && !args.force && candidate.crawlSkipped) {
@@ -604,7 +606,8 @@ function buildDerivedArchiveFiles(eventId, args) {
 
   let rawDeleted = false;
   const isParaCalendarEvent = Boolean(readJson(WTT_DATE_INDEX_PATH)[eventId]?.calendarSource);
-  if (!args.keepRaw && !isParaCalendarEvent && rawExists) {
+  const isEttuEvent = applyWttEventMetadataOverride(eventId).resultSource === "ettu";
+  if (!args.keepRaw && !isParaCalendarEvent && !isEttuEvent && rawExists) {
     fs.rmSync(rawPath, { force: true });
     rawDeleted = !fs.existsSync(rawPath);
   }
@@ -663,13 +666,13 @@ function assertParaEventIdentity(candidate, meta) {
 }
 
 async function archiveEvent(candidate, args) {
-  const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive || candidate.auditSuspicious);
+  const shouldRefresh = Boolean(args.force || candidate.suspiciousArchive || candidate.auditSuspicious || candidate.activeOfficialResults || candidate.partialArchive);
   const meta = applyWttEventMetadataOverride(candidate.eventId, await getWttEventLifecycleMeta(candidate.eventId, {
     wttArchiveDir: WTT_ARCHIVE_DIR,
     wttArchiveIndexPath: WTT_ARCHIVE_INDEX_PATH,
   }));
 
-  if (!args.includeActive && !isFinished(meta)) {
+  if (!args.includeActive && !candidate.activeOfficialResults && !isFinished(meta)) {
     return { eventId: candidate.eventId, status: "skipped", reason: "not_finished" };
   }
   if (candidate.calendarSource) {
@@ -749,7 +752,7 @@ async function archiveEvent(candidate, args) {
     crawlSkipReason: null,
     crawlSkippedAt: null,
     archivedAt: new Date().toISOString(),
-    forced: Boolean(args.includeActive && !meta.isFinished),
+    forced: Boolean((args.includeActive || candidate.activeOfficialResults) && !meta.isFinished),
   });
 
   return { eventId: candidate.eventId, status: "archived", matches: result.normalized.length };

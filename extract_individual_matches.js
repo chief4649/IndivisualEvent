@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_overrides");
+const { fetchEttuOfficialResults } = require("./ettu_results");
 
 const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
@@ -3205,6 +3206,12 @@ function isWttPayloadSourceCompatible(payload, eventId, options = {}) {
     return true;
   }
   const seed = getWttResolutionSeedMeta(eventIdText, options);
+  if (seed.resultSource === "ettu") {
+    return Array.isArray(payload) && payload.length > 0 && payload.every((match) => (
+      match?.eventId === eventIdText && match?.recordSource === "ettu" &&
+      match?.recordEventId === "167" && Boolean(getMatchDateStamp(match))
+    ));
+  }
   if (seed.resultSource === "south-american-games-2026") {
     return Array.isArray(payload) && payload.length > 0 && payload.every((match) => (
       match?.recordSource === seed.resultSource &&
@@ -4205,6 +4212,13 @@ async function fetchWttOfficialResults(eventId, take, options = {}) {
   }
 
   const seed = getWttResolutionSeedMeta(eventId, options);
+  if (seed.resultSource === "ettu") {
+    const payload = await fetchEttuOfficialResults(String(eventId), options);
+    if (!isWttPayloadDateCompatible(payload, eventId, options) || !isWttPayloadSourceCompatible(payload, eventId, options)) {
+      throw new Error(`ETTU result payload does not match event ${eventId}`);
+    }
+    return payload;
+  }
   if (seed.resultSource === "south-american-games-2026") {
     const payload = await fetchAsianGames2026OfficialResults(eventId, {
       champ: "JSUD2026",

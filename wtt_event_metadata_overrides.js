@@ -3,6 +3,15 @@
 // Official calendar corrections that must take precedence over stale runtime
 // copies of the generated WTT date and search indexes.
 const WTT_EVENT_METADATA_OVERRIDES = Object.freeze({
+  "5440": Object.freeze({
+    eventName: "ETTU European Individual Championships Ljubljana 2026",
+    startDate: "2026-10-11",
+    endDate: "2026-10-18",
+    dateLabel: "2026/10/11-18",
+    eventUrl: "https://www.ettu.tv/events/167/4/1/5/5",
+    resultSource: "ettu",
+    source: "wtt",
+  }),
   "TTE5449": Object.freeze({
     eventName: "2022 SOUTH AMERICAN GAMES - ODESUR",
     startDate: "2022-10-09",
