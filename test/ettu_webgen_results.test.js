@@ -129,6 +129,18 @@ test("preserves injury retirements and source-verified missing-player walkovers 
   assert.equal(team.singles[2].overallScore, "0-3");
   assert.equal(team.singles[2].resultStatus, "WO");
   assert.deepEqual(team.singles[2].gameScores, ["0-11", "0-11", "0-11"]);
+  assert.equal(team.singles[2].participantDetailMissing, true);
+  assert.deepEqual(result.sourceWarnings.map((warning) => warning.documentCode), [team.singles[2].documentCode]);
+  const { normalizePreNormalizedMatch } = require("../extract_individual_matches");
+  for (const missing of [null, { players: [] }]) {
+    const archive = structuredClone(team);
+    archive.singles[2].competitors[0] = missing;
+    const normalized = normalizePreNormalizedMatch(archive);
+    assert.deepEqual(normalized.singles[2].competitors, archive.singles[2].competitors);
+    assert.equal(normalized.singles[2].categoryName, "Men Singles");
+    assert.equal(normalized.singles[2].participantDetailMissing, true);
+    assert.equal(normalized.singles[2].overallScore, "0-3");
+  }
   assert.equal(result.counts.skippedUnplayedChildren, 1);
 });
 

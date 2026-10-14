@@ -1728,6 +1728,9 @@ function hydrateTeamMatchDoublesFromSingles(match) {
   }
 
   const third = match.singles[thirdIndex];
+  if (normalizeDiscipline(third?.discipline || third?.categoryName || third?.subEventType) === "singles") {
+    return match;
+  }
   const competitors = Array.isArray(third?.competitors) ? third.competitors : [];
   const shouldHydrateThirdMatch = competitors.length >= 2 && competitors.some((competitor, index) => {
     const namedPlayers = Array.isArray(competitor?.players)

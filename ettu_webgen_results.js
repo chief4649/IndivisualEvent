@@ -253,6 +253,7 @@ function parseDatePage(html, date, config, eventNames, recordUrl, counts) {
           description: `${sides.left?.name || ""} vs ${sides.right?.name || ""}`.trim(),
           overallScore: score.overallScore, resultStatus: score.resultStatus,
           gameScores: score.gameScores, partialPoints: score.partialPoints, competitors: [sides.left, sides.right],
+          ...((!sides.left || !sides.right) ? { participantDetailMissing: true } : {}),
           categoryName: /\bmen\b/i.test(parent.category) ? "Men Singles" : "Women Singles",
           subEventType: /\bmen\b/i.test(parent.category) ? "Men Singles" : "Women Singles",
           matchNumber: childOrdinal + 1,
@@ -278,6 +279,7 @@ function parseDatePage(html, date, config, eventNames, recordUrl, counts) {
       base.gameScores = team ? [] : score.gameScores;
       base.partialPoints = score.partialPoints;
       base.competitors = team ? [] : [sides.left, sides.right];
+      if (!team && (!sides.left || !sides.right)) base.participantDetailMissing = true;
       base.teams = team ? [sides.left, sides.right] : [];
       base.singles = [];
       base.matchType = team ? "team" : "individual";
@@ -374,7 +376,11 @@ async function fetchEttuWebgenResults(config, options = {}) {
   }
   counts.individual = matches.filter((match) => match.matchType === "individual").length;
   counts.teams = matches.filter((match) => match.matchType === "team").length;
-  return { matches, rawPages, counts };
+  const sourceWarnings = matches.flatMap((match) => match.matchType === "team" ? match.singles : [match])
+    .filter((match) => match.participantDetailMissing === true)
+    .map((match) => ({ eventId: config.eventId, documentCode: match.documentCode,
+      rowUrl: match.recordUrl, missingFields: ["participantNames"] }));
+  return { matches, rawPages, counts, sourceWarnings };
 }
 
 module.exports = { fetchEttuWebgenResults };
