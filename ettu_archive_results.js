@@ -1,4 +1,5 @@
 "use strict";
+const { resolveKnockoutOutcomes } = require("./record_knockout_outcome");
 
 const BASE_URL = "https://results.ettu.site/index.php";
 const LISTS = {
@@ -412,12 +413,56 @@ function parseTeamContext(row, config) {
 
 async function fetchHtml(url, options) {
   const timeoutMs = Number.isFinite(options.timeoutMs) ? options.timeoutMs : 20000;
-  const response = await (options.fetchImpl || fetch)(url, {
-    headers: { accept: "text/html,application/xhtml+xml", "user-agent": "Mozilla/5.0 (compatible; ETTUArchiveResults/1.0)" },
-    signal: AbortSignal.timeout(timeoutMs),
-  });
-  assert(response?.ok, `HTTP ${response?.status} for ${new URL(url).pathname}`);
-  const html = await response.text();
+  const maxRetries = 3;
+  const retryDelayMs = Number.isFinite(options.retryDelayMs) && options.retryDelayMs >= 0 ? options.retryDelayMs : 1000;
+  const request = options.fetchImpl || fetch;
+  const retryableCode = (error) => {
+    for (let current = error; current; current = current.cause) {
+      const code = String(current.code || "").toUpperCase();
+      if (["ECONNRESET", "ETIMEDOUT", "ESOCKETTIMEDOUT", "UND_ERR_CONNECT_TIMEOUT", "UND_ERR_SOCKET", "ERR_SOCKET_CONNECTION_TIMEOUT"].includes(code)) return code;
+      if (/timeout/i.test(String(current.name || ""))) return "TIMEOUT";
+      if (/\bECONNRESET\b/i.test(String(current.message || ""))) return "ECONNRESET";
+      if (/\b(?:timed? ?out|timeout)\b/i.test(String(current.message || ""))) return "TIMEOUT";
+    }
+    return null;
+  };
+  const fail = (code, message = "") => new Error(`ETTU archive: request failed for ${url} (${code})${message ? `: ${message}` : ""}`);
+  const waitBeforeRetry = async (retryIndex) => {
+    const delay = retryDelayMs * (2 ** retryIndex);
+    if (delay > 0) await new Promise((resolve) => setTimeout(resolve, delay));
+  };
+  let html;
+  for (let retryIndex = 0; retryIndex <= maxRetries; retryIndex += 1) {
+    let response;
+    try {
+      response = await request(url, {
+        headers: { accept: "text/html,application/xhtml+xml", "user-agent": "Mozilla/5.0 (compatible; ETTUArchiveResults/1.0)" },
+        signal: AbortSignal.timeout(timeoutMs),
+      });
+    } catch (error) {
+      const code = retryableCode(error);
+      if (!code || retryIndex === maxRetries) throw fail(code || error.cause?.code || error.code || error.name || "FETCH_ERROR", error.message);
+      await waitBeforeRetry(retryIndex);
+      continue;
+    }
+    if (response?.status === 429 || (response?.status >= 500 && response?.status <= 599)) {
+      const code = `HTTP_${response.status}`;
+      try { await response.body?.cancel?.(); } catch {}
+      if (retryIndex === maxRetries) throw fail(code, `HTTP ${response.status}`);
+      await waitBeforeRetry(retryIndex);
+      continue;
+    }
+    if (!response?.ok) throw fail(`HTTP_${response?.status ?? "UNKNOWN"}`, `HTTP ${response?.status ?? "unknown"}`);
+    try {
+      html = await response.text();
+    } catch (error) {
+      const code = retryableCode(error);
+      if (!code || retryIndex === maxRetries) throw fail(code || error.cause?.code || error.code || error.name || "RESPONSE_READ_ERROR", error.message);
+      await waitBeforeRetry(retryIndex);
+      continue;
+    }
+    break;
+  }
   assert(/<html\b/i.test(html), `non-HTML response for ${new URL(url).pathname}`);
   if (typeof options.onPage === "function") await options.onPage({ url: String(url), html });
   return html;
@@ -566,13 +611,14 @@ async function fetchEttuArchiveResults(inputConfig, options = {}) {
       }
     }
   }
-  Object.defineProperties(records, {
+  const resolvedRecords = resolveKnockoutOutcomes(records);
+  Object.defineProperties(resolvedRecords, {
     errors: { value: errors, enumerable: true },
     unplayed: { value: unplayed, enumerable: true },
     warnings: { value: warnings, enumerable: true },
     counts: { value: { advertised: rows.advertisedTotal, parsed: records.length, unplayed: unplayed.length, rejected: errors.length, warnings: warnings.length, detailRowsObserved }, enumerable: true },
   });
-  return records;
+  return resolvedRecords;
 }
 
 async function fetchEttuArchiveEvents(configs, options = {}) {

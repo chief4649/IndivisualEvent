@@ -4,6 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { isRecordArchiveFilename, normalizeRecordEventId } = require("./record_archive_identity");
+const { resolveKnockoutOutcomes } = require("./record_knockout_outcome");
 
 const {
   buildJaRoundContext,
@@ -261,7 +262,12 @@ function formatGameScoresForRecord(match, leftCompetitorIndex) {
 }
 
 function buildPlayerRecordLine(match, playerCompetitorIndex, translations) {
-  const winnerIndex = match.resultOutcomeMissing === true ? null : getWinnerIndexFromOverallScore(match.overallScore);
+  const winnerIndex = match.resultOutcomeMissing === true && (match.recordWinnerIndex === 0 || match.recordWinnerIndex === 1)
+    && match.recordWinnerEvidence?.method === "knockout-next-round"
+    && match.recordWinnerEvidence.sourceDocumentCode === match.documentCode
+    && match.recordWinnerEvidence.nextDocumentCode && match.recordWinnerEvidence.nextDocumentCode !== match.documentCode
+    ? match.recordWinnerIndex
+    : match.resultOutcomeMissing === true ? null : getWinnerIndexFromOverallScore(match.overallScore);
   const leftIndex = winnerIndex === playerCompetitorIndex ? playerCompetitorIndex : winnerIndex === null ? playerCompetitorIndex : winnerIndex;
   const rightIndex = leftIndex === 0 ? 1 : 0;
   const left = formatCompetitorForRecord(match.competitors?.[leftIndex], translations, match);
@@ -577,11 +583,8 @@ function buildEventIndex(files, deps) {
       return;
     }
     const eventMeta = getEventRecordMeta(eventId, deps.searchIndex, deps.dateIndex, deps.archiveIndex, deps.eventNames);
-    payload.forEach((item) => {
-      const match = normalizeArchivedMatch(item);
-      if (!match) {
-        return;
-      }
+    const normalizedPayload = resolveKnockoutOutcomes(payload.map(normalizeArchivedMatch).filter(Boolean));
+    normalizedPayload.forEach((match) => {
       if (match.matchType === "individual") {
         indexedMatches += addMatchToIndex(index, { eventId, filePath }, eventMeta, match, deps.translations, deps.rules);
         return;

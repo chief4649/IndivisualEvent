@@ -4,6 +4,7 @@ const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_override
 const { fetchEttuOfficialResults } = require("./ettu_results");
 const { getEttuHistoryEvent } = require("./ettu_history_registry");
 const { normalizeRecordEventId } = require("./record_archive_identity");
+const { resolveKnockoutOutcomes } = require("./record_knockout_outcome");
 
 const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
@@ -4762,6 +4763,12 @@ function getInferredOverallScore(match) {
 }
 
 function getWinnerIndexForMatch(match) {
+  if (match?.resultOutcomeMissing === true && (match.recordWinnerIndex === 0 || match.recordWinnerIndex === 1) &&
+    match.recordWinnerEvidence?.method === "knockout-next-round" &&
+    match.recordWinnerEvidence.sourceDocumentCode === match.documentCode &&
+    match.recordWinnerEvidence.nextDocumentCode && match.recordWinnerEvidence.nextDocumentCode !== match.documentCode) {
+    return match.recordWinnerIndex;
+  }
   if (match?.resultOutcomeMissing === true) {
     return null;
   }
@@ -6349,11 +6356,12 @@ async function getProcessedMatches(options = {}) {
   const normalized = args.source === "zennihon"
     ? payload.filter(Boolean)
     : payload.map((item) => (isPreNormalizedMatch(item) ? normalizePreNormalizedMatch(item) : normalizeOfficialResultItem(item))).filter(Boolean);
+  const resolvedNormalized = resolveKnockoutOutcomes(normalized);
   const translations = readTranslations(args.translations);
-  const filtered = applyFilters(normalized, args, translations);
+  const filtered = applyFilters(resolvedNormalized, args, translations);
   const rules = readRules(args.rules);
   const jaRoundContext = buildJaRoundContext(
-    normalized.filter((match) => {
+    resolvedNormalized.filter((match) => {
       if (normalizedCategory?.isExactCategory && normalizedCategory.categoryName) {
         return match.categoryName === normalizedCategory.categoryName;
       }
@@ -6370,7 +6378,7 @@ async function getProcessedMatches(options = {}) {
   return {
     args,
     payload,
-    normalized,
+    normalized: resolvedNormalized,
     filtered,
     translations,
     rules,

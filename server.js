@@ -11,6 +11,7 @@ const { applyWttEventMetadataOverride } = require("./wtt_event_metadata_override
 const { isRecordArchiveFilename, isRecordEventId, normalizeRecordEventId } = require("./record_archive_identity");
 const { getEttuHistoryImportPid } = require("./archive_maintenance");
 const { getEttuHistoryMetadata } = require("./ettu_history_registry");
+const { resolveKnockoutOutcomes } = require("./record_knockout_outcome");
 const { isPlayerRecordEventIndexForFile } = require("./player_record_event_index_utils");
 const {
   getCandidateIndexCoverageFallbackEventIds,
@@ -5871,6 +5872,12 @@ function getWinnerIndexFromGameScores(gameScores) {
 }
 
 function getWinnerIndexForRecord(match) {
+  if (match?.resultOutcomeMissing === true && (match.recordWinnerIndex === 0 || match.recordWinnerIndex === 1) &&
+    match.recordWinnerEvidence?.method === "knockout-next-round" &&
+    match.recordWinnerEvidence.sourceDocumentCode === match.documentCode &&
+    match.recordWinnerEvidence.nextDocumentCode && match.recordWinnerEvidence.nextDocumentCode !== match.documentCode) {
+    return match.recordWinnerIndex;
+  }
   if (match?.resultOutcomeMissing === true) {
     return null;
   }
@@ -6080,7 +6087,7 @@ function getFileHashToken(filePath) {
 
 function getParsedPlayerRecordArchive(file, existingText = null) {
   if (Array.isArray(file?.liveNormalizedMatches)) {
-    const normalizedMatches = file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean);
+    const normalizedMatches = resolveKnockoutOutcomes(file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean));
     return {
       normalizedMatches,
       contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
@@ -6105,10 +6112,11 @@ function getParsedPlayerRecordArchive(file, existingText = null) {
       normalizedMatches.push(match);
     }
   }
+  const resolvedMatches = resolveKnockoutOutcomes(normalizedMatches);
   const parsedArchive = {
-    normalizedMatches,
-    contextsByCategory: buildRoundContextsByCategory(normalizedMatches),
-    fallbackRoundContext: buildJaRoundContext(normalizedMatches),
+    normalizedMatches: resolvedMatches,
+    contextsByCategory: buildRoundContextsByCategory(resolvedMatches),
+    fallbackRoundContext: buildJaRoundContext(resolvedMatches),
   };
   setPlayerRecordArchiveParseCacheValue(cacheKey, parsedArchive);
   return parsedArchive;
@@ -6515,6 +6523,8 @@ function buildPlayerRecordMatchRecord(match, playerCompetitorIndex) {
     ...(match.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
     ...(match.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
     ...(match.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+    ...(Number.isInteger(match.recordWinnerIndex) ? { recordWinnerIndex: match.recordWinnerIndex } : {}),
+    ...(match.recordWinnerEvidence ? { recordWinnerEvidence: match.recordWinnerEvidence } : {}),
     gameScores: Array.isArray(match.gameScores) ? match.gameScores : [],
   };
 }
@@ -6676,7 +6686,7 @@ function buildPlayerRecordEventIndexForFile(file, deps = null) {
       parseStat = { size: rawStat.size, mtimeMs: Math.trunc(rawStat.mtimeMs) };
     }
   }
-  const normalizedMatches = payload.map(normalizeArchivedMatch).filter(Boolean);
+  const normalizedMatches = resolveKnockoutOutcomes(payload.map(normalizeArchivedMatch).filter(Boolean));
   const contextsByCategory = buildRoundContextsByCategory(normalizedMatches);
   const fallbackRoundContext = buildJaRoundContext(normalizedMatches);
   const eventMeta = getEventRecordMeta(file.eventId, activeDeps.searchIndex, activeDeps.dateIndex, activeDeps.archiveIndex, activeDeps.eventNames);
@@ -6759,6 +6769,8 @@ function buildPlayerRecordLineFromRecord(record, translations) {
     ...(record.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
     ...(record.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
     ...(record.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+    ...(Number.isInteger(record.recordWinnerIndex) ? { recordWinnerIndex: record.recordWinnerIndex } : {}),
+    ...(record.recordWinnerEvidence ? { recordWinnerEvidence: record.recordWinnerEvidence } : {}),
   };
   const left = formatCompetitorForRecord(record.left, translations, matchForScore);
   const right = formatCompetitorForRecord(record.right, translations, matchForScore);
@@ -8993,6 +9005,8 @@ function buildHeadToHeadPairMatchPayload(match, parentMatch = null) {
     ...(match?.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
     ...(match?.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
     ...(match?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+    ...(Number.isInteger(match?.recordWinnerIndex) ? { recordWinnerIndex: match.recordWinnerIndex } : {}),
+    ...(match?.recordWinnerEvidence ? { recordWinnerEvidence: match.recordWinnerEvidence } : {}),
     gameScores: Array.isArray(match?.gameScores) ? match.gameScores : [],
     parent: parentMatch ? {
       categoryName: parentMatch.categoryName || "",
@@ -9102,7 +9116,7 @@ function archiveItemMightContainPlayerNeedles(item, needles) {
 
 function getParsedHeadToHeadArchive(file, playerANeedles, playerBNeedles, eventMeta = null) {
   if (Array.isArray(file?.liveNormalizedMatches)) {
-    const allNormalizedMatches = file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean);
+    const allNormalizedMatches = resolveKnockoutOutcomes(file.liveNormalizedMatches.map(normalizeArchivedMatch).filter(Boolean));
     const eventMatches = filterPlayerRecordMatchesForEvent(allNormalizedMatches, file, eventMeta);
     const normalizedMatches = eventMatches.filter((item) =>
         archiveItemMightContainPlayerNeedles(item, playerANeedles) &&
@@ -9772,6 +9786,8 @@ function collectHeadToHeadMatchesFromPairIndex(index, playerANeedles, playerBNee
         ...(payload.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
         ...(payload.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
         ...(payload.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+        ...(Number.isInteger(payload.recordWinnerIndex) ? { recordWinnerIndex: payload.recordWinnerIndex } : {}),
+        ...(payload.recordWinnerEvidence ? { recordWinnerEvidence: payload.recordWinnerEvidence } : {}),
         gameScores: Array.isArray(payload.gameScores) ? payload.gameScores : [],
       };
       const parent = payload.parent ? {

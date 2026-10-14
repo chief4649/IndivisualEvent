@@ -110,6 +110,74 @@ test("fails closed on year mismatch, incomplete pagination, duplicate IDs, and i
   assert.deepEqual(parseRows("<tr id='list_14_com_fabrik_14_row_1'></tr>", 14, []), [{ id: "1", cells: {}, detailHref: null }]);
 });
 
+test("retries only transient fetch and response-body transport failures", async () => {
+  let calls = 0;
+  const records = await fetchEttuArchiveResults(config, {
+    retryDelayMs: 0,
+    fetchImpl: async () => {
+      calls += 1;
+      if (calls === 1) throw Object.assign(new Error("socket reset"), { code: "ECONNRESET" });
+      if (calls === 2) return { ok: true, status: 200, text: async () => { throw Object.assign(new Error("read timed out"), { code: "ETIMEDOUT" }); } };
+      return response(page(individualRow(), 1));
+    },
+  });
+  assert.equal(calls, 3);
+  assert.equal(records.length, 1);
+});
+
+test("retries HTTP 429 and 5xx, but reports the exact URL and cause code when exhausted", async () => {
+  let calls = 0;
+  const records = await fetchEttuArchiveResults(config, {
+    retryDelayMs: 0,
+    fetchImpl: async () => {
+      calls += 1;
+      if (calls === 1) return { ok: false, status: 429, text: async () => "" };
+      if (calls === 2) return { ok: false, status: 503, text: async () => "" };
+      return response(page(individualRow(), 1));
+    },
+  });
+  assert.equal(calls, 3);
+  assert.equal(records.length, 1);
+
+  calls = 0;
+  await assert.rejects(fetchEttuArchiveResults(config, {
+    retryDelayMs: 0,
+    fetchImpl: async () => {
+      calls += 1;
+      throw Object.assign(new Error("connection reset"), { code: "ECONNRESET" });
+    },
+  }), (error) => {
+    assert.match(error.message, /https:\/\/results\.ettu\.site\/index\.php\?/);
+    assert.match(error.message, /ECONNRESET/);
+    return true;
+  });
+  assert.equal(calls, 4);
+});
+
+test("does not retry nonretryable HTTP, HTML validation, or onPage callback failures", async () => {
+  let calls = 0;
+  await assert.rejects(fetchEttuArchiveResults(config, {
+    retryDelayMs: 0,
+    fetchImpl: async () => { calls += 1; return { ok: false, status: 404, text: async () => "" }; },
+  }), /HTTP_404/);
+  assert.equal(calls, 1);
+
+  calls = 0;
+  await assert.rejects(fetchEttuArchiveResults(config, {
+    retryDelayMs: 0,
+    fetchImpl: async () => { calls += 1; return response("not html"); },
+  }), /non-HTML response/);
+  assert.equal(calls, 1);
+
+  calls = 0;
+  await assert.rejects(fetchEttuArchiveResults(config, {
+    retryDelayMs: 0,
+    fetchImpl: async () => { calls += 1; return response(page(individualRow(), 1)); },
+    onPage: async () => { throw Object.assign(new Error("callback failed"), { code: "ECONNRESET" }); },
+  }), /callback failed/);
+  assert.equal(calls, 1);
+});
+
 test("requires verified event metadata and rejects a bad archive year menu", async () => {
   const invalid = await fetchEttuArchiveEvents([{ ...config, eventName: "" }]);
   assert.equal(invalid.errors[0].error.includes("eventName is required"), true);

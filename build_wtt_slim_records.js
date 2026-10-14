@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const { isRecordArchiveFilename } = require("./record_archive_identity");
+const { resolveKnockoutOutcomes } = require("./record_knockout_outcome");
 
 const {
   normalizeOfficialResultItem,
@@ -90,6 +91,8 @@ function slimSingle(single) {
     ...(single?.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
     ...(single?.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
     ...(single?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+    ...(Number.isInteger(single?.recordWinnerIndex) ? { recordWinnerIndex: single.recordWinnerIndex } : {}),
+    ...(single?.recordWinnerEvidence ? { recordWinnerEvidence: single.recordWinnerEvidence } : {}),
     gameScores: single?.gameScores,
     competitors: Array.isArray(single?.competitors) ? single.competitors.map(slimCompetitor) : [],
     winnerOrg: single?.winnerOrg,
@@ -123,6 +126,8 @@ function slimMatch(match) {
     ...(match?.scoreDetailMissing === true ? { scoreDetailMissing: true } : {}),
     ...(match?.resultOutcomeMissing === true ? { resultOutcomeMissing: true } : {}),
     ...(match?.participantDetailMissing === true ? { participantDetailMissing: true } : {}),
+    ...(Number.isInteger(match?.recordWinnerIndex) ? { recordWinnerIndex: match.recordWinnerIndex } : {}),
+    ...(match?.recordWinnerEvidence ? { recordWinnerEvidence: match.recordWinnerEvidence } : {}),
     isParaClass: match?.isParaClass,
     source: match?.source,
     startDateLocal: match?.startDateLocal,
@@ -163,10 +168,10 @@ function listSourceFiles(args) {
 
 function buildSlimRecord(sourcePath) {
   const payload = readJsonArray(sourcePath);
-  const matches = payload
+  const normalized = payload
     .map(normalizeArchiveItem)
-    .filter(Boolean)
-    .map(slimMatch);
+    .filter(Boolean);
+  const matches = resolveKnockoutOutcomes(normalized).map(slimMatch);
   const outputDir = /^TTE\d+\.json$/i.test(path.basename(sourcePath)) ? ITTF_OUTPUT_DIR : OUTPUT_DIR;
   const outputPath = path.join(outputDir, path.basename(sourcePath));
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });

@@ -122,6 +122,8 @@ function sportingRecord(match) {
     scoreDetailMissing: match.scoreDetailMissing === true,
     resultOutcomeMissing: match.resultOutcomeMissing === true,
     participantDetailMissing: match.participantDetailMissing === true,
+    recordWinnerIndex: match.recordWinnerIndex ?? null,
+    recordWinnerEvidence: match.recordWinnerEvidence || null,
     competitors: (match.competitors || []).map((side) => ({
       name: side.name || "", orgCode: side.orgCode || "",
       participantDetailMissing: side.participantDetailMissing === true,
@@ -148,6 +150,10 @@ function verifyDerivedRecords(dataDir, eventId, matches) {
       (record.resultOutcomeMissing === true) !== (match.resultOutcomeMissing === true) ||
       (record.participantDetailMissing === true) !== (match.participantDetailMissing === true)) {
       throw new Error(`Event index scores differ for ${match.documentCode}`);
+    }
+    if ((record.recordWinnerIndex ?? null) !== (match.recordWinnerIndex ?? null) ||
+      JSON.stringify(record.recordWinnerEvidence || null) !== JSON.stringify(match.recordWinnerEvidence || null)) {
+      throw new Error(`Event index winner evidence differs for ${match.documentCode}`);
     }
     const left = record.leftIndex === 1 ? 1 : 0;
     if (record.left?.name !== match.competitors[left]?.name || record.right?.name !== match.competitors[1 - left]?.name) {
