@@ -4609,7 +4609,7 @@ function applyFilters(matches, args, translations) {
       .map((round) => normalizeRound(round))
       .filter(Boolean);
     filtered = filtered.filter((match) =>
-      wantedRounds.some((wantedRound) => matchesRoundFilter(
+      wantedRounds.some((wantedRound) => normalizeRound(match.roundLabel) === wantedRound || matchesRoundFilter(
         match.roundKey,
         wantedRound,
         roundContextsByCategory.get(getRoundContextKey(match)) || fallbackRoundContext,

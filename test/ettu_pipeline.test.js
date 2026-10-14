@@ -91,3 +91,10 @@ test("record and H2H winner resolution preserves both walkover orientations", ()
   assert.equal(context.getWinnerIndexFromOverallScore("2-3"), 1);
   assert.equal(context.getWinnerIndexFromOverallScore("0-0"), null);
 });
+
+test("the round option Group 1 filters canonical group records without selecting Group 2", () => {
+  const { applyFilters } = require("../extract_individual_matches");
+  const records = [1, 2].map((n) => ({ matchType: "individual", categoryName: "Men Singles", roundKey: "group", roundLabel: `Group ${n}`, documentCode: `ETTU167-${n}`, competitors: [] }));
+  assert.deepEqual(applyFilters(records, { round: "Group 1" }, {}).map((m) => m.documentCode), ["ETTU167-1"]);
+  assert.equal(applyFilters(records, { round: "Group" }, {}).length, 2);
+});
