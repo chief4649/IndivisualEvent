@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1
 FROM node:22-alpine
 
 WORKDIR /app
@@ -41,11 +42,12 @@ COPY wtt-date-index.json ./
 COPY wtt-search-index.json ./
 COPY rules.json ./
 COPY public ./public
-COPY zennihon-records ./zennihon-records
-COPY wtt-records ./wtt-records
-COPY wtt-records-slim ./wtt-records-slim
-COPY player-records-index/event-records ./player-records-index/event-records
-COPY player-records-index/event-records-manifest.json ./player-records-index/event-records-manifest.json
+# Keep unchanged archive layers independent of application code updates.
+COPY --link zennihon-records ./zennihon-records
+COPY --link wtt-records ./wtt-records
+COPY --link wtt-records-slim ./wtt-records-slim
+COPY --link player-records-index/event-records ./player-records-index/event-records
+COPY --link player-records-index/event-records-manifest.json ./player-records-index/event-records-manifest.json
 
 RUN node -e 'for (const file of ["server.js", "crawl_wtt_archives.js"]) { const source = require("fs").readFileSync(file, "utf8"); for (const match of source.matchAll(/require\("(\.\/[^\"]+)"\)/g)) require.resolve(match[1]); }'
 RUN node patch_version_info.js
