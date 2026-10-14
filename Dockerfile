@@ -60,4 +60,4 @@ ENV DATA_DIR=/data
 
 EXPOSE 3000
 
-CMD ["node", "-r", "./runtime_legacy_ittf_patch.js", "server.js"]
+CMD ["node", "--max-old-space-size=160", "-r", "./runtime_legacy_ittf_patch.js", "server.js"]

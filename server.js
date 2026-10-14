@@ -4511,8 +4511,9 @@ const HEAD_TO_HEAD_QUERY_TIMEOUT_MS = Number(process.env.HEAD_TO_HEAD_QUERY_TIME
 const HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS = Number(
   process.env.HEAD_TO_HEAD_ASYNC_QUERY_TIMEOUT_MS || 300_000,
 );
+// Preloading a second full index competes with career searches on small hosts.
 const HEAD_TO_HEAD_QUERY_WORKER_WARMUP = process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP === "1"
-  || (process.env.HEAD_TO_HEAD_QUERY_WORKER_WARMUP !== "0" && Boolean(process.env.RENDER_GIT_COMMIT));
+  && require("v8").getHeapStatistics().heap_size_limit > 224 * 1024 * 1024;
 const HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX = Number(
   process.env.HEAD_TO_HEAD_PAIR_SHARD_CACHE_MAX || 128,
 );
@@ -4909,6 +4910,8 @@ function getHeadToHeadQueryWorker() {
   }
 
   const child = spawn(process.execPath, [
+    // Leave headroom for the web process and external buffers on 512 MiB hosts.
+    "--max-old-space-size=128",
     "-r",
     "./runtime_legacy_ittf_patch.js",
     "server.js",

@@ -19,7 +19,7 @@ services:
       - key: RATE_LIMIT_MAX_REQUESTS
         value: "60"
       - key: HEAD_TO_HEAD_QUERY_WORKER_WARMUP
-        value: "1"
+        value: "0"
       - key: HEAD_TO_HEAD_STARTUP_RECONCILE_ENABLED
         value: "1"
       - key: WTT_NIGHTLY_CRAWL_ENABLED
