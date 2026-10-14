@@ -10115,7 +10115,9 @@ function limitHeadToHeadSearchResult(searchResult, eventLimit, matchLimit) {
     returnedMatches += matches.length;
     events.push({ ...event, matches });
   }
-  return { ...searchResult, events };
+  const totalMatches = searchResult?.totalMatches ?? (Array.isArray(searchResult?.events) ? searchResult.events : [])
+    .reduce((count, event) => count + event.matches.length, 0);
+  return { ...searchResult, totalMatches, events };
 }
 
 function buildHeadToHeadApiPayload(query, searchResult, eventLimit, matchLimit) {
@@ -10143,7 +10145,7 @@ function buildHeadToHeadApiPayload(query, searchResult, eventLimit, matchLimit) 
     summary: {
       playerAWins: searchResult.aWins,
       playerBWins: searchResult.bWins,
-      totalMatches: searchResult.aWins + searchResult.bWins,
+      totalMatches: searchResult.totalMatches ?? searchResult.events.reduce((count, event) => count + event.matches.length, 0),
     },
     events: limitedEvents,
     meta: {

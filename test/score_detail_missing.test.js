@@ -16,6 +16,33 @@ const translations = require("../translations.ja.json");
 const rules = require("../rules.json");
 const { resolveKnockoutOutcomes } = require("../record_knockout_outcome");
 
+test("H2H totals include unknown outcomes without adding wins, including hidden results", () => {
+  const source = fs.readFileSync(path.join(__dirname, "../server.js"), "utf8");
+  const start = source.indexOf("function limitHeadToHeadSearchResult(");
+  const payloadStart = source.indexOf("function buildHeadToHeadApiPayload(");
+  const end = source.indexOf("\nfunction ", payloadStart + 1);
+  const context = vm.createContext({});
+  vm.runInContext(source.slice(start, end), context);
+  const query = { playerA: "A", playerB: "B" };
+  const unknown = { winner: null };
+  const single = context.buildHeadToHeadApiPayload(query, { aWins: 0, bWins: 0, events: [{ matches: [unknown] }] }, 10, 10);
+  assert.equal(single.summary.totalMatches, 1);
+  assert.equal(single.summary.playerAWins, 0);
+  assert.equal(single.summary.playerBWins, 0);
+  const mixed = context.buildHeadToHeadApiPayload(query, { aWins: 1, bWins: 1,
+    events: [{ matches: [unknown, { winner: "A" }] }, { matches: [{ winner: "B" }] }] }, 1, 1);
+  assert.equal(mixed.summary.totalMatches, 3);
+  assert.equal(mixed.summary.playerAWins, 1);
+  assert.equal(mixed.summary.playerBWins, 1);
+  assert.equal(mixed.events.length, 1);
+  assert.equal(mixed.events[0].matches.length, 1);
+  const cached = context.limitHeadToHeadSearchResult({ aWins: 1, bWins: 1,
+    events: [{ matches: [unknown, { winner: "A" }] }, { matches: [{ winner: "B" }] }] }, 1, 1);
+  assert.equal(cached.totalMatches, 3);
+  const cachedPayload = context.buildHeadToHeadApiPayload(query, cached, 1, 1);
+  assert.equal(cachedPayload.summary.totalMatches, 3);
+});
+
 const legacyResultOnly = {
   matchType: "individual",
   id: "legacy-final",
