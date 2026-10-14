@@ -139,6 +139,7 @@ const WTT_EVENT_PUBLIC_URLS = {
   "2587": "https://www.ittf.com/competitions_temp/competitions2.asp?Competition_ID=2587&category=WTTC",
   "3150": "https://results.ittf.com/ittf-web-results/html/TTE5676/results.html#/results",
   "3487": "https://www.ittf.com/tournament/3403/ITTF%20Americas%20Central%20American%20%20Caribbean%20Championships%20Santo%20Domingo%202026/",
+  "5440": "https://www.ettu.tv/events/167/4/1/5/5",
   "5449": "https://results.santafe2026.org/#/discipline/TTE/results",
   "5525": "https://results.ittf.com/ittf-web-results/html/TTE3454/results.html#/results",
   "wmc2026": "https://wmc2026.ittf.com/",
