@@ -5848,7 +5848,8 @@ function formatJaHeader(match, translations, rules) {
   const roundLabel = String(
     translateRoundJaForMatch(match, translations, rules, match.roundContext) || "",
   ).trim();
-  return `▼${categoryLabel}${roundLabel}`.trim();
+  const separator = categoryLabel.includes("クラス") && roundLabel ? " " : "";
+  return `▼${categoryLabel}${separator}${roundLabel}`.trim();
 }
 
 function formatJaTeamLine(match, translations) {
