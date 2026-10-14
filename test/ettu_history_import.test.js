@@ -5,7 +5,7 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 const vm = require("node:vm");
-const { runNode, validatePayload, fetchEttuHistoryResults } = require("../import_ettu_history");
+const { runNode, validatePayload, fetchEttuHistoryResults, verifyDerivedRecords } = require("../import_ettu_history");
 const { getEttuHistoryEvent, getEttuHistoryMetadata } = require("../ettu_history_registry");
 
 test("European history uses explicit identities, never numeric/TTE coincidence", () => {
@@ -65,6 +65,55 @@ test("empty, duplicate, mismatched and detail-free records cannot be promoted", 
     assert.throws(() => validatePayload(config, payload));
   }
   assert.equal(validatePayload(config, [{ ...match, matchType: "team", singles: [], resultStatus: "WO" }]).length, 1);
+});
+
+test("derived verification accepts slim null competitors and excludes unplayed team slots", (t) => {
+  const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "ettu-derived-"));
+  t.after(() => fs.rmSync(dataDir, { recursive: true, force: true }));
+  fs.mkdirSync(path.join(dataDir, "wtt-records-slim"), { recursive: true });
+  fs.mkdirSync(path.join(dataDir, "player-records-index", "event-records"), { recursive: true });
+  const child = {
+    documentCode: "child-1", overallScore: "0-3", gameScores: ["0-11", "0-11", "0-11"], resultStatus: "WO",
+    recordWinnerIndex: null, recordWinnerEvidence: null,
+    competitors: [null, { name: "ELIA Iosif", orgCode: "ROU", players: [{ name: "ELIA Iosif", orgCode: "ROU" }] }],
+  };
+  const unplayed = { documentCode: "child-2", competitors: [] };
+  const team = { documentCode: "team-1", matchType: "team", competitors: [], singles: [child, unplayed] };
+  const slimChild = structuredClone(child);
+  slimChild.competitors[0] = { players: [] };
+  fs.writeFileSync(path.join(dataDir, "wtt-records-slim", "ETTU2023TQ1.json"), JSON.stringify([{ ...team, singles: [slimChild, unplayed] }]));
+  const eventRecord = {
+    documentCode: child.documentCode, overallScore: child.overallScore, gameScores: child.gameScores,
+    leftIndex: 1, left: { name: "ELIA Iosif", participantDetailMissing: false },
+    right: { name: "" },
+    recordWinnerIndex: null, recordWinnerEvidence: null,
+  };
+  fs.writeFileSync(path.join(dataDir, "player-records-index", "event-records", "ETTU2023TQ1.json"), JSON.stringify({ matches: { one: { documentCode: child.documentCode, record: eventRecord } } }));
+  assert.deepEqual(verifyDerivedRecords(dataDir, "ETTU2023TQ1", [team]), {
+    slimMatches: 1, indexedMatchCount: 1, verifiedMatchCount: 1,
+  });
+
+  for (const mutated of [
+    { ...child, competitors: [null, { ...child.competitors[1], players: [{ name: "Other player", orgCode: "GBR" }] }] },
+    { ...child, recordWinnerIndex: 1 },
+    { ...child, overallScore: "3-0" },
+    { ...child, resultStatus: "" },
+  ]) {
+    assert.throws(() => verifyDerivedRecords(dataDir, "ETTU2023TQ1", [{ ...team, singles: [mutated, unplayed] }]), /RAW\/slim sporting records differ/);
+  }
+
+  for (const changedRecord of [
+    { ...eventRecord, overallScore: "3-0" },
+    { ...eventRecord, gameScores: ["0-11"] },
+    { ...eventRecord, recordWinnerIndex: 0 },
+  ]) {
+    fs.writeFileSync(path.join(dataDir, "player-records-index", "event-records", "ETTU2023TQ1.json"), JSON.stringify({ matches: { one: { documentCode: child.documentCode, record: changedRecord } } }));
+    assert.throws(() => verifyDerivedRecords(dataDir, "ETTU2023TQ1", [team]), /scores differ|winner evidence differs/);
+  }
+
+  const wrongOrientation = { ...eventRecord, right: { name: "unexpected" } };
+  fs.writeFileSync(path.join(dataDir, "player-records-index", "event-records", "ETTU2023TQ1.json"), JSON.stringify({ matches: { one: { documentCode: child.documentCode, record: wrongOrientation } } }));
+  assert.throws(() => verifyDerivedRecords(dataDir, "ETTU2023TQ1", [team]), /orientation differs/);
 });
 
 test("archive category counts remain available for source reconciliation", async () => {

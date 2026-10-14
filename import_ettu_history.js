@@ -146,9 +146,10 @@ function sportingRecord(match) {
     recordWinnerIndex: match.recordWinnerIndex ?? null,
     recordWinnerEvidence: match.recordWinnerEvidence || null,
     competitors: (match.competitors || []).map((side) => ({
-      name: side.name || "", orgCode: side.orgCode || "",
-      participantDetailMissing: side.participantDetailMissing === true,
-      players: (side.players || []).map((player) => ({ name: player.name || "", orgCode: player.orgCode || "" })),
+      // Slim records intentionally project null competitors to an empty side.
+      name: side?.name || "", orgCode: side?.orgCode || "",
+      participantDetailMissing: side?.participantDetailMissing === true,
+      players: (side?.players || []).map((player) => ({ name: player.name || "", orgCode: player.orgCode || "" })),
     })),
     teams: (match.teams || []).map((side) => ({ name: side.name || "", orgCode: side.orgCode || "" })),
     singles: (match.singles || []).map(sportingRecord),
@@ -161,7 +162,8 @@ function verifyDerivedRecords(dataDir, eventId, matches) {
     throw new Error(`RAW/slim sporting records differ for ${eventId}`);
   }
   const eventIndex = JSON.parse(fs.readFileSync(path.join(dataDir, "player-records-index", "event-records", `${eventId}.json`), "utf8"));
-  const expected = matches.flatMap((match) => match.matchType === "team" ? match.singles : [match]);
+  const expected = matches.flatMap((match) => match.matchType === "team" ? match.singles : [match])
+    .filter((match) => Array.isArray(match.competitors) && match.competitors.length > 0);
   const stored = new Map(Object.values(eventIndex.matches || {}).map((entry) => [entry.documentCode, entry.record]));
   for (const match of expected) {
     const record = stored.get(match.documentCode);
@@ -177,7 +179,8 @@ function verifyDerivedRecords(dataDir, eventId, matches) {
       throw new Error(`Event index winner evidence differs for ${match.documentCode}`);
     }
     const left = record.leftIndex === 1 ? 1 : 0;
-    if (record.left?.name !== match.competitors[left]?.name || record.right?.name !== match.competitors[1 - left]?.name) {
+    if ((record.left?.name || "") !== (match.competitors[left]?.name || "") ||
+      (record.right?.name || "") !== (match.competitors[1 - left]?.name || "")) {
       throw new Error(`Event index orientation differs for ${match.documentCode}`);
     }
     if ((record.left?.participantDetailMissing === true) !== (match.competitors[left]?.participantDetailMissing === true) ||

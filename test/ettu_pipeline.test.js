@@ -119,3 +119,27 @@ test("ongoing ETTU display serves its verified archive without external requests
     fs.rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test("undated historical ETTU display serves only its identified archive offline", async () => {
+  const { fetchOfficialResultsCached, isWttPayloadSourceCompatible } = require("../extract_individual_matches");
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "ettu-history-display-"));
+  const originalFetch = global.fetch;
+  try {
+    const record = { eventId: "ETTU2008T", recordSource: "ettu", documentCode: "ETTU-ARCHIVE-2008-team-2546" };
+    fs.writeFileSync(path.join(dir, "ETTU2008T.json"), JSON.stringify([record]));
+    const indexPath = path.join(dir, "archive-index.json");
+    fs.writeFileSync(indexPath, JSON.stringify({ ETTU2008T: { archived: true, startDate: null, endDate: null } }));
+    global.fetch = async () => { throw new Error("Historical display must not request upstream"); };
+    const result = await fetchOfficialResultsCached("wtt", "ETTU2008T", 1200, dir, false, {
+      wttArchiveDir: dir, wttSlimArchiveDir: dir,
+      wttArchiveIndexPath: indexPath, wttDateIndexPath: path.join(dir, "missing-date-index.json"),
+    });
+    assert.deepEqual(result, [record]);
+    assert.equal(isWttPayloadSourceCompatible([{ ...record, eventId: "ETTU2009T" }], "ETTU2008T"), false);
+    assert.equal(isWttPayloadSourceCompatible([{ ...record, recordSource: "wtt" }], "ETTU2008T"), false);
+    assert.equal(isWttPayloadSourceCompatible([record], "ETTU2007T"), false);
+  } finally {
+    global.fetch = originalFetch;
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
