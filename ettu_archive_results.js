@@ -293,7 +293,9 @@ function normalizeIndividualRow(row, config, { prefix = "vw_ec_indv", type = con
   const isWo = resultStatus === "WO";
   let gameScores = isWo ? [] : parsedGames;
   let scoreDetailMissing = false;
-  if (gameScoreParseError && (!setScore || setScore === "0-0")) throw gameScoreParseError;
+  if (gameScoreParseError && (!setScore || setScore === "0-0") && !/^(?:0:0|\s|:)*$/.test(rawGameScores)) {
+    throw gameScoreParseError;
+  }
   if (!resultStatus && setScore && setScore !== "0-0") {
     const declared = setScore.split("-").map(Number);
     const expectedGameCount = declared[0] + declared[1];
