@@ -162,7 +162,12 @@ function isUnplayedPlaceholder(row, prefix) {
   if (officialStatus(cells[`${prefix}___wo`], cells[`${prefix}___wo_a`], cells[`${prefix}___wo_x`])) return false;
   const scores = String(cells[`${prefix}___games`] || "").match(/\d+:\d+/g) || [];
   const result = parseResult(cells[`${prefix}___res_a`], cells[`${prefix}___res_x`]);
+  const nameKeys = prefix === "vw_teams_indv_res"
+    ? ["name_a", "name_b", "name_x", "name_y"]
+    : ["player_id_a", "player_id_b", "player_id_x", "player_id_y"];
+  const hasNamedParticipant = nameKeys.some((key) => String(cells[`${prefix}___${key}`] || "").trim());
   return scores.length > 0 && scores.every((score) => score === "0:0")
+    && !hasNamedParticipant
     && (result.missing || result.score === "0-0");
 }
 

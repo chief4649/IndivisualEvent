@@ -143,6 +143,18 @@ test("validates declared game wins and continues processing later configured eve
   assert.equal(events.errors[0].year, "2009");
 });
 
+test("named zero-score rows are retained by the fetch pipeline, not treated as empty schedule slots", async () => {
+  const row = individualRow({ games: "0:0 0:0 0:0" })
+    .replace('<td class="vw_ec_indv___res_a">2</td>', '<td class="vw_ec_indv___res_a">0</td>')
+    .replace('<td class="vw_ec_indv___res_x">4</td>', '<td class="vw_ec_indv___res_x">0</td>');
+  const records = await fetchEttuArchiveResults(config, {
+    fetchImpl: async () => new Response(`<html>Total: 1<table>${row}</table></html>`, { status: 200, headers: { "content-type": "text/html" } }),
+  });
+  assert.equal(records.length, 1);
+  assert.equal(records[0].resultOutcomeMissing, true);
+  assert.equal(records.counts.unplayed, 0);
+});
+
 test("keeps only named, terminal set results when game-point details are missing or malformed", () => {
   const { normalizeIndividualRow } = require("../ettu_archive_results");
   for (const rawGames of [": : : : : :", ": : 0: : :"]) {
