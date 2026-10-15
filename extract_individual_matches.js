@@ -5986,6 +5986,13 @@ function formatJaIndividualMatchLine(match, translations, options = {}) {
   return `${left}　${score}　${right}`;
 }
 
+function getTeamSinglesForDisplay(match) {
+  // An archive slot containing only its order is not an identified match.
+  return (Array.isArray(match?.singles) ? match.singles : []).filter(single =>
+    single && Object.keys(single).some(key => key !== "order"),
+  );
+}
+
 function formatJapanese(matches, translations, rules, roundContext, options = {}) {
   const sortedMatches = sortIndividualMatches(matches, roundContext);
   const blocks = [];
@@ -6054,15 +6061,16 @@ function formatJapanese(matches, translations, rules, roundContext, options = {}
     const displayedTeams = getDisplayedTeamIndexes(match);
     displayedTeams.parentMatch = match;
     const matchRoundContext = getRoundContextForMatch(match);
+    const singles = getTeamSinglesForDisplay(match);
     const lines = [
       formatJaHeader({ ...match, roundContext: matchRoundContext }, translations, rules),
       formatJaTeamLine(match, translations),
-      ...match.singles.map((single) =>
+      ...singles.map((single) =>
         formatJaSinglesLine(single, translations, displayedTeams, options),
       ),
     ];
 
-    if (match.singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
+    if (singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
       const inferredSchedule = inferStandardPendingTeamSchedule(match, displayedTeams)
         || inferOlympicPendingTeamSchedule(match, displayedTeams);
       if (Array.isArray(inferredSchedule) && inferredSchedule.length > 0) {
@@ -6182,15 +6190,16 @@ function formatEnglish(matches, roundContext, options = {}) {
 
     const displayedTeams = getDisplayedTeamIndexes(match);
     displayedTeams.parentMatch = match;
+    const singles = getTeamSinglesForDisplay(match);
     const lines = [
       formatEnHeader({ ...match, roundContext }),
       formatEnTeamLine(match),
-      ...match.singles.map((single) =>
+      ...singles.map((single) =>
         formatEnSinglesLine(single, displayedTeams, options),
       ),
     ];
 
-    if (match.singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
+    if (singles.length > 0 && !(match.discipline === "teams" && match.gender === "mixed")) {
       const inferredSchedule = inferStandardPendingTeamSchedule(match, displayedTeams)
         || inferOlympicPendingTeamSchedule(match, displayedTeams);
       if (Array.isArray(inferredSchedule) && inferredSchedule.length > 0) {

@@ -1575,7 +1575,7 @@
           return;
         }
         setCategoryOptions(data.categories || []);
-        loadRounds().catch(reportBackgroundError);
+        await loadRounds();
       }
 
       async function loadRounds() {
@@ -2057,7 +2057,29 @@
       function refreshEventDependentUi() {
         updateEventName();
         loadEventName().catch(reportBackgroundError);
-        loadCategories().catch(reportBackgroundError);
+        return loadCategories().catch((error) => {
+          reportBackgroundError(error);
+        });
+      }
+
+      async function initializeFromUrl() {
+        const params = initialParams;
+        for (const [key, value] of params.entries()) {
+          const field = form.elements.namedItem(key);
+          if (!field) {
+            continue;
+          }
+          if (field.type === "checkbox") {
+            field.checked = value === "true" || value === "1";
+          } else {
+            field.value = value;
+          }
+        }
+
+        await refreshEventDependentUi();
+        if (params.get("event")) {
+          runQuery();
+        }
       }
 
       function refreshEventNameImmediately() {
@@ -2229,26 +2251,7 @@
         }
       });
 
-      (() => {
-        const params = initialParams;
-        for (const [key, value] of params.entries()) {
-          const field = form.elements.namedItem(key);
-          if (!field) {
-            continue;
-          }
-          if (field.type === "checkbox") {
-            field.checked = value === "true" || value === "1";
-          } else {
-            field.value = value;
-          }
-        }
-
-        if (params.get("event")) {
-          runQuery();
-        }
-
-        refreshEventDependentUi();
-      })();
+      initializeFromUrl();
     </script>
   </body>
 </html>
