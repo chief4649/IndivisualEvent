@@ -86,8 +86,8 @@ insertOnce(
 );
 
 insertOnce(
-  "        refreshEventDependentUi();\n      })();",
-  "        loadVersionInfo();\n",
+  "      initializeFromUrl();",
+  "      loadVersionInfo();\n",
   "loadVersionInfo();",
 );
 

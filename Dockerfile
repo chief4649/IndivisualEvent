@@ -12,6 +12,7 @@ COPY ettu_archive_results.js ./
 COPY ettu_team_results.js ./
 COPY record_archive_identity.js ./
 COPY record_knockout_outcome.js ./
+COPY wtt_verified_result_supplements.js ./
 COPY archive_maintenance.js ./
 COPY import_ettu_history.js ./
 COPY update_wtt_event_indexes.js ./

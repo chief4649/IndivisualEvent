@@ -5,6 +5,7 @@ const { fetchEttuOfficialResults } = require("./ettu_results");
 const { getEttuHistoryEvent } = require("./ettu_history_registry");
 const { normalizeRecordEventId } = require("./record_archive_identity");
 const { resolveKnockoutOutcomes } = require("./record_knockout_outcome");
+const { supplementVerifiedWttResults } = require("./wtt_verified_result_supplements");
 
 const WTT_OFFICIAL_RESULT_URLS = [
   "https://liveeventsapi.worldtabletennis.com/api/cms/GetOfficialResult",
@@ -6369,7 +6370,8 @@ async function getProcessedMatches(options = {}) {
   const normalized = args.source === "zennihon"
     ? payload.filter(Boolean)
     : payload.map((item) => (isPreNormalizedMatch(item) ? normalizePreNormalizedMatch(item) : normalizeOfficialResultItem(item))).filter(Boolean);
-  const resolvedNormalized = resolveKnockoutOutcomes(normalized);
+  const resolvedNormalized = resolveKnockoutOutcomes(args.source === "wtt"
+    ? supplementVerifiedWttResults(args.event, normalized) : normalized);
   const translations = readTranslations(args.translations);
   const filtered = applyFilters(resolvedNormalized, args, translations);
   const rules = readRules(args.rules);
